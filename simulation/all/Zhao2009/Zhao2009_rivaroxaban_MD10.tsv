@@ -1,0 +1,14 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	timeraw	comments	mean_unit	value_unit
+Zhao2009		MD10	8.0	MD10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD10	5.0	days		0.0001113951392465761				6.0		mole/meter^3	µg/l
+Zhao2009		MD10	8.0	MD10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD10	5.01342281879195	days		0.00014322232188845573				6.01342281879195		mole/meter^3	µg/l
+Zhao2009		MD10	8.0	MD10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD10	5.02684563758389	days		0.00021483348283268417				6.02684563758389		mole/meter^3	µg/l
+Zhao2009		MD10	8.0	MD10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD10	5.05369127516779	days		0.00033418541773972874				6.05369127516779		mole/meter^3	µg/l
+Zhao2009		MD10	8.0	MD10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD10	5.08053691275168	days		0.000437623761325835				6.08053691275168		mole/meter^3	µg/l
+Zhao2009		MD10	8.0	MD10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD10	5.09395973154362	days		0.000461494148307245				6.09395973154362		mole/meter^3	µg/l
+Zhao2009		MD10	8.0	MD10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD10	5.12080536912752	days		0.000461494148307245				6.12080536912752		mole/meter^3	µg/l
+Zhao2009		MD10	8.0	MD10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD10	5.16107382550336	days		0.00039783978302348805				6.16107382550336		mole/meter^3	µg/l
+Zhao2009		MD10	8.0	MD10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD10	5.24161073825503	days		0.00029440143943738184				6.24161073825503		mole/meter^3	µg/l
+Zhao2009		MD10	8.0	MD10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD10	5.32214765100671	days		0.00015913591320939452				6.32214765100671		mole/meter^3	µg/l
+Zhao2009		MD10	8.0	MD10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD10	5.49664429530201	days		7.161116094422843e-05				6.49664429530201		mole/meter^3	µg/l
+Zhao2009		MD10	8.0	MD10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD10	5.61744966442953	days		3.182718264187941e-05				6.61744966442953		mole/meter^3	µg/l
+Zhao2009		MD10	8.0	MD10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD10	6.0	days		7.956795660470403e-06				7.0		mole/meter^3	µg/l

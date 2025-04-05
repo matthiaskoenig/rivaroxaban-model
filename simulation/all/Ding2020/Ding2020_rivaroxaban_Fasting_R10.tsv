@@ -1,0 +1,16 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Ding2020		Fasting	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fasting_R10	0.158279896583455	hr		1.938653435893306e-05	23.6234839858624	3.4810685026820825e-05	6.578601110626264e-06		mole/meter^3	ng/ml
+Ding2020		Fasting	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fasting_R10	0.346357780342089	hr		7.634309257057608e-05	64.8567200535038	7.245180523043295e-05	1.3692104191243878e-05		mole/meter^3	ng/ml
+Ding2020		Fasting	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fasting_R10	0.808577146112384	hr		0.00016878810637352965	117.594440345154	0.00010099816586918396	1.9086859268822318e-05		mole/meter^3	ng/ml
+Ding2020		Fasting	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fasting_R10	1.27605498020771	hr		0.00021723316500018149	143.371009421043	0.00011168995471405873	2.1107417436961824e-05		mole/meter^3	ng/ml
+Ding2020		Fasting	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fasting_R10	1.94668497392676	hr		0.00023342549337786547	140.77638861263	8.954502284822888e-05	1.692241868571502e-05		mole/meter^3	ng/ml
+Ding2020		Fasting	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fasting_R10	2.68549977359373	hr		0.00022509296677534024	143.287852784597	0.00010363937420060956	1.9586000726369745e-05		mole/meter^3	ng/ml
+Ding2020		Fasting	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fasting_R10	3.35753202553278	hr		0.00020937299561391462	126.257847405557	8.028894667652541e-05	1.5173184709529437e-05		mole/meter^3	ng/ml
+Ding2020		Fasting	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fasting_R10	4.5	hr		0.00018447469770802195	121.753926451777	9.485430672387905e-05	1.7925779026773274e-05		mole/meter^3	ng/ml
+Ding2020		Fasting	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fasting_R10	5.0	hr		0.00014072336766586587	86.4045992795802	5.750687753827337e-05	1.086777833157983e-05		mole/meter^3	ng/ml
+Ding2020		Fasting	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fasting_R10	6.0	hr		0.00010927730165228871	63.5642281918936	3.6552349150440485e-05	6.9077446919477566e-06		mole/meter^3	ng/ml
+Ding2020		Fasting	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fasting_R10	8.0	hr		7.477075333572566e-05	47.5981595922265	3.442939255815913e-05	6.506543607136212e-06		mole/meter^3	ng/ml
+Ding2020		Fasting	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fasting_R10	12.0	hr		3.971001949964875e-05	24.8270762502369	1.7248492591378364e-05	3.259658706251941e-06		mole/meter^3	ng/ml
+Ding2020		Fasting	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fasting_R10	24.0	hr		1.492622997863559e-05	10.3990837892117	8.931445962475957e-06	1.6878846332088074e-06		mole/meter^3	ng/ml
+Ding2020		Fasting	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fasting_R10	35.0	hr		3.7056530212587187e-06	2.98237437712821	3.13653835510223e-06	5.927500332297213e-07		mole/meter^3	ng/ml
+Ding2020		Fasting	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fasting_R10	48.0	hr		2.1474149781673855e-06	2.10748564488598	2.6875984312250616e-06	5.07908362359203e-07		mole/meter^3	ng/ml

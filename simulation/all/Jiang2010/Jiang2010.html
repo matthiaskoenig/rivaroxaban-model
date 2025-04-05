@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Jiang2010</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <!--<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+</head>
+
+<body>
+<div id="app">
+    <!-- Vue app-->
+    <v-app>
+        <v-content>
+
+            <a href="../index.html">Experiments</a>
+            <h1>Jiang2010</h1>
+
+            <h2>Models</h2>
+            <p>
+            <ul>
+                <li><strong>model</strong>: <a href="../../../../models/results/models/rivaroxaban_body_flat.xml">../../../../models/results/models/rivaroxaban_body_flat.xml</a></li>
+            </ul>
+            </p>
+
+            <h2>Datasets</h2>
+            <p>
+            <ul>
+                <li><strong>rivaroxaban_T10</strong>: <a href="Jiang2010_rivaroxaban_T10.tsv">Jiang2010_rivaroxaban_T10.tsv</a></li>
+                <li><strong>rivaroxaban_T20</strong>: <a href="Jiang2010_rivaroxaban_T20.tsv">Jiang2010_rivaroxaban_T20.tsv</a></li>
+                <li><strong>rivaroxaban_T30</strong>: <a href="Jiang2010_rivaroxaban_T30.tsv">Jiang2010_rivaroxaban_T30.tsv</a></li>
+                <li><strong>rivaroxaban_T40</strong>: <a href="Jiang2010_rivaroxaban_T40.tsv">Jiang2010_rivaroxaban_T40.tsv</a></li>
+                <li><strong>rivaroxaban_T5</strong>: <a href="Jiang2010_rivaroxaban_T5.tsv">Jiang2010_rivaroxaban_T5.tsv</a></li>
+            </ul>
+            </p>
+
+            <h2>Figures</h2>
+            <p>
+            <ul>
+                <li><strong>Fig1</strong>: <a href="Jiang2010_Fig1.svg">Jiang2010_Fig1.svg</a></li>
+            </ul>
+            </p>
+
+            <h3>Fig1</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Jiang2010_Fig1.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Jiang2010_Fig1.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+
+            <h2>Code</h2>
+            <p>
+                <a href="../../../../experiments/studies/jiang2010.py">../../../../experiments/studies/jiang2010.py</a>
+            <pre>
+<code class="python">from typing import Dict
+
+from sbmlsim.data import DataSet, load_pkdb_dataframe
+from sbmlsim.fit import FitMapping, FitData
+from sbmlutils.console import console
+
+from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
+    RivaroxabanSimulationExperiment,
+)
+from pkdb_models.models.rivaroxaban.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
+    Fasting, RivaroxabanMappingMetaData, Coadministration
+
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Timecourse, TimecourseSim
+
+from pkdb_models.models.rivaroxaban.helpers import run_experiments
+
+
+class Jiang2010(RivaroxabanSimulationExperiment):
+    """Simulation experiment of Jiang2010."""
+    # different doses in female and male healthy subjects
+
+    doses = [5, 10, 20, 30, 40]
+    formulations = ["T5", "T10", "T20", "T30", "T40"]
+    colors = {
+        "T5": "tab:orange",
+        "T10": "tab:red",
+        "T20": "tab:green",
+        "T30": "tab:purple",
+        "T40": "tab:brown",
+    }
+    bodyweights = {
+        "T5": 75,  # FIXME: values
+        "T10": 75,
+        "T20": 75,
+        "T30": 75,
+        "T40": 75,
+    }
+
+    def datasets(self) -> Dict[str, DataSet]:
+        dsets = {}
+        fig_id = "Fig1"
+        df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+        for label, df_label in df.groupby("label"):
+            dset = DataSet.from_df(df_label, self.ureg)
+            dset.unit_conversion("mean", 1 / self.Mr.riv)
+            dsets[label] = dset
+
+        # console.print(dsets.keys())
+        return dsets
+
+    def simulations(self) -> Dict[str, TimecourseSim]:
+        Q_ = self.Q_
+        tcsims = {}
+        for dose in self.doses:
+            formulation = f"T{dose}"
+            tcsims[f"po_{formulation}"] = TimecourseSim(
+                [Timecourse(
+                    start=0,
+                    end=50 * 60,  # [min]
+                    steps=500,
+                    changes={
+                        **self.default_changes(),
+                        "BW": Q_(self.bodyweights[formulation], "kg"),
+                        "PODOSE_riv": Q_(dose, "mg"),
+                    },
+                )]
+            )
+        return tcsims
+
+    def fit_mappings(self) -> Dict[str, FitMapping]:
+        mappings = {}
+        for formulation in self.formulations:
+            mappings[f"fm_po_{formulation}"] = FitMapping(
+                self,
+                reference=FitData(
+                    self,
+                    dataset=f"rivaroxaban_{formulation}",
+                    xid="time",
+                    yid="mean",
+                    yid_sd=None,
+                    count="count",
+                ),
+                observable=FitData(
+                    self, task=f"task_po_{formulation}", xid="time", yid=f"[Cve_riv]",
+                ),
+                metadata=RivaroxabanMappingMetaData(
+                    tissue=Tissue.PLASMA,
+                    route=Route.PO,
+                    application_form=ApplicationForm.TABLET, #NOT REPORTED?
+                    dosing=Dosing.SINGLE,
+                    health=Health.HEALTHY,
+                    fasting=Fasting.FED,
+                    coadministration=Coadministration.NONE,
+                ),
+            )
+        return mappings
+
+    def figures(self) -> Dict[str, Figure]:
+        fig = Figure(
+            experiment=self,
+            sid="Fig1",
+            name=f"{self.__class__.__name__} (healthy)",
+        )
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
+        )
+        plots[0].set_yaxis(self.label_riv_plasma, unit=self.unit_riv)
+
+        for formulation in self.formulations:
+
+            # simulation
+            plots[0].add_data(
+                task=f"task_po_{formulation}",
+                xid="time",
+                yid=f"[Cve_riv]",
+                label=formulation,
+                color=self.colors[formulation],
+            )
+
+            # data
+            plots[0].add_data(
+                dataset=f"rivaroxaban_{formulation}",
+                xid="time",
+                yid="mean",
+                yid_sd=None,
+                count="count",
+                label=formulation,
+                color=self.colors[formulation],
+            )
+
+        return {
+            fig.sid: fig,
+        }
+
+if __name__ == "__main__":
+    run_experiments(Jiang2010, output_dir=Jiang2010.__name__)
+</code>
+        </pre>
+            </p>
+
+        </v-content>
+    </v-app>
+</div>
+
+
+<!-- loading dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.6/dist/vuetify.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        delimiters: ['${', '}'],
+        data() {
+            return {}
+        }
+    })
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	0.088560885608857	hr		1.7519417354234258e-05					mole/meter^3	µg/l
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	0.53136531365314	hr		0.0001401014660867826					mole/meter^3	µg/l
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	1.06273062730627	hr		0.0005897018642156189					mole/meter^3	µg/l
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	2.03690036900369	hr		0.001121005670583789					mole/meter^3	µg/l
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	3.01107011070111	hr		0.001115047344755444					mole/meter^3	µg/l
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	4.16236162361624	hr		0.0010448296061960677					mole/meter^3	µg/l
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	6.02214022140221	hr		0.00047230237375329667					mole/meter^3	µg/l
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	8.0590405904059	hr		0.0002910205797895866					mole/meter^3	µg/l
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	12.0442804428044	hr		0.000121181357308163					mole/meter^3	µg/l
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	15.0553505535055	hr		6.825677056523652e-05					mole/meter^3	µg/l
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	24.0885608856089	hr		8.759708677117508e-06					mole/meter^3	µg/l
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	36.0442804428044	hr		0.0					mole/meter^3	µg/l
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	48.0	hr		0.0					mole/meter^3	µg/l

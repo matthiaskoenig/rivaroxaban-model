@@ -1,0 +1,13 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Ding2020		Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fed_T10	0.154	hr		4.849958704230522e-06	3.072	2.197852619987153e-06	4.153551036326966e-07		mole/meter^3	ng/ml
+Ding2020		Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fed_T10	0.616	hr		3.743690924107553e-05	17.785	3.365605212443789e-06	6.360396002392125e-07		mole/meter^3	ng/ml
+Ding2020		Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fed_T10	1.06	hr		9.963522070294576e-05	50.131	1.537579150224832e-05	2.9057514661235204e-06		mole/meter^3	ng/ml
+Ding2020		Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fed_T10	0.958	hr		0.00013673488115995228	133.481	0.00016949848582178582	3.2032202934746624e-05		mole/meter^3	ng/ml
+Ding2020		Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fed_T10	2.471	hr		0.00025048178397724146	168.152	0.00013529411764705878	2.556818493885948e-05		mole/meter^3	ng/ml
+Ding2020		Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fed_T10	4.193	hr		0.00032488070111039743	183.529	9.617325869505366e-05	1.8175037520128017e-05		mole/meter^3	ng/ml
+Ding2020		Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fed_T10	6.0	hr		0.00023024915114251633	145.895	0.00010446453152243739	1.9741940802516925e-05		mole/meter^3	ng/ml
+Ding2020		Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fed_T10	8.0	hr		0.000141327888409654	82.153	4.714829769661377e-05	8.910190746091391e-06		mole/meter^3	ng/ml
+Ding2020		Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fed_T10	12.0	hr		5.974350738735432e-05	40.093	3.2238230705698827e-05	6.0924529397146715e-06		mole/meter^3	ng/ml
+Ding2020		Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fed_T10	24.0	hr		8.259153895567588e-06	6.78	7.295585941084703e-06	1.378736147757803e-06		mole/meter^3	ng/ml
+Ding2020		Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fed_T10	36.0	hr		8.327980178030651e-07	0.937	1.3168762044599435e-06	2.4886621031854685e-07		mole/meter^3	ng/ml
+Ding2020		Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_Fed_T10	48.009	hr		4.083692759475085e-07	0.613	9.97981095714417e-07	1.886006994574353e-07		mole/meter^3	ng/ml

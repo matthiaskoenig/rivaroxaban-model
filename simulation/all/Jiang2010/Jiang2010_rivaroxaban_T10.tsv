@@ -1,0 +1,13 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Jiang2010		T10	11.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	0.088560885608857	hr		5.839805784744928e-06					mole/meter^3	µg/l
+Jiang2010		T10	11.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	1.06273062730627	hr		2.9080508880122275e-05					mole/meter^3	µg/l
+Jiang2010		T10	11.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	2.03690036900369	hr		0.00031511247228901295					mole/meter^3	µg/l
+Jiang2010		T10	11.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	3.01107011070111	hr		0.00042011045637081756					mole/meter^3	µg/l
+Jiang2010		T10	11.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	4.0	hr		0.0004258209675625424					mole/meter^3	µg/l
+Jiang2010		T10	11.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	6.02214022140221	hr		0.00018615189030080317					mole/meter^3	µg/l
+Jiang2010		T10	11.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	8.0	hr		8.662737732352022e-05					mole/meter^3	µg/l
+Jiang2010		T10	11.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	12.0442804428044	hr		2.7744464752247175e-05					mole/meter^3	µg/l
+Jiang2010		T10	11.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	14.9667896678967	hr		1.570929305195175e-05					mole/meter^3	µg/l
+Jiang2010		T10	11.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	24.0	hr		2.9199028923726023e-06					mole/meter^3	µg/l
+Jiang2010		T10	11.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	35.9557195571956	hr		0.0					mole/meter^3	µg/l
+Jiang2010		T10	11.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	48.0	hr		0.0					mole/meter^3	µg/l
