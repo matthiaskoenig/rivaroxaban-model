@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13759839.svg)](https://doi.org/10.5281/zenodo.13759839)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15157735.svg)](https://doi.org/10.5281/zenodo.15157735)
 
 # rivaroxaban model
 This repository provides the rivaroxaban physiologically based pharmacokinetics/pharmacodynamics (PBPK/PD) model.
@@ -24,7 +24,7 @@ The whole-body submodel is available from [`rivaroxaban_body.xml`](./models/riva
 [https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/rivaroxaban-model/main/models/rivaroxaban_body.xml](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/rivaroxaban-model/main/models/rivaroxaban_body.xml) and equations from [`rivaroxaban_body.md`](./models/glimepiride_body.md).
 
 ## How to cite
-
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15157735.svg)](https://doi.org/10.5281/zenodo.15157735)
 > Casabianca, E., & König, M. (2025).
 > *Physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of rivaroxaban.*
 

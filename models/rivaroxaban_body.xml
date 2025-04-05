@@ -71,7 +71,7 @@ FOR A PARTICULAR PURPOSE.</p></body>
           </bqbiol:hasTaxon>
           <bqbiol:isDescribedBy>
             <rdf:Bag>
-              <rdf:li rdf:resource="https://doi.org/10.5281/zenodo.14628700"/>
+              <rdf:li rdf:resource="https://doi.org/10.5281/zenodo.15157735"/>
             </rdf:Bag>
           </bqbiol:isDescribedBy>
         </rdf:Description>
