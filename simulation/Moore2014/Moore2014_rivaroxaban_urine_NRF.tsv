@@ -1,0 +1,3 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	mean	median	min	max	mean_sd	mean_se	cv	comments	mean_unit	median_unit
+Moore2014	NRF	8.0	RIV10	cumulative amount	rivaroxaban	urine	HPLC MS/MS	rivaroxaban_urine_NRF	0.0	hr	0.0								mole	mg
+Moore2014	NRF	8.0	RIV10	cumulative amount	rivaroxaban	urine	HPLC MS/MS	rivaroxaban_urine_NRF	48.0	hr	8.052675048178397e-06				1.773423878131596e-06				mole	mg

@@ -1,0 +1,8 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_se	mean_sd	comments	mean_unit	value_unit
+Greenblatt2018		NRF	10.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF_VER	0.0	hr		0.0					mole	mg
+Greenblatt2018		NRF	10.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF_VER	3.97989949748744	hr		5.597099744020143e-06	2.97759487090626	3.902650484206892e-07	1.234126444165275e-06		mole	mg
+Greenblatt2018		NRF	10.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF_VER	7.95979899497488	hr		1.2097313374631069e-05	6.26610639403916	7.205081771891186e-07	2.278446912693792e-06		mole	mg
+Greenblatt2018		NRF	10.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF_VER	12.0	hr		1.5274878886335505e-05	7.63047998613759	7.055168400469464e-07	2.231040142153049e-06		mole	mg
+Greenblatt2018		NRF	10.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF_VER	24.0	hr		1.8732054897493486e-05	9.24079015768498	7.805300968413784e-07	2.46825288833055e-06		mole	mg
+Greenblatt2018		NRF	10.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF_VER	48.0	hr		2.1089632356737704e-05	10.1235314503552	6.754210235954667e-07	2.135868814124002e-06		mole	mg
+Greenblatt2018		NRF	10.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF_VER	72.0	hr		2.1690833690815504e-05	10.3855830878531	6.754210235955172e-07	2.1358688141241605e-06		mole	mg

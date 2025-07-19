@@ -1,0 +1,9 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Graff2007		G1	8.0	RIV_5	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_RIV_5	0.0	hr		0.370370370370381	6.5925925925926	6.22222222222222	2.19988776369148		percent	percent
+Graff2007		G1	8.0	RIV_5	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_RIV_5	2.05714285714286	hr		26.4444444444444	34.7407407407407	8.2962962962963	2.93318368492198		percent	percent
+Graff2007		G1	8.0	RIV_5	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_RIV_5	3.98961038961039	hr		19.9259259259259	23.7777777777778	3.8518518518519	1.36183528228522		percent	percent
+Graff2007		G1	8.0	RIV_5	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_RIV_5	5.98441558441558	hr		14.8888888888889	19.3333333333333	4.4444444444444	1.57134840263676		percent	percent
+Graff2007		G1	8.0	RIV_5	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_RIV_5	7.97922077922078	hr		11.6296296296296	18.1481481481482	6.5185185185186	2.30464432386729		percent	percent
+Graff2007		G1	8.0	RIV_5	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_RIV_5	10.0363636363636	hr		4.51851851851852	10.1481481481482	5.62962962962968	1.99037464333993		percent	percent
+Graff2007		G1	8.0	RIV_5	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_RIV_5	12.0311688311688	hr		4.51851851851852	11.6296296296296	7.11111111111108	2.51415744421882		percent	percent
+Graff2007		G1	8.0	RIV_5	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_RIV_5	24.0	hr		0.074074074074076	3.62962962962963	3.55555555555555	1.25707872210942		percent	percent

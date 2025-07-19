@@ -1,0 +1,13 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Kubitza2013		mildHI	8.0	mildHI	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_mildHI	1.53024648629126	hr		0.0002141318234532878	42.0625801983355	0.00011763145592475818	4.1589000082621584e-05		mole/meter^3	µg/l
+Kubitza2013		mildHI	8.0	mildHI	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_mildHI	2.25819363770427	hr		0.00034421915410422124	42.0719722185804	0.00024769723931441676	8.757419880020533e-05		mole/meter^3	µg/l
+Kubitza2013		mildHI	8.0	mildHI	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_mildHI	3.20452493454118	hr		0.0003715079684374208	89.9169878087446	0.0001652195683990052	5.8413938599825627e-05		mole/meter^3	µg/l
+Kubitza2013		mildHI	8.0	mildHI	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_mildHI	4.15085623137809	hr		0.0003254289337203863	93.4310887459604	0.00011107845022501971	3.927216269890199e-05		mole/meter^3	µg/l
+Kubitza2013		mildHI	8.0	mildHI	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_mildHI	5.1699822433563	hr		0.0003381364365463659	91.7098343612277	0.00012773487106681265	4.5161096762666324e-05		mole/meter^3	µg/l
+Kubitza2013		mildHI	8.0	mildHI	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_mildHI	6.98985012188882	hr		0.00018790785562235152	48.1457066167253	7.745152218946796e-05	2.7383248276696564e-05		mole/meter^3	µg/l
+Kubitza2013		mildHI	8.0	mildHI	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_mildHI	9.02810214584524	hr		0.00015555143622551112	38.3697846690512	6.752311496954344e-05	2.387302624090162e-05		mole/meter^3	µg/l
+Kubitza2013		mildHI	8.0	mildHI	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_mildHI	12.9590167634754	hr		9.333108403966159e-05	24.8375370255658	3.6348572739382164e-05	1.285116113523481e-05		mole/meter^3	µg/l
+Kubitza2013		mildHI	8.0	mildHI	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_mildHI	15.8708053691275	hr		7.30123720333571e-05	18.355548494592	3.090089985158231e-05	1.0925117914910112e-05		mole/meter^3	µg/l
+Kubitza2013		mildHI	8.0	mildHI	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_mildHI	24.3877870406597	hr		4.307047639432687e-05	10.2281648729269	1.9604924240231942e-05	6.931387437458268e-06		mole/meter^3	µg/l
+Kubitza2013		mildHI	8.0	mildHI	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_mildHI	36.1805308935504	hr		9.848623655451774e-06	1.93465748562234	5.410114236294346e-06	1.912764231738806e-06		mole/meter^3	µg/l
+Kubitza2013		mildHI	8.0	mildHI	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_mildHI	48.0460694615824	hr		4.811053831401049e-06	0.634443041307535	3.3555086324757956e-06	1.1863514541768214e-06		mole/meter^3	µg/l

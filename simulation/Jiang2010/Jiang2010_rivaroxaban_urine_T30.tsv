@@ -1,0 +1,3 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	mean	cv	median	min	max	mean_sd	mean_se	comments	mean_unit	median_unit
+Jiang2010	T30	12.0	T30	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_T30	0.0	hr	0.0								mole	mg
+Jiang2010	T30	12.0	T30	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_T30	48.0	hr	2.216206295310636e-05	1.17				8.643204551711481e-07			mole	mg

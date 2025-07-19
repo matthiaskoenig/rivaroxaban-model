@@ -1,0 +1,12 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Weinz2009		all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	0.0	day		8.609639838280536e-08		3.0062420349833897e-07	1.5031210174916927e-07		mole	mg
+Weinz2009		all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	0.17051601206656	day		7.861188841603423e-06		1.76152432317475e-06	8.80762161587375e-07		mole	mg
+Weinz2009		all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	0.339500078338137	day		1.1941610394382101e-05		1.4178233928513352e-06	7.089116964256676e-07		mole	mg
+Weinz2009		all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	0.516753170207633	day		1.3487180530758352e-05		9.022719973662476e-07	4.511359986831238e-07		mole	mg
+Weinz2009		all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	1.0	day		1.5847100497563893e-05		2.534794361135106e-06	1.267397180567553e-06		mole	mg
+Weinz2009		all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	2.0	day		1.9149117038323622e-05		2.663682210006355e-06	1.3318411050031775e-06		mole	mg
+Weinz2009		all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	3.0	day		2.0775477433222124e-05		1.50380568069953e-06	7.519028403497638e-07		mole	mg
+Weinz2009		all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	4.0	day		2.1370849147685052e-05		6.8745891591413e-07	3.437294579570639e-07		mole	mg
+Weinz2009		all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	5.0	day		2.1450669466662888e-05		7.304215322045496e-07	3.652107661022759e-07		mole	mg
+Weinz2009		all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	6.0	day		2.144456455305986e-05		7.733270932276544e-07	3.866635466138272e-07		mole	mg
+Weinz2009		all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	7.0	day		2.15672904330608e-05		7.303644769372304e-07	3.651822384686152e-07		mole	mg

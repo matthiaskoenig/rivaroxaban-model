@@ -1,0 +1,16 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_se	mean_sd	comments	mean_unit	value_unit
+GenisNajera2022		all	32.0	T20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_T20	0.25	hr		2.2172682743193656e-06	1.6681	2.8455787979917414e-07	1.6097024515684937e-06	no units reported	mole/meter^3	ng/ml
+GenisNajera2022		all	32.0	T20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_T20	0.5	hr		2.7676714848353215e-05	19.44862	2.995037794087272e-06	1.6942492272872806e-05	no units reported	mole/meter^3	ng/ml
+GenisNajera2022		all	32.0	T20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_T20	0.75	hr		7.701210312349111e-05	47.21436	5.534441007575319e-06	3.130752613226737e-05	no units reported	mole/meter^3	ng/ml
+GenisNajera2022		all	32.0	T20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_T20	1.0	hr		0.00014230679915580759	81.49127	7.893298604607141e-06	4.465123975398412e-05	no units reported	mole/meter^3	ng/ml
+GenisNajera2022		all	32.0	T20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_T20	1.5	hr		0.0002815282279185074	172.59851	2.023189811261106e-05	0.00011444889881362073	no units reported	mole/meter^3	ng/ml
+GenisNajera2022		all	32.0	T20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_T20	2.0	hr		0.00034547039420937875	211.79999	2.482707364262687e-05	0.0001404431370377535	no units reported	mole/meter^3	ng/ml
+GenisNajera2022		all	32.0	T20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_T20	2.5	hr		0.00042393544035566904	259.90511	3.046592726718753e-05	0.00017234131012611498	no units reported	mole/meter^3	ng/ml
+GenisNajera2022		all	32.0	T20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_T20	3.0	hr		0.0004538677807617142	259.90511	2.5174587047712674e-05	0.00014240896972006974	no units reported	mole/meter^3	ng/ml
+GenisNajera2022		all	32.0	T20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_T20	3.5	hr		0.000485913520796327	297.90245	3.491995306272644e-05	0.00019753708487495872	no units reported	mole/meter^3	ng/ml
+GenisNajera2022		all	32.0	T20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_T20	4.0	hr		0.000485913520796327	318.93612	4.345042629517574e-05	0.0002457927286301207	no units reported	mole/meter^3	ng/ml
+GenisNajera2022		all	32.0	T20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_T20	6.0	hr		0.00039597712198899236	242.7645	2.8456713315342987e-05	0.00016097547964448472	no units reported	mole/meter^3	ng/ml
+GenisNajera2022		all	32.0	T20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_T20	8.0	hr		0.0001631116232062134	100.0	1.1721942163045999e-05	6.63093183373307e-05	no units reported	mole/meter^3	ng/ml
+GenisNajera2022		all	32.0	T20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_T20	12.0	hr		7.193319560066762e-05	44.10059	5.169444343773677e-06	2.924279320359044e-05	no units reported	mole/meter^3	ng/ml
+GenisNajera2022		all	32.0	T20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_T20	24.0	hr		3.1722966932786774e-05	19.44862	2.2797547222639673e-06	1.289624018843925e-05	no units reported	mole/meter^3	ng/ml
+GenisNajera2022		all	32.0	T20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_T20	48.0	hr		8.105526050731256e-06	4.96931	5.824989639395292e-07	3.295111739486235e-06	no units reported	mole/meter^3	ng/ml

@@ -1,0 +1,12 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_se	mean_sd	comments	mean_unit	value_unit
+Greenblatt2018		MRI	14.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_MRI	0.584035133040558	hr		0.0003909727881127466	258.62443143965	5.408453972110352e-05	0.0002023658175577361		mole/meter^3	ng/ml
+Greenblatt2018		MRI	14.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_MRI	2.05714285714286	hr		0.00045501055146095025	268.619961822709	4.309851957494586e-05	0.00016125989412661744		mole/meter^3	ng/ml
+Greenblatt2018		MRI	14.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_MRI	3.23311805734953	hr		0.0004637200082306621	273.761675432349	4.392347779156603e-05	0.0001643466051316142		mole/meter^3	ng/ml
+Greenblatt2018		MRI	14.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_MRI	4.1138207181607	hr		0.0004464646732211182	279.001807710001	5.174816423200559e-05	0.00019362390095067452		mole/meter^3	ng/ml
+Greenblatt2018		MRI	14.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_MRI	6.16398863342808	hr		0.00033594764023351157	198.329999170799	3.1820901520354e-05	0.00011906291122743874		mole/meter^3	ng/ml
+Greenblatt2018		MRI	14.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_MRI	8.07000774993543	hr		0.00028324502551259063	173.679212249346	3.079155747998738e-05	0.00011521145849526934		mole/meter^3	ng/ml
+Greenblatt2018		MRI	14.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_MRI	12.0	hr		0.0001697596146258812	100.219260967524	1.6079600902654448e-05	6.016435749379394e-05		mole/meter^3	ng/ml
+Greenblatt2018		MRI	14.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_MRI	24.0	hr		8.417106056996536e-05	49.6912148614679	7.972668084225658e-06	2.983099242963981e-05		mole/meter^3	ng/ml
+Greenblatt2018		MRI	14.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_MRI	36.0	hr		2.8026541571309766e-05	18.8941297960137	4.094588926639694e-06	1.5320548903164175e-05		mole/meter^3	ng/ml
+Greenblatt2018		MRI	14.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_MRI	48.0	hr		1.7780529924399513e-05	14.4892449870916	4.132081254202464e-06	1.5460832347536802e-05		mole/meter^3	ng/ml
+Greenblatt2018		MRI	14.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_MRI	72.0	hr		2.0090580631965633e-06	4.06764611714728	1.9571471143529826e-06	7.3229739574221344e-06		mole/meter^3	ng/ml

@@ -11,17 +11,41 @@ length: [m]
 
 ## Parameters `p`
 ```
+RIV2RX_Vmax = 0.0640121306393964  # [1/min] Vmax rivaroxaban conversion  
+RIVIM_Vmax = 1000.0  # [1/min] Vmax rivaroxaban import  
+RXEX_BI_k = 9.99999999999998e-05  # [1/min] rate for rivaroxaban metabolite export in bile  
+RXEX_Vmax = 1000.0  # [1/min] Vmax rivaroxaban metabolite export  
+Vbi = 1.0  # [l] bile  
 Vext = 1.5  # [l] plasma  
 Vli = 1.5  # [l] liver  
+Vlumen = 1.0  # [l] gut lumen  
+Vmem = nan  # [m^2] membrane  
 ```
 
 ## Initial conditions `x0`
 ```
+riv = 0.0  # [mmol/l] rivaroxaban (liver) in Vli  
+riv_ext = 0.0  # [mmol/l] rivaroxaban (plasma) in Vext  
+rx = 0.0  # [mmol/l] rivaroxaban metabolites (liver) in Vli  
+rx_bi = 0.0  # [mmol] rivaroxaban metabolites (bile) in Vbi  
+rx_ext = 0.0  # [mmol/l] rivaroxaban metabolites (plasma) in Vli  
+rx_lumen = 0.0  # [mmol] rivaroxaban metabolites (gut) in Vlumen  
 ```
 
 ## ODE system
 ```
 # y
+RIV2RX = RIV2RX_Vmax * Vli * riv  # [mmol/min] rivaroxaban conversion (RIV2RX)  
+RIVIM = RIVIM_Vmax * Vli * (riv_ext - riv)  # [mmol/min] rivaroxaban import (RIVIM)  
+RXEX = RXEX_Vmax * Vli * (rx - rx_ext)  # [mmol/min] rivaroxaban metabolite export (RXEX)  
+RXEX_BI = RXEX_BI_k * Vli * rx  # [mmol/min] rivaroxaban metabolite bile export  
+RXEXEHC = RXEX_BI  # [mmol/min] rivaroxaban metabolite enterohepatic circulation  
 
 # odes
+d riv/dt = RIVIM / Vli - RIV2RX / Vli  # [mmol/l/min] rivaroxaban (liver)  
+d riv_ext/dt = -RIVIM / Vext  # [mmol/l/min] rivaroxaban (plasma)  
+d rx/dt = RIV2RX / Vli - RXEX / Vli - RXEX_BI / Vli  # [mmol/l/min] rivaroxaban metabolites (liver)  
+d rx_bi/dt = RXEX_BI - RXEXEHC  # [mmol/min] rivaroxaban metabolites (bile)  
+d rx_ext/dt = RXEX / Vli  # [mmol/l/min] rivaroxaban metabolites (plasma)  
+d rx_lumen/dt = RXEXEHC  # [mmol/min] rivaroxaban metabolites (gut)  
 ```

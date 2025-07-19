@@ -1,0 +1,9 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Graff2007		G2	4.0	PLACEBO	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_PLACEBO	0.0	hr		0.666666666666657	6.5925925925926	5.92592592592594	2.96296296296297	0.666666666666657	percent	percent
+Graff2007		G2	4.0	PLACEBO	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_PLACEBO	1.9948051948052	hr		0.0	3.62962962962963	3.62962962962963	1.81481481481482	-2.0	percent	percent
+Graff2007		G2	4.0	PLACEBO	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_PLACEBO	3.98961038961039	hr		0.666666666666657	6.88888888888889	6.22222222222223	3.11111111111112	0.666666666666657	percent	percent
+Graff2007		G2	4.0	PLACEBO	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_PLACEBO	5.98441558441558	hr		0.0	3.03703703703704	3.03703703703704	1.51851851851852	-2.88888888888889	percent	percent
+Graff2007		G2	4.0	PLACEBO	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_PLACEBO	7.97922077922078	hr		0.0	4.81481481481482	4.81481481481482	2.40740740740741	-1.1111111111111	percent	percent
+Graff2007		G2	4.0	PLACEBO	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_PLACEBO	10.0363636363636	hr		0.0	0.0	0.0	0.0	-4.96296296296296	percent	percent
+Graff2007		G2	4.0	PLACEBO	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_PLACEBO	12.0311688311688	hr		0.0	4.81481481481482	4.81481481481482	2.40740740740741	-0.814814814814824	percent	percent
+Graff2007		G2	4.0	PLACEBO	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_PLACEBO	24.0	hr		0.0	0.0	0.0	0.0	-6.44444444444443	percent	percent

@@ -1,0 +1,12 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_se	mean_sd	comments	mean_unit	value_unit
+Moore2014		NRF	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_NRF	0.592592592592593	hr		3.986392246678581e-05	42.1985815602837	2.0134321357828075e-05	5.694846066683743e-05		mole/meter^3	ng/ml
+Moore2014		NRF	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_NRF	1.06666666666666	hr		0.00017938765110053707	127.836879432624	4.026864271565591e-05	0.00011389692133367417		mole/meter^3	ng/ml
+Moore2014		NRF	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_NRF	2.01481481481481	hr		0.00029897941850089474	189.893617021277	4.8322371258787746e-05	0.00013667630560041066		mole/meter^3	ng/ml
+Moore2014		NRF	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_NRF	2.96296296296296	hr		0.0003416907640010232	209.751773049645	4.932908732667821e-05	0.00013952372863375014		mole/meter^3	ng/ml
+Moore2014		NRF	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_NRF	4.02962962962963	hr		0.00035592787916773196	214.716312056738	4.8322371258787746e-05	0.00013667630560041066		mole/meter^3	ng/ml
+Moore2014		NRF	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_NRF	6.0	hr		0.00024487838086739933	140.248226950355	2.718133383306828e-05	7.688042190023172e-05		mole/meter^3	ng/ml
+Moore2014		NRF	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_NRF	8.05925925925926	hr		0.00022494641963400686	139.007092198582	3.3221630240416623e-05	9.396496010028242e-05		mole/meter^3	ng/ml
+Moore2014		NRF	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_NRF	12.0	hr		0.00012243919043369988	75.709219858156	1.8120889222045196e-05	5.1253614600153484e-05		mole/meter^3	ng/ml
+Moore2014		NRF	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_NRF	24.0	hr		3.986392246678581e-05	35.9929078014184	1.5100741018371021e-05	4.2711345500128024e-05		mole/meter^3	ng/ml
+Moore2014		NRF	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_NRF	36.0	hr		8.542269100025489e-06	4.96453900709219	1.0067160678914242e-06	2.847423033341929e-06		mole/meter^3	ng/ml
+Moore2014		NRF	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_NRF	48.0	hr		5.694846066683698e-06	7.44680851063833	4.026864271565637e-06	1.1389692133367533e-05		mole/meter^3	ng/ml

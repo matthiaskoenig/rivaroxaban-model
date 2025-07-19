@@ -1,0 +1,12 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Kubitza2005a		T5	6.0	T5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T5	0.771428571428572	hr		2.046319631643365e-05	21.5112160566705	2.8888038098245843e-05	1.1793492168463818e-05		mole/meter^3	µg/l
+Kubitza2005a		T5	6.0	T5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T5	1.28571428571429	hr		2.8984344934523028e-05	47.4467619922165	7.986846315994447e-05	3.260616354702326e-05		mole/meter^3	µg/l
+Kubitza2005a		T5	6.0	T5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T5	1.54285714285714	hr		4.7693954273746664e-05	60.0463509554418	9.006494945076878e-05	3.6768861643990544e-05		mole/meter^3	µg/l
+Kubitza2005a		T5	6.0	T5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T5	2.12142857142857	hr		0.00010040790238843075	57.8398705671433	3.228887325427663e-05	1.318187730706279e-05		mole/meter^3	µg/l
+Kubitza2005a		T5	6.0	T5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T5	2.57142857142857	hr		0.00013443631787296017	69.7083387992479	2.5489209334637968e-05	1.040592613614148e-05		mole/meter^3	µg/l
+Kubitza2005a		T5	6.0	T5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T5	3.08571428571429	hr		0.0001276667498396579	68.2399755127028	2.8890044490668758e-05	1.1794311274740476e-05		mole/meter^3	µg/l
+Kubitza2005a		T5	6.0	T5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T5	4.0	hr		0.00011244425053062951	68.2723337268792	4.418678031932733e-05	1.8039177526467652e-05		mole/meter^3	µg/l
+Kubitza2005a		T5	6.0	T5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T5	6.10714285714286	hr		8.029783113834586e-05	43.8899820718003	2.039497897407107e-05	8.326215300210951e-06		mole/meter^3	µg/l
+Kubitza2005a		T5	6.0	T5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T5	8.0	hr		4.984881973544415e-05	34.3215706852071	2.889205088309098e-05	1.1795130381016836e-05		mole/meter^3	µg/l
+Kubitza2005a		T5	6.0	T5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T5	12.0	hr		2.2943097350565747e-05	24.8161266343085	3.399029402850303e-05	1.387647942950041e-05		mole/meter^3	µg/l
+Kubitza2005a		T5	6.0	T5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T5	15.1071428571429	hr		1.2963301441364594e-05	21.2016266561721	3.567767005577245e-05	1.4565347808002866e-05		mole/meter^3	µg/l

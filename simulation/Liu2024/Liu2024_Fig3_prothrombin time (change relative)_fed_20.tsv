@@ -1,0 +1,5 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	raw	mean_unit	value_unit
+Liu2024		fed_20	22.0	fed_20	prothrombin time (change relative)		plasma	NR	prothrombin time (change relative)_fed_20	0.0	hr		1.00088105726872				method: coagulation analyzer		dimensionless	dimensionless
+Liu2024		fed_20	22.0	fed_20	prothrombin time (change relative)		plasma	NR	prothrombin time (change relative)_fed_20	3.0	hr		1.27995594713656						dimensionless	dimensionless
+Liu2024		fed_20	22.0	fed_20	prothrombin time (change relative)		plasma	NR	prothrombin time (change relative)_fed_20	8.0	hr		1.02092511013216						dimensionless	dimensionless
+Liu2024		fed_20	22.0	fed_20	prothrombin time (change relative)		plasma	NR	prothrombin time (change relative)_fed_20	12.0	hr		1.00396475770925						dimensionless	dimensionless

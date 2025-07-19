@@ -1,0 +1,8 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Graff2007		G1	8.0	RIV_5	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_5	0.596930468437206	hr		8.87572175843654e-05					mole/meter^3	µg/l
+Graff2007		G1	8.0	RIV_5	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_5	0.941892432937406	hr		0.00015938262209634255					mole/meter^3	µg/l
+Graff2007		G1	8.0	RIV_5	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_5	2.07671159749099	hr		0.0001791795431752163					mole/meter^3	µg/l
+Graff2007		G1	8.0	RIV_5	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_5	4.05850794074469	hr		0.000132844910998497					mole/meter^3	µg/l
+Graff2007		G1	8.0	RIV_5	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_5	6.09443480581876	hr		7.207890809722652e-05					mole/meter^3	µg/l
+Graff2007		G1	8.0	RIV_5	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_5	8.07580408381156	hr		5.073011258397333e-05					mole/meter^3	µg/l
+Graff2007		G1	8.0	RIV_5	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_5	12.0396103029494	hr		2.862056846493599e-05					mole/meter^3	µg/l

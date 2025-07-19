@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Kubitza2013</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <!--<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+</head>
+
+<body>
+<div id="app">
+    <!-- Vue app-->
+    <v-app>
+        <v-content>
+
+            <a href="../index.html">Experiments</a>
+            <h1>Kubitza2013</h1>
+
+            <h2>Models</h2>
+            <p>
+            <ul>
+                <li><strong>model</strong>: <a href="../../../../models/results/models/rivaroxaban_body_flat.xml">../../../../models/results/models/rivaroxaban_body_flat.xml</a></li>
+            </ul>
+            </p>
+
+            <h2>Datasets</h2>
+            <p>
+            <ul>
+                <li><strong>Fig1_rivaroxaban_healthy</strong>: <a href="Kubitza2013_Fig1_rivaroxaban_healthy.tsv">Kubitza2013_Fig1_rivaroxaban_healthy.tsv</a></li>
+                <li><strong>Fig1_rivaroxaban_mildHI</strong>: <a href="Kubitza2013_Fig1_rivaroxaban_mildHI.tsv">Kubitza2013_Fig1_rivaroxaban_mildHI.tsv</a></li>
+                <li><strong>Fig1_rivaroxaban_moderateHI</strong>: <a href="Kubitza2013_Fig1_rivaroxaban_moderateHI.tsv">Kubitza2013_Fig1_rivaroxaban_moderateHI.tsv</a></li>
+                <li><strong>Fig2A_factor Xa inhibition_healthy</strong>: <a href="Kubitza2013_Fig2A_factor Xa inhibition_healthy.tsv">Kubitza2013_Fig2A_factor Xa inhibition_healthy.tsv</a></li>
+                <li><strong>Fig2A_factor Xa inhibition_mildHI</strong>: <a href="Kubitza2013_Fig2A_factor Xa inhibition_mildHI.tsv">Kubitza2013_Fig2A_factor Xa inhibition_mildHI.tsv</a></li>
+                <li><strong>Fig2A_factor Xa inhibition_moderateHI</strong>: <a href="Kubitza2013_Fig2A_factor Xa inhibition_moderateHI.tsv">Kubitza2013_Fig2A_factor Xa inhibition_moderateHI.tsv</a></li>
+                <li><strong>Fig2B_prothrombin time (change relative)_healthy</strong>: <a href="Kubitza2013_Fig2B_prothrombin time (change relative)_healthy.tsv">Kubitza2013_Fig2B_prothrombin time (change relative)_healthy.tsv</a></li>
+                <li><strong>Fig2B_prothrombin time (change relative)_mildHI</strong>: <a href="Kubitza2013_Fig2B_prothrombin time (change relative)_mildHI.tsv">Kubitza2013_Fig2B_prothrombin time (change relative)_mildHI.tsv</a></li>
+                <li><strong>Fig2B_prothrombin time (change relative)_moderateHI</strong>: <a href="Kubitza2013_Fig2B_prothrombin time (change relative)_moderateHI.tsv">Kubitza2013_Fig2B_prothrombin time (change relative)_moderateHI.tsv</a></li>
+            </ul>
+            </p>
+
+            <h2>Figures</h2>
+            <p>
+            <ul>
+                <li><strong>Fig1</strong>: <a href="Kubitza2013_Fig1.svg">Kubitza2013_Fig1.svg</a></li>
+                <li><strong>Fig2</strong>: <a href="Kubitza2013_Fig2.svg">Kubitza2013_Fig2.svg</a></li>
+            </ul>
+            </p>
+
+            <h3>Fig1</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Kubitza2013_Fig1.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Kubitza2013_Fig1.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+            <h3>Fig2</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Kubitza2013_Fig2.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Kubitza2013_Fig2.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+
+            <h2>Code</h2>
+            <p>
+                <a href="../../../../experiments/studies/kubitza2013.py">../../../../experiments/studies/kubitza2013.py</a>
+            <pre>
+<code class="python">from typing import Dict
+
+from sbmlsim.data import DataSet, load_pkdb_dataframe
+from sbmlsim.fit import FitMapping, FitData
+from sbmlutils.console import console
+
+from pkdb_models.models.rivaroxaban.experiments.base_experiment import RivaroxabanSimulationExperiment
+from pkdb_models.models.rivaroxaban.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
+    Fasting, RivaroxabanMappingMetaData
+from pkdb_models.models.rivaroxaban.helpers import run_experiments
+
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Timecourse, TimecourseSim
+
+
+class Kubitza2013(RivaroxabanSimulationExperiment):
+    """Simulation experiment of Kubitza2013."""
+
+    groups = ["healthy", "mildHI", "moderateHI"]
+    colors = {
+        "healthy": "black",
+        "mildHI": "#74A9CF",
+        "moderateHI": "#2B8CBE",
+    }
+    bodyweights = {
+        "healthy": 76,
+        "mildHI": 81.1,
+        "moderateHI": 73.3,
+    }
+    hepatic_functions = {
+        "healthy": "Control",
+        "mildHI": "Mild cirrhosis",
+        "moderateHI": "Moderate cirrhosis",
+    }
+
+    info_figs = {
+        "Fig1": {
+            "[Cve_riv]": "rivaroxaban"
+        },
+        "Fig2A": {
+            "Xa_inhibition": "factor Xa inhibition"
+        },
+        "Fig2B": {
+            "PT_ratio": "prothrombin time (change relative)"
+        }
+    }
+
+    def datasets(self) -> Dict[str, DataSet]:
+        dsets = {}
+        fig_ids = ["Fig1", "Fig2A", "Fig2B"]
+
+        for fig_id in fig_ids:
+            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            for label, df_label in df.groupby("label"):
+                dset = DataSet.from_df(df_label, self.ureg)
+                if "rivaroxaban" in label:
+                    dset.unit_conversion("mean", 1 / self.Mr.riv)
+                dsets[f"{fig_id}_{label}"] = dset
+
+        # print(dsets.keys())
+        return dsets
+
+
+    def simulations(self) -> Dict[str, TimecourseSim]:
+        Q_ = self.Q_
+        tcsims = {}
+        for group in self.groups:
+            hf = self.hepatic_functions[group]
+            hf_value = RivaroxabanSimulationExperiment.cirrhosis_map[hf]
+            tcsims[group] = TimecourseSim([
+                Timecourse(
+                    start=0,
+                    end=100 * 60,  # min
+                    steps=1000,
+                    changes={
+                        **self.default_changes(),
+                        "BW": Q_(self.bodyweights[group], "kg"),
+                        "PODOSE_riv": Q_(10, "mg"),
+                        "f_cirrhosis": Q_(hf_value, "dimensionless"),
+                    }
+                )
+            ])
+        return tcsims
+
+    def fit_mappings(self) -> Dict[str, FitMapping]:
+        mappings = {}
+        for fig_id, variables in self.info_figs.items():
+            for yid, label in variables.items():
+                for group in self.groups:
+                    dataset_id = f"{fig_id}_{label}_{group}"
+                    # print(dataset_id)
+                    mappings[f"fm_{dataset_id}"] = FitMapping(
+                        self,
+                        reference=FitData(
+                            self,
+                            dataset=dataset_id,
+                            xid="time",
+                            yid="mean",
+                            yid_sd="mean_sd",
+                            count="count",
+                        ),
+                        observable=FitData(
+                            self,
+                            task=f"task_{group}",
+                            xid="time",
+                            yid=yid,
+                        ),
+                        metadata=RivaroxabanMappingMetaData(
+                            tissue=Tissue.PLASMA,
+                            route=Route.PO,
+                            application_form=ApplicationForm.TABLET,
+                            dosing=Dosing.SINGLE,
+                            health=Health.HEALTHY if group == "healthy" else Health.HEPATIC_IMPAIRMENT,
+                            fasting=Fasting.FASTED,
+                        ),
+                    )
+        return mappings
+
+
+    def figures(self) -> Dict[str, Figure]:
+        figures = {}
+
+        # PK figure: Fig1 rivaroxaban concentration
+        fig_pk = Figure(
+            experiment=self,
+            sid="Fig1",
+            name=self.__class__.__name__
+        )
+        plots_pk = fig_pk.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time),
+            legend=True,
+        )
+        plots_pk[0].set_yaxis(self.label_riv_plasma, unit=self.unit_riv)
+        for group in self.groups:
+            plots_pk[0].add_data(
+                task=f"task_{group}",
+                xid="time",
+                yid="[Cve_riv]",
+                label=group,
+                color=self.colors[group],
+            )
+            plots_pk[0].add_data(
+                dataset=f"Fig1_rivaroxaban_{group}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=group,
+                color=self.colors[group],
+            )
+        figures[fig_pk.sid] = fig_pk
+
+        # PD figure: Fig2A and Fig2B combined, 2 subplots
+        fig_pd = Figure(
+            experiment=self,
+            sid="Fig2",
+            num_rows=2,
+            name=self.__class__.__name__
+        )
+        plots_pd = fig_pd.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time),
+            legend=True,
+        )
+
+        # Fig2A: Xa inhibition
+        plots_pd[0].set_yaxis(self.labels["Xa_inhibition"], unit=self.units["Xa_inhibition"])
+        for group in self.groups:
+            plots_pd[0].add_data(
+                task=f"task_{group}",
+                xid="time",
+                yid="Xa_inhibition",
+                label=group,
+                color=self.colors[group],
+            )
+            plots_pd[0].add_data(
+                dataset=f"Fig2A_factor Xa inhibition_{group}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=group,
+                color=self.colors[group],
+            )
+
+        # Fig2B: prothrombin time (PT_ratio)
+        plots_pd[1].set_yaxis(self.labels["PT_ratio"], unit=self.units["PT_ratio"])
+        for group in self.groups:
+            plots_pd[1].add_data(
+                task=f"task_{group}",
+                xid="time",
+                yid="PT_ratio",
+                label=group,
+                color=self.colors[group],
+            )
+            plots_pd[1].add_data(
+                dataset=f"Fig2B_prothrombin time (change relative)_{group}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=group,
+                color=self.colors[group],
+            )
+
+        figures[fig_pd.sid] = fig_pd
+        return figures
+
+
+if __name__ == "__main__":
+    run_experiments(Kubitza2013, output_dir=Kubitza2013.__name__)
+</code>
+        </pre>
+            </p>
+
+        </v-content>
+    </v-app>
+</div>
+
+
+<!-- loading dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.6/dist/vuetify.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        delimiters: ['${', '}'],
+        data() {
+            return {}
+        }
+    })
+</script>
+
+
+</body>
+</html>

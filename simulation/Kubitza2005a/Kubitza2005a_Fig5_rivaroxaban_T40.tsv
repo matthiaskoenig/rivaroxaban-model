@@ -1,0 +1,13 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Kubitza2005a		T40	8.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	0.321428571428572	hr		1.3533257787680988e-05					mole/meter^3	µg/l
+Kubitza2005a		T40	8.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	0.642857142857143	hr		0.00018753228648643635					mole/meter^3	µg/l
+Kubitza2005a		T40	8.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	1.09285714285714	hr		0.0002609985430481325					mole/meter^3	µg/l
+Kubitza2005a		T40	8.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	2.57142857142857	hr		0.0004388642168290836					mole/meter^3	µg/l
+Kubitza2005a		T40	8.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	3.08571428571429	hr		0.0004253309590414013					mole/meter^3	µg/l
+Kubitza2005a		T40	8.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	4.0	hr		0.00043113092666469436					mole/meter^3	µg/l
+Kubitza2005a		T40	8.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	6.04285714285714	hr		0.0003015983164111751					mole/meter^3	µg/l
+Kubitza2005a		T40	8.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	8.0	hr		0.00022813205984947916					mole/meter^3	µg/l
+Kubitza2005a		T40	8.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	12.0	hr		0.00015853244836997704					mole/meter^3	µg/l
+Kubitza2005a		T40	8.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	15.0428571428571	hr		0.00010633273976035055					mole/meter^3	µg/l
+Kubitza2005a		T40	8.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	24.0	hr		6.18663213151131e-05					mole/meter^3	µg/l
+Kubitza2005a		T40	8.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	36.0	hr		1.7399902869875584e-05					mole/meter^3	µg/l

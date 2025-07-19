@@ -1,0 +1,12 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_se	mean_sd	comments	mean_unit	value_unit
+Greenblatt2018		NRF	13.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_NRF	0.724552963601703	hr		0.0003126629858369918	203.195496959463	4.257602367386574e-05	0.0001535100364614917		mole/meter^3	ng/ml
+Greenblatt2018		NRF	13.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_NRF	1.03302169374603	hr		0.0004274015793704231	229.46132623395	2.7466189824485182e-05	9.903075575380839e-05		mole/meter^3	ng/ml
+Greenblatt2018		NRF	13.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_NRF	2.23639829354634	hr		0.00044250739049214694	217.812545629548	1.586448177297458e-05	5.72002024911237e-05		mole/meter^3	ng/ml
+Greenblatt2018		NRF	13.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_NRF	3.29164019242988	hr		0.0004997075929832706	272.980439164406	3.510328687840484e-05	0.00012656670077741122		mole/meter^3	ng/ml
+Greenblatt2018		NRF	13.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_NRF	4.19526186802215	hr		0.0005356545028151578	308.266937721987	4.7586178940693536e-05	0.00017157440817407543		mole/meter^3	ng/ml
+Greenblatt2018		NRF	13.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_NRF	6.28918943451031	hr		0.00035307900257620445	210.377110098037	3.5936292207115034e-05	0.0001295701442028104		mole/meter^3	ng/ml
+Greenblatt2018		NRF	13.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_NRF	8.23759644186257	hr		0.00028172361578313526	164.971014367759	2.683485305332729e-05	9.675443865331284e-05		mole/meter^3	ng/ml
+Greenblatt2018		NRF	13.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_NRF	12.0	hr		0.00015340734479421286	91.4055880699227	1.5613761025204827e-05	5.629621597921722e-05		mole/meter^3	ng/ml
+Greenblatt2018		NRF	13.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_NRF	24.0	hr		5.5062532692266907e-05	29.5617105486113	3.5384941192085895e-06	1.2758221984734331e-05		mole/meter^3	ng/ml
+Greenblatt2018		NRF	13.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_NRF	36.0	hr		1.9088939799560545e-05	12.8441042649053	2.8783740251992755e-06	1.0378125137819699e-05		mole/meter^3	ng/ml
+Greenblatt2018		NRF	13.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_NRF	48.0	hr		7.872804404846471e-06	8.17723629650639	3.019645892412889e-06	1.0887488098838924e-05		mole/meter^3	ng/ml

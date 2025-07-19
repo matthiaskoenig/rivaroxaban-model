@@ -1,0 +1,240 @@
+{
+  "experiment_id": "RivaroxabanParameterScan",
+  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/rivaroxaban')]",
+  "models": {
+    "model": {
+      "sid": null,
+      "name": null,
+      "language": "SBML",
+      "language_type": "SBML",
+      "source": {
+        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "content": "None"
+      },
+      "changes": {}
+    }
+  },
+  "tasks": {
+    "task_scan_po_renal_scan": {
+      "model": "model",
+      "simulation": "scan_po_renal_scan"
+    }
+  },
+  "simulations": {
+    "scan_po_renal_scan": {
+      "type": "ScanSim"
+    }
+  },
+  "data": {
+    "task_scan_po_renal_scan__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__Cve_riv": {
+      "type": "TASK",
+      "index": "Cve_riv",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__Cve_rx": {
+      "type": "TASK",
+      "index": "Cve_rx",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__Cve_riv_rx": {
+      "type": "TASK",
+      "index": "Cve_riv_rx",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__Aurine_riv": {
+      "type": "TASK",
+      "index": "Aurine_riv",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__Aurine_rx": {
+      "type": "TASK",
+      "index": "Aurine_rx",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__Aurine_riv_rx": {
+      "type": "TASK",
+      "index": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__Afeces_riv": {
+      "type": "TASK",
+      "index": "Afeces_riv",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__Afeces_rx": {
+      "type": "TASK",
+      "index": "Afeces_rx",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__Afeces_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__KI__RIVEX": {
+      "type": "TASK",
+      "index": "KI__RIVEX",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__PT": {
+      "type": "TASK",
+      "index": "PT",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__PT_change": {
+      "type": "TASK",
+      "index": "PT_change",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__PT_ratio": {
+      "type": "TASK",
+      "index": "PT_ratio",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__aPTT": {
+      "type": "TASK",
+      "index": "aPTT",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__aPTT_change": {
+      "type": "TASK",
+      "index": "aPTT_change",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__aPTT_ratio": {
+      "type": "TASK",
+      "index": "aPTT_ratio",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__Xa_inhibition": {
+      "type": "TASK",
+      "index": "Xa_inhibition",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__PODOSE_riv": {
+      "type": "TASK",
+      "index": "PODOSE_riv",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_scan_po_renal_scan__GU__F_riv_abs": {
+      "type": "TASK",
+      "index": "GU__F_riv_abs",
+      "unit": null,
+      "task": "task_scan_po_renal_scan",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    }
+  },
+  "figures": {}
+}

@@ -1,0 +1,16 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_se	mean_sd	comments	mean_unit	value_unit
+Liu2024		fed_10	79.0	fed_10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_fed_10	0.474308300395258	hr		0.00014147624728518538	91.6666666666667	7.743561766490961e-06	6.882628246306347e-05		mole/meter^3	ng/ml
+Liu2024		fed_10	79.0	fed_10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_fed_10	1.04347826086957	hr		0.0002294209415435441	118.333333333333	4.7321766350777045e-06	4.206050594964899e-05		mole/meter^3	ng/ml
+Liu2024		fed_10	79.0	fed_10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_fed_10	1.42292490118577	hr		0.0003001590651861361	150.0	4.947275573035973e-06	4.397234712918005e-05		mole/meter^3	ng/ml
+Liu2024		fed_10	79.0	fed_10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_fed_10	2.08695652173913	hr		0.00038236823590590756	184.166666666667	4.517077697119712e-06	4.014866477012022e-05		mole/meter^3	ng/ml
+Liu2024		fed_10	79.0	fed_10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_fed_10	2.46640316205534	hr		0.00040531033006026203	196.666666666667	5.162374510993967e-06	4.5884188308708826e-05		mole/meter^3	ng/ml
+Liu2024		fed_10	79.0	fed_10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_fed_10	2.94071146245059	hr		0.00041678137713743925	198.333333333333	4.301978759161467e-06	3.823682359058916e-05		mole/meter^3	ng/ml
+Liu2024		fed_10	79.0	fed_10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_fed_10	3.41501976284585	hr		0.0003995748065216734	190.833333333333	4.301978759161467e-06	3.823682359058916e-05		mole/meter^3	ng/ml
+Liu2024		fed_10	79.0	fed_10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_fed_10	4.07905138339921	hr		0.0003995748065216734	191.666666666667	4.517077697119712e-06	4.014866477012022e-05		mole/meter^3	ng/ml
+Liu2024		fed_10	79.0	fed_10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_fed_10	4.93280632411067	hr		0.0002963353828270786	145.833333333333	4.301978759161467e-06	3.823682359058916e-05		mole/meter^3	ng/ml
+Liu2024		fed_10	79.0	fed_10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_fed_10	5.97628458498024	hr		0.0002179498944663669	113.333333333333	4.7321766350777045e-06	4.206050594964899e-05		mole/meter^3	ng/ml
+Liu2024		fed_10	79.0	fed_10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_fed_10	7.87351778656126	hr		0.00013382888256706731	70.8333333333333	3.2264840693712262e-06	2.8677617692943012e-05		mole/meter^3	ng/ml
+Liu2024		fed_10	79.0	fed_10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_fed_10	12.0474308300395	hr		5.353155302682689e-05	33.3333333333333	2.5811872554969716e-06	2.2942094154354413e-05		mole/meter^3	ng/ml
+Liu2024		fed_10	79.0	fed_10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_fed_10	24.0	hr		1.3382888256706686e-05	22.5	4.30197875916165e-06	3.8236823590590764e-05		mole/meter^3	ng/ml
+Liu2024		fed_10	79.0	fed_10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_fed_10	35.9525691699605	hr		1.91184117952949e-06	16.6666666666666	4.086879821203543e-06	3.632498241106107e-05		mole/meter^3	ng/ml
+Liu2024		fed_10	79.0	fed_10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_fed_10	48.0	hr		1.91184117952949e-06	15.8333333333333	3.871780883245458e-06	3.4413141231531614e-05		mole/meter^3	ng/ml

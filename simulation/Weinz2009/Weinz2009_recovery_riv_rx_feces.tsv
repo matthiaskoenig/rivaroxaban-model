@@ -1,0 +1,9 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Weinz2009		all	4.0	T10	recovery	rivaroxaban+metabolites	feces	scintillation counting	recovery_riv_rx_feces	0.0	day		0.012894490413859115	1.31110685570611	0.017185046516170022	0.008592523258085023		count*mole/kilogram	percent
+Weinz2009		all	4.0	T10	recovery	rivaroxaban+metabolites	feces	scintillation counting	recovery_riv_rx_feces	1.0	day		0.12398680140866247	15.1418915054103	0.22339989918347986	0.11169994959173993		count*mole/kilogram	percent
+Weinz2009		all	4.0	T10	recovery	rivaroxaban+metabolites	feces	scintillation counting	recovery_riv_rx_feces	2.0	day		0.41551639529652196	28.7859080882262	0.24489261838215565	0.12244630919107782		count*mole/kilogram	percent
+Weinz2009		all	4.0	T10	recovery	rivaroxaban+metabolites	feces	scintillation counting	recovery_riv_rx_feces	3.0	day		0.5738561731573277	31.1932514803421	0.1417823392851358	0.0708911696425679		count*mole/kilogram	percent
+Weinz2009		all	4.0	T10	recovery	rivaroxaban+metabolites	feces	scintillation counting	recovery_riv_rx_feces	4.0	day		0.6333990501303524	31.1668900754284	0.08163467647853997	0.04081733823926999		count*mole/kilogram	percent
+Weinz2009		all	4.0	T10	recovery	rivaroxaban+metabolites	feces	scintillation counting	recovery_riv_rx_feces	5.0	day		0.6413753765014041	31.5145621892898	0.08163467647853997	0.04081733823926999		count*mole/kilogram	percent
+Weinz2009		all	4.0	T10	recovery	rivaroxaban+metabolites	feces	scintillation counting	recovery_riv_rx_feces	6.0	day		0.6450611467701455	32.0499971400363	0.0902329052633569	0.04511645263167845		count*mole/kilogram	percent
+Weinz2009		all	4.0	T10	recovery	rivaroxaban+metabolites	feces	scintillation counting	recovery_riv_rx_feces	7.0	day		0.6530374731411948	32.022889657625	0.08163467647853997	0.04081733823926999		count*mole/kilogram	percent

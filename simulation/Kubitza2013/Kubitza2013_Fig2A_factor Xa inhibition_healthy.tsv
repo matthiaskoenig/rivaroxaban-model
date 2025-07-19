@@ -1,0 +1,13 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	raw	mean_unit	value_unit
+Kubitza2013		healthy	8.0	healthy	factor Xa inhibition		plasma	NR	factor Xa inhibition_healthy	0.0	hr		1.0419906687403	1.56	0.518009331259703	0.183143955425822			percent	percent
+Kubitza2013		healthy	8.0	healthy	factor Xa inhibition		plasma	NR	factor Xa inhibition_healthy	1.12672120073152	hr		41.9284603421462	61.09	19.1615396578538	6.77462731502169			percent	percent
+Kubitza2013		healthy	8.0	healthy	factor Xa inhibition		plasma	NR	factor Xa inhibition_healthy	2.01115794745958	hr		50.4821150855365	64.34	13.8578849144635	4.89950219795993			percent	percent
+Kubitza2013		healthy	8.0	healthy	factor Xa inhibition		plasma	NR	factor Xa inhibition_healthy	3.0799975588044	hr		47.2317262830482	52.71	5.47827371695178	1.93686224722632			percent	percent
+Kubitza2013		healthy	8.0	healthy	factor Xa inhibition		plasma	NR	factor Xa inhibition_healthy	4.24702374062718	hr		44.8367029548989	53.05	8.21329704510107	2.9038390182452			percent	percent
+Kubitza2013		healthy	8.0	healthy	factor Xa inhibition		plasma	NR	factor Xa inhibition_healthy	6.08953716194176	hr		35.0855365474339	45.18	10.0944634525661	3.56893177987462			percent	percent
+Kubitza2013		healthy	8.0	healthy	factor Xa inhibition		plasma	NR	factor Xa inhibition_healthy	7.93402037556532	hr		27.5583203732504	39.88	12.3216796267496	4.35637160984139			percent	percent
+Kubitza2013		healthy	8.0	healthy	factor Xa inhibition		plasma	NR	factor Xa inhibition_healthy	12.0166422196361	hr		16.9517884914464	26.02	9.06821150855365	3.20609692546609			percent	percent
+Kubitza2013		healthy	8.0	healthy	factor Xa inhibition		plasma	NR	factor Xa inhibition_healthy	15.0336064245534	hr		13.1881804043546	22.26	9.0718195956454	3.20737257689093			percent	percent
+Kubitza2013		healthy	8.0	healthy	factor Xa inhibition		plasma	NR	factor Xa inhibition_healthy	23.9887368285923	hr		3.77916018662521	11.82	8.0408398133748	2.84286617923605			percent	percent
+Kubitza2013		healthy	8.0	healthy	factor Xa inhibition		plasma	NR	factor Xa inhibition_healthy	48.0494468377047	hr		0.0	2.92	2.92	1.03237590053236			percent	percent
+Kubitza2013		healthy	8.0	healthy	factor Xa inhibition		plasma	NR	factor Xa inhibition_healthy	72.3081967351113	hr		0.0	5.49	5.49	1.94100811435707			percent	percent

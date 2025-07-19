@@ -1,0 +1,14 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	timeraw	comments	mean_unit	value_unit
+Zhao2009		SDP	10.0	SDP	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_SDP	0.0	hr		0.530973451327426						percent	percent
+Zhao2009		SDP	10.0	SDP	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_SDP	0.48137535816619	hr		4.77876106194691						percent	percent
+Zhao2009		SDP	10.0	SDP	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_SDP	0.962750716332378	hr		3.18584070796462						percent	percent
+Zhao2009		SDP	10.0	SDP	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_SDP	1.44412607449857	hr		1.85840707964603						percent	percent
+Zhao2009		SDP	10.0	SDP	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_SDP	2.0	hr		2.38938053097345						percent	percent
+Zhao2009		SDP	10.0	SDP	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_SDP	2.4756446991404	hr		6.63716814159292						percent	percent
+Zhao2009		SDP	10.0	SDP	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_SDP	2.95702005730659	hr		3.45132743362832						percent	percent
+Zhao2009		SDP	10.0	SDP	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_SDP	4.0	hr		2.12389380530975						percent	percent
+Zhao2009		SDP	10.0	SDP	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_SDP	6.0	hr		4.77876106194691						percent	percent
+Zhao2009		SDP	10.0	SDP	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_SDP	8.0	hr		1.06194690265487						percent	percent
+Zhao2009		SDP	10.0	SDP	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_SDP	12.0	hr		6.1061946902655						percent	percent
+Zhao2009		SDP	10.0	SDP	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_SDP	14.9914040114613	hr		3.45132743362832						percent	percent
+Zhao2009		SDP	10.0	SDP	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_SDP	24.0	hr		-0.796460176991147						percent	percent

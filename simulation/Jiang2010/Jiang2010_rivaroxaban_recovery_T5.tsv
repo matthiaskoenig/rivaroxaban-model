@@ -1,0 +1,3 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	mean	cv	median	min	max	mean_sd	mean_se	comments	mean_unit	median_unit
+Jiang2010	T5	12.0	T5	recovery	rivaroxaban	urine	HPLC MS	rivaroxaban_recovery_T5	0.0	hr	0.0								count*mole/kilogram	percent
+Jiang2010	T5	12.0	T5	recovery	rivaroxaban	urine	HPLC MS	rivaroxaban_recovery_T5	48.0	hr	0.7892080389097916	9.7				0.0765531797742498			count*mole/kilogram	percent

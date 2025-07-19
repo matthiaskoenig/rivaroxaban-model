@@ -1,0 +1,10 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Alalawneh2024		non-obese	18.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_non-obese2	0.0	hr		0.0	0.0	0.0	0.0		mole/meter^3	ng/ml
+Alalawneh2024		non-obese	18.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_non-obese2	0.983667777072759	hr		0.000544426648389465	392.578125	0.0007034815080364481	0.0001658121815906371		mole/meter^3	ng/ml
+Alalawneh2024		non-obese	18.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_non-obese2	2.00261408100677	hr		0.0006945360535009636	428.7109375	0.0007549143650064078	0.00017793502223705586		mole/meter^3	ng/ml
+Alalawneh2024		non-obese	18.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_non-obese2	3.99952741645516	hr		0.0007371043922639259	433.59375	0.0008869997994483458	0.00020906785770034413		mole/meter^3	ng/ml
+Alalawneh2024		non-obese	18.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_non-obese2	8.05548395198816	hr		0.0004480877764522346	274.4140625	0.0006648528919611179	0.00015670732946573094		mole/meter^3	ng/ml
+Alalawneh2024		non-obese	18.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_non-obese2	12.0236985776227	hr		0.00022180344934385614	155.2734375	0.0003398470942056919	8.010272829312954e-05		mole/meter^3	ng/ml
+Alalawneh2024		non-obese	18.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_non-obese2	18.0253443580795	hr		9.857931081949161e-05	67.3828125	0.00016700690130751677	3.9363904139832524e-05		mole/meter^3	ng/ml
+Alalawneh2024		non-obese	18.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_non-obese2	36.0414353320643	hr		1.568307217582821e-05	15.6249999999999	4.683957816845072e-05	1.1040194450276315e-05		mole/meter^3	ng/ml
+Alalawneh2024		non-obese	18.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_non-obese2	48.0543107550761	hr		2.240438882261173e-06	1.953125	0.00010576577442203383	2.4929232103755623e-05		mole/meter^3	ng/ml

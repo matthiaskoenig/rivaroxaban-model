@@ -1,0 +1,3 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	mean	median	min	max	mean_sd	mean_se	cv	comments	mean_unit	median_unit
+Moore2014	mildRI	12.0	RIV10	cumulative amount	rivaroxaban	urine	HPLC MS/MS	rivaroxaban_urine_mildRI	0.0	hr	0.0								mole	mg
+Moore2014	mildRI	12.0	RIV10	cumulative amount	rivaroxaban	urine	HPLC MS/MS	rivaroxaban_urine_mildRI	48.0	hr	5.7125814444342486e-06				1.5990639625585024e-06				mole	mg

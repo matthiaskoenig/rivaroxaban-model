@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Kubitza2006</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <!--<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+</head>
+
+<body>
+<div id="app">
+    <!-- Vue app-->
+    <v-app>
+        <v-content>
+
+            <a href="../index.html">Experiments</a>
+            <h1>Kubitza2006</h1>
+
+            <h2>Models</h2>
+            <p>
+            <ul>
+                <li><strong>model</strong>: <a href="../../../../models/results/models/rivaroxaban_body_flat.xml">../../../../models/results/models/rivaroxaban_body_flat.xml</a></li>
+            </ul>
+            </p>
+
+            <h2>Datasets</h2>
+            <p>
+            <ul>
+                <li><strong>rivaroxaban_RIV10_fasted</strong>: <a href="Kubitza2006_rivaroxaban_RIV10_fasted.tsv">Kubitza2006_rivaroxaban_RIV10_fasted.tsv</a></li>
+                <li><strong>rivaroxaban_RIV10_fed</strong>: <a href="Kubitza2006_rivaroxaban_RIV10_fed.tsv">Kubitza2006_rivaroxaban_RIV10_fed.tsv</a></li>
+                <li><strong>prothrombin time (change relative)_RIV10_fasted</strong>: <a href="Kubitza2006_prothrombin time (change relative)_RIV10_fasted.tsv">Kubitza2006_prothrombin time (change relative)_RIV10_fasted.tsv</a></li>
+                <li><strong>prothrombin time (change relative)_RIV10_fed</strong>: <a href="Kubitza2006_prothrombin time (change relative)_RIV10_fed.tsv">Kubitza2006_prothrombin time (change relative)_RIV10_fed.tsv</a></li>
+                <li><strong>factor Xa inhibition_RIV10_fasted</strong>: <a href="Kubitza2006_factor Xa inhibition_RIV10_fasted.tsv">Kubitza2006_factor Xa inhibition_RIV10_fasted.tsv</a></li>
+                <li><strong>factor Xa inhibition_RIV10_fed</strong>: <a href="Kubitza2006_factor Xa inhibition_RIV10_fed.tsv">Kubitza2006_factor Xa inhibition_RIV10_fed.tsv</a></li>
+                <li><strong>rivaroxaban_RIV20_fasted</strong>: <a href="Kubitza2006_rivaroxaban_RIV20_fasted.tsv">Kubitza2006_rivaroxaban_RIV20_fasted.tsv</a></li>
+                <li><strong>rivaroxaban_RIV20_fed</strong>: <a href="Kubitza2006_rivaroxaban_RIV20_fed.tsv">Kubitza2006_rivaroxaban_RIV20_fed.tsv</a></li>
+                <li><strong>rivaroxaban_RIV4x5_fasted</strong>: <a href="Kubitza2006_rivaroxaban_RIV4x5_fasted.tsv">Kubitza2006_rivaroxaban_RIV4x5_fasted.tsv</a></li>
+            </ul>
+            </p>
+
+            <h2>Figures</h2>
+            <p>
+            <ul>
+                <li><strong>Fig_conc_10mg</strong>: <a href="Kubitza2006_Fig_conc_10mg.svg">Kubitza2006_Fig_conc_10mg.svg</a></li>
+                <li><strong>Fig_conc_20mg</strong>: <a href="Kubitza2006_Fig_conc_20mg.svg">Kubitza2006_Fig_conc_20mg.svg</a></li>
+                <li><strong>Fig_PD</strong>: <a href="Kubitza2006_Fig_PD.svg">Kubitza2006_Fig_PD.svg</a></li>
+            </ul>
+            </p>
+
+            <h3>Fig_conc_10mg</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Kubitza2006_Fig_conc_10mg.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Kubitza2006_Fig_conc_10mg.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+            <h3>Fig_conc_20mg</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Kubitza2006_Fig_conc_20mg.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Kubitza2006_Fig_conc_20mg.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+            <h3>Fig_PD</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Kubitza2006_Fig_PD.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Kubitza2006_Fig_PD.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+
+            <h2>Code</h2>
+            <p>
+                <a href="../../../../experiments/studies/kubitza2006.py">../../../../experiments/studies/kubitza2006.py</a>
+            <pre>
+<code class="python">from typing import Dict
+from sbmlsim.data import DataSet, load_pkdb_dataframe
+from sbmlsim.fit import FitMapping, FitData
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Timecourse, TimecourseSim
+
+from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
+    RivaroxabanSimulationExperiment,
+)
+from pkdb_models.models.rivaroxaban.experiments.metadata import (
+    Tissue, Route, Dosing, ApplicationForm, Health, Fasting, RivaroxabanMappingMetaData
+)
+from pkdb_models.models.rivaroxaban.helpers import run_experiments
+
+
+class Kubitza2006(RivaroxabanSimulationExperiment):
+    """Simulation experiment for Kubitza2006 — food effect and dosing."""
+
+    fasting_states = ["fasted", "fed"]
+    fraction_absorbed = {
+        "fasted": RivaroxabanSimulationExperiment.fasting_map["fasted"],
+        "fed": RivaroxabanSimulationExperiment.fasting_map["fed"],
+    }
+
+    groups = [
+        "RIV10_fed",
+        "RIV10_fasted",
+        "RIV20_fed",
+        "RIV20_fasted",
+        "RIV4x5_fasted",
+    ]
+
+    bodyweights = {
+        "RIV10_fed": 85,
+        "RIV10_fasted": 85,
+        "RIV20_fed": 86,
+        "RIV20_fasted": 86,
+        "RIV4x5_fasted": 86,
+    }
+
+    doses = {
+        "RIV10_fed": 10,
+        "RIV10_fasted": 10,
+        "RIV20_fed": 20,
+        "RIV20_fasted": 20,
+        "RIV4x5_fasted": 20,
+    }
+
+    colors = {
+        "RIV10_fed": "#A35AC7",  # "#DF9EE8",
+        "RIV10_fasted": "#DDB8EA",  # "#F7E6FB",
+
+        "RIV20_fed": "#A35AC7",  # "#DF9EE8",
+        "RIV20_fasted":  "#DDB8EA",  # "#F7E6FB",
+        "RIV4x5_fasted":  "#DDB8EA",  # "#EAC6F3",
+    }
+
+    info_fig2_5 = {
+        "[Cve_riv]": "rivaroxaban"
+    }
+
+    info_fig3_4 = {
+        "PT_ratio": "prothrombin time (change relative)",
+        "Xa_inhibition": "factor Xa inhibition"
+    }
+
+    def datasets(self) -> Dict[str, DataSet]:
+        dsets = {}
+        fig_ids = ["Fig2", "Fig3", "Fig4", "Fig5"]
+
+        for fig_id in fig_ids:
+            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            for label, df_label in df.groupby("label"):
+                dset = DataSet.from_df(df_label, self.ureg)
+                if "rivaroxaban" in label:
+                    dset.unit_conversion("mean", 1 / self.Mr.riv)
+                dsets[label] = dset
+                # print(label)
+        return dsets
+
+    def simulations(self) -> Dict[str, TimecourseSim]:
+        Q_ = self.Q_
+        tcsims = {}
+
+        for group in self.groups:
+            dose = self.doses[group]
+            bw = self.bodyweights[group]
+            fed = "fed" in group
+            fasting_key = "fed" if fed else "fasted"
+            fraction_absorbed = self.fasting_map[fasting_key]
+
+            tcsims[group] = TimecourseSim([
+                Timecourse(
+                    start=0,
+                    end=30 * 60,  # 30 hours in minutes
+                    steps=500,
+                    changes={
+                        **self.default_changes(),
+                        "BW": Q_(bw, "kg"),
+                        "PODOSE_riv": Q_(dose, "mg"),
+                        "GU__F_riv_abs": Q_(fraction_absorbed, "dimensionless"),
+                    },
+                )
+            ])
+
+        return tcsims
+
+    def fit_mappings(self) -> Dict[str, FitMapping]:
+        mappings = {}
+
+        # PK mapping for all groups
+        for group in self.groups:
+            fed = "fed" in group
+            for sid, name in self.info_fig2_5.items():
+                mappings[f"fm_{name}_{group}"] = FitMapping(
+                    self,
+                    reference=FitData(
+                        self,
+                        dataset=f"{name}_{group}",
+                        xid="time",
+                        yid="mean",
+                        yid_sd="mean_sd",
+                        count="count",
+                    ),
+                    observable=FitData(
+                        self,
+                        task=f"task_{group}",
+                        xid="time",
+                        yid=sid,
+                    ),
+                    metadata=RivaroxabanMappingMetaData(
+                        tissue=Tissue.PLASMA,
+                        route=Route.PO,
+                        application_form=ApplicationForm.TABLET,
+                        dosing=Dosing.SINGLE,
+                        health=Health.HEALTHY,
+                        fasting=Fasting.FED if fed else Fasting.FASTED,
+                    ),
+                )
+
+        # PD mappings only for the correct groups
+        pd_groups = ["RIV10_fed", "RIV10_fasted"]
+
+        for group in pd_groups:
+            fed = "fed" in group
+            for sid, name in self.info_fig3_4.items():
+                mappings[f"fm_{name}_{group}"] = FitMapping(
+                    self,
+                    reference=FitData(
+                        self,
+                        dataset=f"{name}_{group}",
+                        xid="time",
+                        yid="mean",
+                        yid_sd="mean_sd",
+                        count="count",
+                    ),
+                    observable=FitData(
+                        self,
+                        task=f"task_{group}",
+                        xid="time",
+                        yid=sid,
+                    ),
+                    metadata=RivaroxabanMappingMetaData(
+                        tissue=Tissue.PLASMA,
+                        route=Route.PO,
+                        application_form=ApplicationForm.TABLET,
+                        dosing=Dosing.SINGLE,
+                        health=Health.HEALTHY,
+                        fasting=Fasting.FED if fed else Fasting.FASTED,
+                    ),
+                )
+
+        return mappings
+
+    def figures(self) -> Dict[str, Figure]:
+        return {
+            **self.figure_concentration(),
+            "Fig_PD": self.figure_pd(),
+        }
+
+    def figure_concentration(self) -> Dict[str, Figure]:
+        fig1 = Figure(
+            experiment=self,
+            sid="Fig_conc_10mg",
+            name=self.__class__.__name__
+        )
+
+        fig5 = Figure(
+            experiment=self,
+            sid="Fig_conc_20mg",
+            name=self.__class__.__name__
+        )
+
+        plot_fig1 = fig1.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time),
+            legend=True,
+        )
+        plot_fig1[0].set_yaxis(self.label_riv_plasma, unit=self.unit_riv)
+
+        plot_fig5 = fig5.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time),
+            legend=True,
+        )
+        plot_fig5[0].set_yaxis(self.label_riv_plasma, unit=self.unit_riv)
+
+        for group in ["RIV10_fed", "RIV10_fasted"]:
+            label = group.replace("_", " ")
+            plot_fig1[0].add_data(
+                task=f"task_{group}",
+                xid="time",
+                yid="[Cve_riv]",
+                label=label,
+                color=self.colors[group],
+            )
+            plot_fig1[0].add_data(
+                dataset=f"rivaroxaban_{group}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=label,
+                color=self.colors[group],
+            )
+
+        for group in ["RIV20_fed", "RIV20_fasted", "RIV4x5_fasted"]:
+            label = group.replace("_", " ")
+            plot_fig5[0].add_data(
+                task=f"task_{group}",
+                xid="time",
+                yid="[Cve_riv]",
+                label=label,
+                color=self.colors[group],
+            )
+            plot_fig5[0].add_data(
+                dataset=f"rivaroxaban_{group}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=label,
+                color=self.colors[group],
+                marker="^" if "4x5" in label else "s"
+            )
+
+        return {
+            "Fig_conc_10mg": fig1,
+            "Fig_conc_20mg": fig5,
+        }
+
+    def figure_pd(self) -> Figure:
+        fig = Figure(
+            experiment=self,
+            sid="Fig_PD",
+            num_rows=2,
+            name=self.__class__.__name__
+        )
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time),
+            legend=True,
+        )
+
+        plots[0].set_yaxis(self.labels["PT_ratio"], unit=self.units["PT_ratio"])
+        plots[1].set_yaxis(self.labels["Xa_inhibition"], unit=self.units["Xa_inhibition"])
+
+        for group in ["RIV10_fed", "RIV10_fasted"]:
+            label = group.replace("_", " ")
+            plots[0].add_data(
+                task=f"task_{group}",
+                xid="time",
+                yid="PT_ratio",
+                label=label,
+                color=self.colors[group],
+            )
+            plots[0].add_data(
+                dataset=f"prothrombin time (change relative)_{group}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=label,
+                color=self.colors[group],
+            )
+
+            plots[1].add_data(
+                task=f"task_{group}",
+                xid="time",
+                yid="Xa_inhibition",
+                label=label,
+                color=self.colors[group],
+            )
+            plots[1].add_data(
+                dataset=f"factor Xa inhibition_{group}",
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=label,
+                color=self.colors[group],
+            )
+
+        return fig
+
+
+if __name__ == "__main__":
+    run_experiments(Kubitza2006, output_dir=Kubitza2006.__name__)
+</code>
+        </pre>
+            </p>
+
+        </v-content>
+    </v-app>
+</div>
+
+
+<!-- loading dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.6/dist/vuetify.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        delimiters: ['${', '}'],
+        data() {
+            return {}
+        }
+    })
+</script>
+
+
+</body>
+</html>

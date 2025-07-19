@@ -1,0 +1,26 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	0.0	days		0.00011935193490704664					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	0.128	days		0.00014322232188845573					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	0.16	days		0.00015913591320939452					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	0.224000000000001	days		0.00017504950453033424					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	0.288	days		0.00017504950453033424					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	0.384	days		0.00015913591320939452					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	0.576	days		0.00011935193490704664					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	0.768	days		5.569756962328851e-05					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	1.184	days		2.38703869814091e-05					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	1.472	days		7.956795660470403e-06					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	2.0	days		-7.956795660469349e-06					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	4.0	days							mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	5.0	days		5.569756962328851e-05					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	5.01342281879195	days		9.548154792563754e-05					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	5.04026845637584	days		0.00016709270886986486					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	5.05369127516779	days		0.00020687668717221365					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	5.06711409395973	days		0.0002307470741536225					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	5.09395973154362	days		0.0002307470741536225					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	5.12080536912752	days		0.00022279027849315334					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	5.16107382550336	days		0.00019096309585127393					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	5.24161073825503	days		0.00013526552622798542					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	5.32214765100671	days		7.956795660469783e-05					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	5.49664429530201	days		3.182718264187941e-05					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	5.61744966442953	days		1.5913591320939752e-05					mole/meter^3	µg/l
+Zhao2009		MD5	8.0	MD5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD5	6.0	days		0.0					mole/meter^3	µg/l

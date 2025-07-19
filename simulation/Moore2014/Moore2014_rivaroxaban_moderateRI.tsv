@@ -1,0 +1,13 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_se	mean_sd	comments	mean_unit	value_unit
+Moore2014		moderateRI	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_moderateRI	0.0	hr		0.0	1.24113475177302	1.0067160678913736e-06	2.8474230333417914e-06		mole/meter^3	ng/ml
+Moore2014		moderateRI	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_moderateRI	0.592592592592593	hr		7.403299886688837e-05	91.8439716312057	4.832237125878705e-05	0.0001366763056004093		mole/meter^3	ng/ml
+Moore2014		moderateRI	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_moderateRI	1.06666666666666	hr		0.00016230311290048595	127.836879432624	4.630893912300427e-05	0.00013098145953372535		mole/meter^3	ng/ml
+Moore2014		moderateRI	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_moderateRI	1.89629629629629	hr		0.0003787072634344682	243.262411347518	6.342311227715794e-05	0.00017938765110053683		mole/meter^3	ng/ml
+Moore2014		moderateRI	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_moderateRI	2.84444444444444	hr		0.00043565572410130546	273.049645390071	6.74499765487235e-05	0.00019077734323390383		mole/meter^3	ng/ml
+Moore2014		moderateRI	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_moderateRI	4.02962962962963	hr		0.0004669773774680646	312.765957446808	8.859101397444273e-05	0.0002505732269340828		mole/meter^3	ng/ml
+Moore2014		moderateRI	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_moderateRI	6.0	hr		0.0003018268415342365	171.276595744681	3.2214914172525006e-05	9.111753706694044e-05		mole/meter^3	ng/ml
+Moore2014		moderateRI	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_moderateRI	7.94074074074074	hr		0.0002391835348007158	140.248226950355	2.919476596885106e-05	8.25752679669152e-05		mole/meter^3	ng/ml
+Moore2014		moderateRI	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_moderateRI	12.0	hr		0.00015660826683380218	96.8085106382978	2.315446956150225e-05	6.549072976686267e-05		mole/meter^3	ng/ml
+Moore2014		moderateRI	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_moderateRI	24.0	hr		5.410103763349523e-05	37.2340425531914	1.107387674680536e-05	3.132165336676035e-05		mole/meter^3	ng/ml
+Moore2014		moderateRI	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_moderateRI	36.0	hr		1.9931961233393022e-05	14.8936170212766	5.033580339457006e-06	1.4237115166709302e-05		mole/meter^3	ng/ml
+Moore2014		moderateRI	8.0	RIV10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_moderateRI	48.0	hr		1.1389692133367418e-05	11.1702127659574	5.03358033945696e-06	1.4237115166709209e-05		mole/meter^3	ng/ml

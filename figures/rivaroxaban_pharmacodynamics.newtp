@@ -1,0 +1,93 @@
+{
+  "currentGridProperties": {
+    "showGrid": false,
+    "snapToGridOnRelease": false,
+    "snapToGridDuringDrag": false,
+    "snapToAlignmentLocationOnRelease": false,
+    "snapToAlignmentLocationDuringDrag": false,
+    "gridSize": 20,
+    "gridColor": "#c8c8c8",
+    "autoResizeNodes": false,
+    "showGeometricGuidelines": false,
+    "showInitPosAlignment": false,
+    "showDistributionGuidelines": false,
+    "lineWidth": 0.75,
+    "guidelineTolerance": 3,
+    "guidelineColor": "#0B9BCD",
+    "horizontalGuidelineColor": "#0B9BCD",
+    "verticalGuidelineColor": "#0B9BCD",
+    "initPosAlignmentColor": "#0000ff",
+    "geometricAlignmentRange": 300,
+    "distributionAlignmentRange": 200,
+    "minDistributionAlignmentRange": 15,
+    "initPosAlignmentLine": [
+      0,
+      0
+    ],
+    "lineDash": [
+      3,
+      5
+    ],
+    "horizontalDistLine": [
+      0,
+      0
+    ],
+    "verticalDistLine": [
+      0,
+      0
+    ]
+  },
+  "currentGeneralProperties": {
+    "compoundPadding": [
+      "0"
+    ],
+    "dynamicLabelSize": [
+      "regular"
+    ],
+    "mapColorScheme": [
+      "black_white"
+    ],
+    "mapColorSchemeStyle": [
+      "solid"
+    ],
+    "experimentDescription": {},
+    "highlightColor": [
+      "#0B9BCD"
+    ],
+    "mapPD2AFConverted": false,
+    "$": {
+      "xmlns:nwt": "https://newteditor.org/"
+    }
+  },
+  "currentLayoutProperties": {
+    "name": "fcose",
+    "quality": "default",
+    "samplingType": true,
+    "sampleSize": 25,
+    "nodeSeparation": 75,
+    "piTol": 1e-7,
+    "nodeDimensionsIncludeLabels": false,
+    "nodeRepulsion": 2000,
+    "idealEdgeLength": 30,
+    "edgeElasticity": 0.45,
+    "nestingFactor": 0.1,
+    "gravity": 0.25,
+    "numIter": 2500,
+    "fit": true,
+    "padding": 20,
+    "animationEasing": "cubic-bezier(0.17,0.72,0.41,0.98)",
+    "animate": "end",
+    "animationDuration": 2000,
+    "randomize": false,
+    "tile": true,
+    "tilingPaddingVertical": 12,
+    "tilingPaddingHorizontal": 12,
+    "gravityRangeCompound": 1.5,
+    "gravityCompound": 1,
+    "gravityRange": 3.8,
+    "initialEnergyOnIncremental": 0.3,
+    "improveFlow": true,
+    "packComponents": true
+  },
+  "elementsStyles": []
+}

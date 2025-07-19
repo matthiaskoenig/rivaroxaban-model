@@ -1,0 +1,1655 @@
+{
+  "experiment_id": "Alalawneh2024",
+  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban",
+  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/rivaroxaban')]",
+  "models": {
+    "model": {
+      "sid": null,
+      "name": null,
+      "language": "SBML",
+      "language_type": "SBML",
+      "source": {
+        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "content": "None"
+      },
+      "changes": {}
+    }
+  },
+  "tasks": {
+    "task_non-obese": {
+      "model": "model",
+      "simulation": "non-obese"
+    },
+    "task_obese": {
+      "model": "model",
+      "simulation": "obese"
+    },
+    "task_morbidly-obese": {
+      "model": "model",
+      "simulation": "morbidly-obese"
+    }
+  },
+  "simulations": {
+    "non-obese": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 67.4,
+              "_units": "kilogram"
+            },
+            "PODOSE_riv": {
+              "_magnitude": 20,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "obese": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 111.5,
+              "_units": "kilogram"
+            },
+            "PODOSE_riv": {
+              "_magnitude": 20,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "morbidly-obese": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 135,
+              "_units": "kilogram"
+            },
+            "PODOSE_riv": {
+              "_magnitude": 20,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    }
+  },
+  "data": {
+    "task_non-obese__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__Cve_riv": {
+      "type": "TASK",
+      "index": "Cve_riv",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__Cve_rx": {
+      "type": "TASK",
+      "index": "Cve_rx",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__Cve_riv_rx": {
+      "type": "TASK",
+      "index": "Cve_riv_rx",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__Aurine_riv": {
+      "type": "TASK",
+      "index": "Aurine_riv",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__Aurine_rx": {
+      "type": "TASK",
+      "index": "Aurine_rx",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__Aurine_riv_rx": {
+      "type": "TASK",
+      "index": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__Afeces_riv": {
+      "type": "TASK",
+      "index": "Afeces_riv",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__Afeces_rx": {
+      "type": "TASK",
+      "index": "Afeces_rx",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__Afeces_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__KI__RIVEX": {
+      "type": "TASK",
+      "index": "KI__RIVEX",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__PT": {
+      "type": "TASK",
+      "index": "PT",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__PT_change": {
+      "type": "TASK",
+      "index": "PT_change",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__PT_ratio": {
+      "type": "TASK",
+      "index": "PT_ratio",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__aPTT": {
+      "type": "TASK",
+      "index": "aPTT",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__aPTT_change": {
+      "type": "TASK",
+      "index": "aPTT_change",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__aPTT_ratio": {
+      "type": "TASK",
+      "index": "aPTT_ratio",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__Xa_inhibition": {
+      "type": "TASK",
+      "index": "Xa_inhibition",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__PODOSE_riv": {
+      "type": "TASK",
+      "index": "PODOSE_riv",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_non-obese__GU__F_riv_abs": {
+      "type": "TASK",
+      "index": "GU__F_riv_abs",
+      "unit": null,
+      "task": "task_non-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__Cve_riv": {
+      "type": "TASK",
+      "index": "Cve_riv",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__Cve_rx": {
+      "type": "TASK",
+      "index": "Cve_rx",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__Cve_riv_rx": {
+      "type": "TASK",
+      "index": "Cve_riv_rx",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__Aurine_riv": {
+      "type": "TASK",
+      "index": "Aurine_riv",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__Aurine_rx": {
+      "type": "TASK",
+      "index": "Aurine_rx",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__Aurine_riv_rx": {
+      "type": "TASK",
+      "index": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__Afeces_riv": {
+      "type": "TASK",
+      "index": "Afeces_riv",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__Afeces_rx": {
+      "type": "TASK",
+      "index": "Afeces_rx",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__Afeces_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__KI__RIVEX": {
+      "type": "TASK",
+      "index": "KI__RIVEX",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__PT": {
+      "type": "TASK",
+      "index": "PT",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__PT_change": {
+      "type": "TASK",
+      "index": "PT_change",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__PT_ratio": {
+      "type": "TASK",
+      "index": "PT_ratio",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__aPTT": {
+      "type": "TASK",
+      "index": "aPTT",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__aPTT_change": {
+      "type": "TASK",
+      "index": "aPTT_change",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__aPTT_ratio": {
+      "type": "TASK",
+      "index": "aPTT_ratio",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__Xa_inhibition": {
+      "type": "TASK",
+      "index": "Xa_inhibition",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__PODOSE_riv": {
+      "type": "TASK",
+      "index": "PODOSE_riv",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_obese__GU__F_riv_abs": {
+      "type": "TASK",
+      "index": "GU__F_riv_abs",
+      "unit": null,
+      "task": "task_obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__Cve_riv": {
+      "type": "TASK",
+      "index": "Cve_riv",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__Cve_rx": {
+      "type": "TASK",
+      "index": "Cve_rx",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__Cve_riv_rx": {
+      "type": "TASK",
+      "index": "Cve_riv_rx",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__Aurine_riv": {
+      "type": "TASK",
+      "index": "Aurine_riv",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__Aurine_rx": {
+      "type": "TASK",
+      "index": "Aurine_rx",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__Aurine_riv_rx": {
+      "type": "TASK",
+      "index": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__Afeces_riv": {
+      "type": "TASK",
+      "index": "Afeces_riv",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__Afeces_rx": {
+      "type": "TASK",
+      "index": "Afeces_rx",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__Afeces_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__KI__RIVEX": {
+      "type": "TASK",
+      "index": "KI__RIVEX",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__PT": {
+      "type": "TASK",
+      "index": "PT",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__PT_change": {
+      "type": "TASK",
+      "index": "PT_change",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__PT_ratio": {
+      "type": "TASK",
+      "index": "PT_ratio",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__aPTT": {
+      "type": "TASK",
+      "index": "aPTT",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__aPTT_change": {
+      "type": "TASK",
+      "index": "aPTT_change",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__aPTT_ratio": {
+      "type": "TASK",
+      "index": "aPTT_ratio",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__Xa_inhibition": {
+      "type": "TASK",
+      "index": "Xa_inhibition",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__PODOSE_riv": {
+      "type": "TASK",
+      "index": "PODOSE_riv",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_morbidly-obese__GU__F_riv_abs": {
+      "type": "TASK",
+      "index": "GU__F_riv_abs",
+      "unit": null,
+      "task": "task_morbidly-obese",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    }
+  },
+  "figures": {
+    "Fig2_3_Tab4": {
+      "sid": "Fig2_3_Tab4",
+      "name": "Alalawneh2024",
+      "num_rows": 3,
+      "num_cols": 1,
+      "width": 7.0,
+      "height": 15.0,
+      "subplots": [
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig2_3_Tab4__plot0",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig2_3_Tab4__plot0_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig2_3_Tab4__plot0_yaxis",
+              "name": "rivaroxaban plasma [\u00b5M]",
+              "label": "rivaroxaban plasma",
+              "unit": "\u00b5M",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig2_3_Tab4__plot0_curve0",
+                "name": "non-obese",
+                "x": "task_non-obese__time",
+                "y": "task_non-obese__Cve_riv",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig2_3_Tab4__plot0_curve1",
+                "name": "non-obese\u00b1SD (n=18)",
+                "x": "rivaroxaban_non-obese__time",
+                "y": "rivaroxaban_non-obese__mean",
+                "xerr": null,
+                "yerr": "rivaroxaban_non-obese__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#000000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig2_3_Tab4__plot0_curve2",
+                "name": "obese",
+                "x": "task_obese__time",
+                "y": "task_obese__Cve_riv",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#1f77b4ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig2_3_Tab4__plot0_curve3",
+                "name": "obese\u00b1SD (n=18)",
+                "x": "rivaroxaban_obese__time",
+                "y": "rivaroxaban_obese__mean",
+                "xerr": null,
+                "yerr": "rivaroxaban_obese__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#1f77b4ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig2_3_Tab4__plot0_curve4",
+                "name": "morbidly-obese",
+                "x": "task_morbidly-obese__time",
+                "y": "task_morbidly-obese__Cve_riv",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#ff7f0eff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#ff7f0eff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#ff7f0eff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig2_3_Tab4__plot0_curve5",
+                "name": "morbidly-obese\u00b1SD (n=6)",
+                "x": "rivaroxaban_morbidly-obese__time",
+                "y": "rivaroxaban_morbidly-obese__mean",
+                "xerr": null,
+                "yerr": "rivaroxaban_morbidly-obese__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#ff7f0eff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#ff7f0eff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#ff7f0eff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              }
+            ],
+            "areas": []
+          },
+          "row": 1,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        },
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig2_3_Tab4__plot1",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig2_3_Tab4__plot1_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig2_3_Tab4__plot1_yaxis",
+              "name": "rivaroxaban urine [\u00b5mole]",
+              "label": "rivaroxaban urine",
+              "unit": "\u00b5mole",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig2_3_Tab4__plot1_curve0",
+                "name": "non-obese",
+                "x": "task_non-obese__time",
+                "y": "task_non-obese__Aurine_riv",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig2_3_Tab4__plot1_curve1",
+                "name": "non-obese\u00b1SD (n=18)",
+                "x": "rivaroxaban_urine_non-obese__time",
+                "y": "rivaroxaban_urine_non-obese__mean",
+                "xerr": null,
+                "yerr": "rivaroxaban_urine_non-obese__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#000000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig2_3_Tab4__plot1_curve2",
+                "name": "obese",
+                "x": "task_obese__time",
+                "y": "task_obese__Aurine_riv",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#1f77b4ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig2_3_Tab4__plot1_curve3",
+                "name": "obese\u00b1SD (n=18)",
+                "x": "rivaroxaban_urine_obese__time",
+                "y": "rivaroxaban_urine_obese__mean",
+                "xerr": null,
+                "yerr": "rivaroxaban_urine_obese__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#1f77b4ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              }
+            ],
+            "areas": []
+          },
+          "row": 2,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        },
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig2_3_Tab4__plot2",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig2_3_Tab4__plot2_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig2_3_Tab4__plot2_yaxis",
+              "name": "rivaroxaban excretion\nurine [\u00b5mole/hr]",
+              "label": "rivaroxaban excretion\nurine",
+              "unit": "\u00b5mole/hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig2_3_Tab4__plot2_curve0",
+                "name": "non-obese",
+                "x": "task_non-obese__time",
+                "y": "task_non-obese__KI__RIVEX",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig2_3_Tab4__plot2_curve1",
+                "name": "non-obese\u00b1SD (n=18)",
+                "x": "rivaroxaban_excretion_urine_non-obese__time",
+                "y": "rivaroxaban_excretion_urine_non-obese__mean",
+                "xerr": null,
+                "yerr": "rivaroxaban_excretion_urine_non-obese__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#000000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig2_3_Tab4__plot2_curve2",
+                "name": "obese",
+                "x": "task_obese__time",
+                "y": "task_obese__KI__RIVEX",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#1f77b4ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig2_3_Tab4__plot2_curve3",
+                "name": "obese\u00b1SD (n=18)",
+                "x": "rivaroxaban_excretion_urine_obese__time",
+                "y": "rivaroxaban_excretion_urine_obese__mean",
+                "xerr": null,
+                "yerr": "rivaroxaban_excretion_urine_obese__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#1f77b4ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              }
+            ],
+            "areas": []
+          },
+          "row": 3,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        }
+      ]
+    },
+    "Fig4": {
+      "sid": "Fig4",
+      "name": "Alalawneh2024",
+      "num_rows": 2,
+      "num_cols": 1,
+      "width": 7.0,
+      "height": 10.0,
+      "subplots": [
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig4__plot0",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig4__plot0_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig4__plot0_yaxis",
+              "name": "PT [s]",
+              "label": "PT",
+              "unit": "s",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig4__plot0_curve0",
+                "name": "non-obese",
+                "x": "task_non-obese__time",
+                "y": "task_non-obese__PT",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig4__plot0_curve1",
+                "name": "non-obese\u00b1SD (n=18)",
+                "x": "prothrombin time_non-obese__time",
+                "y": "prothrombin time_non-obese__mean",
+                "xerr": null,
+                "yerr": "prothrombin time_non-obese__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#000000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig4__plot0_curve2",
+                "name": "obese",
+                "x": "task_obese__time",
+                "y": "task_obese__PT",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#1f77b4ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig4__plot0_curve3",
+                "name": "obese\u00b1SD (n=18)",
+                "x": "prothrombin time_obese__time",
+                "y": "prothrombin time_obese__mean",
+                "xerr": null,
+                "yerr": "prothrombin time_obese__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#1f77b4ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              }
+            ],
+            "areas": []
+          },
+          "row": 1,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        },
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig4__plot1",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig4__plot1_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig4__plot1_yaxis",
+              "name": "aPTT [s]",
+              "label": "aPTT",
+              "unit": "s",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig4__plot1_curve0",
+                "name": "non-obese",
+                "x": "task_non-obese__time",
+                "y": "task_non-obese__aPTT",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig4__plot1_curve1",
+                "name": "non-obese\u00b1SD (n=18)",
+                "x": "aPTT_non-obese__time",
+                "y": "aPTT_non-obese__mean",
+                "xerr": null,
+                "yerr": "aPTT_non-obese__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#000000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig4__plot1_curve2",
+                "name": "obese",
+                "x": "task_obese__time",
+                "y": "task_obese__aPTT",
+                "xerr": null,
+                "yerr": null,
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#1f77b4ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig4__plot1_curve3",
+                "name": "obese\u00b1SD (n=18)",
+                "x": "aPTT_obese__time",
+                "y": "aPTT_obese__mean",
+                "xerr": null,
+                "yerr": "aPTT_obese__mean_sd",
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#1f77b4ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              }
+            ],
+            "areas": []
+          },
+          "row": 2,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Moore2014</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <!--<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+</head>
+
+<body>
+<div id="app">
+    <!-- Vue app-->
+    <v-app>
+        <v-content>
+
+            <a href="../index.html">Experiments</a>
+            <h1>Moore2014</h1>
+
+            <h2>Models</h2>
+            <p>
+            <ul>
+                <li><strong>model</strong>: <a href="../../../../models/results/models/rivaroxaban_body_flat.xml">../../../../models/results/models/rivaroxaban_body_flat.xml</a></li>
+            </ul>
+            </p>
+
+            <h2>Datasets</h2>
+            <p>
+            <ul>
+                <li><strong>rivaroxaban_NRF</strong>: <a href="Moore2014_rivaroxaban_NRF.tsv">Moore2014_rivaroxaban_NRF.tsv</a></li>
+                <li><strong>rivaroxaban_NRF_ERY</strong>: <a href="Moore2014_rivaroxaban_NRF_ERY.tsv">Moore2014_rivaroxaban_NRF_ERY.tsv</a></li>
+                <li><strong>rivaroxaban_mildRI</strong>: <a href="Moore2014_rivaroxaban_mildRI.tsv">Moore2014_rivaroxaban_mildRI.tsv</a></li>
+                <li><strong>rivaroxaban_mildRI_ERY</strong>: <a href="Moore2014_rivaroxaban_mildRI_ERY.tsv">Moore2014_rivaroxaban_mildRI_ERY.tsv</a></li>
+                <li><strong>rivaroxaban_moderateRI</strong>: <a href="Moore2014_rivaroxaban_moderateRI.tsv">Moore2014_rivaroxaban_moderateRI.tsv</a></li>
+                <li><strong>rivaroxaban_moderateRI_ERY</strong>: <a href="Moore2014_rivaroxaban_moderateRI_ERY.tsv">Moore2014_rivaroxaban_moderateRI_ERY.tsv</a></li>
+                <li><strong>rivaroxaban_urine_NRF</strong>: <a href="Moore2014_rivaroxaban_urine_NRF.tsv">Moore2014_rivaroxaban_urine_NRF.tsv</a></li>
+                <li><strong>rivaroxaban_urine_NRF_ERY</strong>: <a href="Moore2014_rivaroxaban_urine_NRF_ERY.tsv">Moore2014_rivaroxaban_urine_NRF_ERY.tsv</a></li>
+                <li><strong>rivaroxaban_urine_mildRI</strong>: <a href="Moore2014_rivaroxaban_urine_mildRI.tsv">Moore2014_rivaroxaban_urine_mildRI.tsv</a></li>
+                <li><strong>rivaroxaban_urine_mildRI_ERY</strong>: <a href="Moore2014_rivaroxaban_urine_mildRI_ERY.tsv">Moore2014_rivaroxaban_urine_mildRI_ERY.tsv</a></li>
+                <li><strong>rivaroxaban_urine_moderateRI</strong>: <a href="Moore2014_rivaroxaban_urine_moderateRI.tsv">Moore2014_rivaroxaban_urine_moderateRI.tsv</a></li>
+                <li><strong>rivaroxaban_urine_moderateRI_ERY</strong>: <a href="Moore2014_rivaroxaban_urine_moderateRI_ERY.tsv">Moore2014_rivaroxaban_urine_moderateRI_ERY.tsv</a></li>
+            </ul>
+            </p>
+
+            <h2>Figures</h2>
+            <p>
+            <ul>
+                <li><strong>Fig2_Tab2</strong>: <a href="Moore2014_Fig2_Tab2.svg">Moore2014_Fig2_Tab2.svg</a></li>
+            </ul>
+            </p>
+
+            <h3>Fig2_Tab2</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Moore2014_Fig2_Tab2.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Moore2014_Fig2_Tab2.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+
+            <h2>Code</h2>
+            <p>
+                <a href="../../../../experiments/studies/moore2014.py">../../../../experiments/studies/moore2014.py</a>
+            <pre>
+<code class="python">from typing import Dict
+
+from sbmlsim.data import DataSet, load_pkdb_dataframe
+from sbmlsim.fit import FitMapping, FitData
+from sbmlutils.console import console
+
+from pkdb_models.models.rivaroxaban.experiments.base_experiment import RivaroxabanSimulationExperiment
+from pkdb_models.models.rivaroxaban.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
+    Fasting, RivaroxabanMappingMetaData, Coadministration
+from pkdb_models.models.rivaroxaban.helpers import run_experiments
+
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Timecourse, TimecourseSim
+
+
+class Moore2014(RivaroxabanSimulationExperiment):
+    """Simulation experiment of Moore2014."""
+
+    groups = ["NRF", "mildRI", "moderateRI"]
+
+    colors = {
+        "NRF": "black",
+        "mildRI": "#66c2a4",
+        "moderateRI": "#2ca25f",
+    }
+
+    bodyweights = {
+        "NRF": 75.5,
+        "mildRI": 76.7,
+        "moderateRI": 84.8,
+    }
+
+    renal_functions = {
+        "NRF": "Normal renal function",
+        "mildRI": "Mild renal impairment",
+        "moderateRI": "Moderate renal impairment",
+    }
+
+    infos = {
+        "[Cve_riv]": "rivaroxaban",
+        "Aurine_riv": "rivaroxaban_urine",
+    }
+
+    def datasets(self) -> Dict[str, DataSet]:
+        dsets = {}
+        for fig_id in ["Fig2", "Tab2A"]:
+            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            for label, df_label in df.groupby("label"):
+                dset = DataSet.from_df(df_label, self.ureg)
+                dset.unit_conversion("mean", 1 / self.Mr.riv)
+                dsets[label] = dset
+        return dsets
+
+    def simulations(self) -> Dict[str, TimecourseSim]:
+        Q_ = self.Q_
+        tcsims = {}
+        for group in self.groups:
+            rf_value = RivaroxabanSimulationExperiment.renal_map[self.renal_functions[group]]
+            tcsims[group] = TimecourseSim([
+                Timecourse(
+                    start=0,
+                    end=50 * 60,
+                    steps=500,
+                    changes={
+                        **self.default_changes(),
+                        "BW": Q_(self.bodyweights[group], "kg"),
+                        "PODOSE_riv": Q_(10, "mg"),
+                        "KI__f_renal_function": Q_(rf_value, "dimensionless"),
+                    },
+                )
+            ])
+        return tcsims
+
+    def fit_mappings(self) -> Dict[str, FitMapping]:
+        mappings = {}
+        for kp, sid in enumerate(self.infos):
+            name = self.infos[sid]
+            for group in self.groups:
+                mappings[f"fm_{name}_{group}"] = FitMapping(
+                    self,
+                    reference=FitData(
+                        self,
+                        dataset=f"{name}_{group}",
+                        xid="time",
+                        yid="mean",
+                        yid_sd="mean_sd",
+                        count="count",
+                    ),
+                    observable=FitData(
+                        self,
+                        task=f"task_{group}",
+                        xid="time",
+                        yid=sid,
+                    ),
+                    metadata=RivaroxabanMappingMetaData(
+                        tissue=Tissue.PLASMA,
+                        route=Route.PO,
+                        application_form=ApplicationForm.TABLET,
+                        dosing=Dosing.SINGLE,
+                        health=Health.HEALTHY if "NRF" in group else Health.RENAL_IMPAIRMENT,
+                        fasting=Fasting.FED,
+                        coadministration=Coadministration.NONE,
+                    ),
+                )
+        return mappings
+
+    def figures(self) -> Dict[str, Figure]:
+        figures = {}
+        fig = Figure(
+            experiment=self,
+            sid="Fig2_Tab2",
+            name=self.__class__.__name__,
+            num_rows=2,
+        )
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time),
+            legend=True,
+        )
+        plots[0].set_yaxis(self.label_riv_plasma, unit=self.unit_riv)
+        plots[1].set_yaxis(self.label_riv_urine, unit=self.unit_riv_urine)
+
+        for kp, sid in enumerate(self.infos):
+            name = self.infos[sid]
+            for group in self.groups:
+                plots[kp].add_data(
+                    task=f"task_{group}",
+                    xid="time",
+                    yid=sid,
+                    label=group,
+                    color=self.colors[group],
+                )
+                plots[kp].add_data(
+                    dataset=f"{name}_{group}",
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                    label=group,
+                    linestyle="" if "urine" in name else "--",
+                    color=self.colors[group],
+                )
+
+        figures[fig.sid] = fig
+
+        return figures
+
+
+if __name__ == "__main__":
+    run_experiments(Moore2014, output_dir=Moore2014.__name__)
+</code>
+        </pre>
+            </p>
+
+        </v-content>
+    </v-app>
+</div>
+
+
+<!-- loading dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.6/dist/vuetify.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        delimiters: ['${', '}'],
+        data() {
+            return {}
+        }
+    })
+</script>
+
+
+</body>
+</html>

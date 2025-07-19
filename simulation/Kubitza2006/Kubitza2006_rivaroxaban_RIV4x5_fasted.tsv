@@ -1,0 +1,13 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Kubitza2006		food_study2	10.0	RIV4x5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_RIV4x5_fasted	0.406779661016948	hr		6.719188525417774e-05					mole/meter^3	µg/l
+Kubitza2006		food_study2	10.0	RIV4x5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_RIV4x5_fasted	0.688396349413297	hr		0.00015435973639473273					mole/meter^3	µg/l
+Kubitza2006		food_study2	10.0	RIV4x5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_RIV4x5_fasted	0.970013037809647	hr		0.00020883964335757956					mole/meter^3	µg/l
+Kubitza2006		food_study2	10.0	RIV4x5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_RIV4x5_fasted	1.15775749674055	hr		0.00022155162164891066					mole/meter^3	µg/l
+Kubitza2006		food_study2	10.0	RIV4x5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_RIV4x5_fasted	2.47196870925684	hr		0.00027966352240928					mole/meter^3	µg/l
+Kubitza2006		food_study2	10.0	RIV4x5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_RIV4x5_fasted	2.97262059973924	hr		0.0002851115131055657					mole/meter^3	µg/l
+Kubitza2006		food_study2	10.0	RIV4x5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_RIV4x5_fasted	3.94263363754889	hr		0.000268767541016711					mole/meter^3	µg/l
+Kubitza2006		food_study2	10.0	RIV4x5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_RIV4x5_fasted	5.97653194263364	hr		0.00016888771158482538					mole/meter^3	µg/l
+Kubitza2006		food_study2	10.0	RIV4x5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_RIV4x5_fasted	7.94784876140808	hr		0.00013983176120464024					mole/meter^3	µg/l
+Kubitza2006		food_study2	10.0	RIV4x5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_RIV4x5_fasted	11.9843546284224	hr		0.000103511823229409					mole/meter^3	µg/l
+Kubitza2006		food_study2	10.0	RIV4x5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_RIV4x5_fasted	14.9882659713168	hr		7.263987595046251e-05					mole/meter^3	µg/l
+Kubitza2006		food_study2	10.0	RIV4x5	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_RIV4x5_fasted	24.0	hr		4.358392557027759e-05					mole/meter^3	µg/l

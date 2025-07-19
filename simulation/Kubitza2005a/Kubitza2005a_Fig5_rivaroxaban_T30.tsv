@@ -1,0 +1,15 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Kubitza2005a		T30	7.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	0.642857142857143	hr		4.833306352743209e-05					mole/meter^3	µg/l
+Kubitza2005a		T30	7.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	0.771428571428572	hr		0.00018753228648643635					mole/meter^3	µg/l
+Kubitza2005a		T30	7.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	0.964285714285715	hr		0.0002609985430481325					mole/meter^3	µg/l
+Kubitza2005a		T30	7.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	1.15714285714286	hr		0.0003015983164111751					mole/meter^3	µg/l
+Kubitza2005a		T30	7.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	1.35	hr		0.0003557313475619					mole/meter^3	µg/l
+Kubitza2005a		T30	7.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	1.54285714285714	hr		0.0003731312504317748					mole/meter^3	µg/l
+Kubitza2005a		T30	7.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	1.99285714285714	hr		0.00041179770125372115					mole/meter^3	µg/l
+Kubitza2005a		T30	7.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	2.63571428571429	hr		0.0003731312504317748					mole/meter^3	µg/l
+Kubitza2005a		T30	7.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	3.02142857142857	hr		0.0003537980250208015					mole/meter^3	µg/l
+Kubitza2005a		T30	7.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	4.0	hr		0.00020299886681521447					mole/meter^3	µg/l
+Kubitza2005a		T30	7.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	5.91428571428571	hr		0.0001527324807466853					mole/meter^3	µg/l
+Kubitza2005a		T30	7.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	8.16428571428571	hr		0.00010246609467815589					mole/meter^3	µg/l
+Kubitza2005a		T30	7.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	12.0	hr		7.733290164389119e-05					mole/meter^3	µg/l
+Kubitza2005a		T30	7.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	24.0	hr		1.5466580328778285e-05					mole/meter^3	µg/l

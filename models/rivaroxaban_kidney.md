@@ -12,7 +12,8 @@ length: [m]
 ## Parameters `p`
 ```
 BSA = 1.73  # [m^2] body surface area [m^2]  
-RIVEX_k = 1.0  # [1/min] rate of rivaroxaban urinary excretion  
+RIVEX_k = 0.161396730729702  # [1/min] rate of rivaroxaban urinary excretion  
+RXEX_k = 2.0  # [1/min] rate of rivaroxaban metabolite urinary excretion  
 Vext = 1.5  # [l] plasma  
 Vki = 0.3  # [l] kidney  
 Vurine = 1.0  # [l] urine  
@@ -24,16 +25,21 @@ f_renal_function = 1.0  # [-] parameter for renal function
 ```
 riv_ext = 0.0  # [mmol/l] rivaroxaban (plasma) in Vext  
 riv_urine = 0.0  # [mmol] rivaroxaban (urine) in Vurine  
+rx_ext = 0.0  # [mmol/l] rivaroxaban metabolites (plasma) in Vext  
+rx_urine = 0.0  # [mmol] rivaroxaban metabolites (urine) in Vurine  
 ```
 
 ## ODE system
 ```
 # y
 RIVEX = f_renal_function * Vki * RIVEX_k * riv_ext  # [mmol/min] rivaroxaban excretion (RIVEX)  
+RXEX = f_renal_function * Vki * RXEX_k * rx_ext  # [mmol/min] rivaroxaban metabolites excretion (RXEX)  
 egfr = f_renal_function * egfr_healthy  # [578.034682080925µl/min/m^2] estimated eGFR  
 crcl = (egfr * BSA / 1.73) * 1.1  # [ml/min] creatinine clearance  
 
 # odes
 d riv_ext/dt = -RIVEX / Vext  # [mmol/l/min] rivaroxaban (plasma)  
 d riv_urine/dt = RIVEX  # [mmol/min] rivaroxaban (urine)  
+d rx_ext/dt = -RXEX / Vext  # [mmol/l/min] rivaroxaban metabolites (plasma)  
+d rx_urine/dt = RXEX  # [mmol/min] rivaroxaban metabolites (urine)  
 ```

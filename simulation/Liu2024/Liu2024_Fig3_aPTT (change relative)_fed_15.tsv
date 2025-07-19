@@ -1,0 +1,5 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	raw	mean_unit	value_unit
+Liu2024		fed_15	36.0	fed_15	aPTT (change relative)		plasma	NR	aPTT (change relative)_fed_15	0.0	hr		1.0				method: coagulation analyzer		dimensionless	dimensionless
+Liu2024		fed_15	36.0	fed_15	aPTT (change relative)		plasma	NR	aPTT (change relative)_fed_15	3.0	hr		1.57894736842105						dimensionless	dimensionless
+Liu2024		fed_15	36.0	fed_15	aPTT (change relative)		plasma	NR	aPTT (change relative)_fed_15	8.0	hr		1.29122807017544						dimensionless	dimensionless
+Liu2024		fed_15	36.0	fed_15	aPTT (change relative)		plasma	NR	aPTT (change relative)_fed_15	12.0	hr		1.12280701754386						dimensionless	dimensionless

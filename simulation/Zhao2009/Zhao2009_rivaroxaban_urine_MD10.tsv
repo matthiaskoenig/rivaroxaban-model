@@ -1,0 +1,3 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	mean	cv	median	min	max	mean_sd	mean_se	ci	ci_min	ci_max	comments	mean_unit	median_unit
+Zhao2009	MD10	8.0	MD10	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_MD10	120.0	hr	0.0											mole	mg
+Zhao2009	MD10	8.0	MD10	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_MD10	168.0	hr	9.796274203909333e-06					3.5523986952651417e-06						mole	mg

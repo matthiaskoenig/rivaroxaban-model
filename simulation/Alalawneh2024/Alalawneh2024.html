@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Alalawneh2024</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <!--<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+</head>
+
+<body>
+<div id="app">
+    <!-- Vue app-->
+    <v-app>
+        <v-content>
+
+            <a href="../index.html">Experiments</a>
+            <h1>Alalawneh2024</h1>
+
+            <h2>Models</h2>
+            <p>
+            <ul>
+                <li><strong>model</strong>: <a href="../../../../models/results/models/rivaroxaban_body_flat.xml">../../../../models/results/models/rivaroxaban_body_flat.xml</a></li>
+            </ul>
+            </p>
+
+            <h2>Datasets</h2>
+            <p>
+            <ul>
+                <li><strong>rivaroxaban_non-obese</strong>: <a href="Alalawneh2024_rivaroxaban_non-obese.tsv">Alalawneh2024_rivaroxaban_non-obese.tsv</a></li>
+                <li><strong>rivaroxaban_obese</strong>: <a href="Alalawneh2024_rivaroxaban_obese.tsv">Alalawneh2024_rivaroxaban_obese.tsv</a></li>
+                <li><strong>rivaroxaban_morbidly-obese</strong>: <a href="Alalawneh2024_rivaroxaban_morbidly-obese.tsv">Alalawneh2024_rivaroxaban_morbidly-obese.tsv</a></li>
+                <li><strong>rivaroxaban_non-obese2</strong>: <a href="Alalawneh2024_rivaroxaban_non-obese2.tsv">Alalawneh2024_rivaroxaban_non-obese2.tsv</a></li>
+                <li><strong>prothrombin time_non-obese</strong>: <a href="Alalawneh2024_prothrombin time_non-obese.tsv">Alalawneh2024_prothrombin time_non-obese.tsv</a></li>
+                <li><strong>prothrombin time_obese</strong>: <a href="Alalawneh2024_prothrombin time_obese.tsv">Alalawneh2024_prothrombin time_obese.tsv</a></li>
+                <li><strong>aPTT_non-obese</strong>: <a href="Alalawneh2024_aPTT_non-obese.tsv">Alalawneh2024_aPTT_non-obese.tsv</a></li>
+                <li><strong>aPTT_obese</strong>: <a href="Alalawneh2024_aPTT_obese.tsv">Alalawneh2024_aPTT_obese.tsv</a></li>
+                <li><strong>rivaroxaban_excretion_urine_non-obese</strong>: <a href="Alalawneh2024_rivaroxaban_excretion_urine_non-obese.tsv">Alalawneh2024_rivaroxaban_excretion_urine_non-obese.tsv</a></li>
+                <li><strong>rivaroxaban_excretion_urine_obese</strong>: <a href="Alalawneh2024_rivaroxaban_excretion_urine_obese.tsv">Alalawneh2024_rivaroxaban_excretion_urine_obese.tsv</a></li>
+                <li><strong>rivaroxaban_urine_non-obese</strong>: <a href="Alalawneh2024_rivaroxaban_urine_non-obese.tsv">Alalawneh2024_rivaroxaban_urine_non-obese.tsv</a></li>
+                <li><strong>rivaroxaban_urine_obese</strong>: <a href="Alalawneh2024_rivaroxaban_urine_obese.tsv">Alalawneh2024_rivaroxaban_urine_obese.tsv</a></li>
+            </ul>
+            </p>
+
+            <h2>Figures</h2>
+            <p>
+            <ul>
+                <li><strong>Fig2_3_Tab4</strong>: <a href="Alalawneh2024_Fig2_3_Tab4.svg">Alalawneh2024_Fig2_3_Tab4.svg</a></li>
+                <li><strong>Fig4</strong>: <a href="Alalawneh2024_Fig4.svg">Alalawneh2024_Fig4.svg</a></li>
+            </ul>
+            </p>
+
+            <h3>Fig2_3_Tab4</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Alalawneh2024_Fig2_3_Tab4.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Alalawneh2024_Fig2_3_Tab4.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+            <h3>Fig4</h3>
+            <p>
+            <table>
+                <tr>
+                    <td>
+                        <!--<v-img src="Alalawneh2024_Fig4.svg" max-width="600" width="600"></v-img>-->
+                        <img src="Alalawneh2024_Fig4.svg" width="600">
+                    </td>
+                    <!--
+                    <td>
+                    </td>
+                    -->
+                </tr>
+            </table>
+            </p>
+
+            <h2>Code</h2>
+            <p>
+                <a href="../../../../experiments/studies/alalawneh2024.py">../../../../experiments/studies/alalawneh2024.py</a>
+            <pre>
+<code class="python">from typing import Dict
+
+from sbmlsim.data import DataSet, load_pkdb_dataframe
+from sbmlsim.fit import FitMapping, FitData
+from sbmlutils.console import console
+
+from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
+    RivaroxabanSimulationExperiment,
+)
+from pkdb_models.models.rivaroxaban.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
+    Fasting, RivaroxabanMappingMetaData, Coadministration
+
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Timecourse, TimecourseSim
+
+from pkdb_models.models.rivaroxaban.helpers import run_experiments
+
+
+class Alalawneh2024(RivaroxabanSimulationExperiment):
+    """Simulation experiment of Alalawneh2024."""
+
+    groups = ["non-obese", "obese", "morbidly-obese"]
+    bodyweights = {
+        "non-obese": 67.4,  # kg
+        "obese": 111.5,  # kg
+        "morbidly-obese": 135, # kg > 120 kg
+    }
+    colors = {
+        "non-obese": "black",
+        "obese": "tab:blue",
+        "morbidly-obese": "tab:orange",
+    }
+    info_fig3 = {
+        "[Cve_riv]": "rivaroxaban",
+        "Aurine_riv": "rivaroxaban_urine",
+        "KI__RIVEX": "rivaroxaban_excretion_urine",
+    }
+    info_fig4 = {
+        "PT": "prothrombin time",
+        "aPTT": "aPTT",
+    }
+
+    def datasets(self) -> Dict[str, DataSet]:
+        dsets = {}
+        fig_ids = ["Fig2", "Fig3", "Fig4a", "Fig4b", "Tab4"]
+
+        for fig_id in fig_ids:
+            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            for label, df_label in df.groupby("label"):
+                dset = DataSet.from_df(df_label, self.ureg)
+                if "rivaroxaban" in label:
+                    dset.unit_conversion("mean", 1 / self.Mr.riv)
+                dsets[label] = dset
+
+        # print(dsets.keys())
+        return dsets
+
+    def simulations(self) -> Dict[str, TimecourseSim]:
+        Q_ = self.Q_
+        tcsims = {}
+        for group in self.groups:
+            tcsims[f"{group}"] = TimecourseSim(
+                [Timecourse(
+                    start=0,
+                    end=50 * 60,  # [min]
+                    steps=500,
+                    changes={
+                        **self.default_changes(),
+                        "BW": Q_(self.bodyweights[group], "kg"),
+                        "PODOSE_riv": Q_(20, "mg"),
+                    },
+                )]
+            )
+
+        return tcsims
+
+    def fit_mappings(self) -> Dict[str, FitMapping]:
+        mappings = {}
+        for group in self.groups:
+            # pharmacokinetics
+            for k, sid in enumerate(self.info_fig3.keys()):
+                if k != 0 and "morbid" in group:
+                    continue
+                name = self.info_fig3[sid]
+                mappings[f"fm_{name}_{group}"] = FitMapping(
+                    self,
+                    reference=FitData(
+                        self,
+                        dataset=f"{name}_{group}",
+                        xid="time",
+                        yid="mean",
+                        yid_sd="mean_sd",
+                        count="count",
+                    ),
+                    observable=FitData(
+                        self,
+                        task=f"task_{group}",
+                        xid="time",
+                        yid=sid,
+                    ),
+                    metadata=RivaroxabanMappingMetaData(
+                        tissue=Tissue.URINE if "urine" in name else Tissue.PLASMA,
+                        route=Route.PO,
+                        application_form=ApplicationForm.TABLET,
+                        dosing=Dosing.SINGLE,
+                        health=Health.HEALTHY,
+                        fasting=Fasting.FASTED,
+                    ),
+                )
+
+            # pharmacodynamics
+            if "morbid" in group:
+                continue
+            for k, sid in enumerate(self.info_fig4.keys()):
+                name = self.info_fig4[sid]
+                mappings[f"fm_{name}_{group}"] = FitMapping(
+                    self,
+                    reference=FitData(
+                        self,
+                        dataset=f"{name}_{group}",
+                        xid="time",
+                        yid="mean",
+                        yid_sd="mean_sd",
+                        count="count",
+                    ),
+                    observable=FitData(
+                        self,
+                        task=f"task_{group}",
+                        xid="time",
+                        yid=sid,
+                    ),
+                    metadata=RivaroxabanMappingMetaData(
+                        tissue=Tissue.PLASMA,
+                        route=Route.PO,
+                        application_form=ApplicationForm.TABLET,
+                        dosing=Dosing.SINGLE,
+                        health=Health.HEALTHY,
+                        fasting=Fasting.FASTED,
+                    ),
+                )
+
+
+        return mappings
+
+    def figures(self) -> Dict[str, Figure]:
+
+        return {
+            **self.figure_pk(),
+            **self.figure_pd(),
+        }
+
+    def figure_pk(self) -> Dict[str, Figure]:
+
+        fig = Figure(
+            experiment=self,
+            sid="Fig2_3_Tab4",
+            num_rows=3,
+            name=self.__class__.__name__,
+        )
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time),
+            legend=True,
+        )
+        plots[0].set_yaxis(self.label_riv_plasma, unit=self.unit_riv)
+        plots[1].set_yaxis(self.label_riv_urine, unit=self.unit_riv_urine)
+        plots[2].set_yaxis(self.labels["KI__RIVEX"], unit=self.units["KI__RIVEX"])
+
+        for group in self.groups:
+            for k, sid in enumerate(self.info_fig3.keys()):
+                name = self.info_fig3[sid]
+                label = f"{name.replace('_', ' ')} {group}"
+                if k != 0 and "morbid" in group:
+                    continue
+
+                plots[k].add_data(
+                    task=f"task_{group}",
+                    xid="time",
+                    yid=sid,
+                    label=group,
+                    color=self.colors[group],
+                )
+                plots[k].add_data(
+                    dataset=f"{name}_{group}",
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                    label=group,
+                    color=self.colors[group],
+                )
+
+        return {fig.sid: fig}
+
+
+    def figure_pd(self) -> Dict[str, Figure]:
+        fig = Figure(
+            experiment=self,
+            sid="Fig4",
+            num_rows=2,
+            name=self.__class__.__name__,
+        )
+        plots = fig.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time),
+            legend=True,
+        )
+        plots[0].set_yaxis(self.labels["PT"], unit=self.units["PT"])
+        plots[1].set_yaxis(self.labels["aPTT"], unit=self.units["aPTT"])
+        for group in self.groups:
+            if "morbid" in group:
+                continue
+            for k, sid in enumerate(self.info_fig4.keys()):
+                name = self.info_fig4[sid]
+                label = f"{sid} {group}"
+                plots[k].add_data(
+                    task=f"task_{group}",
+                    xid="time",
+                    yid=sid,
+                    label=group,
+                    color=self.colors[group],
+                )
+                plots[k].add_data(
+                    dataset=f"{name}_{group}",
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                    label=group,
+                    color=self.colors[group],
+                )
+        return {fig.sid: fig}
+
+
+if __name__ == "__main__":
+    run_experiments(Alalawneh2024, output_dir=Alalawneh2024.__name__)
+</code>
+        </pre>
+            </p>
+
+        </v-content>
+    </v-app>
+</div>
+
+
+<!-- loading dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.6/dist/vuetify.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        delimiters: ['${', '}'],
+        data() {
+            return {}
+        }
+    })
+</script>
+
+
+</body>
+</html>

@@ -11,15 +11,15 @@ length: [m]
 
 ## Parameters `p`
 ```
-F_riv_abs = 0.93  # [-] fraction absorbed rivaroxaban  
-Ka_dis_riv = 2.0  # [1/hr] Ka_dis [1/hr] dissolution rivaroxaban  
+F_riv_abs = 0.82  # [-] fraction absorbed rivaroxaban  
+Ka_dis_riv = 0.159609993420602  # [1/hr] Ka_dis [1/hr] dissolution rivaroxaban  
 Mr_riv = 435.88  # [g/mol] Molecular weight rivaroxaban [g/mole]  
-RIVABS_k = 0.1  # [1/min] rate of rivaroxaban absorption  
+RIVABS_k = 0.0520278502970517  # [1/min] rate of rivaroxaban absorption  
 RXEXC_k = 0.1  # [1/min] rate of rivaroxaban metabolites excretion  
 Vapical = nan  # [m^2] apical membrane (intestinal membrane enterocytes)  
 Vext = 1.0  # [l] plasma  
 Vfeces = 1.0  # [l] feces  
-Vlumen = 1.0  # [l] intestinal lumen (inner part of intestine)  
+Vlumen = 1.0  # [l] lumen  
 Vstomach = 1.0  # [l] stomach  
 f_absorption = 1.0  # [-] scaling factor for absorption rate  
 ```

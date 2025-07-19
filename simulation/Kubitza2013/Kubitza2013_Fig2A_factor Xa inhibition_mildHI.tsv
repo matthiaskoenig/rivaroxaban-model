@@ -1,0 +1,13 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	raw	mean_unit	value_unit
+Kubitza2013		mildHI	8.0	mildHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_mildHI	0.0	hr		1.0419906687403	1.2130637636081	0.171073094867808	0.0604834727297982			percent	percent
+Kubitza2013		mildHI	8.0	mildHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_mildHI	0.933833076937649	hr		44.1524105754277	61.7729393468118	17.6205287713841	6.22979769116919			percent	percent
+Kubitza2013		mildHI	8.0	mildHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_mildHI	2.30102046184896	hr		47.7449455676516	65.0233281493002	17.2783825816485	6.1088307457096			percent	percent
+Kubitza2013		mildHI	8.0	mildHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_mildHI	2.78407414500281	hr		43.1259720062208	58.1804043545879	15.054432348367	5.32254560022222			percent	percent
+Kubitza2013		mildHI	8.0	mildHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_mildHI	4.05019603221537	hr		42.6127527216174	53.0482115085537	10.4354587869362	3.68949183651768			percent	percent
+Kubitza2013		mildHI	8.0	mildHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_mildHI	6.08605214477974	hr		31.1508553654744	42.2706065318818	11.1197511664075	3.93142572743687			percent	percent
+Kubitza2013		mildHI	8.0	mildHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_mildHI	8.12842372421224	hr		27.045101088647	38.5069984447901	11.4618973561431	4.05239267289647			percent	percent
+Kubitza2013		mildHI	8.0	mildHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_mildHI	11.920880008923	hr		18.8335925349923	27.3872472783826	8.55365474339034	3.02417363648989			percent	percent
+Kubitza2013		mildHI	8.0	mildHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_mildHI	14.9399655286346	hr		17.4650077760498	24.6500777604977	7.18506998444791	2.54030585465152			percent	percent
+Kubitza2013		mildHI	8.0	mildHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_mildHI	23.8969142024972	hr		10.1088646967341	16.0964230171073	5.98755832037324	2.11692154554293			percent	percent
+Kubitza2013		mildHI	8.0	mildHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_mildHI	47.9535331045063	hr		0.699844479004682	9.25349922239505	8.55365474339037	3.0241736364899			percent	percent
+Kubitza2013		mildHI	8.0	mildHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_mildHI	72.3071360777142	hr		0.0	0.699844479004682	0.699844479004682	0.247432388440088			percent	percent

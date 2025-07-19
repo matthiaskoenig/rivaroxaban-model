@@ -1,0 +1,36 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	raw	mean_unit	value_unit
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.017928422330224	days		14.1654939340514						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.035344155606359	days		40.2048663607971						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.071070212242805	days		56.4628640484648						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.083971142930384	days		60.9426154465888						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.106440525453965	days		67.0823284453489						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.125451872622928	days		68.4121810734034						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.172467551491245	days		63.610691136234						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.250485223569048	days		50.1907935694144						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.338165514860135	days		39.9234105331443						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.500677481964331	days		15.7380891346541						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.523450292703598	days		26.6871393520238						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.546212640400944	days		37.4703503549587						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.572234225656425	days		49.9124766543377						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.588572265614782	days		58.8704099942976						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.604565025189773	days		62.3556492579087						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.629906512720443	days		64.0182266190249						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.670822238149297	days		62.5324746663597						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.759088459787914	days		61.5520876384391						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	0.844325630790639	days		62.5612480316402						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	1.00055977274273	days		38.8723979722624						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	5.0	days						dummy separator		percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	7.00410158358133	days		45.9008321383231						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	7.02608977225418	days		47.711850903839						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	7.04507630076224	days		51.4963070328281						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	7.07067264942768	days		61.0378856799223						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	7.08656500084807	days		65.3155084061904						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	7.11189407840295	days		70.5807492842788						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	7.13052081887756	days		68.6085968780679						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	7.17421964545459	days		67.7898221105166						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	7.25483272426359	days		57.5990830544976						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	7.34170611485462	days		47.5733325109607						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	7.50602644956029	days		26.6986878016437						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	7.63091401579984	days		24.8997476343937						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	7.99886409778011	days		12.1010593187671						percent	percent
+Kubitza2005		BID30	7.0	BID30	factor Xa inhibition		plasma	coagulation assay	factor Xa inhibition_BID30	9.00772002323203	days		3.7958665494786						percent	percent
