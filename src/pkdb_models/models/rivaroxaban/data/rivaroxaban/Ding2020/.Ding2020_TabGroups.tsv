@@ -1,0 +1,19 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+Ding2020	all	56.0	NA	species	56.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Ding2020	all	56.0	NA	healthy	56.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Ding2020	all	56.0	NA	ethnicity	56.0	NA	chinese	NA	NA	NA	NA	NA	NA	NA	NA
+Ding2020	all	56.0	NA	pregnant	56.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Ding2020	all	56.0	NA	smoking	56.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Ding2020	all	56.0	NA	medication	56.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Ding2020	all	56.0	NA	sex	40.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Ding2020	all	56.0	NA	sex	16.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Ding2020	Fasting	28.0	all	sex	20.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Ding2020	Fasting	28.0	all	sex	8.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Ding2020	Fasting	28.0	all	age	28.0	NA	NA	24.6	NA	3.6	NA	18.3	34.8	yr	NA
+Ding2020	Fasting	28.0	all	weight	28.0	NA	NA	63.0	NA	6.66	NA	51.2	79.8	kg	NA
+Ding2020	Fasting	28.0	all	bmi	28.0	NA	NA	22.0	NA	1.69	NA	19.8	24.7	kg/m^2	NA
+Ding2020	Fed	28.0	all	sex	20.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Ding2020	Fed	28.0	all	sex	8.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Ding2020	Fed	28.0	all	age	28.0	NA	NA	25.3	NA	3.91	NA	18.9	33.1	yr	NA
+Ding2020	Fed	28.0	all	weight	28.0	NA	NA	62.0	NA	7.79	NA	49.0	75.9	kg	NA
+Ding2020	Fed	28.0	all	bmi	28.0	NA	NA	22.2	NA	1.99	NA	19.1	26.5	kg/m^2	NA

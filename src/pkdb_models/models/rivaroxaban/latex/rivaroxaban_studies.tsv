@@ -1,0 +1,40 @@
+Study identifier	PubMed	dose route	substance	dosing	dose [mg]	combination	healthy	age	renal impairment	hepatic impairment	obesity	Chronic Heart Failure	hypertension	Venous thromboembolism	Non valvular atrial fibrillation	fed	fasted	Pharmacokinetics	plasma/serum rivaroxaban	urine data	feces data	absorption data	distribution	Pharmacodynamics	Factor Xa	Prothrombin time	Activated partial thromboplastin	HepTest	INR	Comments	Priority	GitHub Issue	PK-DB identifier	Curation status	Information in Google Docs	Available via repository	upload	simulation	Parameter fitting	upload_issues
+study	pmid	route	substance	dosing	dose	combination	healthy	elderly	renal impairment	hepatic impairment	obesity	HF	hypertension	VT	NVAF	fed	fasted	pk	riv plasma	riv urine	riv feces	riv absorption	riv distribution	pd	Xa	PT	aPTT	HT	INR	comments	priority	github	pkdb	status	docs	repo	upload	simulation	fitting	issues
+Alalawneh2024	38847347	oral	rivaroxaban	single	20		TRUE	-	-	-	TRUE	-	-	-	-	TRUE	-	TRUE	TRUE	TRUE	-	TRUE	-	TRUE	-	TRUE	TRUE	-	-		high	#1866	PKDB00983	check	TRUE	TRUE	TRUE	TRUE	TRUE	
+Ding2020	31610099	oral	rivaroxaban	single	10		TRUE	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	TRUE	-	-	-	-	-	-	-	-	-	-		medium	#1853	PKDB00972	check	TRUE	TRUE	TRUE	TRUE	TRUE	
+GenisNajera2022	35510948	oral	rivaroxaban	single	20		TRUE	-	-	-	-	-	-	-	-	TRUE	-	TRUE	TRUE	-	-	-	-	-	-	-	-	-	-		medium	#1854	PKDB00973	check	TRUE	TRUE	TRUE	TRUE	TRUE	
+Graff2007	17873238	oral	rivaroxaban	single	5, 30		TRUE	-	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	-	-	-	-	TRUE	TRUE	TRUE	-	-	-		high	#1868	PKDB00984	check	TRUE	TRUE	TRUE	TRUE	TRUE	
+Greenblatt2018	29194698	oral	rivaroxaban	single	20	verapamil	TRUE	-	TRUE	-	-	-	-	-	-	TRUE	-	TRUE	TRUE	TRUE	-	-	-	TRUE	TRUE	TRUE	-	-	-		high	#1883	PKDB00985	check	TRUE	TRUE	TRUE	TRUE	TRUE	
+Jiang2010	20062915	oral	rivaroxaban	single	5, 10, 20, 30, 40		TRUE	TRUE	-	-	-	-	-	-	-	TRUE	-	TRUE	TRUE	-	-	-	-	TRUE	TRUE	TRUE	-	-	-		high	#1862	PKDB00986	check	TRUE	TRUE	TRUE	TRUE	TRUE	
+Kubitza2005	16328318	oral	rivaroxaban	multi	5, 10, 20, 30		TRUE	-	-	-	-	-	-	-	-	TRUE	-	TRUE	TRUE	-	-	-	-	TRUE	TRUE	TRUE	TRUE	TRUE	-		high	#1900	PKDB00987	check	TRUE	TRUE	TRUE	TRUE	TRUE	
+Kubitza2005a	16198660	oral	rivaroxaban	single, multi	1.25, 5, 10, 20, 40, 80		TRUE	-	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	-	-	-	-	TRUE	TRUE	TRUE	-	TRUE	-		high	#1856	PKDB00988	check	TRUE	TRUE	TRUE	TRUE	TRUE	
+Kubitza2006	16638738	oral	rivaroxaban	single, multi	5, 20		TRUE	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	TRUE	-	-	-	-	TRUE	TRUE	TRUE	-	-	-		high	#1901	PKDB00989	check	TRUE	TRUE	TRUE	TRUE	-	How do I simulate both the fed and the fasted condition
+Kubitza2013	23294275	oral	rivaroxaban	single	10		TRUE	-	-	TRUE	-	-	-	-	-	-	TRUE	TRUE	TRUE	-	-	-	-	TRUE	TRUE	TRUE	-	-	-		high	#1902	PKDB00990	check	TRUE	TRUE	TRUE	TRUE	-	Something is off with the units in the concentration part
+Liu2024	38553322	oral	rivaroxaban	single	10, 15, 20		TRUE	-	-	-	-	-	-	-	-	TRUE	TRUE	-	-	-	-	-	-	TRUE	TRUE	-	TRUE	-	-		high	#1898	PKDB00991	check	TRUE	TRUE	TRUE	TRUE	-	
+Moore2014	24964176	oral	rivaroxaban	single	10	erythromycin	TRUE	-	TRUE	-	-	-	-	-	-	TRUE	-	TRUE	TRUE	-	-	-	-	TRUE	TRUE	TRUE	-	-	-		high	#1889	PKDB00992	check	TRUE	TRUE	TRUE	TRUE	TRUE	
+Weinz2009	19196845	oral	rivaroxaban	single	10		TRUE	-	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	TRUE	TRUE	-	-	-	-	-	-	-	-		high	#1861	PKDB00993	check	TRUE	TRUE	TRUE	TRUE		
+Zhao2009	19660005	oral	rivaroxaban	single, multi	2.5, 5, 10, 20, 40		TRUE	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	TRUE	-	-	-	-	TRUE	TRUE	TRUE	-	-	-		high	#1863	PKDB00994	check	TRUE	TRUE	TRUE	TRUE	-	
+																																								
+Delrue2022	35000196	oral	rivaroxaban	single	massive (suicidal attempt)	multidrug	-	-	TRUE	-	-	-	-	-	-	-	-	TRUE	TRUE	-	-	-	-	-	-	-	-	-		unclear dosing; single case studies	no				-	-	-	-	-	
+Ding2024	39204351	oral	rivaroxaban	multi	10, 15, 20	amiodarone	-	-	-	-	-	-	TRUE	-	TRUE	-	-	TRUE	TRUE	-	-	-	-	TRUE	-	TRUE	TRUE	-		no timecourses; artial fibrillation	no				-	-	-	-	-	
+Foerster2018	29055248	oral	rivaroxaban	single	20		-	-	-	-	-	-	-	-	-	-	-	TRUE	TRUE	-	-	-	-	-	-	-	-	-		n=2 subjects; unclear dosing	no				-	-	-	-	-	
+Gheorghiade2011	20947383	oral	rivaroxaban	multi	10	HF therapy	-	-	-	-	-	TRUE	-	-	-	-	-	TRUE	TRUE	-	-	-	-	TRUE	-	TRUE	-	-		chronic heart failure without control group	no				-	-	-	-	-	
+Goto2020	32007354	oral	rivaroxaban	multi	15		-	-	-	-	-	-	-	TRUE	TRUE	-	-	TRUE	TRUE	-	-	-	-	-	-	-	-	-		single point measurements; computational model	no				-	-	-	-	-	
+Brings2019		oral	rivaroxaban	single	20	ciclosporin; ciclosporin + fluconazole	TRUE	-	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	-	-	-	-	-	-	-	TRUE	-	TRUE		medium				TRUE					
+Choi2016	27511836	oral	rivaroxaban	single	20		TRUE	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	TRUE	-	-	-	-	TRUE	TRUE	TRUE	-	-	-	computational model; individual timepoints	medium				TRUE	-	-	-	-	
+deOliveira2021	33885176	oral	rivaroxaban	single	20		TRUE	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	TRUE	-	-	-	-	-	-	-	-	-	-		medium				TRUE	-	-	-	-	
+Dias2016	27100875	oral	rivaroxaban	single	15		TRUE	-	TRUE	-	-	-	-	-	-	-	-	TRUE	TRUE	-	-	-	-	TRUE	TRUE	TRUE	-	-	-		medium				TRUE	-	-	-	-	
+Frost2014	25419161	oral	rivaroxaban	multi	10		TRUE	-	-	-	-	-	-	-	-	TRUE	-	TRUE	TRUE	-	-	-	-	TRUE	TRUE	-	-	-	-		medium				TRUE	-	-	-	-	
+Gouin-Thibault2017	27893182	oral	rivaroxaban	single	40	clarithromycin	TRUE	-	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	-	-	-	-	-	-	-	-	-	-		medium				TRUE	-	-	-	-	
+Kreutz2017	28805299	oral	rivaroxaban	multi	20		TRUE	-	-	-	-	-	-	-	-	TRUE	-	TRUE	TRUE	-	-	-	-	TRUE	-	TRUE	TRUE	-	-		low				FALSE	-	-	-	-	
+Kroll2017							FALSE									FALSE		FALSE	FALSE					FALSE		FALSE	FALSE				low				TRUE					
+Mikus2019	30828771	oral	rivaroxaban	multi	0.025	ketoconazole	TRUE	-	-	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	-	-	-	TRUE	-	-	-	-	-		medium				TRUE	-	-	-	-	
+Moore2014a	27128839	oral/NG tube	rivaroxaban	single	20		TRUE	-	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	-	-	-	-	-	-	-	-	-	-		low				TRUE	-	-	-	-	
+Mueck2013	23305158	oral	rivaroxaban	single, multi	10, 20	ketoconazole, ritonavir, slarithromycin, erythromycin, fluconazole, midazolam	TRUE	-	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	-	-	-	-	-	-	-	-	-	-		medium				TRUE	-	-	-	-	
+Rohde2008							FALSE											FALSE	FALSE										-						FALSE					
+Rohr2024	38393578	oral	rivaroxaban	multi	0.025	ritonavir	TRUE	-	-	-	-	-	-	-	-	-	-	TRUE	TRUE	-	-	-	-	-	-	-	-	-	-		low				TRUE	-	-	-	-	
+Scholz2021																	FALSE	FALSE	FALSE										-						FALSE					
+Shaikh2020	31514543	oral	rivaroxaban	single			-	-	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	-	-	-	-	-	-	-	-	-	-		low				TRUE	-	-	-	-	
+Sun2024	37740607	oral	rivaroxaban	single	10		TRUE	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	TRUE	-	-	-	-	-	-	-	-	-	-		low				TRUE	-	-	-	-	
+Tao2022	34637608	oral	rivaroxaban	single	20		TRUE	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	TRUE	-	-	-	-	-	-	-	-	-	-		low				TRUE	-	-	-	-	
+Zhang2023	37210712	oral	rivaroxaban	single	10		TRUE	-	-	-	-	-	-	-	-	TRUE	TRUE	TRUE	TRUE	-	-	-	-	-	-	-	-	-	-		low				TRUE	-	-	-	-	

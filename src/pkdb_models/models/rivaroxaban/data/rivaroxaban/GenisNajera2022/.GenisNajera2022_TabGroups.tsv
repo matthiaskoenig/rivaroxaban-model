@@ -1,0 +1,19 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+GenisNajera2022	all	32	NA	species	32	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	One co-hort, two tablets, 7 days washout period
+GenisNajera2022	all	32	NA	healthy	32	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+GenisNajera2022	all	32	NA	ethnicity	32	NA	mexican	NA	NA	NA	NA	NA	NA	NA	NA
+GenisNajera2022	all	32	NA	pregnant	32	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+GenisNajera2022	all	32	NA	smoking	32	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+GenisNajera2022	all	32	NA	fasting	32	NA	N	NA	NA	NA	NA	NA	NA	NA	fed conditions, standard breakfast 0.5 hours before drug administration
+GenisNajera2022	all	32	NA	medication	32	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+GenisNajera2022	all	32	NA	sex	3	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+GenisNajera2022	all	32	NA	sex	29	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+GenisNajera2022	all	32	NA	age	32	NA	NA	30.0	NA	9.6	NA	18.0	55.0	yr	NA
+GenisNajera2022	all	32	NA	weight	32	NA	NA	61.7	NA	7.0	NA	NA	NA	kg	NA
+GenisNajera2022	all	32	NA	height	32	NA	NA	1.6	NA	0.06	NA	NA	NA	m	NA
+GenisNajera2022	all	32	NA	bmi	32	NA	NA	24.0	NA	1.7	NA	20.0	27.0	kg/m^2	NA
+GenisNajera2022	all	32	NA	blood pressure systolic	32	NA	NA	101.5	NA	9.4	NA	NA	NA	mmHg	NA
+GenisNajera2022	all	32	NA	blood pressure diastolic	32	NA	NA	66.4	NA	7.3	NA	NA	NA	mmHg	NA
+GenisNajera2022	all	32	NA	heart rate	32	NA	NA	76.3	NA	10.2	NA	NA	NA	1/min	NA
+GenisNajera2022	all	32	NA	respiratory rate	32	NA	NA	16.4	NA	1.2	NA	NA	NA	1/min	NA
+GenisNajera2022	all	32	NA	body temperature	32	NA	NA	36.5	NA	0.3	NA	NA	NA	C	NA

@@ -1,0 +1,24 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+Greenblatt2018	all	27.0	NA	species	27.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Greenblatt2018	all	27.0	NA	healthy	13.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Greenblatt2018	all	27.0	NA	sex	16.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Greenblatt2018	all	27.0	NA	sex	11.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Greenblatt2018	all	27.0	NA	age	27.0	NA	NA	59.0	NA	NA	NA	38.0	72.0	yr	NA
+Greenblatt2018	NRF	13.0	all	species	13.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Greenblatt2018	NRF	13.0	all	healthy	13.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	Normal Renal Function
+Greenblatt2018	NRF	13.0	all	sex	8.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Greenblatt2018	NRF	13.0	all	sex	5.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Greenblatt2018	NRF	13.0	all	age	13.0	NA	NA	56.0	NA	6.0	NA	NA	NA	yr	NA
+Greenblatt2018	NRF	13.0	all	weight	13.0	NA	NA	76.5	NA	12.3	NA	NA	NA	kg	NA
+Greenblatt2018	NRF	13.0	all	height	13.0	NA	NA	172.0	NA	6.0	NA	NA	NA	cm	NA
+Greenblatt2018	NRF	13.0	all	bmi	13.0	NA	NA	25.7	NA	3.1	NA	NA	NA	kg/m^2	NA
+Greenblatt2018	NRF	13.0	all	estimated clearance	13.0	creatinine	NA	105.0	NA	14.0	NA	90.0	NA	ml/min	estimated creatinine clearance
+Greenblatt2018	MRI	14.0	all	species	14.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Greenblatt2018	MRI	14.0	all	healthy	14.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	Mild Renal Insufficiency
+Greenblatt2018	MRI	14.0	all	sex	8.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Greenblatt2018	MRI	14.0	all	sex	6.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Greenblatt2018	MRI	14.0	all	age	14.0	NA	NA	62.0	NA	9.0	NA	NA	NA	yr	NA
+Greenblatt2018	MRI	14.0	all	weight	14.0	NA	NA	68.7	NA	11.2	NA	NA	NA	kg	NA
+Greenblatt2018	MRI	14.0	all	height	14.0	NA	NA	165.0	NA	10.0	NA	NA	NA	cm	NA
+Greenblatt2018	MRI	14.0	all	bmi	14.0	NA	NA	24.9	NA	2.9	NA	NA	NA	kg/m^2	NA
+Greenblatt2018	MRI	14.0	all	estimated clearance	14.0	creatinine	NA	71.0	NA	7.0	NA	50.0	79.0	ml/min	estimated creatinine clearance

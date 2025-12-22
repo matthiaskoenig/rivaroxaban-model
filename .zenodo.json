@@ -19,8 +19,9 @@
     "model",
     "rivaroxaban",
     "pharmacokinetics",
-    "PBPK",
-    "physiologically based pharamacokinetic model",
+    "pharmacodynamics",
+    "PBPK/PD",
+    "physiologically based pharamacokinetic/pharmacodynamic model",
     "SBML"
   ],
   "contributors": [],

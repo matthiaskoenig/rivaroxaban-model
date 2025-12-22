@@ -1,0 +1,13 @@
+study	name	time	time_end	time_unit	route	application	measurement_type	form	substance	value	unit	comments
+Kubitza2005a	T1.25	0.0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	1.25	mg	Tablet; 1*1.25
+Kubitza2005a	T5	0.0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	5.0	mg	Tablet; 1*5
+Kubitza2005a	T10	0.0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	10.0	mg	Tablet; 2*5
+Kubitza2005a	T15	0.0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	15.0	mg	Tablet; 3*5
+Kubitza2005a	T20	0.0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	20.0	mg	Tablet; 4*5
+Kubitza2005a	T30	0.0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	30.0	mg	Tablet; 6*5
+Kubitza2005a	T40	0.0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	40.0	mg	Tablet; 8*5
+Kubitza2005a	T60	0.0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	60.0	mg	Tablet; 12*5
+Kubitza2005a	T80	0.0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	80.0	mg	Tablet; 16*5
+Kubitza2005a	S5	0.0	NA	hr	oral	single dose	dosing	solution	rivaroxaban	5.0	mg	solution
+Kubitza2005a	S10	0.0	NA	hr	oral	single dose	dosing	solution	rivaroxaban	10.0	mg	solution
+Kubitza2005a	P	0.0	NA	hr	oral	single dose	dosing	tablet	placebo	0.0	mg	placebo

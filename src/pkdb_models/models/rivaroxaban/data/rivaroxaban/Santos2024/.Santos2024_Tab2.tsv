@@ -1,0 +1,29 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	median	min	max	sd	se	cv	unit	comments
+Santos2024	Fasting	60.0	T20	cmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	191.12	NA	NA	NA	6.59	NA	NA	ng/ml	NA
+Santos2024	Fasting	60.0	T20	auc_end	rivaroxaban	plasma	HPLC MS/MS	48.0	hr	1573.82	NA	NA	NA	46.21	NA	NA	ng/ml*hr	NA
+Santos2024	Fasting	60.0	T20	auc_inf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	1685.15	NA	NA	NA	49.35	NA	NA	ng/ml*hr	NA
+Santos2024	Fasting	60.0	T20	tmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	2.26	NA	NA	NA	0.11	NA	NA	hr	NA
+Santos2024	Fasting	60.0	T20	thalf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	15.24	NA	NA	NA	0.6	NA	NA	hr	NA
+Santos2024	Fasting	60.0	T20	vd	rivaroxaban	plasma	HPLC MS/MS	NA	NA	271.73	NA	NA	NA	10.15	NA	NA	l	NA
+Santos2024	Fasting	60.0	T20	oral clearance	rivaroxaban	plasma	HPLC MS/MS	NA	NA	13.0	NA	NA	NA	0.35	NA	NA	ml/h	NA
+Santos2024	Fasting	60.0	R20	cmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	183.98	NA	NA	NA	6.72	NA	NA	ng/ml	NA
+Santos2024	Fasting	60.0	R20	auc_end	rivaroxaban	plasma	HPLC MS/MS	48.0	hr	1509.91	NA	NA	NA	42.11	NA	NA	ng/ml*hr	NA
+Santos2024	Fasting	60.0	R20	auc_inf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	1674.33	NA	NA	NA	53.55	NA	NA	ng/ml*hr	NA
+Santos2024	Fasting	60.0	R20	tmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	2.48	NA	NA	NA	0.12	NA	NA	hr	NA
+Santos2024	Fasting	60.0	R20	thalf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	17.57	NA	NA	NA	1.33	NA	NA	hr	NA
+Santos2024	Fasting	60.0	R20	vd	rivaroxaban	plasma	HPLC MS/MS	NA	NA	304.77	NA	NA	NA	13.26	NA	NA	l	NA
+Santos2024	Fasting	60.0	R20	oral clearance	rivaroxaban	plasma	HPLC MS/MS	NA	NA	13.19	NA	NA	NA	0.37	NA	NA	ml/h	NA
+Santos2024	Fed	57.0	T20	cmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	325.41	NA	NA	NA	7.32	NA	NA	ng/ml	NA
+Santos2024	Fed	57.0	T20	auc_end	rivaroxaban	plasma	HPLC MS/MS	48.0	hr	1969.12	NA	NA	NA	53.73	NA	NA	ng/ml*hr	NA
+Santos2024	Fed	57.0	T20	auc_inf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	2037.85	NA	NA	NA	66.7	NA	NA	ng/ml*hr	NA
+Santos2024	Fed	57.0	T20	tmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	3.03	NA	NA	NA	0.1	NA	NA	hr	NA
+Santos2024	Fed	57.0	T20	thalf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	8.5	NA	NA	NA	0.41	NA	NA	hr	NA
+Santos2024	Fed	57.0	T20	vd	rivaroxaban	plasma	HPLC MS/MS	NA	NA	126.68	NA	NA	NA	6.23	NA	NA	l	NA
+Santos2024	Fed	57.0	T20	oral clearance	rivaroxaban	plasma	HPLC MS/MS	NA	NA	10.73	NA	NA	NA	0.29	NA	NA	ml/h	NA
+Santos2024	Fed	57.0	R20	cmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	299.92	NA	NA	NA	7.7	NA	NA	ng/ml	NA
+Santos2024	Fed	57.0	R20	auc_end	rivaroxaban	plasma	HPLC MS/MS	48.0	hr	1888.29	NA	NA	NA	49.99	NA	NA	ng/ml*hr	NA
+Santos2024	Fed	57.0	R20	auc_inf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	1932.85	NA	NA	NA	50.24	NA	NA	ng/ml*hr	NA
+Santos2024	Fed	57.0	R20	tmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	3.1	NA	NA	NA	0.12	NA	NA	hr	NA
+Santos2024	Fed	57.0	R20	thalf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	10.11	NA	NA	NA	0.48	NA	NA	hr	NA
+Santos2024	Fed	57.0	R20	vd	rivaroxaban	plasma	HPLC MS/MS	NA	NA	158.95	NA	NA	NA	7.79	NA	NA	l	NA
+Santos2024	Fed	57.0	R20	oral clearance	rivaroxaban	plasma	HPLC MS/MS	NA	NA	11.19	NA	NA	NA	0.31	NA	NA	ml/h	NA

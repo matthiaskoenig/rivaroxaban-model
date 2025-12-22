@@ -1,0 +1,39 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+Moore2014	all	29.0	NA	species	29.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	all	29.0	NA	healthy	29.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	all	29.0	NA	medication	29.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	all	29.0	NA	sex	8.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	all	29.0	NA	sex	21.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	NRF	8.0	all	species	8.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	NRF	8.0	all	healthy	8.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	NRF	8.0	all	estimated clearance	8.0	NA	NA	99.5	NA	12.6	NA	NA	NA	ml/min	NA
+Moore2014	NRF	8.0	all	age	8.0	NA	NA	61.0	61.0	5.0	NA	55.0	69.0	yr	NA
+Moore2014	NRF	8.0	all	sex	2.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	NRF	8.0	all	sex	6.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	NRF	8.0	all	ethnicity	7.0	NA	caucasian	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	NRF	8.0	all	ethnicity	1.0	NA	african american	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	NRF	8.0	all	weight	8.0	NA	NA	75.5	NA	10.6	NA	NA	NA	kg	NA
+Moore2014	NRF	8.0	all	height	8.0	NA	NA	164.5	NA	5.7	NA	NA	NA	cm	NA
+Moore2014	NRF	8.0	all	bmi	8.0	NA	NA	27.9	NA	3.6	NA	NA	NA	kg/m^2	NA
+Moore2014	mildRI	12.0	all	species	12.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	mildRI	12.0	all	healthy	12.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	mildRI	12.0	all	estimated clearance	12.0	NA	NA	67.1	NA	9.4	NA	NA	NA	ml/min	NA
+Moore2014	mildRI	12.0	all	age	12.0	NA	NA	64.0	67.5	10.0	NA	46.0	75.0	yr	NA
+Moore2014	mildRI	12.0	all	sex	3.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	mildRI	12.0	all	sex	9.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	mildRI	12.0	all	ethnicity	9.0	NA	caucasian	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	mildRI	12.0	all	ethnicity	3.0	NA	african american	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	mildRI	12.0	all	weight	12.0	NA	NA	76.7	NA	15.9	NA	NA	NA	kg	NA
+Moore2014	mildRI	12.0	all	height	12.0	NA	NA	165.3	NA	8.3	NA	NA	NA	cm	NA
+Moore2014	mildRI	12.0	all	bmi	12.0	NA	NA	27.9	NA	4.0	NA	NA	NA	kg/m^2	NA
+Moore2014	moderateRI	9.0	all	species	9.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	moderateRI	9.0	all	healthy	9.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	moderateRI	9.0	all	estimated clearance	9.0	NA	NA	42.5	NA	4.4	NA	NA	NA	ml/min	NA
+Moore2014	moderateRI	9.0	all	age	9.0	NA	NA	63.0	68.0	10.0	NA	46.0	71.0	yr	NA
+Moore2014	moderateRI	9.0	all	sex	3.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	moderateRI	9.0	all	sex	6.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	moderateRI	9.0	all	ethnicity	7.0	NA	caucasian	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	moderateRI	9.0	all	ethnicity	2.0	NA	african american	NA	NA	NA	NA	NA	NA	NA	NA
+Moore2014	moderateRI	9.0	all	weight	9.0	NA	NA	84.8	NA	19.8	NA	NA	NA	kg	NA
+Moore2014	moderateRI	9.0	all	height	9.0	NA	NA	163.1	NA	9.0	NA	NA	NA	cm	NA
+Moore2014	moderateRI	9.0	all	bmi	9.0	NA	NA	31.7	NA	5.9	NA	NA	NA	kg/m^2	NA

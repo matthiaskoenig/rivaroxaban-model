@@ -1,0 +1,10 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Alalawneh2024		morbidly-obese	6.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_morbidly-obese	0.0	hr		0.0	0.0	0.0	0.0		mole/meter^3	ng/ml
+Alalawneh2024		morbidly-obese	6.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_morbidly-obese	0.983667777072759	hr		0.0002912570546939525	307.6171875	0.000414481193218317	0.0001692112385608		mole/meter^3	ng/ml
+Alalawneh2024		morbidly-obese	6.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_morbidly-obese	2.00261408100677	hr		0.00039207680439570526	331.0546875	0.00036743197669083236	0.00015000347634579035		mole/meter^3	ng/ml
+Alalawneh2024		morbidly-obese	6.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_morbidly-obese	3.99952741645516	hr		0.0006295633259153896	390.625	0.00026661222698907955	0.00010884398588505506		mole/meter^3	ng/ml
+Alalawneh2024		morbidly-obese	6.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_morbidly-obese	8.05548395198816	hr		0.0004951369929797193	297.8515625	0.00018819686610993853	7.683104886003902e-05		mole/meter^3	ng/ml
+Alalawneh2024		morbidly-obese	6.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_morbidly-obese	12.0236985776227	hr		0.00027557398251812425	160.15625	9.185799417270809e-05	3.750086908644765e-05		mole/meter^3	ng/ml
+Alalawneh2024		morbidly-obese	6.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_morbidly-obese	18.0253443580795	hr		0.00013666677181793156	90.8203125	7.169404423235753e-05	2.92689709943005e-05		mole/meter^3	ng/ml
+Alalawneh2024		morbidly-obese	6.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_morbidly-obese	36.0414353320643	hr		2.240438882261173e-05	15.6249999999999	1.3442633293566899e-05	5.4879320614312894e-06		mole/meter^3	ng/ml
+Alalawneh2024		morbidly-obese	6.0	RIV20	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_morbidly-obese	48.0543107550761	hr		4.480877764522346e-06	1.953125	0.0	0.0		mole/meter^3	ng/ml

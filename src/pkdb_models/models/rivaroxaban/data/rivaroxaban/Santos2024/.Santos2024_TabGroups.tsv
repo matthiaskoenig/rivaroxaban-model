@@ -1,0 +1,19 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+Santos2024	all	117.0	NA	species	117.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Santos2024	all	117.0	NA	healthy	117.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Santos2024	all	117.0	NA	pregnant	117.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Santos2024	all	117.0	NA	smoking	117.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Santos2024	all	117.0	NA	medication	117.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Santos2024	all	117.0	NA	sex	59.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Santos2024	all	117.0	NA	sex	58.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Santos2024	Fasting	60.0	all	sex	30.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Santos2024	Fasting	60.0	all	sex	30.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Santos2024	Fasting	60.0	all	age	60.0	NA	NA	30.55	NA	7.59	NA	NA	NA	yr	NA
+Santos2024	Fasting	60.0	all	weight	60.0	NA	NA	68.51	NA	10.22	NA	NA	NA	kg	NA
+Santos2024	Fasting	60.0	all	height	60.0	NA	NA	1.67	NA	0.11	NA	NA	NA	m	NA
+Santos2024	Fed	57.0	all	sex	29.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Santos2024	Fed	57.0	all	sex	28.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Santos2024	Fed	57.0	all	age	57.0	NA	NA	32.37	NA	8.16	NA	NA	NA	yr	NA
+Santos2024	Fed	57.0	all	weight	57.0	NA	NA	70.25	NA	12.16	NA	NA	NA	kg	NA
+Santos2024	Fed	57.0	all	height	57.0	NA	NA	1.68	NA	0.1	NA	NA	NA	m	NA
+Santos2024	Fed	57.0	all	bmi	57.0	NA	NA	24.89	NA	2.91	NA	NA	NA	kg/m^2	NA

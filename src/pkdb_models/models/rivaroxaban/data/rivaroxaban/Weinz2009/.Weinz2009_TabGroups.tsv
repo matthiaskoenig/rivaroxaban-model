@@ -1,0 +1,10 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+Weinz2009	all	4	NA	species	4	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	One co-hort, two tablets, 7 days washout period
+Weinz2009	all	4	NA	healthy	4	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Weinz2009	all	4	NA	ethnicity	4	NA	caucasian	NA	NA	NA	NA	NA	NA	NA	NA
+Weinz2009	all	4	NA	smoking	4	NA	NR	NA	NA	NA	NA	NA	NA	NA	NA
+Weinz2009	all	4	NA	medication	4	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Weinz2009	all	4	NA	sex	4	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Weinz2009	all	4	NA	age	4	NA	NA	NA	NA	NA	NA	30.0	54.0	yr	NA
+Weinz2009	all	4	NA	bmi	4	NA	NA	NA	NA	NA	NA	20.0	27.0	kg/m^2	NA
+Weinz2009	all	4	NA	overnight fast	4	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA

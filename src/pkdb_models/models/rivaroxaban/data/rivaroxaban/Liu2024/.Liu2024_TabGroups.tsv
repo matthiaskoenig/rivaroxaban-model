@@ -1,0 +1,35 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+Liu2024	all	304.0	NA	species	304.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	all	304.0	NA	healthy	304.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	all	304.0	NA	sex	203.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	all	304.0	NA	sex	101.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fasted_20	25.0	all	species	25.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fasted_20	25.0	all	sex	14.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fasted_20	25.0	all	sex	11.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fasted_20	25.0	all	age	25.0	NA	NA	26.4	NA	6.5	NA	NA	NA	yr	NA
+Liu2024	fasted_20	25.0	all	bmi	25.0	NA	NA	22.0	NA	2.1	NA	NA	NA	kg/m^2	NA
+Liu2024	fed_20	22.0	all	species	22.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fed_20	22.0	all	sex	17.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fed_20	22.0	all	sex	5.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fed_20	22.0	all	age	22.0	NA	NA	24.9	NA	6.5	NA	NA	NA	yr	NA
+Liu2024	fed_20	22.0	all	bmi	22.0	NA	NA	22.0	NA	1.9	NA	NA	NA	kg/m^2	NA
+Liu2024	fasted_15	36.0	all	species	36.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fasted_15	36.0	all	sex	31.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fasted_15	36.0	all	sex	5.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fasted_15	36.0	all	age	36.0	NA	NA	25.8	NA	5.0	NA	NA	NA	yr	NA
+Liu2024	fasted_15	36.0	all	bmi	36.0	NA	NA	22.6	NA	1.7	NA	NA	NA	kg/m^2	NA
+Liu2024	fed_15	36.0	all	species	36.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fed_15	36.0	all	sex	31.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fed_15	36.0	all	sex	5.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fed_15	36.0	all	age	36.0	NA	NA	29.7	NA	6.3	NA	NA	NA	yr	NA
+Liu2024	fed_15	36.0	all	bmi	36.0	NA	NA	22.8	NA	2.0	NA	NA	NA	kg/m^2	NA
+Liu2024	fasted_10	106.0	all	species	106.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fasted_10	106.0	all	sex	60.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fasted_10	106.0	all	sex	46.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fasted_10	106.0	all	age	106.0	NA	NA	35.8	NA	9.4	NA	NA	NA	yr	NA
+Liu2024	fasted_10	106.0	all	bmi	106.0	NA	NA	23.0	NA	1.7	NA	NA	NA	kg/m^2	NA
+Liu2024	fed_10	79.0	all	species	79.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fed_10	79.0	all	sex	50.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fed_10	79.0	all	sex	29.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Liu2024	fed_10	79.0	all	age	79.0	NA	NA	32.5	NA	8.0	NA	NA	NA	yr	NA
+Liu2024	fed_10	79.0	all	bmi	79.0	NA	NA	23.0	NA	2.0	NA	NA	NA	kg/m^2	NA

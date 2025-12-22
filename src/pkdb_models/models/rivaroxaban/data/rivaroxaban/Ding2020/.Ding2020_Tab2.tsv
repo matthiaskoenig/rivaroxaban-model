@@ -1,0 +1,11 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	median	min	max	sd	se	cv	unit	comments
+Ding2020	Fasting	28.0	T10	tmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	NA	2.0	0.5	4.5	NA	NA	45.3	hr	NA
+Ding2020	Fasting	28.0	T10	cmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	127.0	NA	NA	NA	51.0	NA	40.1	ng/ml	NA
+Ding2020	Fasting	28.0	T10	auc_end	rivaroxaban	plasma	HPLC MS/MS	48.0	hr	812.0	NA	NA	NA	283.0	NA	34.8	ng/ml*hr	NA
+Ding2020	Fasting	28.0	T10	auc_inf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	834.0	NA	NA	NA	289.0	NA	34.7	ng/ml*hr	NA
+Ding2020	Fasting	28.0	T10	thalf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	7.6	NA	NA	NA	2.6	NA	33.7	hr	NA
+Ding2020	Fasting	28.0	R10	tmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	NA	2.0	1.0	4.5	NA	NA	46.9	hr	NA
+Ding2020	Fasting	28.0	R10	cmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	126.0	NA	NA	NA	41.0	NA	32.1	ng/ml	NA
+Ding2020	Fasting	28.0	R10	auc_end	rivaroxaban	plasma	HPLC MS/MS	48.0	hr	829.0	NA	NA	NA	261.0	NA	31.4	ng/ml*hr	NA
+Ding2020	Fasting	28.0	R10	auc_inf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	856.0	NA	NA	NA	261.0	NA	30.4	ng/ml*hr	NA
+Ding2020	Fasting	28.0	R10	thalf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	8.5	NA	NA	NA	4.2	NA	48.8	hr	NA

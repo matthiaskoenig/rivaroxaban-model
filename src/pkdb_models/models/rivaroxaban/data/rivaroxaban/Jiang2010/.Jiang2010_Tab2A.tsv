@@ -1,0 +1,21 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	mean	cv	median	min	max	sd	se	unit	comments
+Jiang2010	T5	12.0	T5	recovery	rivaroxaban	urine	HPLC MS	rivaroxaban_recovery_T5	0.0	hr	0.0	NA	NA	NA	NA	NA	NA	percent	NA
+Jiang2010	T5	12.0	T5	recovery	rivaroxaban	urine	HPLC MS	rivaroxaban_recovery_T5	48.0	hr	34.4	9.7	NA	NA	NA	3.3368	NA	percent	NA
+Jiang2010	T10	11.0	T10	recovery	rivaroxaban	urine	HPLC MS	rivaroxaban_recovery_T10	0.0	hr	0.0	NA	NA	NA	NA	NA	NA	percent	NA
+Jiang2010	T10	11.0	T10	recovery	rivaroxaban	urine	HPLC MS	rivaroxaban_recovery_T10	48.0	hr	30.1	6.8	NA	NA	NA	2.0468	NA	percent	NA
+Jiang2010	T20	12.0	T20	recovery	rivaroxaban	urine	HPLC MS	rivaroxaban_recovery_T20	0.0	hr	0.0	NA	NA	NA	NA	NA	NA	percent	NA
+Jiang2010	T20	12.0	T20	recovery	rivaroxaban	urine	HPLC MS	rivaroxaban_recovery_T20	48.0	hr	29.4	7.8	NA	NA	NA	2.2932	NA	percent	NA
+Jiang2010	T30	12.0	T30	recovery	rivaroxaban	urine	HPLC MS	rivaroxaban_recovery_T30	0.0	hr	0.0	NA	NA	NA	NA	NA	NA	percent	NA
+Jiang2010	T30	12.0	T30	recovery	rivaroxaban	urine	HPLC MS	rivaroxaban_recovery_T30	48.0	hr	32.2	3.9	NA	NA	NA	1.2558	NA	percent	NA
+Jiang2010	T40	10.0	T40	recovery	rivaroxaban	urine	HPLC MS	rivaroxaban_recovery_T40	0.0	hr	0.0	NA	NA	NA	NA	NA	NA	percent	NA
+Jiang2010	T40	10.0	T40	recovery	rivaroxaban	urine	HPLC MS	rivaroxaban_recovery_T40	48.0	hr	26.9	5.5	NA	NA	NA	1.4795	NA	percent	NA
+Jiang2010	T5	12.0	T5	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_T5	0.0	hr	0.0	NA	NA	NA	NA	NA	NA	mg	NA
+Jiang2010	T5	12.0	T5	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_T5	48.0	hr	1.72	0.485	NA	NA	NA	0.16684	NA	mg	NA
+Jiang2010	T10	11.0	T10	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_T10	0.0	hr	0.0	NA	NA	NA	NA	NA	NA	mg	NA
+Jiang2010	T10	11.0	T10	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_T10	48.0	hr	3.01	0.68	NA	NA	NA	0.20468	NA	mg	NA
+Jiang2010	T20	12.0	T20	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_T20	0.0	hr	0.0	NA	NA	NA	NA	NA	NA	mg	NA
+Jiang2010	T20	12.0	T20	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_T20	48.0	hr	5.88	1.56	NA	NA	NA	0.45864	NA	mg	NA
+Jiang2010	T30	12.0	T30	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_T30	0.0	hr	0.0	NA	NA	NA	NA	NA	NA	mg	NA
+Jiang2010	T30	12.0	T30	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_T30	48.0	hr	9.66	1.17	NA	NA	NA	0.37674	NA	mg	NA
+Jiang2010	T40	10.0	T40	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_T40	0.0	hr	0.0	NA	NA	NA	NA	NA	NA	mg	NA
+Jiang2010	T40	10.0	T40	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_T40	48.0	hr	10.76	2.2	NA	NA	NA	0.5918	NA	mg	NA

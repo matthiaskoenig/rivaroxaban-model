@@ -1,0 +1,29 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	se	sd	unit	comments
+Greenblatt2018	NA	NRF	13.0	RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF	0.0	hr	NA	0.0	NA	NA	NA	mg	NA
+Greenblatt2018	NA	NRF	13.0	RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF	3.97989949748744	hr	NA	1.92242245711315	2.56377577542887	0.177879405759716	0.64135331831572	mg	NA
+Greenblatt2018	NA	NRF	13.0	RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF	7.95979899497488	hr	NA	3.65920984231502	4.79711488476867	0.315598075167358	1.13790504245365	mg	NA
+Greenblatt2018	NA	NRF	13.0	RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF	12.0	hr	NA	4.48562640790158	5.83042800207936	0.372980854087208	1.34480159417778	mg	NA
+Greenblatt2018	NA	NRF	13.0	RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF	24.0	hr	NA	5.47527291630567	6.8615058048865	0.384471827654826	1.38623288858083	mg	NA
+Greenblatt2018	NA	NRF	13.0	RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF	48.0	hr	NA	6.0270057182464	7.41321261479813	0.384464618763005	1.38620689655173	mg	NA
+Greenblatt2018	NA	NRF	13.0	RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF	72.0	hr	NA	6.10287645122162	7.50979899497487	0.390210105546813	1.40692254375325	mg	NA
+Greenblatt2018	NA	NRF	10.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF_VER	0.0	hr	NA	0.0	NA	NA	NA	mg	NA
+Greenblatt2018	NA	NRF	10.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF_VER	3.97989949748744	hr	NA	2.4396638364235	2.97759487090626	0.17010872930561	0.53793103448276	mg	NA
+Greenblatt2018	NA	NRF	10.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF_VER	7.95979899497488	hr	NA	5.27297695373419	6.26610639403916	0.314055104273193	0.99312944030497	mg	NA
+Greenblatt2018	NA	NRF	10.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF_VER	12.0	hr	NA	6.65801420897592	7.63047998613759	0.307520680239663	0.972465777161671	mg	NA
+Greenblatt2018	NA	NRF	10.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF_VER	24.0	hr	NA	8.16492808871946	9.24079015768498	0.34021745861122	1.07586206896552	mg	NA
+Greenblatt2018	NA	NRF	10.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF_VER	48.0	hr	NA	9.19254895165483	10.1235314503552	0.294402515764792	0.93098249870037	mg	NA
+Greenblatt2018	NA	NRF	10.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_NRF_VER	72.0	hr	NA	9.45460058915266	10.3855830878531	0.294402515764814	0.930982498700439	mg	NA
+Greenblatt2018	NA	MRI	14.0	RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_MRI	0.0	hr	NA	0.0	NA	NA	NA	mg	NA
+Greenblatt2018	NA	MRI	14.0	RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_MRI	3.98	hr	NA	1.92242245711315	2.6051550857737	0.182467970229953	0.68273262866055	mg	NA
+Greenblatt2018	NA	MRI	14.0	RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_MRI	7.96	hr	NA	3.30748570438399	4.75576156645295	0.387068005528337	1.44827586206896	mg	NA
+Greenblatt2018	NA	MRI	14.0	RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_MRI	12.0	hr	NA	4.21663489863109	5.80979033096517	0.425788699405131	1.59315543233408	mg	NA
+Greenblatt2018	NA	MRI	14.0	RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_MRI	24.0	hr	NA	5.28906601975394	6.8615058048865	0.420252209807034	1.57243978513256	mg	NA
+Greenblatt2018	NA	MRI	14.0	RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_MRI	48.0	hr	NA	6.10981632299428	7.41321261479813	0.348347311651546	1.30339629180385	mg	NA
+Greenblatt2018	NA	MRI	14.0	RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_MRI	72.0	hr	NA	6.22704037428522	7.48908334777335	0.337295172441286	1.26204297348813	mg	NA
+Greenblatt2018	NA	MRI	11.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_MRI_VER	0.0	hr	NA	0.0	NA	NA	NA	mg	NA
+Greenblatt2018	NA	MRI	11.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_MRI_VER	3.97989949748744	hr	NA	2.17069831918212	2.77069831918212	0.180906806746658	0.6	mg	NA
+Greenblatt2018	NA	MRI	11.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_MRI_VER	7.95979899497488	hr	NA	4.09369260093571	5.31433027204991	0.368036105459912	1.2206376711142	mg	NA
+Greenblatt2018	NA	MRI	11.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_MRI_VER	12.0	hr	NA	5.23047998613758	6.67872985617744	0.436663765600289	1.44824987003986	mg	NA
+Greenblatt2018	NA	MRI	11.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_MRI_VER	24.0	hr	NA	6.84081614971409	8.55808352105355	0.517775594132082	1.71726737133946	mg	NA
+Greenblatt2018	NA	MRI	11.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_MRI_VER	48.0	hr	NA	8.13735054583261	9.95806619303414	0.548966422881506	1.82071564720153	mg	NA
+Greenblatt2018	NA	MRI	11.0	VER120, VER240, VER360, RIV20	cumulative amount	rivaroxaban	urine	NR	rivaroxaban_urine_MRI_VER	72.0	hr	NA	8.50287645122162	10.3235401143649	0.548950749098206	1.82066366314328	mg	NA

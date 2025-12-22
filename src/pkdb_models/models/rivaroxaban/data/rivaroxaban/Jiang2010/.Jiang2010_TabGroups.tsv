@@ -1,0 +1,66 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+Jiang2010	all	79.0	NA	species	79.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	all	79.0	NA	healthy	79.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	all	79.0	NA	ethnicity	79.0	NA	chinese	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	all	79.0	NA	pregnant	79.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	all	79.0	NA	smoking	79.0	NA	NR	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	all	79.0	NA	medication	79.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	all	79.0	NA	sex	40.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	all	79.0	NA	sex	39.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	all	79.0	NA	age	79.0	NA	NA	62.8	NA	NA	NA	59.0	74.0	yr	NA
+Jiang2010	all	79.0	NA	weight	79.0	NA	NA	61.6	NA	NA	NA	44.0	81.0	kg	NA
+Jiang2010	all	79.0	NA	bmi	79.0	NA	NA	23.1	NA	NA	NA	19.0	28.0	kg/m^2	NA
+Jiang2010	all	79.0	NA	fasting	79.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	all	79.0	NA	overnight fast	79.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	P	19.0	all	species	19.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	P	19.0	all	sex	11.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	P	19.0	all	sex	8.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	P	19.0	all	age	19.0	NA	NA	62.3	NA	NA	NA	59.0	69.0	yr	NA
+Jiang2010	P	19.0	all	weight	19.0	NA	NA	62.1	NA	NA	NA	45.0	81.0	kg	NA
+Jiang2010	P	19.0	all	bmi	19.0	NA	NA	23.1	NA	NA	NA	19.3	27.9	kg/m^2	NA
+Jiang2010	T5	12.0	all	species	12.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T5	12.0	all	sex	5.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T5	12.0	all	sex	7.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T5	12.0	all	age	12.0	NA	NA	61.7	NA	NA	NA	60.0	65.0	yr	NA
+Jiang2010	T5	12.0	all	weight	12.0	NA	NA	62.5	NA	NA	NA	50.0	73.0	kg	NA
+Jiang2010	T5	12.0	all	bmi	12.0	NA	NA	24.0	NA	NA	NA	21.9	27.2	kg/m^2	NA
+Jiang2010	T10	11.0	all	species	11.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T10	11.0	all	sex	6.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T10	11.0	all	sex	5.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T10	11.0	all	age	11.0	NA	NA	63.5	NA	NA	NA	60.0	73.0	yr	NA
+Jiang2010	T10	11.0	all	weight	11.0	NA	NA	59.2	NA	NA	NA	44.0	71.0	kg	NA
+Jiang2010	T10	11.0	all	bmi	11.0	NA	NA	21.9	NA	NA	NA	19.0	25.5	kg/m^2	NA
+Jiang2010	T20	12.0	all	species	12.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T20	12.0	all	sex	6.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T20	12.0	all	sex	6.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T20	12.0	all	age	12.0	NA	NA	64.7	NA	NA	NA	61.0	74.0	yr	NA
+Jiang2010	T20	12.0	all	weight	12.0	NA	NA	60.5	NA	NA	NA	49.0	73.0	kg	NA
+Jiang2010	T20	12.0	all	bmi	12.0	NA	NA	22.1	NA	NA	NA	19.1	25.8	kg/m^2	NA
+Jiang2010	T30	12.0	all	species	12.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T30	12.0	all	sex	6.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T30	12.0	all	sex	6.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T30	12.0	all	age	12.0	NA	NA	62.2	NA	NA	NA	60.0	72.0	yr	NA
+Jiang2010	T30	12.0	all	weight	12.0	NA	NA	62.2	NA	NA	NA	48.0	71.0	kg	NA
+Jiang2010	T30	12.0	all	bmi	12.0	NA	NA	23.3	NA	NA	NA	21.0	25.3	kg/m^2	NA
+Jiang2010	T40	10.0	all	species	10.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T40	10.0	all	sex	5.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T40	10.0	all	sex	5.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T40	10.0	all	age	10.0	NA	NA	62.9	NA	NA	NA	60.0	70.0	yr	NA
+Jiang2010	T40	10.0	all	weight	10.0	NA	NA	63.5	NA	NA	NA	45.0	76.0	kg	NA
+Jiang2010	T40	10.0	all	bmi	10.0	NA	NA	24.5	NA	NA	NA	20.5	28.0	kg/m^2	NA
+Jiang2010	PM	11.0	P	species	11.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	PM	11.0	P	sex	11.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	PF	8.0	P	species	8.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	PF	8.0	P	sex	8.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T5M	5.0	T5	species	5.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T5M	5.0	T5	sex	5.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T5F	7.0	T5	species	7.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T5F	7.0	T5	sex	7.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T10M	6.0	T10	species	6.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T10M	6.0	T10	sex	6.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T10F	5.0	T10	species	5.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T10F	5.0	T10	sex	5.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T30M	6.0	T30	species	6.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T30M	6.0	T30	sex	6.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T30F	6.0	T30	species	6.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Jiang2010	T30F	6.0	T30	sex	6.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA

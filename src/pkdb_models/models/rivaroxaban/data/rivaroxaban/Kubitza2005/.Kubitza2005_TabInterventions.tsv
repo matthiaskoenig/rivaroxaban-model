@@ -1,0 +1,11 @@
+study	name	time	time_end	time_unit	route	application	measurement_type	form	substance	value	unit	comments
+Kubitza2005	OD5	0|72|96|120|144|168	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	5.0	mg	"Tablet; 1*1.25; 5 mg once (od), twice (bid), or three times daily
+(tid); 10 mg bid; 20 mg bid; or 30 mg bid—or matching
+placebo on days 0 and 3–7.
+"
+Kubitza2005	TID5	0|8|16|72|80|88|96|104|112|120|128|136|144|152|160|168	NA	hr	oral	multiple dose	dosing	tablet	rivaroxaban	5.0	mg	Tablet; 2*5
+Kubitza2005	BID5	0|12|72|84|96|108|120|132|144|156|168	NA	hr	oral	multiple dose	dosing	tablet	rivaroxaban	5.0	mg	Tablet; 1*5
+Kubitza2005	BID10	0|12|72|84|96|108|120|132|144|156|168	NA	hr	oral	multiple dose	dosing	tablet	rivaroxaban	10.0	mg	Tablet; 3*5
+Kubitza2005	BID20	0|12|72|84|96|108|120|132|144|156|168	NA	hr	oral	multiple dose	dosing	tablet	rivaroxaban	20.0	mg	Tablet; 4*5
+Kubitza2005	BID30	0|12|72|84|96|108|120|132|144|156|168	NA	hr	oral	multiple dose	dosing	tablet	rivaroxaban	30.0	mg	Tablet; 6*5
+Kubitza2005	P	0	NA	hr	oral	single dose	dosing	tablet	placebo	0.0	mg	placebo

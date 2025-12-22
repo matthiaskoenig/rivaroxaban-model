@@ -1,0 +1,17 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	median	min	max	sd	se	cv	unit	comments
+Greenblatt2018	NRF	13.0	RIV20	cmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	272.0	NA	NA	NA	72.0	NA	NA	ng/ml	NA
+Greenblatt2018	NRF	13.0	RIV20	auc_end	rivaroxaban	plasma	HPLC MS/MS	48.0	hr	2644.0	NA	NA	NA	572.0	NA	NA	ng/ml*hr	NA
+Greenblatt2018	NRF	13.0	RIV20	thalf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	8.4	NA	NA	NA	2.6	NA	NA	hr	NA
+Greenblatt2018	NRF	13.0	RIV20	clearance	rivaroxaban	plasma	HPLC MS/MS	NA	NA	132.0	NA	NA	NA	31.0	NA	NA	ml/min	NA
+Greenblatt2018	NRF	10.0	VER120, VER240, VER360, RIV20	cmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	288.0	NA	NA	NA	77.0	NA	NA	ng/ml	NA
+Greenblatt2018	NRF	10.0	VER120, VER240, VER360, RIV20	auc_end	rivaroxaban	plasma	HPLC MS/MS	48.0	hr	3670.0	NA	NA	NA	732.0	NA	NA	ng/ml*hr	NA
+Greenblatt2018	NRF	10.0	VER120, VER240, VER360, RIV20	thalf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	9.9	NA	NA	NA	2.9	NA	NA	hr	NA
+Greenblatt2018	NRF	10.0	VER120, VER240, VER360, RIV20	clearance	rivaroxaban	plasma	HPLC MS/MS	NA	NA	95.0	NA	NA	NA	21.0	NA	NA	ml/min	NA
+Greenblatt2018	MRI	14.0	RIV20	cmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	262.0	NA	NA	NA	75.0	NA	NA	ng/ml	NA
+Greenblatt2018	MRI	14.0	RIV20	auc_end	rivaroxaban	plasma	HPLC MS/MS	48.0	hr	2998.0	NA	NA	NA	865.0	NA	NA	ng/ml*hr	NA
+Greenblatt2018	MRI	14.0	RIV20	thalf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	10.4	NA	NA	NA	4.4	NA	NA	hr	NA
+Greenblatt2018	MRI	14.0	RIV20	clearance	rivaroxaban	plasma	HPLC MS/MS	NA	NA	123.0	NA	NA	NA	52.0	NA	NA	ml/min	NA
+Greenblatt2018	MRI	11.0	VER120, VER240, VER360, RIV20	cmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	277.0	NA	NA	NA	80.0	NA	NA	ng/ml	NA
+Greenblatt2018	MRI	11.0	VER120, VER240, VER360, RIV20	auc_end	rivaroxaban	plasma	HPLC MS/MS	48.0	hr	4246.0	NA	NA	NA	1244.0	NA	NA	ng/ml*hr	NA
+Greenblatt2018	MRI	11.0	VER120, VER240, VER360, RIV20	thalf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	14.9	NA	NA	NA	4.5	NA	NA	hr	NA
+Greenblatt2018	MRI	11.0	VER120, VER240, VER360, RIV20	clearance	rivaroxaban	plasma	HPLC MS/MS	NA	NA	84.0	NA	NA	NA	22.0	NA	NA	ml/min	NA

@@ -1,0 +1,17 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	median	min	max	sd	se	cv	unit	comments
+Alalawneh2024	obese	18.0	RIV20	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	339.7	NA	NA	NA	84.2	NA	NA	ng/ml	NA
+Alalawneh2024	obese	18.0	RIV20	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	4.0	NA	2.0	4.0	NA	NA	NA	hr	NA
+Alalawneh2024	obese	18.0	RIV20	auc_end	rivaroxaban	plasma	HPLC MS	48.0	hr	3339.2	NA	NA	NA	872.9	NA	NA	ng/ml*hr	NA
+Alalawneh2024	obese	18.0	RIV20	auc_inf	rivaroxaban	plasma	HPLC MS	NA	NA	3481.1	NA	NA	NA	809.2	NA	NA	ng/ml*hr	NA
+Alalawneh2024	obese	18.0	RIV20	kel	rivaroxaban	plasma	HPLC MS	NA	NA	0.1	NA	0.09	0.13	NA	NA	NA	1/hr	NA
+Alalawneh2024	obese	18.0	RIV20	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	6.61	NA	NA	NA	1.4	NA	NA	hr	NA
+Alalawneh2024	obese	18.0	RIV20	vd	rivaroxaban	plasma	HPLC MS	NA	NA	60.38	NA	45.9	63.5	NA	NA	NA	l	NA
+Alalawneh2024	obese	18.0	RIV20	oral-clearance	rivaroxaban	plasma	HPLC MS	NA	NA	6.04	NA	NA	NA	1.38	NA	NA	l/hr	NA
+Alalawneh2024	non-obese	18.0	RIV20	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	392.9	NA	NA	NA	78.9	NA	NA	ng/ml	NA
+Alalawneh2024	non-obese	18.0	RIV20	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	2.0	NA	2.0	4.0	NA	NA	NA	hr	NA
+Alalawneh2024	non-obese	18.0	RIV20	auc_end	rivaroxaban	plasma	HPLC MS	48.0	hr	3534.5	NA	NA	NA	805.3	NA	NA	ng/ml*hr	NA
+Alalawneh2024	non-obese	18.0	RIV20	auc_inf	rivaroxaban	plasma	HPLC MS	NA	NA	3595.3	NA	NA	NA	805.7	NA	NA	ng/ml*hr	NA
+Alalawneh2024	non-obese	18.0	RIV20	kel	rivaroxaban	plasma	HPLC MS	NA	NA	0.11	NA	0.08	0.12	NA	NA	NA	1/hr	NA
+Alalawneh2024	non-obese	18.0	RIV20	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	7.2	NA	NA	NA	1.77	NA	NA	hr	NA
+Alalawneh2024	non-obese	18.0	RIV20	vd	rivaroxaban	plasma	HPLC MS	NA	NA	56.88	NA	45.3	72.3	NA	NA	NA	l	NA
+Alalawneh2024	non-obese	18.0	RIV20	oral-clearance	rivaroxaban	plasma	HPLC MS	NA	NA	5.812	NA	NA	NA	1.22	NA	NA	l/hr	NA

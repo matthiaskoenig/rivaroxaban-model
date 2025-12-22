@@ -1,0 +1,61 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	sd	se	unit	comments
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	urine	scintillation counting	recovery_riv_rx_urine	0.0	day	NA	0.749310500046008	1.1243387888178	0.375028288771792	0.187514144385896	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	urine	scintillation counting	recovery_riv_rx_urine	0.161219886447005	day	NA	34.2655986152802	41.7562166907484	7.49061807546821	3.7453090377341	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	urine	scintillation counting	recovery_riv_rx_urine	0.32092523557397	day	NA	52.2388542239177	58.0438345399064	5.8049803159887	2.90249015799435	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	urine	scintillation counting	recovery_riv_rx_urine	0.49814351049358	day	NA	58.6011544305812	63.0957739683613	4.4946195377801	2.24730976889005	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	urine	scintillation counting	recovery_riv_rx_urine	1.0	day	NA	63.6436435440671	67.0141729855286	3.3705294414615	1.68526472073075	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	urine	scintillation counting	recovery_riv_rx_urine	2.0	day	NA	65.8639701767955	67.9243875325476	2.06041735575209	1.03020867787605	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	urine	scintillation counting	recovery_riv_rx_urine	3.0	day	NA	66.0243768387701	67.8975287426356	1.87315190386551	0.936575951932753	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	urine	scintillation counting	recovery_riv_rx_urine	4.0	day	NA	65.9977667413573	67.8711673377219	1.8734005963646	0.936700298182302	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	urine	scintillation counting	recovery_riv_rx_urine	5.0	day	NA	66.1586707883303	68.0315739996966	1.87290321136631	0.936451605683153	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	urine	scintillation counting	recovery_riv_rx_urine	6.0	day	NA	65.9440491615332	67.8174497578978	1.8734005963646	0.936700298182302	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	urine	scintillation counting	recovery_riv_rx_urine	7.0	day	NA	66.1047045160071	67.6030768235999	1.4983723075928	0.749186153796401	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces	scintillation counting	recovery_riv_rx_feces	0.0	day	NA	0.562045048159291	1.31110685570611	0.749061807546819	0.37453090377341	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces	scintillation counting	recovery_riv_rx_feces	1.0	day	NA	5.40433669980078	15.1418915054103	9.73755480560952	4.86877740280476	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces	scintillation counting	recovery_riv_rx_feces	2.0	day	NA	18.1115286381848	28.7859080882262	10.6743794500414	5.3371897250207	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces	scintillation counting	recovery_riv_rx_feces	3.0	day	NA	25.0132428755816	31.1932514803421	6.1800086047605	3.09000430238025	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces	scintillation counting	recovery_riv_rx_feces	4.0	day	NA	27.6085977970818	31.1668900754284	3.5582922783466	1.7791461391733	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces	scintillation counting	recovery_riv_rx_feces	5.0	day	NA	27.9562699109432	31.5145621892898	3.5582922783466	1.7791461391733	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces	scintillation counting	recovery_riv_rx_feces	6.0	day	NA	28.1169252654171	32.0499971400363	3.9330718746192	1.9665359373096	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces	scintillation counting	recovery_riv_rx_feces	7.0	day	NA	28.4645973792784	32.022889657625	3.5582922783466	1.7791461391733	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces_urine	scintillation counting	recovery_riv_rx_feces_urine	0.0	day	NA	0.375276981270972	1.68563775947953	1.31036077820856	0.655180389104279	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces_urine	scintillation counting	recovery_riv_rx_feces_urine	0.17051601206656	day	NA	34.265349922781	41.9434821426351	7.6781322198541	3.83906610992705	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces_urine	scintillation counting	recovery_riv_rx_feces_urine	0.339500078338137	day	NA	52.0510913870327	58.2310999917931	6.1800086047604	3.0900043023802	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces_urine	scintillation counting	recovery_riv_rx_feces_urine	0.516753170207633	day	NA	58.7879224974695	62.7207456795895	3.93282318212	1.96641159106	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces_urine	scintillation counting	recovery_riv_rx_feces_urine	1.0	day	NA	69.0743416487815	80.1230033100972	11.0486616613157	5.52433083065785	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces_urine	scintillation counting	recovery_riv_rx_feces_urine	2.0	day	NA	83.467171346645	95.0776293636207	11.6104580169757	5.80522900848785	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces_urine	scintillation counting	recovery_riv_rx_feces_urine	3.0	day	NA	90.5561510359286	97.1109392369617	6.55478820103311	3.27739410051655	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces_urine	scintillation counting	recovery_riv_rx_feces_urine	4.0	day	NA	93.1512572649296	96.1477531876161	2.99649592268651	1.49824796134325	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces_urine	scintillation counting	recovery_riv_rx_feces_urine	5.0	day	NA	93.4991780712902	96.6829394458634	3.18376137457319	1.5918806872866	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces_urine	scintillation counting	recovery_riv_rx_feces_urine	6.0	day	NA	93.4725679738773	96.843346107838	3.3707781339607	1.68538906698035	percent	NA
+Weinz2009	NA	all	4.0	T10	recovery	rivaroxaban+metabolites	feces_urine	scintillation counting	recovery_riv_rx_feces_urine	7.0	day	NA	94.0075055396254	97.1910182216994	3.183512682074	1.591756341037	percent	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	urine	scintillation counting	riv_rx_urine	0.0	day	NA	0.0749310500046008	NA	0.0375028288771792	0.0187514144385896	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	urine	scintillation counting	riv_rx_urine	0.161219886447005	day	NA	3.42655986152802	NA	0.749061807546821	0.37453090377341	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	urine	scintillation counting	riv_rx_urine	0.32092523557397	day	NA	5.22388542239177	NA	0.58049803159887	0.290249015799435	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	urine	scintillation counting	riv_rx_urine	0.49814351049358	day	NA	5.86011544305812	NA	0.44946195377801	0.224730976889005	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	urine	scintillation counting	riv_rx_urine	1.0	day	NA	6.36436435440671	NA	0.33705294414615	0.168526472073075	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	urine	scintillation counting	riv_rx_urine	2.0	day	NA	6.58639701767955	NA	0.206041735575209	0.103020867787605	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	urine	scintillation counting	riv_rx_urine	3.0	day	NA	6.60243768387701	NA	0.187315190386551	0.0936575951932753	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	urine	scintillation counting	riv_rx_urine	4.0	day	NA	6.59977667413573	NA	0.18734005963646	0.0936700298182302	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	urine	scintillation counting	riv_rx_urine	5.0	day	NA	6.61586707883303	NA	0.187290321136631	0.0936451605683153	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	urine	scintillation counting	riv_rx_urine	6.0	day	NA	6.59440491615332	NA	0.18734005963646	0.0936700298182302	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	urine	scintillation counting	riv_rx_urine	7.0	day	NA	6.61047045160071	NA	0.14983723075928	0.0749186153796401	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces	scintillation counting	riv_rx_feces	0.0	day	NA	0.0562045048159291	NA	0.0749061807546819	0.037453090377341	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces	scintillation counting	riv_rx_feces	1.0	day	NA	0.540433669980078	NA	0.973755480560952	0.486877740280476	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces	scintillation counting	riv_rx_feces	2.0	day	NA	1.81115286381848	NA	1.06743794500414	0.53371897250207	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces	scintillation counting	riv_rx_feces	3.0	day	NA	2.50132428755816	NA	0.61800086047605	0.309000430238025	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces	scintillation counting	riv_rx_feces	4.0	day	NA	2.76085977970818	NA	0.35582922783466	0.17791461391733	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces	scintillation counting	riv_rx_feces	5.0	day	NA	2.79562699109432	NA	0.35582922783466	0.17791461391733	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces	scintillation counting	riv_rx_feces	6.0	day	NA	2.81169252654171	NA	0.39330718746192	0.19665359373096	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces	scintillation counting	riv_rx_feces	7.0	day	NA	2.84645973792784	NA	0.35582922783466	0.17791461391733	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	0.0	day	NA	0.0375276981270972	NA	0.131036077820856	0.0655180389104279	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	0.17051601206656	day	NA	3.4265349922781	NA	0.76781322198541	0.383906610992705	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	0.339500078338137	day	NA	5.20510913870327	NA	0.61800086047604	0.30900043023802	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	0.516753170207633	day	NA	5.87879224974695	NA	0.393282318212	0.196641159106	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	1.0	day	NA	6.90743416487815	NA	1.10486616613157	0.552433083065785	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	2.0	day	NA	8.3467171346645	NA	1.16104580169757	0.580522900848785	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	3.0	day	NA	9.05561510359286	NA	0.655478820103311	0.327739410051655	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	4.0	day	NA	9.31512572649296	NA	0.299649592268651	0.149824796134325	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	5.0	day	NA	9.34991780712902	NA	0.318376137457319	0.15918806872866	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	6.0	day	NA	9.34725679738773	NA	0.33707781339607	0.168538906698035	mg	NA
+Weinz2009	NA	all	4.0	T10	cumulative amount	rivaroxaban+metabolites	feces_urine	scintillation counting	riv_rx_feces_urine	7.0	day	NA	9.40075055396254	NA	0.3183512682074	0.1591756341037	mg	NA

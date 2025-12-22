@@ -1,0 +1,3 @@
+study	name	time	time_end	time_unit	route	application	measurement_type	form	substance	value	unit	comments
+Ding2020	T10	0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	10	mg	test formulation
+Ding2020	R10	0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	10	mg	reference formulation

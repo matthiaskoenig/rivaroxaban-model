@@ -1,0 +1,8 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+Graff2007	all	12.0	NA	species	12.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Graff2007	all	12.0	NA	healthy	12.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Graff2007	all	12.0	NA	sex	12.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Graff2007	all	12.0	NA	age	12.0	NA	NA	NA	NA	NA	NA	27.0	37.0	yr	NA
+Graff2007	all	12.0	NA	weight	12.0	NA	NA	NA	NA	NA	NA	66.0	90.0	kg	NA
+Graff2007	G1	8.0	all	species	8.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Graff2007	G2	4.0	all	species	4.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA

@@ -1,0 +1,73 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	sd	se	unit	comments	raw
+Liu2024	NA	fasted_20	25.0	fasted_20	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fasted_20	0.0	hr	NA	1.0	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_20	25.0	fasted_20	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fasted_20	3.0	hr	NA	1.51	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_20	25.0	fasted_20	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fasted_20	8.0	hr	NA	1.26	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_20	25.0	fasted_20	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fasted_20	12.0	hr	NA	1.24	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_20	22.0	fed_20	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fed_20	0.0	hr	NA	1.0	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_20	22.0	fed_20	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fed_20	3.0	hr	NA	1.72280701754386	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_20	22.0	fed_20	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fed_20	8.0	hr	NA	1.33333333333333	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_20	22.0	fed_20	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fed_20	12.0	hr	NA	1.16140350877193	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_15	36.0	fasted_15	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fasted_15	0.0	hr	NA	1.00350877192982	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_15	36.0	fasted_15	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fasted_15	3.0	hr	NA	1.35789473684211	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_15	36.0	fasted_15	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fasted_15	8.0	hr	NA	1.13684210526316	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_15	36.0	fasted_15	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fasted_15	12.0	hr	NA	1.04912280701754	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_15	36.0	fed_15	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fed_15	0.0	hr	NA	1.0	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_15	36.0	fed_15	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fed_15	3.0	hr	NA	1.57894736842105	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_15	36.0	fed_15	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fed_15	8.0	hr	NA	1.29122807017544	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_15	36.0	fed_15	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fed_15	12.0	hr	NA	1.12280701754386	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_10	106.0	fasted_10	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fasted_10	0.0	hr	NA	1.00350877192982	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_10	106.0	fasted_10	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fasted_10	3.0	hr	NA	1.36842105263158	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_10	106.0	fasted_10	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fasted_10	8.0	hr	NA	1.15438596491228	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_10	106.0	fasted_10	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fasted_10	12.0	hr	NA	1.08421052631579	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_10	79.0	fed_10	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fed_10	0.0	hr	NA	1.0	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_10	79.0	fed_10	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fed_10	3.0	hr	NA	1.58947368421053	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_10	79.0	fed_10	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fed_10	8.0	hr	NA	1.23508771929825	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_10	79.0	fed_10	aPTT (change relative)	NA	plasma	coagulation assay	aPTT (change relative)_fed_10	12.0	hr	NA	1.16842105263158	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_20	25.0	fasted_20	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fasted_20	0.0	hr	NA	0.999339207048458	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_20	25.0	fasted_20	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fasted_20	3.0	hr	NA	1.17202643171806	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_20	25.0	fasted_20	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fasted_20	8.0	hr	NA	1.08259911894273	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_20	25.0	fasted_20	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fasted_20	12.0	hr	NA	1.084140969163	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_20	22.0	fed_20	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fed_20	0.0	hr	NA	1.00088105726872	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_20	22.0	fed_20	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fed_20	3.0	hr	NA	1.27995594713656	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_20	22.0	fed_20	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fed_20	8.0	hr	NA	1.02092511013216	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_20	22.0	fed_20	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fed_20	12.0	hr	NA	1.00396475770925	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_15	36.0	fasted_15	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fasted_15	0.0	hr	NA	0.999339207048458	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_15	36.0	fasted_15	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fasted_15	3.0	hr	NA	1.13193832599119	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_15	36.0	fasted_15	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fasted_15	8.0	hr	NA	1.02246696035242	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_15	36.0	fasted_15	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fasted_15	12.0	hr	NA	1.01013215859031	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_15	36.0	fed_15	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fed_15	0.0	hr	NA	0.999339207048458	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_15	36.0	fed_15	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fed_15	3.0	hr	NA	1.27995594713656	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_15	36.0	fed_15	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fed_15	8.0	hr	NA	1.08105726872247	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_15	36.0	fed_15	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fed_15	12.0	hr	NA	0.983920704845815	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_10	106.0	fasted_10	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fasted_10	0.0	hr	NA	0.999339207048458	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_10	106.0	fasted_10	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fasted_10	3.0	hr	NA	1.11343612334802	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_10	106.0	fasted_10	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fasted_10	8.0	hr	NA	1.02863436123348	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_10	106.0	fasted_10	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fasted_10	12.0	hr	NA	1.00396475770925	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_10	79.0	fed_10	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fed_10	0.0	hr	NA	1.00088105726872	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_10	79.0	fed_10	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fed_10	3.0	hr	NA	1.16431718061674	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_10	79.0	fed_10	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fed_10	8.0	hr	NA	1.01784140969163	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fed_10	79.0	fed_10	prothrombin time (change relative)	NA	plasma	coagulation assay	prothrombin time (change relative)_fed_10	12.0	hr	NA	0.982378854625551	NA	NA	NA	dimensionless	NA	NA
+Liu2024	NA	fasted_20	25.0	fasted_20	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fasted_20	0.0	hr	NA	0.0	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fasted_20	25.0	fasted_20	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fasted_20	3.0	hr	NA	155.687336449207	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fasted_20	25.0	fasted_20	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fasted_20	8.0	hr	NA	39.0406322011171	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fasted_20	25.0	fasted_20	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fasted_20	12.0	hr	NA	16.8921118069028	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fed_20	22.0	fed_20	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fed_20	0.0	hr	NA	15.7627162776165	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fed_20	22.0	fed_20	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fed_20	3.0	hr	NA	222.13289763185	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fed_20	22.0	fed_20	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fed_20	8.0	hr	NA	96.4738123445861	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fed_20	22.0	fed_20	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fed_20	12.0	hr	NA	60.8116025048497	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fasted_15	36.0	fasted_15	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fasted_15	0.0	hr	NA	358.112770306336	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fasted_15	36.0	fasted_15	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fasted_15	3.0	hr	NA	455.257059535744	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fasted_15	36.0	fasted_15	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fasted_15	8.0	hr	NA	374.666388928669	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fasted_15	36.0	fasted_15	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fasted_15	12.0	hr	NA	367.183736704379	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fed_15	36.0	fed_15	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fed_15	0.0	hr	NA	12.3875486583952	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fed_15	36.0	fed_15	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fed_15	3.0	hr	NA	213.120516592676	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fed_15	36.0	fed_15	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fed_15	8.0	hr	NA	57.0588847951466	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fed_15	36.0	fed_15	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fed_15	12.0	hr	NA	12.3842939162361	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fasted_10	106.0	fasted_10	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fasted_10	0.0	hr	NA	359.235656351304	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fasted_10	106.0	fasted_10	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fasted_10	3.0	hr	NA	442.869510877349	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fasted_10	106.0	fasted_10	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fasted_10	8.0	hr	NA	379.174206819336	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fasted_10	106.0	fasted_10	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fasted_10	12.0	hr	NA	362.679173555871	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fed_10	79.0	fed_10	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fed_10	0.0	hr	NA	358.112770306336	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fed_10	79.0	fed_10	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fed_10	3.0	hr	NA	478.906016065408	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fed_10	79.0	fed_10	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fed_10	8.0	hr	NA	372.417362096575	NA	NA	NA	ng/ml	NA	NA
+Liu2024	NA	fed_10	79.0	fed_10	Anti-factor Xa activity	NA	plasma	coagulation assay	Anti-factor Xa activity_fed_10	12.0	hr	NA	348.039343323222	NA	NA	NA	ng/ml	NA	NA

@@ -1,0 +1,12 @@
+study	name	time	time_end	time_unit	route	application	measurement_type	form	substance	value	unit	comments
+Zhao2009	SDP	0	NA	hr	oral	single dose	dosing	NR	rivaroxaban	0.0	mg	NA
+Zhao2009	SD2.5	0	NA	hr	oral	single dose	dosing	NR	rivaroxaban	2.5	mg	NA
+Zhao2009	SD5	0	NA	hr	oral	single dose	dosing	NR	rivaroxaban	5.0	mg	NA
+Zhao2009	SD10	0	NA	hr	oral	single dose	dosing	NR	rivaroxaban	10.0	mg	NA
+Zhao2009	SD20	0	NA	hr	oral	single dose	dosing	NR	rivaroxaban	20.0	mg	NA
+Zhao2009	SD40	0	NA	hr	oral	single dose	dosing	NR	rivaroxaban	40.0	mg	NA
+Zhao2009	MDP	0|48|60|72|84|96|108|120	NA	hr	oral	multiple dose	dosing	NR	rivaroxaban	0.0	mg	In the multiple-dose study, oral rivaroxaban was administered in doses of 5, 10, 20 and 30 mg twice daily for 6 days. once daily (o.d.) on days 1 and 6, and b.i.d. on days 2–5
+Zhao2009	MD5	0|48|60|72|84|96|108|120	NA	hr	oral	multiple dose	dosing	NR	rivaroxaban	5.0	mg	NA
+Zhao2009	MD10	0|48|60|72|84|96|108|120	NA	hr	oral	multiple dose	dosing	NR	rivaroxaban	10.0	mg	NA
+Zhao2009	MD20	0|48|60|72|84|96|108|120	NA	hr	oral	multiple dose	dosing	NR	rivaroxaban	20.0	mg	NA
+Zhao2009	MD30	0|48|60|72|84|96|108|120	NA	hr	oral	multiple dose	dosing	NR	rivaroxaban	30.0	mg	NA

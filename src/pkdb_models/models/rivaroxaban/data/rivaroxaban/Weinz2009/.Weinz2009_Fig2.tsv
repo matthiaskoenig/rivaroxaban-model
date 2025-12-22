@@ -1,0 +1,31 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	sd	se	unit	comments
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban+metabolites	plasma	scintillation counting	riv_rx	0.19277108433735	hr	NA	337.85910882615	365.778682089142	27.919573262992	13.959786631496	µg/l	Total radioactivity
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban+metabolites	plasma	scintillation counting	riv_rx	0.449799196787149	hr	NA	417.53189365604	452.035365636024	34.503471979984	17.251735989992	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban+metabolites	plasma	scintillation counting	riv_rx	0.674698795180723	hr	NA	329.034456231266	351.541831875299	22.507375644033	11.2536878220165	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban+metabolites	plasma	scintillation counting	riv_rx	0.963855421686747	hr	NA	273.389360552263	295.981364384218	22.592003831955	11.2960019159775	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban+metabolites	plasma	scintillation counting	riv_rx	1.25301204819277	hr	NA	255.885676844959	277.031233424578	21.145556579619	10.5727782898095	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban+metabolites	plasma	scintillation counting	riv_rx	1.51004016064257	hr	NA	230.180731302247	255.885676844959	25.704945542712	12.852472771356	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban+metabolites	plasma	scintillation counting	riv_rx	1.9277108433735	hr	NA	212.611233389966	230.180731302247	17.569497912281	8.7847489561405	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban+metabolites	plasma	scintillation counting	riv_rx	2.44176706827309	hr	NA	188.73918221351	207.057971028756	18.318788815246	9.159394407623	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban+metabolites	plasma	scintillation counting	riv_rx	2.98795180722892	hr	NA	163.171264138017	183.809441766779	20.638177628762	10.319088814381	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban+metabolites	plasma	scintillation counting	riv_rx	4.0	hr	NA	141.066953497125	154.758735455789	13.691781958664	6.845890979332	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban+metabolites	plasma	scintillation counting	riv_rx	5.97590361445783	hr	NA	70.8883246720419	76.746304292743	5.8579796207011	2.92898981035055	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban+metabolites	plasma	scintillation counting	riv_rx	8.0	hr	NA	45.8057016705807	50.2515457480882	4.4458440775075	2.22292203875375	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban+metabolites	plasma	scintillation counting	riv_rx	12.0	hr	NA	20.9816230553424	22.7154758560124	1.73385280067	0.866926400335	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban+metabolites	plasma	scintillation counting	riv_rx	14.9718875502008	hr	NA	12.3581659558241	14.2946133835684	1.9364474277443	0.96822371387215	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban+metabolites	plasma	scintillation counting	riv_rx	24.0	hr	NA	3.33417588251419	5.51288978877068	2.17871390625649	1.08935695312825	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban	plasma	scintillation counting	rivaroxaban	0.224899598393574	hr	NA	288.250530296822	316.227766016838	27.977235720016	13.988617860008	µg/l	Unchanged rivaroxaban
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban	plasma	scintillation counting	rivaroxaban	0.481927710843374	hr	NA	375.588809068008	390.79952122756	15.210712159552	7.60535607977599	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban	plasma	scintillation counting	rivaroxaban	0.674698795180723	hr	NA	273.389360552263	307.968109541539	34.578748989276	17.289374494638	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban	plasma	scintillation counting	rivaroxaban	0.867469879518072	hr	NA	227.154758560125	230.180731302247	3.02597274212201	1.512986371061	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban	plasma	scintillation counting	rivaroxaban	1.09236947791165	hr	NA	212.611233389966	212.611233389966	0.0	0.0	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban	plasma	scintillation counting	rivaroxaban	1.47791164658635	hr	NA	188.73918221351	183.809441766779	4.92974044673099	2.46487022336549	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban	plasma	scintillation counting	rivaroxaban	1.99196787148594	hr	NA	167.547491892334	169.779424635856	2.23193274352201	1.115966371761	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban	plasma	scintillation counting	rivaroxaban	2.50602409638554	hr	NA	150.716541414712	158.909340508109	8.19279909339701	4.09639954669851	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban	plasma	scintillation counting	rivaroxaban	3.02008032128514	hr	NA	128.58650796255	135.576340770349	6.98983280779899	3.4949164038995	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban	plasma	scintillation counting	rivaroxaban	4.0	hr	NA	112.648169233589	120.35378976219	7.705620528601	3.8528102643005	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban	plasma	scintillation counting	rivaroxaban	5.94377510040161	hr	NA	52.9831690628371	55.8632806643162	2.8801116014791	1.44005580073955	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban	plasma	scintillation counting	rivaroxaban	8.0	hr	NA	34.6920437221836	36.5778682089142	1.8858244867306	0.942912243365299	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban	plasma	scintillation counting	rivaroxaban	12.0	hr	NA	14.8735210729351	16.5344900300028	1.6609689570677	0.83048447853385	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban	plasma	scintillation counting	rivaroxaban	15.004016064257	hr	NA	8.99545195887275	10.8263673387405	1.83091537986775	0.915457689933875	µg/l	NA
+Weinz2009	NA	all	4.0	T10	concentration	rivaroxaban	plasma	scintillation counting	rivaroxaban	24.0	hr	NA	2.36354142473357	4.46092875631969	2.09738733158612	1.04869366579306	µg/l	NA

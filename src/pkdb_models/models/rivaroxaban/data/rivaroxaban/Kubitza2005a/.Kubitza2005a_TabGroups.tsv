@@ -1,0 +1,23 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+Kubitza2005a	all	103.0	NA	species	103.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	108 subjects, 5 dropped out early on, all data for 103 subjects
+Kubitza2005a	all	103.0	NA	healthy	103.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2005a	all	103.0	NA	ethnicity	103.0	NA	caucasian	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2005a	all	103.0	NA	pregnant	103.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2005a	all	103.0	NA	smoking	103.0	NA	NR	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2005a	all	103.0	NA	medication	103.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2005a	all	103.0	NA	sex	103.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2005a	all	103.0	NA	age	103.0	NA	NA	NA	33.0	NA	NA	19.0	45.0	yr	NA
+Kubitza2005a	all	103.0	NA	weight	103.0	NA	NA	81.2	NA	10.6	NA	52.0	106.0	kg	NA
+Kubitza2005a	all	103.0	NA	bmi	103.0	NA	NA	24.9	NA	2.7	NA	19.3	31.7	kg/m^2	NA
+Kubitza2005a	T1.25	8.0	all	species	8.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2005a	T5	6.0	all	species	6.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2005a	T10	8.0	all	species	8.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2005a	T15	7.0	all	species	7.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	6-8 each
+Kubitza2005a	T20	7.0	all	species	7.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2005a	T30	7.0	all	species	7.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	6-8 each
+Kubitza2005a	T40	8.0	all	species	8.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2005a	T60	7.0	all	species	7.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	6-8 each
+Kubitza2005a	T80	6.0	all	species	6.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2005a	P	9.0	all	species	9.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2005a	S5	6.0	all	species	6.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2005a	S10	8.0	all	species	8.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA

@@ -1,0 +1,26 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	sd	se	unit	comments
+Ding2020	NA	Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_T10	0.154	hr	NA	2.114	3.072	0.958	0.18104498257142	ng/ml	NA
+Ding2020	NA	Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_T10	0.616	hr	NA	16.318	17.785	1.467	0.277236940952268	ng/ml	NA
+Ding2020	NA	Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_T10	1.06	hr	NA	43.429	50.131	6.702	1.26655894905392	ng/ml	NA
+Ding2020	NA	Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_T10	0.958	hr	NA	59.6	133.481	73.881	13.9621966151974	ng/ml	NA
+Ding2020	NA	Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_T10	2.471	hr	NA	109.18	168.152	58.972	11.1446604511501	ng/ml	NA
+Ding2020	NA	Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_T10	4.193	hr	NA	141.609	183.529	41.92	7.9221353542734	ng/ml	NA
+Ding2020	NA	Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_T10	6.0	hr	NA	100.361	145.895	45.534	8.60511715700108	ng/ml	NA
+Ding2020	NA	Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_T10	8.0	hr	NA	61.602	82.153	20.551	3.88377394240632	ng/ml	NA
+Ding2020	NA	Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_T10	12.0	hr	NA	26.041	40.093	14.052	2.65557838736283	ng/ml	NA
+Ding2020	NA	Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_T10	24.0	hr	NA	3.6	6.78	3.18	0.600963512084671	ng/ml	NA
+Ding2020	NA	Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_T10	36.0	hr	NA	0.363	0.937	0.574	0.108475803753648	ng/ml	NA
+Ding2020	NA	Fed	28.0	T10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_T10	48.009	hr	NA	0.178	0.613	0.435	0.0822072728795069	ng/ml	NA
+Ding2020	NA	Fed	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R10	0.215	hr	NA	2.698	3.759	1.061	0.200510152931395	ng/ml	NA
+Ding2020	NA	Fed	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R10	0.537	hr	NA	14.849	27.386	12.537	2.36927029905834	ng/ml	NA
+Ding2020	NA	Fed	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R10	0.752	hr	NA	37.447	54.663	17.216	3.25351818366343	ng/ml	NA
+Ding2020	NA	Fed	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R10	1.611	hr	NA	63.035	94.473	31.438	5.94122355123204	ng/ml	NA
+Ding2020	NA	Fed	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R10	2.04	hr	NA	89.192	15.8674	73.3246	13.8570468988062	ng/ml	NA
+Ding2020	NA	Fed	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R10	3.221	hr	NA	122.662	188.706	66.044	12.4811428277107	ng/ml	NA
+Ding2020	NA	Fed	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R10	4.5	hr	NA	154.691	205.937	51.246	9.68458369191543	ng/ml	NA
+Ding2020	NA	Fed	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R10	6.0	hr	NA	115.959	141.746	25.787	4.87328493274447	ng/ml	NA
+Ding2020	NA	Fed	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R10	8.0	hr	NA	67.046	92.16	25.114	4.74609988757686	ng/ml	NA
+Ding2020	NA	Fed	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R10	12.0	hr	NA	26.651	42.469	15.818	2.98932101702998	ng/ml	NA
+Ding2020	NA	Fed	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R10	24.0	hr	NA	4.605	7.607	3.002	0.56732467398685	ng/ml	NA
+Ding2020	NA	Fed	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R10	36.0	hr	NA	0.501	0.993	0.492	0.0929792603602699	ng/ml	NA
+Ding2020	NA	Fed	28.0	R10	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R10	48.0	hr	NA	0.275	0.688	0.413	0.0780496636764054	ng/ml	NA

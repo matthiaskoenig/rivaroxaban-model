@@ -1,0 +1,25 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	cv	median	min	max	sd	se	unit	comments
+Kubitza2013	healthy	8.0	healthy	auc_inf	rivaroxaban	plasma	HPLC MS	NA	NA	1516.0	33.4	NA	NA	NA	NA	NA	µg/l*hr	NA
+Kubitza2013	healthy	8.0	healthy	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	213.8	36.8	NA	NA	NA	NA	NA	µg/l	NA
+Kubitza2013	healthy	8.0	healthy	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	8.0	44.2	NA	NA	NA	NA	NA	hr	NA
+Kubitza2013	healthy	8.0	healthy	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	NA	NA	2.0	1.0	4.0	NA	NA	hr	NA
+Kubitza2013	healthy	8.0	healthy	fraction_unbound	rivaroxaban	plasma	HPLC MS	NA	NA	7.9	27.8	NA	NA	NA	NA	NA	percent	NA
+Kubitza2013	healthy	8.0	healthy	recovery	rivaroxaban	urine	HPLC MS	48.0	hr	36.1	7.7	NA	NA	NA	NA	NA	percent	NA
+Kubitza2013	healthy	8.0	healthy	oral-clearance	rivaroxaban	plasma	HPLC MS	NA	NA	6.6	33.4	NA	NA	NA	NA	NA	l/hr	NA
+Kubitza2013	healthy	8.0	healthy	clearance_renal	rivaroxaban	plasma	HPLC MS	NA	NA	2.4	38.3	NA	NA	NA	NA	NA	l/hr	NA
+Kubitza2013	mildHI	8.0	mildHI	auc_inf	rivaroxaban	plasma	HPLC MS	NA	NA	1746.0	42.4	NA	NA	NA	NA	NA	µg/l*hr	NA
+Kubitza2013	mildHI	8.0	mildHI	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	202.6	41.8	NA	NA	NA	NA	NA	µg/l	NA
+Kubitza2013	mildHI	8.0	mildHI	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	10.4	82.5	NA	NA	NA	NA	NA	hr	NA
+Kubitza2013	mildHI	8.0	mildHI	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	NA	NA	2.0	1.0	4.0	NA	NA	hr	NA
+Kubitza2013	mildHI	8.0	mildHI	fraction_unbound	rivaroxaban	plasma	HPLC MS	NA	NA	6.2	29.4	NA	NA	NA	NA	NA	percent	NA
+Kubitza2013	mildHI	8.0	mildHI	recovery	rivaroxaban	urine	HPLC MS	48.0	hr	24.9	9.3	NA	NA	NA	NA	NA	percent	NA
+Kubitza2013	mildHI	8.0	mildHI	oral-clearance	rivaroxaban	plasma	HPLC MS	NA	NA	5.7	42.4	NA	NA	NA	NA	NA	l/hr	NA
+Kubitza2013	mildHI	8.0	mildHI	clearance_renal	rivaroxaban	plasma	HPLC MS	NA	NA	1.4	76.7	NA	NA	NA	NA	NA	l/hr	NA
+Kubitza2013	moderateHI	8.0	moderateHI	auc_inf	rivaroxaban	plasma	HPLC MS	NA	NA	3510.0	59.1	NA	NA	NA	NA	NA	µg/l*hr	NA
+Kubitza2013	moderateHI	8.0	moderateHI	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	279.0	45.8	NA	NA	NA	NA	NA	µg/l	NA
+Kubitza2013	moderateHI	8.0	moderateHI	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	10.1	33.9	NA	NA	NA	NA	NA	hr	NA
+Kubitza2013	moderateHI	8.0	moderateHI	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	NA	NA	3.0	1.0	4.0	NA	NA	hr	NA
+Kubitza2013	moderateHI	8.0	moderateHI	fraction_unbound	rivaroxaban	plasma	HPLC MS	NA	NA	8.8	52.3	NA	NA	NA	NA	NA	percent	NA
+Kubitza2013	moderateHI	8.0	moderateHI	recovery	rivaroxaban	urine	HPLC MS	48.0	hr	25.1	12.8	NA	NA	NA	NA	NA	percent	NA
+Kubitza2013	moderateHI	8.0	moderateHI	oral-clearance	rivaroxaban	plasma	HPLC MS	NA	NA	2.8	59.1	NA	NA	NA	NA	NA	l/hr	NA
+Kubitza2013	moderateHI	8.0	moderateHI	clearance_renal	rivaroxaban	plasma	HPLC MS	NA	NA	0.7	138.5	NA	NA	NA	NA	NA	l/hr	NA

@@ -1,0 +1,7 @@
+study	name	time	time_end	time_unit	route	application	measurement_type	form	substance	value	unit	comments
+Liu2024	fasted_20	0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	20	mg	NA
+Liu2024	fed_20	0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	20	mg	NA
+Liu2024	fasted_15	0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	15	mg	NA
+Liu2024	fed_15	0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	15	mg	NA
+Liu2024	fasted_10	0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	10	mg	NA
+Liu2024	fed_10	0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	10	mg	NA

@@ -1,0 +1,19 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	mean	cv	median	min	max	sd	se	ci	ci_min	ci_max	unit	comments
+Zhao2009	SD2.5	8.0	SD2.5	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_SD2.5	0.0	hr	0.0	NA	NA	NA	NA	NA	NA	NA	NA	NA	mg	NA
+Zhao2009	SD2.5	8.0	SD2.5	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_SD2.5	48.0	hr	0.68	NA	NA	NA	NA	0.180384382955752	NA	NA	NA	NA	mg	NA
+Zhao2009	SD5	8.0	SD5	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_SD5	0.0	hr	0.0	NA	NA	NA	NA	NA	NA	NA	NA	NA	mg	NA
+Zhao2009	SD5	8.0	SD5	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_SD5	48.0	hr	1.18	NA	NA	NA	NA	0.570014650140176	NA	NA	NA	NA	mg	NA
+Zhao2009	SD10	8.0	SD10	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_SD10	0.0	hr	0.0	NA	NA	NA	NA	NA	NA	NA	NA	NA	mg	NA
+Zhao2009	SD10	8.0	SD10	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_SD10	48.0	hr	2.67	NA	NA	NA	NA	0.634953028004247	NA	NA	NA	NA	mg	NA
+Zhao2009	SD20	8.0	SD20	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_SD20	0.0	hr	0.0	NA	NA	NA	NA	NA	NA	NA	NA	NA	mg	NA
+Zhao2009	SD20	8.0	SD20	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_SD20	48.0	hr	3.92	NA	NA	NA	NA	1.26990605600849	NA	NA	NA	NA	mg	NA
+Zhao2009	SD40	8.0	SD40	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_SD40	0.0	hr	0.0	NA	NA	NA	NA	NA	NA	NA	NA	NA	mg	NA
+Zhao2009	SD40	8.0	SD40	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_SD40	48.0	hr	4.4	NA	NA	NA	NA	1.56717951911957	NA	NA	NA	NA	mg	NA
+Zhao2009	MD5	8.0	MD5	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_MD5	120.0	hr	0.0	NA	NA	NA	NA	NA	NA	NA	NA	NA	mg	NA
+Zhao2009	MD5	8.0	MD5	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_MD5	168.0	hr	2.6	NA	NA	NA	NA	0.292944237920141	NA	NA	NA	NA	mg	NA
+Zhao2009	MD10	8.0	MD10	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_MD10	120.0	hr	0.0	NA	NA	NA	NA	NA	NA	NA	NA	NA	mg	NA
+Zhao2009	MD10	8.0	MD10	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_MD10	168.0	hr	4.27	NA	NA	NA	NA	1.54841954329217	NA	NA	NA	NA	mg	NA
+Zhao2009	MD20	8.0	MD20	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_MD20	120.0	hr	0.0	NA	NA	NA	NA	NA	NA	NA	NA	NA	mg	NA
+Zhao2009	MD20	8.0	MD20	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_MD20	168.0	hr	7.66	NA	NA	NA	NA	0.940884941497203	NA	NA	NA	NA	mg	NA
+Zhao2009	MD30	8.0	MD30	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_MD30	120.0	hr	0.0	NA	NA	NA	NA	NA	NA	NA	NA	NA	mg	NA
+Zhao2009	MD30	8.0	MD30	cumulative amount	rivaroxaban	urine	HPLC MS	rivaroxaban_urine_MD30	168.0	hr	8.43	NA	NA	NA	NA	1.38968128629111	NA	NA	NA	NA	mg	NA

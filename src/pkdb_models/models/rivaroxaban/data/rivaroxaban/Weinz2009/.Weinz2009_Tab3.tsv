@@ -1,0 +1,5 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	median	min	max	sd	se	cv	unit	comments
+Weinz2009	all	4.0	T10	recovery	rivaroxaban	urine	scintillation counting	2.0	days	36.2	NA	NA	NA	NA	NA	NA	percent	65.4% dose in time interval
+Weinz2009	all	4.0	T10	recovery	rivaroxaban+metabolites	urine	scintillation counting	2.0	days	64.6	NA	NA	NA	NA	NA	NA	percent	NA
+Weinz2009	all	4.0	T10	recovery	rivaroxaban	feces	scintillation counting	2.0	days	7.3	NA	NA	NA	NA	NA	NA	percent	26.4% dose in time interval
+Weinz2009	all	4.0	T10	recovery	rivaroxaban+metabolites	feces	scintillation counting	2.0	days	24.3	NA	NA	NA	NA	NA	NA	percent	NA

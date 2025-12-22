@@ -1,0 +1,47 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+Kubitza2006	all	46.0	NA	species	46.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	all	46.0	NA	healthy	46.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	all	46.0	NA	medication	46.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	all	46.0	NA	sex	46.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	food_study	10.0	all	species	10.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	food_study	10.0	all	healthy	10.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	food_study	10.0	all	ethnicity	10.0	NA	caucasian	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	food_study	10.0	all	pregnant	10.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	food_study	10.0	all	smoking	10.0	NA	NR	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	food_study	10.0	all	medication	10.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	food_study	10.0	all	sex	10.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	food_study	10.0	all	age	10.0	NA	NA	NA	33.5	NA	NA	26.0	38.0	yr	NA
+Kubitza2006	food_study	10.0	all	weight	10.0	NA	NA	NA	85.0	NA	NA	74.0	89.0	kg	NA
+Kubitza2006	food_study	10.0	all	bmi	10.0	NA	NA	26.0	NA	1.8	NA	NA	NA	kg/m^2	NA
+Kubitza2006	food_study2	12.0	all	species	12.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	food_study2	12.0	all	healthy	12.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	food_study2	12.0	all	ethnicity	12.0	NA	caucasian	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	food_study2	12.0	all	pregnant	12.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	food_study2	12.0	all	smoking	12.0	NA	NR	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	food_study2	12.0	all	medication	12.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	food_study2	12.0	all	sex	12.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	food_study2	12.0	all	age	12.0	NA	NA	NA	37.0	NA	NA	19.0	41.0	yr	NA
+Kubitza2006	food_study2	12.0	all	weight	12.0	NA	NA	NA	86.0	NA	NA	76.0	115.0	kg	NA
+Kubitza2006	food_study2	12.0	all	bmi	12.0	NA	NA	26.3	NA	2.9	NA	NA	NA	kg/m^2	NA
+Kubitza2006	ranitidine	12.0	all	species	12.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	ranitidine	12.0	all	healthy	12.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	ranitidine	12.0	all	ethnicity	12.0	NA	caucasian	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	ranitidine	12.0	all	pregnant	12.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	ranitidine	12.0	all	smoking	12.0	NA	NR	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	ranitidine	12.0	all	medication	12.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	ranitidine	12.0	all	fasting	12.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	ranitidine	12.0	all	sex	12.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	ranitidine	12.0	all	age	12.0	NA	NA	NA	32.5	NA	NA	25.0	39.0	yr	NA
+Kubitza2006	ranitidine	12.0	all	weight	12.0	NA	NA	NA	83.5	NA	NA	71.0	91.0	kg	NA
+Kubitza2006	ranitidine	12.0	all	bmi	12.0	NA	NA	25.1	NA	2.2	NA	NA	NA	kg/m^2	NA
+Kubitza2006	antacid	12.0	all	species	12.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	antacid	12.0	all	healthy	12.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	antacid	12.0	all	ethnicity	12.0	NA	caucasian	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	antacid	12.0	all	pregnant	12.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	antacid	12.0	all	smoking	12.0	NA	NR	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	antacid	12.0	all	medication	12.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	antacid	12.0	all	fasting	12.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	antacid	12.0	all	sex	12.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Kubitza2006	antacid	12.0	all	age	12.0	NA	NA	NA	35.5	NA	NA	20.0	42.0	yr	NA
+Kubitza2006	antacid	12.0	all	weight	12.0	NA	NA	NA	86.5	NA	NA	57.0	113.0	kg	NA
+Kubitza2006	antacid	12.0	all	bmi	12.0	NA	NA	25.4	NA	2.7	NA	NA	NA	kg/m^2	NA

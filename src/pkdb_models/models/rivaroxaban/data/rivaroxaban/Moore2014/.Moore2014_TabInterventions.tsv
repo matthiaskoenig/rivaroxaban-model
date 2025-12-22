@@ -1,0 +1,4 @@
+study	name	time	time_end	time_unit	route	application	measurement_type	form	substance	value	unit	comments
+Moore2014	RIV5	0	NA	hr	oral	single dose	dosing	NR	rivaroxaban	5	mg	NA
+Moore2014	RIV10	0	NA	hr	oral	single dose	dosing	NR	rivaroxaban	10	mg	NA
+Moore2014	ERY	0	NA	hr	oral	multiple dose	dosing	NR	erythromycin	500	mg	received erythromycin 500 mg three times daily for 6 days (day 1 through day 6). On the morning of day 5, subjects with normal renal function received the concomitant administration of rivaroxaban 10 mg with the erythromy- cin dose

@@ -1,0 +1,4 @@
+study	name	time	time_end	time_unit	route	application	measurement_type	form	substance	value	unit	comments
+Graff2007	PLACEBO	0	NA	hr	oral	single dose	dosing	NR	rivaroxaban	0	mg	NA
+Graff2007	RIV_5	0	NA	hr	oral	single dose	dosing	NR	rivaroxaban	5	mg	NA
+Graff2007	RIV_30	0	NA	hr	oral	single dose	dosing	NR	rivaroxaban	30	mg	NA

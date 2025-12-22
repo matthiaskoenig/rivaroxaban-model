@@ -1,0 +1,138 @@
+from copy import deepcopy
+from typing import Dict
+
+from sbmlsim.plot import Axis, Figure, Plot
+from sbmlsim.simulation import Timecourse, TimecourseSim
+
+from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
+    RivaroxabanSimulationExperiment,
+)
+from pkdb_models.models.rivaroxaban.helpers import run_experiments
+
+
+class DoseDependencyExperiment(RivaroxabanSimulationExperiment):
+    """Tests application."""
+
+    doses = [0, 10, 20, 40, 80]  # [mg]
+    colors = ["black", "tab:orange", "tab:blue", "tab:red", "tab:green"]
+    routes = ["IV", "PO"]
+    dosing = ["single", "multiple"]
+
+    def simulations(self) -> Dict[str, TimecourseSim]:
+        Q_ = self.Q_
+        tcsims = {}
+
+        for route in self.routes:
+            for dose in self.doses:
+                for dosing in self.dosing:
+                    # single dosing
+                    if dosing == "single":
+                        tcsims[f"riv_{route}_{dose}_{dosing}"] = TimecourseSim(
+                            Timecourse(
+                                start=0,
+                                end=24 * 60,  # [min]
+                                steps=1000,
+                                changes={
+                                    **self.default_changes(),
+                                    f"{route}DOSE_riv": Q_(dose, "mg"),
+                                },
+                            )
+                        )
+                    elif dosing == "multiple":
+                        tc0 = Timecourse(
+                            start=0,
+                            end=24 * 60,  # [min]
+                            steps=1000,
+                            changes={
+                                **self.default_changes(),
+                                f"{route}DOSE_riv": Q_(dose, "mg"),
+                            },
+                        )
+                        tc1 = Timecourse(
+                            start=0,
+                            end=24 * 60,  # [min]
+                            steps=1000,
+                            changes={
+                                f"{route}DOSE_riv": Q_(dose, "mg"),
+                                # reset urinary amounts
+                                "Aurine_riv": Q_(0, "mmole"),
+                                "Aurine_rx": Q_(0, "mmole"),
+                            },
+                        )
+                        tcsims[f"riv_{route}_{dose}_{dosing}"] = TimecourseSim(
+                            [tc0] + [tc1 for _ in range(6)]
+                        )
+
+        return tcsims
+
+    def figures(self) -> Dict[str, Figure]:
+        return {
+            **self.figure_pk(),
+        }
+
+    def figure_pk(self) -> Dict[str, Figure]:
+        figures = {}
+
+        for route in self.routes:
+            for dosing in self.dosing:
+
+
+                fig = Figure(
+                    experiment=self,
+                    sid=f"Fig_dose_dependency_pk_{route}_{dosing}",
+                    num_rows=6,
+                    num_cols=3,
+                    name=f"Dose dependency rivaroxaban ({route}, {dosing})",
+                )
+
+                plots = fig.create_plots(
+                    xaxis=Axis("time", unit="hr" if dosing == "single" else "day"),
+                    legend=True
+                )
+                infos = [
+                    # plasma
+                    ("[Cve_riv]", 0),
+                    ("[Cve_rx]", 1),
+                    ("[Cve_riv_rx]", 2),
+                    # urine
+                    ("Aurine_riv", 3),
+                    ("Aurine_rx", 4),
+                    ("Aurine_riv_rx", 5),
+                    # feces
+                    ("Afeces_riv", 6),
+                    ("Afeces_rx", 7),
+                    ("Afeces_riv_rx", 8),
+
+                    ("PT", 9),
+                    ("PT_change", 10),
+                    ("PT_ratio", 11),
+
+                    ("aPTT", 12),
+                    ("aPTT_change", 13),
+                    ("aPTT_ratio", 14),
+
+                    ("Xa_inhibition", 15),
+                    ("KI__RIVEX", 16),
+
+                ]
+                for sid, ksid in infos:
+                    if sid:
+                        plots[ksid].set_yaxis(label=self.labels[sid], unit=self.units[sid])
+
+                for sid, ksid in infos:
+                    if sid:
+                        for kval, dose in enumerate(self.doses):
+                            plots[ksid].add_data(
+                                task=f"task_riv_{route}_{dose}_{dosing}",
+                                xid="time",
+                                yid=sid,
+                                label=f"{dose} mg",
+                                color=self.colors[kval],
+                            )
+
+                figures[fig.sid] = fig
+        return figures
+
+
+if __name__ == "__main__":
+    run_experiments(DoseDependencyExperiment, output_dir=DoseDependencyExperiment.__name__)

@@ -1,0 +1,7 @@
+study	name	time	time_end	time_unit	route	application	measurement_type	form	substance	value	unit	comments
+Tang2025	T1	0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	20	mg	test formulation period 1
+Tang2025	R1	0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	20	mg	reference formulation period 1
+Tang2025	T2	0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	20	mg	test formulation period 2
+Tang2025	R2	0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	20	mg	reference formulation period 2
+Tang2025	T	0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	20	mg	test formulation
+Tang2025	R	0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	20	mg	reference formulation

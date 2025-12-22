@@ -1,0 +1,17 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	sd	se	unit	comments
+Graff2007	NA	G1	8.0	RIV_5	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_5	0.596930468437206	hr	NA	38.6874960006732	NA	NA	NA	µg/l	NA
+Graff2007	NA	G1	8.0	RIV_5	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_5	0.941892432937406	hr	NA	69.4716973193538	NA	NA	NA	µg/l	NA
+Graff2007	NA	G1	8.0	RIV_5	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_5	2.07671159749099	hr	NA	78.1007792792133	NA	NA	NA	µg/l	NA
+Graff2007	NA	G1	8.0	RIV_5	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_5	4.05850794074469	hr	NA	57.9044398060249	NA	NA	NA	µg/l	NA
+Graff2007	NA	G1	8.0	RIV_5	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_5	6.09443480581876	hr	NA	31.4177544614191	NA	NA	NA	µg/l	NA
+Graff2007	NA	G1	8.0	RIV_5	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_5	8.07580408381156	hr	NA	22.1122414731023	NA	NA	NA	µg/l	NA
+Graff2007	NA	G1	8.0	RIV_5	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_5	12.0396103029494	hr	NA	12.4751333824963	NA	NA	NA	µg/l	NA
+Graff2007	NA	G1	8.0	RIV_30	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_30	0.493687441612169	hr	NA	133.135472920721	NA	NA	NA	µg/l	NA
+Graff2007	NA	G1	8.0	RIV_30	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_30	0.950540504470839	hr	NA	199.26683747251	NA	NA	NA	µg/l	NA
+Graff2007	NA	G1	8.0	RIV_30	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_30	1.97197384225277	hr	NA	224.017778341681	NA	NA	NA	µg/l	NA
+Graff2007	NA	G1	8.0	RIV_30	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_30	4.01174429467503	hr	NA	194.149194574388	NA	NA	NA	µg/l	NA
+Graff2007	NA	G1	8.0	RIV_30	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_30	5.99204590951555	hr	NA	119.976460444274	NA	NA	NA	µg/l	NA
+Graff2007	NA	G1	8.0	RIV_30	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_30	7.86013612705191	hr	NA	85.5467253556568	NA	NA	NA	µg/l	NA
+Graff2007	NA	G1	8.0	RIV_30	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_30	11.9951955158148	hr	NA	55.6881399094527	NA	NA	NA	µg/l	NA
+Graff2007	NA	G1	8.0	RIV_30	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_30	24.0650206859736	hr	NA	27.5853161762918	NA	NA	NA	µg/l	NA
+Graff2007	NA	G1	8.0	RIV_30	concentration	rivaroxaban	plasma	LC/MS	rivaroxaban_RIV_30	35.960603229681	hr	NA	8.22724134170046	NA	NA	NA	µg/l	NA

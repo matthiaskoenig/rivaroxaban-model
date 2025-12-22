@@ -1,0 +1,21 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	median	min	max	sd	se	cv	unit	comments
+Tang2025	Fasting	36.0	T	tmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	2.0	NA	0.5	5.01	NA	NA	NA	hr	NA
+Tang2025	Fasting	36.0	T	cmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	173.0	NA	NA	NA	55.1	NA	31.8	ng/ml	NA
+Tang2025	Fasting	36.0	T	auc_end	rivaroxaban	plasma	HPLC MS/MS	48.0	hr	1416.0	NA	NA	NA	461.0	NA	32.5	ng/ml*hr	NA
+Tang2025	Fasting	36.0	T	auc_inf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	1648.0	NA	NA	NA	782.0	NA	47.5	ng/ml*hr	NA
+Tang2025	Fasting	36.0	T	thalf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	17.3	NA	NA	NA	22.9	NA	132.1	hr	NA
+Tang2025	Fasting	36.0	R	tmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	2.0	NA	0.5	5.0	NA	NA	NA	hr	NA
+Tang2025	Fasting	36.0	R	cmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	195.0	NA	NA	NA	48.5	NA	24.8	ng/ml	NA
+Tang2025	Fasting	36.0	R	auc_end	rivaroxaban	plasma	HPLC MS/MS	48.0	hr	1507.0	NA	NA	NA	421.0	NA	27.9	ng/ml*hr	NA
+Tang2025	Fasting	36.0	R	auc_inf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	1670.0	NA	NA	NA	490.0	NA	29.3	ng/ml*hr	NA
+Tang2025	Fasting	36.0	R	thalf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	13.9	NA	NA	NA	11.1	NA	79.8	hr	NA
+Tang2025	Fed	36.0	T	tmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	2.0	NA	1.0	12.0	NA	NA	NA	hr	NA
+Tang2025	Fed	36.0	T	cmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	358.0	NA	NA	NA	70.2	NA	19.6	ng/ml	NA
+Tang2025	Fed	36.0	T	auc_end	rivaroxaban	plasma	HPLC MS/MS	48.0	hr	2420.0	NA	NA	NA	591.0	NA	24.4	ng/ml*hr	NA
+Tang2025	Fed	36.0	T	auc_inf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	2451.0	NA	NA	NA	583.0	NA	23.8	ng/ml*hr	NA
+Tang2025	Fed	36.0	T	thalf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	6.16	NA	NA	NA	4.03	NA	65.4	hr	NA
+Tang2025	Fed	36.0	R	tmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	2.0	NA	0.5	4.5	NA	NA	NA	hr	NA
+Tang2025	Fed	36.0	R	cmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	399.0	NA	NA	NA	84.2	NA	21.1	ng/ml	NA
+Tang2025	Fed	36.0	R	auc_end	rivaroxaban	plasma	HPLC MS/MS	48.0	hr	2486.0	NA	NA	NA	577.0	NA	23.2	ng/ml*hr	NA
+Tang2025	Fed	36.0	R	auc_inf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	2518.0	NA	NA	NA	575.0	NA	22.8	ng/ml*hr	NA
+Tang2025	Fed	36.0	R	thalf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	6.01	NA	NA	NA	4.88	NA	81.1	hr	NA

@@ -1,0 +1,21 @@
+study	name	group_count	parent	measurement_type	count	substance	choice	mean	median	sd	se	min	max	unit	comments
+Tang2025	all	72.0	NA	species	72.0	NA	homo sapiens	NA	NA	NA	NA	NA	NA	NA	NA
+Tang2025	all	72.0	NA	healthy	72.0	NA	Y	NA	NA	NA	NA	NA	NA	NA	NA
+Tang2025	all	72.0	NA	ethnicity	72.0	NA	chinese	NA	NA	NA	NA	NA	NA	NA	NA
+Tang2025	all	72.0	NA	pregnant	72.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Tang2025	all	72.0	NA	smoking	72.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Tang2025	all	72.0	NA	medication	72.0	NA	N	NA	NA	NA	NA	NA	NA	NA	NA
+Tang2025	all	72.0	NA	sex	63.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Tang2025	all	72.0	NA	sex	9.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Tang2025	Fasting	36.0	all	sex	32.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Tang2025	Fasting	36.0	all	sex	4.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Tang2025	Fasting	36.0	all	age	36.0	NA	NA	31.6	NA	8.88	NA	NA	NA	yr	NA
+Tang2025	Fasting	36.0	all	weight	36.0	NA	NA	64.2	NA	5.8	NA	NA	NA	kg	NA
+Tang2025	Fasting	36.0	all	height	36.0	NA	NA	167.3	NA	6.97	NA	NA	NA	m	NA
+Tang2025	Fasting	36.0	all	bmi	36.0	NA	NA	22.9	NA	1.57	NA	NA	NA	kg/m^2	NA
+Tang2025	Fed	36.0	all	sex	31.0	NA	M	NA	NA	NA	NA	NA	NA	NA	NA
+Tang2025	Fed	36.0	all	sex	5.0	NA	F	NA	NA	NA	NA	NA	NA	NA	NA
+Tang2025	Fed	36.0	all	age	36.0	NA	NA	29.9	NA	7.39	NA	NA	NA	yr	NA
+Tang2025	Fed	36.0	all	weight	36.0	NA	NA	65.6	NA	7.91	NA	NA	NA	kg	NA
+Tang2025	Fed	36.0	all	height	36.0	NA	NA	168.3	NA	6.65	NA	NA	NA	m	NA
+Tang2025	Fed	36.0	all	bmi	36.0	NA	NA	23.1	NA	1.78	NA	NA	NA	kg/m^2	NA

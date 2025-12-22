@@ -1,0 +1,21 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	cv	median	min	max	sd	se	unit	comments
+Kubitza2006	ranitidine	12.0	RIV30	auc_inf	rivaroxaban	plasma	HPLC MS	NA	NA	1741.0	26.0	NA	NA	NA	NA	NA	µg/l*hr	NA
+Kubitza2006	ranitidine	12.0	RIV30	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	176.18	38.0	NA	NA	NA	NA	NA	µg/l	NA
+Kubitza2006	ranitidine	12.0	RIV30	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	NA	NA	2.0	1.0	4.0	NA	NA	hr	NA
+Kubitza2006	ranitidine	12.0	RIV30	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	8.39	27.0	NA	NA	NA	NA	NA	hr	NA
+Kubitza2006	ranitidine	12.0	RIV30	clearance_renal	rivaroxaban	plasma	HPLC MS	NA	NA	2.81	36.0	NA	NA	NA	NA	NA	l/hr	NA
+Kubitza2006	ranitidine	12.0	RIV30, ranitidine	auc_inf	rivaroxaban	plasma	HPLC MS	NA	NA	1736.0	39.0	NA	NA	NA	NA	NA	µg/l*hr	NA
+Kubitza2006	ranitidine	12.0	RIV30, ranitidine	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	191.0	44.0	NA	NA	NA	NA	NA	µg/l	NA
+Kubitza2006	ranitidine	12.0	RIV30, ranitidine	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	NA	NA	2.0	0.5	6.0	NA	NA	hr	NA
+Kubitza2006	ranitidine	12.0	RIV30, ranitidine	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	8.54	37.0	NA	NA	NA	NA	NA	hr	NA
+Kubitza2006	ranitidine	12.0	RIV30, ranitidine	clearance_renal	rivaroxaban	plasma	HPLC MS	NA	NA	2.59	34.0	NA	NA	NA	NA	NA	l/hr	NA
+Kubitza2006	antacid	11.0	RIV30	auc_inf	rivaroxaban	plasma	HPLC MS	NA	NA	1828.0	18.0	NA	NA	NA	NA	NA	µg/l*hr	NA
+Kubitza2006	antacid	11.0	RIV30	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	205.0	15.0	NA	NA	NA	NA	NA	µg/l	NA
+Kubitza2006	antacid	11.0	RIV30	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	NA	NA	2.5	1.0	4.0	NA	NA	hr	NA
+Kubitza2006	antacid	11.0	RIV30	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	8.56	42.0	NA	NA	NA	NA	NA	hr	NA
+Kubitza2006	antacid	11.0	RIV30	clearance_renal	rivaroxaban	plasma	HPLC MS	NA	NA	2.71	24.0	NA	NA	NA	NA	NA	l/hr	NA
+Kubitza2006	antacid	11.0	RIV30, antacid	auc_inf	rivaroxaban	plasma	HPLC MS	NA	NA	1734.0	21.0	NA	NA	NA	NA	NA	µg/l*hr	NA
+Kubitza2006	antacid	11.0	RIV30, antacid	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	177.7	32.0	NA	NA	NA	NA	NA	µg/l	NA
+Kubitza2006	antacid	11.0	RIV30, antacid	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	NA	NA	4.0	0.5	4.0	NA	NA	hr	NA
+Kubitza2006	antacid	11.0	RIV30, antacid	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	7.26	37.0	NA	NA	NA	NA	NA	hr	NA
+Kubitza2006	antacid	11.0	RIV30, antacid	clearance_renal	rivaroxaban	plasma	HPLC MS	NA	NA	3.02	30.0	NA	NA	NA	NA	NA	l/hr	NA

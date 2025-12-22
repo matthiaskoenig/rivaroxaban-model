@@ -1,0 +1,5 @@
+study	name	time	time_end	time_unit	route	application	measurement_type	form	substance	value	unit	comments
+Greenblatt2018	RIV20	0	NA	hr	oral	single dose	dosing	NR	rivaroxaban	20	mg	NA
+Greenblatt2018	VER120	S-7T1R1	NA	day	oral	single dose	dosing	NR	verapamil	120	mg	On study days 8 through 17, subjects received single morning doses of oral extended-release verapamil according to the following schedule: day 8, 120 mg; day 9, 240 mg; days 10 through 17, 360 mg.
+Greenblatt2018	VER240	S-6T1R1	NA	day	oral	single dose	dosing	NR	verapamil	240	mg	On study days 8 through 17, subjects received single morning doses of oral extended-release verapamil according to the following schedule: day 8, 120 mg; day 9, 240 mg; days 10 through 17, 360 mg.
+Greenblatt2018	VER360	S-5T1R8	NA	day	oral	single dose	dosing	NR	verapamil	360	mg	On study days 8 through 17, subjects received single morning doses of oral extended-release verapamil according to the following schedule: day 8, 120 mg; day 9, 240 mg; days 10 through 17, 360 mg.

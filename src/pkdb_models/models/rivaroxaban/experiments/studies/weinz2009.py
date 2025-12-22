@@ -1,0 +1,158 @@
+from typing import Dict
+
+from sbmlsim.data import DataSet, load_pkdb_dataframe
+from sbmlsim.fit import FitMapping, FitData
+from sbmlutils.console import console
+
+from pkdb_models.models import rivaroxaban
+from pkdb_models.models.rivaroxaban.experiments.base_experiment import RivaroxabanSimulationExperiment
+from pkdb_models.models.rivaroxaban.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
+    Fasting, RivaroxabanMappingMetaData, Coadministration
+from pkdb_models.models.rivaroxaban.helpers import run_experiments
+
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Timecourse, TimecourseSim
+
+
+class Weinz2009(RivaroxabanSimulationExperiment):
+    """Simulation experiment of Weinz2009."""
+
+    infos = {
+        "[Cve_riv]": "rivaroxaban",
+        "[Cve_riv_rx]": "riv_rx",
+        "Aurine_riv_rx": "riv_rx_urine",
+        "Afeces_riv_rx": "riv_rx_feces",
+        "Afeces_urine_riv_rx": "riv_rx_feces_urine",
+    }
+    panels = {
+        "rivaroxaban": 0,
+        "riv_rx": 0,
+        "riv_rx_urine": 1,
+        "riv_rx_feces": 1,
+        "riv_rx_feces_urine": 1,
+    }
+    colors = {
+        "rivaroxaban": "black",
+        "riv_rx": "tab:blue",
+        "riv_rx_urine": "tab:red",
+        "riv_rx_feces": "tab:orange",
+        "riv_rx_feces_urine": "tab:green",
+    }
+
+
+    def datasets(self) -> Dict[str, DataSet]:
+        dsets = {}
+
+        for fig_id in ["Fig2", "Fig3"]:
+            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            for label, df_label in df.groupby("label"):
+                dset = DataSet.from_df(df_label, self.ureg)
+                if "rivaroxaban" in label:
+                    dset.unit_conversion("mean", 1 / self.Mr.riv)
+                elif "riv_rx" in label:
+                    dset.unit_conversion("mean", 1 / self.Mr.riv)
+                dsets[label] = dset
+
+        return dsets
+
+
+    def simulations(self) -> Dict[str, TimecourseSim]:
+        Q_ = self.Q_
+        tcsims = {}
+
+        tcsims["riv"] = TimecourseSim([
+            Timecourse(
+                start=0,
+                end=8 * 24 * 60,
+                steps=3000,
+                changes={
+                    **self.default_changes(),
+                    "PODOSE_riv": Q_(10, "mg"),
+                },
+            )
+        ])
+        return tcsims
+
+    def fit_mappings(self) -> Dict[str, FitMapping]:
+        mappings = {}
+        for sid, name in self.infos.items():
+            if name.endswith("feces_urine"):
+                tissue = Tissue.FECES_URINE
+            elif name.endswith("urine"):
+                tissue = Tissue.URINE
+            elif name.endswith("feces"):
+                tissue = Tissue.FECES
+            else:
+                tissue = Tissue.PLASMA
+
+            mappings[f"fm_{name}"] = FitMapping(
+                self,
+                reference=FitData(
+                    self,
+                    dataset=f"{name}",
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                ),
+                observable=FitData(
+                    self,
+                    task=f"task_riv",
+                    xid="time",
+                    yid=sid,
+                ),
+                metadata=RivaroxabanMappingMetaData(
+                    tissue=tissue,
+                    route=Route.PO,
+                    application_form=ApplicationForm.SOLUTION,
+                    dosing=Dosing.SINGLE,
+                    health=Health.HEALTHY,
+                    fasting=Fasting.FASTED,
+                    coadministration=Coadministration.NONE,
+                ),
+            )
+        return mappings
+
+    def figures(self) -> Dict[str, Figure]:
+        figures = {}
+
+       # Figure 2 and 3
+        fig = Figure(
+            experiment=self,
+            sid="Fig2_3",
+            num_rows=1,
+            num_cols=2,
+            name=self.__class__.__name__,
+        )
+        plots = fig.create_plots(legend=True)
+        plots[0].set_xaxis(self.label_time, unit=self.unit_time, min=-1, max=30)
+        plots[1].set_xaxis(self.label_time, unit="day")
+        plots[0].set_yaxis(self.label_riv_plasma, unit=self.unit_riv)
+        plots[1].set_yaxis("Recovery", unit=self.unit_riv_rx_feces)
+        for sid, name in self.infos.items():
+            color = self.colors[name]
+            kp = self.panels[name]
+            plots[kp].add_data(
+                task=f"task_riv",
+                xid="time",
+                yid=sid,
+                label=name.replace("riv_rx_", ""),
+                color=color,
+            )
+            plots[kp].add_data(
+                dataset=name,
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=name.replace("riv_rx_", ""),
+                color=color,
+            )
+        figures[fig.sid] = fig
+        return figures
+
+
+if __name__ == "__main__":
+    out = rivaroxaban.RESULTS_PATH_SIMULATION / Weinz2009.__name__
+    out.mkdir(parents=True, exist_ok=True)
+    run_experiments(Weinz2009, output_dir=Weinz2009.__name__)

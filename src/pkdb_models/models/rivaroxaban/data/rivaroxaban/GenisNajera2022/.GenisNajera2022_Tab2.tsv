@@ -1,0 +1,11 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	median	min	max	sd	se	cv	unit	comments
+GenisNajera2022	all	32.0	T20	tmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	NA	3.5	1.5	6.0	NA	NA	NA	hr	NA
+GenisNajera2022	all	32.0	T20	cmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	261.0	NA	NA	NA	56.0	NA	21.0	ng/ml	NA
+GenisNajera2022	all	32.0	T20	auc_end	rivaroxaban	plasma	HPLC MS/MS	48.0	hr	1948.0	NA	NA	NA	460.0	NA	24.0	ng/ml*hr	NA
+GenisNajera2022	all	32.0	T20	auc_inf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	2045.0	NA	NA	NA	464.0	NA	23.0	ng/ml*hr	NA
+GenisNajera2022	all	32.0	T20	thalf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	10.58	NA	NA	NA	4.81	NA	45.0	hr	NA
+GenisNajera2022	all	31.0	R20	tmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	NA	4.0	0.75	6.0	NA	NA	46.9	hr	NA
+GenisNajera2022	all	31.0	R20	cmax	rivaroxaban	plasma	HPLC MS/MS	NA	NA	246.0	NA	NA	NA	58.0	NA	24.0	ng/ml	NA
+GenisNajera2022	all	31.0	R20	auc_end	rivaroxaban	plasma	HPLC MS/MS	48.0	hr	1885.0	NA	NA	NA	471.0	NA	25.0	ng/ml*hr	NA
+GenisNajera2022	all	31.0	R20	auc_inf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	2001.0	NA	NA	NA	459.0	NA	23.0	ng/ml*hr	NA
+GenisNajera2022	all	31.0	R20	thalf	rivaroxaban	plasma	HPLC MS/MS	NA	NA	11.96	NA	NA	NA	5.49	NA	46.0	hr	NA

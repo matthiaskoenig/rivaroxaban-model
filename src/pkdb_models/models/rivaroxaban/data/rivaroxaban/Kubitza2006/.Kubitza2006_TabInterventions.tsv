@@ -1,0 +1,5 @@
+study	name	time	time_end	time_unit	route	application	measurement_type	form	substance	value	unit	comments
+Kubitza2006	RIV10	0.0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	10.0	mg	2*5
+Kubitza2006	RIV20	0.0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	20.0	mg	NA
+Kubitza2006	RIV4x5	0.0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	20.0	mg	4*5
+Kubitza2006	RIV30	0.0	NA	hr	oral	single dose	dosing	tablet	rivaroxaban	30.0	mg	NA

@@ -1,0 +1,25 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	mean	median	min	max	sd	se	cv	unit	comments
+Alalawneh2024	obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_obese	3.32	hr	1.32	NA	NA	NA	0.87	NA	NA	mg	NA
+Alalawneh2024	obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_obese	6.11	hr	2.82	NA	NA	NA	1.99809909664161	NA	NA	mg	sd approximated
+Alalawneh2024	obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_obese	9.22	hr	4.18	NA	NA	NA	2.41702296224095	NA	NA	mg	sd approximated
+Alalawneh2024	obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_obese	12.21	hr	5.05	NA	NA	NA	2.56883241960234	NA	NA	mg	sd approximated
+Alalawneh2024	obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_obese	15.24	hr	5.54	NA	NA	NA	2.6151481793581	NA	NA	mg	sd approximated
+Alalawneh2024	obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_obese	18.28	hr	5.79	NA	NA	NA	2.62707061191739	NA	NA	mg	sd approximated
+Alalawneh2024	obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_obese	1.66	hr	0.4	NA	NA	NA	0.26	NA	NA	mg/hr	mid-point interval
+Alalawneh2024	obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_obese	4.72	hr	0.54	NA	NA	NA	0.21	NA	NA	mg/hr	mid-point interval
+Alalawneh2024	obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_obese	7.67	hr	0.44	NA	NA	NA	0.21	NA	NA	mg/hr	mid-point interval
+Alalawneh2024	obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_obese	10.72	hr	0.29	NA	NA	NA	0.1	NA	NA	mg/hr	mid-point interval
+Alalawneh2024	obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_obese	13.73	hr	0.16	NA	NA	NA	0.079	NA	NA	mg/hr	mid-point interval; incorrect value in table: 0.79 
+Alalawneh2024	obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_obese	16.76	hr	0.07	NA	NA	NA	0.04	NA	NA	mg/hr	mid-point interval
+Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	3.3	hr	1.41	NA	NA	NA	0.87	NA	NA	mg	NA
+Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	6.1	hr	2.44	NA	NA	NA	1.74613859701915	NA	NA	mg	sd approximated
+Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	9.21	hr	3.58	NA	NA	NA	2.08532971014178	NA	NA	mg	sd approximated
+Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	12.23	hr	4.29	NA	NA	NA	2.20288447268576	NA	NA	mg	sd approximated
+Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	15.24	hr	4.65	NA	NA	NA	2.23210662827742	NA	NA	mg	sd approximated
+Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	18.21	hr	4.85	NA	NA	NA	2.24104886158245	NA	NA	mg	sd approximated
+Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	1.692	hr	0.42	NA	NA	NA	0.22	NA	NA	mg/hr	mid-point interval
+Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	4.74	hr	0.38	NA	NA	NA	0.17	NA	NA	mg/hr	mid-point interval
+Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	7.65	hr	0.37	NA	NA	NA	0.24	NA	NA	mg/hr	mid-point interval
+Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	10.73	hr	0.24	NA	NA	NA	0.15	NA	NA	mg/hr	mid-point interval
+Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	13.71	hr	0.12	NA	NA	NA	0.06	NA	NA	mg/hr	mid-point interval
+Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	15.88	hr	0.07	NA	NA	NA	0.039	NA	NA	mg/hr	mid-point interval

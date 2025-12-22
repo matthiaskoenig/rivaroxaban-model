@@ -1,0 +1,25 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	cv	median	min	max	sd	se	unit	comments
+Kubitza2005	OD5	7.0	OD5	auc_end	rivaroxaban	plasma	HPLC MS	48.0	hr	505.5	19.7	NA	NA	NA	NA	NA	µg/l*hr	NA
+Kubitza2005	OD5	7.0	OD5	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	76.4	18.3	NA	NA	NA	NA	NA	µg/l	NA
+Kubitza2005	OD5	7.0	OD5	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	8.4	32.6	NA	NA	NA	NA	NA	hr	NA
+Kubitza2005	OD5	7.0	OD5	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	3.0	NA	NA	NA	NA	NA	NA	hr	NA
+Kubitza2005	BID5	7.0	BID5	auc_end	rivaroxaban	plasma	HPLC MS	48.0	hr	458.5	13.1	NA	NA	NA	NA	NA	µg/l*hr	NA
+Kubitza2005	BID5	7.0	BID5	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	85.3	17.7	NA	NA	NA	NA	NA	µg/l	NA
+Kubitza2005	BID5	7.0	BID5	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	7.0	27.8	NA	NA	NA	NA	NA	hr	NA
+Kubitza2005	BID5	7.0	BID5	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	3.0	NA	NA	NA	NA	NA	NA	hr	NA
+Kubitza2005	TID5	6.0	TID5	auc_end	rivaroxaban	plasma	HPLC MS	48.0	hr	557.3	20.4	NA	NA	NA	NA	NA	µg/l*hr	NA
+Kubitza2005	TID5	6.0	TID5	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	123.8	19.7	NA	NA	NA	NA	NA	µg/l	NA
+Kubitza2005	TID5	6.0	TID5	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	5.8	35.5	NA	NA	NA	NA	NA	hr	NA
+Kubitza2005	TID5	6.0	TID5	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	2.0	NA	NA	NA	NA	NA	NA	hr	NA
+Kubitza2005	BID10	7.0	BID10	auc_end	rivaroxaban	plasma	HPLC MS	48.0	hr	863.8	18.6	NA	NA	NA	NA	NA	µg/l*hr	NA
+Kubitza2005	BID10	7.0	BID10	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	158.0	18.8	NA	NA	NA	NA	NA	µg/l	NA
+Kubitza2005	BID10	7.0	BID10	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	7.6	26.7	NA	NA	NA	NA	NA	hr	NA
+Kubitza2005	BID10	7.0	BID10	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	2.98	NA	NA	NA	NA	NA	NA	hr	NA
+Kubitza2005	BID20	7.0	BID20	auc_end	rivaroxaban	plasma	HPLC MS	48.0	hr	1903.0	24.5	NA	NA	NA	NA	NA	µg/l*hr	NA
+Kubitza2005	BID20	7.0	BID20	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	318.1	18.7	NA	NA	NA	NA	NA	µg/l	NA
+Kubitza2005	BID20	7.0	BID20	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	8.0	40.7	NA	NA	NA	NA	NA	hr	NA
+Kubitza2005	BID20	7.0	BID20	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	2.5	NA	NA	NA	NA	NA	NA	hr	NA
+Kubitza2005	BID30	7.0	BID30	auc_end	rivaroxaban	plasma	HPLC MS	48.0	hr	2728.0	14.6	NA	NA	NA	NA	NA	µg/l*hr	NA
+Kubitza2005	BID30	7.0	BID30	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	451.9	10.5	NA	NA	NA	NA	NA	µg/l	NA
+Kubitza2005	BID30	7.0	BID30	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	9.2	64.1	NA	NA	NA	NA	NA	hr	NA
+Kubitza2005	BID30	7.0	BID30	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	3.02	NA	NA	NA	NA	NA	NA	hr	NA

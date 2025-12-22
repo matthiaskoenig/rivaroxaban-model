@@ -1,0 +1,62 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rivaroxaban-model"
+version = "0.0.0"
+description = "Python utilities for computational models in SBML."
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [
+    {name="Casabianca Elisabetta", email="elisabetta.casabianca@univ-grenoble-alpes.fr"},
+    {name="Mariia Myshkina", email="mariia.myshkina@hu-berlin.de"},
+	{name="Matthias König", email="konigmatt@googlemail.com"},
+]
+maintainers = [
+	{name="Matthias König", email="konigmatt@googlemail.com"}
+]
+classifiers = [
+	"Development Status :: 5 - Production/Stable",
+	"Intended Audience :: Science/Research",
+	"License :: OSI Approved :: MIT License",
+	"Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.13",
+	"Programming Language :: Python :: Implementation :: CPython",
+	"Topic :: Scientific/Engineering",
+	"Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+keywords = [
+    "SBML",
+    "physiologically based pharmacokinetic/pharmacodynamic model",
+    "anticoagulant medication",
+    "thrombosis",
+    "PBPK/PD",
+    "rivaroxaban",
+    "computational modeling",
+]
+dependencies = [
+    "pkdb_analysis>=0.2.2",
+    "statsmodels",
+    "sbmlutils @ git+https://github.com/matthiaskoenig/sbmlutils.git@ae7ee27d781f217daee2a654059a5ff66d17e15d",
+    "sbmlsim @ git+https://github.com/matthiaskoenig/sbmlsim.git@9617fa09197549b9c675a5dc65c1d170590942a4"
+]
+
+[project.scripts]
+create_nodes = "pkdb_data.management.commands:create_info_nodes_command"
+run_rivaroxaban = "pkdb_models.models.rivaroxaban.run_rivaroxaban:main"
+fit_rivaroxaban = "pkdb_models.models.rivaroxaban.fitting.fitting:main"
+
+[project_urls]
+Homepage = "https://github.com/matthiaskoenig/rivaroxaban-model"
+Repository = "https://github.com/matthiaskoenig/rivaroxaban-model"
+Documentation = "https://github.com/matthiaskoenig/rivaroxaban-model"
+Issues = "https://github.com/matthiaskoenig/rivaroxaban-model/issues"
+# Download = "https://pypi.org/project/pkdb_models"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pkdb_models"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+

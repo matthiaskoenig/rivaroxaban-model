@@ -1,0 +1,13 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	time	time_unit	mean	cv	median	min	max	sd	se	unit	comments
+Kubitza2006	food_study2	10.0	RIV4x5	auc_inf	rivaroxaban	plasma	HPLC MS	NA	NA	1678.0	41.0	NA	NA	NA	NA	NA	µg/l*hr	NA
+Kubitza2006	food_study2	10.0	RIV4x5	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	153.0	33.0	NA	NA	NA	NA	NA	µg/l	NA
+Kubitza2006	food_study2	10.0	RIV4x5	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	NA	NA	1.25	0.75	4.0	NA	NA	hr	NA
+Kubitza2006	food_study2	10.0	RIV4x5	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	9.29	60.0	NA	NA	NA	NA	NA	hr	NA
+Kubitza2006	food_study2	10.0	RIV20	auc_inf	rivaroxaban	plasma	HPLC MS	NA	NA	1629.0	41.0	NA	NA	NA	NA	NA	µg/l*hr	fasted
+Kubitza2006	food_study2	10.0	RIV20	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	158.0	33.0	NA	NA	NA	NA	NA	µg/l	fasted
+Kubitza2006	food_study2	10.0	RIV20	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	NA	NA	2.25	0.75	4.0	NA	NA	hr	fasted
+Kubitza2006	food_study2	10.0	RIV20	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	9.12	55.0	NA	NA	NA	NA	NA	hr	fasted
+Kubitza2006	food_study2	10.0	RIV20	auc_inf	rivaroxaban	plasma	HPLC MS	NA	NA	2021.0	34.0	NA	NA	NA	NA	NA	µg/l*hr	fed
+Kubitza2006	food_study2	10.0	RIV20	cmax	rivaroxaban	plasma	HPLC MS	NA	NA	273.0	26.0	NA	NA	NA	NA	NA	µg/l	fed
+Kubitza2006	food_study2	10.0	RIV20	tmax	rivaroxaban	plasma	HPLC MS	NA	NA	NA	NA	3.5	1.25	6.0	NA	NA	hr	fed
+Kubitza2006	food_study2	10.0	RIV20	thalf	rivaroxaban	plasma	HPLC MS	NA	NA	7.02	30.0	NA	NA	NA	NA	NA	hr	fed
