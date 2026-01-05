@@ -1,7 +1,7 @@
 {
   "experiment_id": "Kubitza2006",
-  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/rivaroxaban')]",
+  "base_path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban",
+  "data_path": "[PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/rivaroxaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/apixaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/edoxaban')]",
   "models": {
     "model": {
       "sid": null,
@@ -9,8 +9,8 @@
       "language": "SBML",
       "language_type": "SBML",
       "source": {
-        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
-        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "source": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
         "content": "None"
       },
       "changes": {}
@@ -1273,7 +1273,7 @@
             "curves": [
               {
                 "sid": "Fig_conc_10mg__plot0_curve0",
-                "name": "RIV10 fed",
+                "name": "Rivaroxaban 10 mg (fed)",
                 "x": "task_RIV10_fed__time",
                 "y": "task_RIV10_fed__Cve_riv",
                 "xerr": null,
@@ -1304,7 +1304,7 @@
               },
               {
                 "sid": "Fig_conc_10mg__plot0_curve1",
-                "name": "RIV10 fed\u00b1SD (n=8)",
+                "name": "Rivaroxaban 10 mg (fed)\u00b1SD (n=8)",
                 "x": "rivaroxaban_RIV10_fed__time",
                 "y": "rivaroxaban_RIV10_fed__mean",
                 "xerr": null,
@@ -1335,7 +1335,7 @@
               },
               {
                 "sid": "Fig_conc_10mg__plot0_curve2",
-                "name": "RIV10 fasted",
+                "name": "Rivaroxaban 10 mg (fasted)",
                 "x": "task_RIV10_fasted__time",
                 "y": "task_RIV10_fasted__Cve_riv",
                 "xerr": null,
@@ -1366,7 +1366,7 @@
               },
               {
                 "sid": "Fig_conc_10mg__plot0_curve3",
-                "name": "RIV10 fasted\u00b1SD (n=8)",
+                "name": "Rivaroxaban 10 mg (fasted)\u00b1SD (n=8)",
                 "x": "rivaroxaban_RIV10_fasted__time",
                 "y": "rivaroxaban_RIV10_fasted__mean",
                 "xerr": null,
@@ -1450,7 +1450,7 @@
             "curves": [
               {
                 "sid": "Fig_conc_20mg__plot0_curve0",
-                "name": "RIV20 fed",
+                "name": "Rivaroxaban 20 mg (fed)",
                 "x": "task_RIV20_fed__time",
                 "y": "task_RIV20_fed__Cve_riv",
                 "xerr": null,
@@ -1481,7 +1481,7 @@
               },
               {
                 "sid": "Fig_conc_20mg__plot0_curve1",
-                "name": "RIV20 fed\u00b1SD (n=10)",
+                "name": "Rivaroxaban 20 mg (fed)\u00b1SD (n=10)",
                 "x": "rivaroxaban_RIV20_fed__time",
                 "y": "rivaroxaban_RIV20_fed__mean",
                 "xerr": null,
@@ -1512,7 +1512,7 @@
               },
               {
                 "sid": "Fig_conc_20mg__plot0_curve2",
-                "name": "RIV20 fasted",
+                "name": "Rivaroxaban 20 mg (fasted)",
                 "x": "task_RIV20_fasted__time",
                 "y": "task_RIV20_fasted__Cve_riv",
                 "xerr": null,
@@ -1543,7 +1543,7 @@
               },
               {
                 "sid": "Fig_conc_20mg__plot0_curve3",
-                "name": "RIV20 fasted\u00b1SD (n=10)",
+                "name": "Rivaroxaban 20 mg (fasted)\u00b1SD (n=10)",
                 "x": "rivaroxaban_RIV20_fasted__time",
                 "y": "rivaroxaban_RIV20_fasted__mean",
                 "xerr": null,
@@ -1574,7 +1574,7 @@
               },
               {
                 "sid": "Fig_conc_20mg__plot0_curve4",
-                "name": "RIV4x5 fasted",
+                "name": "Rivaroxaban 4 \u00d7 5 mg (fasted)",
                 "x": "task_RIV4x5_fasted__time",
                 "y": "task_RIV4x5_fasted__Cve_riv",
                 "xerr": null,
@@ -1605,7 +1605,7 @@
               },
               {
                 "sid": "Fig_conc_20mg__plot0_curve5",
-                "name": "RIV4x5 fasted\u00b1SD (n=10)",
+                "name": "Rivaroxaban 4 \u00d7 5 mg (fasted)\u00b1SD (n=10)",
                 "x": "rivaroxaban_RIV4x5_fasted__time",
                 "y": "rivaroxaban_RIV4x5_fasted__mean",
                 "xerr": null,
@@ -1647,10 +1647,10 @@
     "Fig_PD": {
       "sid": "Fig_PD",
       "name": "Kubitza2006",
-      "num_rows": 2,
-      "num_cols": 1,
-      "width": 7.0,
-      "height": 10.0,
+      "num_rows": 1,
+      "num_cols": 2,
+      "width": 14.0,
+      "height": 5.0,
       "subplots": [
         {
           "sid": null,
@@ -1689,7 +1689,7 @@
             "curves": [
               {
                 "sid": "Fig_PD__plot0_curve0",
-                "name": "RIV10 fed",
+                "name": "Rivaroxaban 10 mg (fed)",
                 "x": "task_RIV10_fed__time",
                 "y": "task_RIV10_fed__PT_ratio",
                 "xerr": null,
@@ -1720,7 +1720,7 @@
               },
               {
                 "sid": "Fig_PD__plot0_curve1",
-                "name": "RIV10 fed\u00b1SD (n=8)",
+                "name": "Rivaroxaban 10 mg (fed)\u00b1SD (n=8)",
                 "x": "prothrombin time (change relative)_RIV10_fed__time",
                 "y": "prothrombin time (change relative)_RIV10_fed__mean",
                 "xerr": null,
@@ -1751,7 +1751,7 @@
               },
               {
                 "sid": "Fig_PD__plot0_curve2",
-                "name": "RIV10 fasted",
+                "name": "Rivaroxaban 10 mg (fasted)",
                 "x": "task_RIV10_fasted__time",
                 "y": "task_RIV10_fasted__PT_ratio",
                 "xerr": null,
@@ -1782,7 +1782,7 @@
               },
               {
                 "sid": "Fig_PD__plot0_curve3",
-                "name": "RIV10 fasted\u00b1SD (n=8)",
+                "name": "Rivaroxaban 10 mg (fasted)\u00b1SD (n=8)",
                 "x": "prothrombin time (change relative)_RIV10_fasted__time",
                 "y": "prothrombin time (change relative)_RIV10_fasted__mean",
                 "xerr": null,
@@ -1856,7 +1856,7 @@
             "curves": [
               {
                 "sid": "Fig_PD__plot1_curve0",
-                "name": "RIV10 fed",
+                "name": "Rivaroxaban 10 mg (fed)",
                 "x": "task_RIV10_fed__time",
                 "y": "task_RIV10_fed__Xa_inhibition",
                 "xerr": null,
@@ -1887,7 +1887,7 @@
               },
               {
                 "sid": "Fig_PD__plot1_curve1",
-                "name": "RIV10 fed\u00b1SD (n=8)",
+                "name": "Rivaroxaban 10 mg (fed)\u00b1SD (n=8)",
                 "x": "factor Xa inhibition_RIV10_fed__time",
                 "y": "factor Xa inhibition_RIV10_fed__mean",
                 "xerr": null,
@@ -1918,7 +1918,7 @@
               },
               {
                 "sid": "Fig_PD__plot1_curve2",
-                "name": "RIV10 fasted",
+                "name": "Rivaroxaban 10 mg (fasted)",
                 "x": "task_RIV10_fasted__time",
                 "y": "task_RIV10_fasted__Xa_inhibition",
                 "xerr": null,
@@ -1949,7 +1949,7 @@
               },
               {
                 "sid": "Fig_PD__plot1_curve3",
-                "name": "RIV10 fasted\u00b1SD (n=8)",
+                "name": "Rivaroxaban 10 mg (fasted)\u00b1SD (n=8)",
                 "x": "factor Xa inhibition_RIV10_fasted__time",
                 "y": "factor Xa inhibition_RIV10_fasted__mean",
                 "xerr": null,
@@ -1981,8 +1981,8 @@
             ],
             "areas": []
           },
-          "row": 2,
-          "col": 1,
+          "row": 1,
+          "col": 2,
           "row_span": 1,
           "col_span": 1
         }

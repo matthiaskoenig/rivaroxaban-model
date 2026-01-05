@@ -106,6 +106,7 @@ from sbmlsim.fit import FitMapping, FitData
 from sbmlsim.plot import Axis, Figure
 from sbmlsim.simulation import Timecourse, TimecourseSim
 
+from pkdb_models.models import rivaroxaban
 from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
     RivaroxabanSimulationExperiment,
 )
@@ -131,6 +132,15 @@ class Kubitza2006(RivaroxabanSimulationExperiment):
         "RIV20_fasted",
         "RIV4x5_fasted",
     ]
+
+    group_labels = {
+    "RIV10_fed": "Rivaroxaban 10 mg (fed)",
+    "RIV10_fasted": "Rivaroxaban 10 mg (fasted)",
+    "RIV20_fed": "Rivaroxaban 20 mg (fed)",
+    "RIV20_fasted": "Rivaroxaban 20 mg (fasted)",
+    "RIV4x5_fasted": "Rivaroxaban 4 × 5 mg (fasted)",
+    }
+
 
     bodyweights = {
         "RIV10_fed": 85,
@@ -311,7 +321,7 @@ class Kubitza2006(RivaroxabanSimulationExperiment):
                 task=f"task_{group}",
                 xid="time",
                 yid="[Cve_riv]",
-                label=label,
+                label = self.group_labels[group],
                 color=self.colors[group],
             )
             plot_fig1[0].add_data(
@@ -320,7 +330,7 @@ class Kubitza2006(RivaroxabanSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=label,
+                label = self.group_labels[group],
                 color=self.colors[group],
             )
 
@@ -330,7 +340,7 @@ class Kubitza2006(RivaroxabanSimulationExperiment):
                 task=f"task_{group}",
                 xid="time",
                 yid="[Cve_riv]",
-                label=label,
+                label = self.group_labels[group],
                 color=self.colors[group],
             )
             plot_fig5[0].add_data(
@@ -339,7 +349,7 @@ class Kubitza2006(RivaroxabanSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=label,
+                label = self.group_labels[group],
                 color=self.colors[group],
                 marker="^" if "4x5" in label else "s"
             )
@@ -353,7 +363,7 @@ class Kubitza2006(RivaroxabanSimulationExperiment):
         fig = Figure(
             experiment=self,
             sid="Fig_PD",
-            num_rows=2,
+            num_cols=2,  # <-- Change from num_rows=2 to num_cols=2
             name=self.__class__.__name__
         )
         plots = fig.create_plots(
@@ -370,7 +380,7 @@ class Kubitza2006(RivaroxabanSimulationExperiment):
                 task=f"task_{group}",
                 xid="time",
                 yid="PT_ratio",
-                label=label,
+                label = self.group_labels[group],
                 color=self.colors[group],
             )
             plots[0].add_data(
@@ -379,7 +389,7 @@ class Kubitza2006(RivaroxabanSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=label,
+                label = self.group_labels[group],
                 color=self.colors[group],
             )
 
@@ -387,7 +397,7 @@ class Kubitza2006(RivaroxabanSimulationExperiment):
                 task=f"task_{group}",
                 xid="time",
                 yid="Xa_inhibition",
-                label=label,
+                label = self.group_labels[group],
                 color=self.colors[group],
             )
             plots[1].add_data(
@@ -396,7 +406,7 @@ class Kubitza2006(RivaroxabanSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=label,
+                label = self.group_labels[group],
                 color=self.colors[group],
             )
 
@@ -404,6 +414,8 @@ class Kubitza2006(RivaroxabanSimulationExperiment):
 
 
 if __name__ == "__main__":
+    out = rivaroxaban.RESULTS_PATH_SIMULATION / Kubitza2006.__name__
+    out.mkdir(parents=True, exist_ok=True)
     run_experiments(Kubitza2006, output_dir=Kubitza2006.__name__)
 </code>
         </pre>

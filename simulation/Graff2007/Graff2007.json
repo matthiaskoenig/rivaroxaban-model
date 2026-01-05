@@ -1,7 +1,7 @@
 {
   "experiment_id": "Graff2007",
-  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/rivaroxaban')]",
+  "base_path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban",
+  "data_path": "[PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/rivaroxaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/apixaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/edoxaban')]",
   "models": {
     "model": {
       "sid": null,
@@ -9,8 +9,8 @@
       "language": "SBML",
       "language_type": "SBML",
       "source": {
-        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
-        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "source": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
         "content": "None"
       },
       "changes": {}
@@ -779,7 +779,7 @@
             "curves": [
               {
                 "sid": "Fig5__plot0_curve0",
-                "name": "PLACEBO",
+                "name": "Placebo",
                 "x": "task_PLACEBO__time",
                 "y": "task_PLACEBO__Cve_riv",
                 "xerr": null,
@@ -810,7 +810,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve1",
-                "name": "RIV_5",
+                "name": "Rivaroxaban 5 mg",
                 "x": "task_RIV_5__time",
                 "y": "task_RIV_5__Cve_riv",
                 "xerr": null,
@@ -841,7 +841,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve2",
-                "name": "RIV_5\u00b1SD (n=8)",
+                "name": "Rivaroxaban 5 mg\u00b1SD (n=8)",
                 "x": "rivaroxaban_RIV_5__time",
                 "y": "rivaroxaban_RIV_5__mean",
                 "xerr": null,
@@ -872,7 +872,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve3",
-                "name": "RIV_30",
+                "name": "Rivaroxaban 30 mg",
                 "x": "task_RIV_30__time",
                 "y": "task_RIV_30__Cve_riv",
                 "xerr": null,
@@ -903,7 +903,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve4",
-                "name": "RIV_30\u00b1SD (n=8)",
+                "name": "Rivaroxaban 30 mg\u00b1SD (n=8)",
                 "x": "rivaroxaban_RIV_30__time",
                 "y": "rivaroxaban_RIV_30__mean",
                 "xerr": null,
@@ -987,7 +987,7 @@
             "curves": [
               {
                 "sid": "Fig3__plot0_curve0",
-                "name": "PLACEBO",
+                "name": "Placebo",
                 "x": "task_PLACEBO__time",
                 "y": "task_PLACEBO__Xa_inhibition",
                 "xerr": null,
@@ -1018,7 +1018,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve1",
-                "name": "PLACEBO\u00b1SD (n=4)",
+                "name": "Placebo\u00b1SD (n=4)",
                 "x": "factor Xa inhibition_PLACEBO__time",
                 "y": "factor Xa inhibition_PLACEBO__mean",
                 "xerr": null,
@@ -1049,7 +1049,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve2",
-                "name": "RIV_5",
+                "name": "Rivaroxaban 5 mg",
                 "x": "task_RIV_5__time",
                 "y": "task_RIV_5__Xa_inhibition",
                 "xerr": null,
@@ -1080,7 +1080,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve3",
-                "name": "RIV_5\u00b1SD (n=8)",
+                "name": "Rivaroxaban 5 mg\u00b1SD (n=8)",
                 "x": "factor Xa inhibition_RIV_5__time",
                 "y": "factor Xa inhibition_RIV_5__mean",
                 "xerr": null,
@@ -1111,7 +1111,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve4",
-                "name": "RIV_30",
+                "name": "Rivaroxaban 30 mg",
                 "x": "task_RIV_30__time",
                 "y": "task_RIV_30__Xa_inhibition",
                 "xerr": null,
@@ -1142,7 +1142,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve5",
-                "name": "RIV_30\u00b1SD (n=8)",
+                "name": "Rivaroxaban 30 mg\u00b1SD (n=8)",
                 "x": "factor Xa inhibition_RIV_30__time",
                 "y": "factor Xa inhibition_RIV_30__mean",
                 "xerr": null,
@@ -1216,7 +1216,7 @@
             "curves": [
               {
                 "sid": "Fig3__plot1_curve0",
-                "name": "PLACEBO",
+                "name": "Placebo",
                 "x": "task_PLACEBO__time",
                 "y": "task_PLACEBO__PT_ratio",
                 "xerr": null,
@@ -1247,7 +1247,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve1",
-                "name": "PLACEBO\u00b1SD (n=4)",
+                "name": "Placebo\u00b1SD (n=4)",
                 "x": "prothrombin time (change relative)_PLACEBO__time",
                 "y": "prothrombin time (change relative)_PLACEBO__mean",
                 "xerr": null,
@@ -1278,7 +1278,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve2",
-                "name": "RIV_5",
+                "name": "Rivaroxaban 5 mg",
                 "x": "task_RIV_5__time",
                 "y": "task_RIV_5__PT_ratio",
                 "xerr": null,
@@ -1309,7 +1309,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve3",
-                "name": "RIV_5\u00b1SD (n=8)",
+                "name": "Rivaroxaban 5 mg\u00b1SD (n=8)",
                 "x": "prothrombin time (change relative)_RIV_5__time",
                 "y": "prothrombin time (change relative)_RIV_5__mean",
                 "xerr": null,
@@ -1340,7 +1340,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve4",
-                "name": "RIV_30",
+                "name": "Rivaroxaban 30 mg",
                 "x": "task_RIV_30__time",
                 "y": "task_RIV_30__PT_ratio",
                 "xerr": null,
@@ -1371,7 +1371,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve5",
-                "name": "RIV_30\u00b1SD (n=8)",
+                "name": "Rivaroxaban 30 mg\u00b1SD (n=8)",
                 "x": "prothrombin time (change relative)_RIV_30__time",
                 "y": "prothrombin time (change relative)_RIV_30__mean",
                 "xerr": null,

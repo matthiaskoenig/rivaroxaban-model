@@ -1,0 +1,19 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	0.0	hr		0.0					mole/meter^3	ng/ml
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	0.562	hr		0.00013008626227402036					mole/meter^3	ng/ml
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	1.148	hr		0.0004587684683857942					mole/meter^3	ng/ml
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	1.608	hr		0.0006504886666054879					mole/meter^3	ng/ml
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	2.17	hr		0.0007737198311461871					mole/meter^3	ng/ml
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	2.494	hr		0.0007428787739744883					mole/meter^3	ng/ml
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	3.038	hr		0.0007188721666513719					mole/meter^3	ng/ml
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	3.692	hr		0.0007017045975956685					mole/meter^3	ng/ml
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	4.129	hr		0.0006982495182160228					mole/meter^3	ng/ml
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	4.563	hr		0.0006742474993117372					mole/meter^3	ng/ml
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	5.096	hr		0.0005543635863081582					mole/meter^3	ng/ml
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	6.064	hr		0.0004207511241626136					mole/meter^3	ng/ml
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	7.145	hr		0.0003213728549141966					mole/meter^3	ng/ml
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	8.12	hr		0.00024597136826649536					mole/meter^3	ng/ml
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	12.04	hr		0.00010872258419748556					mole/meter^3	ng/ml
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	24.057	hr		1.8837753510140408e-05					mole/meter^3	ng/ml
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	36.082	hr		0.0					mole/meter^3	ng/ml
+Tang2025		Fed	18.0	R2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R2	48.0	hr		0.0					mole/meter^3	ng/ml

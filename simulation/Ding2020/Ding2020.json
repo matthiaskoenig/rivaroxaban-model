@@ -1,7 +1,7 @@
 {
   "experiment_id": "Ding2020",
-  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/rivaroxaban')]",
+  "base_path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban",
+  "data_path": "[PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/rivaroxaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/apixaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/edoxaban')]",
   "models": {
     "model": {
       "sid": null,
@@ -9,8 +9,8 @@
       "language": "SBML",
       "language_type": "SBML",
       "source": {
-        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
-        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "source": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
         "content": "None"
       },
       "changes": {}
@@ -989,7 +989,7 @@
   "figures": {
     "Fig1_2": {
       "sid": "Fig1_2",
-      "name": "Ding2020",
+      "name": "Ding2020 (healthy), 10 mg po",
       "num_rows": 1,
       "num_cols": 1,
       "width": 7.0,
@@ -1032,7 +1032,7 @@
             "curves": [
               {
                 "sid": "Fig1_2__plot0_curve0",
-                "name": "Fasting T10",
+                "name": "Fasting, T10",
                 "x": "task_po_Fasting_T10__time",
                 "y": "task_po_Fasting_T10__Cve_riv",
                 "xerr": null,
@@ -1044,18 +1044,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#00008bff",
+                    "color": "#DDB8EAff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#00008bff",
+                    "fill": "#DDB8EAff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00008bff",
+                    "color": "#DDB8EAff",
                     "second_color": null
                   }
                 },
@@ -1063,7 +1063,7 @@
               },
               {
                 "sid": "Fig1_2__plot0_curve1",
-                "name": "Fasting T10\u00b1SD (n=28)",
+                "name": "Fasting, T10\u00b1SD (n=28)",
                 "x": "rivaroxaban_Fasting_T10__time",
                 "y": "rivaroxaban_Fasting_T10__mean",
                 "xerr": null,
@@ -1075,18 +1075,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#00008bff",
+                    "color": "#DDB8EAff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#00008bff",
+                    "fill": "#DDB8EAff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#00008bff",
+                    "color": "#DDB8EAff",
                     "second_color": null
                   }
                 },
@@ -1094,7 +1094,7 @@
               },
               {
                 "sid": "Fig1_2__plot0_curve2",
-                "name": "Fasting R10",
+                "name": "Fasting, R10",
                 "x": "task_po_Fasting_R10__time",
                 "y": "task_po_Fasting_R10__Cve_riv",
                 "xerr": null,
@@ -1106,18 +1106,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#1f77b4ff",
+                    "color": "#B97ACCff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#1f77b4ff",
+                    "fill": "#B97ACCff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#1f77b4ff",
+                    "color": "#B97ACCff",
                     "second_color": null
                   }
                 },
@@ -1125,7 +1125,7 @@
               },
               {
                 "sid": "Fig1_2__plot0_curve3",
-                "name": "Fasting R10\u00b1SD (n=28)",
+                "name": "Fasting, R10\u00b1SD (n=28)",
                 "x": "rivaroxaban_Fasting_R10__time",
                 "y": "rivaroxaban_Fasting_R10__mean",
                 "xerr": null,
@@ -1137,18 +1137,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#1f77b4ff",
+                    "color": "#B97ACCff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#1f77b4ff",
+                    "fill": "#B97ACCff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#1f77b4ff",
+                    "color": "#B97ACCff",
                     "second_color": null
                   }
                 },
@@ -1156,7 +1156,7 @@
               },
               {
                 "sid": "Fig1_2__plot0_curve4",
-                "name": "Fed T10",
+                "name": "Fed, T10",
                 "x": "task_po_Fed_T10__time",
                 "y": "task_po_Fed_T10__Cve_riv",
                 "xerr": null,
@@ -1168,18 +1168,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#ffa500ff",
+                    "color": "#A35AC7ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#ffa500ff",
+                    "fill": "#A35AC7ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#ffa500ff",
+                    "color": "#A35AC7ff",
                     "second_color": null
                   }
                 },
@@ -1187,7 +1187,7 @@
               },
               {
                 "sid": "Fig1_2__plot0_curve5",
-                "name": "Fed T10\u00b1SD (n=28)",
+                "name": "Fed, T10\u00b1SD (n=28)",
                 "x": "rivaroxaban_Fed_T10__time",
                 "y": "rivaroxaban_Fed_T10__mean",
                 "xerr": null,
@@ -1199,18 +1199,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#ffa500ff",
+                    "color": "#A35AC7ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#ffa500ff",
+                    "fill": "#A35AC7ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#ffa500ff",
+                    "color": "#A35AC7ff",
                     "second_color": null
                   }
                 },
@@ -1218,7 +1218,7 @@
               },
               {
                 "sid": "Fig1_2__plot0_curve6",
-                "name": "Fed R10",
+                "name": "Fed, R10",
                 "x": "task_po_Fed_R10__time",
                 "y": "task_po_Fed_R10__Cve_riv",
                 "xerr": null,
@@ -1230,18 +1230,18 @@
                   "base_style": null,
                   "line": {
                     "type": "SOLID",
-                    "color": "#ff7f0eff",
+                    "color": "#7132A8ff",
                     "thickness": 2.0
                   },
                   "marker": {
                     "size": null,
                     "type": "NONE",
-                    "fill": "#ff7f0eff",
+                    "fill": "#7132A8ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#ff7f0eff",
+                    "color": "#7132A8ff",
                     "second_color": null
                   }
                 },
@@ -1249,7 +1249,7 @@
               },
               {
                 "sid": "Fig1_2__plot0_curve7",
-                "name": "Fed R10\u00b1SD (n=28)",
+                "name": "Fed, R10\u00b1SD (n=28)",
                 "x": "rivaroxaban_Fed_R10__time",
                 "y": "rivaroxaban_Fed_R10__mean",
                 "xerr": null,
@@ -1261,18 +1261,18 @@
                   "base_style": null,
                   "line": {
                     "type": "DASH",
-                    "color": "#ff7f0eff",
+                    "color": "#7132A8ff",
                     "thickness": 1.0
                   },
                   "marker": {
                     "size": null,
                     "type": "SQUARE",
-                    "fill": "#ff7f0eff",
+                    "fill": "#7132A8ff",
                     "line_color": "#000000ff",
                     "line_thickness": null
                   },
                   "fill": {
-                    "color": "#ff7f0eff",
+                    "color": "#7132A8ff",
                     "second_color": null
                   }
                 },

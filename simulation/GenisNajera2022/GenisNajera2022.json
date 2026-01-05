@@ -1,7 +1,7 @@
 {
   "experiment_id": "GenisNajera2022",
-  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/rivaroxaban')]",
+  "base_path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban",
+  "data_path": "[PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/rivaroxaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/apixaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/edoxaban')]",
   "models": {
     "model": {
       "sid": null,
@@ -9,8 +9,8 @@
       "language": "SBML",
       "language_type": "SBML",
       "source": {
-        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
-        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "source": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
         "content": "None"
       },
       "changes": {}
@@ -550,7 +550,7 @@
             "curves": [
               {
                 "sid": "Fig1__plot0_curve0",
-                "name": "T20",
+                "name": "Test 20 mg",
                 "x": "task_po_T20__time",
                 "y": "task_po_T20__Cve_riv",
                 "xerr": null,
@@ -581,7 +581,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve1",
-                "name": "T20\u00b1SD (n=32)",
+                "name": "Test 20 mg\u00b1SD (n=32)",
                 "x": "rivaroxaban_T20__time",
                 "y": "rivaroxaban_T20__mean",
                 "xerr": null,
@@ -612,7 +612,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve2",
-                "name": "R20",
+                "name": "Reference 20 mg",
                 "x": "task_po_R20__time",
                 "y": "task_po_R20__Cve_riv",
                 "xerr": null,
@@ -643,7 +643,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve3",
-                "name": "R20\u00b1SD (n=31)",
+                "name": "Reference 20 mg\u00b1SD (n=31)",
                 "x": "rivaroxaban_R20__time",
                 "y": "rivaroxaban_R20__mean",
                 "xerr": null,

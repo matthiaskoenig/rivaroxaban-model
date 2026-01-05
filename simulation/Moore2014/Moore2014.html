@@ -77,6 +77,7 @@ from sbmlsim.data import DataSet, load_pkdb_dataframe
 from sbmlsim.fit import FitMapping, FitData
 from sbmlutils.console import console
 
+from pkdb_models.models import rivaroxaban
 from pkdb_models.models.rivaroxaban.experiments.base_experiment import RivaroxabanSimulationExperiment
 from pkdb_models.models.rivaroxaban.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
     Fasting, RivaroxabanMappingMetaData, Coadministration
@@ -90,6 +91,12 @@ class Moore2014(RivaroxabanSimulationExperiment):
     """Simulation experiment of Moore2014."""
 
     groups = ["NRF", "mildRI", "moderateRI"]
+
+    group_labels = {
+        "NRF": "Normal renal function",
+        "mildRI": "Mild renal impairment",
+        "moderateRI": "Moderate renal impairment",
+    }
 
     colors = {
         "NRF": "black",
@@ -199,7 +206,7 @@ class Moore2014(RivaroxabanSimulationExperiment):
                     task=f"task_{group}",
                     xid="time",
                     yid=sid,
-                    label=group,
+                    label = self.group_labels[group],
                     color=self.colors[group],
                 )
                 plots[kp].add_data(
@@ -208,7 +215,7 @@ class Moore2014(RivaroxabanSimulationExperiment):
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=group,
+                    label = self.group_labels[group],
                     linestyle="" if "urine" in name else "--",
                     color=self.colors[group],
                 )
@@ -219,6 +226,8 @@ class Moore2014(RivaroxabanSimulationExperiment):
 
 
 if __name__ == "__main__":
+    out = rivaroxaban.RESULTS_PATH_SIMULATION / Moore2014.__name__
+    out.mkdir(parents=True, exist_ok=True)
     run_experiments(Moore2014, output_dir=Moore2014.__name__)
 </code>
         </pre>

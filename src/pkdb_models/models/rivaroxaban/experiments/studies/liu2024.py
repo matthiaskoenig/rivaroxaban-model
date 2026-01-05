@@ -35,6 +35,13 @@ class Liu2024(RivaroxabanSimulationExperiment):
         "fed_20": "#A35AC7",
     }
 
+    colors_bland_altman = {
+        "prothrombin time": "tab:blue",  # "#F7E6FB",
+        "aPTT": "tab:orange",  # "#EAC6F3",
+        "Anti-factor Xa activity": "#DDB8EA",
+        "Anti-factor Xa activity (change relative)": "#A35AC7",
+    }
+
     info_figs = {
         "Fig2": {
             "[Cve_riv]": "rivaroxaban"
@@ -47,11 +54,14 @@ class Liu2024(RivaroxabanSimulationExperiment):
 
     def datasets(self) -> Dict[str, DataSet]:
         dsets = {}
-        for fig_id, variables in self.info_figs.items():
+        for fig_id in ["Fig2", "Fig3", "Fig3b"]:
             df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
-            for label, df_label in df.groupby("label"):
-                if "Anti-factor Xa activity" in label:
+            group = "x_label" if fig_id == "Fig3b" else "label"
+            for label, df_label in df.groupby(group):
+                if "Anti-factor Xa activity" in label and fig_id != "Fig3b":
                     continue  # Not handled yet
+                if "digitised" in label:
+                    continue # take only table values
                 dset = DataSet.from_df(df_label, self.ureg)
                 if "rivaroxaban" in label:
                     dset.unit_conversion("mean", 1 / self.Mr.riv)
@@ -118,6 +128,12 @@ class Liu2024(RivaroxabanSimulationExperiment):
         return mappings
 
     def figures(self) -> Dict[str, Figure]:
+        return {
+            #**self.figures_pk_pd(),
+            **self.figure_bland_altman(),
+        }
+
+    def figures_pk_pd(self) -> Dict[str, Figure]:
         figures = {}
 
         # PK Figure: Fig2
@@ -218,6 +234,51 @@ class Liu2024(RivaroxabanSimulationExperiment):
         figures[fig_pd.sid] = fig_pd
 
         return figures
+
+    def figure_bland_altman(self) -> Dict[str, Figure]:
+        fig = Figure(
+            experiment=self,
+            sid="Fig",
+            num_rows=1,
+            num_cols=1,
+            name=self.__class__.__name__
+        )
+        plots = fig.create_plots(
+            xaxis=Axis("Average of two measures", unit="dimensionless"),
+            yaxis=Axis("Difference between two measure", unit="dimensionless"),
+            legend=True,
+        )
+
+        for variable in ["prothrombin time", "aPTT", "Anti-factor Xa activity", "Anti-factor Xa activity (change relative)"]:
+            k = 0
+            for group in self.colors.keys():
+                if k == 0:
+                    if variable == "prothrombin time":
+                        label = "PT"
+                    elif variable == "Anti-factor Xa activity":
+                        label = "Anti-factor Xa activity (ng/ml)"
+                    elif variable == "Anti-factor Xa activity (change relative)":
+                        label = "Anti-factor Xa activity"
+                    else:
+                        label = variable
+                else:
+                    label = ""
+                if variable == "Anti-factor Xa activity (change relative)" and group == "fasted_20":
+                    continue
+                plots[0].add_data(
+                    dataset=f"Fig3b_{variable}_mean_real_dig_{group}",
+                    xid="x",
+                    yid="y",
+                    label=label,
+                    color=self.colors_bland_altman[variable],
+                    marker="o",
+                    markeredgecolor="black",
+                    markersize=7,
+                    linestyle="",
+                )
+                k += 1
+
+        return {fig.sid: fig}
 
 
 if __name__ == "__main__":

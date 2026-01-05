@@ -1,7 +1,7 @@
 study	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	mean	median	min	max	mean_sd	mean_se	cv	comments	mean_unit	median_unit
-Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	1.692	hr	2.6765776513413484e-10				1.402016864988325e-10			mid-point interval	mole/second	mg/hr
-Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	4.74	hr	2.421665494070744e-10				1.0833766684000695e-10			mid-point interval	mole/second	mg/hr
-Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	7.65	hr	2.357937454753092e-10				1.5294729436236275e-10			mid-point interval	mole/second	mg/hr
-Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	10.73	hr	1.5294729436236275e-10				9.559205897647671e-11			mid-point interval	mole/second	mg/hr
-Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	13.71	hr	7.647364718118138e-11				3.823682359059069e-11			mid-point interval	mole/second	mg/hr
-Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	15.88	hr	4.4609627522355806e-11				2.485393533388395e-11			mid-point interval	mole/second	mg/hr
+Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	1.692	hr	2.676577651341348e-10				1.4020168649883248e-10			mid-point interval	mole/second	mg/hr
+Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	4.74	hr	2.4216654940707434e-10				1.0833766684000693e-10			mid-point interval	mole/second	mg/hr
+Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	7.65	hr	2.357937454753092e-10				1.5294729436236273e-10			mid-point interval	mole/second	mg/hr
+Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	10.73	hr	1.5294729436236273e-10				9.55920589764767e-11			mid-point interval	mole/second	mg/hr
+Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	13.71	hr	7.647364718118136e-11				3.823682359059068e-11			mid-point interval	mole/second	mg/hr
+Alalawneh2024	non-obese	18.0	RIV20	excretion rate	rivaroxaban	urine	LC/MS	rivaroxaban_excretion_urine_non-obese	15.88	hr	4.46096275223558e-11				2.4853935333883945e-11			mid-point interval	mole/second	mg/hr

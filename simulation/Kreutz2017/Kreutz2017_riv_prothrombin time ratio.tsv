@@ -1,0 +1,13 @@
+study	individual	group	count	intervention	measurement_type	tissue	substance	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	cv	comments	mean_unit	value_unit
+Kreutz2017		all	24.0	riv	prothrombin time ratio	plasma		coagulation assay	riv_prothrombin time ratio	0.0	hr		1.05981308411215	1.02990654205608	0.02990654205607	0.0061046473340381		geometric mean	dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	prothrombin time ratio	plasma		coagulation assay	riv_prothrombin time ratio	1.0	hr		1.31775700934579	1.10467289719626	0.21308411214953	0.0434956122550278			dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	prothrombin time ratio	plasma		coagulation assay	riv_prothrombin time ratio	2.0	hr		1.55327102803738	1.37009345794393	0.18317757009345	0.0373909649209877			dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	prothrombin time ratio	plasma		coagulation assay	riv_prothrombin time ratio	3.0	hr		1.59065420560748	1.46728971962617	0.12336448598131	0.0251816702529115			dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	prothrombin time ratio	plasma		coagulation assay	riv_prothrombin time ratio	4.0	hr		1.54953271028037	1.42616822429907	0.1233644859813	0.0251816702529094			dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	prothrombin time ratio	plasma		coagulation assay	riv_prothrombin time ratio	6.0	hr		1.38878504672897	1.48598130841122	0.0971962616822499	0.0198401038356284			dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	prothrombin time ratio	plasma		coagulation assay	riv_prothrombin time ratio	12.0	hr		1.14		0.047196	0.0096338431583662	4.14		dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	prothrombin time ratio	plasma		coagulation assay	riv_prothrombin time ratio	18.0	hr		1.09345794392523	1.12710280373832	0.0336448598130898	0.0068677282507951			dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	prothrombin time ratio	plasma		coagulation assay	riv_prothrombin time ratio	24.0	hr		1.06		0.032966	0.0067291565717158	3.11		dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	prothrombin time ratio	plasma		coagulation assay	riv_prothrombin time ratio	36.0	hr		1.02		0.030702	0.0062670195069107	3.01		dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	prothrombin time ratio	plasma		coagulation assay	riv_prothrombin time ratio	48.0	hr		1.02		0.02958	0.0060379922159605	2.9		dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	prothrombin time ratio	plasma		coagulation assay	riv_prothrombin time ratio	60.0	hr		1.00747663551402	1.0411214953271	0.0336448598130801	0.0068677282507931			dimensionless	dimensionless

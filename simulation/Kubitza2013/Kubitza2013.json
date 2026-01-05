@@ -1,7 +1,7 @@
 {
   "experiment_id": "Kubitza2013",
-  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/rivaroxaban')]",
+  "base_path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban",
+  "data_path": "[PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/rivaroxaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/apixaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/edoxaban')]",
   "models": {
     "model": {
       "sid": null,
@@ -9,8 +9,8 @@
       "language": "SBML",
       "language_type": "SBML",
       "source": {
-        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
-        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "source": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
         "content": "None"
       },
       "changes": {}
@@ -791,7 +791,7 @@
             "curves": [
               {
                 "sid": "Fig1__plot0_curve0",
-                "name": "healthy",
+                "name": "Healthy subjects",
                 "x": "task_healthy__time",
                 "y": "task_healthy__Cve_riv",
                 "xerr": null,
@@ -822,7 +822,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve1",
-                "name": "healthy\u00b1SD (n=8)",
+                "name": "Healthy subjects\u00b1SD (n=8)",
                 "x": "Fig1_rivaroxaban_healthy__time",
                 "y": "Fig1_rivaroxaban_healthy__mean",
                 "xerr": null,
@@ -853,7 +853,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve2",
-                "name": "mildHI",
+                "name": "Mild hepatic impairment",
                 "x": "task_mildHI__time",
                 "y": "task_mildHI__Cve_riv",
                 "xerr": null,
@@ -884,7 +884,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve3",
-                "name": "mildHI\u00b1SD (n=8)",
+                "name": "Mild hepatic impairment\u00b1SD (n=8)",
                 "x": "Fig1_rivaroxaban_mildHI__time",
                 "y": "Fig1_rivaroxaban_mildHI__mean",
                 "xerr": null,
@@ -915,7 +915,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve4",
-                "name": "moderateHI",
+                "name": "Moderate hepatic impairment",
                 "x": "task_moderateHI__time",
                 "y": "task_moderateHI__Cve_riv",
                 "xerr": null,
@@ -946,7 +946,7 @@
               },
               {
                 "sid": "Fig1__plot0_curve5",
-                "name": "moderateHI\u00b1SD (n=8)",
+                "name": "Moderate hepatic impairment\u00b1SD (n=8)",
                 "x": "Fig1_rivaroxaban_moderateHI__time",
                 "y": "Fig1_rivaroxaban_moderateHI__mean",
                 "xerr": null,
@@ -988,10 +988,10 @@
     "Fig2": {
       "sid": "Fig2",
       "name": "Kubitza2013",
-      "num_rows": 2,
-      "num_cols": 1,
-      "width": 7.0,
-      "height": 10.0,
+      "num_rows": 1,
+      "num_cols": 2,
+      "width": 14.0,
+      "height": 5.0,
       "subplots": [
         {
           "sid": null,
@@ -1030,7 +1030,7 @@
             "curves": [
               {
                 "sid": "Fig2__plot0_curve0",
-                "name": "healthy",
+                "name": "Healthy subjects",
                 "x": "task_healthy__time",
                 "y": "task_healthy__Xa_inhibition",
                 "xerr": null,
@@ -1061,7 +1061,7 @@
               },
               {
                 "sid": "Fig2__plot0_curve1",
-                "name": "healthy\u00b1SD (n=8)",
+                "name": "Healthy subjects\u00b1SD (n=8)",
                 "x": "Fig2A_factor Xa inhibition_healthy__time",
                 "y": "Fig2A_factor Xa inhibition_healthy__mean",
                 "xerr": null,
@@ -1092,7 +1092,7 @@
               },
               {
                 "sid": "Fig2__plot0_curve2",
-                "name": "mildHI",
+                "name": "Mild hepatic impairment",
                 "x": "task_mildHI__time",
                 "y": "task_mildHI__Xa_inhibition",
                 "xerr": null,
@@ -1123,7 +1123,7 @@
               },
               {
                 "sid": "Fig2__plot0_curve3",
-                "name": "mildHI\u00b1SD (n=8)",
+                "name": "Mild hepatic impairment\u00b1SD (n=8)",
                 "x": "Fig2A_factor Xa inhibition_mildHI__time",
                 "y": "Fig2A_factor Xa inhibition_mildHI__mean",
                 "xerr": null,
@@ -1154,7 +1154,7 @@
               },
               {
                 "sid": "Fig2__plot0_curve4",
-                "name": "moderateHI",
+                "name": "Moderate hepatic impairment",
                 "x": "task_moderateHI__time",
                 "y": "task_moderateHI__Xa_inhibition",
                 "xerr": null,
@@ -1185,7 +1185,7 @@
               },
               {
                 "sid": "Fig2__plot0_curve5",
-                "name": "moderateHI\u00b1SD (n=8)",
+                "name": "Moderate hepatic impairment\u00b1SD (n=8)",
                 "x": "Fig2A_factor Xa inhibition_moderateHI__time",
                 "y": "Fig2A_factor Xa inhibition_moderateHI__mean",
                 "xerr": null,
@@ -1259,7 +1259,7 @@
             "curves": [
               {
                 "sid": "Fig2__plot1_curve0",
-                "name": "healthy",
+                "name": "Healthy subjects",
                 "x": "task_healthy__time",
                 "y": "task_healthy__PT_ratio",
                 "xerr": null,
@@ -1290,7 +1290,7 @@
               },
               {
                 "sid": "Fig2__plot1_curve1",
-                "name": "healthy\u00b1SD (n=8)",
+                "name": "Healthy subjects\u00b1SD (n=8)",
                 "x": "Fig2B_prothrombin time (change relative)_healthy__time",
                 "y": "Fig2B_prothrombin time (change relative)_healthy__mean",
                 "xerr": null,
@@ -1321,7 +1321,7 @@
               },
               {
                 "sid": "Fig2__plot1_curve2",
-                "name": "mildHI",
+                "name": "Mild hepatic impairment",
                 "x": "task_mildHI__time",
                 "y": "task_mildHI__PT_ratio",
                 "xerr": null,
@@ -1352,7 +1352,7 @@
               },
               {
                 "sid": "Fig2__plot1_curve3",
-                "name": "mildHI\u00b1SD (n=8)",
+                "name": "Mild hepatic impairment\u00b1SD (n=8)",
                 "x": "Fig2B_prothrombin time (change relative)_mildHI__time",
                 "y": "Fig2B_prothrombin time (change relative)_mildHI__mean",
                 "xerr": null,
@@ -1383,7 +1383,7 @@
               },
               {
                 "sid": "Fig2__plot1_curve4",
-                "name": "moderateHI",
+                "name": "Moderate hepatic impairment",
                 "x": "task_moderateHI__time",
                 "y": "task_moderateHI__PT_ratio",
                 "xerr": null,
@@ -1414,7 +1414,7 @@
               },
               {
                 "sid": "Fig2__plot1_curve5",
-                "name": "moderateHI\u00b1SD (n=8)",
+                "name": "Moderate hepatic impairment\u00b1SD (n=8)",
                 "x": "Fig2B_prothrombin time (change relative)_moderateHI__time",
                 "y": "Fig2B_prothrombin time (change relative)_moderateHI__mean",
                 "xerr": null,
@@ -1446,8 +1446,8 @@
             ],
             "areas": []
           },
-          "row": 2,
-          "col": 1,
+          "row": 1,
+          "col": 2,
           "row_span": 1,
           "col_span": 1
         }

@@ -1,10 +1,10 @@
 study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
-Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	LC/MS	aPTT_obese	0.0	hr		35.1263537906137					s	s
-Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	LC/MS	aPTT_obese	0.967741935483872	hr		45.884476534296					s	s
-Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	LC/MS	aPTT_obese	2.02346041055718	hr		40.5415162454874					s	s
-Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	LC/MS	aPTT_obese	3.95894428152493	hr		40.5415162454874					s	s
-Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	LC/MS	aPTT_obese	8.00586510263929	hr		38.3032490974729					s	s
-Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	LC/MS	aPTT_obese	12.0527859237537	hr		38.086642599278					s	s
-Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	LC/MS	aPTT_obese	18.0351906158358	hr		31.0830324909747					s	s
-Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	LC/MS	aPTT_obese	35.9824046920821	hr		38.3754512635379					s	s
-Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	LC/MS	aPTT_obese	48.0351906158358	hr		31.9494584837545					s	s
+Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	coagulation assay	aPTT_obese	0.0	hr		35.1263537906137					s	s
+Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	coagulation assay	aPTT_obese	0.967741935483872	hr		45.884476534296					s	s
+Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	coagulation assay	aPTT_obese	2.02346041055718	hr		40.5415162454874					s	s
+Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	coagulation assay	aPTT_obese	3.95894428152493	hr		40.5415162454874					s	s
+Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	coagulation assay	aPTT_obese	8.00586510263929	hr		38.3032490974729					s	s
+Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	coagulation assay	aPTT_obese	12.0527859237537	hr		38.086642599278					s	s
+Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	coagulation assay	aPTT_obese	18.0351906158358	hr		31.0830324909747					s	s
+Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	coagulation assay	aPTT_obese	35.9824046920821	hr		38.3754512635379					s	s
+Alalawneh2024		obese	18.0	RIV20	aPTT		plasma	coagulation assay	aPTT_obese	48.0351906158358	hr		31.9494584837545					s	s

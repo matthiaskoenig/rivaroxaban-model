@@ -1,7 +1,7 @@
 {
   "experiment_id": "Kubitza2005a",
-  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/rivaroxaban')]",
+  "base_path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban",
+  "data_path": "[PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/rivaroxaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/apixaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/edoxaban')]",
   "models": {
     "model": {
       "sid": null,
@@ -9,168 +9,64 @@
       "language": "SBML",
       "language_type": "SBML",
       "source": {
-        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
-        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "source": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
         "content": "None"
       },
       "changes": {}
     }
   },
   "tasks": {
-    "task_S10": {
-      "model": "model",
-      "simulation": "S10"
-    },
-    "task_P": {
-      "model": "model",
-      "simulation": "P"
-    },
-    "task_T80": {
-      "model": "model",
-      "simulation": "T80"
-    },
-    "task_T10": {
-      "model": "model",
-      "simulation": "T10"
-    },
     "task_T30": {
       "model": "model",
       "simulation": "T30"
-    },
-    "task_T60": {
-      "model": "model",
-      "simulation": "T60"
-    },
-    "task_T5": {
-      "model": "model",
-      "simulation": "T5"
     },
     "task_T40": {
       "model": "model",
       "simulation": "T40"
     },
-    "task_S5": {
+    "task_S10": {
       "model": "model",
-      "simulation": "S5"
+      "simulation": "S10"
     },
-    "task_T1.25": {
+    "task_T15": {
       "model": "model",
-      "simulation": "T1.25"
+      "simulation": "T15"
+    },
+    "task_P": {
+      "model": "model",
+      "simulation": "P"
+    },
+    "task_T5": {
+      "model": "model",
+      "simulation": "T5"
+    },
+    "task_T10": {
+      "model": "model",
+      "simulation": "T10"
+    },
+    "task_T60": {
+      "model": "model",
+      "simulation": "T60"
     },
     "task_T20": {
       "model": "model",
       "simulation": "T20"
     },
-    "task_T15": {
+    "task_T1.25": {
       "model": "model",
-      "simulation": "T15"
+      "simulation": "T1.25"
+    },
+    "task_T80": {
+      "model": "model",
+      "simulation": "T80"
+    },
+    "task_S5": {
+      "model": "model",
+      "simulation": "S5"
     }
   },
   "simulations": {
-    "S10": {
-      "type": "TimecourseSim",
-      "selections": null,
-      "reset": true,
-      "time_offset": 0.0,
-      "timecourses": [
-        {
-          "start": 0,
-          "end": 3000,
-          "steps": 500,
-          "changes": {
-            "BW": {
-              "_magnitude": 81.2,
-              "_units": "kilogram"
-            },
-            "PODOSE_riv": {
-              "_magnitude": 10.0,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
-        }
-      ]
-    },
-    "P": {
-      "type": "TimecourseSim",
-      "selections": null,
-      "reset": true,
-      "time_offset": 0.0,
-      "timecourses": [
-        {
-          "start": 0,
-          "end": 3000,
-          "steps": 500,
-          "changes": {
-            "BW": {
-              "_magnitude": 81.2,
-              "_units": "kilogram"
-            },
-            "PODOSE_riv": {
-              "_magnitude": 0.0,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
-        }
-      ]
-    },
-    "T80": {
-      "type": "TimecourseSim",
-      "selections": null,
-      "reset": true,
-      "time_offset": 0.0,
-      "timecourses": [
-        {
-          "start": 0,
-          "end": 3000,
-          "steps": 500,
-          "changes": {
-            "BW": {
-              "_magnitude": 81.2,
-              "_units": "kilogram"
-            },
-            "PODOSE_riv": {
-              "_magnitude": 80.0,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
-        }
-      ]
-    },
-    "T10": {
-      "type": "TimecourseSim",
-      "selections": null,
-      "reset": true,
-      "time_offset": 0.0,
-      "timecourses": [
-        {
-          "start": 0,
-          "end": 3000,
-          "steps": 500,
-          "changes": {
-            "BW": {
-              "_magnitude": 81.2,
-              "_units": "kilogram"
-            },
-            "PODOSE_riv": {
-              "_magnitude": 10.0,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
-        }
-      ]
-    },
     "T30": {
       "type": "TimecourseSim",
       "selections": null,
@@ -188,58 +84,6 @@
             },
             "PODOSE_riv": {
               "_magnitude": 30.0,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
-        }
-      ]
-    },
-    "T60": {
-      "type": "TimecourseSim",
-      "selections": null,
-      "reset": true,
-      "time_offset": 0.0,
-      "timecourses": [
-        {
-          "start": 0,
-          "end": 3000,
-          "steps": 500,
-          "changes": {
-            "BW": {
-              "_magnitude": 81.2,
-              "_units": "kilogram"
-            },
-            "PODOSE_riv": {
-              "_magnitude": 60.0,
-              "_units": "milligram"
-            }
-          },
-          "model_changes": {},
-          "model_manipulations": {},
-          "discard": false
-        }
-      ]
-    },
-    "T5": {
-      "type": "TimecourseSim",
-      "selections": null,
-      "reset": true,
-      "time_offset": 0.0,
-      "timecourses": [
-        {
-          "start": 0,
-          "end": 3000,
-          "steps": 500,
-          "changes": {
-            "BW": {
-              "_magnitude": 81.2,
-              "_units": "kilogram"
-            },
-            "PODOSE_riv": {
-              "_magnitude": 5.0,
               "_units": "milligram"
             }
           },
@@ -275,7 +119,85 @@
         }
       ]
     },
-    "S5": {
+    "S10": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 81.2,
+              "_units": "kilogram"
+            },
+            "PODOSE_riv": {
+              "_magnitude": 10.0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "T15": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 81.2,
+              "_units": "kilogram"
+            },
+            "PODOSE_riv": {
+              "_magnitude": 15.0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "P": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 81.2,
+              "_units": "kilogram"
+            },
+            "PODOSE_riv": {
+              "_magnitude": 0.0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "T5": {
       "type": "TimecourseSim",
       "selections": null,
       "reset": true,
@@ -301,7 +223,7 @@
         }
       ]
     },
-    "T1.25": {
+    "T10": {
       "type": "TimecourseSim",
       "selections": null,
       "reset": true,
@@ -317,7 +239,33 @@
               "_units": "kilogram"
             },
             "PODOSE_riv": {
-              "_magnitude": 1.25,
+              "_magnitude": 10.0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "T60": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 81.2,
+              "_units": "kilogram"
+            },
+            "PODOSE_riv": {
+              "_magnitude": 60.0,
               "_units": "milligram"
             }
           },
@@ -353,7 +301,7 @@
         }
       ]
     },
-    "T15": {
+    "T1.25": {
       "type": "TimecourseSim",
       "selections": null,
       "reset": true,
@@ -369,7 +317,59 @@
               "_units": "kilogram"
             },
             "PODOSE_riv": {
-              "_magnitude": 15.0,
+              "_magnitude": 1.25,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "T80": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 81.2,
+              "_units": "kilogram"
+            },
+            "PODOSE_riv": {
+              "_magnitude": 80.0,
+              "_units": "milligram"
+            }
+          },
+          "model_changes": {},
+          "model_manipulations": {},
+          "discard": false
+        }
+      ]
+    },
+    "S5": {
+      "type": "TimecourseSim",
+      "selections": null,
+      "reset": true,
+      "time_offset": 0.0,
+      "timecourses": [
+        {
+          "start": 0,
+          "end": 3000,
+          "steps": 500,
+          "changes": {
+            "BW": {
+              "_magnitude": 81.2,
+              "_units": "kilogram"
+            },
+            "PODOSE_riv": {
+              "_magnitude": 5.0,
               "_units": "milligram"
             }
           },
@@ -381,834 +381,6 @@
     }
   },
   "data": {
-    "task_S10__time": {
-      "type": "TASK",
-      "index": "time",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__Cve_riv": {
-      "type": "TASK",
-      "index": "Cve_riv",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__Cve_rx": {
-      "type": "TASK",
-      "index": "Cve_rx",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__Cve_riv_rx": {
-      "type": "TASK",
-      "index": "Cve_riv_rx",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__Aurine_riv": {
-      "type": "TASK",
-      "index": "Aurine_riv",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__Aurine_rx": {
-      "type": "TASK",
-      "index": "Aurine_rx",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__Aurine_riv_rx": {
-      "type": "TASK",
-      "index": "Aurine_riv_rx",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__Afeces_riv": {
-      "type": "TASK",
-      "index": "Afeces_riv",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__Afeces_rx": {
-      "type": "TASK",
-      "index": "Afeces_rx",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__Afeces_riv_rx": {
-      "type": "TASK",
-      "index": "Afeces_riv_rx",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__Afeces_urine_riv_rx": {
-      "type": "TASK",
-      "index": "Afeces_urine_riv_rx",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__KI__RIVEX": {
-      "type": "TASK",
-      "index": "KI__RIVEX",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__KI__f_renal_function": {
-      "type": "TASK",
-      "index": "KI__f_renal_function",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__f_cirrhosis": {
-      "type": "TASK",
-      "index": "f_cirrhosis",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__PT": {
-      "type": "TASK",
-      "index": "PT",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__PT_change": {
-      "type": "TASK",
-      "index": "PT_change",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__PT_ratio": {
-      "type": "TASK",
-      "index": "PT_ratio",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__aPTT": {
-      "type": "TASK",
-      "index": "aPTT",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__aPTT_change": {
-      "type": "TASK",
-      "index": "aPTT_change",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__aPTT_ratio": {
-      "type": "TASK",
-      "index": "aPTT_ratio",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__Xa_inhibition": {
-      "type": "TASK",
-      "index": "Xa_inhibition",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__PODOSE_riv": {
-      "type": "TASK",
-      "index": "PODOSE_riv",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_S10__GU__F_riv_abs": {
-      "type": "TASK",
-      "index": "GU__F_riv_abs",
-      "unit": null,
-      "task": "task_S10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__time": {
-      "type": "TASK",
-      "index": "time",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__Cve_riv": {
-      "type": "TASK",
-      "index": "Cve_riv",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__Cve_rx": {
-      "type": "TASK",
-      "index": "Cve_rx",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__Cve_riv_rx": {
-      "type": "TASK",
-      "index": "Cve_riv_rx",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__Aurine_riv": {
-      "type": "TASK",
-      "index": "Aurine_riv",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__Aurine_rx": {
-      "type": "TASK",
-      "index": "Aurine_rx",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__Aurine_riv_rx": {
-      "type": "TASK",
-      "index": "Aurine_riv_rx",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__Afeces_riv": {
-      "type": "TASK",
-      "index": "Afeces_riv",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__Afeces_rx": {
-      "type": "TASK",
-      "index": "Afeces_rx",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__Afeces_riv_rx": {
-      "type": "TASK",
-      "index": "Afeces_riv_rx",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__Afeces_urine_riv_rx": {
-      "type": "TASK",
-      "index": "Afeces_urine_riv_rx",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__KI__RIVEX": {
-      "type": "TASK",
-      "index": "KI__RIVEX",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__KI__f_renal_function": {
-      "type": "TASK",
-      "index": "KI__f_renal_function",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__f_cirrhosis": {
-      "type": "TASK",
-      "index": "f_cirrhosis",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__PT": {
-      "type": "TASK",
-      "index": "PT",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__PT_change": {
-      "type": "TASK",
-      "index": "PT_change",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__PT_ratio": {
-      "type": "TASK",
-      "index": "PT_ratio",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__aPTT": {
-      "type": "TASK",
-      "index": "aPTT",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__aPTT_change": {
-      "type": "TASK",
-      "index": "aPTT_change",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__aPTT_ratio": {
-      "type": "TASK",
-      "index": "aPTT_ratio",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__Xa_inhibition": {
-      "type": "TASK",
-      "index": "Xa_inhibition",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__PODOSE_riv": {
-      "type": "TASK",
-      "index": "PODOSE_riv",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_P__GU__F_riv_abs": {
-      "type": "TASK",
-      "index": "GU__F_riv_abs",
-      "unit": null,
-      "task": "task_P",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__time": {
-      "type": "TASK",
-      "index": "time",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__Cve_riv": {
-      "type": "TASK",
-      "index": "Cve_riv",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__Cve_rx": {
-      "type": "TASK",
-      "index": "Cve_rx",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__Cve_riv_rx": {
-      "type": "TASK",
-      "index": "Cve_riv_rx",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__Aurine_riv": {
-      "type": "TASK",
-      "index": "Aurine_riv",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__Aurine_rx": {
-      "type": "TASK",
-      "index": "Aurine_rx",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__Aurine_riv_rx": {
-      "type": "TASK",
-      "index": "Aurine_riv_rx",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__Afeces_riv": {
-      "type": "TASK",
-      "index": "Afeces_riv",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__Afeces_rx": {
-      "type": "TASK",
-      "index": "Afeces_rx",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__Afeces_riv_rx": {
-      "type": "TASK",
-      "index": "Afeces_riv_rx",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__Afeces_urine_riv_rx": {
-      "type": "TASK",
-      "index": "Afeces_urine_riv_rx",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__KI__RIVEX": {
-      "type": "TASK",
-      "index": "KI__RIVEX",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__KI__f_renal_function": {
-      "type": "TASK",
-      "index": "KI__f_renal_function",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__f_cirrhosis": {
-      "type": "TASK",
-      "index": "f_cirrhosis",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__PT": {
-      "type": "TASK",
-      "index": "PT",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__PT_change": {
-      "type": "TASK",
-      "index": "PT_change",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__PT_ratio": {
-      "type": "TASK",
-      "index": "PT_ratio",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__aPTT": {
-      "type": "TASK",
-      "index": "aPTT",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__aPTT_change": {
-      "type": "TASK",
-      "index": "aPTT_change",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__aPTT_ratio": {
-      "type": "TASK",
-      "index": "aPTT_ratio",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__Xa_inhibition": {
-      "type": "TASK",
-      "index": "Xa_inhibition",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__PODOSE_riv": {
-      "type": "TASK",
-      "index": "PODOSE_riv",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T80__GU__F_riv_abs": {
-      "type": "TASK",
-      "index": "GU__F_riv_abs",
-      "unit": null,
-      "task": "task_T80",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__time": {
-      "type": "TASK",
-      "index": "time",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__Cve_riv": {
-      "type": "TASK",
-      "index": "Cve_riv",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__Cve_rx": {
-      "type": "TASK",
-      "index": "Cve_rx",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__Cve_riv_rx": {
-      "type": "TASK",
-      "index": "Cve_riv_rx",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__Aurine_riv": {
-      "type": "TASK",
-      "index": "Aurine_riv",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__Aurine_rx": {
-      "type": "TASK",
-      "index": "Aurine_rx",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__Aurine_riv_rx": {
-      "type": "TASK",
-      "index": "Aurine_riv_rx",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__Afeces_riv": {
-      "type": "TASK",
-      "index": "Afeces_riv",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__Afeces_rx": {
-      "type": "TASK",
-      "index": "Afeces_rx",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__Afeces_riv_rx": {
-      "type": "TASK",
-      "index": "Afeces_riv_rx",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__Afeces_urine_riv_rx": {
-      "type": "TASK",
-      "index": "Afeces_urine_riv_rx",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__KI__RIVEX": {
-      "type": "TASK",
-      "index": "KI__RIVEX",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__KI__f_renal_function": {
-      "type": "TASK",
-      "index": "KI__f_renal_function",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__f_cirrhosis": {
-      "type": "TASK",
-      "index": "f_cirrhosis",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__PT": {
-      "type": "TASK",
-      "index": "PT",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__PT_change": {
-      "type": "TASK",
-      "index": "PT_change",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__PT_ratio": {
-      "type": "TASK",
-      "index": "PT_ratio",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__aPTT": {
-      "type": "TASK",
-      "index": "aPTT",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__aPTT_change": {
-      "type": "TASK",
-      "index": "aPTT_change",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__aPTT_ratio": {
-      "type": "TASK",
-      "index": "aPTT_ratio",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__Xa_inhibition": {
-      "type": "TASK",
-      "index": "Xa_inhibition",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__PODOSE_riv": {
-      "type": "TASK",
-      "index": "PODOSE_riv",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T10__GU__F_riv_abs": {
-      "type": "TASK",
-      "index": "GU__F_riv_abs",
-      "unit": null,
-      "task": "task_T10",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
     "task_T30__time": {
       "type": "TASK",
       "index": "time",
@@ -1412,420 +584,6 @@
       "index": "GU__F_riv_abs",
       "unit": null,
       "task": "task_T30",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__time": {
-      "type": "TASK",
-      "index": "time",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__Cve_riv": {
-      "type": "TASK",
-      "index": "Cve_riv",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__Cve_rx": {
-      "type": "TASK",
-      "index": "Cve_rx",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__Cve_riv_rx": {
-      "type": "TASK",
-      "index": "Cve_riv_rx",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__Aurine_riv": {
-      "type": "TASK",
-      "index": "Aurine_riv",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__Aurine_rx": {
-      "type": "TASK",
-      "index": "Aurine_rx",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__Aurine_riv_rx": {
-      "type": "TASK",
-      "index": "Aurine_riv_rx",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__Afeces_riv": {
-      "type": "TASK",
-      "index": "Afeces_riv",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__Afeces_rx": {
-      "type": "TASK",
-      "index": "Afeces_rx",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__Afeces_riv_rx": {
-      "type": "TASK",
-      "index": "Afeces_riv_rx",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__Afeces_urine_riv_rx": {
-      "type": "TASK",
-      "index": "Afeces_urine_riv_rx",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__KI__RIVEX": {
-      "type": "TASK",
-      "index": "KI__RIVEX",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__KI__f_renal_function": {
-      "type": "TASK",
-      "index": "KI__f_renal_function",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__f_cirrhosis": {
-      "type": "TASK",
-      "index": "f_cirrhosis",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__PT": {
-      "type": "TASK",
-      "index": "PT",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__PT_change": {
-      "type": "TASK",
-      "index": "PT_change",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__PT_ratio": {
-      "type": "TASK",
-      "index": "PT_ratio",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__aPTT": {
-      "type": "TASK",
-      "index": "aPTT",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__aPTT_change": {
-      "type": "TASK",
-      "index": "aPTT_change",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__aPTT_ratio": {
-      "type": "TASK",
-      "index": "aPTT_ratio",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__Xa_inhibition": {
-      "type": "TASK",
-      "index": "Xa_inhibition",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__PODOSE_riv": {
-      "type": "TASK",
-      "index": "PODOSE_riv",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T60__GU__F_riv_abs": {
-      "type": "TASK",
-      "index": "GU__F_riv_abs",
-      "unit": null,
-      "task": "task_T60",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__time": {
-      "type": "TASK",
-      "index": "time",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__Cve_riv": {
-      "type": "TASK",
-      "index": "Cve_riv",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__Cve_rx": {
-      "type": "TASK",
-      "index": "Cve_rx",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__Cve_riv_rx": {
-      "type": "TASK",
-      "index": "Cve_riv_rx",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__Aurine_riv": {
-      "type": "TASK",
-      "index": "Aurine_riv",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__Aurine_rx": {
-      "type": "TASK",
-      "index": "Aurine_rx",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__Aurine_riv_rx": {
-      "type": "TASK",
-      "index": "Aurine_riv_rx",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__Afeces_riv": {
-      "type": "TASK",
-      "index": "Afeces_riv",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__Afeces_rx": {
-      "type": "TASK",
-      "index": "Afeces_rx",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__Afeces_riv_rx": {
-      "type": "TASK",
-      "index": "Afeces_riv_rx",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__Afeces_urine_riv_rx": {
-      "type": "TASK",
-      "index": "Afeces_urine_riv_rx",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__KI__RIVEX": {
-      "type": "TASK",
-      "index": "KI__RIVEX",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__KI__f_renal_function": {
-      "type": "TASK",
-      "index": "KI__f_renal_function",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__f_cirrhosis": {
-      "type": "TASK",
-      "index": "f_cirrhosis",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__PT": {
-      "type": "TASK",
-      "index": "PT",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__PT_change": {
-      "type": "TASK",
-      "index": "PT_change",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__PT_ratio": {
-      "type": "TASK",
-      "index": "PT_ratio",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__aPTT": {
-      "type": "TASK",
-      "index": "aPTT",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__aPTT_change": {
-      "type": "TASK",
-      "index": "aPTT_change",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__aPTT_ratio": {
-      "type": "TASK",
-      "index": "aPTT_ratio",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__Xa_inhibition": {
-      "type": "TASK",
-      "index": "Xa_inhibition",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__PODOSE_riv": {
-      "type": "TASK",
-      "index": "PODOSE_riv",
-      "unit": null,
-      "task": "task_T5",
-      "dataset": null,
-      "function": null,
-      "variables": null
-    },
-    "task_T5__GU__F_riv_abs": {
-      "type": "TASK",
-      "index": "GU__F_riv_abs",
-      "unit": null,
-      "task": "task_T5",
       "dataset": null,
       "function": null,
       "variables": null
@@ -2037,416 +795,1244 @@
       "function": null,
       "variables": null
     },
-    "task_S5__time": {
+    "task_S10__time": {
       "type": "TASK",
       "index": "time",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__Cve_riv": {
+    "task_S10__Cve_riv": {
       "type": "TASK",
       "index": "Cve_riv",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__Cve_rx": {
+    "task_S10__Cve_rx": {
       "type": "TASK",
       "index": "Cve_rx",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__Cve_riv_rx": {
+    "task_S10__Cve_riv_rx": {
       "type": "TASK",
       "index": "Cve_riv_rx",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__Aurine_riv": {
+    "task_S10__Aurine_riv": {
       "type": "TASK",
       "index": "Aurine_riv",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__Aurine_rx": {
+    "task_S10__Aurine_rx": {
       "type": "TASK",
       "index": "Aurine_rx",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__Aurine_riv_rx": {
+    "task_S10__Aurine_riv_rx": {
       "type": "TASK",
       "index": "Aurine_riv_rx",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__Afeces_riv": {
+    "task_S10__Afeces_riv": {
       "type": "TASK",
       "index": "Afeces_riv",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__Afeces_rx": {
+    "task_S10__Afeces_rx": {
       "type": "TASK",
       "index": "Afeces_rx",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__Afeces_riv_rx": {
+    "task_S10__Afeces_riv_rx": {
       "type": "TASK",
       "index": "Afeces_riv_rx",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__Afeces_urine_riv_rx": {
+    "task_S10__Afeces_urine_riv_rx": {
       "type": "TASK",
       "index": "Afeces_urine_riv_rx",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__KI__RIVEX": {
+    "task_S10__KI__RIVEX": {
       "type": "TASK",
       "index": "KI__RIVEX",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__KI__f_renal_function": {
+    "task_S10__KI__f_renal_function": {
       "type": "TASK",
       "index": "KI__f_renal_function",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__f_cirrhosis": {
+    "task_S10__f_cirrhosis": {
       "type": "TASK",
       "index": "f_cirrhosis",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__PT": {
+    "task_S10__PT": {
       "type": "TASK",
       "index": "PT",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__PT_change": {
+    "task_S10__PT_change": {
       "type": "TASK",
       "index": "PT_change",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__PT_ratio": {
+    "task_S10__PT_ratio": {
       "type": "TASK",
       "index": "PT_ratio",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__aPTT": {
+    "task_S10__aPTT": {
       "type": "TASK",
       "index": "aPTT",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__aPTT_change": {
+    "task_S10__aPTT_change": {
       "type": "TASK",
       "index": "aPTT_change",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__aPTT_ratio": {
+    "task_S10__aPTT_ratio": {
       "type": "TASK",
       "index": "aPTT_ratio",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__Xa_inhibition": {
+    "task_S10__Xa_inhibition": {
       "type": "TASK",
       "index": "Xa_inhibition",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__PODOSE_riv": {
+    "task_S10__PODOSE_riv": {
       "type": "TASK",
       "index": "PODOSE_riv",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_S5__GU__F_riv_abs": {
+    "task_S10__GU__F_riv_abs": {
       "type": "TASK",
       "index": "GU__F_riv_abs",
       "unit": null,
-      "task": "task_S5",
+      "task": "task_S10",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__time": {
+    "task_T15__time": {
       "type": "TASK",
       "index": "time",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__Cve_riv": {
+    "task_T15__Cve_riv": {
       "type": "TASK",
       "index": "Cve_riv",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__Cve_rx": {
+    "task_T15__Cve_rx": {
       "type": "TASK",
       "index": "Cve_rx",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__Cve_riv_rx": {
+    "task_T15__Cve_riv_rx": {
       "type": "TASK",
       "index": "Cve_riv_rx",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__Aurine_riv": {
+    "task_T15__Aurine_riv": {
       "type": "TASK",
       "index": "Aurine_riv",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__Aurine_rx": {
+    "task_T15__Aurine_rx": {
       "type": "TASK",
       "index": "Aurine_rx",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__Aurine_riv_rx": {
+    "task_T15__Aurine_riv_rx": {
       "type": "TASK",
       "index": "Aurine_riv_rx",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__Afeces_riv": {
+    "task_T15__Afeces_riv": {
       "type": "TASK",
       "index": "Afeces_riv",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__Afeces_rx": {
+    "task_T15__Afeces_rx": {
       "type": "TASK",
       "index": "Afeces_rx",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__Afeces_riv_rx": {
+    "task_T15__Afeces_riv_rx": {
       "type": "TASK",
       "index": "Afeces_riv_rx",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__Afeces_urine_riv_rx": {
+    "task_T15__Afeces_urine_riv_rx": {
       "type": "TASK",
       "index": "Afeces_urine_riv_rx",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__KI__RIVEX": {
+    "task_T15__KI__RIVEX": {
       "type": "TASK",
       "index": "KI__RIVEX",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__KI__f_renal_function": {
+    "task_T15__KI__f_renal_function": {
       "type": "TASK",
       "index": "KI__f_renal_function",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__f_cirrhosis": {
+    "task_T15__f_cirrhosis": {
       "type": "TASK",
       "index": "f_cirrhosis",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__PT": {
+    "task_T15__PT": {
       "type": "TASK",
       "index": "PT",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__PT_change": {
+    "task_T15__PT_change": {
       "type": "TASK",
       "index": "PT_change",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__PT_ratio": {
+    "task_T15__PT_ratio": {
       "type": "TASK",
       "index": "PT_ratio",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__aPTT": {
+    "task_T15__aPTT": {
       "type": "TASK",
       "index": "aPTT",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__aPTT_change": {
+    "task_T15__aPTT_change": {
       "type": "TASK",
       "index": "aPTT_change",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__aPTT_ratio": {
+    "task_T15__aPTT_ratio": {
       "type": "TASK",
       "index": "aPTT_ratio",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__Xa_inhibition": {
+    "task_T15__Xa_inhibition": {
       "type": "TASK",
       "index": "Xa_inhibition",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__PODOSE_riv": {
+    "task_T15__PODOSE_riv": {
       "type": "TASK",
       "index": "PODOSE_riv",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T1.25__GU__F_riv_abs": {
+    "task_T15__GU__F_riv_abs": {
       "type": "TASK",
       "index": "GU__F_riv_abs",
       "unit": null,
-      "task": "task_T1.25",
+      "task": "task_T15",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__Cve_riv": {
+      "type": "TASK",
+      "index": "Cve_riv",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__Cve_rx": {
+      "type": "TASK",
+      "index": "Cve_rx",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__Cve_riv_rx": {
+      "type": "TASK",
+      "index": "Cve_riv_rx",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__Aurine_riv": {
+      "type": "TASK",
+      "index": "Aurine_riv",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__Aurine_rx": {
+      "type": "TASK",
+      "index": "Aurine_rx",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__Aurine_riv_rx": {
+      "type": "TASK",
+      "index": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__Afeces_riv": {
+      "type": "TASK",
+      "index": "Afeces_riv",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__Afeces_rx": {
+      "type": "TASK",
+      "index": "Afeces_rx",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__Afeces_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__KI__RIVEX": {
+      "type": "TASK",
+      "index": "KI__RIVEX",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__PT": {
+      "type": "TASK",
+      "index": "PT",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__PT_change": {
+      "type": "TASK",
+      "index": "PT_change",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__PT_ratio": {
+      "type": "TASK",
+      "index": "PT_ratio",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__aPTT": {
+      "type": "TASK",
+      "index": "aPTT",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__aPTT_change": {
+      "type": "TASK",
+      "index": "aPTT_change",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__aPTT_ratio": {
+      "type": "TASK",
+      "index": "aPTT_ratio",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__Xa_inhibition": {
+      "type": "TASK",
+      "index": "Xa_inhibition",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__PODOSE_riv": {
+      "type": "TASK",
+      "index": "PODOSE_riv",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_P__GU__F_riv_abs": {
+      "type": "TASK",
+      "index": "GU__F_riv_abs",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__Cve_riv": {
+      "type": "TASK",
+      "index": "Cve_riv",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__Cve_rx": {
+      "type": "TASK",
+      "index": "Cve_rx",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__Cve_riv_rx": {
+      "type": "TASK",
+      "index": "Cve_riv_rx",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__Aurine_riv": {
+      "type": "TASK",
+      "index": "Aurine_riv",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__Aurine_rx": {
+      "type": "TASK",
+      "index": "Aurine_rx",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__Aurine_riv_rx": {
+      "type": "TASK",
+      "index": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__Afeces_riv": {
+      "type": "TASK",
+      "index": "Afeces_riv",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__Afeces_rx": {
+      "type": "TASK",
+      "index": "Afeces_rx",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__Afeces_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__KI__RIVEX": {
+      "type": "TASK",
+      "index": "KI__RIVEX",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__PT": {
+      "type": "TASK",
+      "index": "PT",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__PT_change": {
+      "type": "TASK",
+      "index": "PT_change",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__PT_ratio": {
+      "type": "TASK",
+      "index": "PT_ratio",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__aPTT": {
+      "type": "TASK",
+      "index": "aPTT",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__aPTT_change": {
+      "type": "TASK",
+      "index": "aPTT_change",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__aPTT_ratio": {
+      "type": "TASK",
+      "index": "aPTT_ratio",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__Xa_inhibition": {
+      "type": "TASK",
+      "index": "Xa_inhibition",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__PODOSE_riv": {
+      "type": "TASK",
+      "index": "PODOSE_riv",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T5__GU__F_riv_abs": {
+      "type": "TASK",
+      "index": "GU__F_riv_abs",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__Cve_riv": {
+      "type": "TASK",
+      "index": "Cve_riv",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__Cve_rx": {
+      "type": "TASK",
+      "index": "Cve_rx",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__Cve_riv_rx": {
+      "type": "TASK",
+      "index": "Cve_riv_rx",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__Aurine_riv": {
+      "type": "TASK",
+      "index": "Aurine_riv",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__Aurine_rx": {
+      "type": "TASK",
+      "index": "Aurine_rx",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__Aurine_riv_rx": {
+      "type": "TASK",
+      "index": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__Afeces_riv": {
+      "type": "TASK",
+      "index": "Afeces_riv",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__Afeces_rx": {
+      "type": "TASK",
+      "index": "Afeces_rx",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__Afeces_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__KI__RIVEX": {
+      "type": "TASK",
+      "index": "KI__RIVEX",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__PT": {
+      "type": "TASK",
+      "index": "PT",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__PT_change": {
+      "type": "TASK",
+      "index": "PT_change",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__PT_ratio": {
+      "type": "TASK",
+      "index": "PT_ratio",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__aPTT": {
+      "type": "TASK",
+      "index": "aPTT",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__aPTT_change": {
+      "type": "TASK",
+      "index": "aPTT_change",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__aPTT_ratio": {
+      "type": "TASK",
+      "index": "aPTT_ratio",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__Xa_inhibition": {
+      "type": "TASK",
+      "index": "Xa_inhibition",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__PODOSE_riv": {
+      "type": "TASK",
+      "index": "PODOSE_riv",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T10__GU__F_riv_abs": {
+      "type": "TASK",
+      "index": "GU__F_riv_abs",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__Cve_riv": {
+      "type": "TASK",
+      "index": "Cve_riv",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__Cve_rx": {
+      "type": "TASK",
+      "index": "Cve_rx",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__Cve_riv_rx": {
+      "type": "TASK",
+      "index": "Cve_riv_rx",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__Aurine_riv": {
+      "type": "TASK",
+      "index": "Aurine_riv",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__Aurine_rx": {
+      "type": "TASK",
+      "index": "Aurine_rx",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__Aurine_riv_rx": {
+      "type": "TASK",
+      "index": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__Afeces_riv": {
+      "type": "TASK",
+      "index": "Afeces_riv",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__Afeces_rx": {
+      "type": "TASK",
+      "index": "Afeces_rx",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__Afeces_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__KI__RIVEX": {
+      "type": "TASK",
+      "index": "KI__RIVEX",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__PT": {
+      "type": "TASK",
+      "index": "PT",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__PT_change": {
+      "type": "TASK",
+      "index": "PT_change",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__PT_ratio": {
+      "type": "TASK",
+      "index": "PT_ratio",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__aPTT": {
+      "type": "TASK",
+      "index": "aPTT",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__aPTT_change": {
+      "type": "TASK",
+      "index": "aPTT_change",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__aPTT_ratio": {
+      "type": "TASK",
+      "index": "aPTT_ratio",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__Xa_inhibition": {
+      "type": "TASK",
+      "index": "Xa_inhibition",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__PODOSE_riv": {
+      "type": "TASK",
+      "index": "PODOSE_riv",
+      "unit": null,
+      "task": "task_T60",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T60__GU__F_riv_abs": {
+      "type": "TASK",
+      "index": "GU__F_riv_abs",
+      "unit": null,
+      "task": "task_T60",
       "dataset": null,
       "function": null,
       "variables": null
@@ -2658,209 +2244,623 @@
       "function": null,
       "variables": null
     },
-    "task_T15__time": {
+    "task_T1.25__time": {
       "type": "TASK",
       "index": "time",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__Cve_riv": {
+    "task_T1.25__Cve_riv": {
       "type": "TASK",
       "index": "Cve_riv",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__Cve_rx": {
+    "task_T1.25__Cve_rx": {
       "type": "TASK",
       "index": "Cve_rx",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__Cve_riv_rx": {
+    "task_T1.25__Cve_riv_rx": {
       "type": "TASK",
       "index": "Cve_riv_rx",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__Aurine_riv": {
+    "task_T1.25__Aurine_riv": {
       "type": "TASK",
       "index": "Aurine_riv",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__Aurine_rx": {
+    "task_T1.25__Aurine_rx": {
       "type": "TASK",
       "index": "Aurine_rx",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__Aurine_riv_rx": {
+    "task_T1.25__Aurine_riv_rx": {
       "type": "TASK",
       "index": "Aurine_riv_rx",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__Afeces_riv": {
+    "task_T1.25__Afeces_riv": {
       "type": "TASK",
       "index": "Afeces_riv",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__Afeces_rx": {
+    "task_T1.25__Afeces_rx": {
       "type": "TASK",
       "index": "Afeces_rx",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__Afeces_riv_rx": {
+    "task_T1.25__Afeces_riv_rx": {
       "type": "TASK",
       "index": "Afeces_riv_rx",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__Afeces_urine_riv_rx": {
+    "task_T1.25__Afeces_urine_riv_rx": {
       "type": "TASK",
       "index": "Afeces_urine_riv_rx",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__KI__RIVEX": {
+    "task_T1.25__KI__RIVEX": {
       "type": "TASK",
       "index": "KI__RIVEX",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__KI__f_renal_function": {
+    "task_T1.25__KI__f_renal_function": {
       "type": "TASK",
       "index": "KI__f_renal_function",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__f_cirrhosis": {
+    "task_T1.25__f_cirrhosis": {
       "type": "TASK",
       "index": "f_cirrhosis",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__PT": {
+    "task_T1.25__PT": {
       "type": "TASK",
       "index": "PT",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__PT_change": {
+    "task_T1.25__PT_change": {
       "type": "TASK",
       "index": "PT_change",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__PT_ratio": {
+    "task_T1.25__PT_ratio": {
       "type": "TASK",
       "index": "PT_ratio",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__aPTT": {
+    "task_T1.25__aPTT": {
       "type": "TASK",
       "index": "aPTT",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__aPTT_change": {
+    "task_T1.25__aPTT_change": {
       "type": "TASK",
       "index": "aPTT_change",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__aPTT_ratio": {
+    "task_T1.25__aPTT_ratio": {
       "type": "TASK",
       "index": "aPTT_ratio",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__Xa_inhibition": {
+    "task_T1.25__Xa_inhibition": {
       "type": "TASK",
       "index": "Xa_inhibition",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__PODOSE_riv": {
+    "task_T1.25__PODOSE_riv": {
       "type": "TASK",
       "index": "PODOSE_riv",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
       "dataset": null,
       "function": null,
       "variables": null
     },
-    "task_T15__GU__F_riv_abs": {
+    "task_T1.25__GU__F_riv_abs": {
       "type": "TASK",
       "index": "GU__F_riv_abs",
       "unit": null,
-      "task": "task_T15",
+      "task": "task_T1.25",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__Cve_riv": {
+      "type": "TASK",
+      "index": "Cve_riv",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__Cve_rx": {
+      "type": "TASK",
+      "index": "Cve_rx",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__Cve_riv_rx": {
+      "type": "TASK",
+      "index": "Cve_riv_rx",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__Aurine_riv": {
+      "type": "TASK",
+      "index": "Aurine_riv",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__Aurine_rx": {
+      "type": "TASK",
+      "index": "Aurine_rx",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__Aurine_riv_rx": {
+      "type": "TASK",
+      "index": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__Afeces_riv": {
+      "type": "TASK",
+      "index": "Afeces_riv",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__Afeces_rx": {
+      "type": "TASK",
+      "index": "Afeces_rx",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__Afeces_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__KI__RIVEX": {
+      "type": "TASK",
+      "index": "KI__RIVEX",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__PT": {
+      "type": "TASK",
+      "index": "PT",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__PT_change": {
+      "type": "TASK",
+      "index": "PT_change",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__PT_ratio": {
+      "type": "TASK",
+      "index": "PT_ratio",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__aPTT": {
+      "type": "TASK",
+      "index": "aPTT",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__aPTT_change": {
+      "type": "TASK",
+      "index": "aPTT_change",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__aPTT_ratio": {
+      "type": "TASK",
+      "index": "aPTT_ratio",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__Xa_inhibition": {
+      "type": "TASK",
+      "index": "Xa_inhibition",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__PODOSE_riv": {
+      "type": "TASK",
+      "index": "PODOSE_riv",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_T80__GU__F_riv_abs": {
+      "type": "TASK",
+      "index": "GU__F_riv_abs",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__time": {
+      "type": "TASK",
+      "index": "time",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__Cve_riv": {
+      "type": "TASK",
+      "index": "Cve_riv",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__Cve_rx": {
+      "type": "TASK",
+      "index": "Cve_rx",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__Cve_riv_rx": {
+      "type": "TASK",
+      "index": "Cve_riv_rx",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__Aurine_riv": {
+      "type": "TASK",
+      "index": "Aurine_riv",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__Aurine_rx": {
+      "type": "TASK",
+      "index": "Aurine_rx",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__Aurine_riv_rx": {
+      "type": "TASK",
+      "index": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__Afeces_riv": {
+      "type": "TASK",
+      "index": "Afeces_riv",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__Afeces_rx": {
+      "type": "TASK",
+      "index": "Afeces_rx",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__Afeces_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "index": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__KI__RIVEX": {
+      "type": "TASK",
+      "index": "KI__RIVEX",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__KI__f_renal_function": {
+      "type": "TASK",
+      "index": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__f_cirrhosis": {
+      "type": "TASK",
+      "index": "f_cirrhosis",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__PT": {
+      "type": "TASK",
+      "index": "PT",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__PT_change": {
+      "type": "TASK",
+      "index": "PT_change",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__PT_ratio": {
+      "type": "TASK",
+      "index": "PT_ratio",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__aPTT": {
+      "type": "TASK",
+      "index": "aPTT",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__aPTT_change": {
+      "type": "TASK",
+      "index": "aPTT_change",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__aPTT_ratio": {
+      "type": "TASK",
+      "index": "aPTT_ratio",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__Xa_inhibition": {
+      "type": "TASK",
+      "index": "Xa_inhibition",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__PODOSE_riv": {
+      "type": "TASK",
+      "index": "PODOSE_riv",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null
+    },
+    "task_S5__GU__F_riv_abs": {
+      "type": "TASK",
+      "index": "GU__F_riv_abs",
+      "unit": null,
+      "task": "task_S5",
       "dataset": null,
       "function": null,
       "variables": null
@@ -2912,7 +2912,7 @@
             "curves": [
               {
                 "sid": "Fig5__plot0_curve0",
-                "name": "T1.25",
+                "name": "Rivaroxaban 1.25 mg",
                 "x": "task_T1.25__time",
                 "y": "task_T1.25__Cve_riv",
                 "xerr": null,
@@ -2943,7 +2943,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve1",
-                "name": "T1.25\u00b1SD (n=8)",
+                "name": "Rivaroxaban 1.25 mg\u00b1SD (n=8)",
                 "x": "Fig5_rivaroxaban_T1.25__time",
                 "y": "Fig5_rivaroxaban_T1.25__mean",
                 "xerr": null,
@@ -2974,7 +2974,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve2",
-                "name": "T5",
+                "name": "Rivaroxaban 5 mg",
                 "x": "task_T5__time",
                 "y": "task_T5__Cve_riv",
                 "xerr": null,
@@ -3005,7 +3005,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve3",
-                "name": "T5\u00b1SD (n=6)",
+                "name": "Rivaroxaban 5 mg\u00b1SD (n=6)",
                 "x": "Fig5_rivaroxaban_T5__time",
                 "y": "Fig5_rivaroxaban_T5__mean",
                 "xerr": null,
@@ -3036,7 +3036,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve4",
-                "name": "T10",
+                "name": "Rivaroxaban 10 mg",
                 "x": "task_T10__time",
                 "y": "task_T10__Cve_riv",
                 "xerr": null,
@@ -3067,7 +3067,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve5",
-                "name": "T10\u00b1SD (n=8)",
+                "name": "Rivaroxaban 10 mg\u00b1SD (n=8)",
                 "x": "Fig5_rivaroxaban_T10__time",
                 "y": "Fig5_rivaroxaban_T10__mean",
                 "xerr": null,
@@ -3098,7 +3098,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve6",
-                "name": "T15",
+                "name": "Rivaroxaban 15 mg",
                 "x": "task_T15__time",
                 "y": "task_T15__Cve_riv",
                 "xerr": null,
@@ -3129,7 +3129,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve7",
-                "name": "T15\u00b1SD (n=7)",
+                "name": "Rivaroxaban 15 mg\u00b1SD (n=7)",
                 "x": "Fig5_rivaroxaban_T15__time",
                 "y": "Fig5_rivaroxaban_T15__mean",
                 "xerr": null,
@@ -3160,7 +3160,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve8",
-                "name": "T20",
+                "name": "Rivaroxaban 20 mg",
                 "x": "task_T20__time",
                 "y": "task_T20__Cve_riv",
                 "xerr": null,
@@ -3191,7 +3191,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve9",
-                "name": "T20\u00b1SD (n=7)",
+                "name": "Rivaroxaban 20 mg\u00b1SD (n=7)",
                 "x": "Fig5_rivaroxaban_T20__time",
                 "y": "Fig5_rivaroxaban_T20__mean",
                 "xerr": null,
@@ -3222,7 +3222,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve10",
-                "name": "T30",
+                "name": "Rivaroxaban 30 mg",
                 "x": "task_T30__time",
                 "y": "task_T30__Cve_riv",
                 "xerr": null,
@@ -3253,7 +3253,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve11",
-                "name": "T30\u00b1SD (n=7)",
+                "name": "Rivaroxaban 30 mg\u00b1SD (n=7)",
                 "x": "Fig5_rivaroxaban_T30__time",
                 "y": "Fig5_rivaroxaban_T30__mean",
                 "xerr": null,
@@ -3284,7 +3284,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve12",
-                "name": "T40",
+                "name": "Rivaroxaban 40 mg",
                 "x": "task_T40__time",
                 "y": "task_T40__Cve_riv",
                 "xerr": null,
@@ -3315,7 +3315,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve13",
-                "name": "T40\u00b1SD (n=8)",
+                "name": "Rivaroxaban 40 mg\u00b1SD (n=8)",
                 "x": "Fig5_rivaroxaban_T40__time",
                 "y": "Fig5_rivaroxaban_T40__mean",
                 "xerr": null,
@@ -3346,7 +3346,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve14",
-                "name": "T60",
+                "name": "Rivaroxaban 60 mg",
                 "x": "task_T60__time",
                 "y": "task_T60__Cve_riv",
                 "xerr": null,
@@ -3377,7 +3377,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve15",
-                "name": "T60\u00b1SD (n=7)",
+                "name": "Rivaroxaban 60 mg\u00b1SD (n=7)",
                 "x": "Fig5_rivaroxaban_T60__time",
                 "y": "Fig5_rivaroxaban_T60__mean",
                 "xerr": null,
@@ -3408,7 +3408,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve16",
-                "name": "T80",
+                "name": "Rivaroxaban 80 mg",
                 "x": "task_T80__time",
                 "y": "task_T80__Cve_riv",
                 "xerr": null,
@@ -3439,7 +3439,7 @@
               },
               {
                 "sid": "Fig5__plot0_curve17",
-                "name": "T80\u00b1SD (n=6)",
+                "name": "Rivaroxaban 80 mg\u00b1SD (n=6)",
                 "x": "Fig5_rivaroxaban_T80__time",
                 "y": "Fig5_rivaroxaban_T80__mean",
                 "xerr": null,
@@ -3523,7 +3523,7 @@
             "curves": [
               {
                 "sid": "Fig3__plot0_curve0",
-                "name": "P",
+                "name": "Placebo",
                 "x": "task_P__time",
                 "y": "task_P__Xa_inhibition",
                 "xerr": null,
@@ -3554,7 +3554,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve1",
-                "name": "P (n=9)",
+                "name": "Placebo (n=9)",
                 "x": "Fig3A_factor Xa inhibition_P__time",
                 "y": "Fig3A_factor Xa inhibition_P__mean",
                 "xerr": null,
@@ -3585,7 +3585,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve2",
-                "name": "T1.25",
+                "name": "Rivaroxaban 1.25 mg",
                 "x": "task_T1.25__time",
                 "y": "task_T1.25__Xa_inhibition",
                 "xerr": null,
@@ -3616,7 +3616,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve3",
-                "name": "T1.25 (n=8)",
+                "name": "Rivaroxaban 1.25 mg (n=8)",
                 "x": "Fig3A_factor Xa inhibition_T1.25__time",
                 "y": "Fig3A_factor Xa inhibition_T1.25__mean",
                 "xerr": null,
@@ -3647,7 +3647,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve4",
-                "name": "T5",
+                "name": "Rivaroxaban 5 mg",
                 "x": "task_T5__time",
                 "y": "task_T5__Xa_inhibition",
                 "xerr": null,
@@ -3678,7 +3678,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve5",
-                "name": "T5 (n=6)",
+                "name": "Rivaroxaban 5 mg (n=6)",
                 "x": "Fig3A_factor Xa inhibition_T5__time",
                 "y": "Fig3A_factor Xa inhibition_T5__mean",
                 "xerr": null,
@@ -3709,7 +3709,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve6",
-                "name": "T10",
+                "name": "Rivaroxaban 10 mg",
                 "x": "task_T10__time",
                 "y": "task_T10__Xa_inhibition",
                 "xerr": null,
@@ -3740,7 +3740,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve7",
-                "name": "T10 (n=8)",
+                "name": "Rivaroxaban 10 mg (n=8)",
                 "x": "Fig3A_factor Xa inhibition_T10__time",
                 "y": "Fig3A_factor Xa inhibition_T10__mean",
                 "xerr": null,
@@ -3771,7 +3771,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve8",
-                "name": "T20",
+                "name": "Rivaroxaban 20 mg",
                 "x": "task_T20__time",
                 "y": "task_T20__Xa_inhibition",
                 "xerr": null,
@@ -3802,7 +3802,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve9",
-                "name": "T20 (n=7)",
+                "name": "Rivaroxaban 20 mg (n=7)",
                 "x": "Fig3A_factor Xa inhibition_T20__time",
                 "y": "Fig3A_factor Xa inhibition_T20__mean",
                 "xerr": null,
@@ -3833,7 +3833,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve10",
-                "name": "T40",
+                "name": "Rivaroxaban 40 mg",
                 "x": "task_T40__time",
                 "y": "task_T40__Xa_inhibition",
                 "xerr": null,
@@ -3864,7 +3864,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve11",
-                "name": "T40 (n=6)",
+                "name": "Rivaroxaban 40 mg (n=6)",
                 "x": "Fig3A_factor Xa inhibition_T40__time",
                 "y": "Fig3A_factor Xa inhibition_T40__mean",
                 "xerr": null,
@@ -3895,7 +3895,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve12",
-                "name": "T80",
+                "name": "Rivaroxaban 80 mg",
                 "x": "task_T80__time",
                 "y": "task_T80__Xa_inhibition",
                 "xerr": null,
@@ -3926,7 +3926,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve13",
-                "name": "T80 (n=6)",
+                "name": "Rivaroxaban 80 mg (n=6)",
                 "x": "Fig3A_factor Xa inhibition_T80__time",
                 "y": "Fig3A_factor Xa inhibition_T80__mean",
                 "xerr": null,
@@ -4000,7 +4000,7 @@
             "curves": [
               {
                 "sid": "Fig3__plot1_curve0",
-                "name": "P",
+                "name": "Placebo",
                 "x": "task_P__time",
                 "y": "task_P__PT_ratio",
                 "xerr": null,
@@ -4031,7 +4031,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve1",
-                "name": "P (n=9)",
+                "name": "Placebo (n=9)",
                 "x": "Fig3B_prothrombin time (change relative)_P__time",
                 "y": "Fig3B_prothrombin time (change relative)_P__mean",
                 "xerr": null,
@@ -4062,7 +4062,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve2",
-                "name": "T1.25",
+                "name": "Rivaroxaban 1.25 mg",
                 "x": "task_T1.25__time",
                 "y": "task_T1.25__PT_ratio",
                 "xerr": null,
@@ -4093,7 +4093,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve3",
-                "name": "T1.25 (n=8)",
+                "name": "Rivaroxaban 1.25 mg (n=8)",
                 "x": "Fig3B_prothrombin time (change relative)_T1.25__time",
                 "y": "Fig3B_prothrombin time (change relative)_T1.25__mean",
                 "xerr": null,
@@ -4124,7 +4124,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve4",
-                "name": "T5",
+                "name": "Rivaroxaban 5 mg",
                 "x": "task_T5__time",
                 "y": "task_T5__PT_ratio",
                 "xerr": null,
@@ -4155,7 +4155,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve5",
-                "name": "T5 (n=6)",
+                "name": "Rivaroxaban 5 mg (n=6)",
                 "x": "Fig3B_prothrombin time (change relative)_T5__time",
                 "y": "Fig3B_prothrombin time (change relative)_T5__mean",
                 "xerr": null,
@@ -4186,7 +4186,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve6",
-                "name": "T10",
+                "name": "Rivaroxaban 10 mg",
                 "x": "task_T10__time",
                 "y": "task_T10__PT_ratio",
                 "xerr": null,
@@ -4217,7 +4217,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve7",
-                "name": "T10 (n=8)",
+                "name": "Rivaroxaban 10 mg (n=8)",
                 "x": "Fig3B_prothrombin time (change relative)_T10__time",
                 "y": "Fig3B_prothrombin time (change relative)_T10__mean",
                 "xerr": null,
@@ -4248,7 +4248,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve8",
-                "name": "T20",
+                "name": "Rivaroxaban 20 mg",
                 "x": "task_T20__time",
                 "y": "task_T20__PT_ratio",
                 "xerr": null,
@@ -4279,7 +4279,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve9",
-                "name": "T20 (n=7)",
+                "name": "Rivaroxaban 20 mg (n=7)",
                 "x": "Fig3B_prothrombin time (change relative)_T20__time",
                 "y": "Fig3B_prothrombin time (change relative)_T20__mean",
                 "xerr": null,
@@ -4310,7 +4310,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve10",
-                "name": "T40",
+                "name": "Rivaroxaban 40 mg",
                 "x": "task_T40__time",
                 "y": "task_T40__PT_ratio",
                 "xerr": null,
@@ -4341,7 +4341,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve11",
-                "name": "T40 (n=6)",
+                "name": "Rivaroxaban 40 mg (n=6)",
                 "x": "Fig3B_prothrombin time (change relative)_T40__time",
                 "y": "Fig3B_prothrombin time (change relative)_T40__mean",
                 "xerr": null,
@@ -4372,7 +4372,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve12",
-                "name": "T80",
+                "name": "Rivaroxaban 80 mg",
                 "x": "task_T80__time",
                 "y": "task_T80__PT_ratio",
                 "xerr": null,
@@ -4403,7 +4403,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve13",
-                "name": "T80 (n=6)",
+                "name": "Rivaroxaban 80 mg (n=6)",
                 "x": "Fig3B_prothrombin time (change relative)_T80__time",
                 "y": "Fig3B_prothrombin time (change relative)_T80__mean",
                 "xerr": null,
@@ -4477,7 +4477,7 @@
             "curves": [
               {
                 "sid": "Fig3__plot2_curve0",
-                "name": "P",
+                "name": "Placebo",
                 "x": "task_P__time",
                 "y": "task_P__aPTT_ratio",
                 "xerr": null,
@@ -4508,7 +4508,7 @@
               },
               {
                 "sid": "Fig3__plot2_curve1",
-                "name": "P (n=9)",
+                "name": "Placebo (n=9)",
                 "x": "Fig3C_aPTT (change relative)_P__time",
                 "y": "Fig3C_aPTT (change relative)_P__mean",
                 "xerr": null,
@@ -4539,7 +4539,7 @@
               },
               {
                 "sid": "Fig3__plot2_curve2",
-                "name": "T1.25",
+                "name": "Rivaroxaban 1.25 mg",
                 "x": "task_T1.25__time",
                 "y": "task_T1.25__aPTT_ratio",
                 "xerr": null,
@@ -4570,7 +4570,7 @@
               },
               {
                 "sid": "Fig3__plot2_curve3",
-                "name": "T1.25 (n=8)",
+                "name": "Rivaroxaban 1.25 mg (n=8)",
                 "x": "Fig3C_aPTT (change relative)_T1.25__time",
                 "y": "Fig3C_aPTT (change relative)_T1.25__mean",
                 "xerr": null,
@@ -4601,7 +4601,7 @@
               },
               {
                 "sid": "Fig3__plot2_curve4",
-                "name": "T5",
+                "name": "Rivaroxaban 5 mg",
                 "x": "task_T5__time",
                 "y": "task_T5__aPTT_ratio",
                 "xerr": null,
@@ -4632,7 +4632,7 @@
               },
               {
                 "sid": "Fig3__plot2_curve5",
-                "name": "T5 (n=6)",
+                "name": "Rivaroxaban 5 mg (n=6)",
                 "x": "Fig3C_aPTT (change relative)_T5__time",
                 "y": "Fig3C_aPTT (change relative)_T5__mean",
                 "xerr": null,
@@ -4663,7 +4663,7 @@
               },
               {
                 "sid": "Fig3__plot2_curve6",
-                "name": "T10",
+                "name": "Rivaroxaban 10 mg",
                 "x": "task_T10__time",
                 "y": "task_T10__aPTT_ratio",
                 "xerr": null,
@@ -4694,7 +4694,7 @@
               },
               {
                 "sid": "Fig3__plot2_curve7",
-                "name": "T10 (n=8)",
+                "name": "Rivaroxaban 10 mg (n=8)",
                 "x": "Fig3C_aPTT (change relative)_T10__time",
                 "y": "Fig3C_aPTT (change relative)_T10__mean",
                 "xerr": null,
@@ -4725,7 +4725,7 @@
               },
               {
                 "sid": "Fig3__plot2_curve8",
-                "name": "T20",
+                "name": "Rivaroxaban 20 mg",
                 "x": "task_T20__time",
                 "y": "task_T20__aPTT_ratio",
                 "xerr": null,
@@ -4756,7 +4756,7 @@
               },
               {
                 "sid": "Fig3__plot2_curve9",
-                "name": "T20 (n=7)",
+                "name": "Rivaroxaban 20 mg (n=7)",
                 "x": "Fig3C_aPTT (change relative)_T20__time",
                 "y": "Fig3C_aPTT (change relative)_T20__mean",
                 "xerr": null,
@@ -4787,7 +4787,7 @@
               },
               {
                 "sid": "Fig3__plot2_curve10",
-                "name": "T40",
+                "name": "Rivaroxaban 40 mg",
                 "x": "task_T40__time",
                 "y": "task_T40__aPTT_ratio",
                 "xerr": null,
@@ -4818,7 +4818,7 @@
               },
               {
                 "sid": "Fig3__plot2_curve11",
-                "name": "T40 (n=6)",
+                "name": "Rivaroxaban 40 mg (n=6)",
                 "x": "Fig3C_aPTT (change relative)_T40__time",
                 "y": "Fig3C_aPTT (change relative)_T40__mean",
                 "xerr": null,
@@ -4849,7 +4849,7 @@
               },
               {
                 "sid": "Fig3__plot2_curve12",
-                "name": "T80",
+                "name": "Rivaroxaban 80 mg",
                 "x": "task_T80__time",
                 "y": "task_T80__aPTT_ratio",
                 "xerr": null,
@@ -4880,7 +4880,7 @@
               },
               {
                 "sid": "Fig3__plot2_curve13",
-                "name": "T80 (n=6)",
+                "name": "Rivaroxaban 80 mg (n=6)",
                 "x": "Fig3C_aPTT (change relative)_T80__time",
                 "y": "Fig3C_aPTT (change relative)_T80__mean",
                 "xerr": null,
@@ -4964,7 +4964,7 @@
             "curves": [
               {
                 "sid": "FigX__plot0_curve0",
-                "name": "S5",
+                "name": "Rivaroxaban 5 mg Solution",
                 "x": "task_S5__time",
                 "y": "task_S5__Cve_riv",
                 "xerr": null,
@@ -4995,7 +4995,7 @@
               },
               {
                 "sid": "FigX__plot0_curve1",
-                "name": "S5\u00b1SD (n=6)",
+                "name": "Rivaroxaban 5 mg Solution\u00b1SD (n=6)",
                 "x": "Fig5_rivaroxaban_S5__time",
                 "y": "Fig5_rivaroxaban_S5__mean",
                 "xerr": null,
@@ -5026,7 +5026,7 @@
               },
               {
                 "sid": "FigX__plot0_curve2",
-                "name": "S10",
+                "name": "Rivaroxaban 10 mg Solution",
                 "x": "task_S10__time",
                 "y": "task_S10__Cve_riv",
                 "xerr": null,
@@ -5057,7 +5057,7 @@
               },
               {
                 "sid": "FigX__plot0_curve3",
-                "name": "S10\u00b1SD (n=6)",
+                "name": "Rivaroxaban 10 mg Solution\u00b1SD (n=6)",
                 "x": "Fig5_rivaroxaban_S10__time",
                 "y": "Fig5_rivaroxaban_S10__mean",
                 "xerr": null,
@@ -5131,7 +5131,7 @@
             "curves": [
               {
                 "sid": "FigX__plot1_curve0",
-                "name": "T5 BID",
+                "name": "Rivaroxaban 5 mg BID",
                 "x": "task_T5__time",
                 "y": "task_T5__Cve_riv",
                 "xerr": null,
@@ -5162,7 +5162,7 @@
               },
               {
                 "sid": "FigX__plot1_curve1",
-                "name": "T5 BID\u00b1SD (n=6)",
+                "name": "Rivaroxaban 5 mg BID\u00b1SD (n=6)",
                 "x": "Fig5_rivaroxaban_T5__time",
                 "y": "Fig5_rivaroxaban_T5__mean",
                 "xerr": null,
@@ -5193,7 +5193,7 @@
               },
               {
                 "sid": "FigX__plot1_curve2",
-                "name": "T10 BID",
+                "name": "Rivaroxaban 10 mg BID",
                 "x": "task_T10__time",
                 "y": "task_T10__Cve_riv",
                 "xerr": null,
@@ -5224,7 +5224,7 @@
               },
               {
                 "sid": "FigX__plot1_curve3",
-                "name": "T10 BID\u00b1SD (n=8)",
+                "name": "Rivaroxaban 10 mg BID\u00b1SD (n=8)",
                 "x": "Fig5_rivaroxaban_T10__time",
                 "y": "Fig5_rivaroxaban_T10__mean",
                 "xerr": null,

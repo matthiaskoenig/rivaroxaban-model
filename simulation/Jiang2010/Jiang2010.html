@@ -124,6 +124,7 @@ from sbmlsim.data import DataSet, load_pkdb_dataframe
 from sbmlsim.fit import FitMapping, FitData
 from sbmlutils.console import console
 
+from pkdb_models.models import rivaroxaban
 from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
     RivaroxabanSimulationExperiment,
 )
@@ -149,6 +150,15 @@ class Jiang2010(RivaroxabanSimulationExperiment):
         "T20": "#FF874C",
         "T30": "#D25100",
         "T40": "#892E0E",
+    }
+
+    formulation_labels = {
+    "P": "Placebo",
+    "T5": "Test 5 mg",
+    "T10": "Test 10 mg",
+    "T20": "Test 20 mg",
+    "T30": "Test 30 mg",
+    "T40": "Test 40 mg",
     }
 
     bodyweights = {
@@ -283,11 +293,10 @@ class Jiang2010(RivaroxabanSimulationExperiment):
         }
 
     def figure_pk(self) -> Dict[str, Figure]:
-
         fig = Figure(
             experiment=self,
             sid="Fig1_Tab2A",
-            num_rows=2,
+            num_cols=2,  # Changed from num_rows=2 to num_cols=2
             name=self.__class__.__name__
         )
         plots = fig.create_plots(
@@ -298,7 +307,6 @@ class Jiang2010(RivaroxabanSimulationExperiment):
         plots[1].set_yaxis(self.label_riv_urine.replace("\n", ""), unit=self.unit_riv_urine)
 
         for formulation in self.formulations:
-
             for k, sid in enumerate(self.info_pk.keys()):
                 name = self.info_pk[sid]
 
@@ -306,7 +314,7 @@ class Jiang2010(RivaroxabanSimulationExperiment):
                     task=f"task_{formulation}",
                     xid="time",
                     yid=sid,
-                    label=formulation,
+                    label=self.formulation_labels[formulation],
                     color=self.colors[formulation],
                 )
                 if formulation == "P":
@@ -317,13 +325,12 @@ class Jiang2010(RivaroxabanSimulationExperiment):
                     yid="mean",
                     yid_sd="mean_sd" if "urine" in sid else None,
                     count="count",
-                    label=formulation,
+                    label=self.formulation_labels[formulation],
                     color=self.colors[formulation],
                     linestyle="" if "urine" in sid else "--"
                 )
 
         return {fig.sid: fig}
-
 
     def figure_pd(self) -> Dict[str, Figure]:
         fig = Figure(
@@ -338,6 +345,7 @@ class Jiang2010(RivaroxabanSimulationExperiment):
         )
         plots[0].set_yaxis(self.labels["Xa_inhibition"], unit=self.units["Xa_inhibition"])
         plots[1].set_yaxis(self.labels["PT_ratio"], unit=self.units["PT_ratio"])
+
         for formulation in self.formulations:
             for k, sid in enumerate(self.info_pd.keys()):
                 name = self.info_pd[sid]
@@ -345,7 +353,7 @@ class Jiang2010(RivaroxabanSimulationExperiment):
                     task=f"task_{formulation}",
                     xid="time",
                     yid=sid,
-                    label=formulation,
+                    label=self.formulation_labels[formulation],
                     color=self.colors[formulation],
                 )
                 plots[k].add_data(
@@ -354,14 +362,16 @@ class Jiang2010(RivaroxabanSimulationExperiment):
                     yid="mean",
                     yid_sd=None,
                     count="count",
-                    label=formulation,
+                    label=self.formulation_labels[formulation],
                     color=self.colors[formulation],
                 )
+
         return {fig.sid: fig}
 
 
-
 if __name__ == "__main__":
+    out = rivaroxaban.RESULTS_PATH_SIMULATION / Jiang2010.__name__
+    out.mkdir(parents=True, exist_ok=True)
     run_experiments(Jiang2010, output_dir=Jiang2010.__name__)
 </code>
         </pre>

@@ -1,0 +1,18 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Lenard2025		all	12.0	API25, RIV25, EDO50, CAR	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_API25, RIV25, EDO50, CAR	0.0	hr		1.748187574561806e-08					mole/meter^3	pg/ml
+Lenard2025		all	12.0	API25, RIV25, EDO50, CAR	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_API25, RIV25, EDO50, CAR	0.25	hr		5.914471872992567e-07	88.69	3.879737542442875e-07			mole/meter^3	pg/ml
+Lenard2025		all	12.0	API25, RIV25, EDO50, CAR	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_API25, RIV25, EDO50, CAR	0.5	hr		1.1483435808020557e-06	302.01	4.5546939524639814e-07			mole/meter^3	pg/ml
+Lenard2025		all	12.0	API25, RIV25, EDO50, CAR	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_API25, RIV25, EDO50, CAR	0.75	hr		1.097939799944939e-06	338.87	3.205010553363311e-07			mole/meter^3	pg/ml
+Lenard2025		all	12.0	API25, RIV25, EDO50, CAR	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_API25, RIV25, EDO50, CAR	1.0	hr		9.632008809764155e-07	309.55	2.530283564283747e-07			mole/meter^3	pg/ml
+Lenard2025		all	12.0	API25, RIV25, EDO50, CAR	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_API25, RIV25, EDO50, CAR	1.5	hr		8.961411397632376e-07	302.42	2.023263283472515e-07			mole/meter^3	pg/ml
+Lenard2025		all	12.0	API25, RIV25, EDO50, CAR	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_API25, RIV25, EDO50, CAR	2.0	hr		8.29173166926677e-07	251.08	2.5314306689914655e-07			mole/meter^3	pg/ml
+Lenard2025		all	12.0	API25, RIV25, EDO50, CAR	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_API25, RIV25, EDO50, CAR	2.5	hr		6.94526016334771e-07	221.85	1.8555565752041852e-07			mole/meter^3	pg/ml
+Lenard2025		all	12.0	API25, RIV25, EDO50, CAR	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_API25, RIV25, EDO50, CAR	3.0	hr		5.768560154170873e-07	155.86	2.192805359273194e-07			mole/meter^3	pg/ml
+Lenard2025		all	12.0	API25, RIV25, EDO50, CAR	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_API25, RIV25, EDO50, CAR	3.5	hr		4.760713957970083e-07	133.98	1.6869321831696797e-07			mole/meter^3	pg/ml
+Lenard2025		all	12.0	API25, RIV25, EDO50, CAR	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_API25, RIV25, EDO50, CAR	4.0	hr		3.58493163255942e-07	112.1	1.0131228778562906e-07			mole/meter^3	pg/ml
+Lenard2025		all	12.0	API25, RIV25, EDO50, CAR	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_API25, RIV25, EDO50, CAR	5.0	hr		2.9184637973754245e-07	83.05	1.0131228778562906e-07			mole/meter^3	pg/ml
+Lenard2025		all	12.0	API25, RIV25, EDO50, CAR	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_API25, RIV25, EDO50, CAR	6.0	hr		2.083371570156924e-07	61.39	6.749564100211068e-08			mole/meter^3	pg/ml
+Lenard2025		all	12.0	API25, RIV25, EDO50, CAR	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_API25, RIV25, EDO50, CAR	8.0	hr		1.2563090758924475e-07	40.06	3.372487840690097e-08			mole/meter^3	pg/ml
+Lenard2025		all	12.0	API25, RIV25, EDO50, CAR	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_API25, RIV25, EDO50, CAR	10.0	hr		7.678718913462421e-08					mole/meter^3	pg/ml
+Lenard2025		all	12.0	API25, RIV25, EDO50, CAR	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_API25, RIV25, EDO50, CAR	12.0	hr		6.157658071028724e-08					mole/meter^3	pg/ml
+Lenard2025		all	12.0	API25, RIV25, EDO50, CAR	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_API25, RIV25, EDO50, CAR	24.0	hr		3.7854455354684775e-09					mole/meter^3	pg/ml

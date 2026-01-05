@@ -1,0 +1,18 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Kreutz2017		all	24.0	riv	concentration	rivaroxaban	plasma	LC MS/MS	riv_rivaroxaban	0.0	hr		3.424824673407107e-05	24.7349086688527	2.2498813623946493e-05	4.59255109972061e-06	geometric mean	mole/meter^3	ug/l
+Kreutz2017		all	24.0	riv	concentration	rivaroxaban	plasma	LC MS/MS	riv_rivaroxaban	0.5	hr		3.424824673407107e-05	24.7349086688527	2.2498813623946493e-05	4.59255109972061e-06		mole/meter^3	ug/l
+Kreutz2017		all	24.0	riv	concentration	rivaroxaban	plasma	LC MS/MS	riv_rivaroxaban	1.0	hr		5.887394946982402e-05	8.3875160106524	3.9631231266069785e-05	8.089691206675484e-06		mole/meter^3	ug/l
+Kreutz2017		all	24.0	riv	concentration	rivaroxaban	plasma	LC MS/MS	riv_rivaroxaban	1.5	hr		0.00014562614240627004	19.5872256591129	0.00010068894487687459	2.0553044807297095e-05		mole/meter^3	ug/l
+Kreutz2017		all	24.0	riv	concentration	rivaroxaban	plasma	LC MS/MS	riv_rivaroxaban	2.0	hr		0.0002580846636327681	47.1301961844877	0.000149958123794997	3.06100738402379e-05		mole/meter^3	ug/l
+Kreutz2017		all	24.0	riv	concentration	rivaroxaban	plasma	LC MS/MS	riv_rivaroxaban	3.0	hr		0.0003673321155038359	101.284420555236	0.00013496444422909056	2.7549501814965812e-05		mole/meter^3	ug/l
+Kreutz2017		all	24.0	riv	concentration	rivaroxaban	plasma	LC MS/MS	riv_rivaroxaban	4.0	hr		0.0004465732499000366	161.034626205259	7.712609424880472e-05	1.574329806361464e-05		mole/meter^3	ug/l
+Kreutz2017		all	24.0	riv	concentration	rivaroxaban	plasma	LC MS/MS	riv_rivaroxaban	6.0	hr		0.00045512109282625944	153.555585604873	0.000102832422538857	2.0990580352873008e-05		mole/meter^3	ug/l
+Kreutz2017		all	24.0	riv	concentration	rivaroxaban	plasma	LC MS/MS	riv_rivaroxaban	8.0	hr		0.0003061867195563893	173.612284912612	9.211621912538541e-05	1.8803144490966615e-05		mole/meter^3	ug/l
+Kreutz2017		all	24.0	riv	concentration	rivaroxaban	plasma	LC MS/MS	riv_rivaroxaban	12.0	hr		0.00022687567627016446	130.173835307197	7.177036233494927e-05	1.465006386460755e-05		mole/meter^3	ug/l
+Kreutz2017		all	24.0	riv	concentration	rivaroxaban	plasma	LC MS/MS	riv_rivaroxaban	15.0	hr		0.00013895636033921742	83.4459713254378	5.248617275575777e-05	1.0713695150264543e-05		mole/meter^3	ug/l
+Kreutz2017		all	24.0	riv	concentration	rivaroxaban	plasma	LC MS/MS	riv_rivaroxaban	18.0	hr		7.783584721703356e-05	44.1976644167239	2.3562850628070337e-05	4.80974674368255e-06		mole/meter^3	ug/l
+Kreutz2017		all	24.0	riv	concentration	rivaroxaban	plasma	LC MS/MS	riv_rivaroxaban	24.0	hr		6.0629965995560694e-05	37.6322639532131	2.5706328290052533e-05	5.247282289258396e-06		mole/meter^3	ug/l
+Kreutz2017		all	24.0	riv	concentration	rivaroxaban	plasma	LC MS/MS	riv_rivaroxaban	30.0	hr		4.013955183930921e-05	27.7697020234459	2.356996000671698e-05	4.811197939521909e-06		mole/meter^3	ug/l
+Kreutz2017		all	24.0	riv	concentration	rivaroxaban	plasma	LC MS/MS	riv_rivaroxaban	36.0	hr		2.179853982724564e-05	13.7035691077981	9.640317444935002e-06	1.9678215582118354e-06		mole/meter^3	ug/l
+Kreutz2017		all	24.0	riv	concentration	rivaroxaban	plasma	LC MS/MS	riv_rivaroxaban	42.0	hr		1.2026698877346424e-05	8.04199580060765	6.423323607299921e-06	1.3111554408881826e-06		mole/meter^3	ug/l
+Kreutz2017		all	24.0	riv	concentration	rivaroxaban	plasma	LC MS/MS	riv_rivaroxaban	48.0	hr		6.533518976323895e-06	5.64866149067148	6.425693400182205e-06	1.3116391728346562e-06		mole/meter^3	ug/l

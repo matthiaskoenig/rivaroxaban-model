@@ -1,0 +1,24 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_se	mean_sd	comments	mean_unit	value_unit
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	0.0	hr		0.0					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	0.31	hr		3.578966688079288e-05					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	0.31	hr		7.157933376158577e-05					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	0.47	hr		0.00024226851426998255					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	0.94	hr		0.00041020464347985686					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	1.25	hr		0.0005175736441222355					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	1.56	hr		0.0005643755161971185					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	1.88	hr		0.0005946590804808662					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	2.19	hr		0.0006221895934660916					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	2.5	hr		0.0006359548499587042					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	2.97	hr		0.0006359548499587042					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	3.28	hr		0.0006166834908690466					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	3.59	hr		0.0006001651830779115					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	3.75	hr		0.0005781407726897312					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	4.38	hr		0.0005478572084059833					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	4.84	hr		0.0004927961824355327					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	5.94	hr		0.000379921079196109					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	7.97	hr		0.00017619528310544187					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	10.0	hr		9.635679544828853e-05					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	11.88	hr		6.056712856749564e-05					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	24.06	hr		1.3765256492612646e-05					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	47.81	hr		0.0					mole/meter^3	ng/ml
+Santos2024		Fed	57.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fed_R20	72.19	hr		0.0					mole/meter^3	ng/ml

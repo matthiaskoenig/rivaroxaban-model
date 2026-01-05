@@ -1,0 +1,19 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	0.0	hr		0.0					mole/meter^3	ng/ml
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	0.33	hr		5.987198311461871e-05					mole/meter^3	ng/ml
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	0.549	hr		0.0001535147288244471					mole/meter^3	ng/ml
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	0.769	hr		0.00017500917683766176					mole/meter^3	ng/ml
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	0.989	hr		0.0001903597320363403					mole/meter^3	ng/ml
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	1.538	hr		0.0002456249426447646					mole/meter^3	ng/ml
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	2.087	hr		0.00028860925025236305					mole/meter^3	ng/ml
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	2.526	hr		0.0003085665779572359					mole/meter^3	ng/ml
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	2.966	hr		0.00029628567495641007					mole/meter^3	ng/ml
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	3.515	hr		0.0002978205010553363					mole/meter^3	ng/ml
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	4.174	hr		0.0002901440763512894					mole/meter^3	ng/ml
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	5.053	hr		0.00021799348444526018					mole/meter^3	ng/ml
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	6.041	hr		0.00016579792603468846					mole/meter^3	ng/ml
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	7.799	hr		0.00011360236762411674					mole/meter^3	ng/ml
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	13.95	hr		5.8337157015692393e-05					mole/meter^3	ng/ml
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	24.055	hr		4.2984307607598424e-05					mole/meter^3	ng/ml
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	36.027	hr		2.1492153803799212e-05					mole/meter^3	ng/ml
+Tang2025		Fasting	18.0	T2	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_T2	48.0	hr		1.5350555198678536e-05					mole/meter^3	ng/ml

@@ -1,7 +1,7 @@
 {
   "experiment_id": "Jiang2010",
-  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/rivaroxaban')]",
+  "base_path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban",
+  "data_path": "[PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/rivaroxaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/apixaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/edoxaban')]",
   "models": {
     "model": {
       "sid": null,
@@ -9,8 +9,8 @@
       "language": "SBML",
       "language_type": "SBML",
       "source": {
-        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
-        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "source": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
         "content": "None"
       },
       "changes": {}
@@ -1448,10 +1448,10 @@
     "Fig1_Tab2A": {
       "sid": "Fig1_Tab2A",
       "name": "Jiang2010",
-      "num_rows": 2,
-      "num_cols": 1,
-      "width": 7.0,
-      "height": 10.0,
+      "num_rows": 1,
+      "num_cols": 2,
+      "width": 14.0,
+      "height": 5.0,
       "subplots": [
         {
           "sid": null,
@@ -1490,7 +1490,7 @@
             "curves": [
               {
                 "sid": "Fig1_Tab2A__plot0_curve0",
-                "name": "P",
+                "name": "Placebo",
                 "x": "task_P__time",
                 "y": "task_P__Cve_riv",
                 "xerr": null,
@@ -1521,7 +1521,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot0_curve1",
-                "name": "T5",
+                "name": "Test 5 mg",
                 "x": "task_T5__time",
                 "y": "task_T5__Cve_riv",
                 "xerr": null,
@@ -1552,7 +1552,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot0_curve2",
-                "name": "T5 (n=12)",
+                "name": "Test 5 mg (n=12)",
                 "x": "rivaroxaban_T5__time",
                 "y": "rivaroxaban_T5__mean",
                 "xerr": null,
@@ -1583,7 +1583,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot0_curve3",
-                "name": "T10",
+                "name": "Test 10 mg",
                 "x": "task_T10__time",
                 "y": "task_T10__Cve_riv",
                 "xerr": null,
@@ -1614,7 +1614,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot0_curve4",
-                "name": "T10 (n=11)",
+                "name": "Test 10 mg (n=11)",
                 "x": "rivaroxaban_T10__time",
                 "y": "rivaroxaban_T10__mean",
                 "xerr": null,
@@ -1645,7 +1645,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot0_curve5",
-                "name": "T20",
+                "name": "Test 20 mg",
                 "x": "task_T20__time",
                 "y": "task_T20__Cve_riv",
                 "xerr": null,
@@ -1676,7 +1676,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot0_curve6",
-                "name": "T20 (n=12)",
+                "name": "Test 20 mg (n=12)",
                 "x": "rivaroxaban_T20__time",
                 "y": "rivaroxaban_T20__mean",
                 "xerr": null,
@@ -1707,7 +1707,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot0_curve7",
-                "name": "T30",
+                "name": "Test 30 mg",
                 "x": "task_T30__time",
                 "y": "task_T30__Cve_riv",
                 "xerr": null,
@@ -1738,7 +1738,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot0_curve8",
-                "name": "T30 (n=12)",
+                "name": "Test 30 mg (n=12)",
                 "x": "rivaroxaban_T30__time",
                 "y": "rivaroxaban_T30__mean",
                 "xerr": null,
@@ -1769,7 +1769,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot0_curve9",
-                "name": "T40",
+                "name": "Test 40 mg",
                 "x": "task_T40__time",
                 "y": "task_T40__Cve_riv",
                 "xerr": null,
@@ -1800,7 +1800,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot0_curve10",
-                "name": "T40 (n=12)",
+                "name": "Test 40 mg (n=12)",
                 "x": "rivaroxaban_T40__time",
                 "y": "rivaroxaban_T40__mean",
                 "xerr": null,
@@ -1874,7 +1874,7 @@
             "curves": [
               {
                 "sid": "Fig1_Tab2A__plot1_curve0",
-                "name": "P",
+                "name": "Placebo",
                 "x": "task_P__time",
                 "y": "task_P__Aurine_riv",
                 "xerr": null,
@@ -1905,7 +1905,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot1_curve1",
-                "name": "T5",
+                "name": "Test 5 mg",
                 "x": "task_T5__time",
                 "y": "task_T5__Aurine_riv",
                 "xerr": null,
@@ -1936,7 +1936,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot1_curve2",
-                "name": "T5\u00b1SD (n=12)",
+                "name": "Test 5 mg\u00b1SD (n=12)",
                 "x": "rivaroxaban_urine_T5__time",
                 "y": "rivaroxaban_urine_T5__mean",
                 "xerr": null,
@@ -1967,7 +1967,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot1_curve3",
-                "name": "T10",
+                "name": "Test 10 mg",
                 "x": "task_T10__time",
                 "y": "task_T10__Aurine_riv",
                 "xerr": null,
@@ -1998,7 +1998,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot1_curve4",
-                "name": "T10\u00b1SD (n=11)",
+                "name": "Test 10 mg\u00b1SD (n=11)",
                 "x": "rivaroxaban_urine_T10__time",
                 "y": "rivaroxaban_urine_T10__mean",
                 "xerr": null,
@@ -2029,7 +2029,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot1_curve5",
-                "name": "T20",
+                "name": "Test 20 mg",
                 "x": "task_T20__time",
                 "y": "task_T20__Aurine_riv",
                 "xerr": null,
@@ -2060,7 +2060,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot1_curve6",
-                "name": "T20\u00b1SD (n=12)",
+                "name": "Test 20 mg\u00b1SD (n=12)",
                 "x": "rivaroxaban_urine_T20__time",
                 "y": "rivaroxaban_urine_T20__mean",
                 "xerr": null,
@@ -2091,7 +2091,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot1_curve7",
-                "name": "T30",
+                "name": "Test 30 mg",
                 "x": "task_T30__time",
                 "y": "task_T30__Aurine_riv",
                 "xerr": null,
@@ -2122,7 +2122,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot1_curve8",
-                "name": "T30\u00b1SD (n=12)",
+                "name": "Test 30 mg\u00b1SD (n=12)",
                 "x": "rivaroxaban_urine_T30__time",
                 "y": "rivaroxaban_urine_T30__mean",
                 "xerr": null,
@@ -2153,7 +2153,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot1_curve9",
-                "name": "T40",
+                "name": "Test 40 mg",
                 "x": "task_T40__time",
                 "y": "task_T40__Aurine_riv",
                 "xerr": null,
@@ -2184,7 +2184,7 @@
               },
               {
                 "sid": "Fig1_Tab2A__plot1_curve10",
-                "name": "T40\u00b1SD (n=10)",
+                "name": "Test 40 mg\u00b1SD (n=10)",
                 "x": "rivaroxaban_urine_T40__time",
                 "y": "rivaroxaban_urine_T40__mean",
                 "xerr": null,
@@ -2216,8 +2216,8 @@
             ],
             "areas": []
           },
-          "row": 2,
-          "col": 1,
+          "row": 1,
+          "col": 2,
           "row_span": 1,
           "col_span": 1
         }
@@ -2268,7 +2268,7 @@
             "curves": [
               {
                 "sid": "Fig2_3__plot0_curve0",
-                "name": "P",
+                "name": "Placebo",
                 "x": "task_P__time",
                 "y": "task_P__Xa_inhibition",
                 "xerr": null,
@@ -2299,7 +2299,7 @@
               },
               {
                 "sid": "Fig2_3__plot0_curve1",
-                "name": "P (n=19)",
+                "name": "Placebo (n=19)",
                 "x": "factor Xa inhibition_P__time",
                 "y": "factor Xa inhibition_P__mean",
                 "xerr": null,
@@ -2330,7 +2330,7 @@
               },
               {
                 "sid": "Fig2_3__plot0_curve2",
-                "name": "T5",
+                "name": "Test 5 mg",
                 "x": "task_T5__time",
                 "y": "task_T5__Xa_inhibition",
                 "xerr": null,
@@ -2361,7 +2361,7 @@
               },
               {
                 "sid": "Fig2_3__plot0_curve3",
-                "name": "T5 (n=12)",
+                "name": "Test 5 mg (n=12)",
                 "x": "factor Xa inhibition_T5__time",
                 "y": "factor Xa inhibition_T5__mean",
                 "xerr": null,
@@ -2392,7 +2392,7 @@
               },
               {
                 "sid": "Fig2_3__plot0_curve4",
-                "name": "T10",
+                "name": "Test 10 mg",
                 "x": "task_T10__time",
                 "y": "task_T10__Xa_inhibition",
                 "xerr": null,
@@ -2423,7 +2423,7 @@
               },
               {
                 "sid": "Fig2_3__plot0_curve5",
-                "name": "T10 (n=11)",
+                "name": "Test 10 mg (n=11)",
                 "x": "factor Xa inhibition_T10__time",
                 "y": "factor Xa inhibition_T10__mean",
                 "xerr": null,
@@ -2454,7 +2454,7 @@
               },
               {
                 "sid": "Fig2_3__plot0_curve6",
-                "name": "T20",
+                "name": "Test 20 mg",
                 "x": "task_T20__time",
                 "y": "task_T20__Xa_inhibition",
                 "xerr": null,
@@ -2485,7 +2485,7 @@
               },
               {
                 "sid": "Fig2_3__plot0_curve7",
-                "name": "T20 (n=12)",
+                "name": "Test 20 mg (n=12)",
                 "x": "factor Xa inhibition_T20__time",
                 "y": "factor Xa inhibition_T20__mean",
                 "xerr": null,
@@ -2516,7 +2516,7 @@
               },
               {
                 "sid": "Fig2_3__plot0_curve8",
-                "name": "T30",
+                "name": "Test 30 mg",
                 "x": "task_T30__time",
                 "y": "task_T30__Xa_inhibition",
                 "xerr": null,
@@ -2547,7 +2547,7 @@
               },
               {
                 "sid": "Fig2_3__plot0_curve9",
-                "name": "T30 (n=12)",
+                "name": "Test 30 mg (n=12)",
                 "x": "factor Xa inhibition_T30__time",
                 "y": "factor Xa inhibition_T30__mean",
                 "xerr": null,
@@ -2578,7 +2578,7 @@
               },
               {
                 "sid": "Fig2_3__plot0_curve10",
-                "name": "T40",
+                "name": "Test 40 mg",
                 "x": "task_T40__time",
                 "y": "task_T40__Xa_inhibition",
                 "xerr": null,
@@ -2609,7 +2609,7 @@
               },
               {
                 "sid": "Fig2_3__plot0_curve11",
-                "name": "T40 (n=10)",
+                "name": "Test 40 mg (n=10)",
                 "x": "factor Xa inhibition_T40__time",
                 "y": "factor Xa inhibition_T40__mean",
                 "xerr": null,
@@ -2683,7 +2683,7 @@
             "curves": [
               {
                 "sid": "Fig2_3__plot1_curve0",
-                "name": "P",
+                "name": "Placebo",
                 "x": "task_P__time",
                 "y": "task_P__PT_ratio",
                 "xerr": null,
@@ -2714,7 +2714,7 @@
               },
               {
                 "sid": "Fig2_3__plot1_curve1",
-                "name": "P (n=19)",
+                "name": "Placebo (n=19)",
                 "x": "prothrombin time (change relative)_P__time",
                 "y": "prothrombin time (change relative)_P__mean",
                 "xerr": null,
@@ -2745,7 +2745,7 @@
               },
               {
                 "sid": "Fig2_3__plot1_curve2",
-                "name": "T5",
+                "name": "Test 5 mg",
                 "x": "task_T5__time",
                 "y": "task_T5__PT_ratio",
                 "xerr": null,
@@ -2776,7 +2776,7 @@
               },
               {
                 "sid": "Fig2_3__plot1_curve3",
-                "name": "T5 (n=12)",
+                "name": "Test 5 mg (n=12)",
                 "x": "prothrombin time (change relative)_T5__time",
                 "y": "prothrombin time (change relative)_T5__mean",
                 "xerr": null,
@@ -2807,7 +2807,7 @@
               },
               {
                 "sid": "Fig2_3__plot1_curve4",
-                "name": "T10",
+                "name": "Test 10 mg",
                 "x": "task_T10__time",
                 "y": "task_T10__PT_ratio",
                 "xerr": null,
@@ -2838,7 +2838,7 @@
               },
               {
                 "sid": "Fig2_3__plot1_curve5",
-                "name": "T10 (n=11)",
+                "name": "Test 10 mg (n=11)",
                 "x": "prothrombin time (change relative)_T10__time",
                 "y": "prothrombin time (change relative)_T10__mean",
                 "xerr": null,
@@ -2869,7 +2869,7 @@
               },
               {
                 "sid": "Fig2_3__plot1_curve6",
-                "name": "T20",
+                "name": "Test 20 mg",
                 "x": "task_T20__time",
                 "y": "task_T20__PT_ratio",
                 "xerr": null,
@@ -2900,7 +2900,7 @@
               },
               {
                 "sid": "Fig2_3__plot1_curve7",
-                "name": "T20 (n=12)",
+                "name": "Test 20 mg (n=12)",
                 "x": "prothrombin time (change relative)_T20__time",
                 "y": "prothrombin time (change relative)_T20__mean",
                 "xerr": null,
@@ -2931,7 +2931,7 @@
               },
               {
                 "sid": "Fig2_3__plot1_curve8",
-                "name": "T30",
+                "name": "Test 30 mg",
                 "x": "task_T30__time",
                 "y": "task_T30__PT_ratio",
                 "xerr": null,
@@ -2962,7 +2962,7 @@
               },
               {
                 "sid": "Fig2_3__plot1_curve9",
-                "name": "T30 (n=12)",
+                "name": "Test 30 mg (n=12)",
                 "x": "prothrombin time (change relative)_T30__time",
                 "y": "prothrombin time (change relative)_T30__mean",
                 "xerr": null,
@@ -2993,7 +2993,7 @@
               },
               {
                 "sid": "Fig2_3__plot1_curve10",
-                "name": "T40",
+                "name": "Test 40 mg",
                 "x": "task_T40__time",
                 "y": "task_T40__PT_ratio",
                 "xerr": null,
@@ -3024,7 +3024,7 @@
               },
               {
                 "sid": "Fig2_3__plot1_curve11",
-                "name": "T40 (n=10)",
+                "name": "Test 40 mg (n=10)",
                 "x": "prothrombin time (change relative)_T40__time",
                 "y": "prothrombin time (change relative)_T40__mean",
                 "xerr": null,

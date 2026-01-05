@@ -1,0 +1,13 @@
+study	individual	group	count	intervention	measurement_type	tissue	substance	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	cv	comments	mean_unit	value_unit
+Kreutz2017		all	24.0	riv	aPTT (ratio)	plasma		coagulation assay	riv_aPTT ratio	0.0	hr		1.0465785980388	1.00772919967456	0.03884939836424	0.0079301002338752		geometric mean	dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	aPTT (ratio)	plasma		coagulation assay	riv_aPTT ratio	1.0	hr		1.22013231704706	1.06209052370145	0.15804179334561	0.0322601459775942			dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	aPTT (ratio)	plasma		coagulation assay	riv_aPTT ratio	2.0	hr		1.35998586905323	1.24600693701023	0.113978932043	0.0232658520777258			dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	aPTT (ratio)	plasma		coagulation assay	riv_aPTT ratio	3.0	hr		1.39622318331692	1.32885496510084	0.0673682182160802	0.0137514799591556			dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	aPTT (ratio)	plasma		coagulation assay	riv_aPTT ratio	4.0	hr		1.38323769965315	1.30551749239926	0.0777202072538898	0.0158645708729488			dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	aPTT (ratio)	plasma		coagulation assay	riv_aPTT ratio	6.0	hr		1.30285188198518	1.23291440071939	0.06993748126579	0.0142759285830536			dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	aPTT (ratio)	plasma		coagulation assay	riv_aPTT ratio	12.0	hr		1.15		0.05106	0.0104225788555424	4.44		dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	aPTT (ratio)	plasma		coagulation assay	riv_aPTT ratio	18.0	hr		1.09774975377896	1.14956322528155	0.05181347150259	0.0105763805819652			dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	aPTT (ratio)	plasma		coagulation assay	riv_aPTT ratio	24.0	hr		1.08		0.046764	0.009545661527626	4.33		dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	aPTT (ratio)	plasma		coagulation assay	riv_aPTT ratio	36.0	hr		1.04		0.045136	0.0092133474191884	4.34		dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	aPTT (ratio)	plasma		coagulation assay	riv_aPTT ratio	48.0	hr		1.02		0.047532	0.0097024288711641	4.66		dimensionless	dimensionless
+Kreutz2017		all	24.0	riv	aPTT (ratio)	plasma		coagulation assay	riv_aPTT ratio	60.0	hr		0.987432021581809	1.0392454930844	0.051813471502591	0.0105763805819654			dimensionless	dimensionless

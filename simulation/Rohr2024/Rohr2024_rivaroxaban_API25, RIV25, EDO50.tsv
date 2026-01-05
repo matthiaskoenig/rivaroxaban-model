@@ -1,0 +1,12 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit
+Rohr2024		all	8.0	API25, RIV25, EDO50	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_API25, RIV25, EDO50	0.5	hr		1.9271359089657704e-06	660.0	4.129576947783794e-07			mole/meter^3	pg/ml
+Rohr2024		all	8.0	API25, RIV25, EDO50	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_API25, RIV25, EDO50	1.0	hr		1.7665412498852894e-06	630.0	3.211893181609617e-07			mole/meter^3	pg/ml
+Rohr2024		all	8.0	API25, RIV25, EDO50	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_API25, RIV25, EDO50	1.5	hr		1.5141782141873908e-06	560.0	2.2942094154354408e-07			mole/meter^3	pg/ml
+Rohr2024		all	8.0	API25, RIV25, EDO50	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_API25, RIV25, EDO50	2.0	hr		1.2847572726438469e-06	470.0	2.064788473891897e-07			mole/meter^3	pg/ml
+Rohr2024		all	8.0	API25, RIV25, EDO50	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_API25, RIV25, EDO50	2.5	hr		1.124162613563366e-06	390.0	2.2942094154354408e-07			mole/meter^3	pg/ml
+Rohr2024		all	8.0	API25, RIV25, EDO50	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_API25, RIV25, EDO50	3.0	hr		1.009452142791594e-06	350.0	2.064788473891897e-07			mole/meter^3	pg/ml
+Rohr2024		all	8.0	API25, RIV25, EDO50	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_API25, RIV25, EDO50	4.0	hr		8.488574837111131e-07	290.0	1.8353675323483527e-07			mole/meter^3	pg/ml
+Rohr2024		all	8.0	API25, RIV25, EDO50	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_API25, RIV25, EDO50	6.0	hr		2.982472240066073e-07	100.0	6.882628246306323e-08			mole/meter^3	pg/ml
+Rohr2024		all	8.0	API25, RIV25, EDO50	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_API25, RIV25, EDO50	8.0	hr		2.064788473891897e-07	60.0	6.882628246306323e-08			mole/meter^3	pg/ml
+Rohr2024		all	8.0	API25, RIV25, EDO50	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_API25, RIV25, EDO50	23.0	hr		2.294209415435441e-08					mole/meter^3	pg/ml
+Rohr2024		all	8.0	API25, RIV25, EDO50	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_API25, RIV25, EDO50	24.0	hr		2.294209415435441e-08					mole/meter^3	pg/ml

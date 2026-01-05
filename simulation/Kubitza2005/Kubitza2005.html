@@ -122,6 +122,7 @@ from sbmlsim.data import DataSet, load_pkdb_dataframe
 from sbmlsim.fit import FitMapping, FitData
 from sbmlutils.console import console
 
+from pkdb_models.models import rivaroxaban
 from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
     RivaroxabanSimulationExperiment,
 )
@@ -149,6 +150,15 @@ class Kubitza2005(RivaroxabanSimulationExperiment):
         "BID30": "tab:red",
         "OD5": "tab:blue",
         "TID5": "tab:pink",
+    }
+    formulation_labels = {
+        "P": "Placebo",
+        "OD5": "Rivaroxaban 5 mg OD",
+        "BID5": "Rivaroxaban 5 mg BID",
+        "TID5": "Rivaroxaban 5 mg TID",
+        "BID10": "Rivaroxaban 10 mg BID",
+        "BID20": "Rivaroxaban 20 mg BID",
+        "BID30": "Rivaroxaban 30 mg BID",
     }
     doses = {
         "P": 0,
@@ -334,7 +344,7 @@ class Kubitza2005(RivaroxabanSimulationExperiment):
                     task=f"task_{formulation}",
                     xid="time",
                     yid=sid,
-                    label=formulation,
+                    label=self.formulation_labels[formulation],
                     color=self.colors[formulation],
                 )
 
@@ -346,7 +356,7 @@ class Kubitza2005(RivaroxabanSimulationExperiment):
                     yid="mean",
                     yid_sd=None,
                     count="count",
-                    label=formulation,
+                    label=self.formulation_labels[formulation],
                     color=self.colors[formulation],
                 )
 
@@ -377,7 +387,7 @@ class Kubitza2005(RivaroxabanSimulationExperiment):
                     task=f"task_{formulation}",
                     xid="time",
                     yid=sid,
-                    label=formulation,
+                    label=self.formulation_labels[formulation],
                     color=self.colors[formulation],
                 )
                 plots1[k].add_data(
@@ -386,7 +396,7 @@ class Kubitza2005(RivaroxabanSimulationExperiment):
                     yid="mean",
                     yid_sd=None,
                     count="count",
-                    label=formulation,
+                    label=self.formulation_labels[formulation],
                     color=self.colors[formulation],
                 )
 
@@ -414,7 +424,7 @@ class Kubitza2005(RivaroxabanSimulationExperiment):
                     task=f"task_{formulation}",
                     xid="time",
                     yid=sid,
-                    label=formulation,
+                    label=self.formulation_labels[formulation],
                     color=self.colors[formulation],
                 )
                 plots2[k].add_data(
@@ -423,7 +433,7 @@ class Kubitza2005(RivaroxabanSimulationExperiment):
                     yid="mean",
                     yid_sd=None,
                     count="count",
-                    label=formulation,
+                    label=self.formulation_labels[formulation],
                     color=self.colors[formulation],
                 )
 
@@ -433,6 +443,8 @@ class Kubitza2005(RivaroxabanSimulationExperiment):
 
 
 if __name__ == "__main__":
+    out = rivaroxaban.RESULTS_PATH_SIMULATION / Kubitza2005.__name__
+    out.mkdir(parents=True, exist_ok=True)
     run_experiments(Kubitza2005, output_dir=Kubitza2005.__name__)
 </code>
         </pre>

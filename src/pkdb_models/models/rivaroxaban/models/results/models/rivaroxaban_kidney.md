@@ -17,7 +17,7 @@ RXEX_k = 2.0  # [1/min] rate of rivaroxaban metabolite urinary excretion
 Vext = 1.5  # [l] plasma  
 Vki = 0.3  # [l] kidney  
 Vurine = 1.0  # [l] urine  
-egfr_healthy = 100.0  # [578.034682080925 µl/min/m^2] estimated glomerular filtration (eGFR) rate healthy  
+egfr_healthy = 100.0  # [578.034682080925 Âµl/min/m^2] estimated glomerular filtration (eGFR) rate healthy  
 f_renal_function = 1.0  # [-] parameter for renal function  
 ```
 
@@ -34,7 +34,7 @@ rx_urine = 0.0  # [mmol] rivaroxaban metabolites (urine) in Vurine
 # y
 RIVEX = f_renal_function * Vki * RIVEX_k * riv_ext  # [mmol/min] rivaroxaban excretion (RIVEX)  
 RXEX = f_renal_function * Vki * RXEX_k * rx_ext  # [mmol/min] rivaroxaban metabolites excretion (RXEX)  
-egfr = f_renal_function * egfr_healthy  # [578.034682080925 µl/min/m^2] estimated eGFR  
+egfr = f_renal_function * egfr_healthy  # [578.034682080925 Âµl/min/m^2] estimated eGFR  
 crcl = (egfr * BSA / 1.73) * 1.1  # [ml/min] creatinine clearance  
 
 # odes

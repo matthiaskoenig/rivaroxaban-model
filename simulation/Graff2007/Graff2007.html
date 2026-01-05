@@ -89,6 +89,7 @@ from sbmlsim.data import DataSet, load_pkdb_dataframe
 from sbmlsim.fit import FitMapping, FitData
 from sbmlutils.console import console
 
+from pkdb_models.models import rivaroxaban
 from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
     RivaroxabanSimulationExperiment,
 )
@@ -112,6 +113,13 @@ class Graff2007(RivaroxabanSimulationExperiment):
         "RIV_30": "#D25100",
     }
     formulations = list(colors.keys())
+
+    formulation_labels = {
+    "PLACEBO": "Placebo",
+    "RIV_5": "Rivaroxaban 5 mg",
+    "RIV_30": "Rivaroxaban 30 mg",
+}
+
 
     info_fig5 = {
         "[Cve_riv]": "rivaroxaban",
@@ -256,7 +264,7 @@ class Graff2007(RivaroxabanSimulationExperiment):
                     task=f"task_{formulation}",
                     xid="time",
                     yid=sid,
-                    label=formulation,
+                    label=self.formulation_labels[formulation],
                     color=self.colors[formulation],
                 )
                 if formulation != "PLACEBO":
@@ -266,7 +274,7 @@ class Graff2007(RivaroxabanSimulationExperiment):
                         yid="mean",
                         yid_sd="mean_sd",
                         count="count",
-                        label=formulation,
+                        label=self.formulation_labels[formulation],
                         color=self.colors[formulation],
                     )
 
@@ -294,7 +302,7 @@ class Graff2007(RivaroxabanSimulationExperiment):
                     task=f"task_{formulation}",
                     xid="time",
                     yid=sid,
-                    label=formulation,
+                    label=self.formulation_labels[formulation],
                     color=self.colors[formulation],
                 )
                 plots[k].add_data(
@@ -303,13 +311,15 @@ class Graff2007(RivaroxabanSimulationExperiment):
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=formulation,
+                    label=self.formulation_labels[formulation],
                     color=self.colors[formulation],
                 )
         return {fig.sid: fig}
 
 
 if __name__ == "__main__":
+    out = rivaroxaban.RESULTS_PATH_SIMULATION / Graff2007.__name__
+    out.mkdir(parents=True, exist_ok=True)
     run_experiments(Graff2007, output_dir=Graff2007.__name__)
 </code>
         </pre>

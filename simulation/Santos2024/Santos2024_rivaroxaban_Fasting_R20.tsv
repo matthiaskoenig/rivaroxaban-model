@@ -1,0 +1,23 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_se	mean_sd	comments	mean_unit	value_unit
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	0.0	hr		0.0					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	0.16	hr		3.028356428374782e-05					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	0.31	hr		7.708543635863083e-05					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	0.63	hr		0.0001624300266128292					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	0.94	hr		0.00022299715518032487					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	1.25	hr		0.0002615398733596403					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	1.56	hr		0.0002890703863448656					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	1.88	hr		0.0003110947967330458					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	2.03	hr		0.0003303661558227035					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	2.66	hr		0.00034413141231531613					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	3.13	hr		0.00033587225841974857					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	3.44	hr		0.00032210700192713594					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	3.75	hr		0.0003055886941360007					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	4.38	hr		0.0002918234376433881					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	4.69	hr		0.00021198494998623477					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	5.94	hr		0.00015141782141873912					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	7.97	hr		0.00010186289804533358					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	10.0	hr		7.157933376158577e-05					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	11.88	hr		6.056712856749564e-05					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	23.91	hr		4.680187207488299e-05					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	47.81	hr		1.3765256492612646e-05					mole/meter^3	ng/ml
+Santos2024		Fasting	60.0	R20	concentration	rivaroxaban	plasma	HPLC MS/MS	rivaroxaban_Fasting_R20	72.03	hr		2.7530512985225292e-06					mole/meter^3	ng/ml

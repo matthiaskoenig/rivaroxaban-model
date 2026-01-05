@@ -1,7 +1,7 @@
 study	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	mean	median	min	max	mean_sd	mean_se	cv	comments	mean_unit	median_unit
-Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	3.3	hr	3.2348352757639717e-06				1.995962191428834e-06			end collection interval	mole	mg
-Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	6.1	hr	5.597870973662476e-06				4.006007609936565e-06			end collection interval	mole	mg
-Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	9.21	hr	8.213269707258879e-06				4.78418305529453e-06			end collection interval	mole	mg
-Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	12.23	hr	9.842158392218041e-06				5.053878298352207e-06			end collection interval	mole	mg
-Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	15.24	hr	1.0668073781774801e-05				5.120920042849912e-06			end collection interval	mole	mg
-Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	18.21	hr	1.112691566486189e-05				5.141435398693333e-06			end collection interval	mole	mg
+Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	3.3	hr	3.2348352757639717e-06				1.995962191428834e-06				mole	mg
+Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	6.1	hr	5.597870973662476e-06				4.006007609936565e-06			sd approximated	mole	mg
+Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	9.21	hr	8.213269707258879e-06				4.78418305529453e-06			sd approximated	mole	mg
+Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	12.23	hr	9.842158392218041e-06				5.053878298352207e-06			sd approximated	mole	mg
+Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	15.24	hr	1.0668073781774801e-05				5.120920042849912e-06			sd approximated	mole	mg
+Alalawneh2024	non-obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_non-obese	18.21	hr	1.112691566486189e-05				5.141435398693333e-06			sd approximated	mole	mg

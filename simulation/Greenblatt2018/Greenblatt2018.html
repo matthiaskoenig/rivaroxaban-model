@@ -73,6 +73,7 @@ from sbmlsim.data import DataSet, load_pkdb_dataframe
 from sbmlsim.fit import FitMapping, FitData
 from sbmlutils.console import console
 
+from pkdb_models.models import rivaroxaban
 from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
     RivaroxabanSimulationExperiment,
 )
@@ -96,6 +97,10 @@ class Greenblatt2018(RivaroxabanSimulationExperiment):
     bodyweights = {
         "NRF": 76.5,
         "MRI": 68.7,
+    }
+    group_labels = {
+        "NRF": "Normal renal function",
+        "MRI": "Mild renal impairment",
     }
     renal_functions = {
         "NRF": 105/105, # Normalized on NRI
@@ -190,7 +195,7 @@ class Greenblatt2018(RivaroxabanSimulationExperiment):
                     task=f"task_po_{group}",
                     xid="time",
                     yid=sid,
-                    label=group,
+                    label=self.group_labels[group],
                     color=self.colors[group],
                 )
 
@@ -201,7 +206,7 @@ class Greenblatt2018(RivaroxabanSimulationExperiment):
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
-                    label=group,
+                    label=self.group_labels[group],
                     color=self.colors[group],
                 )
 
@@ -211,6 +216,8 @@ class Greenblatt2018(RivaroxabanSimulationExperiment):
 
 
 if __name__ == "__main__":
+    out = rivaroxaban.RESULTS_PATH_SIMULATION / Greenblatt2018.__name__
+    out.mkdir(parents=True, exist_ok=True)
     run_experiments(Greenblatt2018, output_dir=Greenblatt2018.__name__)
 </code>
         </pre>

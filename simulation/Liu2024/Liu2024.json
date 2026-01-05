@@ -1,7 +1,7 @@
 {
   "experiment_id": "Liu2024",
-  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/rivaroxaban')]",
+  "base_path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban",
+  "data_path": "[PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/rivaroxaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/apixaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/edoxaban')]",
   "models": {
     "model": {
       "sid": null,
@@ -9,8 +9,8 @@
       "language": "SBML",
       "language_type": "SBML",
       "source": {
-        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
-        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "source": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
         "content": "None"
       },
       "changes": {}
@@ -1490,7 +1490,7 @@
             "curves": [
               {
                 "sid": "Fig2__plot0_curve0",
-                "name": "RIV10 fasted",
+                "name": "RIV 10 mg fasted",
                 "x": "task_fasted_10__time",
                 "y": "task_fasted_10__Cve_riv",
                 "xerr": null,
@@ -1521,7 +1521,7 @@
               },
               {
                 "sid": "Fig2__plot0_curve1",
-                "name": "RIV10 fasted\u00b1SD (n=106)",
+                "name": "RIV 10 mg fasted\u00b1SD (n=106)",
                 "x": "Fig2_rivaroxaban_fasted_10__time",
                 "y": "Fig2_rivaroxaban_fasted_10__mean",
                 "xerr": null,
@@ -1552,7 +1552,7 @@
               },
               {
                 "sid": "Fig2__plot0_curve2",
-                "name": "RIV10 fed",
+                "name": "RIV 10 mg fed",
                 "x": "task_fed_10__time",
                 "y": "task_fed_10__Cve_riv",
                 "xerr": null,
@@ -1583,7 +1583,7 @@
               },
               {
                 "sid": "Fig2__plot0_curve3",
-                "name": "RIV10 fed\u00b1SD (n=79)",
+                "name": "RIV 10 mg fed\u00b1SD (n=79)",
                 "x": "Fig2_rivaroxaban_fed_10__time",
                 "y": "Fig2_rivaroxaban_fed_10__mean",
                 "xerr": null,
@@ -1657,7 +1657,7 @@
             "curves": [
               {
                 "sid": "Fig2__plot1_curve0",
-                "name": "RIV15 fasted",
+                "name": "RIV 15 mg fasted",
                 "x": "task_fasted_15__time",
                 "y": "task_fasted_15__Cve_riv",
                 "xerr": null,
@@ -1688,7 +1688,7 @@
               },
               {
                 "sid": "Fig2__plot1_curve1",
-                "name": "RIV15 fasted\u00b1SD (n=36)",
+                "name": "RIV 15 mg fasted\u00b1SD (n=36)",
                 "x": "Fig2_rivaroxaban_fasted_15__time",
                 "y": "Fig2_rivaroxaban_fasted_15__mean",
                 "xerr": null,
@@ -1719,7 +1719,7 @@
               },
               {
                 "sid": "Fig2__plot1_curve2",
-                "name": "RIV15 fed",
+                "name": "RIV 15 mg fed",
                 "x": "task_fed_15__time",
                 "y": "task_fed_15__Cve_riv",
                 "xerr": null,
@@ -1750,7 +1750,7 @@
               },
               {
                 "sid": "Fig2__plot1_curve3",
-                "name": "RIV15 fed\u00b1SD (n=36)",
+                "name": "RIV 15 mg fed\u00b1SD (n=36)",
                 "x": "Fig2_rivaroxaban_fed_15__time",
                 "y": "Fig2_rivaroxaban_fed_15__mean",
                 "xerr": null,
@@ -1824,7 +1824,7 @@
             "curves": [
               {
                 "sid": "Fig2__plot2_curve0",
-                "name": "RIV20 fasted",
+                "name": "RIV 20 mg fasted",
                 "x": "task_fasted_20__time",
                 "y": "task_fasted_20__Cve_riv",
                 "xerr": null,
@@ -1855,7 +1855,7 @@
               },
               {
                 "sid": "Fig2__plot2_curve1",
-                "name": "RIV20 fasted\u00b1SD (n=25)",
+                "name": "RIV 20 mg fasted\u00b1SD (n=25)",
                 "x": "Fig2_rivaroxaban_fasted_20__time",
                 "y": "Fig2_rivaroxaban_fasted_20__mean",
                 "xerr": null,
@@ -1886,7 +1886,7 @@
               },
               {
                 "sid": "Fig2__plot2_curve2",
-                "name": "RIV20 fed",
+                "name": "RIV 20 mg fed",
                 "x": "task_fed_20__time",
                 "y": "task_fed_20__Cve_riv",
                 "xerr": null,
@@ -1917,7 +1917,7 @@
               },
               {
                 "sid": "Fig2__plot2_curve3",
-                "name": "RIV20 fed\u00b1SD (n=22)",
+                "name": "RIV 20 mg fed\u00b1SD (n=22)",
                 "x": "Fig2_rivaroxaban_fed_20__time",
                 "y": "Fig2_rivaroxaban_fed_20__mean",
                 "xerr": null,
@@ -2001,7 +2001,7 @@
             "curves": [
               {
                 "sid": "Fig3__plot0_curve0",
-                "name": "RIV10 fasted",
+                "name": "RIV 10 mg fasted",
                 "x": "task_fasted_10__time",
                 "y": "task_fasted_10__PT_ratio",
                 "xerr": null,
@@ -2032,7 +2032,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve1",
-                "name": "RIV10 fasted\u00b1SD (n=106)",
+                "name": "RIV 10 mg fasted\u00b1SD (n=106)",
                 "x": "Fig3_prothrombin time (change relative)_fasted_10__time",
                 "y": "Fig3_prothrombin time (change relative)_fasted_10__mean",
                 "xerr": null,
@@ -2063,7 +2063,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve2",
-                "name": "RIV10 fed",
+                "name": "RIV 10 mg fed",
                 "x": "task_fed_10__time",
                 "y": "task_fed_10__PT_ratio",
                 "xerr": null,
@@ -2094,7 +2094,7 @@
               },
               {
                 "sid": "Fig3__plot0_curve3",
-                "name": "RIV10 fed\u00b1SD (n=79)",
+                "name": "RIV 10 mg fed\u00b1SD (n=79)",
                 "x": "Fig3_prothrombin time (change relative)_fed_10__time",
                 "y": "Fig3_prothrombin time (change relative)_fed_10__mean",
                 "xerr": null,
@@ -2168,7 +2168,7 @@
             "curves": [
               {
                 "sid": "Fig3__plot1_curve0",
-                "name": "RIV15 fasted",
+                "name": "RIV 15 mg fasted",
                 "x": "task_fasted_15__time",
                 "y": "task_fasted_15__PT_ratio",
                 "xerr": null,
@@ -2199,7 +2199,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve1",
-                "name": "RIV15 fasted\u00b1SD (n=36)",
+                "name": "RIV 15 mg fasted\u00b1SD (n=36)",
                 "x": "Fig3_prothrombin time (change relative)_fasted_15__time",
                 "y": "Fig3_prothrombin time (change relative)_fasted_15__mean",
                 "xerr": null,
@@ -2230,7 +2230,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve2",
-                "name": "RIV15 fed",
+                "name": "RIV 15 mg fed",
                 "x": "task_fed_15__time",
                 "y": "task_fed_15__PT_ratio",
                 "xerr": null,
@@ -2261,7 +2261,7 @@
               },
               {
                 "sid": "Fig3__plot1_curve3",
-                "name": "RIV15 fed\u00b1SD (n=36)",
+                "name": "RIV 15 mg fed\u00b1SD (n=36)",
                 "x": "Fig3_prothrombin time (change relative)_fed_15__time",
                 "y": "Fig3_prothrombin time (change relative)_fed_15__mean",
                 "xerr": null,
@@ -2335,7 +2335,7 @@
             "curves": [
               {
                 "sid": "Fig3__plot2_curve0",
-                "name": "RIV20 fasted",
+                "name": "RIV 20 mg fasted",
                 "x": "task_fasted_20__time",
                 "y": "task_fasted_20__PT_ratio",
                 "xerr": null,
@@ -2366,7 +2366,7 @@
               },
               {
                 "sid": "Fig3__plot2_curve1",
-                "name": "RIV20 fasted\u00b1SD (n=25)",
+                "name": "RIV 20 mg fasted\u00b1SD (n=25)",
                 "x": "Fig3_prothrombin time (change relative)_fasted_20__time",
                 "y": "Fig3_prothrombin time (change relative)_fasted_20__mean",
                 "xerr": null,
@@ -2397,7 +2397,7 @@
               },
               {
                 "sid": "Fig3__plot2_curve2",
-                "name": "RIV20 fed",
+                "name": "RIV 20 mg fed",
                 "x": "task_fed_20__time",
                 "y": "task_fed_20__PT_ratio",
                 "xerr": null,
@@ -2428,7 +2428,7 @@
               },
               {
                 "sid": "Fig3__plot2_curve3",
-                "name": "RIV20 fed\u00b1SD (n=22)",
+                "name": "RIV 20 mg fed\u00b1SD (n=22)",
                 "x": "Fig3_prothrombin time (change relative)_fed_20__time",
                 "y": "Fig3_prothrombin time (change relative)_fed_20__mean",
                 "xerr": null,
@@ -2502,7 +2502,7 @@
             "curves": [
               {
                 "sid": "Fig3__plot3_curve0",
-                "name": "RIV10 fasted",
+                "name": "RIV 10 mg fasted",
                 "x": "task_fasted_10__time",
                 "y": "task_fasted_10__aPTT_ratio",
                 "xerr": null,
@@ -2533,7 +2533,7 @@
               },
               {
                 "sid": "Fig3__plot3_curve1",
-                "name": "RIV10 fasted\u00b1SD (n=106)",
+                "name": "RIV 10 mg fasted\u00b1SD (n=106)",
                 "x": "Fig3_aPTT (change relative)_fasted_10__time",
                 "y": "Fig3_aPTT (change relative)_fasted_10__mean",
                 "xerr": null,
@@ -2564,7 +2564,7 @@
               },
               {
                 "sid": "Fig3__plot3_curve2",
-                "name": "RIV10 fed",
+                "name": "RIV 10 mg fed",
                 "x": "task_fed_10__time",
                 "y": "task_fed_10__aPTT_ratio",
                 "xerr": null,
@@ -2595,7 +2595,7 @@
               },
               {
                 "sid": "Fig3__plot3_curve3",
-                "name": "RIV10 fed\u00b1SD (n=79)",
+                "name": "RIV 10 mg fed\u00b1SD (n=79)",
                 "x": "Fig3_aPTT (change relative)_fed_10__time",
                 "y": "Fig3_aPTT (change relative)_fed_10__mean",
                 "xerr": null,
@@ -2669,7 +2669,7 @@
             "curves": [
               {
                 "sid": "Fig3__plot4_curve0",
-                "name": "RIV15 fasted",
+                "name": "RIV 15 mg fasted",
                 "x": "task_fasted_15__time",
                 "y": "task_fasted_15__aPTT_ratio",
                 "xerr": null,
@@ -2700,7 +2700,7 @@
               },
               {
                 "sid": "Fig3__plot4_curve1",
-                "name": "RIV15 fasted\u00b1SD (n=36)",
+                "name": "RIV 15 mg fasted\u00b1SD (n=36)",
                 "x": "Fig3_aPTT (change relative)_fasted_15__time",
                 "y": "Fig3_aPTT (change relative)_fasted_15__mean",
                 "xerr": null,
@@ -2731,7 +2731,7 @@
               },
               {
                 "sid": "Fig3__plot4_curve2",
-                "name": "RIV15 fed",
+                "name": "RIV 15 mg fed",
                 "x": "task_fed_15__time",
                 "y": "task_fed_15__aPTT_ratio",
                 "xerr": null,
@@ -2762,7 +2762,7 @@
               },
               {
                 "sid": "Fig3__plot4_curve3",
-                "name": "RIV15 fed\u00b1SD (n=36)",
+                "name": "RIV 15 mg fed\u00b1SD (n=36)",
                 "x": "Fig3_aPTT (change relative)_fed_15__time",
                 "y": "Fig3_aPTT (change relative)_fed_15__mean",
                 "xerr": null,
@@ -2836,7 +2836,7 @@
             "curves": [
               {
                 "sid": "Fig3__plot5_curve0",
-                "name": "RIV20 fasted",
+                "name": "RIV 20 mg fasted",
                 "x": "task_fasted_20__time",
                 "y": "task_fasted_20__aPTT_ratio",
                 "xerr": null,
@@ -2867,7 +2867,7 @@
               },
               {
                 "sid": "Fig3__plot5_curve1",
-                "name": "RIV20 fasted\u00b1SD (n=25)",
+                "name": "RIV 20 mg fasted\u00b1SD (n=25)",
                 "x": "Fig3_aPTT (change relative)_fasted_20__time",
                 "y": "Fig3_aPTT (change relative)_fasted_20__mean",
                 "xerr": null,
@@ -2898,7 +2898,7 @@
               },
               {
                 "sid": "Fig3__plot5_curve2",
-                "name": "RIV20 fed",
+                "name": "RIV 20 mg fed",
                 "x": "task_fed_20__time",
                 "y": "task_fed_20__aPTT_ratio",
                 "xerr": null,
@@ -2929,7 +2929,7 @@
               },
               {
                 "sid": "Fig3__plot5_curve3",
-                "name": "RIV20 fed\u00b1SD (n=22)",
+                "name": "RIV 20 mg fed\u00b1SD (n=22)",
                 "x": "Fig3_aPTT (change relative)_fed_20__time",
                 "y": "Fig3_aPTT (change relative)_fed_20__mean",
                 "xerr": null,

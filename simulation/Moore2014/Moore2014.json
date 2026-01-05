@@ -1,7 +1,7 @@
 {
   "experiment_id": "Moore2014",
-  "base_path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban",
-  "data_path": "[PosixPath('/home/mkoenig/git/pkdb_data/studies/rivaroxaban')]",
+  "base_path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban",
+  "data_path": "[PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/rivaroxaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/apixaban'), PosixPath('/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/edoxaban')]",
   "models": {
     "model": {
       "sid": null,
@@ -9,8 +9,8 @@
       "language": "SBML",
       "language_type": "SBML",
       "source": {
-        "source": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
-        "path": "/home/mkoenig/git/pkdb_models/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "source": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
+        "path": "/home/mariia/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/results/models/rivaroxaban_body_flat.xml",
         "content": "None"
       },
       "changes": {}
@@ -791,7 +791,7 @@
             "curves": [
               {
                 "sid": "Fig2_Tab2__plot0_curve0",
-                "name": "NRF",
+                "name": "Normal renal function",
                 "x": "task_NRF__time",
                 "y": "task_NRF__Cve_riv",
                 "xerr": null,
@@ -822,7 +822,7 @@
               },
               {
                 "sid": "Fig2_Tab2__plot0_curve1",
-                "name": "NRF\u00b1SD (n=8)",
+                "name": "Normal renal function\u00b1SD (n=8)",
                 "x": "rivaroxaban_NRF__time",
                 "y": "rivaroxaban_NRF__mean",
                 "xerr": null,
@@ -853,7 +853,7 @@
               },
               {
                 "sid": "Fig2_Tab2__plot0_curve2",
-                "name": "mildRI",
+                "name": "Mild renal impairment",
                 "x": "task_mildRI__time",
                 "y": "task_mildRI__Cve_riv",
                 "xerr": null,
@@ -884,7 +884,7 @@
               },
               {
                 "sid": "Fig2_Tab2__plot0_curve3",
-                "name": "mildRI\u00b1SD (n=8)",
+                "name": "Mild renal impairment\u00b1SD (n=8)",
                 "x": "rivaroxaban_mildRI__time",
                 "y": "rivaroxaban_mildRI__mean",
                 "xerr": null,
@@ -915,7 +915,7 @@
               },
               {
                 "sid": "Fig2_Tab2__plot0_curve4",
-                "name": "moderateRI",
+                "name": "Moderate renal impairment",
                 "x": "task_moderateRI__time",
                 "y": "task_moderateRI__Cve_riv",
                 "xerr": null,
@@ -946,7 +946,7 @@
               },
               {
                 "sid": "Fig2_Tab2__plot0_curve5",
-                "name": "moderateRI\u00b1SD (n=8)",
+                "name": "Moderate renal impairment\u00b1SD (n=8)",
                 "x": "rivaroxaban_moderateRI__time",
                 "y": "rivaroxaban_moderateRI__mean",
                 "xerr": null,
@@ -1020,7 +1020,7 @@
             "curves": [
               {
                 "sid": "Fig2_Tab2__plot1_curve0",
-                "name": "NRF",
+                "name": "Normal renal function",
                 "x": "task_NRF__time",
                 "y": "task_NRF__Aurine_riv",
                 "xerr": null,
@@ -1051,7 +1051,7 @@
               },
               {
                 "sid": "Fig2_Tab2__plot1_curve1",
-                "name": "NRF\u00b1SD (n=8)",
+                "name": "Normal renal function\u00b1SD (n=8)",
                 "x": "rivaroxaban_urine_NRF__time",
                 "y": "rivaroxaban_urine_NRF__mean",
                 "xerr": null,
@@ -1082,7 +1082,7 @@
               },
               {
                 "sid": "Fig2_Tab2__plot1_curve2",
-                "name": "mildRI",
+                "name": "Mild renal impairment",
                 "x": "task_mildRI__time",
                 "y": "task_mildRI__Aurine_riv",
                 "xerr": null,
@@ -1113,7 +1113,7 @@
               },
               {
                 "sid": "Fig2_Tab2__plot1_curve3",
-                "name": "mildRI\u00b1SD (n=12)",
+                "name": "Mild renal impairment\u00b1SD (n=12)",
                 "x": "rivaroxaban_urine_mildRI__time",
                 "y": "rivaroxaban_urine_mildRI__mean",
                 "xerr": null,
@@ -1144,7 +1144,7 @@
               },
               {
                 "sid": "Fig2_Tab2__plot1_curve4",
-                "name": "moderateRI",
+                "name": "Moderate renal impairment",
                 "x": "task_moderateRI__time",
                 "y": "task_moderateRI__Aurine_riv",
                 "xerr": null,
@@ -1175,7 +1175,7 @@
               },
               {
                 "sid": "Fig2_Tab2__plot1_curve5",
-                "name": "moderateRI\u00b1SD (n=9)",
+                "name": "Moderate renal impairment\u00b1SD (n=9)",
                 "x": "rivaroxaban_urine_moderateRI__time",
                 "y": "rivaroxaban_urine_moderateRI__mean",
                 "xerr": null,

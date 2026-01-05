@@ -90,6 +90,7 @@ from sbmlsim.data import DataSet, load_pkdb_dataframe
 from sbmlsim.fit import FitMapping, FitData
 from sbmlutils.console import console
 
+from pkdb_models.models import rivaroxaban
 from pkdb_models.models.rivaroxaban.experiments.base_experiment import RivaroxabanSimulationExperiment
 from pkdb_models.models.rivaroxaban.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
     Fasting, RivaroxabanMappingMetaData
@@ -107,6 +108,11 @@ class Kubitza2013(RivaroxabanSimulationExperiment):
         "healthy": "black",
         "mildHI": "#74A9CF",
         "moderateHI": "#2B8CBE",
+    }
+    group_labels = {
+        "healthy": "Healthy subjects",
+        "mildHI": "Mild hepatic impairment",
+        "moderateHI": "Moderate hepatic impairment",
     }
     bodyweights = {
         "healthy": 76,
@@ -222,7 +228,7 @@ class Kubitza2013(RivaroxabanSimulationExperiment):
                 task=f"task_{group}",
                 xid="time",
                 yid="[Cve_riv]",
-                label=group,
+                label = self.group_labels[group],
                 color=self.colors[group],
             )
             plots_pk[0].add_data(
@@ -231,7 +237,7 @@ class Kubitza2013(RivaroxabanSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=group,
+                label = self.group_labels[group],
                 color=self.colors[group],
             )
         figures[fig_pk.sid] = fig_pk
@@ -248,14 +254,26 @@ class Kubitza2013(RivaroxabanSimulationExperiment):
             legend=True,
         )
 
-        # Fig2A: Xa inhibition
+        # PD figure: Fig2A and Fig2B combined, now horizontally aligned
+        fig_pd = Figure(
+            experiment=self,
+            sid="Fig2",
+            num_cols=2,
+            name=self.__class__.__name__
+        )
+        plots_pd = fig_pd.create_plots(
+            xaxis=Axis(self.label_time, unit=self.unit_time),
+            legend=True,
+        )
+
+        # Fig2A: Xa inhibition (left plot)
         plots_pd[0].set_yaxis(self.labels["Xa_inhibition"], unit=self.units["Xa_inhibition"])
         for group in self.groups:
             plots_pd[0].add_data(
                 task=f"task_{group}",
                 xid="time",
                 yid="Xa_inhibition",
-                label=group,
+                label = self.group_labels[group],
                 color=self.colors[group],
             )
             plots_pd[0].add_data(
@@ -264,18 +282,18 @@ class Kubitza2013(RivaroxabanSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=group,
+                label = self.group_labels[group],
                 color=self.colors[group],
             )
 
-        # Fig2B: prothrombin time (PT_ratio)
+        # Fig2B: prothrombin time (right plot)
         plots_pd[1].set_yaxis(self.labels["PT_ratio"], unit=self.units["PT_ratio"])
         for group in self.groups:
             plots_pd[1].add_data(
                 task=f"task_{group}",
                 xid="time",
                 yid="PT_ratio",
-                label=group,
+                label = self.group_labels[group],
                 color=self.colors[group],
             )
             plots_pd[1].add_data(
@@ -284,7 +302,7 @@ class Kubitza2013(RivaroxabanSimulationExperiment):
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=group,
+                label = self.group_labels[group],
                 color=self.colors[group],
             )
 
@@ -293,6 +311,8 @@ class Kubitza2013(RivaroxabanSimulationExperiment):
 
 
 if __name__ == "__main__":
+    out = rivaroxaban.RESULTS_PATH_SIMULATION / Kubitza2013.__name__
+    out.mkdir(parents=True, exist_ok=True)
     run_experiments(Kubitza2013, output_dir=Kubitza2013.__name__)
 </code>
         </pre>
