@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16148695.svg)](https://doi.org/10.5281/zenodo.15157735)
 [![GitHub Action](https://github.com/matthiaskoenig/rivaroxaban-model/actions/workflows/python.yml/badge.svg)](https://github.com/matthiaskoenig/rivaroxaban-model/actions/workflows/python.yml)
-[![GitHub Action](https://github.com/matthiaskoenig/rivaroxaban-model/actions/workflows/docker.yml/badge.svg)](https://github.com/matthiaskoenig/sorafenib-model/actions/workflows/docker.yml)
+[![GitHub Action](https://github.com/matthiaskoenig/rivaroxaban-model/actions/workflows/docker.yml/badge.svg)](https://github.com/matthiaskoenig/rivaroxaban-model/actions/workflows/docker.yml)
 
 # rivaroxaban model
 This repository provides the rivaroxaban physiologically based pharmacokinetics/pharmacodynamics (PBPK/PD) model.
@@ -22,7 +22,7 @@ The FAIR assessment is available from [`rivaroxaban_model_fair.xlsx`](./losartan
 ## How to cite
 To cite the model repository
 
-> Casabianca, E. & König, M. (2025).
+> Casabianca, E. Myshkina, M. & König, M. (2026).
 > *Physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of rivaroxaban.*
 > Zenodo. [https://doi.org/10.5281/zenodo.16148695](https://doi.org/10.5281/zenodo.16148695)
 
