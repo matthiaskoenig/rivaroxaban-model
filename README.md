@@ -1,33 +1,36 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15157735.svg)](https://doi.org/10.5281/zenodo.15157735)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16148695.svg)](https://doi.org/10.5281/zenodo.15157735)
+[![GitHub Action](https://github.com/matthiaskoenig/rivaroxaban-model/actions/workflows/python.yml/badge.svg)](https://github.com/matthiaskoenig/rivaroxaban-model/actions/workflows/python.yml)
+[![GitHub Action](https://github.com/matthiaskoenig/rivaroxaban-model/actions/workflows/docker.yml/badge.svg)](https://github.com/matthiaskoenig/sorafenib-model/actions/workflows/docker.yml)
 
 # rivaroxaban model
 This repository provides the rivaroxaban physiologically based pharmacokinetics/pharmacodynamics (PBPK/PD) model.
 
-The model is distributed as [SBML](http://sbml.org) available from [`rivaroxaban_body_flat.xml`](./models/rivaroxaban_body_flat.xml) with 
-corresponding SBML4humans model report at [https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/rivaroxaban-model/main/models/rivaroxaban_body_flat.xml](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/rivaroxaban-model/main/models/rivaroxaban_body_flat.xml) and equations from [`rivaroxaban_body_flat.md`](./models/rivaroxaban_body_flat.md).
+The model is distributed as [SBML](http://sbml.org) format available from [`rivaroxaban_body_flat.xml`](./models/rivaroxaban_body_flat.xml) with 
+corresponding [SBML4humans model report](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/rivaroxaban-model/main/models/rivaroxaban_body_flat.xml) and [model equations](./models/rivaroxaban_body_flat.md).
 
 The COMBINE archive is available from [`rivaroxaban_model.omex`](./rivaroxaban_model.omex).
+The FAIR assessment is available from [`rivaroxaban_model_fair.xlsx`](./losartan_model_fair.xlsx).
 
 ![model overview](./figures/rivaroxaban_model.png)
 
 ### Comp submodels
-The liver submodel is available from [`rivaroxaban_liver.xml`](./models/rivaroxaban_liver.xml) with corresponding SBML4humans report at
-[https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/rivaroxaban-model/main/models/rivaroxaban_liver.xml](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/rivaroxaban-model/main/models/rivaroxaban_liver.xml) and equations from [`rivaroxaban_liver.md`](./models/rivaroxaban_liver.md).
-
-The kidney submodel is available from [`rivaroxaban_kidney.xml`](./models/rivaroxaban_kidney.xml) with corresponding SBML4humans report at
-[https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/rivaroxaban-model/main/models/rivaroxaban_kidney.xml](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/rivaroxaban-model/main/models/rivaroxaban_kidney.xml) and equations from [`rivaroxaban_kidney.md`](./models/rivaroxaban_kidney.md).
-
-The intestine submodel is available from [`rivaroxaban_intestine.xml`](./models/rivaroxaban_intestine.xml) with corresponding SBML4humans report at
-[https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/rivaroxaban-model/main/models/rivaroxaban_intestine.xml](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/rivaroxaban-model/main/models/rivaroxaban_intestine.xml) and equations from [`rivaroxaban_intestine.md`](./models/rivaroxaban_intestine.md).
-
-The whole-body submodel is available from [`rivaroxaban_body.xml`](./models/rivaroxaban_body.xml) with corresponding SBML4humans report at
-[https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/rivaroxaban-model/main/models/rivaroxaban_body.xml](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/rivaroxaban-model/main/models/rivaroxaban_body.xml) and equations from [`rivaroxaban_body.md`](./models/glimepiride_body.md).
+* **liver** submodel [`rivaroxaban_liver.xml`](./models/rivaroxaban_liver.xml) with [SBML4humans report](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/rivaroxaban-model/main/models/rivaroxaban_liver.xml) and [equations](./models/rivaroxaban_liver.md).
+* **kidney** submodel [`rivaroxaban_kidney.xml`](./models/rivaroxaban_kidney.xml) with [SBML4humans report](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/rivaroxaban-model/main/models/rivaroxaban_kidney.xml) and [equations](./models/rivaroxaban_kidney.md).
+* **intestine** submodel [`rivaroxaban_intestine.xml`](./models/rivaroxaban_intestine.xml) with [SBML4humans report](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/rivaroxaban-model/main/models/rivaroxaban_intestine.xml) and [equations](./models/rivaroxaban_intestine.md).
+* **whole-body** submodel [`rivaroxaban_body.xml`](./models/rivaroxaban_body.xml) with [SBML4humans report](https://sbml4humans.de/model_url?url=https://raw.githubusercontent.com/matthiaskoenig/rivaroxaban-model/main/models/rivaroxaban_body.xml) and [equations](./models/rivaroxaban_body.md).
 
 ## How to cite
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15157735.svg)](https://doi.org/10.5281/zenodo.15157735)
+To cite the model repository
+
 > Casabianca, E. & König, M. (2025).
 > *Physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of rivaroxaban.*
 > Zenodo. [https://doi.org/10.5281/zenodo.16148695](https://doi.org/10.5281/zenodo.16148695)
+
+To cite the preprint
+
+> Elisabetta Casabianca, Mariia Myshkina, Matthias König
+> A Systems Pharmacology Approach to Rivaroxaban: Physiologically Based Modeling of Pharmacokinetics and Coagulation Dynamics
+> Preprints 2025, 202507.1945. (preprint). doi:[10.20944/preprints202507.1945.v1](https://doi.org/10.20944/preprints202507.1945.v1)
 
 ## License
 
@@ -48,12 +51,9 @@ cd rivaroxaban-model
 ```
 
 #### uv
-Setup environment with uv (https://docs.astral.sh/uv/getting-started/installation/)
+Run the complete analysis with uv (https://docs.astral.sh/uv/getting-started/installation/):
 ```bash
 uv sync
-```
-Run the complete analysis:
-```bash
 uv run run_rivaroxaban -a all -r results
 ```
 
@@ -64,7 +64,7 @@ pip install -e .
 ```
 Run the complete analysis in the environment via:
 ```bash
-run run_rivaroxaban -a all -r results
+run_rivaroxaban -a all -r results
 ```
 
 ### docker
@@ -84,10 +84,11 @@ In case of permission issues with the mounted folder, adjust ownership and acces
 ```bash
 sudo chown $(id -u):$(id -g) -R "${PWD}/results"
 sudo chmod 775 "${PWD}/results"
+```
 
-Funding
-=======
+
+## Funding
 Matthias König was supported by the Federal Ministry of Education and Research (BMBF, Germany) within LiSyM by grant number 031L0054 and ATLAS by grant number 031L0304B and by the German Research Foundation (DFG) within the Research Unit Program FOR 5151 QuaLiPerF (Quantifying Liver Perfusion-Function Relationship in Complex Resection - A Systems Medicine Approach) by grant number 436883643 and by grant number 465194077 (Priority Programme SPP 2311, Subproject SimLivA). This work was supported by the BMBF-funded de.NBI Cloud within the German Network for Bioinformatics Infrastructure (de.NBI) (031A537B, 031A533A, 031A538A, 031A533B, 031A535A, 031A537C, 031A534A, 031A532B). 
 Mariia Myshkina was supported by the Federal Ministry of Education and Research (BMBF, Germany) within ATLAS by grant number 031L0304B and by the German Research Foundation (DFG) within Priority Programme SPP 2311 by grant number 465194077 (Subproject SimLivA).
 
-© 2025 Elisabetta Casabianca, Mariia Myshkina & Matthias König, [Systems Medicine of the Liver](https://livermetabolism.com)
+© 2025-2026 Elisabetta Casabianca, Mariia Myshkina & Matthias König, [Systems Medicine of the Liver](https://livermetabolism.com)

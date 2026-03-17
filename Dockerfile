@@ -1,7 +1,16 @@
-FROM python:3.13-slim
+# --------------------------------------------------------
+# Dockerfile
+# --------------------------------------------------------
+# Build and push image
+#   docker build -f Dockerfile -t matthiaskoenig/canagliflozin:0.7.1 -t matthiaskoenig/canagliflozin:latest .
+#   docker login
+#   docker push --all-tags matthiaskoenig/canagliflozin
+# --------------------------------------------------------
+
+FROM python:3.14-slim
 
 # install uv
-COPY --from=ghcr.io/astral-sh/uv:0.9.4 /uv /bin/uv
+COPY --from=ghcr.io/astral-sh/uv:0.10.10 /uv /bin/uv
 ENV UV_SYSTEM_PYTHON=1
 
 # install git
@@ -11,7 +20,7 @@ RUN apt-get update && \
 
 # copy code
 WORKDIR /code
-COPY .python-version /code/python-version.py
+COPY .python-version /code/.python-version
 COPY pyproject.toml /code/pyproject.toml
 COPY README.md /code/README.md
 COPY src /code/src

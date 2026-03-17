@@ -1,2 +1,7 @@
+.venv
 .idea
-/src/pkdb_models/models/rivaroxaban/results
+*.pyc
+__pycache__
+results/
+src/pkdb_models/models/rivaroxaban/results/
+src/pkdb_models/models/rivaroxaban/models/results/rivaroxaban_model.omex
