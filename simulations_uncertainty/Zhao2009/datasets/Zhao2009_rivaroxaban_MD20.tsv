@@ -1,0 +1,27 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit	count_unit
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	0.5	hr		5.753877213912085e-05					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	1.0	hr		0.00031304487473616583					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	1.5	hr		0.00047412131779388814					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	2.0	hr		0.0005485225291364595					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	2.5	hr		0.0006837432320822243					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	3.0	hr		0.0006720886482518123					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	4.0	hr		0.0005866981738093052					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	6.0	hr		0.0004184867394695787					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	8.0	hr		0.0002270349637514912					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	12.0	hr		0.0001015417087271726					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	15.0	hr		5.558869413600073e-05					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	24.0	hr		8.350922272185003e-06					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	120.0	hr		0.00020179866018170132					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	120.5	hr		0.0002101954666421951					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	121.0	hr		0.00045342754886666046					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	121.5	hr		0.0006565568505093144					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	122.0	hr		0.0008447967330457923					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	122.5	hr		0.0009411994126823895					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	123.0	hr		0.0008991465540974579					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	124.0	hr		0.0008073093511975772					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	126.0	hr		0.0005756859686152151					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	128.0	hr		0.00030724052491511416					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	132.0	hr		0.00014421400385427179					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	135.0	hr		7.823254106634852e-05					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	144.0	hr		2.6475176654124983e-05					mole/meter^3	µg/l	dimensionless
+Zhao2009		MD20	8.0	MD20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_MD20	156.0	hr		3.1660089933009078e-06					mole/meter^3	µg/l	dimensionless

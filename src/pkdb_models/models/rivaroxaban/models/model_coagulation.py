@@ -1,43 +1,53 @@
 """Model for coagulation factors and readouts."""
-from dataclasses import dataclass
 
 import numpy as np
+from sbmlutils.factory import (
+    AssignmentRule,
+    Compartment,
+    FactoryResult,
+    Model,
+    Parameter,
+    Species,
+    UnitDefinition,
+    ValidationOptions,
+    create_model,
+)
+from sbmlutils.metadata import (
+    SBO,
+)
 
-from sbmlutils import cytoscape as cyviz
-from sbmlutils.converters import odefac
-from sbmlutils.factory import *
-from sbmlutils.metadata import *
-
-from pkdb_models.models.rivaroxaban.models import annotations
-from pkdb_models.models.rivaroxaban.models import templates
+from pkdb_models.models.rivaroxaban.models import annotations, templates
+from pkdb_models.models.rivaroxaban.models.fits import FITS
 
 
 class U(templates.U):
-    """UnitDefinitions"""
-    pass
+    """Units of the coagulation model."""
+
+    per_mM = UnitDefinition("per_mM", "liter/mmole")
 
 
 mid = "rivaroxaban_coagulation"
-version = 1
 
 _m = Model(
     sid=mid,
     name="Model for coagulation factors and readouts.",
-    notes=f"""
+    notes="""
     Model for coagulation factors and readouts.
-    
-    **version** {version}
-    
-    ## Changelog
-    
-    **version 1**
-    
-    - initial model
-        
-    """ + templates.terms_of_use,
+
+    The effects depend on the total concentration of rivaroxaban in the venous
+    plasma `Cve_riv`, as the assays measure the total drug in a plasma sample.
+    The prothrombin time (PT) is linear in the concentration (Neoplastin, up
+    to the concentrations of 80 mg, Kubitza2005a, Mueck2014); the activated
+    partial thromboplastin time (aPTT) and the inhibition of factor Xa follow
+    an Emax model of the concentration, the PT and the aPTT relative to their
+    baseline (`PT_ref`, `aPTT_ref`), which an experiment sets to the baseline
+    of its subjects.
+    """
+    + templates.terms_of_use,
     creators=templates.creators,
     units=U,
     model_units=templates.model_units,
+    annotations=annotations.model,
 )
 
 _m.compartments = [
@@ -49,7 +59,7 @@ _m.compartments = [
         constant=True,
         sboTerm=SBO.PHYSICAL_COMPARTMENT,
         annotations=annotations.compartments["plasma"],
-        port=True
+        port=True,
     ),
 ]
 
@@ -68,13 +78,13 @@ _m.species = [
 
 names = {
     "PT": "prothrombin time",
-    "aPTT": "activated partial thromboplastin",
+    "aPTT": "activated partial thromboplastin time",
     "Xa_inhibition": "inhibition of factor Xa",
 }
 reference_values = {
     "PT": 12.5,  # [s]
     "aPTT": 28.4,  # [s]
-    "Xa_inhibition": 0, #[-] not inhibited
+    "Xa_inhibition": 0,  # [-] not inhibited
 }
 unit_values = {
     "PT": U.second,
@@ -84,28 +94,32 @@ unit_values = {
 
 # Xa, PT aPTT
 for sid in ["PT", "aPTT"]:
-    _m.parameters.extend([
-        Parameter(
-            sid=f"{sid}_ref",
-            name=f"{names[sid]} reference",
-            value=reference_values[sid],
-            unit=unit_values[sid],
-            constant=True,
-            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        ),
-    ])
+    _m.parameters.extend(
+        [
+            Parameter(
+                sid=f"{sid}_ref",
+                name=f"{names[sid]} reference",
+                value=reference_values[sid],
+                unit=unit_values[sid],
+                constant=True,
+                sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            ),
+        ]
+    )
 
 for sid in ["PT", "aPTT", "Xa_inhibition"]:
-    _m.parameters.extend([
-        Parameter(
-            sid=sid,
-            name=names[sid],
-            value=reference_values[sid],
-            unit=unit_values[sid],
-            constant=False,
-            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        )
-    ])
+    _m.parameters.extend(
+        [
+            Parameter(
+                sid=sid,
+                name=names[sid],
+                value=reference_values[sid],
+                unit=unit_values[sid],
+                constant=False,
+                sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            )
+        ]
+    )
 
 for sid in ["PT", "aPTT"]:
     # absolute change
@@ -120,11 +134,7 @@ for sid in ["PT", "aPTT"]:
             notes=f"Absolute change to baseline {names[sid]}",
         )
     )
-    _m.rules.append(
-        AssignmentRule(
-            f"{sid}_change", f"{sid}-{sid}_ref", unit=U.second
-        )
-    )
+    _m.rules.append(AssignmentRule(f"{sid}_change", f"{sid}-{sid}_ref", unit=U.second))
     # ratio to baseline
     _m.parameters.append(
         Parameter(
@@ -138,87 +148,91 @@ for sid in ["PT", "aPTT"]:
         )
     )
     _m.rules.append(
-        AssignmentRule(
-            f"{sid}_ratio", f"{sid}/{sid}_ref", unit=U.dimensionless
-        )
+        AssignmentRule(f"{sid}_ratio", f"{sid}/{sid}_ref", unit=U.dimensionless)
     )
 
 
 # Effect of rivaroxaban on PT, aPTT and Xa_inhibition
-_m.parameters.extend([
-    Parameter(
-        sid="Emax_PT",
-        name="Effect constant for PT inhibition",
-        value=3.5530919743774545,
-        unit=U.dimensionless,
-        sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-    ),
-    Parameter(
-        sid="EC50_riv_PT",
-        name="Effect constant for PT",
-        value=0.0035833544566150222,
-        unit=U.mM,
-        sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-    ),
-    Parameter(
-        sid="Emax_aPTT",
-        name="Effect constant for aPTT inhibition",
-        value=0.9500194161813726,
-        unit=U.dimensionless,
-        sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-    ),
-    Parameter(
-        sid="EC50_riv_aPTT",
-        name="Effect constant for aPTT",
-        value=0.00040891827752344355,
-        unit=U.mM,
-        sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-    ),
-    Parameter(
-        sid="Emax_Xa",
-        name="Effect constant for Xa inhibition",
-        value=0.6860934265985122,
-        unit=U.dimensionless,
-        sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-    ),
-    Parameter(
-        sid="EC50_riv_Xa",
-        name="Effect constant for Xa inhibition",
-        value=0.000295895101103941,
-        unit=U.mM,
-        sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-    ),
-])
+_m.parameters.extend(
+    [
+        Parameter(
+            sid="PT_slope",
+            name="relative increase of the PT per rivaroxaban concentration",
+            **FITS.parameter("PT_slope", unit=U.per_mM),
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            notes="""
+            The PT is linear in the total concentration of rivaroxaban in
+            plasma; the PT of 10 mg in the fasted state rises to about 1.44
+            times its baseline at a Cmax of about 0.26 µM (Neoplastin Plus,
+            Kubitza2006), the less sensitive reagents of the other studies give
+            smaller increases.
+            """,
+        ),
+        Parameter(
+            sid="Emax_aPTT",
+            name="maximum effect aPTT",
+            **FITS.parameter("Emax_aPTT", unit=U.dimensionless),
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+        ),
+        Parameter(
+            sid="EC50_riv_aPTT",
+            name="EC50 rivaroxaban aPTT",
+            **FITS.parameter("EC50_riv_aPTT", unit=U.mM),
+            sboTerm=SBO.EC50,
+            notes="Total concentration of rivaroxaban in plasma.",
+        ),
+        Parameter(
+            sid="Emax_Xa",
+            name="maximum effect Xa inhibition",
+            **FITS.parameter("Emax_Xa", unit=U.dimensionless),
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+        ),
+        Parameter(
+            sid="EC50_riv_Xa",
+            name="EC50 rivaroxaban Xa inhibition",
+            **FITS.parameter("EC50_riv_Xa", unit=U.mM),
+            sboTerm=SBO.EC50,
+            notes="Total concentration of rivaroxaban in plasma.",
+        ),
+    ]
+)
 
-_m.rules.extend([
-    AssignmentRule(
-        "PT", "PT_ref * (1 dimensionless + Emax_PT * Cve_riv / (Cve_riv + EC50_riv_PT))", unit=U.second
-    ),
-    AssignmentRule(
-        "aPTT", "aPTT_ref * (1 dimensionless + Emax_aPTT * Cve_riv / (Cve_riv + EC50_riv_aPTT))", unit=U.second
-    ),
-    AssignmentRule(
-        "Xa_inhibition", "Emax_Xa * Cve_riv / (Cve_riv + EC50_riv_Xa)", unit=U.dimensionless
-    )
-])
-
+_m.rules.extend(
+    [
+        AssignmentRule(
+            "PT",
+            "PT_ref * (1 dimensionless + PT_slope * Cve_riv)",
+            unit=U.second,
+        ),
+        AssignmentRule(
+            "aPTT",
+            "aPTT_ref * (1 dimensionless + Emax_aPTT * Cve_riv / (Cve_riv + EC50_riv_aPTT))",
+            unit=U.second,
+        ),
+        AssignmentRule(
+            "Xa_inhibition",
+            "Emax_Xa * Cve_riv / (Cve_riv + EC50_riv_Xa)",
+            unit=U.dimensionless,
+        ),
+    ]
+)
 
 model_coagulation = _m
 
+
 if __name__ == "__main__":
+    from sbmlode import OdeSystem
+
     from pkdb_models.models.rivaroxaban import MODEL_BASE_PATH
 
     results: FactoryResult = create_model(
         model=model_coagulation,
         filepath=MODEL_BASE_PATH / f"{model_coagulation.sid}.xml",
-        sbml_level=3, sbml_version=2,
-        validation_options=ValidationOptions(units_consistency=True)
+        sbml_level=3,
+        sbml_version=2,
+        validation_options=ValidationOptions(units_consistency=True),
     )
     # create differential equations
     md_path = MODEL_BASE_PATH / f"{model_coagulation.sid}.md"
-    ode_factory = odefac.SBML2ODE.from_file(sbml_file=results.sbml_path)
-    ode_factory.to_markdown(md_file=md_path)
-
-    cyviz.visualize_sbml(results.sbml_path, delete_session=True)
-    # cyviz.apply_layout(layout=kidney_layout())
-    # cyviz.add_annotations(annotations=kidney_annotations())
+    ode_system = OdeSystem.from_sbml(results.sbml_path)
+    ode_system.write(md_path)

@@ -1,0 +1,14 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit	count_unit
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	0.0	hr		0.0					mole/meter^3	µg/l	dimensionless
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	0.5	hr		0.0001401014660867826					mole/meter^3	µg/l	dimensionless
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	1.0	hr		0.0005897018642156189					mole/meter^3	µg/l	dimensionless
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	2.0	hr		0.001121005670583789					mole/meter^3	µg/l	dimensionless
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	3.0	hr		0.001115047344755444					mole/meter^3	µg/l	dimensionless
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	4.0	hr		0.0010448296061960677					mole/meter^3	µg/l	dimensionless
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	6.0	hr		0.00047230237375329667					mole/meter^3	µg/l	dimensionless
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	8.0	hr		0.0002910205797895866					mole/meter^3	µg/l	dimensionless
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	12.0	hr		0.000121181357308163					mole/meter^3	µg/l	dimensionless
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	15.0	hr		6.825677056523652e-05					mole/meter^3	µg/l	dimensionless
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	24.0	hr		8.759708677117508e-06					mole/meter^3	µg/l	dimensionless
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	36.0	hr		0.0					mole/meter^3	µg/l	dimensionless
+Jiang2010		T30	12.0	T30	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T30	48.0	hr		0.0					mole/meter^3	µg/l	dimensionless

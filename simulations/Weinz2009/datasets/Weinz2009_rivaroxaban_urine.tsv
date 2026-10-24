@@ -1,0 +1,2 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	mean	median	min	max	mean_sd	mean_se	cv	comments	mean_unit	median_unit	count_unit
+Weinz2009	all	4.0	T10	recovery	rivaroxaban	urine	scintillation counting	recovery_rivaroxaban_urine	2.0	day	8.305038083876297e-06							65.4% dose in time interval	count*mole	percent	dimensionless

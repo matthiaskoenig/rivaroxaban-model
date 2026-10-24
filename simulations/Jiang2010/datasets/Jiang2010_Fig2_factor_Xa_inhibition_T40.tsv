@@ -1,0 +1,14 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	median	mean_pm	sd	se	comments	value_unit	median_unit	count_unit
+Jiang2010		T40	10.0	T40	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T40	0.0	hr		0.0					percent	percent	dimensionless
+Jiang2010		T40	10.0	T40	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T40	0.5	hr		41.4716981132076					percent	percent	dimensionless
+Jiang2010		T40	10.0	T40	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T40	1.0	hr		54.1509433962264					percent	percent	dimensionless
+Jiang2010		T40	10.0	T40	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T40	2.0	hr		65.5094339622642					percent	percent	dimensionless
+Jiang2010		T40	10.0	T40	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T40	3.0	hr		65.2452830188679					percent	percent	dimensionless
+Jiang2010		T40	10.0	T40	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T40	4.0	hr		61.5471698113208					percent	percent	dimensionless
+Jiang2010		T40	10.0	T40	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T40	6.0	hr		46.4905660377359					percent	percent	dimensionless
+Jiang2010		T40	10.0	T40	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T40	8.0	hr		36.188679245283					percent	percent	dimensionless
+Jiang2010		T40	10.0	T40	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T40	12.0	hr		20.3396226415094					percent	percent	dimensionless
+Jiang2010		T40	10.0	T40	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T40	15.0	hr		13.7358490566038					percent	percent	dimensionless
+Jiang2010		T40	10.0	T40	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T40	24.0	hr		3.16981132075472					percent	percent	dimensionless
+Jiang2010		T40	10.0	T40	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T40	36.0	hr		-0.79245283018868					percent	percent	dimensionless
+Jiang2010		T40	10.0	T40	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T40	48.0	hr		-3.69811320754718					percent	percent	dimensionless

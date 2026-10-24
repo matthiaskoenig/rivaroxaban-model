@@ -1,25 +1,35 @@
-"""Reusable functionality for multiple simulation experiments."""
+"""Base class of the simulation experiments of the coagulation model alone."""
 
-from typing import Dict
+from collections.abc import Mapping
+from pathlib import Path
+from typing import ClassVar, override
 
-from sbmlsim.experiment import SimulationExperiment
+from pkpdsim.experiment import PKPDSimulationExperiment
+from sbmlsim.data import Data
 from sbmlsim.model import AbstractModel
 from sbmlsim.task import Task
+from sbmlsim.units import Quantity
 
-from pkdb_models.models.rivaroxaban import MODEL_BASE_PATH
+from pkdb_models.models.rivaroxaban import MODEL, MODEL_BASE_PATH
 
 
-class CoagulationSimulationExperiment(SimulationExperiment):
-    """Base class for all SimulationExperiments."""
+class CoagulationSimulationExperiment(PKPDSimulationExperiment):
+    """Base class of the simulation experiments of the coagulation model alone.
 
-    font = {"weight": "bold", "size": 22}
-    scan_font = {"weight": "bold", "size": 15}
+    The plasma concentration of rivaroxaban is set by the simulations.
+    """
+
+    pkpd_model = MODEL
+
+    font: ClassVar[dict[str, str | int]] = {"weight": "bold", "size": 22}
+    scan_font: ClassVar[dict[str, str | int]] = {"weight": "bold", "size": 15}
     tick_font_size = 15
     legend_font_size = 13
     suptitle_font_size = 40
 
-    units: Dict[str, str] = {
+    units: ClassVar[Mapping[str, str]] = {
         "time": "hr",
+        "[Cve_riv]": "µM",
         "PT": "s",
         "PT_change": "s",
         "PT_ratio": "dimensionless",
@@ -28,19 +38,20 @@ class CoagulationSimulationExperiment(SimulationExperiment):
         "aPTT_ratio": "dimensionless",
         "Xa_inhibition": "dimensionless",
     }
-    labels: Dict[str, str] = {
+    labels: ClassVar[Mapping[str, str]] = {
         "time": "time",
+        "[Cve_riv]": "rivaroxaban plasma",
         "PT": "prothrombin time",
         "PT_change": "prothrombin time change",
         "PT_ratio": "prothrombin time ratio",
         "aPTT": "aPTT",
-        "aPTT_change": "aPTT",
+        "aPTT_change": "aPTT change",
         "aPTT_ratio": "aPTT ratio",
-        "Xa_inhibition": "aPTT inhibition",
+        "Xa_inhibition": "Xa inhibition",
     }
 
-    def models(self) -> Dict[str, AbstractModel]:
-        Q_ = self.Q_
+    @override
+    def models(self) -> dict[str, AbstractModel | Path]:
         return {
             "model": AbstractModel(
                 source=MODEL_BASE_PATH / "rivaroxaban_coagulation.xml",
@@ -49,30 +60,28 @@ class CoagulationSimulationExperiment(SimulationExperiment):
             )
         }
 
-    @staticmethod
-    def _default_changes(Q_):
-        """Default changes to simulations."""
+    def default_changes(self) -> dict[str, Quantity | float]:
+        """Changes of every simulation of the experiments, none at the moment.
 
-        changes = {}
-
-        return changes
-
-    def default_changes(self: SimulationExperiment) -> Dict:
-        """Default changes to simulations."""
-        return CoagulationSimulationExperiment._default_changes(Q_=self.Q_)
-
-    def tasks(self) -> Dict[str, Task]:
-        if self.simulations():
-            return {
-                f"task_{key}": Task(model="model", simulation=key)
-                for key in self.simulations()
-            }
+        The parameters are part of the model and are not changed in the
+        simulations: a parameter which is fitted must not be set by a simulation,
+        it would override the value of the fit.
+        """
         return {}
 
-    def data(self) -> Dict:
+    @override
+    def tasks(self) -> dict[str, Task]:
+        return {
+            f"task_{key}": Task(model="model", simulation=key)
+            for key in self.simulations()
+        }
+
+    @override
+    def data(self) -> dict[str, Data]:
         self.add_selections_data(
             selections=[
                 "time",
+                "[Cve_riv]",
                 "PT",
                 "PT_change",
                 "PT_ratio",

@@ -1,0 +1,12 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	meanraw	comments	raw	mean_unit	value_unit	count_unit
+Kubitza2013		moderateHI	8.0	moderateHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_moderateHI	1.0	hr		58.0093312597201	82.64	24.6306687402799	8.708256445705718				percent	percent	dimensionless
+Kubitza2013		moderateHI	8.0	moderateHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_moderateHI	2.0	hr		62.7993779160187	82.47	19.6706220839813	6.954615132870517				percent	percent	dimensionless
+Kubitza2013		moderateHI	8.0	moderateHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_moderateHI	3.0	hr		63.8258164852255	74.77	10.9441835147745	3.869353188923536				percent	percent	dimensionless
+Kubitza2013		moderateHI	8.0	moderateHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_moderateHI	4.0	hr		63.1415241057543	73.75	10.6084758942457	3.750662621437579				percent	percent	dimensionless
+Kubitza2013		moderateHI	8.0	moderateHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_moderateHI	6.0	hr		53.5614307931571	64.34	10.7785692068429	3.81079968882356				percent	percent	dimensionless
+Kubitza2013		moderateHI	8.0	moderateHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_moderateHI	8.0	hr		49.4556765163297	59.21	9.7543234836703	3.448674140595228				percent	percent	dimensionless
+Kubitza2013		moderateHI	8.0	moderateHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_moderateHI	12.0	hr		41.5863141524106	55.79	14.2036858475894	5.021761290336929				percent	percent	dimensionless
+Kubitza2013		moderateHI	8.0	moderateHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_moderateHI	15.0	hr		37.4805598755832	49.8	12.3194401244168	4.355579826198382				percent	percent	dimensionless
+Kubitza2013		moderateHI	8.0	moderateHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_moderateHI	24.0	hr		29.4401244167963	42.78	13.3398755832037	4.716358242534093				percent	percent	dimensionless
+Kubitza2013		moderateHI	8.0	moderateHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_moderateHI	48.0	hr		7.71384136858477	12.5	4.78615863141523	1.692162612054117				percent	percent	dimensionless
+Kubitza2013		moderateHI	8.0	moderateHI	factor Xa inhibition		plasma	NR	factor Xa inhibition_moderateHI	72.0	hr		0.0	5.32	5.32	1.8809040379562163				percent	percent	dimensionless

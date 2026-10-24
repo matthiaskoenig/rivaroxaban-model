@@ -1,0 +1,5 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	raw	mean_unit	value_unit	count_unit
+Liu2024		fasted_15	36.0	fasted_15	prothrombin time (change relative)		plasma	calculated	prothrombin time (change relative)_fasted_15	0.0	hr		1.0		0.046				dimensionless	dimensionless	dimensionless
+Liu2024		fasted_15	36.0	fasted_15	prothrombin time (change relative)		plasma	calculated	prothrombin time (change relative)_fasted_15	3.0	hr		1.12844036697248		0.105				dimensionless	dimensionless	dimensionless
+Liu2024		fasted_15	36.0	fasted_15	prothrombin time (change relative)		plasma	calculated	prothrombin time (change relative)_fasted_15	8.0	hr		1.01834862385321		0.079				dimensionless	dimensionless	dimensionless
+Liu2024		fasted_15	36.0	fasted_15	prothrombin time (change relative)		plasma	calculated	prothrombin time (change relative)_fasted_15	12.0	hr		1.00917431192661		0.072				dimensionless	dimensionless	dimensionless

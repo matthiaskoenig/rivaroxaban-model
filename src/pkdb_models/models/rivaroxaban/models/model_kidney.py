@@ -1,45 +1,59 @@
 """Kidney model for rivaroxaban."""
-from pathlib import Path
 
-import pandas as pd
-from sbmlutils import cytoscape as cyviz
 import numpy as np
-from sbmlutils.console import console
-from sbmlutils.converters import odefac
-from sbmlutils.factory import *
-from sbmlutils.metadata import *
-from pkdb_models.models.rivaroxaban.models import annotations
-from pkdb_models.models.rivaroxaban.models import templates
-from pkdb_models.models.rivaroxaban import MODEL_BASE_PATH
+from sbmlutils.factory import (
+    AssignmentRule,
+    Compartment,
+    FactoryResult,
+    Model,
+    Parameter,
+    Reaction,
+    Species,
+    UnitDefinition,
+    create_model,
+)
+from sbmlutils.metadata import (
+    BQB,
+    SBO,
+)
+
+from pkdb_models.models.rivaroxaban.models import annotations, templates
+from pkdb_models.models.rivaroxaban.models.fits import FITS
+
 
 class U(templates.U):
-    """UnitDefinitions"""
-    mg_per_g = UnitDefinition("mg_per_g", "mg/g")
-    ml_per_l = UnitDefinition("ml_per_l", "ml/l")
+    """Units of the kidney model."""
+
+    l_per_ml = UnitDefinition("l_per_ml", "l/ml")
     ml_per_min = UnitDefinition("ml_per_min", "ml/min")
-    ml_per_min_bsa = UnitDefinition("ml_per_min_bsa", "ml/min/(1.73 * m^2)")
 
 
 mid = "rivaroxaban_kidney"
-version = 1
 
 _m = Model(
     sid=mid,
     name="Model for renal rivaroxaban excretion.",
-    notes=f"""
+    notes="""
     Model for renal rivaroxaban excretion.
-    """ + templates.terms_of_use,
+
+    The renal clearance of rivaroxaban is the filtration of its unbound
+    fraction, `GFR * fu_riv`, times `RIVEX_f` for the active secretion by P-gp
+    and BCRP (`f_pgp`); the glomerular filtration rate is the renal function
+    times the healthy GFR of 101 ml/min. About 36 % of an oral dose of 10 mg is
+    excreted unchanged in the urine (Weinz2009, Kubitza2013).
+    """
+    + templates.terms_of_use,
     creators=templates.creators,
     units=U,
     model_units=templates.model_units,
     annotations=[
+        *annotations.model,
         # tissue
         (BQB.OCCURS_IN, "fma/FMA:7203"),  # kidney
         (BQB.OCCURS_IN, "bto/BTO:0000671"),
         (BQB.OCCURS_IN, "ncit/C12415"),
-
         (BQB.HAS_PROPERTY, "ncit/C79372"),  # Pharmacokinetics: Excretion
-    ] + templates.model_annotations
+    ],
 )
 
 _m.compartments = [
@@ -51,7 +65,7 @@ _m.compartments = [
         constant=True,
         sboTerm=SBO.PHYSICAL_COMPARTMENT,
         annotations=annotations.compartments["plasma"],
-        port=True
+        port=True,
     ),
     Compartment(
         "Vki",
@@ -61,7 +75,7 @@ _m.compartments = [
         constant=True,
         sboTerm=SBO.PHYSICAL_COMPARTMENT,
         annotations=annotations.compartments["ki"],
-        port=True
+        port=True,
     ),
     Compartment(
         "Vurine",
@@ -84,7 +98,7 @@ _m.species = [
         hasOnlySubstanceUnits=False,  # this is a concentration
         sboTerm=SBO.SIMPLE_CHEMICAL,
         annotations=annotations.species["riv"],
-        port=True
+        port=True,
     ),
     Species(
         "riv_urine",
@@ -95,7 +109,7 @@ _m.species = [
         hasOnlySubstanceUnits=True,
         sboTerm=SBO.SIMPLE_CHEMICAL,
         annotations=annotations.species["riv"],
-        port=True
+        port=True,
     ),
     Species(
         "rx_ext",
@@ -106,7 +120,7 @@ _m.species = [
         hasOnlySubstanceUnits=False,  # this is a concentration
         sboTerm=SBO.SIMPLE_CHEMICAL,
         annotations=annotations.species["rx"],
-        port=True
+        port=True,
     ),
     Species(
         "rx_urine",
@@ -117,94 +131,111 @@ _m.species = [
         hasOnlySubstanceUnits=True,
         sboTerm=SBO.SIMPLE_CHEMICAL,
         annotations=annotations.species["rx"],
-        port=True
+        port=True,
     ),
 ]
 
-# glomerular filtration rate, creatinine clearance & kidney function
-_m.parameters.extend([
-    Parameter(
-        "BSA",
-        1.73,
-        U.m2,
-        constant=False,
-        name="body surface area [m^2]",
-        sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        port=True
-    ),
-    Parameter(
-        "f_renal_function",
-        name="parameter for renal function",
-        value=1.0,
-        unit=U.dimensionless,
-        sboTerm=SBO.KINETIC_CONSTANT,
-        notes="""scaling factor for renal function. 1.0: normal renal function; 
-        <1.0: reduced renal function
-        """
-    ),
-    Parameter(
-        "egfr",
-        np.nan,
-        unit=U.ml_per_min_bsa,
-        constant=False,
-        name="estimated GFR [ml/min/(1.73 m^2)]",
-        sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        annotations=[
-            (BQB.IS, "ncit/C110935"),
-        ],
-        port=True,
-        notes="""A laboratory test that estimates kidney function. It is calculated using an individual's 
-        serum creatinine measurement, age, gender, and race."""
-    ),
-    Parameter(
-        "crcl",
-        np.nan,
-        U.ml_per_min,
-        constant=False,
-        name="creatinine clearance [ml/min]",
-        sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        annotations=[
-            (BQB.IS, "cmo/CMO:0000765"),
-        ],
-        port=True,
-        notes="""The clearance rate of creatinine, that is, the volume of plasma that is cleared of creatinine 
-        by the kidneys per unit time. Creatinine clearance is calculated using the level of creatinine in a 
-        sample of urine, usually one collected over a period of 24 hours, the corresponding plasma creatinine 
-        level, and the volume of urine excreted. It is used as an approximation of the glomerular 
-        filtration rate (GFR)."""
-    ),
-    Parameter(
-        sid="egfr_healthy",
-        name="estimated glomerular filtration (eGFR) rate healthy",
-        value=100.0,
-        unit=U.ml_per_min_bsa,
-        sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        annotations=[
-        ],
-        notes="""eGFR is often estimated via creatinine clearance, creatinine urinary amount,
-        or creatinine plasma amounts.
+# glomerular filtration rate and kidney function
+_m.parameters.extend(
+    [
+        Parameter(
+            "f_renal_function",
+            name="renal function",
+            value=1.0,
+            unit=U.dimensionless,
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            notes="""
+            >1.0: increased kidney function
+            1.0: normal kidney function (healthy control)
+            <1.0: decreased kidney function
 
-        CKD-EPI Creatinine Equation (2021): This is the most recent and recommended equation for 
-        estimating GFR35. It is more accurate than previous formulas and does not include 
-        race as a variable.
-
-        MDRD (Modification of Diet in Renal Disease) Study Equation
-    """,
-    )
-])
-_m.rules.extend([
+            Renal function relative to the healthy glomerular filtration rate
+            GFR_base, which is 101 ml/min at 75 kg; a measured creatinine
+            clearance of X ml/min is the renal function X/101.
+            """,
+        ),
+        Parameter(
+            "GFR_base",
+            101,
+            U.ml_per_min,
+            name="glomerular filtration rate (healthy)",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            port=True,
+        ),
+        Parameter(
+            "GFR",
+            np.nan,
+            U.ml_per_min,
+            constant=False,
+            name="glomerular filtration rate",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+        ),
+        Parameter(
+            "fu_riv",
+            0.079,
+            U.dimensionless,
+            constant=True,
+            name="fraction unbound in plasma rivaroxaban",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            notes="""
+            7.9 % unbound in the plasma of healthy subjects (Kubitza2013), 92-95 %
+            bound to plasma proteins, mainly albumin.
+            """,
+            port=True,
+        ),
+        Parameter(
+            "RIVEX_f",
+            **FITS.parameter("KI__RIVEX_f", unit=U.dimensionless),
+            name="renal clearance of unbound rivaroxaban relative to the GFR",
+            sboTerm=SBO.KINETIC_CONSTANT,
+            notes="""
+            The renal clearance of rivaroxaban is RIVEX_f times the filtration
+            of its unbound fraction, fu_riv * GFR: 1 is filtration alone, above
+            1 a net secretion. Rivaroxaban is secreted by P-gp and BCRP, about
+            two thirds of the renal clearance of 2.4-3.1 l/hr are active
+            (Mueck2014, Kubitza2013); 36-42 % of a small oral dose are
+            excreted unchanged in the urine (Weinz2009, Kubitza2005a), i.e.
+            RIVEX_f about 6-8.
+            """,
+        ),
+        Parameter(
+            "f_pgp",
+            1.0,
+            U.dimensionless,
+            name="P-gp/BCRP activity",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            port=True,
+            notes="""
+            Activity of the renal efflux transporters (P-gp, BCRP) relative to
+            normal: 1.0 normal, <1.0 inhibition, >1.0 induction. It scales the
+            secretion, `(RIVEX_f - 1)`, not the filtration; set by the
+            experiments of the coadministrations with documented factors, not
+            fitted.
+            """,
+        ),
+        Parameter(
+            "RXEX_f",
+            7.0,
+            U.dimensionless,
+            name="renal clearance of the rivaroxaban metabolites relative to the GFR",
+            sboTerm=SBO.KINETIC_CONSTANT,
+            notes="""
+            The renal clearance of the metabolites is RXEX_f times the GFR; the
+            metabolites are about 11 % of the radioactivity in plasma after
+            [14C]rivaroxaban (Weinz2009), so they are cleared faster than they
+            are filtered.
+            """,
+        ),
+    ]
+)
+_m.rules.append(
     AssignmentRule(
-        "egfr", "f_renal_function * egfr_healthy", unit=U.ml_per_min_bsa,
-        name="estimated eGFR"
+        "GFR",
+        "f_renal_function * GFR_base",
+        unit=U.ml_per_min,
+        name="glomerular filtration rate",
     ),
-    AssignmentRule(
-        "crcl", "egfr * BSA/(1.73 dimensionless) * 1.1 dimensionless", unit=U.ml_per_min,
-        name="creatinine clearance",
-        notes="CrCl typically overestimates GFR by 10-20% due to the active secretion"
-              "of creatinine in the proximal tubules."
-              "Using a 10 % overestimation in the model."
-    ),
-])
+)
 
 _m.reactions = [
     Reaction(
@@ -213,18 +244,12 @@ _m.reactions = [
         equation="riv_ext -> riv_urine",
         compartment="Vki",
         sboTerm=SBO.TRANSPORT_REACTION,
-        pars=[
-            Parameter(
-                "RIVEX_k",
-                0.16139673072970187,
-                U.per_min,
-                name="rate of rivaroxaban urinary excretion",
-                sboTerm=SBO.KINETIC_CONSTANT,
-            ),
-        ],
+        # [ml/min] * [l/ml] * [-] * [-] * [mmole/l]
         formula=(
-            "f_renal_function * Vki * RIVEX_k * riv_ext"
-        )
+            "GFR * 0.001 l_per_ml * fu_riv"
+            " * (1 dimensionless + (RIVEX_f - 1 dimensionless) * f_pgp) * riv_ext",
+            U.mmole_per_min,
+        ),
     ),
     Reaction(
         sid="RXEX",
@@ -232,100 +257,28 @@ _m.reactions = [
         equation="rx_ext -> rx_urine",
         compartment="Vki",
         sboTerm=SBO.TRANSPORT_REACTION,
-        pars=[
-            Parameter(
-                "RXEX_k",
-                2,
-                U.per_min,
-                name="rate of rivaroxaban metabolite urinary excretion",
-                sboTerm=SBO.KINETIC_CONSTANT,
-            ),
-        ],
         formula=(
-            "f_renal_function * Vki * RXEX_k * rx_ext"
-        )
+            "GFR * 0.001 l_per_ml * RXEX_f * rx_ext",
+            U.mmole_per_min,
+        ),
     ),
 ]
 
 model_kidney = _m
 
-def kidney_layout(dx=200, dy=200) -> pd.DataFrame:
-    """Kidney layout for Cytoscape visualization."""
-    delta_x = 1.1 * dx
-    delta_y = 0.4 * dy
-
-    positions = [
-        ["riv_ext", 0, 0],
-        ["RIVEX",   0, 1 * delta_y],
-        ["riv_urine", 0, 2 * delta_y],
-
-        ["rx_ext", delta_x, 0],
-        ["RXEX",   delta_x, 1 * delta_y],
-        ["rx_urine", delta_x, 2 * delta_y],
-    ]
-
-    df = pd.DataFrame(positions, columns=["id", "x", "y"])
-    df.set_index("id", inplace=True)
-    return df
-
-def kidney_annotations(dx=200, dy=200) -> list:
-    """Bounding boxes for 'plasma' and 'urine'."""
-    from sbmlutils import cytoscape as cyviz
-
-    delta_x = 1.1 * dx
-    delta_y = 0.4 * dy
-
-    kwargs = {
-        "type": cyviz.AnnotationShapeType.ROUND_RECTANGLE,
-        "opacity": 20,
-        "border_color": "#000000",
-        "border_thickness": 2,
-    }
-
-    # plasma
-    top_box = cyviz.AnnotationShape(
-        x_pos=-0.5 * delta_x,
-        y_pos=-0.5 * delta_y,
-        width=2.0 * delta_x,
-        height=1.5 * delta_y,
-        fill_color="#FF0000",  # pale pink
-        **kwargs
-    )
-
-    # urine
-    bottom_box = cyviz.AnnotationShape(
-        x_pos=-0.5 * delta_x,
-        y_pos=top_box.y_pos + top_box.height,
-        width=2.0 * delta_x,
-        height=1.5 * delta_y,
-        fill_color="#FFFACD",  # pale yellow
-        **kwargs
-    )
-
-    return [top_box, bottom_box]
 
 if __name__ == "__main__":
+    from sbmlode import OdeSystem
+
+    from pkdb_models.models.rivaroxaban import MODEL_BASE_PATH
+
     results: FactoryResult = create_model(
         model=model_kidney,
         filepath=MODEL_BASE_PATH / f"{model_kidney.sid}.xml",
-        sbml_level=3, sbml_version=2,
+        sbml_level=3,
+        sbml_version=2,
     )
 
     # ODE equations
-    ode_factory = odefac.SBML2ODE.from_file(sbml_file=results.sbml_path)
-    ode_factory.to_markdown(md_file=results.sbml_path.parent / f"{results.sbml_path.stem}.md")
-
-    # visualization in Cytoscape
-    # visualization in Cytoscape
-    cyviz.visualize_sbml(sbml_path=results.sbml_path, delete_session=False)
-    cyviz.apply_layout(layout=kidney_layout())
-    cyviz.add_annotations(annotations=kidney_annotations())
-
-    # PNG output
-    # figure_path: Path = MODEL_BASE_PATH.parent / "figures" / f"{model_kidney.sid}.png"
-    # cyviz.export_image(
-    #    figure_path,
-    #    fit_content=True,
-    # )
-    # console.print(figure_path)
-
+    ode_system = OdeSystem.from_sbml(results.sbml_path)
+    ode_system.write(results.sbml_path.parent / f"{results.sbml_path.stem}.md")

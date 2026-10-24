@@ -1,107 +1,142 @@
-from typing import Dict
+"""Simulation experiment of the study Weinz2009."""
 
-from sbmlsim.data import DataSet, load_pkdb_dataframe
-from sbmlsim.fit import FitMapping, FitData
-from sbmlutils.console import console
+from typing import ClassVar, override
 
-from pkdb_models.models import rivaroxaban
-from pkdb_models.models.rivaroxaban.experiments.base_experiment import RivaroxabanSimulationExperiment
-from pkdb_models.models.rivaroxaban.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
-    Fasting, RivaroxabanMappingMetaData, Coadministration
-from pkdb_models.models.rivaroxaban.helpers import run_experiments
+from pkpdsim.metadata import (
+    ApplicationForm,
+    Coadministration,
+    Dosing,
+    Fasting,
+    Health,
+    PKPDMappingMetaData,
+    Route,
+    Tissue,
+)
+from sbmlsim import Q
+from sbmlsim.data import DataSet
+from sbmlsim.fit import FitData, FitMapping
+from sbmlsim.plot import Figure
+from sbmlsim.simulation import Simulation
 
-from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
+from pkdb_models.models.rivaroxaban import MODEL
+from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
+    RivaroxabanSimulationExperiment,
+)
 
 
 class Weinz2009(RivaroxabanSimulationExperiment):
-    """Simulation experiment of Weinz2009."""
+    """Simulation experiment of Weinz2009.
 
-    infos = {
+    Mass balance of a single oral solution of about 10 mg [14C]rivaroxaban in
+    four healthy fasted men: unchanged rivaroxaban and the total radioactivity
+    (rivaroxaban and its metabolites in rivaroxaban equivalents) in plasma
+    (Fig. 2, geometric means with SD), the cumulative excretion of the
+    radioactivity in urine and feces (Fig. 3, means with SD) and the unchanged
+    rivaroxaban in the urine of 0-2 days (36.2 % of the dose) and in the feces
+    of 0-4 days (7.3 %, Tab. 3).
+
+    The SD of the plasma concentrations are read from error bars which the
+    symbols of the log axis hide (SD 0 at 1 hr): the plasma is fitted without
+    them.
+    """
+
+    dose = 10.0  # [mg]
+
+    infos: ClassVar[dict[str, str]] = {
         "[Cve_riv]": "rivaroxaban",
         "[Cve_riv_rx]": "riv_rx",
+        "Aurine_riv": "rivaroxaban_urine",
+        "Afeces_riv": "rivaroxaban_feces",
         "Aurine_riv_rx": "riv_rx_urine",
         "Afeces_riv_rx": "riv_rx_feces",
         "Afeces_urine_riv_rx": "riv_rx_feces_urine",
     }
-    panels = {
-        "rivaroxaban": 0,
-        "riv_rx": 0,
-        "riv_rx_urine": 1,
-        "riv_rx_feces": 1,
-        "riv_rx_feces_urine": 1,
+    tissues: ClassVar[dict[str, Tissue]] = {
+        "rivaroxaban": Tissue.PLASMA,
+        "riv_rx": Tissue.PLASMA,
+        "rivaroxaban_urine": Tissue.URINE,
+        "rivaroxaban_feces": Tissue.FECES,
+        "riv_rx_urine": Tissue.URINE,
+        "riv_rx_feces": Tissue.FECES,
+        "riv_rx_feces_urine": Tissue.FECES_URINE,
     }
-    colors = {
+    labels_data: ClassVar[dict[str, str]] = {
+        "rivaroxaban": "rivaroxaban",
+        "riv_rx": "total radioactivity",
+        "rivaroxaban_urine": "rivaroxaban urine",
+        "rivaroxaban_feces": "rivaroxaban feces",
+        "riv_rx_urine": "total urine",
+        "riv_rx_feces": "total feces",
+        "riv_rx_feces_urine": "total urine + feces",
+    }
+    colors: ClassVar[dict[str, str]] = {
         "rivaroxaban": "black",
         "riv_rx": "tab:blue",
+        "rivaroxaban_urine": "tab:purple",
+        "rivaroxaban_feces": "tab:brown",
         "riv_rx_urine": "tab:red",
         "riv_rx_feces": "tab:orange",
         "riv_rx_feces_urine": "tab:green",
     }
 
-
-    def datasets(self) -> Dict[str, DataSet]:
+    @override
+    def datasets(self) -> dict[str, DataSet]:
         dsets = {}
-
         for fig_id in ["Fig2", "Fig3"]:
-            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            df = self.load_dataframe(fig_id)
+            # the amounts, the recovery in percent of Fig. 3 is the same data
+            df = df[df.measurement_type != "recovery"]
             for label, df_label in df.groupby("label"):
+                label = str(label)
                 dset = DataSet.from_df(df_label, self.ureg)
-                if "rivaroxaban" in label:
-                    dset.unit_conversion("mean", 1 / self.Mr.riv)
-                elif "riv_rx" in label:
-                    dset.unit_conversion("mean", 1 / self.Mr.riv)
-                dsets[label] = dset
+                dset.unit_conversion("mean", 1 / self.Mr.riv)
+                dsets[self.to_sid(label)] = dset
+
+        # unchanged rivaroxaban in urine and feces in percent of the dose
+        df = self.load_dataframe("Tab3")
+        df = df[df.substance == "rivaroxaban"]
+        for tissue, df_tissue in df.groupby("tissue"):
+            dset = DataSet.from_df(df_tissue, self.ureg)
+            dset.unit_conversion("mean", Q(self.dose, "mg") / self.Mr.riv)
+            dsets[self.to_sid(f"rivaroxaban_{tissue}")] = dset
 
         return dsets
 
+    @override
+    def simulations(self) -> dict[str, Simulation]:
+        simulations = {}
+        simulations["riv"] = Simulation(
+            time_unit="min",
+            end=8 * 24 * 60,
+            preinit_changes={
+                **self.default_changes(),
+                "POSOLUTION_riv": Q(self.dose, "mg"),
+            },
+        )
+        return simulations
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
-        tcsims = {}
-
-        tcsims["riv"] = TimecourseSim([
-            Timecourse(
-                start=0,
-                end=8 * 24 * 60,
-                steps=3000,
-                changes={
-                    **self.default_changes(),
-                    "PODOSE_riv": Q_(10, "mg"),
-                },
-            )
-        ])
-        return tcsims
-
-    def fit_mappings(self) -> Dict[str, FitMapping]:
+    @override
+    def fit_mappings(self) -> dict[str, FitMapping]:
         mappings = {}
         for sid, name in self.infos.items():
-            if name.endswith("feces_urine"):
-                tissue = Tissue.FECES_URINE
-            elif name.endswith("urine"):
-                tissue = Tissue.URINE
-            elif name.endswith("feces"):
-                tissue = Tissue.FECES
-            else:
-                tissue = Tissue.PLASMA
-
-            mappings[f"fm_{name}"] = FitMapping(
+            tissue = self.tissues[name]
+            mappings[self.to_sid(f"fm_{name}")] = FitMapping(
                 self,
                 reference=FitData(
                     self,
-                    dataset=f"{name}",
+                    dataset=self.to_sid(name),
                     xid="time",
                     yid="mean",
-                    yid_sd="mean_sd",
+                    yid_sd=None if tissue == Tissue.PLASMA else "mean_sd",
                     count="count",
                 ),
                 observable=FitData(
                     self,
-                    task=f"task_riv",
+                    task="task_riv",
                     xid="time",
                     yid=sid,
                 ),
-                metadata=RivaroxabanMappingMetaData(
+                metadata=PKPDMappingMetaData(
                     tissue=tissue,
                     route=Route.PO,
                     application_form=ApplicationForm.SOLUTION,
@@ -113,46 +148,50 @@ class Weinz2009(RivaroxabanSimulationExperiment):
             )
         return mappings
 
-    def figures(self) -> Dict[str, Figure]:
-        figures = {}
-
-       # Figure 2 and 3
+    @override
+    def figures(self) -> dict[str, Figure]:
+        # Figure 2 (plasma, linear and log axis) and Figure 3 (excretion)
         fig = Figure(
             experiment=self,
             sid="Fig2_3",
             num_rows=1,
-            num_cols=2,
+            num_cols=3,
             name=self.__class__.__name__,
+            settings={"legend_scope": "row"},
         )
         plots = fig.create_plots(legend=True)
-        plots[0].set_xaxis(self.label_time, unit=self.unit_time, min=-1, max=30)
-        plots[1].set_xaxis(self.label_time, unit="day")
-        plots[0].set_yaxis(self.label_riv_plasma, unit=self.unit_riv)
-        plots[1].set_yaxis("Recovery", unit=self.unit_riv_rx_feces)
+        for kp in [0, 1]:
+            plots[kp].set_xaxis(self.label_time, unit=self.unit_time, min=-1, max=30)
+            plots[kp].set_yaxis(
+                self.label_riv_plasma,
+                unit=self.unit_riv,
+                scale="linear" if kp == 0 else "log",
+                min=None if kp == 0 else 1e-3,
+            )
+        plots[2].set_xaxis(self.label_time, unit="day")
+        plots[2].set_yaxis("excretion (14C)", unit=self.unit_riv_rx_feces)
+
         for sid, name in self.infos.items():
-            color = self.colors[name]
-            kp = self.panels[name]
-            plots[kp].add_data(
-                task=f"task_riv",
-                xid="time",
-                yid=sid,
-                label=name.replace("riv_rx_", ""),
-                color=color,
-            )
-            plots[kp].add_data(
-                dataset=name,
-                xid="time",
-                yid="mean",
-                yid_sd="mean_sd",
-                count="count",
-                label=name.replace("riv_rx_", ""),
-                color=color,
-            )
-        figures[fig.sid] = fig
-        return figures
+            kps = [0, 1] if self.tissues[name] == Tissue.PLASMA else [2]
+            for kp in kps:
+                plots[kp].add_data(
+                    task="task_riv",
+                    xid="time",
+                    yid=sid,
+                    label=self.labels_data[name],
+                    color=self.colors[name],
+                )
+                plots[kp].add_data(
+                    dataset=self.to_sid(name),
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                    label=self.labels_data[name],
+                    color=self.colors[name],
+                )
+        return self.figures_by_sid(fig)
 
 
 if __name__ == "__main__":
-    out = rivaroxaban.RESULTS_PATH_SIMULATION / Weinz2009.__name__
-    out.mkdir(parents=True, exist_ok=True)
-    run_experiments(Weinz2009, output_dir=Weinz2009.__name__)
+    MODEL.run_experiments(Weinz2009, output_dir=Weinz2009.__name__)

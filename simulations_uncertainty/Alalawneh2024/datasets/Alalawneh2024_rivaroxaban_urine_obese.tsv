@@ -1,0 +1,7 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	mean	median	min	max	mean_sd	mean_se	cv	comments	mean_unit	median_unit	count_unit
+Alalawneh2024	obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_obese	3.32	hr	3.028356428374782e-06				1.995962191428834e-06				mole	mg	dimensionless
+Alalawneh2024	obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_obese	6.11	hr	6.4696705515279434e-06				1.970003211893182e-06			sd from the CV of fe 0-18 h (0.304, Tab4)	mole	mg	dimensionless
+Alalawneh2024	obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_obese	9.22	hr	9.589795356520144e-06				2.9200697439662294e-06			sd from the CV of fe 0-18 h (0.304, Tab4)	mole	mg	dimensionless
+Alalawneh2024	obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_obese	12.21	hr	1.1585757547948977e-05				3.5278517023033865e-06			sd from the CV of fe 0-18 h (0.304, Tab4)	mole	mg	dimensionless
+Alalawneh2024	obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_obese	15.24	hr	1.2709920161512344e-05				3.870147747086354e-06			sd from the CV of fe 0-18 h (0.304, Tab4)	mole	mg	dimensionless
+Alalawneh2024	obese	18.0	RIV20	cumulative amount	rivaroxaban	urine	LC/MS	rivaroxaban_urine_obese	18.28	hr	1.3283472515371204e-05				4.0447829677892996e-06			sd from the CV of fe 0-18 h (0.304, Tab4)	mole	mg	dimensionless

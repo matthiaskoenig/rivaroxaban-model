@@ -1,93 +1,101 @@
-from copy import deepcopy
-from typing import Dict
+"""Dependency of the pharmacokinetics and pharmacodynamics on the dose."""
 
-from sbmlsim.plot import Axis, Figure, Plot
-from sbmlsim.simulation import Timecourse, TimecourseSim
+from typing import ClassVar, override
 
+from sbmlsim import Q
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Change, Simulation
+
+from pkdb_models.models.rivaroxaban import MODEL
 from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
     RivaroxabanSimulationExperiment,
 )
-from pkdb_models.models.rivaroxaban.helpers import run_experiments
 
 
 class DoseDependencyExperiment(RivaroxabanSimulationExperiment):
-    """Tests application."""
+    """Single and multiple doses of rivaroxaban (IV, PO)."""
 
-    doses = [0, 10, 20, 40, 80]  # [mg]
-    colors = ["black", "tab:orange", "tab:blue", "tab:red", "tab:green"]
-    routes = ["IV", "PO"]
-    dosing = ["single", "multiple"]
+    doses: ClassVar[list[int]] = [0, 10, 20, 40, 80]  # [mg]
+    colors: ClassVar[list[str]] = [
+        "black",
+        "tab:orange",
+        "tab:blue",
+        "tab:red",
+        "tab:green",
+    ]
+    routes: ClassVar[list[str]] = ["IV", "PO"]
+    dosing: ClassVar[list[str]] = ["single", "multiple"]
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
-        tcsims = {}
+    @override
+    def simulations(self) -> dict[str, Simulation]:
+        simulations = {}
 
         for route in self.routes:
             for dose in self.doses:
                 for dosing in self.dosing:
                     # single dosing
                     if dosing == "single":
-                        tcsims[f"riv_{route}_{dose}_{dosing}"] = TimecourseSim(
-                            Timecourse(
-                                start=0,
-                                end=24 * 60,  # [min]
-                                steps=1000,
-                                changes={
-                                    **self.default_changes(),
-                                    f"{route}DOSE_riv": Q_(dose, "mg"),
-                                },
-                            )
+                        simulations[f"riv_{route}_{dose}_{dosing}"] = Simulation(
+                            time_unit="min",
+                            end=24 * 60,
+                            preinit_changes={
+                                **self.default_changes(),
+                                f"{route}DOSE_riv": Q(dose, "mg"),
+                            },
                         )
                     elif dosing == "multiple":
-                        tc0 = Timecourse(
-                            start=0,
-                            end=24 * 60,  # [min]
-                            steps=1000,
-                            changes={
+                        # a dose every 24 hr for 7 days, the urine is
+                        # collected from dose to dose; a dose adds to what is
+                        # left of the earlier ones
+                        times = [24 * 60 * k for k in range(1, 7)]
+                        simulations[f"riv_{route}_{dose}_{dosing}"] = Simulation(
+                            time_unit="min",
+                            end=7 * 24 * 60,
+                            preinit_changes={
                                 **self.default_changes(),
-                                f"{route}DOSE_riv": Q_(dose, "mg"),
+                                f"{route}DOSE_riv": Q(dose, "mg"),
                             },
-                        )
-                        tc1 = Timecourse(
-                            start=0,
-                            end=24 * 60,  # [min]
-                            steps=1000,
-                            changes={
-                                f"{route}DOSE_riv": Q_(dose, "mg"),
-                                # reset urinary amounts
-                                "Aurine_riv": Q_(0, "mmole"),
-                                "Aurine_rx": Q_(0, "mmole"),
-                            },
-                        )
-                        tcsims[f"riv_{route}_{dose}_{dosing}"] = TimecourseSim(
-                            [tc0] + [tc1 for _ in range(6)]
+                            changes=[
+                                Change(
+                                    times,
+                                    {
+                                        **self.add_doses(
+                                            times, {f"{route}DOSE_riv": Q(dose, "mg")}
+                                        ).values,
+                                        # reset urinary amounts
+                                        "Aurine_riv": Q(0, "mmole"),
+                                        "Aurine_rx": Q(0, "mmole"),
+                                    },
+                                )
+                            ],
                         )
 
-        return tcsims
+        return simulations
 
-    def figures(self) -> Dict[str, Figure]:
+    @override
+    def figures(self) -> dict[str, Figure]:
         return {
             **self.figure_pk(),
         }
 
-    def figure_pk(self) -> Dict[str, Figure]:
-        figures = {}
+    def figure_pk(self) -> dict[str, Figure]:
+        """Timecourses of the pharmacokinetics and the effects by route and dosing."""
+        figures = []
 
         for route in self.routes:
             for dosing in self.dosing:
-
-
                 fig = Figure(
                     experiment=self,
                     sid=f"Fig_dose_dependency_pk_{route}_{dosing}",
                     num_rows=6,
                     num_cols=3,
                     name=f"Dose dependency rivaroxaban ({route}, {dosing})",
+                    settings={"legend_scope": "row"},
                 )
 
                 plots = fig.create_plots(
                     xaxis=Axis("time", unit="hr" if dosing == "single" else "day"),
-                    legend=True
+                    legend=True,
                 )
                 infos = [
                     # plasma
@@ -102,37 +110,34 @@ class DoseDependencyExperiment(RivaroxabanSimulationExperiment):
                     ("Afeces_riv", 6),
                     ("Afeces_rx", 7),
                     ("Afeces_riv_rx", 8),
-
                     ("PT", 9),
                     ("PT_change", 10),
                     ("PT_ratio", 11),
-
                     ("aPTT", 12),
                     ("aPTT_change", 13),
                     ("aPTT_ratio", 14),
-
                     ("Xa_inhibition", 15),
                     ("KI__RIVEX", 16),
-
+                    (f"{route}DOSE_riv", 17),
                 ]
                 for sid, ksid in infos:
-                    if sid:
-                        plots[ksid].set_yaxis(label=self.labels[sid], unit=self.units[sid])
+                    plots[ksid].set_yaxis(label=self.labels[sid], unit=self.units[sid])
 
                 for sid, ksid in infos:
-                    if sid:
-                        for kval, dose in enumerate(self.doses):
-                            plots[ksid].add_data(
-                                task=f"task_riv_{route}_{dose}_{dosing}",
-                                xid="time",
-                                yid=sid,
-                                label=f"{dose} mg",
-                                color=self.colors[kval],
-                            )
+                    for kval, dose in enumerate(self.doses):
+                        plots[ksid].add_data(
+                            task=f"task_riv_{route}_{dose}_{dosing}",
+                            xid="time",
+                            yid=sid,
+                            label=f"{dose} mg",
+                            color=self.colors[kval],
+                        )
 
-                figures[fig.sid] = fig
-        return figures
+                figures.append(fig)
+        return self.figures_by_sid(*figures)
 
 
 if __name__ == "__main__":
-    run_experiments(DoseDependencyExperiment, output_dir=DoseDependencyExperiment.__name__)
+    MODEL.run_experiments(
+        DoseDependencyExperiment, output_dir=DoseDependencyExperiment.__name__
+    )

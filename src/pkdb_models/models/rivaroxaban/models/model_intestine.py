@@ -1,24 +1,34 @@
 """Rivaroxaban intestine model."""
 
-from pathlib import Path
-import pandas as pd
-from sbmlutils.factory import create_model, FactoryResult
-from sbmlutils.converters import odefac
-from sbmlutils import cytoscape as cyviz
 import numpy as np
-from sbmlutils.converters import odefac
-from sbmlutils.cytoscape import visualize_sbml
-from sbmlutils.factory import *
-from sbmlutils.metadata import *
-from pkdb_models.models.rivaroxaban.models import annotations
-from pkdb_models.models.rivaroxaban.models import templates
-from pkdb_models.models.rivaroxaban import MODEL_BASE_PATH
+from sbmlutils.factory import (
+    AssignmentRule,
+    Compartment,
+    FactoryResult,
+    Model,
+    Parameter,
+    RateRule,
+    Reaction,
+    Species,
+    UnitDefinition,
+    create_model,
+)
+from sbmlutils.metadata import (
+    BQB,
+    SBO,
+)
+
+from pkdb_models.models.rivaroxaban.models import annotations, templates
+from pkdb_models.models.rivaroxaban.models.fits import FITS
+
 
 class U(templates.U):
-    """UnitDefinitions"""
+    """Units of the intestine model."""
 
     per_hr = UnitDefinition("per_hr", "1/hr")
     mg_per_min = UnitDefinition("mg_per_min", "mg/min")
+    mg_per_hr = UnitDefinition("mg_per_hr", "mg/hr")
+    min_per_hr = UnitDefinition("min_per_hr", "min/hr")
 
 
 _m = Model(
@@ -26,22 +36,51 @@ _m = Model(
     name="Model for rivaroxaban absorption in the small intestine",
     notes="""
     # Model for rivaroxaban absorption
+
+    An oral dose of a tablet (`PODOSE_riv`) enters the stomach
+    (`POSTOMACH_riv`) and is emptied into the intestine in three stages
+    (`emptying<k>_riv`, `POINTESTINE_riv`), where it dissolves into the lumen
+    (`dissolution_riv`).
+    The dissolution of rivaroxaban, a compound of low solubility (BCS class
+    II), saturates at a small undissolved amount (`Km_dis_riv`), its capacity
+    is `Vmax_dis_riv`; the undissolved drug leaves the absorptive part of the
+    intestine with the transit (`ktransit_riv`) and is excreted with the feces
+    (`transit_riv`). The fraction of the dose which dissolves therefore falls
+    with the dose: the bioavailability is 80-100 % at 10 mg and about 66 % at
+    20 mg in the fasted state, the AUC per dose falls from 10 to 80 mg to 40 %
+    and the urinary excretion of unchanged drug from 42 % at 1.25 mg to 11 %
+    of the dose at 80 mg (Kubitza2005a); the Cmax of 10, 20, 40 and 80 mg
+    (141, 173, 234 and 316 µg/l) follows from the capacity of the dissolution.
+
+    Food (`fed`) increases the solubility (`FED_f_solubility`, bile micelles)
+    and slows the gastric emptying (`FED_f_emptying`): with food the AUC of 20
+    mg increases by 39 % and the Cmax by 76 %, the tmax is delayed by 1.25 hr;
+    at 10 mg the AUC increases by 28 % (Kubitza2006).
+
+    An oral solution (`POSOLUTION_riv`) enters the lumen of the intestine
+    without the dissolution; the passage of the solution from the stomach is
+    lumped into the absorption (tmax 0.5 hr, Kubitza2005a, Weinz2009).
+
+    The dissolved rivaroxaban is absorbed (`RIVABS`); a fraction `1 -
+    F_riv_abs` is not absorbed and excreted with the feces (`RIVEXC`): 7 % of
+    an oral solution of [14C]rivaroxaban is excreted unchanged with the feces
+    (Weinz2009). The metabolites which are excreted with the bile are excreted
+    with the feces (`RXEXC`).
     """
     + templates.terms_of_use,
     creators=templates.creators,
     units=U,
     model_units=templates.model_units,
     annotations=[
+        *annotations.model,
         # tissue
-        (BQB.OCCURS_IN, "fma/FMA:45615"),  # gut
         (BQB.OCCURS_IN, "bto/BTO:0000545"),  # gut
         (BQB.OCCURS_IN, "ncit/C12736"),  # intestine
         (BQB.OCCURS_IN, "fma/FMA:7199"),  # intestine
         (BQB.OCCURS_IN, "bto/BTO:0000648"),  # intestine
-
         (BQB.HAS_PROPERTY, "ncit/C79369"),  # Pharmacokinetics: Absorption
         (BQB.HAS_PROPERTY, "ncit/C79372"),  # Pharmacokinetics: Excretion
-    ] + templates.model_annotations
+    ],
 )
 
 _m.compartments = [
@@ -76,17 +115,6 @@ _m.compartments = [
         annotations=annotations.compartments["feces"],
     ),
     Compartment(
-        "Vstomach",
-        metaId="meta_Vstomach",
-        value=1,
-        unit=U.liter,
-        constant=True,
-        name="stomach",
-        sboTerm=SBO.PHYSICAL_COMPARTMENT,
-        port=True,
-        annotations=annotations.compartments["stomach"],
-    ),
-    Compartment(
         "Vapical",
         np.nan,
         name="apical membrane (intestinal membrane enterocytes)",
@@ -98,18 +126,6 @@ _m.compartments = [
 ]
 
 _m.species = [
-    Species(
-        f"riv_stomach",
-        metaId=f"meta_riv_stomach",
-        initialConcentration=0.0,
-        compartment="Vstomach",
-        substanceUnit=U.mmole,
-        name=f"rivaroxaban (stomach)",
-        hasOnlySubstanceUnits=True,
-        sboTerm=SBO.SIMPLE_CHEMICAL,
-        annotations=annotations.species["riv"],
-        boundaryCondition=True,
-    ),
     Species(
         "riv_ext",
         initialConcentration=0.0,
@@ -167,51 +183,43 @@ _m.species = [
     ),
 ]
 
+# -------------------------------------
+# Absorption
+# -------------------------------------
 _m.parameters = [
     Parameter(
-        f"F_riv_abs",
-        0.82,  # [0.82 - 0.88]
+        "F_riv_abs",
+        0.93,
         U.dimensionless,
         constant=True,
         sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        name=f"fraction absorbed rivaroxaban",
+        name="fraction absorbed of the dissolved rivaroxaban",
         notes="""
-        Fraction absorbed, i.e., only a fraction of the rivaroxaban in the intestinal lumen
-        is absorbed. This parameter determines how much of the rivaroxaban is excreted.
-
-        `F_riv_abs` of dose is absorbed. `(1-F_riv_abs)` is excreted in feces.
-
-        ~12 % in feces and 6% unaccounted, total around 18 %
-        applicant’s estimate of 80% to 100% appears.
-        
-        assuming: 0.82 in fasted state
-        assuming: 1.00 in fed state
+        Fraction of the dissolved rivaroxaban in the lumen of the intestine
+        which is absorbed, the rest `(1 - F_riv_abs)` is excreted with the
+        feces. 7 % of an oral solution of 10 mg [14C]rivaroxaban is excreted
+        unchanged with the feces (Weinz2009), so 0.93. The dose dependent and
+        the food dependent bioavailability of the tablets are the dissolution,
+        see `Vmax_dis_riv` and `fed`.
         """,
     ),
     Parameter(
         "RIVABS_k",
-        0.052027850297051675,
-        unit=U.per_min,
+        **FITS.parameter("GU__RIVABS_k", unit=U.per_min),
         name="rate of rivaroxaban absorption",
         sboTerm=SBO.KINETIC_CONSTANT,
-    ),
-    Parameter(
-        "f_absorption",
-        1,
-        unit=U.dimensionless,
-        name="scaling factor for absorption rate",
-        sboTerm=SBO.KINETIC_CONSTANT,
-        notes="""1.0: normal absorption corresponding to tablet under fasting conditions.
-
-        allows to change the velocity of absorption
-        """
+        notes="""
+        First order absorption of the dissolved rivaroxaban, including the
+        passage of an oral solution from the stomach: the tmax of an oral
+        solution is about 0.5 hr (Kubitza2005a, Weinz2009).
+        """,
     ),
 ]
 
 _m.rules.append(
     AssignmentRule(
         "absorption_riv",
-        value="f_absorption * RIVABS_k * Vlumen * riv_lumen",
+        value="RIVABS_k * Vlumen * riv_lumen",
         unit=U.mmole_per_min,
         name="absorption rivaroxaban",
     ),
@@ -226,181 +234,400 @@ _m.reactions = [
         compartment="Vapical",
         formula=("F_riv_abs * absorption_riv", U.mmole_per_min),
     ),
-
     Reaction(
         sid="RIVEXC",
-        name=f"excretion rivaroxaban (feces)",
+        name="excretion rivaroxaban (feces)",
         compartment="Vlumen",
-        equation=f"riv_lumen -> riv_feces",
+        equation="riv_lumen -> riv_feces",
         sboTerm=SBO.TRANSPORT_REACTION,
         formula=(
-            f"(1 dimensionless - F_riv_abs) * absorption_riv",
+            "(1 dimensionless - F_riv_abs) * absorption_riv",
             U.mmole_per_min,
         ),
     ),
     Reaction(
         sid="RXEXC",
-        name=f"excretion rivaroxaban metabolites (feces)",
+        name="excretion rivaroxaban metabolites (feces)",
         compartment="Vlumen",
-        equation=f"rx_lumen -> rx_feces",
+        equation="rx_lumen -> rx_feces",
         sboTerm=SBO.TRANSPORT_REACTION,
         pars=[
             Parameter(
                 "RXEXC_k",
-                0.10,
+                1 / (36 * 60),
                 unit=U.per_min,
                 name="rate of rivaroxaban metabolites excretion",
                 sboTerm=SBO.KINETIC_CONSTANT,
+                notes="""
+                Transit of the metabolites which are excreted with the bile
+                into the feces, a mean transit time of about 36 hr: the fecal
+                radioactivity of [14C]rivaroxaban is recovered within 2-4 days
+                (Weinz2009). The rate does not change the amount which is
+                excreted.
+                """,
             ),
         ],
         formula=(
-            f"f_absorption * RXEXC_k * Vlumen * rx_lumen",
+            "RXEXC_k * Vlumen * rx_lumen",
             U.mmole_per_min,
         ),
     ),
 ]
 
-_m.parameters.extend([
-    Parameter(
-        f"PODOSE_riv",
-        0,
-        U.mg,
-        constant=False,
-        sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        name=f"oral dose rivaroxaban [mg]",
-        port=True,
-    ),
-    Parameter(
-        f"Ka_dis_riv",
-        0.15960999342060214,
-        U.per_hr,
-        constant=True,
-        sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        name=f"Ka_dis [1/hr] dissolution rivaroxaban",
-        port=True
-    ),
-    Parameter(
-        f"Mr_riv",
-        435.88,
-        U.g_per_mole,
-        constant=True,
-        name=f"Molecular weight rivaroxaban [g/mole]",
-        sboTerm=SBO.MOLECULAR_MASS,
-        port=True,
-    ),
-])
-
 # -------------------------------------
-# Dissolution of tablet/dose in stomach
+# Food
 # -------------------------------------
-_m.reactions.extend(
+_m.parameters.extend(
     [
-        # fraction dose available for absorption from stomach
-        Reaction(
-            sid=f"dissolution_riv",
-            name=f"dissolution rivaroxaban",
-            formula=(
-                f"Ka_dis_riv/60 min_per_hr * PODOSE_riv/Mr_riv",
-                U.mmole_per_min,
-            ),
-            equation=f"riv_stomach -> riv_lumen",
-            compartment="Vlumen",
-            notes="""Swallowing, dissolution of tablet, and transport into intestine.
-            Overall process describing the rates of this processes.
-            """
+        Parameter(
+            "fed",
+            0.0,
+            unit=U.dimensionless,
+            name="fed state (0 fasted, 1 fed)",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            notes="""
+            The dose is taken in the fasted state (0) or with a meal (1). The
+            effects of food on the solubility and on the gastric emptying are
+            `FED_f_solubility` and `FED_f_emptying`.
+            """,
+        ),
+        Parameter(
+            "FED_f_solubility",
+            **FITS.parameter("GU__FED_f_solubility", unit=U.dimensionless),
+            name="fed effect on the solubility",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            notes="""
+            Factor of the capacity of the dissolution `Vmax_dis_riv` with food
+            (bile micelles): food increases the AUC of 20 mg by 39 % and of 10
+            mg by 28 % (Kubitza2006), the bioavailability of 20 mg is about 66
+            % fasted and about 100 % fed.
+            """,
+        ),
+        Parameter(
+            "FED_f_emptying",
+            **FITS.parameter("GU__FED_f_emptying", unit=U.dimensionless),
+            name="fed effect on the gastric emptying",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            notes="""
+            Factor of the rate of the gastric emptying `Ka_emptying_riv` with
+            food: food delays the tmax by about 1.25 hr (Kubitza2006).
+            """,
+        ),
+        Parameter(
+            "f_solubility",
+            np.nan,
+            unit=U.dimensionless,
+            constant=False,
+            name="factor of the solubility",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+        ),
+        Parameter(
+            "f_emptying",
+            np.nan,
+            unit=U.dimensionless,
+            constant=False,
+            name="factor of the gastric emptying",
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
         ),
     ]
 )
-_m.rate_rules.append(
-    RateRule(f"PODOSE_riv", f"-dissolution_riv * Mr_riv", U.mg_per_min),
+_m.rules.extend(
+    [
+        AssignmentRule(
+            "f_solubility",
+            "1 dimensionless + fed * (FED_f_solubility - 1 dimensionless)",
+            unit=U.dimensionless,
+        ),
+        AssignmentRule(
+            "f_emptying",
+            "1 dimensionless + fed * (FED_f_emptying - 1 dimensionless)",
+            unit=U.dimensionless,
+        ),
+    ]
+)
+
+# -------------------------------------
+# Dosing, gastric emptying and dissolution
+# -------------------------------------
+#: the stages of the gastric emptying: a chain of first order steps, whose
+#: delay is distributed narrower than the one of a single step (a lag)
+N_EMPTYING = 3
+
+_m.parameters.extend(
+    [
+        Parameter(
+            "PODOSE_riv",
+            0,
+            U.mg,
+            constant=False,
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            name="oral dose rivaroxaban [mg]",
+            notes="""
+            An oral dose of a tablet; it enters the stomach (`POSTOMACH_riv`)
+            within minutes, so that a dose of a repeated dosing is added by
+            setting `PODOSE_riv` to the dose.
+            """,
+            port=True,
+        ),
+        Parameter(
+            "POSOLUTION_riv",
+            0,
+            U.mg,
+            constant=False,
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            name="oral dose as solution rivaroxaban [mg]",
+            notes="""
+            An oral dose given dissolved (a solution) enters the lumen of the
+            intestine without the dissolution of `PODOSE_riv`; the passage of
+            the solution from the stomach is lumped into the absorption.
+            """,
+            port=True,
+        ),
+        Parameter(
+            "POSTOMACH_riv",
+            np.nan,
+            U.mg,
+            constant=False,
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            name="oral dose in stomach rivaroxaban [mg]",
+            notes="""
+            The dose in the stomach, the sum of the stages of the gastric
+            emptying (`POSTOMACH<k>_riv`).
+            """,
+        ),
+        *(
+            Parameter(
+                f"POSTOMACH{k}_riv",
+                0,
+                U.mg,
+                constant=False,
+                sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+                name=f"oral dose in stomach rivaroxaban, stage {k} [mg]",
+            )
+            for k in range(1, N_EMPTYING + 1)
+        ),
+        Parameter(
+            "POINTESTINE_riv",
+            0,
+            U.mg,
+            constant=False,
+            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+            name="undissolved oral dose in intestine rivaroxaban [mg]",
+            notes="""
+            The undissolved rivaroxaban in the absorptive part of the
+            intestine.
+            """,
+        ),
+        Parameter(
+            "Ka_application_riv",
+            1000,
+            U.per_hr,
+            constant=True,
+            sboTerm=SBO.KINETIC_CONSTANT,
+            name="Ka [1/hr] application rivaroxaban",
+            notes="""Fast application to shift the applied dose into the stomach.""",
+        ),
+        Parameter(
+            "application_riv",
+            np.nan,
+            U.mmole_per_min,
+            constant=False,
+            sboTerm=SBO.RATE_OF_REACTION,
+            name="PO application rivaroxaban",
+            notes="""
+            The rate at which the oral dose `PODOSE_riv` enters the stomach
+            (`POSTOMACH1_riv`).
+            """,
+        ),
+        Parameter(
+            "Ka_emptying_riv",
+            **FITS.parameter("GU__Ka_emptying_riv", unit=U.per_hr),
+            constant=True,
+            sboTerm=SBO.KINETIC_CONSTANT,
+            name="rate of a stage of the gastric emptying of the tablet",
+            notes="""
+            The gastric emptying of a tablet in the fasted state passes
+            `N_EMPTYING` = 3 stages with this rate (fitted), the mean residence
+            time in the stomach is 3 stages divided by the rate.
+            """,
+        ),
+        Parameter(
+            "Vmax_dis_riv",
+            **FITS.parameter("GU__Vmax_dis_riv", unit=U.mg_per_hr),
+            constant=True,
+            sboTerm=SBO.MAXIMAL_VELOCITY,
+            name="capacity of the dissolution rivaroxaban",
+            notes="""
+            The maximal rate of the dissolution of undissolved rivaroxaban in
+            the intestine in the fasted state (solubility). The Cmax of the
+            tablets rises less than the dose above 10 mg, 141, 173, 234 and
+            316 µg/l at 10, 20, 40 and 80 mg (Kubitza2005a), the tmax of 10 mg
+            is 2.75 hr (Kubitza2006).
+            """,
+            port=True,
+        ),
+        Parameter(
+            "Km_dis_riv",
+            1.0,
+            U.mg,
+            constant=True,
+            sboTerm=SBO.MICHAELIS_CONSTANT,
+            name="undissolved amount of half-maximal dissolution rivaroxaban",
+            notes="""
+            The dissolution saturates at a small undissolved amount: a dose of
+            a tablet dissolves with the capacity `Vmax_dis_riv`, the remainder
+            below `Km_dis_riv` with the first order rate `Vmax_dis_riv/Km_dis_riv`.
+            """,
+        ),
+        Parameter(
+            "ktransit_riv",
+            **FITS.parameter("GU__ktransit_riv", unit=U.per_hr),
+            constant=True,
+            sboTerm=SBO.KINETIC_CONSTANT,
+            name="rate of the transit of undissolved rivaroxaban",
+            notes="""
+            The undissolved rivaroxaban leaves the absorptive part of the
+            intestine and is excreted with the feces, the small intestinal
+            transit of about 3-4 hr; it limits the fraction of a high dose
+            which dissolves.
+            """,
+        ),
+        Parameter(
+            "Mr_riv",
+            435.88,
+            U.g_per_mole,
+            constant=True,
+            name="Molecular weight rivaroxaban [g/mole]",
+            sboTerm=SBO.MOLECULAR_MASS,
+            port=True,
+        ),
+    ]
+)
+
+_m.rules.append(
+    AssignmentRule(
+        "application_riv",
+        "Ka_application_riv/60 min_per_hr * PODOSE_riv/Mr_riv",
+        unit=U.mmole_per_min,
+    ),
+)
+_m.parameters.extend(
+    [
+        Parameter(
+            f"emptying{k}_riv",
+            np.nan,
+            U.mmole_per_min,
+            constant=False,
+            sboTerm=SBO.RATE_OF_REACTION,
+            name=f"gastric emptying rivaroxaban, stage {k}",
+        )
+        for k in range(1, N_EMPTYING + 1)
+    ]
+)
+_m.rules.extend(
+    [
+        *(
+            AssignmentRule(
+                f"emptying{k}_riv",
+                f"Ka_emptying_riv/60 min_per_hr * f_emptying * POSTOMACH{k}_riv/Mr_riv",
+                unit=U.mmole_per_min,
+            )
+            for k in range(1, N_EMPTYING + 1)
+        ),
+        AssignmentRule(
+            "POSTOMACH_riv",
+            " + ".join(f"POSTOMACH{k}_riv" for k in range(1, N_EMPTYING + 1)),
+            unit=U.mg,
+        ),
+    ]
+)
+_m.reactions.extend(
+    [
+        Reaction(
+            sid="dissolution_riv",
+            name="dissolution rivaroxaban",
+            formula=(
+                "f_solubility * Vmax_dis_riv/60 min_per_hr/Mr_riv"
+                " * POINTESTINE_riv/(POINTESTINE_riv + Km_dis_riv)",
+                U.mmole_per_min,
+            ),
+            equation="-> riv_lumen",
+            compartment="Vlumen",
+            sboTerm=SBO.TRANSPORT_REACTION,
+            notes="""
+            Dissolution of the undissolved dose in the intestine into the
+            lumen; the rate saturates with the undissolved amount.
+            """,
+        ),
+        Reaction(
+            sid="transit_riv",
+            name="transit undissolved rivaroxaban (feces)",
+            formula=(
+                "ktransit_riv/60 min_per_hr * POINTESTINE_riv/Mr_riv",
+                U.mmole_per_min,
+            ),
+            equation="-> riv_feces",
+            compartment="Vlumen",
+            sboTerm=SBO.TRANSPORT_REACTION,
+            notes="""
+            The undissolved rivaroxaban leaves the absorptive part of the
+            intestine and is excreted with the feces.
+            """,
+        ),
+        Reaction(
+            sid="application_solution_riv",
+            name="application of the solution rivaroxaban",
+            formula=(
+                "Ka_application_riv/60 min_per_hr * POSOLUTION_riv/Mr_riv",
+                U.mmole_per_min,
+            ),
+            equation="-> riv_lumen",
+            compartment="Vlumen",
+            sboTerm=SBO.TRANSPORT_REACTION,
+            notes="""
+            The oral dose given as a solution enters the lumen of the intestine
+            without dissolution.
+            """,
+        ),
+    ]
+)
+_m.rate_rules.extend(
+    [
+        RateRule("PODOSE_riv", "-application_riv * Mr_riv", U.mg_per_min),
+        RateRule(
+            "POSOLUTION_riv",
+            "-application_solution_riv * Mr_riv",
+            U.mg_per_min,
+        ),
+        RateRule(
+            "POSTOMACH1_riv",
+            "(application_riv - emptying1_riv) * Mr_riv",
+            U.mg_per_min,
+        ),
+        *(
+            RateRule(
+                f"POSTOMACH{k}_riv",
+                f"(emptying{k - 1}_riv - emptying{k}_riv) * Mr_riv",
+                U.mg_per_min,
+            )
+            for k in range(2, N_EMPTYING + 1)
+        ),
+        RateRule(
+            "POINTESTINE_riv",
+            f"(emptying{N_EMPTYING}_riv - dissolution_riv - transit_riv) * Mr_riv",
+            U.mg_per_min,
+        ),
+    ]
 )
 
 model_intestine = _m
 
 
-def intestine_layout(dx=200, dy=200) -> pd.DataFrame:
-    """Intestine layout for cytoscape visualization."""
-    delta_x = 0.8 * dx
-    delta_y = 0.4 * dy
-
-    positions = [
-        ["riv_stomach",      0 * delta_x, 0],
-        ["dissolution_riv",  0 * delta_x, 1 * delta_y],
-        ["riv_lumen",        0.6 * delta_x, 2 * delta_y],
-        ["RIVABS",           0.6 * delta_x, 3 * delta_y],
-        ["riv_ext",          0.6 * delta_x, 3.75 * delta_y],
-        ["RIVEXC",           1.2 * delta_x, 1 * delta_y],
-        ["riv_feces",        1.2 * delta_x, 0 * delta_y],
-        ["rx_lumen",         2.3 * delta_x, 2 * delta_y],
-        ["RXEXC",            2.3 * delta_x, 1 * delta_y],
-        ["rx_feces",         2.3 * delta_x, 0 * delta_y],
-    ]
-
-    df = pd.DataFrame(positions, columns=["id", "x", "y"])
-    df.set_index("id", inplace=True)
-    return df
-
-
-
-def intestine_annotations(dx=200, dy=200) -> list:
-    """Bounding boxes for 'stomach', 'intestines', 'plasma' and 'feces'."""
-    from sbmlutils.cytoscape import AnnotationShape, AnnotationShapeType
-
-    delta_x = 0.8 * dx
-    delta_y = 0.4 * dy
-
-    kwargs = dict(
-        type=AnnotationShapeType.ROUND_RECTANGLE,
-        opacity=20,
-        border_color="#000000",
-        border_thickness=2,
-    )
-
-    # Stomach region
-    stomach_box = AnnotationShape(
-        x_pos=-0.6 * delta_x,
-        y_pos=-0.5 * delta_y,
-        width=1.2 * delta_x,
-        height=1.5 * delta_y,
-        fill_color="#FFC0CB",      # pinkish
-        **kwargs
-    )
-
-    # Intestinal lumen
-    lumen_box = AnnotationShape(
-        x_pos=-0.6 * delta_x,
-        y_pos=stomach_box.y_pos + stomach_box.height,
-        width=3.6 * delta_x,
-        height=2 * delta_y,
-        fill_color="#ffe3e3",      # very light pink
-        **kwargs
-    )
-
-    # Plasma
-    plasma_box = AnnotationShape(
-        x_pos=-0.6 * delta_x,
-        y_pos=lumen_box.y_pos + lumen_box.height,
-        width=3.6 * delta_x,
-        height=1.25 * delta_y,
-        fill_color="#FF0000",  # pale pink
-        **kwargs
-    )
-
-    # Feces
-    feces_box = AnnotationShape(
-        x_pos=0.6 * delta_x,
-        y_pos=-0.5 * delta_y,
-        width=2.4 * delta_x,
-        height=1.5 * delta_y,
-        fill_color="#d7c2af",  # beige
-        **kwargs
-    )
-
-    return [stomach_box, lumen_box, plasma_box, feces_box]
-
-
-
 if __name__ == "__main__":
+    from sbmlode import OdeSystem
+
+    from pkdb_models.models.rivaroxaban import MODEL_BASE_PATH
+
     results: FactoryResult = create_model(
         model=model_intestine,
         filepath=MODEL_BASE_PATH / f"{model_intestine.sid}.xml",
@@ -409,19 +636,5 @@ if __name__ == "__main__":
     )
 
     # ODE equations
-    ode_factory = odefac.SBML2ODE.from_file(sbml_file=results.sbml_path)
-    ode_factory.to_markdown(md_file=results.sbml_path.parent / f"{results.sbml_path.stem}.md")
-
-    # visualization in Cytoscape
-    cyviz.visualize_sbml(results.sbml_path, delete_session=False)
-    cyviz.apply_layout(layout=intestine_layout())
-    cyviz.add_annotations(annotations=intestine_annotations())
-
-
-    # PNG output
-    # figure_path: Path = MODEL_BASE_PATH.parent / "figures" / f"{model_intestine.sid}.png"
-    # cyviz.export_image(
-    #     figure_path,
-    #     fit_content=True,
-    #  )
-    # console.print(figure_path)
+    ode_system = OdeSystem.from_sbml(results.sbml_path)
+    ode_system.write(results.sbml_path.parent / f"{results.sbml_path.stem}.md")

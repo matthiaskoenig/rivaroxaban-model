@@ -1,0 +1,35 @@
+{
+  "sets": [
+    {
+      "sid": "PK_20261018_075718__82026_0",
+      "values": {
+        "GU__RIVABS_k": 0.08187782586851525,
+        "GU__Ka_emptying_riv": 11.778472525513623,
+        "GU__Vmax_dis_riv": 4.036585870679116,
+        "GU__ktransit_riv": 0.5,
+        "GU__FED_f_solubility": 1.607539410704491,
+        "GU__FED_f_emptying": 0.2028338674633794,
+        "LI__RIV2RX_k": 0.048210728132953615,
+        "KI__RIVEX_f": 6.395147352767264,
+        "Kp_riv": 0.40706870030412085,
+        "ftissue_riv": 5.8076457557902845,
+        "LI__RXEX_BI_k": 0.17953060417325015
+      },
+      "units": {
+        "GU__RIVABS_k": "1/(min)",
+        "GU__Ka_emptying_riv": "1/(hr)",
+        "GU__Vmax_dis_riv": "(mg)/(hr)",
+        "GU__ktransit_riv": "1/(hr)",
+        "GU__FED_f_solubility": "dimensionless",
+        "GU__FED_f_emptying": "dimensionless",
+        "LI__RIV2RX_k": "1/(min)",
+        "KI__RIVEX_f": "dimensionless",
+        "Kp_riv": "dimensionless",
+        "ftissue_riv": "l/(min)",
+        "LI__RXEX_BI_k": "1/(min)"
+      },
+      "cost": 196.724981525462,
+      "provenance": "optimization 'PK_20261018_075718__82026', run '2'"
+    }
+  ]
+}

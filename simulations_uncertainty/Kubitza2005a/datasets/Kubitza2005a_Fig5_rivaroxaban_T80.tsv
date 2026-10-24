@@ -1,0 +1,16 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit	count_unit
+Kubitza2005a		T80	6.0	T80	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T80	0.25	hr		4.22134532440121e-05					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T80	6.0	T80	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T80	0.5	hr		0.00023400936037441494					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T80	6.0	T80	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T80	0.75	hr		0.0003624850876387996					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T80	6.0	T80	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T80	1.0	hr		0.0004886666054877488					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T80	6.0	T80	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T80	1.25	hr		0.0005350096356795447					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T80	6.0	T80	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T80	1.5	hr		0.0006171423327521335					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T80	6.0	T80	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T80	2.0	hr		0.0006570615765807102					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T80	6.0	T80	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T80	2.5	hr		0.0006231072772322657					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T80	6.0	T80	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T80	3.0	hr		0.0005769936679820134					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T80	6.0	T80	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T80	4.0	hr		0.0005015141782141873					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T80	6.0	T80	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T80	6.0	hr		0.0002886115444617784					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T80	6.0	T80	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T80	8.0	hr		0.00021519684316784432					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T80	6.0	T80	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T80	12.0	hr		0.00013512893456914745					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T80	6.0	T80	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T80	15.0	hr		0.00011700468018720747					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T80	6.0	T80	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T80	24.0	hr		8.259153895567586e-05					mole/meter^3	µg/l	dimensionless

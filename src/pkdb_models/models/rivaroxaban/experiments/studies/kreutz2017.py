@@ -1,106 +1,107 @@
-from typing import Dict
+"""Simulation experiment of the study Kreutz2017."""
 
-from sbmlsim.data import DataSet, load_pkdb_dataframe
-from sbmlsim.fit import FitMapping, FitData
-from sbmlutils.console import console
+from typing import ClassVar, override
 
-from pkdb_models.models import rivaroxaban
+from pkpdsim.metadata import (
+    ApplicationForm,
+    Dosing,
+    Fasting,
+    Health,
+    PKPDMappingMetaData,
+    Route,
+    Tissue,
+)
+from sbmlsim import Q
+from sbmlsim.data import DataSet
+from sbmlsim.fit import FitData, FitMapping
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Simulation
+
+from pkdb_models.models.rivaroxaban import MODEL
 from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
     RivaroxabanSimulationExperiment,
 )
-from pkdb_models.models.rivaroxaban.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
-    Fasting, RivaroxabanMappingMetaData
-
-from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
-
-from pkdb_models.models.rivaroxaban.helpers import run_experiments
 
 
 class Kreutz2017(RivaroxabanSimulationExperiment):
-    """Simulation experiment of Kreutz2017."""
+    """Simulation experiment of Kreutz2017.
 
-    bodyweight = 81.1 #[kg]
-    bodyheight = 181 #[cm]
+    The rivaroxaban period of the crossover study: 20 mg once daily for 7 days
+    with a standardized breakfast (fed) in healthy men. Plasma (Fig2, geometric
+    mean and SD) and the prothrombin time and aPTT ratios to the baseline
+    (Fig6) after the dose of day 7, the time is relative to that dose.
+    """
 
-    dose = 20 #[mg]
+    bodyweight = 81.1  # [kg]
+    bodyheight = 181  # [cm]
+
+    dose = 20  # [mg]
     route = "PO"
 
-    info_figpk = {
+    info_figpk: ClassVar[dict[str, str]] = {
         "riv_rivaroxaban": "[Cve_riv]",
     }
 
-    info_figpd = {
+    info_figpd: ClassVar[dict[str, str]] = {
         "riv_prothrombin time ratio": "PT_ratio",
         "riv_aPTT ratio": "aPTT_ratio",
     }
 
-
-    def datasets(self) -> Dict[str, DataSet]:
+    @override
+    def datasets(self) -> dict[str, DataSet]:
         dsets = {}
-        for fig_id, group_id in zip(["Fig2", "Fig6"], ["label", "label"]):
-            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
-            for label, df_label in df.groupby(group_id):
+        for fig_id in ["Fig2", "Fig6"]:
+            df = self.load_dataframe(fig_id)
+            for label, df_label in df.groupby("label"):
+                label = str(label)
                 if label.startswith("api_"):
                     continue
                 dset = DataSet.from_df(df_label, self.ureg)
-                if "rivaroxaban" in label:
+                if df_label["measurement_type"].iloc[0] == "concentration":
                     dset.unit_conversion("mean", 1 / self.Mr.riv)
+                # the data are curated at the time after the first dose
                 dset.time = dset.time - 6 * 24
-                dsets[label] = dset
-                #print(label)
-
-        #console.print(dsets)
+                dsets[self.to_sid(label)] = dset
 
         return dsets
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
+    @override
+    def simulations(self) -> dict[str, Simulation]:
         tcsims = {}
 
-        tc = Timecourse(
-            start=0,
-            end=24 * 60,  # [min]
-            steps=1000,
-            changes={
+        # a dose every 24 hr for 7 days, the time is relative to the last dose;
+        # a dose adds to what is left of the earlier ones
+        tcsims["rivaroxaban"] = Simulation(
+            time_unit="hr",
+            end=6 * 24 + 73,
+            preinit_changes={
                 **self.default_changes(),
-                "BW": Q_(self.bodyweight, "kg"),
-                "HEIGHT": Q_(self.bodyheight, "cm"),
-                f"{self.route}DOSE_riv": Q_(self.dose, "mg"),
-                "GU__f_absorption": Q_(self.fasting_map["fed"], "dimensionless")
+                "BW": Q(self.bodyweight, "kg"),
+                f"{self.route}DOSE_riv": Q(self.dose, "mg"),
+                "GU__fed": Q(self.fasting_map["fed"], "dimensionless"),
             },
-        )
-
-        tc_end = Timecourse(
-            start=0,
-            end=73 * 60,  # [min]
-            steps=1000,
-            changes={
-                **self.default_changes(),
-                "BW": Q_(self.bodyweight, "kg"),
-                "HEIGHT": Q_(self.bodyheight, "cm"),
-                f"{self.route}DOSE_riv": Q_(self.dose, "mg"),
-                "GU__f_absorption": Q_(self.fasting_map["fed"], "dimensionless")
-            },
-        )
-
-        tcsims["rivaroxaban"] = TimecourseSim(
-            timecourses=[tc] * 6 + [tc_end],
-            time_offset= - 6 * 24 * 60
+            changes=[
+                self.add_doses(
+                    [24 * k for k in range(1, 7)],
+                    {f"{self.route}DOSE_riv": Q(self.dose, "mg")},
+                )
+            ],
+            time_shift=-6 * 24,
         )
 
         return tcsims
 
-    def fit_mappings(self) -> Dict[str, FitMapping]:
+    @override
+    def fit_mappings(self) -> dict[str, FitMapping]:
         mappings = {}
 
         for variables in [self.info_figpk.items(), self.info_figpd.items()]:
             for label, sid in variables:
-                mappings[f"fm_{self.route}_{label}"] = FitMapping(
+                mappings[self.to_sid(f"fm_{self.route}_{label}")] = FitMapping(
                     self,
                     reference=FitData(
                         self,
-                        dataset=label,
+                        dataset=self.to_sid(label),
                         xid="time",
                         yid="mean",
                         yid_sd="mean_sd",
@@ -108,15 +109,15 @@ class Kreutz2017(RivaroxabanSimulationExperiment):
                     ),
                     observable=FitData(
                         self,
-                        task=f"task_rivaroxaban",
+                        task="task_rivaroxaban",
                         xid="time",
                         yid=sid,
                     ),
-                    metadata=RivaroxabanMappingMetaData(
+                    metadata=PKPDMappingMetaData(
                         tissue=Tissue.PLASMA,
                         route=Route.PO,
                         application_form=ApplicationForm.TABLET,
-                        dosing=Dosing.SINGLE,
+                        dosing=Dosing.MULTIPLE,
                         health=Health.HEALTHY,
                         fasting=Fasting.FED,
                     ),
@@ -124,15 +125,14 @@ class Kreutz2017(RivaroxabanSimulationExperiment):
 
         return mappings
 
-    def figures(self) -> Dict[str, Figure]:
-
+    @override
+    def figures(self) -> dict[str, Figure]:
         return {
-            **self.figure_pk(),
-            **self.figure_pd(),
+            **self._figure_pk(),
+            **self._figure_pd(),
         }
 
-    def figure_pk(self) -> Dict[str, Figure]:
-
+    def _figure_pk(self) -> dict[str, Figure]:
         fig = Figure(
             experiment=self,
             sid="PK",
@@ -141,35 +141,36 @@ class Kreutz2017(RivaroxabanSimulationExperiment):
             num_cols=1,
         )
         plots = fig.create_plots(
-            xaxis=Axis(self.label_time, unit=self.unit_time, min=-24),
+            xaxis=Axis(self.label_time, unit=self.unit_time, min=-24, max=75),
             legend=True,
         )
-        plots[0].set_yaxis(self.labels["[Cve_riv]"], unit=self.units["[Cve_riv]"], scale="linear")
+        plots[0].set_yaxis(
+            self.labels["[Cve_riv]"], unit=self.units["[Cve_riv]"], scale="linear"
+        )
 
         for label, sid in self.info_figpk.items():
             # simulation
             plots[0].add_data(
-                task=f"task_rivaroxaban",
+                task="task_rivaroxaban",
                 xid="time",
                 yid=sid,
-                label=f"sim chronic fed: {self.dose}mg {self.route}",
+                label=f"{self.dose} mg QD, day 7 (fed)",
                 color=self.fasting_colors["fed"],
             )
             # data
             plots[0].add_data(
-                dataset=label,
+                dataset=self.to_sid(label),
                 xid="time",
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"exp chronic fed: {self.dose}mg {self.route}",
+                label=f"{self.dose} mg QD, day 7 (fed)",
                 color=self.fasting_colors["fed"],
             )
 
-        return {fig.sid: fig}
+        return self.figures_by_sid(fig)
 
-    def figure_pd(self) -> Dict[str, Figure]:
-
+    def _figure_pd(self) -> dict[str, Figure]:
         fig = Figure(
             experiment=self,
             sid="PD",
@@ -178,36 +179,33 @@ class Kreutz2017(RivaroxabanSimulationExperiment):
             num_cols=2,
         )
         plots = fig.create_plots(
-            xaxis=Axis(self.label_time, unit=self.unit_time, min=-24),
+            xaxis=Axis(self.label_time, unit=self.unit_time, min=-24, max=75),
             legend=True,
         )
-
 
         for kp, (label, sid) in enumerate(self.info_figpd.items()):
             plots[kp].set_yaxis(self.labels[sid], unit=self.units[sid], scale="linear")
             # simulation
             plots[kp].add_data(
-                task=f"task_rivaroxaban",
+                task="task_rivaroxaban",
                 xid="time",
                 yid=sid,
-                label=f"sim chronic fed: {self.dose}mg {self.route}",
+                label=f"{self.dose} mg QD, day 7 (fed)",
                 color=self.fasting_colors["fed"],
             )
             # data
             plots[kp].add_data(
-                dataset=label,
+                dataset=self.to_sid(label),
                 xid="time",
                 yid="mean",
                 yid_sd="mean_sd",
                 count="count",
-                label=f"exp chronic fed: {self.dose}mg {self.route}",
+                label=f"{self.dose} mg QD, day 7 (fed)",
                 color=self.fasting_colors["fed"],
             )
 
-        return {fig.sid: fig}
+        return self.figures_by_sid(fig)
 
 
 if __name__ == "__main__":
-    out = rivaroxaban.RESULTS_PATH_SIMULATION / Kreutz2017.__name__
-    out.mkdir(parents=True, exist_ok=True)
-    run_experiments(Kreutz2017, output_dir=Kreutz2017.__name__)
+    MODEL.run_experiments(Kreutz2017, output_dir=Kreutz2017.__name__)

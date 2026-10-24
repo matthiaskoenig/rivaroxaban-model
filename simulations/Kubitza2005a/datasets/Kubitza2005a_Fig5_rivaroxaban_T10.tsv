@@ -1,0 +1,15 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit	count_unit
+Kubitza2005a		T10	8.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	0.5	hr		3.28071946407268e-05					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T10	8.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	0.75	hr		6.974396622923738e-05					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T10	8.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	1.0	hr		0.00012342846655042668					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T10	8.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	1.25	hr		0.0001807837019363127					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T10	8.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	1.5	hr		0.00021955584105717168					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T10	8.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	2.0	hr		0.00026521060842433694					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T10	8.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	2.5	hr		0.00028264659998164624					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T10	8.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	3.0	hr		0.00025167477287326784					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T10	8.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	4.0	hr		0.0002252913645957603					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T10	8.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	6.0	hr		0.00011884004771955581					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T10	8.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	8.0	hr		8.557401119574193e-05					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T10	8.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	12.0	hr		5.391392126273286e-05					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T10	8.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	15.0	hr		3.9230981003946034e-05					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T10	8.0	T10	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T10	24.0	hr		2.156556850509314e-05					mole/meter^3	µg/l	dimensionless

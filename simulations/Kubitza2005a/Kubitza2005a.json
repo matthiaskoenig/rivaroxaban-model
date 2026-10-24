@@ -1,0 +1,6149 @@
+{
+  "experiment_id": "Kubitza2005a",
+  "base_path": "/home/mkoenig/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban",
+  "data_path": [
+    "/home/mkoenig/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/rivaroxaban",
+    "/home/mkoenig/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/apixaban",
+    "/home/mkoenig/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/edoxaban"
+  ],
+  "models": {
+    "model": {
+      "sid": null,
+      "name": null,
+      "language": "SBML",
+      "language_type": "SBML",
+      "source": {
+        "source": "/home/mkoenig/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/output/models/rivaroxaban_body_flat.xml",
+        "path": "/home/mkoenig/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/output/models/rivaroxaban_body_flat.xml",
+        "content": null
+      },
+      "base_path": null,
+      "changes": {},
+      "selections": [
+        "Afeces_riv",
+        "Afeces_riv_rx",
+        "Afeces_rx",
+        "Afeces_urine_riv_rx",
+        "Aurine_riv",
+        "Aurine_riv_rx",
+        "Aurine_rx",
+        "GU__POINTESTINE_riv",
+        "GU__POSTOMACH_riv",
+        "GU__fed",
+        "IVDOSE_riv",
+        "KI__GFR",
+        "KI__RIVEX",
+        "KI__f_pgp",
+        "KI__f_renal_function",
+        "LI__f_cyp3a4",
+        "PODOSE_riv",
+        "POSOLUTION_riv",
+        "PT",
+        "PT_change",
+        "PT_ratio",
+        "Xa_inhibition",
+        "[Cve_riv]",
+        "[Cve_riv_rx]",
+        "[Cve_rx]",
+        "aPTT",
+        "aPTT_change",
+        "aPTT_ratio",
+        "f_cirrhosis",
+        "time"
+      ],
+      "parameters": {}
+    }
+  },
+  "tasks": {
+    "task_T1p25": {
+      "sid": "model__T1p25",
+      "name": null,
+      "model": "model",
+      "simulation": "T1p25",
+      "observables": []
+    },
+    "task_T5": {
+      "sid": "model__T5",
+      "name": null,
+      "model": "model",
+      "simulation": "T5",
+      "observables": []
+    },
+    "task_T10": {
+      "sid": "model__T10",
+      "name": null,
+      "model": "model",
+      "simulation": "T10",
+      "observables": []
+    },
+    "task_T20": {
+      "sid": "model__T20",
+      "name": null,
+      "model": "model",
+      "simulation": "T20",
+      "observables": []
+    },
+    "task_T40": {
+      "sid": "model__T40",
+      "name": null,
+      "model": "model",
+      "simulation": "T40",
+      "observables": []
+    },
+    "task_T80": {
+      "sid": "model__T80",
+      "name": null,
+      "model": "model",
+      "simulation": "T80",
+      "observables": []
+    },
+    "task_S5": {
+      "sid": "model__S5",
+      "name": null,
+      "model": "model",
+      "simulation": "S5",
+      "observables": []
+    },
+    "task_S10": {
+      "sid": "model__S10",
+      "name": null,
+      "model": "model",
+      "simulation": "S10",
+      "observables": []
+    },
+    "task_P": {
+      "sid": "model__P",
+      "name": null,
+      "model": "model",
+      "simulation": "P",
+      "observables": []
+    }
+  },
+  "observables": {},
+  "simulations": {
+    "T1p25": {
+      "type": "Simulation",
+      "time_unit": "min",
+      "start": 0.0,
+      "end": 3000,
+      "preinit_changes": {
+        "BW": {
+          "value": 81.2,
+          "unit": "kilogram"
+        },
+        "PODOSE_riv": {
+          "value": 1.25,
+          "unit": "milligram"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        }
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
+    },
+    "T5": {
+      "type": "Simulation",
+      "time_unit": "min",
+      "start": 0.0,
+      "end": 3000,
+      "preinit_changes": {
+        "BW": {
+          "value": 81.2,
+          "unit": "kilogram"
+        },
+        "PODOSE_riv": {
+          "value": 5.0,
+          "unit": "milligram"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        }
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
+    },
+    "T10": {
+      "type": "Simulation",
+      "time_unit": "min",
+      "start": 0.0,
+      "end": 3000,
+      "preinit_changes": {
+        "BW": {
+          "value": 81.2,
+          "unit": "kilogram"
+        },
+        "PODOSE_riv": {
+          "value": 10.0,
+          "unit": "milligram"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        }
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
+    },
+    "T20": {
+      "type": "Simulation",
+      "time_unit": "min",
+      "start": 0.0,
+      "end": 3000,
+      "preinit_changes": {
+        "BW": {
+          "value": 81.2,
+          "unit": "kilogram"
+        },
+        "PODOSE_riv": {
+          "value": 20.0,
+          "unit": "milligram"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        }
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
+    },
+    "T40": {
+      "type": "Simulation",
+      "time_unit": "min",
+      "start": 0.0,
+      "end": 3000,
+      "preinit_changes": {
+        "BW": {
+          "value": 81.2,
+          "unit": "kilogram"
+        },
+        "PODOSE_riv": {
+          "value": 40.0,
+          "unit": "milligram"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        }
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
+    },
+    "T80": {
+      "type": "Simulation",
+      "time_unit": "min",
+      "start": 0.0,
+      "end": 3000,
+      "preinit_changes": {
+        "BW": {
+          "value": 81.2,
+          "unit": "kilogram"
+        },
+        "PODOSE_riv": {
+          "value": 80.0,
+          "unit": "milligram"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        }
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
+    },
+    "S5": {
+      "type": "Simulation",
+      "time_unit": "min",
+      "start": 0.0,
+      "end": 3000,
+      "preinit_changes": {
+        "BW": {
+          "value": 81.2,
+          "unit": "kilogram"
+        },
+        "POSOLUTION_riv": {
+          "value": 5.0,
+          "unit": "milligram"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        }
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
+    },
+    "S10": {
+      "type": "Simulation",
+      "time_unit": "min",
+      "start": 0.0,
+      "end": 3000,
+      "preinit_changes": {
+        "BW": {
+          "value": 81.2,
+          "unit": "kilogram"
+        },
+        "POSOLUTION_riv": {
+          "value": 10.0,
+          "unit": "milligram"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        }
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
+    },
+    "P": {
+      "type": "Simulation",
+      "time_unit": "min",
+      "start": 0.0,
+      "end": 3000,
+      "preinit_changes": {
+        "BW": {
+          "value": 81.2,
+          "unit": "kilogram"
+        },
+        "PODOSE_riv": {
+          "value": 0.0,
+          "unit": "milligram"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        }
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
+    }
+  },
+  "data": {
+    "task_T1p25__time": {
+      "type": "TASK",
+      "sid": "task_T1p25__time",
+      "index": "time",
+      "selection": "time",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__conc__Cve_riv": {
+      "type": "TASK",
+      "sid": "task_T1p25__conc__Cve_riv",
+      "index": "Cve_riv",
+      "selection": "[Cve_riv]",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__conc__Cve_rx": {
+      "type": "TASK",
+      "sid": "task_T1p25__conc__Cve_rx",
+      "index": "Cve_rx",
+      "selection": "[Cve_rx]",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__conc__Cve_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T1p25__conc__Cve_riv_rx",
+      "index": "Cve_riv_rx",
+      "selection": "[Cve_riv_rx]",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__Aurine_riv": {
+      "type": "TASK",
+      "sid": "task_T1p25__Aurine_riv",
+      "index": "Aurine_riv",
+      "selection": "Aurine_riv",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__Aurine_rx": {
+      "type": "TASK",
+      "sid": "task_T1p25__Aurine_rx",
+      "index": "Aurine_rx",
+      "selection": "Aurine_rx",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__Aurine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T1p25__Aurine_riv_rx",
+      "index": "Aurine_riv_rx",
+      "selection": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__Afeces_riv": {
+      "type": "TASK",
+      "sid": "task_T1p25__Afeces_riv",
+      "index": "Afeces_riv",
+      "selection": "Afeces_riv",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__Afeces_rx": {
+      "type": "TASK",
+      "sid": "task_T1p25__Afeces_rx",
+      "index": "Afeces_rx",
+      "selection": "Afeces_rx",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__Afeces_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T1p25__Afeces_riv_rx",
+      "index": "Afeces_riv_rx",
+      "selection": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T1p25__Afeces_urine_riv_rx",
+      "index": "Afeces_urine_riv_rx",
+      "selection": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__KI__RIVEX": {
+      "type": "TASK",
+      "sid": "task_T1p25__KI__RIVEX",
+      "index": "KI__RIVEX",
+      "selection": "KI__RIVEX",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_T1p25__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__KI__f_renal_function": {
+      "type": "TASK",
+      "sid": "task_T1p25__KI__f_renal_function",
+      "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__f_cirrhosis": {
+      "type": "TASK",
+      "sid": "task_T1p25__f_cirrhosis",
+      "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__LI__f_cyp3a4": {
+      "type": "TASK",
+      "sid": "task_T1p25__LI__f_cyp3a4",
+      "index": "LI__f_cyp3a4",
+      "selection": "LI__f_cyp3a4",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__KI__f_pgp": {
+      "type": "TASK",
+      "sid": "task_T1p25__KI__f_pgp",
+      "index": "KI__f_pgp",
+      "selection": "KI__f_pgp",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__GU__fed": {
+      "type": "TASK",
+      "sid": "task_T1p25__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__PT": {
+      "type": "TASK",
+      "sid": "task_T1p25__PT",
+      "index": "PT",
+      "selection": "PT",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__PT_change": {
+      "type": "TASK",
+      "sid": "task_T1p25__PT_change",
+      "index": "PT_change",
+      "selection": "PT_change",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__PT_ratio": {
+      "type": "TASK",
+      "sid": "task_T1p25__PT_ratio",
+      "index": "PT_ratio",
+      "selection": "PT_ratio",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__aPTT": {
+      "type": "TASK",
+      "sid": "task_T1p25__aPTT",
+      "index": "aPTT",
+      "selection": "aPTT",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__aPTT_change": {
+      "type": "TASK",
+      "sid": "task_T1p25__aPTT_change",
+      "index": "aPTT_change",
+      "selection": "aPTT_change",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__aPTT_ratio": {
+      "type": "TASK",
+      "sid": "task_T1p25__aPTT_ratio",
+      "index": "aPTT_ratio",
+      "selection": "aPTT_ratio",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__Xa_inhibition": {
+      "type": "TASK",
+      "sid": "task_T1p25__Xa_inhibition",
+      "index": "Xa_inhibition",
+      "selection": "Xa_inhibition",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__PODOSE_riv": {
+      "type": "TASK",
+      "sid": "task_T1p25__PODOSE_riv",
+      "index": "PODOSE_riv",
+      "selection": "PODOSE_riv",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__POSOLUTION_riv": {
+      "type": "TASK",
+      "sid": "task_T1p25__POSOLUTION_riv",
+      "index": "POSOLUTION_riv",
+      "selection": "POSOLUTION_riv",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__GU__POSTOMACH_riv": {
+      "type": "TASK",
+      "sid": "task_T1p25__GU__POSTOMACH_riv",
+      "index": "GU__POSTOMACH_riv",
+      "selection": "GU__POSTOMACH_riv",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__GU__POINTESTINE_riv": {
+      "type": "TASK",
+      "sid": "task_T1p25__GU__POINTESTINE_riv",
+      "index": "GU__POINTESTINE_riv",
+      "selection": "GU__POINTESTINE_riv",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T1p25__IVDOSE_riv": {
+      "type": "TASK",
+      "sid": "task_T1p25__IVDOSE_riv",
+      "index": "IVDOSE_riv",
+      "selection": "IVDOSE_riv",
+      "unit": null,
+      "task": "task_T1p25",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__time": {
+      "type": "TASK",
+      "sid": "task_T5__time",
+      "index": "time",
+      "selection": "time",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__conc__Cve_riv": {
+      "type": "TASK",
+      "sid": "task_T5__conc__Cve_riv",
+      "index": "Cve_riv",
+      "selection": "[Cve_riv]",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__conc__Cve_rx": {
+      "type": "TASK",
+      "sid": "task_T5__conc__Cve_rx",
+      "index": "Cve_rx",
+      "selection": "[Cve_rx]",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__conc__Cve_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T5__conc__Cve_riv_rx",
+      "index": "Cve_riv_rx",
+      "selection": "[Cve_riv_rx]",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__Aurine_riv": {
+      "type": "TASK",
+      "sid": "task_T5__Aurine_riv",
+      "index": "Aurine_riv",
+      "selection": "Aurine_riv",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__Aurine_rx": {
+      "type": "TASK",
+      "sid": "task_T5__Aurine_rx",
+      "index": "Aurine_rx",
+      "selection": "Aurine_rx",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__Aurine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T5__Aurine_riv_rx",
+      "index": "Aurine_riv_rx",
+      "selection": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__Afeces_riv": {
+      "type": "TASK",
+      "sid": "task_T5__Afeces_riv",
+      "index": "Afeces_riv",
+      "selection": "Afeces_riv",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__Afeces_rx": {
+      "type": "TASK",
+      "sid": "task_T5__Afeces_rx",
+      "index": "Afeces_rx",
+      "selection": "Afeces_rx",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__Afeces_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T5__Afeces_riv_rx",
+      "index": "Afeces_riv_rx",
+      "selection": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T5__Afeces_urine_riv_rx",
+      "index": "Afeces_urine_riv_rx",
+      "selection": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__KI__RIVEX": {
+      "type": "TASK",
+      "sid": "task_T5__KI__RIVEX",
+      "index": "KI__RIVEX",
+      "selection": "KI__RIVEX",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_T5__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__KI__f_renal_function": {
+      "type": "TASK",
+      "sid": "task_T5__KI__f_renal_function",
+      "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__f_cirrhosis": {
+      "type": "TASK",
+      "sid": "task_T5__f_cirrhosis",
+      "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__LI__f_cyp3a4": {
+      "type": "TASK",
+      "sid": "task_T5__LI__f_cyp3a4",
+      "index": "LI__f_cyp3a4",
+      "selection": "LI__f_cyp3a4",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__KI__f_pgp": {
+      "type": "TASK",
+      "sid": "task_T5__KI__f_pgp",
+      "index": "KI__f_pgp",
+      "selection": "KI__f_pgp",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__GU__fed": {
+      "type": "TASK",
+      "sid": "task_T5__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__PT": {
+      "type": "TASK",
+      "sid": "task_T5__PT",
+      "index": "PT",
+      "selection": "PT",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__PT_change": {
+      "type": "TASK",
+      "sid": "task_T5__PT_change",
+      "index": "PT_change",
+      "selection": "PT_change",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__PT_ratio": {
+      "type": "TASK",
+      "sid": "task_T5__PT_ratio",
+      "index": "PT_ratio",
+      "selection": "PT_ratio",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__aPTT": {
+      "type": "TASK",
+      "sid": "task_T5__aPTT",
+      "index": "aPTT",
+      "selection": "aPTT",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__aPTT_change": {
+      "type": "TASK",
+      "sid": "task_T5__aPTT_change",
+      "index": "aPTT_change",
+      "selection": "aPTT_change",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__aPTT_ratio": {
+      "type": "TASK",
+      "sid": "task_T5__aPTT_ratio",
+      "index": "aPTT_ratio",
+      "selection": "aPTT_ratio",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__Xa_inhibition": {
+      "type": "TASK",
+      "sid": "task_T5__Xa_inhibition",
+      "index": "Xa_inhibition",
+      "selection": "Xa_inhibition",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__PODOSE_riv": {
+      "type": "TASK",
+      "sid": "task_T5__PODOSE_riv",
+      "index": "PODOSE_riv",
+      "selection": "PODOSE_riv",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__POSOLUTION_riv": {
+      "type": "TASK",
+      "sid": "task_T5__POSOLUTION_riv",
+      "index": "POSOLUTION_riv",
+      "selection": "POSOLUTION_riv",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__GU__POSTOMACH_riv": {
+      "type": "TASK",
+      "sid": "task_T5__GU__POSTOMACH_riv",
+      "index": "GU__POSTOMACH_riv",
+      "selection": "GU__POSTOMACH_riv",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__GU__POINTESTINE_riv": {
+      "type": "TASK",
+      "sid": "task_T5__GU__POINTESTINE_riv",
+      "index": "GU__POINTESTINE_riv",
+      "selection": "GU__POINTESTINE_riv",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T5__IVDOSE_riv": {
+      "type": "TASK",
+      "sid": "task_T5__IVDOSE_riv",
+      "index": "IVDOSE_riv",
+      "selection": "IVDOSE_riv",
+      "unit": null,
+      "task": "task_T5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__time": {
+      "type": "TASK",
+      "sid": "task_T10__time",
+      "index": "time",
+      "selection": "time",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__conc__Cve_riv": {
+      "type": "TASK",
+      "sid": "task_T10__conc__Cve_riv",
+      "index": "Cve_riv",
+      "selection": "[Cve_riv]",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__conc__Cve_rx": {
+      "type": "TASK",
+      "sid": "task_T10__conc__Cve_rx",
+      "index": "Cve_rx",
+      "selection": "[Cve_rx]",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__conc__Cve_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T10__conc__Cve_riv_rx",
+      "index": "Cve_riv_rx",
+      "selection": "[Cve_riv_rx]",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__Aurine_riv": {
+      "type": "TASK",
+      "sid": "task_T10__Aurine_riv",
+      "index": "Aurine_riv",
+      "selection": "Aurine_riv",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__Aurine_rx": {
+      "type": "TASK",
+      "sid": "task_T10__Aurine_rx",
+      "index": "Aurine_rx",
+      "selection": "Aurine_rx",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__Aurine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T10__Aurine_riv_rx",
+      "index": "Aurine_riv_rx",
+      "selection": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__Afeces_riv": {
+      "type": "TASK",
+      "sid": "task_T10__Afeces_riv",
+      "index": "Afeces_riv",
+      "selection": "Afeces_riv",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__Afeces_rx": {
+      "type": "TASK",
+      "sid": "task_T10__Afeces_rx",
+      "index": "Afeces_rx",
+      "selection": "Afeces_rx",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__Afeces_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T10__Afeces_riv_rx",
+      "index": "Afeces_riv_rx",
+      "selection": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T10__Afeces_urine_riv_rx",
+      "index": "Afeces_urine_riv_rx",
+      "selection": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__KI__RIVEX": {
+      "type": "TASK",
+      "sid": "task_T10__KI__RIVEX",
+      "index": "KI__RIVEX",
+      "selection": "KI__RIVEX",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_T10__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__KI__f_renal_function": {
+      "type": "TASK",
+      "sid": "task_T10__KI__f_renal_function",
+      "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__f_cirrhosis": {
+      "type": "TASK",
+      "sid": "task_T10__f_cirrhosis",
+      "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__LI__f_cyp3a4": {
+      "type": "TASK",
+      "sid": "task_T10__LI__f_cyp3a4",
+      "index": "LI__f_cyp3a4",
+      "selection": "LI__f_cyp3a4",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__KI__f_pgp": {
+      "type": "TASK",
+      "sid": "task_T10__KI__f_pgp",
+      "index": "KI__f_pgp",
+      "selection": "KI__f_pgp",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__GU__fed": {
+      "type": "TASK",
+      "sid": "task_T10__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__PT": {
+      "type": "TASK",
+      "sid": "task_T10__PT",
+      "index": "PT",
+      "selection": "PT",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__PT_change": {
+      "type": "TASK",
+      "sid": "task_T10__PT_change",
+      "index": "PT_change",
+      "selection": "PT_change",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__PT_ratio": {
+      "type": "TASK",
+      "sid": "task_T10__PT_ratio",
+      "index": "PT_ratio",
+      "selection": "PT_ratio",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__aPTT": {
+      "type": "TASK",
+      "sid": "task_T10__aPTT",
+      "index": "aPTT",
+      "selection": "aPTT",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__aPTT_change": {
+      "type": "TASK",
+      "sid": "task_T10__aPTT_change",
+      "index": "aPTT_change",
+      "selection": "aPTT_change",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__aPTT_ratio": {
+      "type": "TASK",
+      "sid": "task_T10__aPTT_ratio",
+      "index": "aPTT_ratio",
+      "selection": "aPTT_ratio",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__Xa_inhibition": {
+      "type": "TASK",
+      "sid": "task_T10__Xa_inhibition",
+      "index": "Xa_inhibition",
+      "selection": "Xa_inhibition",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__PODOSE_riv": {
+      "type": "TASK",
+      "sid": "task_T10__PODOSE_riv",
+      "index": "PODOSE_riv",
+      "selection": "PODOSE_riv",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__POSOLUTION_riv": {
+      "type": "TASK",
+      "sid": "task_T10__POSOLUTION_riv",
+      "index": "POSOLUTION_riv",
+      "selection": "POSOLUTION_riv",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__GU__POSTOMACH_riv": {
+      "type": "TASK",
+      "sid": "task_T10__GU__POSTOMACH_riv",
+      "index": "GU__POSTOMACH_riv",
+      "selection": "GU__POSTOMACH_riv",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__GU__POINTESTINE_riv": {
+      "type": "TASK",
+      "sid": "task_T10__GU__POINTESTINE_riv",
+      "index": "GU__POINTESTINE_riv",
+      "selection": "GU__POINTESTINE_riv",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T10__IVDOSE_riv": {
+      "type": "TASK",
+      "sid": "task_T10__IVDOSE_riv",
+      "index": "IVDOSE_riv",
+      "selection": "IVDOSE_riv",
+      "unit": null,
+      "task": "task_T10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__time": {
+      "type": "TASK",
+      "sid": "task_T20__time",
+      "index": "time",
+      "selection": "time",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__conc__Cve_riv": {
+      "type": "TASK",
+      "sid": "task_T20__conc__Cve_riv",
+      "index": "Cve_riv",
+      "selection": "[Cve_riv]",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__conc__Cve_rx": {
+      "type": "TASK",
+      "sid": "task_T20__conc__Cve_rx",
+      "index": "Cve_rx",
+      "selection": "[Cve_rx]",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__conc__Cve_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T20__conc__Cve_riv_rx",
+      "index": "Cve_riv_rx",
+      "selection": "[Cve_riv_rx]",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__Aurine_riv": {
+      "type": "TASK",
+      "sid": "task_T20__Aurine_riv",
+      "index": "Aurine_riv",
+      "selection": "Aurine_riv",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__Aurine_rx": {
+      "type": "TASK",
+      "sid": "task_T20__Aurine_rx",
+      "index": "Aurine_rx",
+      "selection": "Aurine_rx",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__Aurine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T20__Aurine_riv_rx",
+      "index": "Aurine_riv_rx",
+      "selection": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__Afeces_riv": {
+      "type": "TASK",
+      "sid": "task_T20__Afeces_riv",
+      "index": "Afeces_riv",
+      "selection": "Afeces_riv",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__Afeces_rx": {
+      "type": "TASK",
+      "sid": "task_T20__Afeces_rx",
+      "index": "Afeces_rx",
+      "selection": "Afeces_rx",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__Afeces_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T20__Afeces_riv_rx",
+      "index": "Afeces_riv_rx",
+      "selection": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T20__Afeces_urine_riv_rx",
+      "index": "Afeces_urine_riv_rx",
+      "selection": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__KI__RIVEX": {
+      "type": "TASK",
+      "sid": "task_T20__KI__RIVEX",
+      "index": "KI__RIVEX",
+      "selection": "KI__RIVEX",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_T20__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__KI__f_renal_function": {
+      "type": "TASK",
+      "sid": "task_T20__KI__f_renal_function",
+      "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__f_cirrhosis": {
+      "type": "TASK",
+      "sid": "task_T20__f_cirrhosis",
+      "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__LI__f_cyp3a4": {
+      "type": "TASK",
+      "sid": "task_T20__LI__f_cyp3a4",
+      "index": "LI__f_cyp3a4",
+      "selection": "LI__f_cyp3a4",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__KI__f_pgp": {
+      "type": "TASK",
+      "sid": "task_T20__KI__f_pgp",
+      "index": "KI__f_pgp",
+      "selection": "KI__f_pgp",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__GU__fed": {
+      "type": "TASK",
+      "sid": "task_T20__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__PT": {
+      "type": "TASK",
+      "sid": "task_T20__PT",
+      "index": "PT",
+      "selection": "PT",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__PT_change": {
+      "type": "TASK",
+      "sid": "task_T20__PT_change",
+      "index": "PT_change",
+      "selection": "PT_change",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__PT_ratio": {
+      "type": "TASK",
+      "sid": "task_T20__PT_ratio",
+      "index": "PT_ratio",
+      "selection": "PT_ratio",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__aPTT": {
+      "type": "TASK",
+      "sid": "task_T20__aPTT",
+      "index": "aPTT",
+      "selection": "aPTT",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__aPTT_change": {
+      "type": "TASK",
+      "sid": "task_T20__aPTT_change",
+      "index": "aPTT_change",
+      "selection": "aPTT_change",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__aPTT_ratio": {
+      "type": "TASK",
+      "sid": "task_T20__aPTT_ratio",
+      "index": "aPTT_ratio",
+      "selection": "aPTT_ratio",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__Xa_inhibition": {
+      "type": "TASK",
+      "sid": "task_T20__Xa_inhibition",
+      "index": "Xa_inhibition",
+      "selection": "Xa_inhibition",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__PODOSE_riv": {
+      "type": "TASK",
+      "sid": "task_T20__PODOSE_riv",
+      "index": "PODOSE_riv",
+      "selection": "PODOSE_riv",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__POSOLUTION_riv": {
+      "type": "TASK",
+      "sid": "task_T20__POSOLUTION_riv",
+      "index": "POSOLUTION_riv",
+      "selection": "POSOLUTION_riv",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__GU__POSTOMACH_riv": {
+      "type": "TASK",
+      "sid": "task_T20__GU__POSTOMACH_riv",
+      "index": "GU__POSTOMACH_riv",
+      "selection": "GU__POSTOMACH_riv",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__GU__POINTESTINE_riv": {
+      "type": "TASK",
+      "sid": "task_T20__GU__POINTESTINE_riv",
+      "index": "GU__POINTESTINE_riv",
+      "selection": "GU__POINTESTINE_riv",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T20__IVDOSE_riv": {
+      "type": "TASK",
+      "sid": "task_T20__IVDOSE_riv",
+      "index": "IVDOSE_riv",
+      "selection": "IVDOSE_riv",
+      "unit": null,
+      "task": "task_T20",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__time": {
+      "type": "TASK",
+      "sid": "task_T40__time",
+      "index": "time",
+      "selection": "time",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__conc__Cve_riv": {
+      "type": "TASK",
+      "sid": "task_T40__conc__Cve_riv",
+      "index": "Cve_riv",
+      "selection": "[Cve_riv]",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__conc__Cve_rx": {
+      "type": "TASK",
+      "sid": "task_T40__conc__Cve_rx",
+      "index": "Cve_rx",
+      "selection": "[Cve_rx]",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__conc__Cve_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T40__conc__Cve_riv_rx",
+      "index": "Cve_riv_rx",
+      "selection": "[Cve_riv_rx]",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__Aurine_riv": {
+      "type": "TASK",
+      "sid": "task_T40__Aurine_riv",
+      "index": "Aurine_riv",
+      "selection": "Aurine_riv",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__Aurine_rx": {
+      "type": "TASK",
+      "sid": "task_T40__Aurine_rx",
+      "index": "Aurine_rx",
+      "selection": "Aurine_rx",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__Aurine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T40__Aurine_riv_rx",
+      "index": "Aurine_riv_rx",
+      "selection": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__Afeces_riv": {
+      "type": "TASK",
+      "sid": "task_T40__Afeces_riv",
+      "index": "Afeces_riv",
+      "selection": "Afeces_riv",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__Afeces_rx": {
+      "type": "TASK",
+      "sid": "task_T40__Afeces_rx",
+      "index": "Afeces_rx",
+      "selection": "Afeces_rx",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__Afeces_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T40__Afeces_riv_rx",
+      "index": "Afeces_riv_rx",
+      "selection": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T40__Afeces_urine_riv_rx",
+      "index": "Afeces_urine_riv_rx",
+      "selection": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__KI__RIVEX": {
+      "type": "TASK",
+      "sid": "task_T40__KI__RIVEX",
+      "index": "KI__RIVEX",
+      "selection": "KI__RIVEX",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_T40__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__KI__f_renal_function": {
+      "type": "TASK",
+      "sid": "task_T40__KI__f_renal_function",
+      "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__f_cirrhosis": {
+      "type": "TASK",
+      "sid": "task_T40__f_cirrhosis",
+      "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__LI__f_cyp3a4": {
+      "type": "TASK",
+      "sid": "task_T40__LI__f_cyp3a4",
+      "index": "LI__f_cyp3a4",
+      "selection": "LI__f_cyp3a4",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__KI__f_pgp": {
+      "type": "TASK",
+      "sid": "task_T40__KI__f_pgp",
+      "index": "KI__f_pgp",
+      "selection": "KI__f_pgp",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__GU__fed": {
+      "type": "TASK",
+      "sid": "task_T40__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__PT": {
+      "type": "TASK",
+      "sid": "task_T40__PT",
+      "index": "PT",
+      "selection": "PT",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__PT_change": {
+      "type": "TASK",
+      "sid": "task_T40__PT_change",
+      "index": "PT_change",
+      "selection": "PT_change",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__PT_ratio": {
+      "type": "TASK",
+      "sid": "task_T40__PT_ratio",
+      "index": "PT_ratio",
+      "selection": "PT_ratio",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__aPTT": {
+      "type": "TASK",
+      "sid": "task_T40__aPTT",
+      "index": "aPTT",
+      "selection": "aPTT",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__aPTT_change": {
+      "type": "TASK",
+      "sid": "task_T40__aPTT_change",
+      "index": "aPTT_change",
+      "selection": "aPTT_change",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__aPTT_ratio": {
+      "type": "TASK",
+      "sid": "task_T40__aPTT_ratio",
+      "index": "aPTT_ratio",
+      "selection": "aPTT_ratio",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__Xa_inhibition": {
+      "type": "TASK",
+      "sid": "task_T40__Xa_inhibition",
+      "index": "Xa_inhibition",
+      "selection": "Xa_inhibition",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__PODOSE_riv": {
+      "type": "TASK",
+      "sid": "task_T40__PODOSE_riv",
+      "index": "PODOSE_riv",
+      "selection": "PODOSE_riv",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__POSOLUTION_riv": {
+      "type": "TASK",
+      "sid": "task_T40__POSOLUTION_riv",
+      "index": "POSOLUTION_riv",
+      "selection": "POSOLUTION_riv",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__GU__POSTOMACH_riv": {
+      "type": "TASK",
+      "sid": "task_T40__GU__POSTOMACH_riv",
+      "index": "GU__POSTOMACH_riv",
+      "selection": "GU__POSTOMACH_riv",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__GU__POINTESTINE_riv": {
+      "type": "TASK",
+      "sid": "task_T40__GU__POINTESTINE_riv",
+      "index": "GU__POINTESTINE_riv",
+      "selection": "GU__POINTESTINE_riv",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T40__IVDOSE_riv": {
+      "type": "TASK",
+      "sid": "task_T40__IVDOSE_riv",
+      "index": "IVDOSE_riv",
+      "selection": "IVDOSE_riv",
+      "unit": null,
+      "task": "task_T40",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__time": {
+      "type": "TASK",
+      "sid": "task_T80__time",
+      "index": "time",
+      "selection": "time",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__conc__Cve_riv": {
+      "type": "TASK",
+      "sid": "task_T80__conc__Cve_riv",
+      "index": "Cve_riv",
+      "selection": "[Cve_riv]",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__conc__Cve_rx": {
+      "type": "TASK",
+      "sid": "task_T80__conc__Cve_rx",
+      "index": "Cve_rx",
+      "selection": "[Cve_rx]",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__conc__Cve_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T80__conc__Cve_riv_rx",
+      "index": "Cve_riv_rx",
+      "selection": "[Cve_riv_rx]",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__Aurine_riv": {
+      "type": "TASK",
+      "sid": "task_T80__Aurine_riv",
+      "index": "Aurine_riv",
+      "selection": "Aurine_riv",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__Aurine_rx": {
+      "type": "TASK",
+      "sid": "task_T80__Aurine_rx",
+      "index": "Aurine_rx",
+      "selection": "Aurine_rx",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__Aurine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T80__Aurine_riv_rx",
+      "index": "Aurine_riv_rx",
+      "selection": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__Afeces_riv": {
+      "type": "TASK",
+      "sid": "task_T80__Afeces_riv",
+      "index": "Afeces_riv",
+      "selection": "Afeces_riv",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__Afeces_rx": {
+      "type": "TASK",
+      "sid": "task_T80__Afeces_rx",
+      "index": "Afeces_rx",
+      "selection": "Afeces_rx",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__Afeces_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T80__Afeces_riv_rx",
+      "index": "Afeces_riv_rx",
+      "selection": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_T80__Afeces_urine_riv_rx",
+      "index": "Afeces_urine_riv_rx",
+      "selection": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__KI__RIVEX": {
+      "type": "TASK",
+      "sid": "task_T80__KI__RIVEX",
+      "index": "KI__RIVEX",
+      "selection": "KI__RIVEX",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_T80__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__KI__f_renal_function": {
+      "type": "TASK",
+      "sid": "task_T80__KI__f_renal_function",
+      "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__f_cirrhosis": {
+      "type": "TASK",
+      "sid": "task_T80__f_cirrhosis",
+      "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__LI__f_cyp3a4": {
+      "type": "TASK",
+      "sid": "task_T80__LI__f_cyp3a4",
+      "index": "LI__f_cyp3a4",
+      "selection": "LI__f_cyp3a4",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__KI__f_pgp": {
+      "type": "TASK",
+      "sid": "task_T80__KI__f_pgp",
+      "index": "KI__f_pgp",
+      "selection": "KI__f_pgp",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__GU__fed": {
+      "type": "TASK",
+      "sid": "task_T80__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__PT": {
+      "type": "TASK",
+      "sid": "task_T80__PT",
+      "index": "PT",
+      "selection": "PT",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__PT_change": {
+      "type": "TASK",
+      "sid": "task_T80__PT_change",
+      "index": "PT_change",
+      "selection": "PT_change",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__PT_ratio": {
+      "type": "TASK",
+      "sid": "task_T80__PT_ratio",
+      "index": "PT_ratio",
+      "selection": "PT_ratio",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__aPTT": {
+      "type": "TASK",
+      "sid": "task_T80__aPTT",
+      "index": "aPTT",
+      "selection": "aPTT",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__aPTT_change": {
+      "type": "TASK",
+      "sid": "task_T80__aPTT_change",
+      "index": "aPTT_change",
+      "selection": "aPTT_change",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__aPTT_ratio": {
+      "type": "TASK",
+      "sid": "task_T80__aPTT_ratio",
+      "index": "aPTT_ratio",
+      "selection": "aPTT_ratio",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__Xa_inhibition": {
+      "type": "TASK",
+      "sid": "task_T80__Xa_inhibition",
+      "index": "Xa_inhibition",
+      "selection": "Xa_inhibition",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__PODOSE_riv": {
+      "type": "TASK",
+      "sid": "task_T80__PODOSE_riv",
+      "index": "PODOSE_riv",
+      "selection": "PODOSE_riv",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__POSOLUTION_riv": {
+      "type": "TASK",
+      "sid": "task_T80__POSOLUTION_riv",
+      "index": "POSOLUTION_riv",
+      "selection": "POSOLUTION_riv",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__GU__POSTOMACH_riv": {
+      "type": "TASK",
+      "sid": "task_T80__GU__POSTOMACH_riv",
+      "index": "GU__POSTOMACH_riv",
+      "selection": "GU__POSTOMACH_riv",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__GU__POINTESTINE_riv": {
+      "type": "TASK",
+      "sid": "task_T80__GU__POINTESTINE_riv",
+      "index": "GU__POINTESTINE_riv",
+      "selection": "GU__POINTESTINE_riv",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_T80__IVDOSE_riv": {
+      "type": "TASK",
+      "sid": "task_T80__IVDOSE_riv",
+      "index": "IVDOSE_riv",
+      "selection": "IVDOSE_riv",
+      "unit": null,
+      "task": "task_T80",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__time": {
+      "type": "TASK",
+      "sid": "task_S5__time",
+      "index": "time",
+      "selection": "time",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__conc__Cve_riv": {
+      "type": "TASK",
+      "sid": "task_S5__conc__Cve_riv",
+      "index": "Cve_riv",
+      "selection": "[Cve_riv]",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__conc__Cve_rx": {
+      "type": "TASK",
+      "sid": "task_S5__conc__Cve_rx",
+      "index": "Cve_rx",
+      "selection": "[Cve_rx]",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__conc__Cve_riv_rx": {
+      "type": "TASK",
+      "sid": "task_S5__conc__Cve_riv_rx",
+      "index": "Cve_riv_rx",
+      "selection": "[Cve_riv_rx]",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__Aurine_riv": {
+      "type": "TASK",
+      "sid": "task_S5__Aurine_riv",
+      "index": "Aurine_riv",
+      "selection": "Aurine_riv",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__Aurine_rx": {
+      "type": "TASK",
+      "sid": "task_S5__Aurine_rx",
+      "index": "Aurine_rx",
+      "selection": "Aurine_rx",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__Aurine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_S5__Aurine_riv_rx",
+      "index": "Aurine_riv_rx",
+      "selection": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__Afeces_riv": {
+      "type": "TASK",
+      "sid": "task_S5__Afeces_riv",
+      "index": "Afeces_riv",
+      "selection": "Afeces_riv",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__Afeces_rx": {
+      "type": "TASK",
+      "sid": "task_S5__Afeces_rx",
+      "index": "Afeces_rx",
+      "selection": "Afeces_rx",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__Afeces_riv_rx": {
+      "type": "TASK",
+      "sid": "task_S5__Afeces_riv_rx",
+      "index": "Afeces_riv_rx",
+      "selection": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_S5__Afeces_urine_riv_rx",
+      "index": "Afeces_urine_riv_rx",
+      "selection": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__KI__RIVEX": {
+      "type": "TASK",
+      "sid": "task_S5__KI__RIVEX",
+      "index": "KI__RIVEX",
+      "selection": "KI__RIVEX",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_S5__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__KI__f_renal_function": {
+      "type": "TASK",
+      "sid": "task_S5__KI__f_renal_function",
+      "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__f_cirrhosis": {
+      "type": "TASK",
+      "sid": "task_S5__f_cirrhosis",
+      "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__LI__f_cyp3a4": {
+      "type": "TASK",
+      "sid": "task_S5__LI__f_cyp3a4",
+      "index": "LI__f_cyp3a4",
+      "selection": "LI__f_cyp3a4",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__KI__f_pgp": {
+      "type": "TASK",
+      "sid": "task_S5__KI__f_pgp",
+      "index": "KI__f_pgp",
+      "selection": "KI__f_pgp",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__GU__fed": {
+      "type": "TASK",
+      "sid": "task_S5__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__PT": {
+      "type": "TASK",
+      "sid": "task_S5__PT",
+      "index": "PT",
+      "selection": "PT",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__PT_change": {
+      "type": "TASK",
+      "sid": "task_S5__PT_change",
+      "index": "PT_change",
+      "selection": "PT_change",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__PT_ratio": {
+      "type": "TASK",
+      "sid": "task_S5__PT_ratio",
+      "index": "PT_ratio",
+      "selection": "PT_ratio",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__aPTT": {
+      "type": "TASK",
+      "sid": "task_S5__aPTT",
+      "index": "aPTT",
+      "selection": "aPTT",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__aPTT_change": {
+      "type": "TASK",
+      "sid": "task_S5__aPTT_change",
+      "index": "aPTT_change",
+      "selection": "aPTT_change",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__aPTT_ratio": {
+      "type": "TASK",
+      "sid": "task_S5__aPTT_ratio",
+      "index": "aPTT_ratio",
+      "selection": "aPTT_ratio",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__Xa_inhibition": {
+      "type": "TASK",
+      "sid": "task_S5__Xa_inhibition",
+      "index": "Xa_inhibition",
+      "selection": "Xa_inhibition",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__PODOSE_riv": {
+      "type": "TASK",
+      "sid": "task_S5__PODOSE_riv",
+      "index": "PODOSE_riv",
+      "selection": "PODOSE_riv",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__POSOLUTION_riv": {
+      "type": "TASK",
+      "sid": "task_S5__POSOLUTION_riv",
+      "index": "POSOLUTION_riv",
+      "selection": "POSOLUTION_riv",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__GU__POSTOMACH_riv": {
+      "type": "TASK",
+      "sid": "task_S5__GU__POSTOMACH_riv",
+      "index": "GU__POSTOMACH_riv",
+      "selection": "GU__POSTOMACH_riv",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__GU__POINTESTINE_riv": {
+      "type": "TASK",
+      "sid": "task_S5__GU__POINTESTINE_riv",
+      "index": "GU__POINTESTINE_riv",
+      "selection": "GU__POINTESTINE_riv",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S5__IVDOSE_riv": {
+      "type": "TASK",
+      "sid": "task_S5__IVDOSE_riv",
+      "index": "IVDOSE_riv",
+      "selection": "IVDOSE_riv",
+      "unit": null,
+      "task": "task_S5",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__time": {
+      "type": "TASK",
+      "sid": "task_S10__time",
+      "index": "time",
+      "selection": "time",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__conc__Cve_riv": {
+      "type": "TASK",
+      "sid": "task_S10__conc__Cve_riv",
+      "index": "Cve_riv",
+      "selection": "[Cve_riv]",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__conc__Cve_rx": {
+      "type": "TASK",
+      "sid": "task_S10__conc__Cve_rx",
+      "index": "Cve_rx",
+      "selection": "[Cve_rx]",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__conc__Cve_riv_rx": {
+      "type": "TASK",
+      "sid": "task_S10__conc__Cve_riv_rx",
+      "index": "Cve_riv_rx",
+      "selection": "[Cve_riv_rx]",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__Aurine_riv": {
+      "type": "TASK",
+      "sid": "task_S10__Aurine_riv",
+      "index": "Aurine_riv",
+      "selection": "Aurine_riv",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__Aurine_rx": {
+      "type": "TASK",
+      "sid": "task_S10__Aurine_rx",
+      "index": "Aurine_rx",
+      "selection": "Aurine_rx",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__Aurine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_S10__Aurine_riv_rx",
+      "index": "Aurine_riv_rx",
+      "selection": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__Afeces_riv": {
+      "type": "TASK",
+      "sid": "task_S10__Afeces_riv",
+      "index": "Afeces_riv",
+      "selection": "Afeces_riv",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__Afeces_rx": {
+      "type": "TASK",
+      "sid": "task_S10__Afeces_rx",
+      "index": "Afeces_rx",
+      "selection": "Afeces_rx",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__Afeces_riv_rx": {
+      "type": "TASK",
+      "sid": "task_S10__Afeces_riv_rx",
+      "index": "Afeces_riv_rx",
+      "selection": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_S10__Afeces_urine_riv_rx",
+      "index": "Afeces_urine_riv_rx",
+      "selection": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__KI__RIVEX": {
+      "type": "TASK",
+      "sid": "task_S10__KI__RIVEX",
+      "index": "KI__RIVEX",
+      "selection": "KI__RIVEX",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_S10__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__KI__f_renal_function": {
+      "type": "TASK",
+      "sid": "task_S10__KI__f_renal_function",
+      "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__f_cirrhosis": {
+      "type": "TASK",
+      "sid": "task_S10__f_cirrhosis",
+      "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__LI__f_cyp3a4": {
+      "type": "TASK",
+      "sid": "task_S10__LI__f_cyp3a4",
+      "index": "LI__f_cyp3a4",
+      "selection": "LI__f_cyp3a4",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__KI__f_pgp": {
+      "type": "TASK",
+      "sid": "task_S10__KI__f_pgp",
+      "index": "KI__f_pgp",
+      "selection": "KI__f_pgp",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__GU__fed": {
+      "type": "TASK",
+      "sid": "task_S10__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__PT": {
+      "type": "TASK",
+      "sid": "task_S10__PT",
+      "index": "PT",
+      "selection": "PT",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__PT_change": {
+      "type": "TASK",
+      "sid": "task_S10__PT_change",
+      "index": "PT_change",
+      "selection": "PT_change",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__PT_ratio": {
+      "type": "TASK",
+      "sid": "task_S10__PT_ratio",
+      "index": "PT_ratio",
+      "selection": "PT_ratio",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__aPTT": {
+      "type": "TASK",
+      "sid": "task_S10__aPTT",
+      "index": "aPTT",
+      "selection": "aPTT",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__aPTT_change": {
+      "type": "TASK",
+      "sid": "task_S10__aPTT_change",
+      "index": "aPTT_change",
+      "selection": "aPTT_change",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__aPTT_ratio": {
+      "type": "TASK",
+      "sid": "task_S10__aPTT_ratio",
+      "index": "aPTT_ratio",
+      "selection": "aPTT_ratio",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__Xa_inhibition": {
+      "type": "TASK",
+      "sid": "task_S10__Xa_inhibition",
+      "index": "Xa_inhibition",
+      "selection": "Xa_inhibition",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__PODOSE_riv": {
+      "type": "TASK",
+      "sid": "task_S10__PODOSE_riv",
+      "index": "PODOSE_riv",
+      "selection": "PODOSE_riv",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__POSOLUTION_riv": {
+      "type": "TASK",
+      "sid": "task_S10__POSOLUTION_riv",
+      "index": "POSOLUTION_riv",
+      "selection": "POSOLUTION_riv",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__GU__POSTOMACH_riv": {
+      "type": "TASK",
+      "sid": "task_S10__GU__POSTOMACH_riv",
+      "index": "GU__POSTOMACH_riv",
+      "selection": "GU__POSTOMACH_riv",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__GU__POINTESTINE_riv": {
+      "type": "TASK",
+      "sid": "task_S10__GU__POINTESTINE_riv",
+      "index": "GU__POINTESTINE_riv",
+      "selection": "GU__POINTESTINE_riv",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_S10__IVDOSE_riv": {
+      "type": "TASK",
+      "sid": "task_S10__IVDOSE_riv",
+      "index": "IVDOSE_riv",
+      "selection": "IVDOSE_riv",
+      "unit": null,
+      "task": "task_S10",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__time": {
+      "type": "TASK",
+      "sid": "task_P__time",
+      "index": "time",
+      "selection": "time",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__conc__Cve_riv": {
+      "type": "TASK",
+      "sid": "task_P__conc__Cve_riv",
+      "index": "Cve_riv",
+      "selection": "[Cve_riv]",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__conc__Cve_rx": {
+      "type": "TASK",
+      "sid": "task_P__conc__Cve_rx",
+      "index": "Cve_rx",
+      "selection": "[Cve_rx]",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__conc__Cve_riv_rx": {
+      "type": "TASK",
+      "sid": "task_P__conc__Cve_riv_rx",
+      "index": "Cve_riv_rx",
+      "selection": "[Cve_riv_rx]",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__Aurine_riv": {
+      "type": "TASK",
+      "sid": "task_P__Aurine_riv",
+      "index": "Aurine_riv",
+      "selection": "Aurine_riv",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__Aurine_rx": {
+      "type": "TASK",
+      "sid": "task_P__Aurine_rx",
+      "index": "Aurine_rx",
+      "selection": "Aurine_rx",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__Aurine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_P__Aurine_riv_rx",
+      "index": "Aurine_riv_rx",
+      "selection": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__Afeces_riv": {
+      "type": "TASK",
+      "sid": "task_P__Afeces_riv",
+      "index": "Afeces_riv",
+      "selection": "Afeces_riv",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__Afeces_rx": {
+      "type": "TASK",
+      "sid": "task_P__Afeces_rx",
+      "index": "Afeces_rx",
+      "selection": "Afeces_rx",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__Afeces_riv_rx": {
+      "type": "TASK",
+      "sid": "task_P__Afeces_riv_rx",
+      "index": "Afeces_riv_rx",
+      "selection": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_P__Afeces_urine_riv_rx",
+      "index": "Afeces_urine_riv_rx",
+      "selection": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__KI__RIVEX": {
+      "type": "TASK",
+      "sid": "task_P__KI__RIVEX",
+      "index": "KI__RIVEX",
+      "selection": "KI__RIVEX",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_P__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__KI__f_renal_function": {
+      "type": "TASK",
+      "sid": "task_P__KI__f_renal_function",
+      "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__f_cirrhosis": {
+      "type": "TASK",
+      "sid": "task_P__f_cirrhosis",
+      "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__LI__f_cyp3a4": {
+      "type": "TASK",
+      "sid": "task_P__LI__f_cyp3a4",
+      "index": "LI__f_cyp3a4",
+      "selection": "LI__f_cyp3a4",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__KI__f_pgp": {
+      "type": "TASK",
+      "sid": "task_P__KI__f_pgp",
+      "index": "KI__f_pgp",
+      "selection": "KI__f_pgp",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__GU__fed": {
+      "type": "TASK",
+      "sid": "task_P__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__PT": {
+      "type": "TASK",
+      "sid": "task_P__PT",
+      "index": "PT",
+      "selection": "PT",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__PT_change": {
+      "type": "TASK",
+      "sid": "task_P__PT_change",
+      "index": "PT_change",
+      "selection": "PT_change",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__PT_ratio": {
+      "type": "TASK",
+      "sid": "task_P__PT_ratio",
+      "index": "PT_ratio",
+      "selection": "PT_ratio",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__aPTT": {
+      "type": "TASK",
+      "sid": "task_P__aPTT",
+      "index": "aPTT",
+      "selection": "aPTT",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__aPTT_change": {
+      "type": "TASK",
+      "sid": "task_P__aPTT_change",
+      "index": "aPTT_change",
+      "selection": "aPTT_change",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__aPTT_ratio": {
+      "type": "TASK",
+      "sid": "task_P__aPTT_ratio",
+      "index": "aPTT_ratio",
+      "selection": "aPTT_ratio",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__Xa_inhibition": {
+      "type": "TASK",
+      "sid": "task_P__Xa_inhibition",
+      "index": "Xa_inhibition",
+      "selection": "Xa_inhibition",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__PODOSE_riv": {
+      "type": "TASK",
+      "sid": "task_P__PODOSE_riv",
+      "index": "PODOSE_riv",
+      "selection": "PODOSE_riv",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__POSOLUTION_riv": {
+      "type": "TASK",
+      "sid": "task_P__POSOLUTION_riv",
+      "index": "POSOLUTION_riv",
+      "selection": "POSOLUTION_riv",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__GU__POSTOMACH_riv": {
+      "type": "TASK",
+      "sid": "task_P__GU__POSTOMACH_riv",
+      "index": "GU__POSTOMACH_riv",
+      "selection": "GU__POSTOMACH_riv",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__GU__POINTESTINE_riv": {
+      "type": "TASK",
+      "sid": "task_P__GU__POINTESTINE_riv",
+      "index": "GU__POINTESTINE_riv",
+      "selection": "GU__POINTESTINE_riv",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_P__IVDOSE_riv": {
+      "type": "TASK",
+      "sid": "task_P__IVDOSE_riv",
+      "index": "IVDOSE_riv",
+      "selection": "IVDOSE_riv",
+      "unit": null,
+      "task": "task_P",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    }
+  },
+  "figures": {
+    "Fig5A": {
+      "sid": "Fig5A",
+      "name": "Kubitza2005a",
+      "num_rows": 1,
+      "num_cols": 1,
+      "width": null,
+      "height": null,
+      "settings": {
+        "legend_position": "outside"
+      },
+      "subplots": [
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig5A__plot0",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig5A__plot0_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": 30,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig5A__plot0_yaxis",
+              "name": "rivaroxaban plasma [\u00b5M]",
+              "label": "rivaroxaban plasma",
+              "unit": "\u00b5M",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig5A__plot0_curve0",
+                "name": "Rivaroxaban 1.25 mg",
+                "x": "task_T1p25__time",
+                "y": "task_T1p25__conc__Cve_riv",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#E6C229ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#E6C229ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#E6C229ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig5A__plot0_curve1",
+                "name": "Rivaroxaban 1.25 mg\u00b1SD (n=8)",
+                "x": "Fig5_rivaroxaban_T1p25__time",
+                "y": "Fig5_rivaroxaban_T1p25__mean",
+                "xerr": null,
+                "yerr": "Fig5_rivaroxaban_T1p25__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#E6C229ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#E6C229ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#E6C229ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig5A__plot0_curve2",
+                "name": "Rivaroxaban 5 mg",
+                "x": "task_T5__time",
+                "y": "task_T5__conc__Cve_riv",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#FFD580ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#FFD580ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFD580ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig5A__plot0_curve3",
+                "name": "Rivaroxaban 5 mg\u00b1SD (n=6)",
+                "x": "Fig5_rivaroxaban_T5__time",
+                "y": "Fig5_rivaroxaban_T5__mean",
+                "xerr": null,
+                "yerr": "Fig5_rivaroxaban_T5__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#FFD580ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#FFD580ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFD580ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig5A__plot0_curve4",
+                "name": "Rivaroxaban 10 mg",
+                "x": "task_T10__time",
+                "y": "task_T10__conc__Cve_riv",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#FFB347ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#FFB347ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFB347ff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig5A__plot0_curve5",
+                "name": "Rivaroxaban 10 mg\u00b1SD (n=8)",
+                "x": "Fig5_rivaroxaban_T10__time",
+                "y": "Fig5_rivaroxaban_T10__mean",
+                "xerr": null,
+                "yerr": "Fig5_rivaroxaban_T10__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#FFB347ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#FFB347ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFB347ff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              },
+              {
+                "sid": "Fig5A__plot0_curve6",
+                "name": "Rivaroxaban 20 mg",
+                "x": "task_T20__time",
+                "y": "task_T20__conc__Cve_riv",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#FF7043ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#FF7043ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FF7043ff",
+                    "second_color": null
+                  }
+                },
+                "order": 6
+              },
+              {
+                "sid": "Fig5A__plot0_curve7",
+                "name": "Rivaroxaban 20 mg\u00b1SD (n=7)",
+                "x": "Fig5_rivaroxaban_T20__time",
+                "y": "Fig5_rivaroxaban_T20__mean",
+                "xerr": null,
+                "yerr": "Fig5_rivaroxaban_T20__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#FF7043ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#FF7043ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FF7043ff",
+                    "second_color": null
+                  }
+                },
+                "order": 7
+              },
+              {
+                "sid": "Fig5A__plot0_curve8",
+                "name": "Rivaroxaban 40 mg",
+                "x": "task_T40__time",
+                "y": "task_T40__conc__Cve_riv",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#A63C00ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#A63C00ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#A63C00ff",
+                    "second_color": null
+                  }
+                },
+                "order": 8
+              },
+              {
+                "sid": "Fig5A__plot0_curve9",
+                "name": "Rivaroxaban 40 mg\u00b1SD (n=8)",
+                "x": "Fig5_rivaroxaban_T40__time",
+                "y": "Fig5_rivaroxaban_T40__mean",
+                "xerr": null,
+                "yerr": "Fig5_rivaroxaban_T40__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#A63C00ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#A63C00ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#A63C00ff",
+                    "second_color": null
+                  }
+                },
+                "order": 9
+              },
+              {
+                "sid": "Fig5A__plot0_curve10",
+                "name": "Rivaroxaban 80 mg",
+                "x": "task_T80__time",
+                "y": "task_T80__conc__Cve_riv",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#4C1F00ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#4C1F00ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#4C1F00ff",
+                    "second_color": null
+                  }
+                },
+                "order": 10
+              },
+              {
+                "sid": "Fig5A__plot0_curve11",
+                "name": "Rivaroxaban 80 mg\u00b1SD (n=6)",
+                "x": "Fig5_rivaroxaban_T80__time",
+                "y": "Fig5_rivaroxaban_T80__mean",
+                "xerr": null,
+                "yerr": "Fig5_rivaroxaban_T80__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#4C1F00ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#4C1F00ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#4C1F00ff",
+                    "second_color": null
+                  }
+                },
+                "order": 11
+              }
+            ],
+            "areas": [],
+            "bands": []
+          },
+          "row": 1,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        }
+      ]
+    },
+    "Fig3": {
+      "sid": "Fig3",
+      "name": "Kubitza2005a",
+      "num_rows": 3,
+      "num_cols": 1,
+      "width": null,
+      "height": null,
+      "settings": {
+        "legend_position": "outside"
+      },
+      "subplots": [
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig3__plot0",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig3__plot0_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": 30,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig3__plot0_yaxis",
+              "name": "Xa inhibition [-]",
+              "label": "Xa inhibition",
+              "unit": "dimensionless",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig3__plot0_curve0",
+                "name": "Placebo",
+                "x": "task_P__time",
+                "y": "task_P__Xa_inhibition",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig3__plot0_curve1",
+                "name": "Placebo (n=9)",
+                "x": "Fig3A_factor_Xa_inhibition_P__time",
+                "y": "Fig3A_factor_Xa_inhibition_P__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#000000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig3__plot0_curve2",
+                "name": "Rivaroxaban 1.25 mg",
+                "x": "task_T1p25__time",
+                "y": "task_T1p25__Xa_inhibition",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#E6C229ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#E6C229ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#E6C229ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig3__plot0_curve3",
+                "name": "Rivaroxaban 1.25 mg (n=8)",
+                "x": "Fig3A_factor_Xa_inhibition_T1p25__time",
+                "y": "Fig3A_factor_Xa_inhibition_T1p25__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#E6C229ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#E6C229ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#E6C229ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig3__plot0_curve4",
+                "name": "Rivaroxaban 5 mg",
+                "x": "task_T5__time",
+                "y": "task_T5__Xa_inhibition",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#FFD580ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#FFD580ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFD580ff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig3__plot0_curve5",
+                "name": "Rivaroxaban 5 mg (n=6)",
+                "x": "Fig3A_factor_Xa_inhibition_T5__time",
+                "y": "Fig3A_factor_Xa_inhibition_T5__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#FFD580ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#FFD580ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFD580ff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              },
+              {
+                "sid": "Fig3__plot0_curve6",
+                "name": "Rivaroxaban 10 mg",
+                "x": "task_T10__time",
+                "y": "task_T10__Xa_inhibition",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#FFB347ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#FFB347ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFB347ff",
+                    "second_color": null
+                  }
+                },
+                "order": 6
+              },
+              {
+                "sid": "Fig3__plot0_curve7",
+                "name": "Rivaroxaban 10 mg (n=8)",
+                "x": "Fig3A_factor_Xa_inhibition_T10__time",
+                "y": "Fig3A_factor_Xa_inhibition_T10__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#FFB347ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#FFB347ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFB347ff",
+                    "second_color": null
+                  }
+                },
+                "order": 7
+              },
+              {
+                "sid": "Fig3__plot0_curve8",
+                "name": "Rivaroxaban 20 mg",
+                "x": "task_T20__time",
+                "y": "task_T20__Xa_inhibition",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#FF7043ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#FF7043ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FF7043ff",
+                    "second_color": null
+                  }
+                },
+                "order": 8
+              },
+              {
+                "sid": "Fig3__plot0_curve9",
+                "name": "Rivaroxaban 20 mg (n=7)",
+                "x": "Fig3A_factor_Xa_inhibition_T20__time",
+                "y": "Fig3A_factor_Xa_inhibition_T20__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#FF7043ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#FF7043ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FF7043ff",
+                    "second_color": null
+                  }
+                },
+                "order": 9
+              },
+              {
+                "sid": "Fig3__plot0_curve10",
+                "name": "Rivaroxaban 40 mg",
+                "x": "task_T40__time",
+                "y": "task_T40__Xa_inhibition",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#A63C00ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#A63C00ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#A63C00ff",
+                    "second_color": null
+                  }
+                },
+                "order": 10
+              },
+              {
+                "sid": "Fig3__plot0_curve11",
+                "name": "Rivaroxaban 40 mg (n=8)",
+                "x": "Fig3A_factor_Xa_inhibition_T40__time",
+                "y": "Fig3A_factor_Xa_inhibition_T40__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#A63C00ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#A63C00ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#A63C00ff",
+                    "second_color": null
+                  }
+                },
+                "order": 11
+              },
+              {
+                "sid": "Fig3__plot0_curve12",
+                "name": "Rivaroxaban 80 mg",
+                "x": "task_T80__time",
+                "y": "task_T80__Xa_inhibition",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#4C1F00ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#4C1F00ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#4C1F00ff",
+                    "second_color": null
+                  }
+                },
+                "order": 12
+              },
+              {
+                "sid": "Fig3__plot0_curve13",
+                "name": "Rivaroxaban 80 mg (n=6)",
+                "x": "Fig3A_factor_Xa_inhibition_T80__time",
+                "y": "Fig3A_factor_Xa_inhibition_T80__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#4C1F00ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#4C1F00ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#4C1F00ff",
+                    "second_color": null
+                  }
+                },
+                "order": 13
+              }
+            ],
+            "areas": [],
+            "bands": []
+          },
+          "row": 1,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        },
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig3__plot1",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig3__plot1_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": 30,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig3__plot1_yaxis",
+              "name": "PT ratio [-]",
+              "label": "PT ratio",
+              "unit": "dimensionless",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": false,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig3__plot1_curve0",
+                "name": "Placebo",
+                "x": "task_P__time",
+                "y": "task_P__PT_ratio",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig3__plot1_curve1",
+                "name": "Placebo (n=9)",
+                "x": "Fig3B_prothrombin_time__change_relative__P__time",
+                "y": "Fig3B_prothrombin_time__change_relative__P__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#000000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig3__plot1_curve2",
+                "name": "Rivaroxaban 1.25 mg",
+                "x": "task_T1p25__time",
+                "y": "task_T1p25__PT_ratio",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#E6C229ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#E6C229ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#E6C229ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig3__plot1_curve3",
+                "name": "Rivaroxaban 1.25 mg (n=8)",
+                "x": "Fig3B_prothrombin_time__change_relative__T1p25__time",
+                "y": "Fig3B_prothrombin_time__change_relative__T1p25__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#E6C229ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#E6C229ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#E6C229ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig3__plot1_curve4",
+                "name": "Rivaroxaban 5 mg",
+                "x": "task_T5__time",
+                "y": "task_T5__PT_ratio",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#FFD580ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#FFD580ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFD580ff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig3__plot1_curve5",
+                "name": "Rivaroxaban 5 mg (n=6)",
+                "x": "Fig3B_prothrombin_time__change_relative__T5__time",
+                "y": "Fig3B_prothrombin_time__change_relative__T5__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#FFD580ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#FFD580ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFD580ff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              },
+              {
+                "sid": "Fig3__plot1_curve6",
+                "name": "Rivaroxaban 10 mg",
+                "x": "task_T10__time",
+                "y": "task_T10__PT_ratio",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#FFB347ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#FFB347ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFB347ff",
+                    "second_color": null
+                  }
+                },
+                "order": 6
+              },
+              {
+                "sid": "Fig3__plot1_curve7",
+                "name": "Rivaroxaban 10 mg (n=8)",
+                "x": "Fig3B_prothrombin_time__change_relative__T10__time",
+                "y": "Fig3B_prothrombin_time__change_relative__T10__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#FFB347ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#FFB347ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFB347ff",
+                    "second_color": null
+                  }
+                },
+                "order": 7
+              },
+              {
+                "sid": "Fig3__plot1_curve8",
+                "name": "Rivaroxaban 20 mg",
+                "x": "task_T20__time",
+                "y": "task_T20__PT_ratio",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#FF7043ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#FF7043ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FF7043ff",
+                    "second_color": null
+                  }
+                },
+                "order": 8
+              },
+              {
+                "sid": "Fig3__plot1_curve9",
+                "name": "Rivaroxaban 20 mg (n=7)",
+                "x": "Fig3B_prothrombin_time__change_relative__T20__time",
+                "y": "Fig3B_prothrombin_time__change_relative__T20__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#FF7043ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#FF7043ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FF7043ff",
+                    "second_color": null
+                  }
+                },
+                "order": 9
+              },
+              {
+                "sid": "Fig3__plot1_curve10",
+                "name": "Rivaroxaban 40 mg",
+                "x": "task_T40__time",
+                "y": "task_T40__PT_ratio",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#A63C00ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#A63C00ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#A63C00ff",
+                    "second_color": null
+                  }
+                },
+                "order": 10
+              },
+              {
+                "sid": "Fig3__plot1_curve11",
+                "name": "Rivaroxaban 40 mg (n=8)",
+                "x": "Fig3B_prothrombin_time__change_relative__T40__time",
+                "y": "Fig3B_prothrombin_time__change_relative__T40__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#A63C00ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#A63C00ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#A63C00ff",
+                    "second_color": null
+                  }
+                },
+                "order": 11
+              },
+              {
+                "sid": "Fig3__plot1_curve12",
+                "name": "Rivaroxaban 80 mg",
+                "x": "task_T80__time",
+                "y": "task_T80__PT_ratio",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#4C1F00ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#4C1F00ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#4C1F00ff",
+                    "second_color": null
+                  }
+                },
+                "order": 12
+              },
+              {
+                "sid": "Fig3__plot1_curve13",
+                "name": "Rivaroxaban 80 mg (n=6)",
+                "x": "Fig3B_prothrombin_time__change_relative__T80__time",
+                "y": "Fig3B_prothrombin_time__change_relative__T80__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#4C1F00ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#4C1F00ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#4C1F00ff",
+                    "second_color": null
+                  }
+                },
+                "order": 13
+              }
+            ],
+            "areas": [],
+            "bands": []
+          },
+          "row": 2,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        },
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig3__plot2",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig3__plot2_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": 30,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig3__plot2_yaxis",
+              "name": "aPTT ratio [-]",
+              "label": "aPTT ratio",
+              "unit": "dimensionless",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": false,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig3__plot2_curve0",
+                "name": "Placebo",
+                "x": "task_P__time",
+                "y": "task_P__aPTT_ratio",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig3__plot2_curve1",
+                "name": "Placebo (n=9)",
+                "x": "Fig3C_aPTT__change_relative__P__time",
+                "y": "Fig3C_aPTT__change_relative__P__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#000000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig3__plot2_curve2",
+                "name": "Rivaroxaban 1.25 mg",
+                "x": "task_T1p25__time",
+                "y": "task_T1p25__aPTT_ratio",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#E6C229ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#E6C229ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#E6C229ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig3__plot2_curve3",
+                "name": "Rivaroxaban 1.25 mg (n=8)",
+                "x": "Fig3C_aPTT__change_relative__T1p25__time",
+                "y": "Fig3C_aPTT__change_relative__T1p25__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#E6C229ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#E6C229ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#E6C229ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig3__plot2_curve4",
+                "name": "Rivaroxaban 5 mg",
+                "x": "task_T5__time",
+                "y": "task_T5__aPTT_ratio",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#FFD580ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#FFD580ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFD580ff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig3__plot2_curve5",
+                "name": "Rivaroxaban 5 mg (n=6)",
+                "x": "Fig3C_aPTT__change_relative__T5__time",
+                "y": "Fig3C_aPTT__change_relative__T5__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#FFD580ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#FFD580ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFD580ff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              },
+              {
+                "sid": "Fig3__plot2_curve6",
+                "name": "Rivaroxaban 10 mg",
+                "x": "task_T10__time",
+                "y": "task_T10__aPTT_ratio",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#FFB347ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#FFB347ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFB347ff",
+                    "second_color": null
+                  }
+                },
+                "order": 6
+              },
+              {
+                "sid": "Fig3__plot2_curve7",
+                "name": "Rivaroxaban 10 mg (n=8)",
+                "x": "Fig3C_aPTT__change_relative__T10__time",
+                "y": "Fig3C_aPTT__change_relative__T10__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#FFB347ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#FFB347ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFB347ff",
+                    "second_color": null
+                  }
+                },
+                "order": 7
+              },
+              {
+                "sid": "Fig3__plot2_curve8",
+                "name": "Rivaroxaban 20 mg",
+                "x": "task_T20__time",
+                "y": "task_T20__aPTT_ratio",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#FF7043ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#FF7043ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FF7043ff",
+                    "second_color": null
+                  }
+                },
+                "order": 8
+              },
+              {
+                "sid": "Fig3__plot2_curve9",
+                "name": "Rivaroxaban 20 mg (n=7)",
+                "x": "Fig3C_aPTT__change_relative__T20__time",
+                "y": "Fig3C_aPTT__change_relative__T20__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#FF7043ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#FF7043ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FF7043ff",
+                    "second_color": null
+                  }
+                },
+                "order": 9
+              },
+              {
+                "sid": "Fig3__plot2_curve10",
+                "name": "Rivaroxaban 40 mg",
+                "x": "task_T40__time",
+                "y": "task_T40__aPTT_ratio",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#A63C00ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#A63C00ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#A63C00ff",
+                    "second_color": null
+                  }
+                },
+                "order": 10
+              },
+              {
+                "sid": "Fig3__plot2_curve11",
+                "name": "Rivaroxaban 40 mg (n=8)",
+                "x": "Fig3C_aPTT__change_relative__T40__time",
+                "y": "Fig3C_aPTT__change_relative__T40__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#A63C00ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#A63C00ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#A63C00ff",
+                    "second_color": null
+                  }
+                },
+                "order": 11
+              },
+              {
+                "sid": "Fig3__plot2_curve12",
+                "name": "Rivaroxaban 80 mg",
+                "x": "task_T80__time",
+                "y": "task_T80__aPTT_ratio",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#4C1F00ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#4C1F00ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#4C1F00ff",
+                    "second_color": null
+                  }
+                },
+                "order": 12
+              },
+              {
+                "sid": "Fig3__plot2_curve13",
+                "name": "Rivaroxaban 80 mg (n=6)",
+                "x": "Fig3C_aPTT__change_relative__T80__time",
+                "y": "Fig3C_aPTT__change_relative__T80__median",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#4C1F00ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#4C1F00ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#4C1F00ff",
+                    "second_color": null
+                  }
+                },
+                "order": 13
+              }
+            ],
+            "areas": [],
+            "bands": []
+          },
+          "row": 3,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        }
+      ]
+    },
+    "Fig5B": {
+      "sid": "Fig5B",
+      "name": "Kubitza2005a",
+      "num_rows": 2,
+      "num_cols": 1,
+      "width": null,
+      "height": null,
+      "settings": {},
+      "subplots": [
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig5B__plot0",
+            "name": "Oral solution",
+            "xaxis": {
+              "sid": "Fig5B__plot0_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": 30,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig5B__plot0_yaxis",
+              "name": "rivaroxaban plasma [\u00b5M]",
+              "label": "rivaroxaban plasma",
+              "unit": "\u00b5M",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig5B__plot0_curve0",
+                "name": "Rivaroxaban 5 mg solution",
+                "x": "task_S5__time",
+                "y": "task_S5__conc__Cve_riv",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#1f77b4ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig5B__plot0_curve1",
+                "name": "Rivaroxaban 5 mg solution\u00b1SD (n=6)",
+                "x": "Fig5_rivaroxaban_S5__time",
+                "y": "Fig5_rivaroxaban_S5__mean",
+                "xerr": null,
+                "yerr": "Fig5_rivaroxaban_S5__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#1f77b4ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#1f77b4ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#1f77b4ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig5B__plot0_curve2",
+                "name": "Rivaroxaban 10 mg solution",
+                "x": "task_S10__time",
+                "y": "task_S10__conc__Cve_riv",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#9467bdff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#9467bdff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#9467bdff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig5B__plot0_curve3",
+                "name": "Rivaroxaban 10 mg solution\u00b1SD (n=8)",
+                "x": "Fig5_rivaroxaban_S10__time",
+                "y": "Fig5_rivaroxaban_S10__mean",
+                "xerr": null,
+                "yerr": "Fig5_rivaroxaban_S10__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#9467bdff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#9467bdff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#9467bdff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              }
+            ],
+            "areas": [],
+            "bands": []
+          },
+          "row": 1,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        },
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig5B__plot1",
+            "name": "Tablet",
+            "xaxis": {
+              "sid": "Fig5B__plot1_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": 30,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig5B__plot1_yaxis",
+              "name": "rivaroxaban plasma [\u00b5M]",
+              "label": "rivaroxaban plasma",
+              "unit": "\u00b5M",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig5B__plot1_curve0",
+                "name": "Rivaroxaban 5 mg",
+                "x": "task_T5__time",
+                "y": "task_T5__conc__Cve_riv",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#FFD580ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#FFD580ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFD580ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig5B__plot1_curve1",
+                "name": "Rivaroxaban 5 mg\u00b1SD (n=6)",
+                "x": "Fig5_rivaroxaban_T5__time",
+                "y": "Fig5_rivaroxaban_T5__mean",
+                "xerr": null,
+                "yerr": "Fig5_rivaroxaban_T5__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#FFD580ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#FFD580ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFD580ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig5B__plot1_curve2",
+                "name": "Rivaroxaban 10 mg",
+                "x": "task_T10__time",
+                "y": "task_T10__conc__Cve_riv",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#FFB347ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#FFB347ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFB347ff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig5B__plot1_curve3",
+                "name": "Rivaroxaban 10 mg\u00b1SD (n=8)",
+                "x": "Fig5_rivaroxaban_T10__time",
+                "y": "Fig5_rivaroxaban_T10__mean",
+                "xerr": null,
+                "yerr": "Fig5_rivaroxaban_T10__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#FFB347ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#FFB347ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#FFB347ff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              }
+            ],
+            "areas": [],
+            "bands": []
+          },
+          "row": 2,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        }
+      ]
+    }
+  }
+}

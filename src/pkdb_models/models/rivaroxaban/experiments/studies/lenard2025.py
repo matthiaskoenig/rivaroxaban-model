@@ -1,160 +1,196 @@
-from typing import Dict
+"""Simulation experiment of the study Lenard2025."""
 
-from sbmlsim.data import DataSet, load_pkdb_dataframe
-from sbmlsim.fit import FitMapping, FitData
-from sbmlutils.console import console
+from typing import ClassVar, override
 
-from pkdb_models.models import rivaroxaban
-from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
-    RivaroxabanSimulationExperiment
+from pkpdsim.metadata import (
+    ApplicationForm,
+    Coadministration,
+    Dosing,
+    Fasting,
+    Health,
+    PKPDMappingMetaData,
+    Route,
+    Tissue,
 )
-from pkdb_models.models.rivaroxaban.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, Health, \
-    Fasting, RivaroxabanMappingMetaData, Coadministration
-
+from sbmlsim import Q
+from sbmlsim.data import DataSet
+from sbmlsim.fit import FitData, FitMapping
 from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
+from sbmlsim.simulation import Simulation
 
-from pkdb_models.models.rivaroxaban.helpers import run_experiments
+from pkdb_models.models.rivaroxaban import MODEL
+from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
+    RivaroxabanSimulationExperiment,
+)
+from pkdb_models.models.rivaroxaban.experiments.studies.lenard2024 import impute_sd
 
 
 class Lenard2025(RivaroxabanSimulationExperiment):
-    """Simulation experiment of Lenard2025."""
+    """Simulation experiment of Lenard2025.
 
-    colors = {
-        "API25, RIV25, EDO50_1": "black",
-        # "API25, RIV25, EDO50, CAR": "tab:blue",
-        "API25, RIV25, EDO50_2": "black",
-        # "API25, RIV25, EDO50, GAB": "tab:orange",
-        "API25, RIV25, EDO50_3": "black",
-        # "API25, RIV25, EDO50, PRE": "tab:red"
-    }
-    labels = {
-        "API25, RIV25, EDO50_1": "RIV25 (1)",
-        # "API25, RIV25, EDO50, CAR": "RIV25, CAR",
-        "API25, RIV25, EDO50_2": "RIV25 (2)",
-        # "API25, RIV25, EDO50, GAB": "RIV25, GAB",
-        "API25, RIV25, EDO50_3": "RIV25 (3)",
-        # "API25, RIV25, EDO50, PRE": "RIV25, PRE",
-    }
-    interventions =  list(colors.keys())
-    dose = 0.025
-    infos_pk = {
-        "[Cve_riv]": "rivaroxaban"
-    }
+    Microdose cocktail of apixaban 25 µg, rivaroxaban 25 µg and edoxaban 50 µg
+    as an oral solution in three cohorts of healthy subjects (the trial of
+    Lenard2024), each given the cocktail alone and at the steady state of a
+    perpetrator: carbamazepine (CAR, Fig2, n=12), gabapentin (GAB, Fig3, n=11)
+    and pregabalin (PRE, Fig4, n=12). Only the rivaroxaban data is used.
+    """
 
+    #: cohorts with the figure of their data
+    cohorts: ClassVar[dict[str, str]] = {"car": "Fig2", "gab": "Fig3", "pre": "Fig4"}
+    #: the intervention of the perpetrator arm of a cohort
+    perpetrators: ClassVar[dict[str, str]] = {
+        "car": "API25, RIV25, EDO50, CAR",
+        "gab": "API25, RIV25, EDO50, GAB",
+        "pre": "API25, RIV25, EDO50, PRE",
+    }
+    perpetrator_labels: ClassVar[dict[str, str]] = {
+        "car": "carbamazepine",
+        "gab": "gabapentin",
+        "pre": "pregabalin",
+    }
+    coadministrations: ClassVar[dict[str, Coadministration]] = {
+        "car": Coadministration.CARBAMAZEPINE,
+        "gab": Coadministration.GABAPENTIN,
+        "pre": Coadministration.PREGABALIN,
+    }
+    colors: ClassVar[dict[str, str]] = {
+        "car": "tab:blue",
+        "gab": "tab:orange",
+        "pre": "tab:green",
+    }
+    #: the simulation of a perpetrator arm: gabapentin and pregabalin are
+    #: neither metabolized by CYP nor inducers or inhibitors of CYP3A4 or P-gp
+    #: (negative controls, observed AUC ratios 0.92 and 0.98), their arms are
+    #: the simulation of the cocktail alone
+    perpetrator_tasks: ClassVar[dict[str, str]] = {
+        "car": "task_RIV25_CAR",
+        "gab": "task_RIV25",
+        "pre": "task_RIV25",
+    }
+    #: induction by carbamazepine at steady state (not fitted): a strong
+    #: inducer of CYP3A4 and P-gp (PXR/CAR); the hepatic CYP3A4 activity 3 fold
+    #: and the renal P-gp activity 2 fold give the AUC ratio of 0.54 for the
+    #: observed 0.56 (Cmax 0.75) of this study (rifampicin with 20 mg: AUC
+    #: 0.50, Mueck2013); without an intestinal CYP3A4 or P-gp the model does
+    #: not describe the decrease of Cmax
+    induction: ClassVar[dict[str, dict[str, float]]] = {
+        "RIV25": {"LI__f_cyp3a4": 1.0, "KI__f_pgp": 1.0},
+        "RIV25_CAR": {"LI__f_cyp3a4": 3.0, "KI__f_pgp": 2.0},
+    }
+    dose = 0.025  # [mg]
 
-    def datasets(self) -> Dict[str, DataSet]:
+    @override
+    def datasets(self) -> dict[str, DataSet]:
         dsets = {}
-        for fig_id in ["Fig2", "Fig3", "Fig4"]:
-            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
-            for label, df_label in df.groupby("label"):
-                dset = DataSet.from_df(df_label, self.ureg)
-                if label.startswith("rivaroxaban"):
-                        dset.unit_conversion("mean", 1 / self.Mr.riv)
-                dsets[label] = dset
+        for cohort, fig_id in self.cohorts.items():
+            df = self.load_dataframe(fig_id)
+            df = df[df.substance == "rivaroxaban"]
+            for intervention, df_label in df.groupby("intervention"):
+                key = (
+                    f"riv25_{cohort}"
+                    if intervention == self.perpetrators[cohort]
+                    else f"riv25_{cohort}_baseline"
+                )
+                dset = DataSet.from_df(impute_sd(df_label), self.ureg)
+                dset.unit_conversion("mean", 1 / self.Mr.riv)
+                dsets[key] = dset
         return dsets
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
-        tcsims = {}
-        for intervention in self.interventions:
-            tcsims[f"{intervention}"] = TimecourseSim(
-                [Timecourse(
-                    start=0,
-                    end=50 * 60,  # [min]
-                    steps=500,
-                    changes={
-                        **self.default_changes(),
-                        "PODOSE_riv": Q_(self.dose, "mg")
+    @override
+    def simulations(self) -> dict[str, Simulation]:
+        return {
+            key: Simulation(
+                time_unit="min",
+                end=25 * 60,
+                preinit_changes={
+                    **self.default_changes(),
+                    "POSOLUTION_riv": Q(self.dose, "mg"),
+                    **{
+                        pid: Q(value, "dimensionless") for pid, value in changes.items()
                     },
-                )])
-        return tcsims
+                },
+            )
+            for key, changes in self.induction.items()
+        }
 
-    def fit_mappings(self) -> Dict[str, FitMapping]:
+    @override
+    def fit_mappings(self) -> dict[str, FitMapping]:
         mappings = {}
-        for intervention in self.interventions:
-            # PK
-            for ks, sid in enumerate(self.infos_pk):
-                name = self.infos_pk[sid]
-                coadministration = Coadministration.NONE
-                if "CAR" in intervention:
-                    coadministration = Coadministration.CARBAMAZEPINE
-                elif "GAB" in intervention:
-                    coadministration = Coadministration.GABAPENTIN
-                elif "PRE" in intervention:
-                    coadministration = Coadministration.PREGABALIN
-                mappings[f"fm_{name}_{intervention}"] = FitMapping(
+        for cohort in self.cohorts:
+            for key, task, coadministration in [
+                (f"riv25_{cohort}_baseline", "task_RIV25", Coadministration.NONE),
+                (
+                    f"riv25_{cohort}",
+                    self.perpetrator_tasks[cohort],
+                    self.coadministrations[cohort],
+                ),
+            ]:
+                mappings[f"fm_{key}"] = FitMapping(
                     self,
                     reference=FitData(
                         self,
-                        dataset=f"{name}_{intervention}",
+                        dataset=key,
                         xid="time",
                         yid="mean",
                         yid_sd="mean_sd",
                         count="count",
                     ),
-                    observable=FitData(
-                        self, task=f"task_{intervention}", xid="time", yid=sid,
-                    ),
-                    metadata= RivaroxabanMappingMetaData(
+                    observable=FitData(self, task=task, xid="time", yid="[Cve_riv]"),
+                    metadata=PKPDMappingMetaData(
                         tissue=Tissue.PLASMA,
                         route=Route.PO,
-                        application_form=ApplicationForm.TABLET,
+                        application_form=ApplicationForm.SOLUTION,
                         dosing=Dosing.SINGLE,
                         health=Health.HEALTHY,
                         fasting=Fasting.NR,
                         coadministration=coadministration,
-
                     ),
                 )
 
         return mappings
 
-
-    def figures(self) -> Dict[str, Figure]:
-        return {
-            **self.figure_pk(),
-        }
-
-    def figure_pk(self) -> Dict[str, Figure]:
+    @override
+    def figures(self) -> dict[str, Figure]:
         fig = Figure(
             experiment=self,
-            sid="Fig1",
+            sid="Fig2_Fig3_Fig4",
+            num_cols=3,
             name=f"{self.__class__.__name__} (healthy)",
         )
         plots = fig.create_plots(
             xaxis=Axis(self.label_time, unit=self.unit_time), legend=True
         )
-        plots[0].set_yaxis(self.label_riv_plasma, unit=self.unit_riv)
+        for kp, cohort in enumerate(self.cohorts):
+            plots[kp].set_title(f"{self.perpetrator_labels[cohort]} cohort")
+            plots[kp].set_yaxis(self.label_riv_plasma, unit=self.unit_riv)
+            for key, task, label, color in [
+                (f"riv25_{cohort}_baseline", "task_RIV25", "RIV 25 µg", "black"),
+                (
+                    f"riv25_{cohort}",
+                    self.perpetrator_tasks[cohort],
+                    f"RIV 25 µg + {self.perpetrator_labels[cohort]}",
+                    self.colors[cohort],
+                ),
+            ]:
+                plots[kp].add_data(
+                    task=task,
+                    xid="time",
+                    yid="[Cve_riv]",
+                    label=label,
+                    color=color,
+                )
+                plots[kp].add_data(
+                    dataset=key,
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                    label=label,
+                    color=color,
+                )
 
-        for intervention in self.interventions:
-            for ks, sid in enumerate(self.infos_pk):
-                    name = self.infos_pk[sid]
-                    # simulation
-                    plots[ks].add_data(
-                        task=f"task_{intervention}",
-                        xid="time",
-                        yid=sid,
-                        label=self.labels[intervention],
-                        color=self.colors[f"{intervention}"],
-                    )
-                    # data
-                    plots[ks].add_data(
-                        dataset=f"{name}_{intervention}",
-                        xid="time",
-                        yid="mean",
-                        yid_sd="mean_sd",
-                        count="count",
-                        label=self.labels[intervention],
-                        color=self.colors[intervention],
-                    )
-
-        return {
-            fig.sid: fig
-        }
+        return self.figures_by_sid(fig)
 
 
 if __name__ == "__main__":
-    out = rivaroxaban.RESULTS_PATH_SIMULATION / Lenard2025.__name__
-    out.mkdir(parents=True, exist_ok=True)
-    run_experiments(Lenard2025, output_dir=Lenard2025.__name__)
+    MODEL.run_experiments(Lenard2025, output_dir=Lenard2025.__name__)

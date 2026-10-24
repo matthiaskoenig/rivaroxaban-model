@@ -1,0 +1,5 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	raw	mean_unit	value_unit	count_unit
+Liu2024		fed_10	79.0	fed_10	aPTT		plasma	coagulation assay	aPTT_fed_10	0.0	hr		30.1		4.8				s	s	dimensionless
+Liu2024		fed_10	79.0	fed_10	aPTT		plasma	coagulation assay	aPTT_fed_10	3.0	hr		47.7		10.2				s	s	dimensionless
+Liu2024		fed_10	79.0	fed_10	aPTT		plasma	coagulation assay	aPTT_fed_10	8.0	hr		37.1		7.9				s	s	dimensionless
+Liu2024		fed_10	79.0	fed_10	aPTT		plasma	coagulation assay	aPTT_fed_10	12.0	hr		35.1		7.4				s	s	dimensionless

@@ -1,0 +1,14 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	median	mean_pm	sd	se	comments	value_unit	median_unit	count_unit
+Jiang2010		PF	8.0	P	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_PF	0.0	hr		0.0					percent	percent	dimensionless
+Jiang2010		PF	8.0	P	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_PF	0.5	hr		6.13593102676066					percent	percent	dimensionless
+Jiang2010		PF	8.0	P	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_PF	1.0	hr		1.60071660508339					percent	percent	dimensionless
+Jiang2010		PF	8.0	P	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_PF	2.0	hr		5.25271526144883					percent	percent	dimensionless
+Jiang2010		PF	8.0	P	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_PF	3.0	hr		1.52009853319896					percent	percent	dimensionless
+Jiang2010		PF	8.0	P	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_PF	4.0	hr		1.06505430522896					percent	percent	dimensionless
+Jiang2010		PF	8.0	P	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_PF	6.0	hr		7.95431642593218					percent	percent	dimensionless
+Jiang2010		PF	8.0	P	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_PF	8.0	hr		6.63845034150711					percent	percent	dimensionless
+Jiang2010		PF	8.0	P	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_PF	12.0	hr		7.284290672937					percent	percent	dimensionless
+Jiang2010		PF	8.0	P	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_PF	15.0	hr		4.2826111297727					percent	percent	dimensionless
+Jiang2010		PF	8.0	P	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_PF	24.0	hr		0.615384615384585					percent	percent	dimensionless
+Jiang2010		PF	8.0	P	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_PF	36.0	hr		0.920837532191228					percent	percent	dimensionless
+Jiang2010		PF	8.0	P	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_PF	48.0	hr		0.0					percent	percent	dimensionless

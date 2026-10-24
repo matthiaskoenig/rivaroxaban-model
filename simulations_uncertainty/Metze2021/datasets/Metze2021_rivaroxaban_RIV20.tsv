@@ -1,0 +1,4 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit	count_unit
+Metze2021		riv	20.0	RIV20	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_RIV20	3.0	hr		0.0005586858768468386		0.00017591997797558964	3.9345691474717806e-05		mole/meter^3	ng/ml	dimensionless
+Metze2021		riv	20.0	RIV20	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_RIV20	6.0	hr		0.00047267596586216394		0.00019177296503624852	4.287877397448839e-05		mole/meter^3	ng/ml	dimensionless
+Metze2021		riv	20.0	RIV20	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_RIV20	12.0	hr		0.00026468294025878687		0.00011083325685968616	2.4777461686702764e-05		mole/meter^3	ng/ml	dimensionless

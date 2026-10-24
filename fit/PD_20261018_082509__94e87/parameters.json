@@ -1,0 +1,23 @@
+{
+  "sets": [
+    {
+      "sid": "PD_20261018_082509__94e87_0",
+      "values": {
+        "PT_slope": 628.0633581336092,
+        "Emax_aPTT": 1.5952502100074506,
+        "EC50_riv_aPTT": 0.0008454872159705619,
+        "Emax_Xa": 1.0,
+        "EC50_riv_Xa": 0.0005581355440341446
+      },
+      "units": {
+        "PT_slope": "1/(mmol/l)",
+        "Emax_aPTT": "dimensionless",
+        "EC50_riv_aPTT": "mmol/l",
+        "Emax_Xa": "dimensionless",
+        "EC50_riv_Xa": "mmol/l"
+      },
+      "cost": 68.65971759795272,
+      "provenance": "optimization 'PD_20261018_082509__94e87', run '2'"
+    }
+  ]
+}

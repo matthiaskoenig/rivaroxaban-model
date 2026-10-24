@@ -1,8 +1,14 @@
 """Template definition."""
-from datetime import datetime
 
-from pymetadata.identifiers.miriam import BQB
-from sbmlutils.factory import *
+from pkpdsim.templates import terms_of_use
+from sbmlutils.factory import (
+    Creator,
+    ModelUnits,
+    UnitDefinition,
+    Units,
+)
+
+__all__ = ["U", "creators", "model_units", "terms_of_use"]
 
 
 class U(Units):
@@ -39,59 +45,17 @@ creators = [
         email="elisabetta.casabianca.11@gmail.com",
         organization="Faculty of Pharmacy, Université Grenoble Alpes, Grenoble, France",
     ),
-   Creator(
-       familyName="König",
-       givenName="Matthias",
-       email="koenigmx@hu-berlin.de",
-       organization="Humboldt-University Berlin, Institute for Theoretical Biology",
-       site="https://livermetabolism.com",
-   ),
+    Creator(
+        familyName="Myshkina",
+        givenName="Mariia",
+        email="mariia.myshkina@hu-berlin.de",
+        organization="Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Institute of Theoretical Biology, Systems Medicine of the Liver",
+    ),
+    Creator(
+        familyName="König",
+        givenName="Matthias",
+        email="koenigmx@hu-berlin.de",
+        organization="Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Institute of Theoretical Biology, Systems Medicine of the Liver; University of Stuttgart, Institute of Structural Mechanics and Dynamics in Aerospace Engineering",
+        site="https://livermetabolism.com",
+    ),
 ]
-
-model_annotations = [
-    # taxonomy
-    (BQB.HAS_TAXON, "taxonomy/9606"),  # human
-    (BQB.HAS_TAXON, "snomedct/337915000"),  # human
-
-    # modelling approach
-    (BQB.HAS_PROPERTY, "mamo/MAMO_0000046"),  # ordinary differential equation model
-
-    # biological process explained by model (GO/NCIT)
-    (BQB.HAS_PROPERTY, "ncit/C77995"),  # rivaroxaban
-    (BQB.HAS_PROPERTY, "ncit/C180619"),  # Direct Oral Anticoagulant
-
-    (BQB.HAS_PROPERTY, "ncit/C15299"),  # pharmacokinetics
-
-    # model relevance to a particular area
-    (BQB.HAS_PROPERTY, "go/GO:0007596"),  # blood coagulation
-
-    # model reference
-    (BQB.IS_DESCRIBED_BY, "doi/10.20944/preprints202507.1945.v1"),  # preprint
-    (BQB.IS_DESCRIBED_BY, "doi/10.5281/zenodo.15157735"),
-]
-
-terms_of_use = """
-    The content of this model has been carefully created in a manual research effort.
-
-    ## Terms of use
-    Copyright © {year} <a href="{site}" title="{given_name} {family_name}" target="_blank">{given_name} {family_name}</a>.
-
-    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-
-    Redistribution and use of any part of this model, with or without modification, are permitted provided
-    that the following conditions are met:
-
-    - Redistributions of this SBML file must retain the above copyright notice, this list of conditions and the following disclaimer.
-    - Redistributions in a different form must reproduce the above copyright notice, this list of conditions
-      and the following disclaimer in the documentation and/or other materials provided
-      with the distribution.
-
-    This model is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
-    implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-""".format(
-    year=datetime.now().year,
-    given_name=creators[0].givenName,
-    family_name=creators[0].familyName,
-    site=creators[0].site,
-)

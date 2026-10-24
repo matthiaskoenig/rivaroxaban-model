@@ -1,29 +1,40 @@
-from typing import Dict
+"""Simulation experiment of the study Jiang2010."""
 
-from sbmlsim.data import DataSet, load_pkdb_dataframe
-from sbmlsim.fit import FitMapping, FitData
-from sbmlutils.console import console
+from typing import ClassVar, override
 
-from pkdb_models.models import rivaroxaban
+from pkpdsim.metadata import (
+    ApplicationForm,
+    Dosing,
+    Fasting,
+    Health,
+    PKPDMappingMetaData,
+    Route,
+    Tissue,
+)
+from sbmlsim import Q
+from sbmlsim.data import DataSet
+from sbmlsim.fit import FitData, FitMapping
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Simulation
+
+from pkdb_models.models.rivaroxaban import MODEL
 from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
     RivaroxabanSimulationExperiment,
 )
-from pkdb_models.models.rivaroxaban.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
-    Fasting, RivaroxabanMappingMetaData, Coadministration
-
-from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
-
-from pkdb_models.models.rivaroxaban.helpers import run_experiments
 
 
 class Jiang2010(RivaroxabanSimulationExperiment):
     """Simulation experiment of Jiang2010.
 
-    Subsets of male and female data not simulated.
+    Single oral doses of 5 to 40 mg in healthy elderly Chinese subjects, taken
+    within 5 min after a standardized breakfast (fed). Plasma (Fig1, geometric
+    means), urinary excretion 0-72 hr (Table 2), factor Xa inhibition (Fig2)
+    and prothrombin time (Fig3A) as medians. The subsets of male and female
+    subjects (Fig2B, Fig3B) are not simulated.
     """
-    formulations = ["P", "T5", "T10", "T20", "T30", "T40"]
-    colors = {
+
+    formulations: ClassVar[list[str]] = ["P", "T5", "T10", "T20", "T30", "T40"]
+    colors: ClassVar[dict[str, str]] = {
         "P": "black",
         "T5": "#FFDAB9",
         "T10": "#FFB07C",
@@ -32,17 +43,17 @@ class Jiang2010(RivaroxabanSimulationExperiment):
         "T40": "#892E0E",
     }
 
-    formulation_labels = {
-    "P": "Placebo",
-    "T5": "Test 5 mg",
-    "T10": "Test 10 mg",
-    "T20": "Test 20 mg",
-    "T30": "Test 30 mg",
-    "T40": "Test 40 mg",
+    formulation_labels: ClassVar[dict[str, str]] = {
+        "P": "Placebo",
+        "T5": "Rivaroxaban 5 mg",
+        "T10": "Rivaroxaban 10 mg",
+        "T20": "Rivaroxaban 20 mg",
+        "T30": "Rivaroxaban 30 mg",
+        "T40": "Rivaroxaban 40 mg",
     }
 
-    bodyweights = {
-        "P" : 62.1,
+    bodyweights: ClassVar[dict[str, float]] = {
+        "P": 62.1,
         "T5": 62.5,
         "T10": 59.2,
         "T20": 60.5,
@@ -50,111 +61,82 @@ class Jiang2010(RivaroxabanSimulationExperiment):
         "T40": 63.5,
     }
 
-    info_pk = {
-        "[Cve_riv]": "rivaroxaban",
-        "Aurine_riv": "rivaroxaban_urine",
+    #: observable: (figure, label of the data, column of the central value)
+    info_pk: ClassVar[dict[str, tuple[str, str, str]]] = {
+        "[Cve_riv]": ("Fig1", "rivaroxaban", "mean"),
+        "Aurine_riv": ("Tab2A", "rivaroxaban_urine", "mean"),
     }
 
-    info_pd = {
-        "Xa_inhibition": "factor Xa inhibition",
-        "PT_ratio": "prothrombin time (change relative)",
+    #: the pharmacodynamics are medians
+    info_pd: ClassVar[dict[str, tuple[str, str, str]]] = {
+        "Xa_inhibition": ("Fig2", "factor Xa inhibition", "median"),
+        "PT_ratio": ("Fig3", "prothrombin time (change relative)", "median"),
     }
 
-    def datasets(self) -> Dict[str, DataSet]:
+    @override
+    def datasets(self) -> dict[str, DataSet]:
         dsets = {}
-
         for fig_id in ["Fig1", "Fig2", "Fig3", "Tab2A"]:
-            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
+            df = self.load_dataframe(fig_id)
             for label, df_label in df.groupby("label"):
+                measurement = df_label["measurement_type"].iloc[0]
+                if measurement == "recovery":
+                    # the same excretion in percent of the dose
+                    continue
                 dset = DataSet.from_df(df_label, self.ureg)
-                if "rivaroxaban" in label:
+                if measurement in {"concentration", "cumulative amount"}:
                     dset.unit_conversion("mean", 1 / self.Mr.riv)
-                dsets[label] = dset
+                dsets[self.to_sid(f"{fig_id}_{label}")] = dset
 
-        # print(dsets)
         return dsets
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
+    @override
+    def simulations(self) -> dict[str, Simulation]:
         tcsims = {}
         for formulation in self.formulations:
-            if formulation == "P":
-                dose = 0
-            else:
-                dose = float(formulation[1:])
+            dose = 0 if formulation == "P" else float(formulation[1:])
 
-            tcsims[f"{formulation}"] = TimecourseSim(
-                [Timecourse(
-                    start=0,
-                    end=100 * 60,  # [min]
-                    steps=1000,
-                    changes={
-                        **self.default_changes(),
-                        "BW": Q_(self.bodyweights[formulation], "kg"),
-                        "PODOSE_riv": Q_(dose, "mg"),
-                    },
-                )]
+            tcsims[self.to_sid(f"{formulation}")] = Simulation(
+                time_unit="min",
+                end=100 * 60,
+                preinit_changes={
+                    **self.default_changes(),
+                    "BW": Q(self.bodyweights[formulation], "kg"),
+                    "PODOSE_riv": Q(dose, "mg"),
+                    "GU__fed": Q(self.fasting_map["fed"], "dimensionless"),
+                },
             )
 
         return tcsims
 
-    def fit_mappings(self) -> Dict[str, FitMapping]:
+    @override
+    def fit_mappings(self) -> dict[str, FitMapping]:
         mappings = {}
         for formulation in self.formulations:
-
-            # pharmacodynamics
-            for k, sid in enumerate(self.info_pd.keys()):
-                name = self.info_pd[sid]
-                mappings[f"fm_{name}_{formulation}"] = FitMapping(
+            infos = {**self.info_pk, **self.info_pd}
+            for sid, (fig_id, name, yid) in infos.items():
+                if formulation == "P" and sid in self.info_pk:
+                    continue
+                urine = sid == "Aurine_riv"
+                dataset = f"{fig_id}_{name}_{formulation}"
+                mappings[self.to_sid(f"fm_{dataset}")] = FitMapping(
                     self,
                     reference=FitData(
                         self,
-                        dataset=f"{name}_{formulation}",
+                        dataset=self.to_sid(dataset),
                         xid="time",
-                        yid="mean",
-                        yid_sd=None,
+                        yid=yid,
+                        yid_sd="mean_sd" if urine else None,
                         count="count",
                     ),
                     observable=FitData(
                         self,
-                        task=f"task_{formulation}",
+                        task=self.to_sid(f"task_{formulation}"),
                         xid="time",
                         yid=sid,
                     ),
-                    metadata=RivaroxabanMappingMetaData(
-                        tissue=Tissue.PLASMA,
-                        route=Route.PO,
-                        application_form=ApplicationForm.TABLET,
-                        dosing=Dosing.SINGLE,
-                        health=Health.HEALTHY,
-                        fasting=Fasting.FED,
-                    ),
-                )
-
-            # pharmacokinetics
-            if formulation == "P":
-                continue
-
-            for k, sid in enumerate(self.info_pk.keys()):
-                name = self.info_pk[sid]
-                mappings[f"fm_{name}_{formulation}"] = FitMapping(
-                    self,
-                    reference=FitData(
-                        self,
-                        dataset=f"{name}_{formulation}",
-                        xid="time",
-                        yid="mean",
-                        yid_sd="mean_sd" if "urine" in name else None,
-                        count="count",
-                    ),
-                    observable=FitData(
-                        self,
-                        task=f"task_{formulation}",
-                        xid="time",
-                        yid=sid,
-                    ),
-                    metadata=RivaroxabanMappingMetaData(
-                        tissue=Tissue.URINE if "urine" in name else Tissue.PLASMA,
+                    metadata=PKPDMappingMetaData(
+                        tissue=Tissue.URINE if urine else Tissue.PLASMA,
                         route=Route.PO,
                         application_form=ApplicationForm.TABLET,
                         dosing=Dosing.SINGLE,
@@ -165,91 +147,53 @@ class Jiang2010(RivaroxabanSimulationExperiment):
 
         return mappings
 
-    def figures(self) -> Dict[str, Figure]:
-
+    @override
+    def figures(self) -> dict[str, Figure]:
         return {
-            **self.figure_pk(),
-            **self.figure_pd(),
+            **self._figure(sid="Fig1_Tab2A", info=self.info_pk, num_cols=2),
+            **self._figure(sid="Fig2_3", info=self.info_pd, num_cols=2),
         }
 
-    def figure_pk(self) -> Dict[str, Figure]:
+    def _figure(
+        self, sid: str, info: dict[str, tuple[str, str, str]], num_cols: int
+    ) -> dict[str, Figure]:
         fig = Figure(
             experiment=self,
-            sid="Fig1_Tab2A",
-            num_cols=2,  # Changed from num_rows=2 to num_cols=2
-            name=self.__class__.__name__
+            sid=sid,
+            num_cols=num_cols,
+            name=self.__class__.__name__,
         )
         plots = fig.create_plots(
             xaxis=Axis(self.label_time, unit=self.unit_time),
             legend=True,
         )
-        plots[0].set_yaxis(self.label_riv_plasma, unit=self.unit_riv)
-        plots[1].set_yaxis(self.label_riv_urine.replace("\n", ""), unit=self.unit_riv_urine)
-
-        for formulation in self.formulations:
-            for k, sid in enumerate(self.info_pk.keys()):
-                name = self.info_pk[sid]
-
+        for k, (yid, (fig_id, name, central)) in enumerate(info.items()):
+            plots[k].set_yaxis(
+                self.labels[yid].replace("\n", " "), unit=self.units[yid]
+            )
+            for formulation in self.formulations:
                 plots[k].add_data(
-                    task=f"task_{formulation}",
+                    task=self.to_sid(f"task_{formulation}"),
                     xid="time",
-                    yid=sid,
+                    yid=yid,
                     label=self.formulation_labels[formulation],
                     color=self.colors[formulation],
                 )
-                if formulation == "P":
+                if formulation == "P" and yid in self.info_pk:
                     continue
                 plots[k].add_data(
-                    dataset=f"{name}_{formulation}",
+                    dataset=self.to_sid(f"{fig_id}_{name}_{formulation}"),
                     xid="time",
-                    yid="mean",
-                    yid_sd="mean_sd" if "urine" in sid else None,
+                    yid=central,
+                    yid_sd="mean_sd" if yid == "Aurine_riv" else None,
                     count="count",
                     label=self.formulation_labels[formulation],
                     color=self.colors[formulation],
-                    linestyle="" if "urine" in sid else "--"
+                    linestyle="" if yid == "Aurine_riv" else "--",
                 )
 
-        return {fig.sid: fig}
-
-    def figure_pd(self) -> Dict[str, Figure]:
-        fig = Figure(
-            experiment=self,
-            sid="Fig2_3",
-            num_rows=2,
-            name=self.__class__.__name__
-        )
-        plots = fig.create_plots(
-            xaxis=Axis(self.label_time, unit=self.unit_time),
-            legend=True,
-        )
-        plots[0].set_yaxis(self.labels["Xa_inhibition"], unit=self.units["Xa_inhibition"])
-        plots[1].set_yaxis(self.labels["PT_ratio"], unit=self.units["PT_ratio"])
-
-        for formulation in self.formulations:
-            for k, sid in enumerate(self.info_pd.keys()):
-                name = self.info_pd[sid]
-                plots[k].add_data(
-                    task=f"task_{formulation}",
-                    xid="time",
-                    yid=sid,
-                    label=self.formulation_labels[formulation],
-                    color=self.colors[formulation],
-                )
-                plots[k].add_data(
-                    dataset=f"{name}_{formulation}",
-                    xid="time",
-                    yid="mean",
-                    yid_sd=None,
-                    count="count",
-                    label=self.formulation_labels[formulation],
-                    color=self.colors[formulation],
-                )
-
-        return {fig.sid: fig}
+        return self.figures_by_sid(fig)
 
 
 if __name__ == "__main__":
-    out = rivaroxaban.RESULTS_PATH_SIMULATION / Jiang2010.__name__
-    out.mkdir(parents=True, exist_ok=True)
-    run_experiments(Jiang2010, output_dir=Jiang2010.__name__)
+    MODEL.run_experiments(Jiang2010, output_dir=Jiang2010.__name__)

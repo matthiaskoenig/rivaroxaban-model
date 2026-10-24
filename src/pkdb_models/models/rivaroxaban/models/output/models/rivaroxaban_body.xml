@@ -1,0 +1,2949 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version2/core" xmlns:comp="http://www.sbml.org/sbml/level3/version1/comp/version1" xmlns:distrib="http://www.sbml.org/sbml/level3/version1/distrib/version1" level="3" version="2" comp:required="true" distrib:required="true">
+  <notes>
+    <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>Created with <a href="https://github.com/matthiaskoenig/sbmlutils">https://github.com/matthiaskoenig/sbmlutils</a>.
+<a href="https://doi.org/10.5281/zenodo.5525390">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.5525390.svg" alt="DOI"/></a></p>
+      </body>
+    </notes>
+  <model metaid="meta_rivaroxaban_body" id="rivaroxaban_body" name="Rivaroxaban body model" substanceUnits="mmole" timeUnits="min" volumeUnits="litre" areaUnits="m2" lengthUnits="metre" extentUnits="mmole">
+    <notes>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <h1>Physiologically based pharmacokinetic/ pharmacodynamic (PBPK/PD) model rivaroxaban (body model)</h1>
+        <p>Rivaroxaban, a direct oral anticoagulant (DOAC), is a widely used drug for the prevention and treatment of thromboembolic disorders. While its fixed dosing regimen and predictable anticoagulation profile improve clinical usability, significant inter-individual variability in pharmacokinetics (PK) and pharmacodynamics (PD) exists, particularly in patients with altered physiology or comorbidities. This study established an open database of rivaroxaban PK and PD data from 14 clinical studies. The data were used to develop and validate a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of rivaroxaban that captures its absorption, distribution, metabolism, excretion, and coagulation effects. The model incorporates the effects of dose, food intake, hepatic and renal function, and allows simulation of activated Factor X (Factor Xa) inhibition, prothrombin time (PT), and activated partial thromboplastin time (aPTT). Simulations accurately reproduced observed plasma concentration-time and coagulation profiles across a range of doses, fed/fasting conditions, as well as with different degrees of cirrhosis and renal impairment. This mechanistic PBPK/PD model provides a framework for exploring variability in rivaroxaban response across diverse clinical scenarios and supports its use in personalized dosing strategies, clinical trial design, and regulatory evaluation.</p>
+        <h2>License</h2>
+        <ul>
+          <li>Source Code: <a href="https://opensource.org/license/MIT">MIT</a></li>
+          <li>Documentation: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></li>
+          <li>Models: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></li>
+        </ul>
+        <p>The content of this model has been carefully created in a manual research effort.</p>
+        <h2>Terms of use</h2>
+        <p>Copyright © 2026 <a href="https://livermetabolism.com" title="Matthias König" target="_blank">Matthias König</a>.</p>
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+          <img alt="Creative Commons License" style="border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png"/>
+        </a>
+        <br/>This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+<p>Redistribution and use of any part of this model, with or without modification, are permitted provided
+that the following conditions are met:</p>
+        <ul>
+          <li>Redistributions of this SBML file must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+          <li>Redistributions in a different form must reproduce the above copyright notice, this list of conditions
+and the following disclaimer in the documentation and/or other materials provided
+with the distribution.</li>
+        </ul>
+        <p>This model is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
+implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p></body>
+      </notes>
+    <annotation>
+      <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+        <rdf:Description rdf:about="#meta_rivaroxaban_body">
+          <dcterms:creator>
+            <rdf:Bag>
+              <rdf:li rdf:parseType="Resource">
+                <vCard4:hasName rdf:parseType="Resource">
+                  <vCard4:family-name>Casabianca</vCard4:family-name>
+                  <vCard4:given-name>Elisabetta</vCard4:given-name>
+                </vCard4:hasName>
+                <vCard4:hasEmail>elisabetta.casabianca.11@gmail.com</vCard4:hasEmail>
+                <vCard4:organization-name>Faculty of Pharmacy, Université Grenoble Alpes, Grenoble, France</vCard4:organization-name>
+              </rdf:li>
+              <rdf:li rdf:parseType="Resource">
+                <vCard4:hasName rdf:parseType="Resource">
+                  <vCard4:family-name>Myshkina</vCard4:family-name>
+                  <vCard4:given-name>Mariia</vCard4:given-name>
+                </vCard4:hasName>
+                <vCard4:hasEmail>mariia.myshkina@hu-berlin.de</vCard4:hasEmail>
+                <vCard4:organization-name>Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Institute of Theoretical Biology, Systems Medicine of the Liver</vCard4:organization-name>
+              </rdf:li>
+              <rdf:li rdf:parseType="Resource">
+                <vCard4:hasName rdf:parseType="Resource">
+                  <vCard4:family-name>König</vCard4:family-name>
+                  <vCard4:given-name>Matthias</vCard4:given-name>
+                </vCard4:hasName>
+                <vCard4:hasEmail>koenigmx@hu-berlin.de</vCard4:hasEmail>
+                <vCard4:organization-name>Humboldt-Universität zu Berlin, Faculty of Life Sciences, Department of Biology, Institute of Theoretical Biology, Systems Medicine of the Liver; University of Stuttgart, Institute of Structural Mechanics and Dynamics in Aerospace Engineering</vCard4:organization-name>
+              </rdf:li>
+            </rdf:Bag>
+          </dcterms:creator>
+          <dcterms:created rdf:parseType="Resource">
+            <dcterms:W3CDTF>2026-10-24T12:16:29Z</dcterms:W3CDTF>
+          </dcterms:created>
+          <dcterms:modified rdf:parseType="Resource">
+            <dcterms:W3CDTF>2026-10-24T12:16:29Z</dcterms:W3CDTF>
+          </dcterms:modified>
+          <bqbiol:hasTaxon>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/taxonomy:9606"/>
+              <rdf:li rdf:resource="https://identifiers.org/snomedct:337915000"/>
+            </rdf:Bag>
+          </bqbiol:hasTaxon>
+          <bqbiol:hasProperty>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/mamo:MAMO_0000046"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C77995"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C180619"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C15299"/>
+              <rdf:li rdf:resource="https://identifiers.org/GO:0007596"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C79369"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C79371"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C79372"/>
+              <rdf:li rdf:resource="https://identifiers.org/ncit:C79370"/>
+            </rdf:Bag>
+          </bqbiol:hasProperty>
+          <bqbiol:isDescribedBy>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/doi:10.20944/preprints202507.1945.v1"/>
+              <rdf:li rdf:resource="https://identifiers.org/doi:10.5281/zenodo.15157735"/>
+            </rdf:Bag>
+          </bqbiol:isDescribedBy>
+          <bqbiol:occursIn>
+            <rdf:Bag>
+              <rdf:li rdf:resource="https://identifiers.org/BTO:0001489"/>
+              <rdf:li rdf:resource="https://identifiers.org/FMA:256135"/>
+            </rdf:Bag>
+          </bqbiol:occursIn>
+        </rdf:Description>
+      </rdf:RDF>
+    </annotation>
+    <listOfUnitDefinitions>
+      <unitDefinition id="g_per_mole" name="g/mole">
+        <listOfUnits>
+          <unit kind="gram" exponent="1" scale="0" multiplier="1"/>
+          <unit kind="mole" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="l_per_min" name="l/min">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="m2" name="meter^2">
+        <listOfUnits>
+          <unit kind="metre" exponent="2" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mM" name="mmole/liter">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mg" name="mg">
+        <listOfUnits>
+          <unit kind="gram" exponent="1" scale="0" multiplier="0.001"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mg_per_s_l" name="mg/s/l">
+        <listOfUnits>
+          <unit kind="gram" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="1"/>
+          <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="min" name="min">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="min_per_hr" name="min/hr">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="60"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="3600"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mmole" name="mmole">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="0.001"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mmole_per_min" name="mmole/min">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mmole_per_min_l" name="mmole/min/l">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="60"/>
+          <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="per_mM" name="liter/mmole">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+          <unit kind="mole" exponent="-1" scale="0" multiplier="0.001"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="per_min" name="1/min">
+        <listOfUnits>
+          <unit kind="second" exponent="-1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="per_mmole" name="1/mmole">
+        <listOfUnits>
+          <unit kind="mole" exponent="-1" scale="0" multiplier="0.001"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="cm" name="cm">
+        <listOfUnits>
+          <unit kind="metre" exponent="1" scale="0" multiplier="0.01"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="hr" name="hr">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="3600"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="kg" name="kg">
+        <listOfUnits>
+          <unit kind="gram" exponent="1" scale="0" multiplier="1000"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="l_per_hr" name="l/hr">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="3600"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="l_per_kg" name="l/kg">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+          <unit kind="gram" exponent="-1" scale="0" multiplier="1000"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="l_per_min_kg" name="l/min/kg">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="60"/>
+          <unit kind="gram" exponent="-1" scale="0" multiplier="1000"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="l_per_ml" name="l/ml">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+          <unit kind="litre" exponent="-1" scale="0" multiplier="0.001"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="m2_per_kg" name="meter^2/kg">
+        <listOfUnits>
+          <unit kind="metre" exponent="2" scale="0" multiplier="1"/>
+          <unit kind="gram" exponent="-1" scale="0" multiplier="1000"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mg_per_day" name="mg/day">
+        <listOfUnits>
+          <unit kind="gram" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="86400"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mg_per_g" name="mg/g">
+        <listOfUnits>
+          <unit kind="gram" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="gram" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mg_per_hr" name="mg/hr">
+        <listOfUnits>
+          <unit kind="gram" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="3600"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mg_per_l" name="mg/l">
+        <listOfUnits>
+          <unit kind="gram" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mg_per_min" name="mg/min">
+        <listOfUnits>
+          <unit kind="gram" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="min_per_day" name="min/day">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="60"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="86400"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="ml" name="ml">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="0.001"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="ml_per_l" name="ml/l">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="ml_per_s" name="ml/s">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="ml_per_s_kg" name="ml/s/kg">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="1"/>
+          <unit kind="gram" exponent="-1" scale="0" multiplier="1000"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mmHg" name="133.32239 N/m^2">
+        <listOfUnits>
+          <unit kind="newton" exponent="1" scale="0" multiplier="133.32239"/>
+          <unit kind="metre" exponent="-2" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mmole_per_hr" name="mmole/hr">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="3600"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mmole_per_hr_ml" name="mmole/hr/ml">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="3600"/>
+          <unit kind="litre" exponent="-1" scale="0" multiplier="0.001"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mmole_per_l" name="mmole/l">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="litre" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mmole_per_min_kg" name="mmole/min/kg">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="0.001"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="60"/>
+          <unit kind="gram" exponent="-1" scale="0" multiplier="1000"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mulitre_per_g" name="microlitre/g">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1e-06"/>
+          <unit kind="gram" exponent="-1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mul_per_min_mg" name="microliter/min/mg">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1e-06"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="60"/>
+          <unit kind="gram" exponent="-1" scale="0" multiplier="0.001"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="per_hr" name="1/hr">
+        <listOfUnits>
+          <unit kind="second" exponent="-1" scale="0" multiplier="3600"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="per_min_kg" name="1/min/kg">
+        <listOfUnits>
+          <unit kind="second" exponent="-1" scale="0" multiplier="60"/>
+          <unit kind="gram" exponent="-1" scale="0" multiplier="1000"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="s_per_min" name="s/min">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="1"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment metaid="meta_Vplasma" sboTerm="SBO:0000290" id="Vplasma" name="plasma" size="5" units="litre" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vplasma">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C13356"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000131"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vre" sboTerm="SBO:0000290" id="Vre" name="rest of body" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vre">
+              <bqbiol:isVersionOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:62955"/>
+                </rdf:Bag>
+              </bqbiol:isVersionOf>
+              <bqbiol:isPartOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C14250"/>
+                </rdf:Bag>
+              </bqbiol:isPartOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vgu" sboTerm="SBO:0000290" id="Vgu" name="gut" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vgu">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000545"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C12736"/>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:7199"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000648"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Vgu_RE2" comp:portRef="Vlumen_port" comp:submodelRef="LI"/>
+          <comp:replacedElement metaid="Vgu_RE" comp:portRef="Vlumen_port" comp:submodelRef="GU"/>
+        </comp:listOfReplacedElements>
+      </compartment>
+      <compartment metaid="meta_Vki" sboTerm="SBO:0000290" id="Vki" name="kidney" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vki">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:7203"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000671"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C12415"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vli" sboTerm="SBO:0000290" id="Vli" name="liver" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vli">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:7197"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000759"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C12392"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vlu" sboTerm="SBO:0000290" id="Vlu" name="lung" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vlu">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:7195"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000763"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C12468"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vve" sboTerm="SBO:0000290" id="Vve" name="venous blood" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vve">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000131"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C13356"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isPartOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:50723"/>
+                </rdf:Bag>
+              </bqbiol:isPartOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Var" sboTerm="SBO:0000290" id="Var" name="arterial blood" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Var">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000131"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C13356"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isPartOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:50720"/>
+                </rdf:Bag>
+              </bqbiol:isPartOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vurine" sboTerm="SBO:0000290" id="Vurine" name="urine" size="1" units="litre" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vurine">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:12274"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C13283"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0001419"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Vurine_RE" comp:portRef="Vurine_port" comp:submodelRef="KI"/>
+        </comp:listOfReplacedElements>
+      </compartment>
+      <compartment metaid="meta_Vfeces" sboTerm="SBO:0000290" id="Vfeces" name="feces" size="1" units="litre" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vfeces">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:64183"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C13234"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000440"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Vfeces_RE" comp:portRef="Vfeces_port" comp:submodelRef="GU"/>
+        </comp:listOfReplacedElements>
+      </compartment>
+      <compartment metaid="meta_Vstomach" sboTerm="SBO:0000290" id="Vstomach" name="stomach" size="1" units="litre" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vstomach">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:7148"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C12391"/>
+                  <rdf:li rdf:resource="https://identifiers.org/UBERON:0000945"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0001307"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vpo" sboTerm="SBO:0000290" id="Vpo" name="portal plasma" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vpo">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000131"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C13356"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isPartOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:66645"/>
+                </rdf:Bag>
+              </bqbiol:isPartOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vhv" sboTerm="SBO:0000290" id="Vhv" name="hepatic venous plasma" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vhv">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000131"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C13356"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isPartOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:14337"/>
+                </rdf:Bag>
+              </bqbiol:isPartOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vki_tissue" sboTerm="SBO:0000290" id="Vki_tissue" name="ki tissue" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vki_tissue">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:45732"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C74601"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0001539"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isPartOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:7203"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000671"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C12415"/>
+                </rdf:Bag>
+              </bqbiol:isPartOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Vki_tissue_RE" comp:portRef="Vki_port" comp:submodelRef="KI"/>
+        </comp:listOfReplacedElements>
+      </compartment>
+      <compartment metaid="meta_Vki_plasma" sboTerm="SBO:0000290" id="Vki_plasma" name="ki plasma" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vki_plasma">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C13356"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000131"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isPartOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:7203"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000671"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C12415"/>
+                </rdf:Bag>
+              </bqbiol:isPartOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Vki_plasma_RE" comp:portRef="Vext_port" comp:submodelRef="KI"/>
+        </comp:listOfReplacedElements>
+      </compartment>
+      <compartment metaid="meta_Vli_tissue" sboTerm="SBO:0000290" id="Vli_tissue" name="li tissue" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vli_tissue">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:45732"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C74601"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0001539"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isPartOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:7197"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000759"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C12392"/>
+                </rdf:Bag>
+              </bqbiol:isPartOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Vli_tissue_RE" comp:portRef="Vli_port" comp:submodelRef="LI"/>
+        </comp:listOfReplacedElements>
+      </compartment>
+      <compartment metaid="meta_Vli_plasma" sboTerm="SBO:0000290" id="Vli_plasma" name="li plasma" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vli_plasma">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C13356"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000131"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isPartOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:7197"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000759"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C12392"/>
+                </rdf:Bag>
+              </bqbiol:isPartOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Vli_plasma_RE" comp:portRef="Vext_port" comp:submodelRef="LI"/>
+        </comp:listOfReplacedElements>
+      </compartment>
+      <compartment metaid="meta_Vlu_tissue" sboTerm="SBO:0000290" id="Vlu_tissue" name="lu tissue" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vlu_tissue">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:45732"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C74601"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0001539"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isPartOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:7195"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000763"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C12468"/>
+                </rdf:Bag>
+              </bqbiol:isPartOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vlu_plasma" sboTerm="SBO:0000290" id="Vlu_plasma" name="lu plasma" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vlu_plasma">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C13356"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000131"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isPartOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:7195"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000763"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C12468"/>
+                </rdf:Bag>
+              </bqbiol:isPartOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vgu_tissue" sboTerm="SBO:0000290" id="Vgu_tissue" name="gu tissue" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vgu_tissue">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:45732"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C74601"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0001539"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isPartOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000545"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C12736"/>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:7199"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000648"/>
+                </rdf:Bag>
+              </bqbiol:isPartOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vgu_plasma" sboTerm="SBO:0000290" id="Vgu_plasma" name="gu plasma" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vgu_plasma">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C13356"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000131"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isPartOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000545"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C12736"/>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:7199"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000648"/>
+                </rdf:Bag>
+              </bqbiol:isPartOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Vgu_plasma_RE" comp:portRef="Vext_port" comp:submodelRef="GU"/>
+        </comp:listOfReplacedElements>
+      </compartment>
+      <compartment metaid="meta_Vre_tissue" sboTerm="SBO:0000290" id="Vre_tissue" name="re tissue" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vre_tissue">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:45732"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C74601"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0001539"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isPartOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:62955"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C14250"/>
+                </rdf:Bag>
+              </bqbiol:isPartOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+      <compartment metaid="meta_Vre_plasma" sboTerm="SBO:0000290" id="Vre_plasma" name="re plasma" size="1" units="litre" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Vre_plasma">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C13356"/>
+                  <rdf:li rdf:resource="https://identifiers.org/BTO:0000131"/>
+                </rdf:Bag>
+              </bqbiol:is>
+              <bqbiol:isPartOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/FMA:62955"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C14250"/>
+                </rdf:Bag>
+              </bqbiol:isPartOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </compartment>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species metaid="meta_Cki_plasma_riv" sboTerm="SBO:0000247" id="Cki_plasma_riv" name="rivaroxaban (kidney plasma)" compartment="Vki_plasma" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Cki_plasma_riv">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:68579"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:9875401"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:KGFYHTZWPPHNLQ-AWEZNQCLSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C77995"/>
+                  <rdf:li rdf:resource="https://identifiers.org/snomedct:442031002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Cki_plasma_riv_RE" comp:portRef="riv_ext_port" comp:submodelRef="KI"/>
+        </comp:listOfReplacedElements>
+      </species>
+      <species metaid="meta_Cli_plasma_riv" sboTerm="SBO:0000247" id="Cli_plasma_riv" name="rivaroxaban (liver plasma)" compartment="Vli_plasma" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Cli_plasma_riv">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:68579"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:9875401"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:KGFYHTZWPPHNLQ-AWEZNQCLSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C77995"/>
+                  <rdf:li rdf:resource="https://identifiers.org/snomedct:442031002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Cli_plasma_riv_RE" comp:portRef="riv_ext_port" comp:submodelRef="LI"/>
+        </comp:listOfReplacedElements>
+      </species>
+      <species metaid="meta_Clu_plasma_riv" sboTerm="SBO:0000247" id="Clu_plasma_riv" name="rivaroxaban (lung plasma)" compartment="Vlu_plasma" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Clu_plasma_riv">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:68579"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:9875401"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:KGFYHTZWPPHNLQ-AWEZNQCLSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C77995"/>
+                  <rdf:li rdf:resource="https://identifiers.org/snomedct:442031002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Cgu_plasma_riv" sboTerm="SBO:0000247" id="Cgu_plasma_riv" name="rivaroxaban (gut plasma)" compartment="Vgu_plasma" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Cgu_plasma_riv">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:68579"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:9875401"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:KGFYHTZWPPHNLQ-AWEZNQCLSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C77995"/>
+                  <rdf:li rdf:resource="https://identifiers.org/snomedct:442031002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Cgu_plasma_riv_RE" comp:portRef="riv_ext_port" comp:submodelRef="GU"/>
+        </comp:listOfReplacedElements>
+      </species>
+      <species metaid="meta_Cre_plasma_riv" sboTerm="SBO:0000247" id="Cre_plasma_riv" name="rivaroxaban (rest plasma)" compartment="Vre_plasma" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Cre_plasma_riv">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:68579"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:9875401"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:KGFYHTZWPPHNLQ-AWEZNQCLSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C77995"/>
+                  <rdf:li rdf:resource="https://identifiers.org/snomedct:442031002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Car_riv" sboTerm="SBO:0000247" id="Car_riv" name="rivaroxaban (arterial blood plasma)" compartment="Var" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Car_riv">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:68579"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:9875401"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:KGFYHTZWPPHNLQ-AWEZNQCLSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C77995"/>
+                  <rdf:li rdf:resource="https://identifiers.org/snomedct:442031002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Cve_riv" sboTerm="SBO:0000247" id="Cve_riv" name="rivaroxaban (venous blood plasma)" compartment="Vve" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Cve_riv">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:68579"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:9875401"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:KGFYHTZWPPHNLQ-AWEZNQCLSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C77995"/>
+                  <rdf:li rdf:resource="https://identifiers.org/snomedct:442031002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Cpo_riv" sboTerm="SBO:0000247" id="Cpo_riv" name="rivaroxaban (portal vein plasma)" compartment="Vpo" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Cpo_riv">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:68579"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:9875401"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:KGFYHTZWPPHNLQ-AWEZNQCLSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C77995"/>
+                  <rdf:li rdf:resource="https://identifiers.org/snomedct:442031002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Chv_riv" sboTerm="SBO:0000247" id="Chv_riv" name="rivaroxaban (hepatic vein plasma)" compartment="Vhv" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Chv_riv">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:68579"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:9875401"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:KGFYHTZWPPHNLQ-AWEZNQCLSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C77995"/>
+                  <rdf:li rdf:resource="https://identifiers.org/snomedct:442031002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Clu_riv" sboTerm="SBO:0000247" id="Clu_riv" name="rivaroxaban (lung)" compartment="Vlu_tissue" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Clu_riv">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:68579"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:9875401"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:KGFYHTZWPPHNLQ-AWEZNQCLSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C77995"/>
+                  <rdf:li rdf:resource="https://identifiers.org/snomedct:442031002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Cre_riv" sboTerm="SBO:0000247" id="Cre_riv" name="rivaroxaban (rest)" compartment="Vre_tissue" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Cre_riv">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:68579"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:9875401"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:KGFYHTZWPPHNLQ-AWEZNQCLSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C77995"/>
+                  <rdf:li rdf:resource="https://identifiers.org/snomedct:442031002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Aurine_riv" sboTerm="SBO:0000247" id="Aurine_riv" name="rivaroxaban (urine)" compartment="Vurine" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Aurine_riv">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:68579"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:9875401"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:KGFYHTZWPPHNLQ-AWEZNQCLSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C77995"/>
+                  <rdf:li rdf:resource="https://identifiers.org/snomedct:442031002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Aurine_riv_RE" comp:portRef="riv_urine_port" comp:submodelRef="KI"/>
+        </comp:listOfReplacedElements>
+      </species>
+      <species metaid="meta_Afeces_riv" sboTerm="SBO:0000247" id="Afeces_riv" name="rivaroxaban (feces)" compartment="Vfeces" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Afeces_riv">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/CHEBI:68579"/>
+                  <rdf:li rdf:resource="https://identifiers.org/pubchem.compound:9875401"/>
+                  <rdf:li rdf:resource="https://identifiers.org/inchikey:KGFYHTZWPPHNLQ-AWEZNQCLSA-N"/>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C77995"/>
+                  <rdf:li rdf:resource="https://identifiers.org/snomedct:442031002"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Afeces_riv_RE" comp:portRef="riv_feces_port" comp:submodelRef="GU"/>
+        </comp:listOfReplacedElements>
+      </species>
+      <species metaid="meta_Cki_plasma_rx" sboTerm="SBO:0000247" id="Cki_plasma_rx" name="rivaroxaban metabolites (kidney plasma)" compartment="Vki_plasma" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Cki_plasma_rx">
+              <bqbiol:isVersionOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C1513"/>
+                </rdf:Bag>
+              </bqbiol:isVersionOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Cki_plasma_rx_RE" comp:portRef="rx_ext_port" comp:submodelRef="KI"/>
+        </comp:listOfReplacedElements>
+      </species>
+      <species metaid="meta_Cli_plasma_rx" sboTerm="SBO:0000247" id="Cli_plasma_rx" name="rivaroxaban metabolites (liver plasma)" compartment="Vli_plasma" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Cli_plasma_rx">
+              <bqbiol:isVersionOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C1513"/>
+                </rdf:Bag>
+              </bqbiol:isVersionOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Cli_plasma_rx_RE" comp:portRef="rx_ext_port" comp:submodelRef="LI"/>
+        </comp:listOfReplacedElements>
+      </species>
+      <species metaid="meta_Clu_plasma_rx" sboTerm="SBO:0000247" id="Clu_plasma_rx" name="rivaroxaban metabolites (lung plasma)" compartment="Vlu_plasma" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Clu_plasma_rx">
+              <bqbiol:isVersionOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C1513"/>
+                </rdf:Bag>
+              </bqbiol:isVersionOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Cgu_plasma_rx" sboTerm="SBO:0000247" id="Cgu_plasma_rx" name="rivaroxaban metabolites (gut plasma)" compartment="Vgu_plasma" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Cgu_plasma_rx">
+              <bqbiol:isVersionOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C1513"/>
+                </rdf:Bag>
+              </bqbiol:isVersionOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Cre_plasma_rx" sboTerm="SBO:0000247" id="Cre_plasma_rx" name="rivaroxaban metabolites (rest plasma)" compartment="Vre_plasma" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Cre_plasma_rx">
+              <bqbiol:isVersionOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C1513"/>
+                </rdf:Bag>
+              </bqbiol:isVersionOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Car_rx" sboTerm="SBO:0000247" id="Car_rx" name="rivaroxaban metabolites (arterial blood plasma)" compartment="Var" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Car_rx">
+              <bqbiol:isVersionOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C1513"/>
+                </rdf:Bag>
+              </bqbiol:isVersionOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Cve_rx" sboTerm="SBO:0000247" id="Cve_rx" name="rivaroxaban metabolites (venous blood plasma)" compartment="Vve" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Cve_rx">
+              <bqbiol:isVersionOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C1513"/>
+                </rdf:Bag>
+              </bqbiol:isVersionOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Cpo_rx" sboTerm="SBO:0000247" id="Cpo_rx" name="rivaroxaban metabolites (portal vein plasma)" compartment="Vpo" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Cpo_rx">
+              <bqbiol:isVersionOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C1513"/>
+                </rdf:Bag>
+              </bqbiol:isVersionOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Chv_rx" sboTerm="SBO:0000247" id="Chv_rx" name="rivaroxaban metabolites (hepatic vein plasma)" compartment="Vhv" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Chv_rx">
+              <bqbiol:isVersionOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C1513"/>
+                </rdf:Bag>
+              </bqbiol:isVersionOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="meta_Aurine_rx" sboTerm="SBO:0000247" id="Aurine_rx" name="rivaroxaban metabolites (urine)" compartment="Vurine" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Aurine_rx">
+              <bqbiol:isVersionOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C1513"/>
+                </rdf:Bag>
+              </bqbiol:isVersionOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Aurine_rx_RE" comp:portRef="rx_urine_port" comp:submodelRef="KI"/>
+        </comp:listOfReplacedElements>
+      </species>
+      <species metaid="meta_Afeces_rx" sboTerm="SBO:0000247" id="Afeces_rx" name="rivaroxaban metabolites (feces)" compartment="Vfeces" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_Afeces_rx">
+              <bqbiol:isVersionOf>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C1513"/>
+                </rdf:Bag>
+              </bqbiol:isVersionOf>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Afeces_rx_RE" comp:portRef="rx_feces_port" comp:submodelRef="GU"/>
+        </comp:listOfReplacedElements>
+      </species>
+      <species metaid="meta_Cve_riv_rx" sboTerm="SBO:0000247" id="Cve_riv_rx" name="RIV + RX (plasma)" compartment="Vve" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="meta_Aurine_riv_rx" sboTerm="SBO:0000247" id="Aurine_riv_rx" name="RIV + RX (urine)" compartment="Vurine" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species metaid="meta_Afeces_riv_rx" sboTerm="SBO:0000247" id="Afeces_riv_rx" name="RIV + RX (feces)" compartment="Vfeces" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="true" boundaryCondition="false" constant="false"/>
+      <species metaid="meta_Cgu_rx" sboTerm="SBO:0000247" id="Cgu_rx" name="rivaroxaban metabolites (intestinal volume)" compartment="Vgu" initialConcentration="0" substanceUnits="mmole" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Cgu_rx_RE" comp:portRef="rx_lumen_port" comp:submodelRef="GU"/>
+          <comp:replacedElement metaid="Cgu_rx_RE2" comp:portRef="rx_lumen_port" comp:submodelRef="LI"/>
+        </comp:listOfReplacedElements>
+      </species>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter sboTerm="SBO:0000002" id="PT_ref" name="prothrombin time reference" value="12.5" units="second" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="aPTT_ref" name="activated partial thromboplastin time reference" value="28.4" units="second" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="PT" name="prothrombin time" value="12.5" units="second" constant="false"/>
+      <parameter sboTerm="SBO:0000002" id="aPTT" name="activated partial thromboplastin time" value="28.4" units="second" constant="false"/>
+      <parameter sboTerm="SBO:0000002" id="Xa_inhibition" name="inhibition of factor Xa" value="0" units="dimensionless" constant="false"/>
+      <parameter sboTerm="SBO:0000002" id="PT_change" name="prothrombin time change" value="NaN" units="second" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Absolute change to baseline prothrombin time</p>
+          </body>
+        </notes>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="PT_ratio" name="prothrombin time ratio" value="NaN" units="dimensionless" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Ratio relative to baseline prothrombin time</p>
+          </body>
+        </notes>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="aPTT_change" name="activated partial thromboplastin time change" value="NaN" units="second" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Absolute change to baseline activated partial thromboplastin time</p>
+          </body>
+        </notes>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="aPTT_ratio" name="activated partial thromboplastin time ratio" value="NaN" units="dimensionless" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Ratio relative to baseline activated partial thromboplastin time</p>
+          </body>
+        </notes>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="PT_slope" name="relative increase of the PT per rivaroxaban concentration" value="628.063358133609" units="per_mM" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>The PT is linear in the total concentration of rivaroxaban in
+plasma; the PT of 10 mg in the fasted state rises to about 1.44
+times its baseline at a Cmax of about 0.26 µM (Neoplastin Plus,
+Kubitza2006), the less sensitive reagents of the other studies give
+smaller increases.</p>
+          </body>
+        </notes>
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PD_20261018_082509__94e87">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>PT_slope</code> is the result of the fit <code>PD_20261018_082509__94e87</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PD_20261018_082509__94e87</code> |
+| record | <code>PD_20261018_082509__94e87/</code> |
+| cost | 68.6597 |
+| data points | 823 |
+| value | 628.063 1/(mmol/l) |
+| bounds | [100, 10000] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | identifiable |
+| 95 % confidence interval | [453.014, 803.098] |
+| Fisher confidence interval | [560.166, 704.19] |
+| distribution of the draws | <code>lognormal(6.442641050127056, 0.14606269315209164, 100.0, 10000.0)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="per_mM" distrib:type="confidenceInterval" distrib:valueLower="453.013518939323" distrib:valueUpper="803.098365775506"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="36.6071985601439" distrib:units="per_mM" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <cn> 6.44264105012706 </cn>
+                  <cn> 0.146062693152092 </cn>
+                  <cn> 100 </cn>
+                  <cn> 10000 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="Emax_aPTT" name="maximum effect aPTT" value="1.59525021000745" units="dimensionless" constant="true">
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PD_20261018_082509__94e87">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>Emax_aPTT</code> is the result of the fit <code>PD_20261018_082509__94e87</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PD_20261018_082509__94e87</code> |
+| record | <code>PD_20261018_082509__94e87/</code> |
+| cost | 68.6597 |
+| data points | 823 |
+| value | 1.59525 dimensionless |
+| bounds | [0.1, 5] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | non_identifiable_upper |
+| 95 % confidence interval | [0.538156, 5] (open sides at the bounds) |
+| Fisher confidence interval | [0.752209, 3.38313] |
+| distribution of the draws | <code>lognormal(0.4670305954117897, 0.5544174887232749, 0.1, 5.0)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="dimensionless" distrib:type="confidenceInterval" distrib:valueLower="0.538155506587161" distrib:valueUpper="5"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="0.610975070002647" distrib:units="dimensionless" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <cn> 0.46703059541179 </cn>
+                  <cn> 0.554417488723275 </cn>
+                  <cn> 0.1 </cn>
+                  <cn> 5 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
+      </parameter>
+      <parameter sboTerm="SBO:0000287" id="EC50_riv_aPTT" name="EC50 rivaroxaban aPTT" value="0.000845487215970562" units="mM" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Total concentration of rivaroxaban in plasma.</p>
+          </body>
+        </notes>
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PD_20261018_082509__94e87">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>EC50_riv_aPTT</code> is the result of the fit <code>PD_20261018_082509__94e87</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PD_20261018_082509__94e87</code> |
+| record | <code>PD_20261018_082509__94e87/</code> |
+| cost | 68.6597 |
+| data points | 823 |
+| value | 0.000845487 mmol/l |
+| bounds | [1e-05, 0.01] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | identifiable |
+| 95 % confidence interval | [0.000132994, 0.00440483] |
+| Fisher confidence interval | [0.000301701, 0.00236939] |
+| distribution of the draws | <code>lognormal(-7.075597509822075, 0.8929118220917158, 1e-05, 0.01)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="mM" distrib:type="confidenceInterval" distrib:valueLower="0.000132994346641088" distrib:valueUpper="0.00440482868332111"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="0.000443867503358024" distrib:units="mM" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <apply>
+                    <minus/>
+                    <cn> 7.07559750982208 </cn>
+                  </apply>
+                  <cn> 0.892911822091716 </cn>
+                  <cn type="e-notation"> 1 <sep/> -5 </cn>
+                  <cn> 0.01 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="Emax_Xa" name="maximum effect Xa inhibition" value="1" units="dimensionless" constant="true">
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PD_20261018_082509__94e87">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>Emax_Xa</code> is the result of the fit <code>PD_20261018_082509__94e87</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PD_20261018_082509__94e87</code> |
+| record | <code>PD_20261018_082509__94e87/</code> |
+| cost | 68.6597 |
+| data points | 823 |
+| value | 1 dimensionless |
+| bounds | [0.5, 1] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | non_identifiable_upper |
+| 95 % confidence interval | [0.810144, 1] (open sides at the bounds) |
+| Fisher confidence interval | [0.860389, 1.16227] |
+| distribution of the draws | <code>lognormal(0.0, 0.10742182141596429, 0.5, 1.0)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="dimensionless" distrib:type="confidenceInterval" distrib:valueLower="0.810144298302762" distrib:valueUpper="1"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="0.0766076944831811" distrib:units="dimensionless" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <cn> 0 </cn>
+                  <cn> 0.107421821415964 </cn>
+                  <cn> 0.5 </cn>
+                  <cn> 1 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
+      </parameter>
+      <parameter sboTerm="SBO:0000287" id="EC50_riv_Xa" name="EC50 rivaroxaban Xa inhibition" value="0.000558135544034145" units="mM" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Total concentration of rivaroxaban in plasma.</p>
+          </body>
+        </notes>
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PD_20261018_082509__94e87">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>EC50_riv_Xa</code> is the result of the fit <code>PD_20261018_082509__94e87</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PD_20261018_082509__94e87</code> |
+| record | <code>PD_20261018_082509__94e87/</code> |
+| cost | 68.6597 |
+| data points | 823 |
+| value | 0.000558136 mmol/l |
+| bounds | [1e-05, 0.01] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | identifiable |
+| 95 % confidence interval | [0.000410096, 0.000623359] |
+| Fisher confidence interval | [0.000450612, 0.000691317] |
+| distribution of the draws | <code>lognormal(-7.4909087146254745, 0.10682072312449406, 1e-05, 0.01)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="mM" distrib:type="confidenceInterval" distrib:valueLower="0.000410096444369373" distrib:valueUpper="0.000623358567173921"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="6.08491583226786e-05" distrib:units="mM" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <apply>
+                    <minus/>
+                    <cn> 7.49090871462547 </cn>
+                  </apply>
+                  <cn> 0.106820723124494 </cn>
+                  <cn type="e-notation"> 1 <sep/> -5 </cn>
+                  <cn> 0.01 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="BW" name="body weight" value="75" units="kg" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="BW_ref" name="reference body weight [kg]" value="75" units="kg" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Body weight at which the exchange flows of the tissue distribution (<code>ftissue_&lt;sid&gt;</code>) are given; they scale with the body weight as the volumes and the blood flows do.</p>
+          </body>
+        </notes>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="COBW" name="cardiac output per bodyweight" value="1.548" units="ml_per_s_kg" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="f_cardiac_function" name="heart function" value="1" units="dimensionless" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>1.0: normal function;
+&lt;1.0: reduced function as reduced cardiac output;</p>
+          </body>
+        </notes>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="CO" name="cardiac output" value="108.33" units="ml_per_s" constant="false"/>
+      <parameter sboTerm="SBO:0000002" id="QC" name="cardiac output" value="6.4998" units="l_per_min" constant="false"/>
+      <parameter sboTerm="SBO:0000002" id="Fblood" name="blood fraction of organ volume" value="0.02" units="dimensionless" constant="false"/>
+      <parameter metaid="meta_HCT" sboTerm="SBO:0000002" id="HCT" name="hematocrit" value="0.51" units="dimensionless" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="FVgu" name="gut fractional tissue volume" value="0.0171" units="l_per_kg" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="FVki" name="kidney fractional tissue volume" value="0.0044" units="l_per_kg" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="FVli" name="liver fractional tissue volume" value="0.021" units="l_per_kg" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="FVlu" name="lung fractional tissue volume" value="0.0076" units="l_per_kg" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="FVre" name="rest of body fractional tissue volume" value="0" units="l_per_kg" constant="false"/>
+      <parameter sboTerm="SBO:0000002" id="FVve" name="venous fractional tissue volume" value="0.0514" units="l_per_kg" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="FVar" name="arterial fractional tissue volume" value="0.0257" units="l_per_kg" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="FVpo" name="portal fractional tissue volume" value="0.001" units="l_per_kg" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="FVhv" name="hepatic venous fractional tissue volume" value="0.001" units="l_per_kg" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="FQgu" name="gut fractional tissue blood flow" value="0.18" units="dimensionless" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Assumed FQgu is the sum of FQgu + FQsp + FQpa for correct portal blood flow.
+with FQgu=0.146, FQsp=0.017, FQpa=0.017</p>
+          </body>
+        </notes>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="FQki" name="kidney fractional tissue blood flow" value="0.19" units="dimensionless" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="FQh" name="hepatic (venous side) fractional tissue blood flow" value="0.215" units="dimensionless" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="FQlu" name="lung fractional tissue blood flow" value="1" units="dimensionless" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="FQre" name="rest of body fractional tissue blood flow" value="0" units="dimensionless" constant="false"/>
+      <parameter metaid="meta_f_cirrhosis" sboTerm="SBO:0000002" id="f_cirrhosis" name="severity of cirrhosis [0, 0.95]" value="0" units="dimensionless" constant="true">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_f_cirrhosis">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C2951"/>
+                  <rdf:li rdf:resource="https://identifiers.org/efo:0001422"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter metaid="meta_f_shunts" sboTerm="SBO:0000002" id="f_shunts" name="fraction of portal venous blood shunted by the liver" value="0" units="dimensionless" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_f_shunts">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/HP:0002629"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="f_tissue_loss" name="fraction of lost parenchymal liver volume" value="0" units="dimensionless" constant="false"/>
+      <parameter sboTerm="SBO:0000002" id="PODOSE_riv" name="oral dose riv [mg]" value="0" units="mg" constant="false">
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="PODOSE_riv_RE" comp:portRef="PODOSE_riv_port" comp:submodelRef="GU"/>
+        </comp:listOfReplacedElements>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="POSOLUTION_riv" name="oral dose as solution riv [mg]" value="0" units="mg" constant="false">
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="POSOLUTION_riv_RE" comp:portRef="POSOLUTION_riv_port" comp:submodelRef="GU"/>
+        </comp:listOfReplacedElements>
+      </parameter>
+      <parameter sboTerm="SBO:0000647" id="Mr_riv" name="Molecular weight riv [g/mole]" value="435.88" units="g_per_mole" constant="true">
+        <comp:listOfReplacedElements>
+          <comp:replacedElement metaid="Mr_riv_gu_RE" comp:portRef="Mr_riv_port" comp:submodelRef="GU"/>
+        </comp:listOfReplacedElements>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="ftissue_riv" name="tissue distribution riv" value="5.80764575579028" units="l_per_min" constant="true">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>Exchange flow at the reference body weight <code>BW_ref</code>.</p>
+          </body>
+        </notes>
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PK_20261018_075718__82026">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>ftissue_riv</code> is the result of the fit <code>PK_20261018_075718__82026</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PK_20261018_075718__82026</code> |
+| record | <code>PK_20261018_075718__82026/</code> |
+| cost | 196.725 |
+| data points | 678 |
+| value | 5.80765 l/(min) |
+| bounds | [0.01, 10] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | non_identifiable_upper |
+| 95 % confidence interval | [3.59666, 10] (open sides at the bounds) |
+| Fisher confidence interval | [1.62419, 20.7665] |
+| distribution of the draws | <code>lognormal(1.7591752832020287, 0.24447931022711072, 0.01, 10.0)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="l_per_min" distrib:type="confidenceInterval" distrib:valueLower="3.59665641470579" distrib:valueUpper="10"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="3.76867805673158" distrib:units="l_per_min" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <cn> 1.75917528320203 </cn>
+                  <cn> 0.244479310227111 </cn>
+                  <cn> 0.01 </cn>
+                  <cn> 10 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="Kp_riv" name="tissue/plasma partition coefficient riv" value="0.407068700304121" units="dimensionless" constant="true">
+        <distrib:listOfUncertainties>
+          <distrib:uncertainty distrib:name="fit PK_20261018_075718__82026">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+                <p>The value of <code>Kp_riv</code> is the result of the fit <code>PK_20261018_075718__82026</code>, its uncertainty is the profile likelihood of the fit.</p>
+                <p>| | |
+|---|---|
+| fit | <code>PK_20261018_075718__82026</code> |
+| record | <code>PK_20261018_075718__82026/</code> |
+| cost | 196.725 |
+| data points | 678 |
+| value | 0.407069 dimensionless |
+| bounds | [0.2, 5] |
+| scale | LOG10 |
+| method | profile likelihood |
+| identifiability | identifiable |
+| 95 % confidence interval | [0.361959, 0.465975] |
+| Fisher confidence interval | [0.374027, 0.443029] |
+| distribution of the draws | <code>lognormal(-0.8987733109681, 0.06444057824960414, 0.2, 5.0)</code> |</p>
+              </body>
+            </notes>
+            <distrib:uncertSpan distrib:name="95 % confidence interval (profile likelihood)" distrib:units="dimensionless" distrib:type="confidenceInterval" distrib:valueLower="0.361958600730393" distrib:valueUpper="0.46597513190314"/>
+            <distrib:uncertParameter distrib:name="standard error (Fisher information)" distrib:value="0.0175501271900136" distrib:units="dimensionless" distrib:type="standardError"/>
+            <distrib:uncertParameter distrib:name="distribution of the draws" distrib:type="distribution">
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <apply>
+                  <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/distrib/lognormal"> lognormal </csymbol>
+                  <apply>
+                    <minus/>
+                    <cn> 0.8987733109681 </cn>
+                  </apply>
+                  <cn> 0.0644405782496041 </cn>
+                  <cn> 0.2 </cn>
+                  <cn> 5 </cn>
+                </apply>
+              </math>
+            </distrib:uncertParameter>
+          </distrib:uncertainty>
+        </distrib:listOfUncertainties>
+      </parameter>
+      <parameter sboTerm="SBO:0000002" id="IVDOSE_riv" name="IV bolus dose riv [mg]" value="0" units="mg" constant="false"/>
+      <parameter sboTerm="SBO:0000002" id="ti_riv" name="injection time riv [s]" value="10" units="second" constant="true"/>
+      <parameter sboTerm="SBO:0000002" id="Ki_riv" name="Ki [1/min] injection riv" value="0.02" units="per_min" constant="false"/>
+      <parameter sboTerm="SBO:0000002" id="Ri_riv" name="Ri [mg/min] rate of infusion riv" value="0" units="mg_per_min" constant="true"/>
+      <parameter sboTerm="SBO:0000647" id="Mr_rx" name="Molecular weight rx [g/mole]" value="435.88" units="g_per_mole" constant="true"/>
+      <parameter id="Qgu" name="gut blood flow" units="l_per_min" constant="false"/>
+      <parameter id="Qki" name="kidney blood flow" units="l_per_min" constant="false"/>
+      <parameter id="Qh" name="hepatic (venous side) blood flow" units="l_per_min" constant="false"/>
+      <parameter id="Qha" name="hepatic artery blood flow" units="l_per_min" constant="false"/>
+      <parameter id="Qlu" name="lung blood flow" units="l_per_min" constant="false"/>
+      <parameter id="Qre" name="rest of body blood flow" units="l_per_min" constant="false"/>
+      <parameter id="Qpo" name="portal blood flow" units="l_per_min" constant="false"/>
+      <parameter id="Afeces_urine_riv_rx" name="Sum of RIV and RX feces and urine" units="mmole" constant="false"/>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule variable="PT_change">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <ci> PT </ci>
+            <ci> PT_ref </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="PT_ratio">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <ci> PT </ci>
+            <ci> PT_ref </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="aPTT_change">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <ci> aPTT </ci>
+            <ci> aPTT_ref </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="aPTT_ratio">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <ci> aPTT </ci>
+            <ci> aPTT_ref </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="PT">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <times/>
+            <ci> PT_ref </ci>
+            <apply>
+              <plus/>
+              <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+              <apply>
+                <times/>
+                <ci> PT_slope </ci>
+                <ci> Cve_riv </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="aPTT">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <times/>
+            <ci> aPTT_ref </ci>
+            <apply>
+              <plus/>
+              <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> Emax_aPTT </ci>
+                  <ci> Cve_riv </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> Cve_riv </ci>
+                  <ci> EC50_riv_aPTT </ci>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="Xa_inhibition">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> Emax_Xa </ci>
+              <ci> Cve_riv </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Cve_riv </ci>
+              <ci> EC50_riv_Xa </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="f_shunts">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> f_cirrhosis </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="f_tissue_loss">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> f_cirrhosis </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="FVre">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <minus/>
+            <cn sbml:units="l_per_kg"> 1 </cn>
+            <apply>
+              <plus/>
+              <ci> FVgu </ci>
+              <ci> FVki </ci>
+              <ci> FVli </ci>
+              <ci> FVlu </ci>
+              <ci> FVve </ci>
+              <ci> FVar </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="FQre">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <minus/>
+            <cn sbml:units="dimensionless"> 1 </cn>
+            <apply>
+              <plus/>
+              <ci> FQki </ci>
+              <ci> FQh </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="CO">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> f_cardiac_function </ci>
+            <ci> BW </ci>
+            <ci> COBW </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="QC">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <ci> CO </ci>
+              <cn sbml:units="ml_per_l" type="integer"> 1000 </cn>
+            </apply>
+            <cn sbml:units="s_per_min" type="integer"> 60 </cn>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="Vgu">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> BW </ci>
+            <ci> FVgu </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="Vki">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> BW </ci>
+            <ci> FVki </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="Vli">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> BW </ci>
+            <ci> FVli </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="Vlu">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> BW </ci>
+            <ci> FVlu </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="Vre">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> BW </ci>
+            <ci> FVre </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="Vve">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> BW </ci>
+              <ci> FVve </ci>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> FVve </ci>
+                <apply>
+                  <plus/>
+                  <ci> FVar </ci>
+                  <ci> FVve </ci>
+                </apply>
+              </apply>
+              <ci> BW </ci>
+              <ci> Fblood </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <cn sbml:units="l_per_kg" type="integer"> 1 </cn>
+                  <ci> FVve </ci>
+                </apply>
+                <ci> FVar </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="Var">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <ci> BW </ci>
+              <ci> FVar </ci>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> FVar </ci>
+                <apply>
+                  <plus/>
+                  <ci> FVar </ci>
+                  <ci> FVve </ci>
+                </apply>
+              </apply>
+              <ci> BW </ci>
+              <ci> Fblood </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <cn sbml:units="l_per_kg" type="integer"> 1 </cn>
+                  <ci> FVve </ci>
+                </apply>
+                <ci> FVar </ci>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="Vpo">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+              <ci> HCT </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> BW </ci>
+                <ci> FVpo </ci>
+              </apply>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <ci> FVpo </ci>
+                  <apply>
+                    <plus/>
+                    <ci> FVar </ci>
+                    <ci> FVve </ci>
+                    <ci> FVpo </ci>
+                    <ci> FVhv </ci>
+                  </apply>
+                </apply>
+                <ci> BW </ci>
+                <ci> Fblood </ci>
+                <apply>
+                  <minus/>
+                  <cn sbml:units="l_per_kg" type="integer"> 1 </cn>
+                  <apply>
+                    <plus/>
+                    <ci> FVar </ci>
+                    <ci> FVve </ci>
+                    <ci> FVpo </ci>
+                    <ci> FVhv </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="Vhv">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <times/>
+            <apply>
+              <minus/>
+              <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+              <ci> HCT </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <apply>
+                <times/>
+                <ci> BW </ci>
+                <ci> FVhv </ci>
+              </apply>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <ci> FVhv </ci>
+                  <apply>
+                    <plus/>
+                    <ci> FVar </ci>
+                    <ci> FVve </ci>
+                    <ci> FVpo </ci>
+                    <ci> FVhv </ci>
+                  </apply>
+                </apply>
+                <ci> BW </ci>
+                <ci> Fblood </ci>
+                <apply>
+                  <minus/>
+                  <cn sbml:units="l_per_kg" type="integer"> 1 </cn>
+                  <apply>
+                    <plus/>
+                    <ci> FVar </ci>
+                    <ci> FVve </ci>
+                    <ci> FVpo </ci>
+                    <ci> FVhv </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="gut blood flow" variable="Qgu">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> QC </ci>
+            <ci> FQgu </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="kidney blood flow" variable="Qki">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> QC </ci>
+            <ci> FQki </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="hepatic (venous side) blood flow" variable="Qh">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> QC </ci>
+            <ci> FQh </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="hepatic artery blood flow" variable="Qha">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <ci> Qh </ci>
+            <ci> Qgu </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="lung blood flow" variable="Qlu">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> QC </ci>
+            <ci> FQlu </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="rest of body blood flow" variable="Qre">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <times/>
+            <ci> QC </ci>
+            <ci> FQre </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="portal blood flow" variable="Qpo">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> Qgu </ci>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="plasma volume of kidney" variable="Vki_plasma">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <times/>
+            <ci> Vki </ci>
+            <ci> Fblood </ci>
+            <apply>
+              <minus/>
+              <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+              <ci> HCT </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="tissue volume of kidney" variable="Vki_tissue">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <times/>
+            <ci> Vki </ci>
+            <apply>
+              <minus/>
+              <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+              <ci> Fblood </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="plasma volume of liver" variable="Vli_plasma">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <times/>
+            <ci> Vli </ci>
+            <ci> Fblood </ci>
+            <apply>
+              <minus/>
+              <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+              <ci> HCT </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="tissue volume of liver" variable="Vli_tissue">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <times/>
+            <ci> Vli </ci>
+            <apply>
+              <minus/>
+              <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+              <ci> f_tissue_loss </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+              <ci> Fblood </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="plasma volume of lung" variable="Vlu_plasma">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <times/>
+            <ci> Vlu </ci>
+            <ci> Fblood </ci>
+            <apply>
+              <minus/>
+              <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+              <ci> HCT </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="tissue volume of lung" variable="Vlu_tissue">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <times/>
+            <ci> Vlu </ci>
+            <apply>
+              <minus/>
+              <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+              <ci> Fblood </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="plasma volume of gut" variable="Vgu_plasma">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <times/>
+            <ci> Vgu </ci>
+            <ci> Fblood </ci>
+            <apply>
+              <minus/>
+              <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+              <ci> HCT </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="tissue volume of gut" variable="Vgu_tissue">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <times/>
+            <ci> Vgu </ci>
+            <apply>
+              <minus/>
+              <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+              <ci> Fblood </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="plasma volume of rest" variable="Vre_plasma">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <times/>
+            <ci> Vre </ci>
+            <ci> Fblood </ci>
+            <apply>
+              <minus/>
+              <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+              <ci> HCT </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="tissue volume of rest" variable="Vre_tissue">
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <times/>
+            <ci> Vre </ci>
+            <apply>
+              <minus/>
+              <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+              <ci> Fblood </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="injection rate IV" variable="Ki_riv">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>log(2) ~ 0.693 used for conversion of half-life injection time to
+injection rate.</p>
+          </body>
+        </notes>
+        <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+          <apply>
+            <times/>
+            <apply>
+              <divide/>
+              <cn sbml:units="dimensionless"> 0.693 </cn>
+              <ci> ti_riv </ci>
+            </apply>
+            <cn sbml:units="s_per_min" type="integer"> 60 </cn>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="Sum of RIV and RX plasma" variable="Cve_riv_rx">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <ci> Cve_riv </ci>
+            <ci> Cve_rx </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="Sum of RIV and RX urine" variable="Aurine_riv_rx">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <ci> Aurine_riv </ci>
+            <ci> Aurine_rx </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="Sum of RIV and RX feces" variable="Afeces_riv_rx">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <ci> Afeces_riv </ci>
+            <ci> Afeces_rx </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule name="Sum of RIV and RX feces and urine" variable="Afeces_urine_riv_rx">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <ci> Afeces_riv_rx </ci>
+            <ci> Aurine_riv_rx </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <rateRule variable="IVDOSE_riv">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <minus/>
+                <ci> iv_riv </ci>
+              </apply>
+              <ci> Mr_riv </ci>
+            </apply>
+            <ci> Ri_riv </ci>
+          </apply>
+        </math>
+      </rateRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction sboTerm="SBO:0000655" id="transport_lu_riv" name="transport rivaroxaban" reversible="true" compartment="Vlu_tissue">
+        <listOfReactants>
+          <speciesReference species="Clu_plasma_riv" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Clu_riv" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> ftissue_riv </ci>
+                  <ci> BW </ci>
+                </apply>
+                <ci> BW_ref </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Clu_plasma_riv </ci>
+                  <ci> Kp_riv </ci>
+                </apply>
+                <ci> Clu_riv </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="transport_re_riv" name="transport rivaroxaban" reversible="true" compartment="Vre_tissue">
+        <listOfReactants>
+          <speciesReference species="Cre_plasma_riv" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cre_riv" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> ftissue_riv </ci>
+                  <ci> BW </ci>
+                </apply>
+                <ci> BW_ref </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <apply>
+                  <times/>
+                  <ci> Cre_plasma_riv </ci>
+                  <ci> Kp_riv </ci>
+                </apply>
+                <ci> Cre_riv </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="meta_iv_riv" sboTerm="SBO:0000655" id="iv_riv" name="iv rivaroxaban" reversible="false" compartment="Vve">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#meta_iv_riv">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="https://identifiers.org/ncit:C38276"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfProducts>
+          <speciesReference species="Cve_riv" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> Ki_riv </ci>
+                <ci> IVDOSE_riv </ci>
+              </apply>
+              <ci> Mr_riv </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_ar_ki_riv" name="inflow kidney rivaroxaban" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Car_riv" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cki_plasma_riv" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qki </ci>
+              <ci> Car_riv </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_ki_ve_riv" name="outflow kidney rivaroxaban" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Cki_plasma_riv" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cve_riv" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qki </ci>
+              <ci> Cki_plasma_riv </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_arli_li_riv" name="arterial inflow liver rivaroxaban" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Car_riv" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cli_plasma_riv" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+            <apply>
+              <times/>
+              <apply>
+                <minus/>
+                <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+                <ci> f_shunts </ci>
+              </apply>
+              <ci> Qha </ci>
+              <ci> Car_riv </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_arli_hv_riv" name="flow arterial shunts" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Car_riv" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Chv_riv" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> f_shunts </ci>
+              <ci> Qha </ci>
+              <ci> Car_riv </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_po_li_riv" name="outflow po rivaroxaban" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Cpo_riv" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cli_plasma_riv" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+            <apply>
+              <times/>
+              <apply>
+                <minus/>
+                <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+                <ci> f_shunts </ci>
+              </apply>
+              <ci> Qpo </ci>
+              <ci> Cpo_riv </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_po_hv_riv" name="flow portal shunts" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Cpo_riv" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Chv_riv" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> f_shunts </ci>
+              <ci> Qpo </ci>
+              <ci> Cpo_riv </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_li_hv_riv" name="outflow liver rivaroxaban" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Cli_plasma_riv" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Chv_riv" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+            <apply>
+              <times/>
+              <apply>
+                <minus/>
+                <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+                <ci> f_shunts </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Qpo </ci>
+                <ci> Qha </ci>
+              </apply>
+              <ci> Cli_plasma_riv </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_hv_ve_riv" name="outflow hepatic vein rivaroxaban" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Chv_riv" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cve_riv" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qh </ci>
+              <ci> Chv_riv </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_ve_lu_riv" name="inflow lung rivaroxaban" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Cve_riv" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Clu_plasma_riv" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qlu </ci>
+              <ci> Cve_riv </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_lu_ar_riv" name="outflow lung rivaroxaban" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Clu_plasma_riv" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Car_riv" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qlu </ci>
+              <ci> Clu_plasma_riv </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_ar_gu_riv" name="inflow gut rivaroxaban" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Car_riv" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cgu_plasma_riv" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qgu </ci>
+              <ci> Car_riv </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_gu_po_riv" name="outflow gut rivaroxaban" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Cgu_plasma_riv" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cpo_riv" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qgu </ci>
+              <ci> Cgu_plasma_riv </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_ar_re_riv" name="inflow rest rivaroxaban" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Car_riv" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cre_plasma_riv" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qre </ci>
+              <ci> Car_riv </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_re_ve_riv" name="outflow rest rivaroxaban" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Cre_plasma_riv" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cve_riv" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qre </ci>
+              <ci> Cre_plasma_riv </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_ar_ki_rx" name="inflow kidney rivaroxaban metabolites" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Car_rx" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cki_plasma_rx" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qki </ci>
+              <ci> Car_rx </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_ki_ve_rx" name="outflow kidney rivaroxaban metabolites" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Cki_plasma_rx" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cve_rx" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qki </ci>
+              <ci> Cki_plasma_rx </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_arli_li_rx" name="arterial inflow liver rivaroxaban metabolites" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Car_rx" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cli_plasma_rx" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+            <apply>
+              <times/>
+              <apply>
+                <minus/>
+                <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+                <ci> f_shunts </ci>
+              </apply>
+              <ci> Qha </ci>
+              <ci> Car_rx </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_arli_hv_rx" name="flow arterial shunts" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Car_rx" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Chv_rx" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> f_shunts </ci>
+              <ci> Qha </ci>
+              <ci> Car_rx </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_po_li_rx" name="outflow po rivaroxaban metabolites" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Cpo_rx" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cli_plasma_rx" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+            <apply>
+              <times/>
+              <apply>
+                <minus/>
+                <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+                <ci> f_shunts </ci>
+              </apply>
+              <ci> Qpo </ci>
+              <ci> Cpo_rx </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_po_hv_rx" name="flow portal shunts" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Cpo_rx" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Chv_rx" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> f_shunts </ci>
+              <ci> Qpo </ci>
+              <ci> Cpo_rx </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_li_hv_rx" name="outflow liver rivaroxaban metabolites" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Cli_plasma_rx" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Chv_rx" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:sbml="http://www.sbml.org/sbml/level3/version2/core">
+            <apply>
+              <times/>
+              <apply>
+                <minus/>
+                <cn sbml:units="dimensionless" type="integer"> 1 </cn>
+                <ci> f_shunts </ci>
+              </apply>
+              <apply>
+                <plus/>
+                <ci> Qpo </ci>
+                <ci> Qha </ci>
+              </apply>
+              <ci> Cli_plasma_rx </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_hv_ve_rx" name="outflow hepatic vein rivaroxaban metabolites" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Chv_rx" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cve_rx" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qh </ci>
+              <ci> Chv_rx </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_ve_lu_rx" name="inflow lung rivaroxaban metabolites" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Cve_rx" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Clu_plasma_rx" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qlu </ci>
+              <ci> Cve_rx </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_lu_ar_rx" name="outflow lung rivaroxaban metabolites" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Clu_plasma_rx" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Car_rx" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qlu </ci>
+              <ci> Clu_plasma_rx </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_ar_gu_rx" name="inflow gut rivaroxaban metabolites" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Car_rx" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cgu_plasma_rx" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qgu </ci>
+              <ci> Car_rx </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_gu_po_rx" name="outflow gut rivaroxaban metabolites" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Cgu_plasma_rx" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cpo_rx" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qgu </ci>
+              <ci> Cgu_plasma_rx </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_ar_re_rx" name="inflow rest rivaroxaban metabolites" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Car_rx" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cre_plasma_rx" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qre </ci>
+              <ci> Car_rx </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction sboTerm="SBO:0000655" id="Flow_re_ve_rx" name="outflow rest rivaroxaban metabolites" reversible="false">
+        <listOfReactants>
+          <speciesReference species="Cre_plasma_rx" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Cve_rx" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> Qre </ci>
+              <ci> Cre_plasma_rx </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+    <comp:listOfSubmodels>
+      <comp:submodel comp:id="KI" comp:name="kidney submodel" comp:modelRef="kidney"/>
+      <comp:submodel comp:id="LI" comp:name="liver submodel" comp:modelRef="liver"/>
+      <comp:submodel comp:id="GU" comp:name="gut submodel" comp:modelRef="gut"/>
+    </comp:listOfSubmodels>
+    <comp:listOfPorts>
+      <comp:port metaid="Vplasma_port" sboTerm="SBO:0000599" comp:idRef="Vplasma" comp:id="Vplasma_port" comp:name="Port of Vplasma"/>
+      <comp:port metaid="Vki_tissue_port" sboTerm="SBO:0000599" comp:idRef="Vki_tissue" comp:id="Vki_tissue_port" comp:name="Port of Vki_tissue"/>
+      <comp:port metaid="Vki_plasma_port" sboTerm="SBO:0000599" comp:idRef="Vki_plasma" comp:id="Vki_plasma_port" comp:name="Port of Vki_plasma"/>
+      <comp:port metaid="Vli_tissue_port" sboTerm="SBO:0000599" comp:idRef="Vli_tissue" comp:id="Vli_tissue_port" comp:name="Port of Vli_tissue"/>
+      <comp:port metaid="Vli_plasma_port" sboTerm="SBO:0000599" comp:idRef="Vli_plasma" comp:id="Vli_plasma_port" comp:name="Port of Vli_plasma"/>
+      <comp:port metaid="Vlu_tissue_port" sboTerm="SBO:0000599" comp:idRef="Vlu_tissue" comp:id="Vlu_tissue_port" comp:name="Port of Vlu_tissue"/>
+      <comp:port metaid="Vlu_plasma_port" sboTerm="SBO:0000599" comp:idRef="Vlu_plasma" comp:id="Vlu_plasma_port" comp:name="Port of Vlu_plasma"/>
+      <comp:port metaid="Vgu_tissue_port" sboTerm="SBO:0000599" comp:idRef="Vgu_tissue" comp:id="Vgu_tissue_port" comp:name="Port of Vgu_tissue"/>
+      <comp:port metaid="Vgu_plasma_port" sboTerm="SBO:0000599" comp:idRef="Vgu_plasma" comp:id="Vgu_plasma_port" comp:name="Port of Vgu_plasma"/>
+      <comp:port metaid="Vre_tissue_port" sboTerm="SBO:0000599" comp:idRef="Vre_tissue" comp:id="Vre_tissue_port" comp:name="Port of Vre_tissue"/>
+      <comp:port metaid="Vre_plasma_port" sboTerm="SBO:0000599" comp:idRef="Vre_plasma" comp:id="Vre_plasma_port" comp:name="Port of Vre_plasma"/>
+      <comp:port metaid="Cki_plasma_riv_port" sboTerm="SBO:0000599" comp:idRef="Cki_plasma_riv" comp:id="Cki_plasma_riv_port" comp:name="Port of Cki_plasma_riv"/>
+      <comp:port metaid="Cli_plasma_riv_port" sboTerm="SBO:0000599" comp:idRef="Cli_plasma_riv" comp:id="Cli_plasma_riv_port" comp:name="Port of Cli_plasma_riv"/>
+      <comp:port metaid="Clu_plasma_riv_port" sboTerm="SBO:0000599" comp:idRef="Clu_plasma_riv" comp:id="Clu_plasma_riv_port" comp:name="Port of Clu_plasma_riv"/>
+      <comp:port metaid="Cgu_plasma_riv_port" sboTerm="SBO:0000599" comp:idRef="Cgu_plasma_riv" comp:id="Cgu_plasma_riv_port" comp:name="Port of Cgu_plasma_riv"/>
+      <comp:port metaid="Cre_plasma_riv_port" sboTerm="SBO:0000599" comp:idRef="Cre_plasma_riv" comp:id="Cre_plasma_riv_port" comp:name="Port of Cre_plasma_riv"/>
+      <comp:port metaid="Car_riv_port" sboTerm="SBO:0000599" comp:idRef="Car_riv" comp:id="Car_riv_port" comp:name="Port of Car_riv"/>
+      <comp:port metaid="Cve_riv_port" sboTerm="SBO:0000599" comp:idRef="Cve_riv" comp:id="Cve_riv_port" comp:name="Port of Cve_riv"/>
+      <comp:port metaid="Cpo_riv_port" sboTerm="SBO:0000599" comp:idRef="Cpo_riv" comp:id="Cpo_riv_port" comp:name="Port of Cpo_riv"/>
+      <comp:port metaid="Chv_riv_port" sboTerm="SBO:0000599" comp:idRef="Chv_riv" comp:id="Chv_riv_port" comp:name="Port of Chv_riv"/>
+      <comp:port metaid="Clu_riv_port" sboTerm="SBO:0000599" comp:idRef="Clu_riv" comp:id="Clu_riv_port" comp:name="Port of Clu_riv"/>
+      <comp:port metaid="Cre_riv_port" sboTerm="SBO:0000599" comp:idRef="Cre_riv" comp:id="Cre_riv_port" comp:name="Port of Cre_riv"/>
+      <comp:port metaid="Cki_plasma_rx_port" sboTerm="SBO:0000599" comp:idRef="Cki_plasma_rx" comp:id="Cki_plasma_rx_port" comp:name="Port of Cki_plasma_rx"/>
+      <comp:port metaid="Cli_plasma_rx_port" sboTerm="SBO:0000599" comp:idRef="Cli_plasma_rx" comp:id="Cli_plasma_rx_port" comp:name="Port of Cli_plasma_rx"/>
+      <comp:port metaid="Clu_plasma_rx_port" sboTerm="SBO:0000599" comp:idRef="Clu_plasma_rx" comp:id="Clu_plasma_rx_port" comp:name="Port of Clu_plasma_rx"/>
+      <comp:port metaid="Cgu_plasma_rx_port" sboTerm="SBO:0000599" comp:idRef="Cgu_plasma_rx" comp:id="Cgu_plasma_rx_port" comp:name="Port of Cgu_plasma_rx"/>
+      <comp:port metaid="Cre_plasma_rx_port" sboTerm="SBO:0000599" comp:idRef="Cre_plasma_rx" comp:id="Cre_plasma_rx_port" comp:name="Port of Cre_plasma_rx"/>
+      <comp:port metaid="Car_rx_port" sboTerm="SBO:0000599" comp:idRef="Car_rx" comp:id="Car_rx_port" comp:name="Port of Car_rx"/>
+      <comp:port metaid="Cve_rx_port" sboTerm="SBO:0000599" comp:idRef="Cve_rx" comp:id="Cve_rx_port" comp:name="Port of Cve_rx"/>
+      <comp:port metaid="Cpo_rx_port" sboTerm="SBO:0000599" comp:idRef="Cpo_rx" comp:id="Cpo_rx_port" comp:name="Port of Cpo_rx"/>
+      <comp:port metaid="Chv_rx_port" sboTerm="SBO:0000599" comp:idRef="Chv_rx" comp:id="Chv_rx_port" comp:name="Port of Chv_rx"/>
+    </comp:listOfPorts>
+  </model>
+  <comp:listOfExternalModelDefinitions>
+    <comp:externalModelDefinition comp:id="kidney" comp:name="kidney model definition" comp:source="rivaroxaban_kidney.xml" comp:modelRef="rivaroxaban_kidney"/>
+    <comp:externalModelDefinition comp:id="liver" comp:name="liver model definition" comp:source="rivaroxaban_liver.xml" comp:modelRef="rivaroxaban_liver"/>
+    <comp:externalModelDefinition comp:id="gut" comp:name="gut model definition" comp:source="rivaroxaban_intestine.xml" comp:modelRef="rivaroxaban_intestine"/>
+  </comp:listOfExternalModelDefinitions>
+</sbml>

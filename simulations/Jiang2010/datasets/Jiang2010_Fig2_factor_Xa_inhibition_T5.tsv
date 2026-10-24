@@ -1,0 +1,14 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	median	mean_pm	sd	se	comments	value_unit	median_unit	count_unit
+Jiang2010		T5	12.0	T5	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T5	0.0	hr		0.264150943396231					percent	percent	dimensionless
+Jiang2010		T5	12.0	T5	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T5	0.5	hr		17.1698113207547					percent	percent	dimensionless
+Jiang2010		T5	12.0	T5	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T5	1.0	hr		29.3207547169811					percent	percent	dimensionless
+Jiang2010		T5	12.0	T5	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T5	2.0	hr		31.9622641509434					percent	percent	dimensionless
+Jiang2010		T5	12.0	T5	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T5	3.0	hr		25.3584905660377					percent	percent	dimensionless
+Jiang2010		T5	12.0	T5	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T5	4.0	hr		23.5094339622642					percent	percent	dimensionless
+Jiang2010		T5	12.0	T5	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T5	6.0	hr		19.811320754717					percent	percent	dimensionless
+Jiang2010		T5	12.0	T5	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T5	8.0	hr		12.9433962264151					percent	percent	dimensionless
+Jiang2010		T5	12.0	T5	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T5	12.0	hr		2.90566037735849					percent	percent	dimensionless
+Jiang2010		T5	12.0	T5	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T5	15.0	hr		11.8867924528302					percent	percent	dimensionless
+Jiang2010		T5	12.0	T5	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T5	24.0	hr		2.90566037735849					percent	percent	dimensionless
+Jiang2010		T5	12.0	T5	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T5	36.0	hr		1.32075471698113					percent	percent	dimensionless
+Jiang2010		T5	12.0	T5	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T5	48.0	hr		0.264150943396231					percent	percent	dimensionless

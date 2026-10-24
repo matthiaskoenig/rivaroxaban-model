@@ -1,79 +1,76 @@
-from typing import Dict
+"""Effect of rivaroxaban on the coagulation model alone."""
+
+from typing import ClassVar, override
 
 import numpy as np
-from sbmlsim.plot import Axis, Figure, Plot
-from sbmlsim.simulation import Timecourse, TimecourseSim
+from sbmlsim import Q
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Change, Simulation
 
-from pkdb_models.models.rivaroxaban.experiments.coagulation_experiment import CoagulationSimulationExperiment
-from pkdb_models.models.rivaroxaban.helpers import run_experiments
+from pkdb_models.models.rivaroxaban import MODEL
+from pkdb_models.models.rivaroxaban.experiments.coagulation_experiment import (
+    CoagulationSimulationExperiment,
+)
 
 
 class CoagulationExperiment(CoagulationSimulationExperiment):
     """Effect of rivaroxaban."""
 
-    riv_values = np.linspace(0.0, 300.0/435.88, num=6)  # [µmole/l]  # FIXME values not right
-    colors = ['black', '#eff3ff','#bdd7e7','#6baed6','#3182bd','#08519c']
+    riv_values: ClassVar[np.ndarray] = np.linspace(
+        0.0, 300.0 / 435.88, num=6
+    )  # [µmole/l]  # FIXME values not right
+    colors: ClassVar[list[str]] = [
+        "black",
+        "#c6dbef",
+        "#9ecae1",
+        "#6baed6",
+        "#3182bd",
+        "#08519c",
+    ]
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
-        tcsims = {}
-
-        baseline_changes = {}
+    @override
+    def simulations(self) -> dict[str, Simulation]:
+        simulations = {}
 
         for k, riv in enumerate(self.riv_values):
-            tcsims[f"coagulation_{k}"] = TimecourseSim([
-                Timecourse(
-                    start=0,
-                    end=5 * 60,  # [min] # simulate 1 day
-                    steps=500,
-                    changes={
-                        **self.default_changes(),
-                        "[Cve_riv]": Q_(0, "µM"),
-                        **baseline_changes,
-                    },
-                ),
-                Timecourse(
-                    start=0,
-                    end=24 * 60,  # [min] # simulate 1 day
-                    steps=2000,
-                    changes={
-                        "[Cve_riv]": Q_(riv, "µM")
-                    },
-                ),
-                Timecourse(
-                    start=0,
-                    end=24 * 60,  # [min] # simulate 1 day
-                    steps=2000,
-                    changes={
-                        "[Cve_riv]": Q_(0, "µM")
-                    },
-                ),
+            # rivaroxaban for 24 hr after a baseline of 5 hr, then 24 hr without
+            simulations[f"coagulation_{k}"] = Simulation(
+                time_unit="min",
+                end=(5 + 24 + 24) * 60,
+                preinit_changes={
+                    **self.default_changes(),
+                    "[Cve_riv]": Q(0, "µM"),
+                },
+                changes=[
+                    Change(5 * 60, {"[Cve_riv]": Q(riv, "µM")}),
+                    Change((5 + 24) * 60, {"[Cve_riv]": Q(0, "µM")}),
                 ],
-                time_offset=-5*60
+                time_shift=-5 * 60,
             )
 
-        return tcsims
+        return simulations
 
-    def figures(self) -> Dict[str, Figure]:
-
+    @override
+    def figures(self) -> dict[str, Figure]:
+        # the concentration of rivaroxaban and its effects, by panel
         info = [
-            ("PT", 0),
-            ("PT_change", 1),
-            ("PT_ratio", 2),
-
+            ("[Cve_riv]", 0),
+            ("Xa_inhibition", 1),
+            ("PT", 2),
             ("aPTT", 3),
-            ("aPTT_change", 4),
-            ("aPTT_ratio", 5),
-
-            ("Xa_inhibition", 6),
+            ("PT_change", 4),
+            ("aPTT_change", 5),
+            ("PT_ratio", 6),
+            ("aPTT_ratio", 7),
         ]
 
+        fig_id = "Fig_coagulation"
         fig = Figure(
             experiment=self,
-            sid=f"Fig_coagulation",
-            num_rows=3,
-            num_cols=3,
-            name=f"Coagulation",
+            sid=fig_id,
+            num_rows=4,
+            num_cols=2,
+            name="Coagulation",
         )
         plots = fig.create_plots(xaxis=Axis("time", unit="hour"), legend=True)
 
@@ -85,14 +82,14 @@ class CoagulationExperiment(CoagulationSimulationExperiment):
                     task=f"task_coagulation_{k}",
                     xid="time",
                     yid=sid,
-                    label=f"{riv:.1f} nM",
+                    label=f"{riv:.2f} µM",
                     color=self.colors[k],
                 )
 
-        return {fig.sid: fig}
+        return {fig_id: fig}
 
 
 if __name__ == "__main__":
-    run_experiments(
-       CoagulationExperiment, output_dir=CoagulationExperiment.__name__
+    MODEL.run_experiments(
+        CoagulationExperiment, output_dir=CoagulationExperiment.__name__
     )

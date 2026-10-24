@@ -1,476 +1,445 @@
-"""Parameter scans rivaroxaban."""
-from typing import Dict
+"""Parameter scans of rivaroxaban: the dose, the renal function, cirrhosis and food."""
 
-import matplotlib.axes
-import matplotlib.cm as cm
+from collections.abc import Mapping
+from typing import ClassVar, TypedDict, override
 
+import matplotlib
+import matplotlib.pyplot as plt
 import numpy as np
-from sbmlsim.simulation import Timecourse, TimecourseSim, ScanSim, Dimension
-from sbmlsim.plot.serialization_matplotlib import FigureMPL, MatplotlibFigureSerializer
-from sbmlsim.plot.serialization_matplotlib import plt
-from sbmlutils.console import console
+import pandas as pd
+from matplotlib.axes import Axes
+from matplotlib.colors import Colormap
+from matplotlib.typing import ColorType
+from pkpdsim.scan import point_band, point_timecourse, scan_dimensions, start_values
+from sbmlsim import Q
+from sbmlsim.plot.serialization_matplotlib import FigureMPL
+from sbmlsim.result import ScanResult
+from sbmlsim.simulation import Dimension, Scan, Simulation
+from sbmlsim.units import Quantity
 
+from pkdb_models.models.rivaroxaban import MODEL
 from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
     RivaroxabanSimulationExperiment,
 )
-from pkdb_models.models.rivaroxaban.helpers import run_experiments
+from pkdb_models.models.rivaroxaban.rivaroxaban_pk import (
+    calculate_rivaroxaban_pd,
+    summarize,
+)
+
+
+class ScanSpec(TypedDict):
+    """Definition of a parameter scan."""
+
+    parameter: str
+    #: the values of the parameter, which contain the reference
+    range: np.ndarray
+    units: str
+    #: the value of the scan in the simulations of the other scans
+    reference: float
+    label: str
+    #: a logarithmic axis of the scanned parameter
+    log: bool
+    #: the colormap from the lowest to the highest value
+    colormap: str
 
 
 class RivaroxabanParameterScan(RivaroxabanSimulationExperiment):
-    """Scan the effect of parameters on pharmacokinetics."""
+    """Scan the effect of parameters on the pharmacokinetics and the anticoagulation.
 
-    font = {"weight": "bold", "size": 20}
-    tick_font_size = 17
+    A single oral dose of 10 mg rivaroxaban as a tablet, fasted, in a healthy
+    liver and kidney, followed for 4 days (the half-life is 3 to 5 hr, longer
+    in severe renal impairment and cirrhosis). Scanned are the dose (1 to
+    100 mg; the dissolution saturates above 10 mg), the renal function (0.1 to
+    10, logarithmic), the degree of cirrhosis (0 to 0.9) and the fed state
+    (0, fasted, to 1, fed); the figures show the first 2 days of the
+    timecourses of rivaroxaban and its metabolites in plasma, their excretion
+    and the anticoagulant effects (PT, aPTT, inhibition of factor Xa), and the
+    pharmacokinetic parameters of the non-compartmental analysis
+    (`rivaroxaban_pk`) and the maxima of the effects over the scanned
+    parameter.
 
-    tend = 48 * 60
-    steps = 2000
-    dose_riv = 10  # [mg]
+    In a run over the draws of the fitted parameters (`run_simulation
+    pkdb_models.models.rivaroxaban --uncertainty`) every point of a scan is
+    simulated for every draw; the figures draw the median of the draws with the
+    band of their quantiles.
+    """
 
-    num_points = 10
-    scan_map = {
-        "hepatic_scan": {
-            "parameter": "f_cirrhosis",
-            "default": 0.0,
-            "range": np.linspace(0, 0.9, num=num_points),
-            # "range": np.logspace(-2, 2, num=21),
-            "scale": "linear",
-            "colormap": "Blues",
-            "units": "dimensionless",
-            "label": "cirrhosis degree [-]",
-        },
-        "renal_scan": {
-            "parameter": "KI__f_renal_function",
-            # "range": np.linspace(0.1, 1.9, num=num_points),
-            "default": 1.0,
-            "range": np.sort(
-                np.append(np.logspace(-1, 1, num=num_points), [1.0])
-            ),  # [10^-1=0.1, 10^1=10]
-            "scale": "log",
-            "colormap": "Greens_r",
-            "units": "dimensionless",
-            "label": "renal function [-]",
-        },
-        "dose_scan": {
+    #: the end of the simulations [hr]
+    tend = 96
+    #: the output times [hr]: every 0.05 hr in the first day (absorption and
+    #: maximum, tmax 0.5 to 4 hr), every 0.5 hr after it
+    times: ClassVar[tuple[float, ...]] = tuple(
+        np.unique(
+            np.concatenate([np.linspace(0, 24, 481), np.linspace(24, tend, 145)])
+        ).tolist()
+    )
+    #: the end of the time axis of the timecourses [hr]
+    tend_plot = 48
+    #: the opacity of the bands of the draws
+    band_alpha = 0.15
+    #: the oral dose of the scans [mg]
+    dose_riv = 10.0
+
+    #: the variables of the timecourses
+    timecourses: ClassVar[tuple[str, ...]] = (
+        "[Cve_riv]",
+        "[Cve_rx]",
+        "Aurine_riv",
+        "Aurine_rx",
+        "Afeces_rx",
+        "PT",
+        "aPTT",
+        "Xa_inhibition",
+    )
+    #: the pharmacokinetic parameters of the substances of `rivaroxaban_pk`
+    pk_parameters: ClassVar[dict[str, tuple[str, ...]]] = {
+        "riv": ("auc_inf_obs", "cmax", "tmax", "thalf", "cl_f"),
+        "rx": ("auc_inf_obs", "cmax", "tmax", "thalf"),
+    }
+    pk_names: ClassVar[dict[str, str]] = {
+        "riv": "rivaroxaban plasma",
+        "rx": "rivaroxaban metabolites plasma",
+    }
+    #: the effects whose maximum is drawn over the scanned parameter
+    effects: ClassVar[tuple[str, ...]] = ("PT", "aPTT", "Xa_inhibition")
+    pk_labels: ClassVar[Mapping[str, str]] = {
+        "auc_inf_obs": "AUC",
+        "cmax": "Cmax",
+        "tmax": "Tmax",
+        "thalf": "Half-life",
+        "cl_f": "CL/F",
+        "PT": "max PT",
+        "aPTT": "max aPTT",
+        "Xa_inhibition": "max Xa inhibition",
+    }
+    pk_units: ClassVar[Mapping[str, str]] = {
+        "auc_inf_obs": "µmole/l*hr",
+        "cmax": "µmole/l",
+        "tmax": "hr",
+        "thalf": "hr",
+        "cl_f": "l/hr",
+        "PT": "s",
+        "aPTT": "s",
+        "Xa_inhibition": "percent",
+    }
+
+    scan_map: ClassVar[dict[str, ScanSpec]] = {
+        "dose": {
             "parameter": "PODOSE_riv",
-            "default": 10,
-            "range": np.sort(
-                # np.append(np.linspace(1, 100, num=num_points), [10])
-                [1, 2.5, 5, 10, 20, 30, 40, 60, 80, 100]
-            ),  # [10^-1=0.1, 10^1=10]
-            # "range": np.sort(
-            #     np.append(np.logspace(1, 2, num=num_points), [50])
-            # ),  # [10^-1=0.1, 10^1=10]
-            "scale": "linear",
-            "colormap": "Reds",
+            "range": np.array([1, 2.5, 5, 10, 20, 30, 40, 60, 80, 100], dtype=float),
             "units": "mg",
+            "reference": dose_riv,
             "label": "rivaroxaban dose [mg]",
+            "log": True,
+            "colormap": "viridis_r",
         },
-        "food_scan": {
-            "parameter": "GU__F_riv_abs",
-            # "range": np.linspace(0.1, 1.9, num=num_points),
-            "default": 0.82,
-            "range": np.sort(
-                np.append(np.logspace(-1, 0, num=num_points), [0.82])
-            ),  # [10^-1=0.1, 10^1=10] = [10% - 100%]
-            "scale": "log",
-            "colormap": "Purples",
+        "renal": {
+            "parameter": "KI__f_renal_function",
+            "range": np.logspace(-1, 1, num=11),
             "units": "dimensionless",
-            "label": "fraction absorbed [-]",
+            "reference": 1.0,
+            "label": "renal function [-]",
+            "log": True,
+            "colormap": "seismic_r",
+        },
+        "hepatic": {
+            "parameter": "f_cirrhosis",
+            "range": np.linspace(0, 0.9, num=10),
+            "units": "dimensionless",
+            "reference": 0.0,
+            "label": "cirrhosis degree [-]",
+            "log": False,
+            "colormap": "Blues",
+        },
+        "food": {
+            "parameter": "GU__fed",
+            "range": np.linspace(0, 1, num=6),
+            "units": "dimensionless",
+            "reference": 0.0,
+            "label": "fed state [-]",
+            "log": False,
+            "colormap": "Purples",
         },
     }
 
-    def simulations(self) -> Dict[str, ScanSim]:
-        Q_ = self.Q_
-        tcscans = {}
+    font: ClassVar[dict[str, str | int]] = {"weight": "bold", "size": 15}
+    tick_font_size = 13
 
-        for scan_key, scan_data in self.scan_map.items():
-            tcscans[f"scan_po_{scan_key}"] = ScanSim(
-                simulation=TimecourseSim(
-                    Timecourse(
-                        start=0,
-                        end=self.tend,
-                        steps=self.steps,
-                        changes={
-                            **self.default_changes(),
-                            "PODOSE_riv": Q_(self.dose_riv, "mg"),
-                        },
-                    )
+    def _reference_changes(self, parameter: str) -> dict[str, Quantity | float]:
+        """Get the changes of the reference without the scanned parameter.
+
+        The reference is the dose of 10 mg, fasted, in a healthy liver and
+        kidney; the scanned parameter is set by the dimension of the scan.
+        """
+        changes: dict[str, Quantity | float] = {
+            **self.default_changes(),
+            **{
+                spec["parameter"]: Q(spec["reference"], spec["units"])
+                for spec in self.scan_map.values()
+            },
+        }
+        changes.pop(parameter)
+        return changes
+
+    @override
+    def simulations(self) -> dict[str, Scan]:
+        return {
+            f"scan_{key}": Scan(
+                simulation=Simulation(
+                    time_unit="hr",
+                    end=self.tend,
+                    times=self.times,
+                    preinit_changes=self._reference_changes(spec["parameter"]),
                 ),
                 dimensions=[
                     Dimension(
                         "dim_scan",
-                        changes={
-                            scan_data["parameter"]: Q_(
-                                scan_data["range"], scan_data["units"]
-                            )
-                        },
+                        values={spec["parameter"]: Q(spec["range"], spec["units"])},
                     ),
                 ],
             )
-
-        return tcscans
-
-    def figures_mpl(self) -> Dict[str, FigureMPL]:
-        """Matplotlib figures."""
-        # calculate pharmacokinetic parameters
-        self.pk_dfs = self.calculate_rivaroxaban_pk()
-        self.pd_dfs = self.calculate_rivaroxaban_pd()
-        #console.print(self.pd_dfs)
-
-        return {
-            **self.figures_mpl_timecourses(),
-            **self.figures_mpl_pharmacokinetics(),
-            **self.figures_mpl_pharmacodynamics(),
+            for key, spec in self.scan_map.items()
         }
 
-    def figures_mpl_timecourses(self) -> Dict[str, FigureMPL]:
-        """Timecourse plots for key variables depending on degree of renal impairment."""
+    def _across(self) -> str | None:
+        """Get the dimension of the draws of the fitted parameters, `None` without."""
+        return None if self.uncertainty is None else self.uncertainty.id
 
-        figures = {}
-        for scan_key, scan_data in self.scan_map.items():
-            range = scan_data["range"]
-            rmin, rmax = range[0], range[-1]
+    def _axis_values(self, res: ScanResult, spec: ScanSpec) -> np.ndarray:
+        """Get the values of the axis of the scanned parameter at the points."""
+        pid = spec["parameter"]
+        values = start_values(res, pid)
+        across = self._across()
+        if across is not None:
+            values = values.isel({across: 0})
+        scanned = Q(values.values, res.units[pid]).to(spec["units"]).magnitude
+        return np.asarray(scanned, dtype=float)
 
-            # cmap_str
-            cmap_str = scan_data["colormap"]
-            cmap = matplotlib.colormaps.get_cmap(cmap_str)
+    @staticmethod
+    def _color(spec: ScanSpec, value: float, cmap: Colormap) -> ColorType:
+        """Get the color of a value of a scan, black for the reference."""
+        if np.isclose(value, spec["reference"]):
+            return "black"
+        vmin, vmax = float(np.min(spec["range"])), float(np.max(spec["range"]))
+        if spec["log"]:
+            position = (np.log10(value) - np.log10(vmin)) / (
+                np.log10(vmax) - np.log10(vmin)
+            )
+        else:
+            position = (value - vmin) / (vmax - vmin)
+        return cmap(float(position))
 
-            # -----------------------------------
-            # pharmacokinetics & pharmacodynamics
-            # -----------------------------------
-            sids = [
-                "[Cve_riv]",
-                "[Cve_rx]",
-                "Aurine_riv",
-                "Aurine_rx",
+    @staticmethod
+    def _unit(units: Mapping[str, str], sid: str) -> str:
+        """Get the unit of a variable in the figures, the inhibition in percent."""
+        return "percent" if sid == "Xa_inhibition" else units[sid]
 
-                "Afeces_rx",
-                "PT",
-                "aPTT",
-                "Xa_inhibition",
+    def _timecourse(
+        self, ax: Axes, res: ScanResult, sid: str, index: int, color: ColorType
+    ) -> tuple[np.ndarray, np.ndarray, float, float]:
+        """Get the timecourse of a point of a scan, drawing the band of its draws.
+
+        Returns:
+            The time and the values in the units of the figure, the median of
+            the draws in a run over them, and the minimum and the maximum of
+            the values or of the band on the time axis of the figure.
+        """
+        (scandim,) = scan_dimensions(res, self._across())
+        run = self.uncertainty
+        if run is None:
+            time, values = point_timecourse(res, sid, **{scandim: index})
+        else:
+            time, lower, values, upper = point_band(
+                res, sid, across=run.id, quantiles=run.quantiles, **{scandim: index}
+            )
+        unit = self._unit(self.units, sid)
+        t_vec = Q(time, res.units["time"]).to(self.units["time"]).magnitude
+        c_vec = Q(values, res.units[sid]).to(unit).magnitude
+        shown = t_vec <= self.tend_plot
+        bottom = float(np.nanmin(c_vec[shown]))
+        top = float(np.nanmax(c_vec[shown]))
+        if run is not None:
+            lower_vec = Q(lower, res.units[sid]).to(unit).magnitude
+            upper_vec = Q(upper, res.units[sid]).to(unit).magnitude
+            ax.fill_between(
+                t_vec,
+                lower_vec,
+                upper_vec,
+                color=color,
+                alpha=self.band_alpha,
+                linewidth=0,
+            )
+            bottom = min(bottom, float(np.nanmin(lower_vec[shown])))
+            top = max(top, float(np.nanmax(upper_vec[shown])))
+        return t_vec, c_vec, bottom, top
+
+    def _maxima(self, res: ScanResult) -> pd.DataFrame:
+        """Get the maxima of the effects at every point of a scan.
+
+        Returns:
+            One row per point (and draw), the columns `point`, `draw` (with
+            draws) and per effect its maximum and its unit (`<effect>_unit`).
+        """
+        across = self._across()
+        dfs = calculate_rivaroxaban_pd(res, across=across)
+        columns = ["point", *(["draw"] if across is not None else [])]
+        df = dfs[self.effects[0]][columns].copy()
+        for sid in self.effects:
+            df[sid] = dfs[sid]["max"].to_numpy(dtype=float)
+            df[f"{sid}_unit"] = dfs[sid]["unit"].to_numpy()
+        return df
+
+    def _summary(
+        self, df: pd.DataFrame, key: str, target: str
+    ) -> tuple[np.ndarray, np.ndarray | None, np.ndarray | None]:
+        """Get a parameter at the points of a scan, the median and the band of the draws.
+
+        Returns:
+            The values (the median of the draws in a run over them), and the
+            lower and the upper quantile, `None` without draws.
+        """
+        unit = df[f"{key}_unit"].iloc[0]
+        run = self.uncertainty
+        if run is None:
+            return (
+                Q(df[key].to_numpy(dtype=float), unit).to(target).magnitude,
+                None,
+                None,
+            )
+        summary = summarize(df, key, run.quantiles)
+        median, lower, upper = (
+            Q(summary[column].to_numpy(), unit).to(target).magnitude
+            for column in ["median", "lower", "upper"]
+        )
+        return median, lower, upper
+
+    @override
+    def figures_mpl(self) -> dict[str, FigureMPL]:
+        figures: dict[str, FigureMPL] = {}
+        keys = [f"scan_{key}" for key in self.scan_map]
+        pk_dfs = self.calculate_rivaroxaban_pk(scans=keys, across=self._across())
+        for key, spec in self.scan_map.items():
+            res = self.results[f"task_scan_{key}"]
+            figures[f"fig_timecourse_{key}"] = self._figure_timecourses(key, spec, res)
+            figures[f"fig_pk_{key}"] = self._figure_pharmacokinetics(
+                spec, res, pk_dfs[f"scan_{key}"]
+            )
+        return figures
+
+    def _figure_timecourses(
+        self, key: str, spec: ScanSpec, res: ScanResult
+    ) -> FigureMPL:
+        """Timecourses of a scan, the reference in black.
+
+        Raises:
+            ValueError: if the reference is not a point of the scan.
+        """
+        cmap = matplotlib.colormaps[spec["colormap"]]
+        x_vec = self._axis_values(res, spec)
+        references = [
+            k for k, x in enumerate(x_vec) if np.isclose(x, spec["reference"])
+        ]
+        if not references:
+            raise ValueError(f"The reference is not a point of the scan '{key}'.")
+
+        ncols = 4
+        nrows = (len(self.timecourses) + ncols - 1) // ncols
+        f: FigureMPL
+        f, axes = plt.subplots(
+            nrows=nrows, ncols=ncols, figsize=(5.5 * ncols, 5 * nrows)
+        )
+        f.subplots_adjust(wspace=0.4, hspace=0.35)
+        f.suptitle(
+            f"Scan {spec['label']}: reference black", fontsize=20, fontweight="bold"
+        )
+        for ax, sid in zip(axes.flatten(), self.timecourses, strict=True):
+            ymin, ymax = np.inf, 0.0
+            # the reference last, on top
+            for index in [k for k in range(len(x_vec)) if k not in references] + [
+                references[0]
+            ]:
+                color = self._color(spec, float(x_vec[index]), cmap)
+                t_vec, c_vec, bottom, top = self._timecourse(ax, res, sid, index, color)
+                ymin, ymax = min(ymin, bottom), max(ymax, top)
+                ax.plot(t_vec, c_vec, color=color, linewidth=2.0)
+            ax.set_xlim(0, self.tend_plot)
+            # the clotting times start at their baseline, not at 0
+            low = 0.95 * ymin if sid in ("PT", "aPTT") else 0.0
+            ax.set_ylim(bottom=low, top=1.05 * ymax if ymax > 0 else 1.0)
+            ax.tick_params(axis="both", labelsize=self.tick_font_size)
+            ax.set_xlabel(
+                f"{self.label_time} [{self.units['time']}]", fontdict=self.font
+            )
+            unit = self._unit(self.units, sid).replace("dimensionless", "-")
+            ax.set_ylabel(f"{self.labels[sid]} [{unit}]", fontdict=self.font)
+        return f
+
+    def _figure_pharmacokinetics(
+        self, spec: ScanSpec, res: ScanResult, df: pd.DataFrame
+    ) -> FigureMPL:
+        """Pharmacokinetic parameters of the substances and the maxima of the effects."""
+        x_vec = self._axis_values(res, spec)
+        maxima = self._maxima(res)
+        rows: list[list[tuple[str, pd.DataFrame, str]]] = [
+            [
+                (key, df[df["substance"] == substance], self.pk_names[substance])
+                for key in parameters
             ]
-
-            f, axes = plt.subplots(
-                nrows=2,
-                ncols=4,
-                figsize=(6 * 4, 5 * 2),
-                dpi=300,
-                layout="constrained"
-            )
-
-            ymax = {}
-            for ksid, sid in enumerate(sids):
-                ymax[sid] = 0.0
-                ax = axes.flatten()[ksid]
-
-                # get data
-                Q_ = self.Q_
-                xres = self.results[
-                    f"task_scan_po_{scan_key}"
-                ]
-
-                # scanned dimension
-                scandim = xres._redop_dims()[0]
-                parameter_id = scan_data["parameter"]
-                par_vec = Q_(
-                    xres[parameter_id].values[0], xres.uinfo[parameter_id]
-                )
-                t_vec = xres.dim_mean("time").to(self.units["time"])
-
-                for k_par, par in enumerate(par_vec):
-                    c_vec = Q_(
-                        xres[sid].sel({scandim: k_par}).values,
-                        xres.uinfo[sid],
-                    ).to(self.units[sid])
-
-                    # update ymax
-                    cmax = np.nanmax(c_vec.magnitude)
-                    if cmax > ymax[sid]:
-                        ymax[sid] = cmax
-
-                    # 0.1 - 1.9
-                    linewidth = 2.0
-                    if np.isclose(scan_data["default"], par.magnitude):
-                        color = "black"
-                        t_vec_default = t_vec
-                        c_vec_default = c_vec
-                    else:
-                        # red less function, blue more function
-                        if scan_data["scale"] == "linear":
-                            cvalue = (par.magnitude - rmin)/np.abs(rmax-rmin)
-                        elif scan_data["scale"] == "log":
-                            cvalue = (np.log10(par.magnitude) - np.log10(rmin)) / np.abs(np.log10(rmax) - np.log10(rmin))
-
-                        color = cmap(cvalue)
-
-                    ax.plot(
-                        t_vec.magnitude,
-                        c_vec.magnitude,
-                        color=color,
-                        linewidth=linewidth,
+            for substance, parameters in self.pk_parameters.items()
+        ]
+        rows.append([(sid, maxima, "anticoagulation") for sid in self.effects])
+        ncols = max(len(row) for row in rows)
+        nrows = len(rows)
+        f: FigureMPL
+        f, axes = plt.subplots(
+            nrows=nrows, ncols=ncols, figsize=(5 * ncols, 4.5 * nrows)
+        )
+        f.subplots_adjust(wspace=0.45, hspace=0.45)
+        f.suptitle(
+            f"Scan {spec['label']}: pharmacokinetics and pharmacodynamics",
+            fontsize=20,
+            fontweight="bold",
+        )
+        for krow, panels in enumerate(rows):
+            for kcol in range(ncols):
+                ax: Axes = axes[krow, kcol]
+                if kcol >= len(panels):
+                    ax.set_axis_off()
+                    continue
+                key, data, name = panels[kcol]
+                target = self.pk_units[key]
+                y_vec, y_lower, y_upper = self._summary(data, key, target)
+                if y_lower is not None and y_upper is not None:
+                    ax.fill_between(
+                        x_vec,
+                        y_lower,
+                        y_upper,
+                        color="black",
+                        alpha=self.band_alpha,
+                        linewidth=0,
                     )
-
-                # plot the reference line in black
+                    top = float(np.nanmax(y_upper))
+                else:
+                    top = float(np.nanmax(y_vec))
+                ax.axvline(x=spec["reference"], color="grey", linestyle="--")
                 ax.plot(
-                    t_vec_default.magnitude,
-                    c_vec_default.magnitude,
-                    color="black",
-                    linewidth=2.0,
-                )
-
-                ax.set_xlabel(
-                    f"{self.label_time} [{self.units['time']}]",
-                    fontdict=self.font,
-                )
-                ax.set_ylabel(
-                    f"{self.labels[sid]} [{self.units[sid].replace('dimensionless', '-')}]",
-                    fontdict=self.font,
-                )
-                ax.tick_params(axis="x", labelsize=self.tick_font_size)
-                ax.tick_params(axis="y", labelsize=self.tick_font_size)
-
-
-            # --- colorbar ---
-            # 4-tuple of floats rect = (left, bottom, width, height).
-            # A new Axes is added with dimensions rect in normalized (0, 1)
-            cb_ax = f.add_axes(rect=[0.12, 0.85, 0.07, 0.08])
-            cb_ax.set_in_layout(True)
-
-            # colorbar range
-            if scan_data["scale"] == "linear":
-                norm = matplotlib.colors.Normalize(vmin=rmin, vmax=rmax, clip=False)
-            elif scan_data["scale"] == "log":
-                norm = matplotlib.colors.LogNorm(vmin=rmin, vmax=rmax, clip=False)
-
-            cbar = f.colorbar(
-                cm.ScalarMappable(norm=norm, cmap=cmap_str),
-                cax=cb_ax,
-                orientation="horizontal",
-            )
-
-            # label
-            cbar.ax.set_xlabel(
-                scan_data["label"], **{"size": 15, "weight": "bold"}
-            )
-            cbar.ax.axvline(x=scan_data["default"], color="black", linewidth=2)
-
-            # ticks
-            ticks = [rmin, rmax]
-            if scan_data["default"] not in ticks:
-                ticks.append(scan_data["default"])
-                ticks = sorted(ticks)
-            #console.print(ticks)
-            cbar.set_ticks(ticks)
-            cbar.set_ticklabels(
-                ticks, **{"size": 15, "weight": "medium"}
-            )
-
-            figures[f"timecourse__pk__{scan_key}"] = f
-
-        return figures
-
-    def figures_mpl_pharmacokinetics(self):
-        """Visualize dependency of pharmacokinetics parameters."""
-        Q_ = self.Q_
-        figures = {}
-
-        parameters_info = {
-            "riv": [
-                "aucinf",
-                # "cmax",
-                # "kel",
-                # "vd",
-                "thalf",
-                # "cl",
-                # "cl_hepatic",
-                # "cl_renal",
-                # "cl_fecal",
-            ],
-            "rx": [
-                "aucinf",
-                # "cmax",
-                # "kel",
-                "thalf",
-                # "cl_renal",
-                # "Aurine_eat",
-            ],
-
-        }
-        colors = {
-            "riv": "black",
-            "rx": "tab:blue",
-        }
-
-        for scan_key, scan_data in self.scan_map.items():
-            parameters = parameters_info["riv"]
-            f, axes = plt.subplots(
-                nrows=1, ncols=len(parameters), figsize=(6 * len(parameters), 5), dpi=300,
-                layout="constrained"
-            )
-            # f.suptitle(
-            #     f"{names[substance]}",
-            #     fontsize=self.suptitle_font_size,
-            # )
-            axes = axes.flatten()
-
-            for substance, parameters in parameters_info.items():
-                for k, pk_key in enumerate(parameters):
-                    ax = axes[k]
-                    ax.axvline(x=scan_data["default"], color="grey", linestyle="--")
-
-                    ymax = 0.0
-
-                    sim_key = f"scan_po_{scan_key}"
-                    xres = self.results[f"task_{sim_key}"]
-                    df = self.pk_dfs[sim_key]
-                    df = df[df.substance == substance]  # get PK for substance
-
-                    # This was scanned
-                    parameter_id = scan_data["parameter"]
-                    x_vec = Q_(
-                        xres[parameter_id].values[0], xres.uinfo[parameter_id]
-                    )
-
-                    pk_vec = df[f"{pk_key}"]
-                    pk_vec = pk_vec.to_numpy()
-
-                    x = x_vec
-                    y = Q_(pk_vec, df[f"{pk_key}_unit"].values[0])
-
-                    y = y.to(self.pk_units[pk_key])
-                    ax.plot(
-                        x,
-                        y,
-                        marker="o",
-                        linestyle="-",
-                        linewidth=2.0,
-                        color=colors[substance],
-                        markeredgecolor=colors[substance],
-                        markeredgewidth=2.0,
-                        markerfacecolor="white",
-                        markersize=9,
-                        label=f"{substance}",
-                    )
-                    ymax_value = np.nanmax(y.magnitude)
-                    if ymax_value > ymax:
-                        ymax = ymax_value
-
-
-                    # ax.set_xlabel(scan_data["label"], fontdict=EnalaprilSimulationExperiment.scan_font)
-                    ax.set_xlabel(
-                        scan_data["label"],
-                        fontdict=self.font,
-                    )
-                    ax.set_ylabel(
-                        f"{self.pk_labels[pk_key]} [{self.pk_units[pk_key]}]",
-                        fontdict=self.font,
-                    )
-                    ax.tick_params(
-                        axis="x", labelsize=self.tick_font_size
-                    )
-                    ax.tick_params(
-                        axis="y", labelsize=self.tick_font_size
-                    )
-
-                    # set axis
-                    # ax.set_ylim(bottom=0.0, top=1.05 * ymax)
-                    # ax.set_ylim(bottom=0.0)
-                    ax.set_xscale("log")
-                    ax.legend(fontsize=RivaroxabanSimulationExperiment.legend_font_size)
-
-
-            figures[f"pk_{scan_key}"] = f
-        return figures
-
-    def figures_mpl_pharmacodynamics(self):
-        """Visualize dependency of pharmacodynamic parameters."""
-        Q_ = self.Q_
-        figures = {}
-
-        parameters = {
-            "PT": "max",
-            "aPTT": "max",
-            "Xa_inhibition": "max",
-        }
-
-        for scan_key, scan_data in self.scan_map.items():
-
-            f, axes = plt.subplots(
-                nrows=1, ncols=3, figsize=(6 * 3, 5), dpi=300,
-                layout="constrained"
-            )
-            axes = axes.flatten()
-
-            for k, sid in enumerate(parameters):
-                pd_key = parameters[sid]
-
-                if sid == "DBP":
-                    k = 3
-                ax = axes[k]
-                ax.axvline(x=scan_data["default"], color="grey", linestyle="--")
-
-                ymax = 0.0
-
-                sim_key = f"scan_po_{scan_key}"
-                xres = self.results[f"task_{sim_key}"]
-                dfs = self.pd_dfs[sim_key]
-                df = dfs[sid]  # get PD for sid
-
-                # This was scanned
-                parameter_id = scan_data["parameter"]
-                x_vec = Q_(
-                    xres[parameter_id].values[0], xres.uinfo[parameter_id]
-                )
-                pd_vec = df[f"{pd_key}"]
-                pd_vec = pd_vec.to_numpy()
-
-                x = x_vec
-                y = Q_(pd_vec, df[f"unit"].values[0])
-
-                y = y.to(self.units[sid])
-                ax.plot(
-                    x,
-                    y,
+                    x_vec,
+                    y_vec,
                     marker="o",
                     linestyle="-",
-                    linewidth=2.0,
                     color="black",
                     markeredgecolor="black",
-                    markeredgewidth=2.0,
-                    markerfacecolor="white",
-                    markersize=9,
                 )
-                ymax_value = np.nanmax(y.magnitude)
-                if ymax_value > ymax:
-                    ymax = ymax_value
-
-
-                # ax.set_xlabel(scan_data["label"], fontdict=EnalaprilSimulationExperiment.scan_font)
-                ax.set_xlabel(
-                    scan_data["label"],
-                    fontdict=self.font,
-                )
-                ax.set_ylabel(
-                    f"{pd_key} {self.labels[sid]} [{self.units[sid].replace('dimensionless', '-')}]",
-                    fontdict=self.font,
-                )
-
-                ax.tick_params(
-                    axis="x", labelsize=self.tick_font_size
-                )
-                ax.tick_params(
-                    axis="y", labelsize=self.tick_font_size
-                )
-
-                # set axis
-                # ax.set_ylim(bottom=0.0, top=1.05 * ymax)
-                # ax.set_ylim(bottom=0.0)
-                ax.set_xscale("log")
-                # ax.legend(fontsize=RivaroxabanSimulationExperiment.legend_font_size)
-
-            figures[f"pd_{scan_key}"] = f
-        return figures
+                if spec["log"]:
+                    ax.set_xscale("log")
+                # a margin above keeps a constant curve inside the axes
+                ax.set_ylim(bottom=0.0, top=1.1 * top if top > 0 else 1.0)
+                ax.tick_params(axis="both", labelsize=self.tick_font_size)
+                ax.set_title(name, fontsize=13)
+                ax.set_xlabel(spec["label"], fontdict=self.font)
+                ax.set_ylabel(f"{self.pk_labels[key]} [{target}]", fontdict=self.font)
+        return f
 
 
 if __name__ == "__main__":
-    run_experiments(RivaroxabanParameterScan, output_dir=RivaroxabanParameterScan.__name__)
+    MODEL.run_experiments(RivaroxabanParameterScan, output_dir="scan_parameters")

@@ -1,0 +1,21 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit	count_unit
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	0.0	hr		2.5396898228870334e-05					mole/meter^3	ng/ml	dimensionless
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	0.5	hr		0.00016135174818757457				time of the marker (curated 1 hr, shifted by one sampling time)	mole/meter^3	ng/ml	dimensionless
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	1.0	hr		0.0003059098834541617				time of the marker (curated 2 hr, shifted by one sampling time)	mole/meter^3	ng/ml	dimensionless
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	2.0	hr		0.00038216940442323575				time of the marker (curated 3 hr, shifted by one sampling time)	mole/meter^3	ng/ml	dimensionless
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	3.0	hr		0.00032814077268973114				time of the marker (curated 4 hr, shifted by one sampling time)	mole/meter^3	ng/ml	dimensionless
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	4.0	hr		0.00026649536569698084				time of the marker (curated 5 hr, shifted by one sampling time)	mole/meter^3	ng/ml	dimensionless
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	5.0	hr		0.00020473524823345874				time of the marker (curated 6 hr, shifted by one sampling time)	mole/meter^3	ng/ml	dimensionless
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	6.0	hr		0.00017332752133614757				time of the marker (curated 8 hr, shifted by one sampling time)	mole/meter^3	ng/ml	dimensionless
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	8.0	hr		0.000117555290446912				time of the marker (curated 12 hr, shifted by one sampling time)	mole/meter^3	ng/ml	dimensionless
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	12.0	hr		6.848215105074792e-05				time of the marker (curated 14 hr, shifted by one sampling time)	mole/meter^3	ng/ml	dimensionless
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	14.0	hr		5.1183812058364686e-05				time of the marker (curated 15 hr, shifted by one sampling time)	mole/meter^3	ng/ml	dimensionless
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	15.0	hr		4.333761585757548e-05				time of the marker (curated 16 hr, shifted by one sampling time)	mole/meter^3	ng/ml	dimensionless
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	16.0	hr		3.932274938056346e-05				time of the marker (curated 17 hr, shifted by one sampling time)	mole/meter^3	ng/ml	dimensionless
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	17.0	hr		3.8267413049463154e-05				time of the marker (curated 18 hr, shifted by one sampling time)	mole/meter^3	ng/ml	dimensionless
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	18.0	hr		3.572084059832982e-05				time of the marker (curated 19 hr, shifted by one sampling time)	mole/meter^3	ng/ml	dimensionless
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	20.0	hr		2.9824722400660732e-05					mole/meter^3	ng/ml	dimensionless
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	24.0	hr		2.4593924933467927e-05					mole/meter^3	ng/ml	dimensionless
+Frost2014		all	14.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	36.0	hr		6.699091493071487e-06					mole/meter^3	ng/ml	dimensionless
+Frost2014		all	10.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	48.0	hr		3.6936771588510604e-06				digitized from Fig2 (n=10)	mole/meter^3	ng/ml	dimensionless
+Frost2014		all	2.0	mRIV10	concentration	rivaroxaban	plasma	LC MS/MS	rivaroxaban_mRIV10	72.0	hr		1.8812517206570615e-06				digitized from Fig2 (n=2)	mole/meter^3	ng/ml	dimensionless

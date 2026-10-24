@@ -1,0 +1,13 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	median	mean_pm	sd	se	comments	value_unit	median_unit	count_unit
+Jiang2010		T10F	5.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10F	0.0	hr		0.0					percent	percent	dimensionless
+Jiang2010		T10F	5.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10F	1.0	hr		15.5494345538013					percent	percent	dimensionless
+Jiang2010		T10F	5.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10F	2.0	hr		49.5559287873698					percent	percent	dimensionless
+Jiang2010		T10F	5.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10F	3.0	hr		53.2124062255066					percent	percent	dimensionless
+Jiang2010		T10F	5.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10F	4.0	hr		51.5265927667674					percent	percent	dimensionless
+Jiang2010		T10F	5.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10F	6.0	hr		34.6209830925988					percent	percent	dimensionless
+Jiang2010		T10F	5.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10F	8.0	hr		20.9929459187101					percent	percent	dimensionless
+Jiang2010		T10F	5.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10F	12.0	hr		13.0278804165267					percent	percent	dimensionless
+Jiang2010		T10F	5.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10F	15.0	hr		9.20120927107826					percent	percent	dimensionless
+Jiang2010		T10F	5.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10F	24.0	hr		-0.615384615384642					percent	percent	dimensionless
+Jiang2010		T10F	5.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10F	36.0	hr		0.104803493449765					percent	percent	dimensionless
+Jiang2010		T10F	5.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10F	48.0	hr		-1.64550442279699					percent	percent	dimensionless

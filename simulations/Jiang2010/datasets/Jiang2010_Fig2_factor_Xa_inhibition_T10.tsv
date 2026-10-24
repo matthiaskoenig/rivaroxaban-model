@@ -1,0 +1,14 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	median	mean_pm	sd	se	comments	value_unit	median_unit	count_unit
+Jiang2010		T10	11.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10	0.0	hr		0.0					percent	percent	dimensionless
+Jiang2010		T10	11.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10	0.5	hr		6.86792452830188					percent	percent	dimensionless
+Jiang2010		T10	11.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10	1.0	hr		13.7358490566038					percent	percent	dimensionless
+Jiang2010		T10	11.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10	2.0	hr		49.3962264150944					percent	percent	dimensionless
+Jiang2010		T10	11.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10	3.0	hr		52.3018867924528					percent	percent	dimensionless
+Jiang2010		T10	11.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10	4.0	hr		51.2452830188679					percent	percent	dimensionless
+Jiang2010		T10	11.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10	6.0	hr		33.811320754717					percent	percent	dimensionless
+Jiang2010		T10	11.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10	8.0	hr		21.1320754716981					percent	percent	dimensionless
+Jiang2010		T10	11.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10	12.0	hr		12.4150943396226					percent	percent	dimensionless
+Jiang2010		T10	11.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10	15.0	hr		9.24528301886792					percent	percent	dimensionless
+Jiang2010		T10	11.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10	24.0	hr		-1.32075471698113					percent	percent	dimensionless
+Jiang2010		T10	11.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10	36.0	hr		-3.9622641509434					percent	percent	dimensionless
+Jiang2010		T10	11.0	T10	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T10	48.0	hr		-2.37735849056604					percent	percent	dimensionless

@@ -1,67 +1,67 @@
-study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	sd	se	unit
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.0	days	NA	2.3943661971831	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.05	days	NA	7.04225352112675	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.05	days	NA	17.6056338028169	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.08	days	NA	17.6056338028169	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.11	days	NA	22.887323943662	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.14	days	NA	22.4647887323944	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.16	days	NA	20.1408450704225	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.24	days	NA	20.1408450704225	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.33	days	NA	15.4929577464789	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.5	days	NA	6.83098591549295	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.63	days	NA	4.92957746478872	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	1.0	days	NA	1.33802816901407	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	5.0	days	NA	NA	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.0	days	NA	-6.26760563380282	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.01	days	NA	-4.15492957746479	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.01	days	NA	0.492957746478865	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.03	days	NA	5.77464788732394	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.04	days	NA	5.56338028169013	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.05	days	NA	9.36619718309859	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.06	days	NA	11.9014084507042	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.07	days	NA	16.5492957746479	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.1	days	NA	14.8591549295775	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.12	days	NA	20.1408450704225	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.17	days	NA	14.225352112676	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.25	days	NA	7.67605633802816	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.33	days	NA	4.92957746478872	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.5	days	NA	-8.80281690140846	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.61	days	NA	-8.16901408450705	NA	NA	NA	percent
-Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	8.0	days	NA	-5.21126760563381	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.0	days	NA	-2.46	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.05	days	NA	0.07	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.07	days	NA	14.86	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.08	days	NA	21.41	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.12	days	NA	21.83	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.17	days	NA	18.66	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.24	days	NA	12.11	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.34	days	NA	5.14	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.37	days	NA	14.01	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.42	days	NA	20.56	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.5	days	NA	18.45	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.59	days	NA	8.94	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.67	days	NA	11.69	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.69	days	NA	17.61	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.71	days	NA	25.63	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.73	days	NA	28.17	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.75	days	NA	22.25	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.78	days	NA	22.68	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.8	days	NA	26.9	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.84	days	NA	22.68	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.93	days	NA	18.03	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	1.0	days	NA	4.72	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	4.0	days	NA	NA	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.0	days	NA	7.25	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.02	days	NA	25.85	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.04	days	NA	24.79	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.06	days	NA	25.42	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.08	days	NA	26.48	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.0	days	NA	29.01	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.12837837837838	days	NA	24.58	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.16216216216216	days	NA	23.52	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.25675675675676	days	NA	13.8	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.33783783783784	days	NA	4.72	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.5	days	NA	-9.23	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.62162162162162	days	NA	-7.75	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	8.0	days	NA	-10.92	NA	NA	NA	percent
-Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	9.0	days	NA	-14.51	NA	NA	NA	percent
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	median	mean_pm	sd	se	unit	comments
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.0103	days	NA	2.403	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.0206	days	NA	4.713	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.0309	days	NA	4.713	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.0419	days	NA	7.097	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.0625	days	NA	17.616	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.083	days	NA	17.616	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.1036	days	NA	22.801	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.1249	days	NA	22.408	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.1668	days	NA	19.999	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.2498	days	NA	19.999	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.3336	days	NA	15.305	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.4996	days	NA	6.703	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	0.6245	days	NA	4.713	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	1.0	days	NA	1.198	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	6.9999	days	NA	-6.199	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.0109	days	NA	-3.988	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.0211	days	NA	0.51	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.0313	days	NA	5.598	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.0423	days	NA	5.303	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.0525	days	NA	9.21	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.0627	days	NA	11.914	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.0839	days	NA	16.608	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.1044	days	NA	14.519	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.1248	days	NA	19.803	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.1673	days	NA	14.003	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.2498	days	NA	7.613	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.3339	days	NA	4.91	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.5005	days	NA	-9.0	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	7.6254	days	NA	-8.092	NA	NA	NA	percent	NA
+Kubitza2005	NA	OD5	7.0	OD5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_OD5	8.0003	days	NA	-5.093	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.0206	days	NA	-2.488	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.0419	days	NA	-0.006	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.0625	days	NA	14.813	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.083	days	NA	21.523	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.1249	days	NA	21.719	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.1668	days	NA	18.5	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.2498	days	NA	12.012	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.3336	days	NA	5.008	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.3747	days	NA	14.002	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.4166	days	NA	20.318	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.4996	days	NA	18.5	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.5834	days	NA	8.719	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.6664	days	NA	11.422	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.687	days	NA	17.419	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.7083	days	NA	25.799	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.7288	days	NA	28.109	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.7494	days	NA	22.408	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.7707	days	NA	22.605	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.7913	days	NA	26.807	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.8332	days	NA	22.703	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	0.9162	days	NA	18.009	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	1.0	days	NA	4.91	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	6.9999	days	NA	7.097	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.0211	days	NA	25.799	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.0423	days	NA	24.915	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.0627	days	NA	25.504	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.0839	days	NA	26.316	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.1044	days	NA	29.117	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.1248	days	NA	24.718	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.1673	days	NA	23.318	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.2498	days	NA	13.806	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.3339	days	NA	4.614	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.5005	days	NA	-9.197	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	7.6254	days	NA	-7.797	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	8.0003	days	NA	-10.795	NA	NA	NA	percent	NA
+Kubitza2005	NA	TID5	7.0	TID5	factor Xa inhibition	NA	plasma	coagulation assay	factor Xa inhibition_TID5	8.9999	days	NA	-14.506	NA	NA	NA	percent	NA

@@ -1,97 +1,119 @@
-from typing import Dict
+"""Simulation experiment of the study Liu2024."""
 
-from sbmlsim.data import DataSet, load_pkdb_dataframe
-from sbmlsim.fit import FitMapping, FitData
-from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
-from sbmlutils.console import console
+from typing import ClassVar, override
 
-from pkdb_models.models import rivaroxaban
-from pkdb_models.models.rivaroxaban.experiments.base_experiment import RivaroxabanSimulationExperiment
-from pkdb_models.models.rivaroxaban.experiments.metadata import (
-    Tissue, Route, Dosing, ApplicationForm, Health,
-    Fasting, RivaroxabanMappingMetaData, Coadministration
+from pkpdsim.metadata import (
+    ApplicationForm,
+    Coadministration,
+    Dosing,
+    Fasting,
+    Health,
+    PKPDMappingMetaData,
+    Route,
+    Tissue,
 )
-from pkdb_models.models.rivaroxaban.helpers import run_experiments
+from sbmlsim import Q
+from sbmlsim.data import DataSet
+from sbmlsim.fit import FitData, FitMapping
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Simulation
+
+from pkdb_models.models.rivaroxaban import MODEL
+from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
+    RivaroxabanSimulationExperiment,
+)
 
 
 class Liu2024(RivaroxabanSimulationExperiment):
-    """Simulation experiment of Liu2024."""
+    """Simulation experiment of Liu2024.
 
-    doses = [10, 15, 20]
-    fasting_states = ["fasted", "fed"]
+    Single doses of rivaroxaban 10, 15 and 20 mg (Xarelto tablets, the
+    reference product of bioequivalence trials) in healthy Chinese subjects,
+    fasted and fed; parallel groups, each subject once. The body weight is not
+    reported (BMI 22-23 kg/m^2), the default of the model is used.
+    """
 
-    fraction_absorbed = {
+    doses: ClassVar[list[int]] = [10, 15, 20]
+    fasting_states: ClassVar[list[str]] = ["fasted", "fed"]
+
+    fed: ClassVar[dict[str, float]] = {
         "fasted": RivaroxabanSimulationExperiment.fasting_map["fasted"],
         "fed": RivaroxabanSimulationExperiment.fasting_map["fed"],
     }
 
-    colors = {
-        "fasted_10": "#DDB8EA",  # "#F7E6FB",
-        "fasted_15": "#DDB8EA",  # "#EAC6F3",
+    colors: ClassVar[dict[str, str]] = {
+        "fasted_10": "#DDB8EA",
+        "fasted_15": "#DDB8EA",
         "fasted_20": "#DDB8EA",
-        "fed_10": "#A35AC7",  #"#DF9EE8",
-        "fed_15": "#A35AC7",  #"#C27AD8",
+        "fed_10": "#A35AC7",
+        "fed_15": "#A35AC7",
         "fed_20": "#A35AC7",
     }
 
-    colors_bland_altman = {
-        "prothrombin time": "tab:blue",  # "#F7E6FB",
-        "aPTT": "tab:orange",  # "#EAC6F3",
-        "Anti-factor Xa activity": "#DDB8EA",
-        "Anti-factor Xa activity (change relative)": "#A35AC7",
-    }
-
-    info_figs = {
-        "Fig2": {
-            "[Cve_riv]": "rivaroxaban"
-        },
+    info_figs: ClassVar[dict[str, dict[str, str]]] = {
+        "Fig2": {"[Cve_riv]": "rivaroxaban"},
         "Fig3": {
             "PT_ratio": "prothrombin time (change relative)",
-            "aPTT_ratio": "aPTT (change relative)"
-        }
+            "aPTT_ratio": "aPTT (change relative)",
+        },
     }
 
-    def datasets(self) -> Dict[str, DataSet]:
+    def cv_cmax(self) -> dict[str, float]:
+        """Coefficient of variation of Cmax of every group (Tab 2)."""
+        df = self.load_dataframe("Tab2")
+        df = df[df.measurement_type == "cmax"]
+        return {
+            str(row.group): float(row.sd) / float(row.mean) for row in df.itertuples()
+        }
+
+    @override
+    def datasets(self) -> dict[str, DataSet]:
         dsets = {}
-        for fig_id in ["Fig2", "Fig3", "Fig3b"]:
-            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
-            group = "x_label" if fig_id == "Fig3b" else "label"
-            for label, df_label in df.groupby(group):
-                if "Anti-factor Xa activity" in label and fig_id != "Fig3b":
-                    continue  # Not handled yet
+        cv_cmax = self.cv_cmax()
+        for fig_id in ["Fig2", "Fig3"]:
+            df = self.load_dataframe(fig_id)
+            for label, df_label in df.groupby("label"):
+                label = str(label)
+                if "Anti-factor Xa activity" in label:
+                    # rivaroxaban by anti-Xa activity of the subjects of Fig2
+                    continue
                 if "digitised" in label:
-                    continue # take only table values
+                    continue  # take only table values
+                if fig_id == "Fig2":
+                    # the error bars of Fig2 (2.5 to 30 ng/ml) are not the SDs
+                    # of Tab 2 (Cmax 44 to 76 ng/ml) and are smaller than them
+                    # by 2 to 5 fold; the points get the coefficient of
+                    # variation of Cmax of their group instead
+                    group = label.removeprefix("rivaroxaban_")
+                    df_label = df_label.copy()
+                    df_label["sd"] = df_label["mean"] * cv_cmax[group]
+                    df_label["se"] = float("nan")
                 dset = DataSet.from_df(df_label, self.ureg)
                 if "rivaroxaban" in label:
                     dset.unit_conversion("mean", 1 / self.Mr.riv)
-                dsets[f"{fig_id}_{label}"] = dset
+                dsets[self.to_sid(f"{fig_id}_{label}")] = dset
         return dsets
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
-        tcsims = {}
-
+    @override
+    def simulations(self) -> dict[str, Simulation]:
+        simulations = {}
         for fasting in self.fasting_states:
             for dose in self.doses:
                 sim_id = f"{fasting}_{dose}"
-                tcsims[sim_id] = TimecourseSim([
-                    Timecourse(
-                        start=0,
-                        end=50 * 60,  # 50 hours in minutes
-                        steps=500,
-                        changes={
-                            **self.default_changes(),
-                            "PODOSE_riv": Q_(dose, "mg"),
-                            "GU__F_riv_abs": Q_(self.fraction_absorbed[fasting], "dimensionless"),
-                        }
-                    )
-                ])
-        return tcsims
+                simulations[self.to_sid(sim_id)] = Simulation(
+                    time_unit="min",
+                    end=50 * 60,
+                    preinit_changes={
+                        **self.default_changes(),
+                        "PODOSE_riv": Q(dose, "mg"),
+                        "GU__fed": Q(self.fed[fasting], "dimensionless"),
+                    },
+                )
+        return simulations
 
-    def fit_mappings(self) -> Dict[str, FitMapping]:
+    @override
+    def fit_mappings(self) -> dict[str, FitMapping]:
         mappings = {}
-
         for fig_id, variables in self.info_figs.items():
             for yid, label in variables.items():
                 for fasting in self.fasting_states:
@@ -99,43 +121,44 @@ class Liu2024(RivaroxabanSimulationExperiment):
                         sim_id = f"{fasting}_{dose}"
                         dataset_id = f"{fig_id}_{label}_{sim_id}"
 
-                        mappings[f"fm_{dataset_id}"] = FitMapping(
+                        mappings[self.to_sid(f"fm_{dataset_id}")] = FitMapping(
                             self,
                             reference=FitData(
                                 self,
-                                dataset=dataset_id,
+                                dataset=self.to_sid(dataset_id),
                                 xid="time",
                                 yid="mean",
                                 yid_sd="mean_sd",
-                                count="count"
+                                count="count",
                             ),
                             observable=FitData(
                                 self,
-                                task=f"task_{sim_id}",
+                                task=self.to_sid(f"task_{sim_id}"),
                                 xid="time",
-                                yid=yid
+                                yid=yid,
                             ),
-                            metadata=RivaroxabanMappingMetaData(
+                            metadata=PKPDMappingMetaData(
                                 tissue=Tissue.PLASMA,
                                 route=Route.PO,
                                 application_form=ApplicationForm.TABLET,
                                 dosing=Dosing.SINGLE,
                                 health=Health.HEALTHY,
-                                fasting=Fasting.FASTED if fasting == "fasted" else Fasting.FED,
+                                fasting=Fasting.FASTED
+                                if fasting == "fasted"
+                                else Fasting.FED,
                                 coadministration=Coadministration.NONE,
-                            )
+                            ),
                         )
         return mappings
 
-    def figures(self) -> Dict[str, Figure]:
+    @override
+    def figures(self) -> dict[str, Figure]:
         return {
-            #**self.figures_pk_pd(),
-            **self.figure_bland_altman(),
+            **self.figures_pk_pd(),
         }
 
-    def figures_pk_pd(self) -> Dict[str, Figure]:
-        figures = {}
-
+    def figures_pk_pd(self) -> dict[str, Figure]:
+        """Figures of the plasma concentrations and the coagulation tests."""
         # PK Figure: Fig2
         fig_pk = Figure(
             experiment=self,
@@ -148,29 +171,27 @@ class Liu2024(RivaroxabanSimulationExperiment):
             legend=True,
         )
         for kp in range(3):
-            plots_pk[kp].set_yaxis(self.label_riv_plasma, unit=self.unit_riv, max=0.6)
+            plots_pk[kp].set_yaxis(self.label_riv_plasma, unit=self.unit_riv)
 
         for fasting in self.fasting_states:
             for kp, dose in enumerate(self.doses):
                 sim_id = f"{fasting}_{dose}"
                 plots_pk[kp].add_data(
-                    task=f"task_{sim_id}",
+                    task=self.to_sid(f"task_{sim_id}"),
                     xid="time",
                     yid="[Cve_riv]",
                     label=f"RIV {dose} mg {fasting}",
-                    color=self.colors[sim_id]
+                    color=self.colors[sim_id],
                 )
                 plots_pk[kp].add_data(
-                    dataset=f"Fig2_rivaroxaban_{sim_id}",
+                    dataset=self.to_sid(f"Fig2_rivaroxaban_{sim_id}"),
                     xid="time",
                     yid="mean",
                     yid_sd="mean_sd",
                     count="count",
                     label=f"RIV {dose} mg {fasting}",
-                    color=self.colors[sim_id]
+                    color=self.colors[sim_id],
                 )
-
-        figures[fig_pk.sid] = fig_pk
 
         # PD Figure: Fig3 (combined PT_ratio and aPTT_ratio)
         fig_pd = Figure(
@@ -178,17 +199,18 @@ class Liu2024(RivaroxabanSimulationExperiment):
             sid="Fig3",
             num_rows=2,
             num_cols=3,
-            name=self.__class__.__name__
+            name=self.__class__.__name__,
         )
         plots_pd = fig_pd.create_plots(
             xaxis=Axis(self.label_time, unit=self.unit_time),
             legend=True,
         )
 
-
         for kp in range(3):
-            plots_pd[kp].set_yaxis(self.labels["PT_ratio"], unit=self.units["PT_ratio"], max=1.8)
-            plots_pd[kp+3].set_yaxis(self.labels["aPTT_ratio"], unit=self.units["aPTT_ratio"], max=1.8)
+            plots_pd[kp].set_yaxis(self.labels["PT_ratio"], unit=self.units["PT_ratio"])
+            plots_pd[kp + 3].set_yaxis(
+                self.labels["aPTT_ratio"], unit=self.units["aPTT_ratio"]
+            )
 
         for fasting in self.fasting_states:
             for kp, dose in enumerate(self.doses):
@@ -197,14 +219,16 @@ class Liu2024(RivaroxabanSimulationExperiment):
 
                 # Subplot 1: PT_ratio
                 plots_pd[kp].add_data(
-                    task=f"task_{sim_id}",
+                    task=self.to_sid(f"task_{sim_id}"),
                     xid="time",
                     yid="PT_ratio",
                     label=f"RIV {dose} mg {fasting}",
                     color=color,
                 )
                 plots_pd[kp].add_data(
-                    dataset=f"Fig3_prothrombin time (change relative)_{sim_id}",
+                    dataset=self.to_sid(
+                        f"Fig3_prothrombin time (change relative)_{sim_id}"
+                    ),
                     xid="time",
                     yid="mean",
                     yid_sd="mean_sd",
@@ -214,15 +238,15 @@ class Liu2024(RivaroxabanSimulationExperiment):
                 )
 
                 # Subplot 2: aPTT_ratio
-                plots_pd[kp+3].add_data(
-                    task=f"task_{sim_id}",
+                plots_pd[kp + 3].add_data(
+                    task=self.to_sid(f"task_{sim_id}"),
                     xid="time",
                     yid="aPTT_ratio",
                     label=f"RIV {dose} mg {fasting}",
                     color=color,
                 )
-                plots_pd[kp+3].add_data(
-                    dataset=f"Fig3_aPTT (change relative)_{sim_id}",
+                plots_pd[kp + 3].add_data(
+                    dataset=self.to_sid(f"Fig3_aPTT (change relative)_{sim_id}"),
                     xid="time",
                     yid="mean",
                     yid_sd="mean_sd",
@@ -231,57 +255,8 @@ class Liu2024(RivaroxabanSimulationExperiment):
                     color=color,
                 )
 
-        figures[fig_pd.sid] = fig_pd
-
-        return figures
-
-    def figure_bland_altman(self) -> Dict[str, Figure]:
-        fig = Figure(
-            experiment=self,
-            sid="Fig",
-            num_rows=1,
-            num_cols=1,
-            name=self.__class__.__name__
-        )
-        plots = fig.create_plots(
-            xaxis=Axis("Average of two measures", unit="dimensionless"),
-            yaxis=Axis("Difference between two measure", unit="dimensionless"),
-            legend=True,
-        )
-
-        for variable in ["prothrombin time", "aPTT", "Anti-factor Xa activity", "Anti-factor Xa activity (change relative)"]:
-            k = 0
-            for group in self.colors.keys():
-                if k == 0:
-                    if variable == "prothrombin time":
-                        label = "PT"
-                    elif variable == "Anti-factor Xa activity":
-                        label = "Anti-factor Xa activity (ng/ml)"
-                    elif variable == "Anti-factor Xa activity (change relative)":
-                        label = "Anti-factor Xa activity"
-                    else:
-                        label = variable
-                else:
-                    label = ""
-                if variable == "Anti-factor Xa activity (change relative)" and group == "fasted_20":
-                    continue
-                plots[0].add_data(
-                    dataset=f"Fig3b_{variable}_mean_real_dig_{group}",
-                    xid="x",
-                    yid="y",
-                    label=label,
-                    color=self.colors_bland_altman[variable],
-                    marker="o",
-                    markeredgecolor="black",
-                    markersize=7,
-                    linestyle="",
-                )
-                k += 1
-
-        return {fig.sid: fig}
+        return self.figures_by_sid(fig_pk, fig_pd)
 
 
 if __name__ == "__main__":
-    out = rivaroxaban.RESULTS_PATH_SIMULATION / Liu2024.__name__
-    out.mkdir(parents=True, exist_ok=True)
-    run_experiments(Liu2024, output_dir=Liu2024.__name__)
+    MODEL.run_experiments(Liu2024, output_dir=Liu2024.__name__)

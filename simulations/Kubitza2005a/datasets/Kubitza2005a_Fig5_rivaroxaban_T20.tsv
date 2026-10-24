@@ -1,0 +1,15 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit	count_unit
+Kubitza2005a		T20	7.0	T20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T20	0.5	hr		4.2442874185555654e-05					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T20	7.0	T20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T20	0.75	hr		0.00014499403505551986					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T20	7.0	T20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T20	1.0	hr		0.00020670826833073318					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T20	7.0	T20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T20	1.25	hr		0.0002578691382949435					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T20	7.0	T20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T20	1.5	hr		0.0002821877580985592					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T20	7.0	T20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T20	2.0	hr		0.0003129301642653941					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T20	7.0	T20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T20	2.5	hr		0.0003347251537120308					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T20	7.0	T20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T20	3.0	hr		0.0003120124804992199					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T20	7.0	T20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T20	4.0	hr		0.0002927411214095622					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T20	7.0	T20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T20	6.0	hr		0.00020280811232449296					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T20	7.0	T20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T20	8.0	hr		0.00016954207580067906					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T20	7.0	T20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T20	12.0	hr		0.00010874552629163988					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T20	7.0	T20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T20	15.0	hr		7.570891070936954e-05					mole/meter^3	µg/l	dimensionless
+Kubitza2005a		T20	7.0	T20	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T20	24.0	hr		4.014866477012021e-05					mole/meter^3	µg/l	dimensionless

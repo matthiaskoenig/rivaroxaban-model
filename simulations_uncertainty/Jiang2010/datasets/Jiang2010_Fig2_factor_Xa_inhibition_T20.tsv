@@ -1,0 +1,14 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	median	mean_pm	sd	se	comments	value_unit	median_unit	count_unit
+Jiang2010		T20	12.0	T20	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T20	0.0	hr		0.528301886792448					percent	percent	dimensionless
+Jiang2010		T20	12.0	T20	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T20	0.5	hr		12.9433962264151					percent	percent	dimensionless
+Jiang2010		T20	12.0	T20	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T20	1.0	hr		28.5283018867925					percent	percent	dimensionless
+Jiang2010		T20	12.0	T20	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T20	2.0	hr		47.811320754717					percent	percent	dimensionless
+Jiang2010		T20	12.0	T20	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T20	3.0	hr		50.9811320754717					percent	percent	dimensionless
+Jiang2010		T20	12.0	T20	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T20	4.0	hr		46.2264150943396					percent	percent	dimensionless
+Jiang2010		T20	12.0	T20	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T20	6.0	hr		33.0188679245283					percent	percent	dimensionless
+Jiang2010		T20	12.0	T20	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T20	8.0	hr		24.3018867924528					percent	percent	dimensionless
+Jiang2010		T20	12.0	T20	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T20	12.0	hr		11.0943396226415					percent	percent	dimensionless
+Jiang2010		T20	12.0	T20	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T20	15.0	hr		7.66037735849056					percent	percent	dimensionless
+Jiang2010		T20	12.0	T20	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T20	24.0	hr		2.90566037735849					percent	percent	dimensionless
+Jiang2010		T20	12.0	T20	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T20	36.0	hr		-0.264150943396217					percent	percent	dimensionless
+Jiang2010		T20	12.0	T20	factor Xa inhibition		plasma	Spectrophotometry	factor Xa inhibition_T20	48.0	hr		-3.16981132075472					percent	percent	dimensionless

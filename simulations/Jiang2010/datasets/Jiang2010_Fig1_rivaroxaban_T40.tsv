@@ -1,0 +1,14 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	mean_unit	value_unit	count_unit
+Jiang2010		T40	10.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	0.0	hr		0.0					mole/meter^3	µg/l	dimensionless
+Jiang2010		T40	10.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	0.5	hr		0.0002861073852548201					mole/meter^3	µg/l	dimensionless
+Jiang2010		T40	10.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	1.0	hr		0.0007882444863475222					mole/meter^3	µg/l	dimensionless
+Jiang2010		T40	10.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	2.0	hr		0.001401316348251539					mole/meter^3	µg/l	dimensionless
+Jiang2010		T40	10.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	3.0	hr		0.0013603084131653044					mole/meter^3	µg/l	dimensionless
+Jiang2010		T40	10.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	4.0	hr		0.0012200345542878292					mole/meter^3	µg/l	dimensionless
+Jiang2010		T40	10.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	6.0	hr		0.0006007781010176814					mole/meter^3	µg/l	dimensionless
+Jiang2010		T40	10.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	8.0	hr		0.0003786176665607575					mole/meter^3	µg/l	dimensionless
+Jiang2010		T40	10.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	12.0	hr		0.00016788902903670273					mole/meter^3	µg/l	dimensionless
+Jiang2010		T40	10.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	15.0	hr		0.0001149752168431942					mole/meter^3	µg/l	dimensionless
+Jiang2010		T40	10.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	24.0	hr		4.3798543385585934e-05					mole/meter^3	µg/l	dimensionless
+Jiang2010		T40	10.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	36.0	hr		1.3144950290384897e-05					mole/meter^3	µg/l	dimensionless
+Jiang2010		T40	10.0	T40	concentration	rivaroxaban	plasma	HPLC MS	rivaroxaban_T40	48.0	hr		0.0					mole/meter^3	µg/l	dimensionless

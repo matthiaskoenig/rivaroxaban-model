@@ -1,0 +1,2086 @@
+{
+  "experiment_id": "Kubitza2013",
+  "base_path": "/home/mkoenig/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban",
+  "data_path": [
+    "/home/mkoenig/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/rivaroxaban",
+    "/home/mkoenig/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/apixaban",
+    "/home/mkoenig/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/data/edoxaban"
+  ],
+  "models": {
+    "model": {
+      "sid": null,
+      "name": null,
+      "language": "SBML",
+      "language_type": "SBML",
+      "source": {
+        "source": "/home/mkoenig/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/output/models/rivaroxaban_body_flat.xml",
+        "path": "/home/mkoenig/git/rivaroxaban-model/src/pkdb_models/models/rivaroxaban/models/output/models/rivaroxaban_body_flat.xml",
+        "content": null
+      },
+      "base_path": null,
+      "changes": {},
+      "selections": [
+        "Afeces_riv",
+        "Afeces_riv_rx",
+        "Afeces_rx",
+        "Afeces_urine_riv_rx",
+        "Aurine_riv",
+        "Aurine_riv_rx",
+        "Aurine_rx",
+        "GU__POINTESTINE_riv",
+        "GU__POSTOMACH_riv",
+        "GU__fed",
+        "IVDOSE_riv",
+        "KI__GFR",
+        "KI__RIVEX",
+        "KI__f_pgp",
+        "KI__f_renal_function",
+        "LI__f_cyp3a4",
+        "PODOSE_riv",
+        "POSOLUTION_riv",
+        "PT",
+        "PT_change",
+        "PT_ratio",
+        "Xa_inhibition",
+        "[Cve_riv]",
+        "[Cve_riv_rx]",
+        "[Cve_rx]",
+        "aPTT",
+        "aPTT_change",
+        "aPTT_ratio",
+        "f_cirrhosis",
+        "time"
+      ],
+      "parameters": {}
+    }
+  },
+  "tasks": {
+    "task_healthy": {
+      "sid": "model__healthy",
+      "name": null,
+      "model": "model",
+      "simulation": "healthy",
+      "observables": []
+    },
+    "task_mildHI": {
+      "sid": "model__mildHI",
+      "name": null,
+      "model": "model",
+      "simulation": "mildHI",
+      "observables": []
+    },
+    "task_moderateHI": {
+      "sid": "model__moderateHI",
+      "name": null,
+      "model": "model",
+      "simulation": "moderateHI",
+      "observables": []
+    }
+  },
+  "observables": {},
+  "simulations": {
+    "healthy": {
+      "type": "Simulation",
+      "time_unit": "min",
+      "start": 0.0,
+      "end": 6000,
+      "preinit_changes": {
+        "BW": {
+          "value": 76,
+          "unit": "kilogram"
+        },
+        "PODOSE_riv": {
+          "value": 10,
+          "unit": "milligram"
+        },
+        "f_cirrhosis": {
+          "value": 0,
+          "unit": "dimensionless"
+        },
+        "KI__f_renal_function": {
+          "value": 1.3316831683168318,
+          "unit": "dimensionless"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        }
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
+    },
+    "mildHI": {
+      "type": "Simulation",
+      "time_unit": "min",
+      "start": 0.0,
+      "end": 6000,
+      "preinit_changes": {
+        "BW": {
+          "value": 81.1,
+          "unit": "kilogram"
+        },
+        "PODOSE_riv": {
+          "value": 10,
+          "unit": "milligram"
+        },
+        "f_cirrhosis": {
+          "value": 0.3994897959183674,
+          "unit": "dimensionless"
+        },
+        "KI__f_renal_function": {
+          "value": 1.002970297029703,
+          "unit": "dimensionless"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        }
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
+    },
+    "moderateHI": {
+      "type": "Simulation",
+      "time_unit": "min",
+      "start": 0.0,
+      "end": 6000,
+      "preinit_changes": {
+        "BW": {
+          "value": 73.3,
+          "unit": "kilogram"
+        },
+        "PODOSE_riv": {
+          "value": 10,
+          "unit": "milligram"
+        },
+        "f_cirrhosis": {
+          "value": 0.6979591836734694,
+          "unit": "dimensionless"
+        },
+        "KI__f_renal_function": {
+          "value": 1.295049504950495,
+          "unit": "dimensionless"
+        },
+        "GU__fed": {
+          "value": 0.0,
+          "unit": "dimensionless"
+        }
+      },
+      "changes": [],
+      "presimulation": null,
+      "times": null,
+      "steps": null,
+      "time_shift": 0.0
+    }
+  },
+  "data": {
+    "task_healthy__time": {
+      "type": "TASK",
+      "sid": "task_healthy__time",
+      "index": "time",
+      "selection": "time",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__conc__Cve_riv": {
+      "type": "TASK",
+      "sid": "task_healthy__conc__Cve_riv",
+      "index": "Cve_riv",
+      "selection": "[Cve_riv]",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__conc__Cve_rx": {
+      "type": "TASK",
+      "sid": "task_healthy__conc__Cve_rx",
+      "index": "Cve_rx",
+      "selection": "[Cve_rx]",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__conc__Cve_riv_rx": {
+      "type": "TASK",
+      "sid": "task_healthy__conc__Cve_riv_rx",
+      "index": "Cve_riv_rx",
+      "selection": "[Cve_riv_rx]",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__Aurine_riv": {
+      "type": "TASK",
+      "sid": "task_healthy__Aurine_riv",
+      "index": "Aurine_riv",
+      "selection": "Aurine_riv",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__Aurine_rx": {
+      "type": "TASK",
+      "sid": "task_healthy__Aurine_rx",
+      "index": "Aurine_rx",
+      "selection": "Aurine_rx",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__Aurine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_healthy__Aurine_riv_rx",
+      "index": "Aurine_riv_rx",
+      "selection": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__Afeces_riv": {
+      "type": "TASK",
+      "sid": "task_healthy__Afeces_riv",
+      "index": "Afeces_riv",
+      "selection": "Afeces_riv",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__Afeces_rx": {
+      "type": "TASK",
+      "sid": "task_healthy__Afeces_rx",
+      "index": "Afeces_rx",
+      "selection": "Afeces_rx",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__Afeces_riv_rx": {
+      "type": "TASK",
+      "sid": "task_healthy__Afeces_riv_rx",
+      "index": "Afeces_riv_rx",
+      "selection": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_healthy__Afeces_urine_riv_rx",
+      "index": "Afeces_urine_riv_rx",
+      "selection": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__KI__RIVEX": {
+      "type": "TASK",
+      "sid": "task_healthy__KI__RIVEX",
+      "index": "KI__RIVEX",
+      "selection": "KI__RIVEX",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_healthy__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__KI__f_renal_function": {
+      "type": "TASK",
+      "sid": "task_healthy__KI__f_renal_function",
+      "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__f_cirrhosis": {
+      "type": "TASK",
+      "sid": "task_healthy__f_cirrhosis",
+      "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__LI__f_cyp3a4": {
+      "type": "TASK",
+      "sid": "task_healthy__LI__f_cyp3a4",
+      "index": "LI__f_cyp3a4",
+      "selection": "LI__f_cyp3a4",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__KI__f_pgp": {
+      "type": "TASK",
+      "sid": "task_healthy__KI__f_pgp",
+      "index": "KI__f_pgp",
+      "selection": "KI__f_pgp",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__GU__fed": {
+      "type": "TASK",
+      "sid": "task_healthy__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__PT": {
+      "type": "TASK",
+      "sid": "task_healthy__PT",
+      "index": "PT",
+      "selection": "PT",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__PT_change": {
+      "type": "TASK",
+      "sid": "task_healthy__PT_change",
+      "index": "PT_change",
+      "selection": "PT_change",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__PT_ratio": {
+      "type": "TASK",
+      "sid": "task_healthy__PT_ratio",
+      "index": "PT_ratio",
+      "selection": "PT_ratio",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__aPTT": {
+      "type": "TASK",
+      "sid": "task_healthy__aPTT",
+      "index": "aPTT",
+      "selection": "aPTT",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__aPTT_change": {
+      "type": "TASK",
+      "sid": "task_healthy__aPTT_change",
+      "index": "aPTT_change",
+      "selection": "aPTT_change",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__aPTT_ratio": {
+      "type": "TASK",
+      "sid": "task_healthy__aPTT_ratio",
+      "index": "aPTT_ratio",
+      "selection": "aPTT_ratio",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__Xa_inhibition": {
+      "type": "TASK",
+      "sid": "task_healthy__Xa_inhibition",
+      "index": "Xa_inhibition",
+      "selection": "Xa_inhibition",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__PODOSE_riv": {
+      "type": "TASK",
+      "sid": "task_healthy__PODOSE_riv",
+      "index": "PODOSE_riv",
+      "selection": "PODOSE_riv",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__POSOLUTION_riv": {
+      "type": "TASK",
+      "sid": "task_healthy__POSOLUTION_riv",
+      "index": "POSOLUTION_riv",
+      "selection": "POSOLUTION_riv",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__GU__POSTOMACH_riv": {
+      "type": "TASK",
+      "sid": "task_healthy__GU__POSTOMACH_riv",
+      "index": "GU__POSTOMACH_riv",
+      "selection": "GU__POSTOMACH_riv",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__GU__POINTESTINE_riv": {
+      "type": "TASK",
+      "sid": "task_healthy__GU__POINTESTINE_riv",
+      "index": "GU__POINTESTINE_riv",
+      "selection": "GU__POINTESTINE_riv",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_healthy__IVDOSE_riv": {
+      "type": "TASK",
+      "sid": "task_healthy__IVDOSE_riv",
+      "index": "IVDOSE_riv",
+      "selection": "IVDOSE_riv",
+      "unit": null,
+      "task": "task_healthy",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__time": {
+      "type": "TASK",
+      "sid": "task_mildHI__time",
+      "index": "time",
+      "selection": "time",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__conc__Cve_riv": {
+      "type": "TASK",
+      "sid": "task_mildHI__conc__Cve_riv",
+      "index": "Cve_riv",
+      "selection": "[Cve_riv]",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__conc__Cve_rx": {
+      "type": "TASK",
+      "sid": "task_mildHI__conc__Cve_rx",
+      "index": "Cve_rx",
+      "selection": "[Cve_rx]",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__conc__Cve_riv_rx": {
+      "type": "TASK",
+      "sid": "task_mildHI__conc__Cve_riv_rx",
+      "index": "Cve_riv_rx",
+      "selection": "[Cve_riv_rx]",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__Aurine_riv": {
+      "type": "TASK",
+      "sid": "task_mildHI__Aurine_riv",
+      "index": "Aurine_riv",
+      "selection": "Aurine_riv",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__Aurine_rx": {
+      "type": "TASK",
+      "sid": "task_mildHI__Aurine_rx",
+      "index": "Aurine_rx",
+      "selection": "Aurine_rx",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__Aurine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_mildHI__Aurine_riv_rx",
+      "index": "Aurine_riv_rx",
+      "selection": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__Afeces_riv": {
+      "type": "TASK",
+      "sid": "task_mildHI__Afeces_riv",
+      "index": "Afeces_riv",
+      "selection": "Afeces_riv",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__Afeces_rx": {
+      "type": "TASK",
+      "sid": "task_mildHI__Afeces_rx",
+      "index": "Afeces_rx",
+      "selection": "Afeces_rx",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__Afeces_riv_rx": {
+      "type": "TASK",
+      "sid": "task_mildHI__Afeces_riv_rx",
+      "index": "Afeces_riv_rx",
+      "selection": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_mildHI__Afeces_urine_riv_rx",
+      "index": "Afeces_urine_riv_rx",
+      "selection": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__KI__RIVEX": {
+      "type": "TASK",
+      "sid": "task_mildHI__KI__RIVEX",
+      "index": "KI__RIVEX",
+      "selection": "KI__RIVEX",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_mildHI__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__KI__f_renal_function": {
+      "type": "TASK",
+      "sid": "task_mildHI__KI__f_renal_function",
+      "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__f_cirrhosis": {
+      "type": "TASK",
+      "sid": "task_mildHI__f_cirrhosis",
+      "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__LI__f_cyp3a4": {
+      "type": "TASK",
+      "sid": "task_mildHI__LI__f_cyp3a4",
+      "index": "LI__f_cyp3a4",
+      "selection": "LI__f_cyp3a4",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__KI__f_pgp": {
+      "type": "TASK",
+      "sid": "task_mildHI__KI__f_pgp",
+      "index": "KI__f_pgp",
+      "selection": "KI__f_pgp",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__GU__fed": {
+      "type": "TASK",
+      "sid": "task_mildHI__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__PT": {
+      "type": "TASK",
+      "sid": "task_mildHI__PT",
+      "index": "PT",
+      "selection": "PT",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__PT_change": {
+      "type": "TASK",
+      "sid": "task_mildHI__PT_change",
+      "index": "PT_change",
+      "selection": "PT_change",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__PT_ratio": {
+      "type": "TASK",
+      "sid": "task_mildHI__PT_ratio",
+      "index": "PT_ratio",
+      "selection": "PT_ratio",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__aPTT": {
+      "type": "TASK",
+      "sid": "task_mildHI__aPTT",
+      "index": "aPTT",
+      "selection": "aPTT",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__aPTT_change": {
+      "type": "TASK",
+      "sid": "task_mildHI__aPTT_change",
+      "index": "aPTT_change",
+      "selection": "aPTT_change",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__aPTT_ratio": {
+      "type": "TASK",
+      "sid": "task_mildHI__aPTT_ratio",
+      "index": "aPTT_ratio",
+      "selection": "aPTT_ratio",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__Xa_inhibition": {
+      "type": "TASK",
+      "sid": "task_mildHI__Xa_inhibition",
+      "index": "Xa_inhibition",
+      "selection": "Xa_inhibition",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__PODOSE_riv": {
+      "type": "TASK",
+      "sid": "task_mildHI__PODOSE_riv",
+      "index": "PODOSE_riv",
+      "selection": "PODOSE_riv",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__POSOLUTION_riv": {
+      "type": "TASK",
+      "sid": "task_mildHI__POSOLUTION_riv",
+      "index": "POSOLUTION_riv",
+      "selection": "POSOLUTION_riv",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__GU__POSTOMACH_riv": {
+      "type": "TASK",
+      "sid": "task_mildHI__GU__POSTOMACH_riv",
+      "index": "GU__POSTOMACH_riv",
+      "selection": "GU__POSTOMACH_riv",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__GU__POINTESTINE_riv": {
+      "type": "TASK",
+      "sid": "task_mildHI__GU__POINTESTINE_riv",
+      "index": "GU__POINTESTINE_riv",
+      "selection": "GU__POINTESTINE_riv",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_mildHI__IVDOSE_riv": {
+      "type": "TASK",
+      "sid": "task_mildHI__IVDOSE_riv",
+      "index": "IVDOSE_riv",
+      "selection": "IVDOSE_riv",
+      "unit": null,
+      "task": "task_mildHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__time": {
+      "type": "TASK",
+      "sid": "task_moderateHI__time",
+      "index": "time",
+      "selection": "time",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__conc__Cve_riv": {
+      "type": "TASK",
+      "sid": "task_moderateHI__conc__Cve_riv",
+      "index": "Cve_riv",
+      "selection": "[Cve_riv]",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__conc__Cve_rx": {
+      "type": "TASK",
+      "sid": "task_moderateHI__conc__Cve_rx",
+      "index": "Cve_rx",
+      "selection": "[Cve_rx]",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__conc__Cve_riv_rx": {
+      "type": "TASK",
+      "sid": "task_moderateHI__conc__Cve_riv_rx",
+      "index": "Cve_riv_rx",
+      "selection": "[Cve_riv_rx]",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__Aurine_riv": {
+      "type": "TASK",
+      "sid": "task_moderateHI__Aurine_riv",
+      "index": "Aurine_riv",
+      "selection": "Aurine_riv",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__Aurine_rx": {
+      "type": "TASK",
+      "sid": "task_moderateHI__Aurine_rx",
+      "index": "Aurine_rx",
+      "selection": "Aurine_rx",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__Aurine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_moderateHI__Aurine_riv_rx",
+      "index": "Aurine_riv_rx",
+      "selection": "Aurine_riv_rx",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__Afeces_riv": {
+      "type": "TASK",
+      "sid": "task_moderateHI__Afeces_riv",
+      "index": "Afeces_riv",
+      "selection": "Afeces_riv",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__Afeces_rx": {
+      "type": "TASK",
+      "sid": "task_moderateHI__Afeces_rx",
+      "index": "Afeces_rx",
+      "selection": "Afeces_rx",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__Afeces_riv_rx": {
+      "type": "TASK",
+      "sid": "task_moderateHI__Afeces_riv_rx",
+      "index": "Afeces_riv_rx",
+      "selection": "Afeces_riv_rx",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__Afeces_urine_riv_rx": {
+      "type": "TASK",
+      "sid": "task_moderateHI__Afeces_urine_riv_rx",
+      "index": "Afeces_urine_riv_rx",
+      "selection": "Afeces_urine_riv_rx",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__KI__RIVEX": {
+      "type": "TASK",
+      "sid": "task_moderateHI__KI__RIVEX",
+      "index": "KI__RIVEX",
+      "selection": "KI__RIVEX",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__KI__GFR": {
+      "type": "TASK",
+      "sid": "task_moderateHI__KI__GFR",
+      "index": "KI__GFR",
+      "selection": "KI__GFR",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__KI__f_renal_function": {
+      "type": "TASK",
+      "sid": "task_moderateHI__KI__f_renal_function",
+      "index": "KI__f_renal_function",
+      "selection": "KI__f_renal_function",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__f_cirrhosis": {
+      "type": "TASK",
+      "sid": "task_moderateHI__f_cirrhosis",
+      "index": "f_cirrhosis",
+      "selection": "f_cirrhosis",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__LI__f_cyp3a4": {
+      "type": "TASK",
+      "sid": "task_moderateHI__LI__f_cyp3a4",
+      "index": "LI__f_cyp3a4",
+      "selection": "LI__f_cyp3a4",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__KI__f_pgp": {
+      "type": "TASK",
+      "sid": "task_moderateHI__KI__f_pgp",
+      "index": "KI__f_pgp",
+      "selection": "KI__f_pgp",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__GU__fed": {
+      "type": "TASK",
+      "sid": "task_moderateHI__GU__fed",
+      "index": "GU__fed",
+      "selection": "GU__fed",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__PT": {
+      "type": "TASK",
+      "sid": "task_moderateHI__PT",
+      "index": "PT",
+      "selection": "PT",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__PT_change": {
+      "type": "TASK",
+      "sid": "task_moderateHI__PT_change",
+      "index": "PT_change",
+      "selection": "PT_change",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__PT_ratio": {
+      "type": "TASK",
+      "sid": "task_moderateHI__PT_ratio",
+      "index": "PT_ratio",
+      "selection": "PT_ratio",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__aPTT": {
+      "type": "TASK",
+      "sid": "task_moderateHI__aPTT",
+      "index": "aPTT",
+      "selection": "aPTT",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__aPTT_change": {
+      "type": "TASK",
+      "sid": "task_moderateHI__aPTT_change",
+      "index": "aPTT_change",
+      "selection": "aPTT_change",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__aPTT_ratio": {
+      "type": "TASK",
+      "sid": "task_moderateHI__aPTT_ratio",
+      "index": "aPTT_ratio",
+      "selection": "aPTT_ratio",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__Xa_inhibition": {
+      "type": "TASK",
+      "sid": "task_moderateHI__Xa_inhibition",
+      "index": "Xa_inhibition",
+      "selection": "Xa_inhibition",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__PODOSE_riv": {
+      "type": "TASK",
+      "sid": "task_moderateHI__PODOSE_riv",
+      "index": "PODOSE_riv",
+      "selection": "PODOSE_riv",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__POSOLUTION_riv": {
+      "type": "TASK",
+      "sid": "task_moderateHI__POSOLUTION_riv",
+      "index": "POSOLUTION_riv",
+      "selection": "POSOLUTION_riv",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__GU__POSTOMACH_riv": {
+      "type": "TASK",
+      "sid": "task_moderateHI__GU__POSTOMACH_riv",
+      "index": "GU__POSTOMACH_riv",
+      "selection": "GU__POSTOMACH_riv",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__GU__POINTESTINE_riv": {
+      "type": "TASK",
+      "sid": "task_moderateHI__GU__POINTESTINE_riv",
+      "index": "GU__POINTESTINE_riv",
+      "selection": "GU__POINTESTINE_riv",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    },
+    "task_moderateHI__IVDOSE_riv": {
+      "type": "TASK",
+      "sid": "task_moderateHI__IVDOSE_riv",
+      "index": "IVDOSE_riv",
+      "selection": "IVDOSE_riv",
+      "unit": null,
+      "task": "task_moderateHI",
+      "dataset": null,
+      "function": null,
+      "variables": null,
+      "parameters": {},
+      "sel": null
+    }
+  },
+  "figures": {
+    "Fig1": {
+      "sid": "Fig1",
+      "name": "Kubitza2013",
+      "num_rows": 1,
+      "num_cols": 1,
+      "width": null,
+      "height": null,
+      "settings": {},
+      "subplots": [
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig1__plot0",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig1__plot0_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": 50,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig1__plot0_yaxis",
+              "name": "rivaroxaban plasma [\u00b5M]",
+              "label": "rivaroxaban plasma",
+              "unit": "\u00b5M",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig1__plot0_curve0",
+                "name": "Healthy subjects",
+                "x": "task_healthy__time",
+                "y": "task_healthy__conc__Cve_riv",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig1__plot0_curve1",
+                "name": "Healthy subjects\u00b1SD (n=16)",
+                "x": "Fig1_rivaroxaban_healthy__time",
+                "y": "Fig1_rivaroxaban_healthy__mean",
+                "xerr": null,
+                "yerr": "Fig1_rivaroxaban_healthy__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#000000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig1__plot0_curve2",
+                "name": "Mild hepatic impairment",
+                "x": "task_mildHI__time",
+                "y": "task_mildHI__conc__Cve_riv",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#74A9CFff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#74A9CFff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#74A9CFff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig1__plot0_curve3",
+                "name": "Mild hepatic impairment\u00b1SD (n=8)",
+                "x": "Fig1_rivaroxaban_mildHI__time",
+                "y": "Fig1_rivaroxaban_mildHI__mean",
+                "xerr": null,
+                "yerr": "Fig1_rivaroxaban_mildHI__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#74A9CFff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#74A9CFff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#74A9CFff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig1__plot0_curve4",
+                "name": "Moderate hepatic impairment",
+                "x": "task_moderateHI__time",
+                "y": "task_moderateHI__conc__Cve_riv",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#2B8CBEff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#2B8CBEff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2B8CBEff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig1__plot0_curve5",
+                "name": "Moderate hepatic impairment\u00b1SD (n=8)",
+                "x": "Fig1_rivaroxaban_moderateHI__time",
+                "y": "Fig1_rivaroxaban_moderateHI__mean",
+                "xerr": null,
+                "yerr": "Fig1_rivaroxaban_moderateHI__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#2B8CBEff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#2B8CBEff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2B8CBEff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              }
+            ],
+            "areas": [],
+            "bands": []
+          },
+          "row": 1,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        }
+      ]
+    },
+    "Fig2": {
+      "sid": "Fig2",
+      "name": "Kubitza2013",
+      "num_rows": 1,
+      "num_cols": 2,
+      "width": null,
+      "height": null,
+      "settings": {},
+      "subplots": [
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig2__plot0",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig2__plot0_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": 75,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig2__plot0_yaxis",
+              "name": "Xa inhibition [-]",
+              "label": "Xa inhibition",
+              "unit": "dimensionless",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig2__plot0_curve0",
+                "name": "Healthy subjects",
+                "x": "task_healthy__time",
+                "y": "task_healthy__Xa_inhibition",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig2__plot0_curve1",
+                "name": "Healthy subjects\u00b1SD (n=16)",
+                "x": "Fig2A_factor_Xa_inhibition_healthy__time",
+                "y": "Fig2A_factor_Xa_inhibition_healthy__mean",
+                "xerr": null,
+                "yerr": "Fig2A_factor_Xa_inhibition_healthy__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#000000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig2__plot0_curve2",
+                "name": "Mild hepatic impairment",
+                "x": "task_mildHI__time",
+                "y": "task_mildHI__Xa_inhibition",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#74A9CFff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#74A9CFff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#74A9CFff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig2__plot0_curve3",
+                "name": "Mild hepatic impairment\u00b1SD (n=8)",
+                "x": "Fig2A_factor_Xa_inhibition_mildHI__time",
+                "y": "Fig2A_factor_Xa_inhibition_mildHI__mean",
+                "xerr": null,
+                "yerr": "Fig2A_factor_Xa_inhibition_mildHI__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#74A9CFff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#74A9CFff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#74A9CFff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig2__plot0_curve4",
+                "name": "Moderate hepatic impairment",
+                "x": "task_moderateHI__time",
+                "y": "task_moderateHI__Xa_inhibition",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#2B8CBEff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#2B8CBEff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2B8CBEff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig2__plot0_curve5",
+                "name": "Moderate hepatic impairment\u00b1SD (n=8)",
+                "x": "Fig2A_factor_Xa_inhibition_moderateHI__time",
+                "y": "Fig2A_factor_Xa_inhibition_moderateHI__mean",
+                "xerr": null,
+                "yerr": "Fig2A_factor_Xa_inhibition_moderateHI__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#2B8CBEff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#2B8CBEff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2B8CBEff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              }
+            ],
+            "areas": [],
+            "bands": []
+          },
+          "row": 1,
+          "col": 1,
+          "row_span": 1,
+          "col_span": 1
+        },
+        {
+          "sid": null,
+          "name": null,
+          "plot": {
+            "sid": "Fig2__plot1",
+            "name": null,
+            "xaxis": {
+              "sid": "Fig2__plot1_xaxis",
+              "name": "time [hr]",
+              "label": "time",
+              "unit": "hr",
+              "scale": "LINEAR",
+              "min": null,
+              "max": 75,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis": {
+              "sid": "Fig2__plot1_yaxis",
+              "name": "PT ratio [-]",
+              "label": "PT ratio",
+              "unit": "dimensionless",
+              "scale": "LINEAR",
+              "min": null,
+              "max": null,
+              "grid": false,
+              "label_visible": true,
+              "ticks_visible": true
+            },
+            "yaxis_right": null,
+            "legend": true,
+            "facecolor": "#ffffffff",
+            "title_visible": true,
+            "curves": [
+              {
+                "sid": "Fig2__plot1_curve0",
+                "name": "Healthy subjects",
+                "x": "task_healthy__time",
+                "y": "task_healthy__PT_ratio",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#000000ff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 0
+              },
+              {
+                "sid": "Fig2__plot1_curve1",
+                "name": "Healthy subjects\u00b1SD (n=16)",
+                "x": "Fig2B_prothrombin_time__change_relative__healthy__time",
+                "y": "Fig2B_prothrombin_time__change_relative__healthy__mean",
+                "xerr": null,
+                "yerr": "Fig2B_prothrombin_time__change_relative__healthy__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#000000ff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#000000ff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#000000ff",
+                    "second_color": null
+                  }
+                },
+                "order": 1
+              },
+              {
+                "sid": "Fig2__plot1_curve2",
+                "name": "Mild hepatic impairment",
+                "x": "task_mildHI__time",
+                "y": "task_mildHI__PT_ratio",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#74A9CFff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#74A9CFff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#74A9CFff",
+                    "second_color": null
+                  }
+                },
+                "order": 2
+              },
+              {
+                "sid": "Fig2__plot1_curve3",
+                "name": "Mild hepatic impairment\u00b1SD (n=8)",
+                "x": "Fig2B_prothrombin_time__change_relative__mildHI__time",
+                "y": "Fig2B_prothrombin_time__change_relative__mildHI__mean",
+                "xerr": null,
+                "yerr": "Fig2B_prothrombin_time__change_relative__mildHI__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#74A9CFff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#74A9CFff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#74A9CFff",
+                    "second_color": null
+                  }
+                },
+                "order": 3
+              },
+              {
+                "sid": "Fig2__plot1_curve4",
+                "name": "Moderate hepatic impairment",
+                "x": "task_moderateHI__time",
+                "y": "task_moderateHI__PT_ratio",
+                "xerr": null,
+                "yerr": null,
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "SOLID",
+                    "color": "#2B8CBEff",
+                    "thickness": 2.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "NONE",
+                    "fill": "#2B8CBEff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2B8CBEff",
+                    "second_color": null
+                  }
+                },
+                "order": 4
+              },
+              {
+                "sid": "Fig2__plot1_curve5",
+                "name": "Moderate hepatic impairment\u00b1SD (n=8)",
+                "x": "Fig2B_prothrombin_time__change_relative__moderateHI__time",
+                "y": "Fig2B_prothrombin_time__change_relative__moderateHI__mean",
+                "xerr": null,
+                "yerr": "Fig2B_prothrombin_time__change_relative__moderateHI__mean_sd",
+                "over": [],
+                "yaxis_position": null,
+                "style": {
+                  "sid": null,
+                  "name": null,
+                  "base_style": null,
+                  "line": {
+                    "type": "DASH",
+                    "color": "#2B8CBEff",
+                    "thickness": 1.0
+                  },
+                  "marker": {
+                    "size": null,
+                    "type": "SQUARE",
+                    "fill": "#2B8CBEff",
+                    "line_color": "#000000ff",
+                    "line_thickness": null
+                  },
+                  "fill": {
+                    "color": "#2B8CBEff",
+                    "second_color": null
+                  }
+                },
+                "order": 5
+              }
+            ],
+            "areas": [],
+            "bands": []
+          },
+          "row": 1,
+          "col": 2,
+          "row_span": 1,
+          "col_span": 1
+        }
+      ]
+    }
+  }
+}

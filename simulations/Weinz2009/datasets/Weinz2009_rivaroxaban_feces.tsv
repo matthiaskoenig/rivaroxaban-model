@@ -1,0 +1,2 @@
+study	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	mean	median	min	max	mean_sd	mean_se	cv	comments	mean_unit	median_unit	count_unit
+Weinz2009	all	4.0	T10	recovery	rivaroxaban	feces	scintillation counting	recovery_rivaroxaban_feces	4.0	day	1.674772873267872e-06							26.4% dose in time interval	count*mole	percent	dimensionless

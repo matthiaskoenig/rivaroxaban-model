@@ -1,17 +1,36 @@
 """Rivaroxaban body model."""
 
-from sbmlutils.cytoscape import visualize_sbml
-from sbmlutils.factory import *
-from sbmlutils.metadata import *
-from pkdb_models.models.rivaroxaban.models import annotations
-from pkdb_models.models.rivaroxaban.models import templates
+from typing import NotRequired, TypedDict
+
+from sbmlutils.factory import (
+    PORT_SUFFIX,
+    AssignmentRule,
+    Compartment,
+    ExternalModelDefinition,
+    Model,
+    Parameter,
+    RateRule,
+    Reaction,
+    ReplacedElement,
+    Species,
+    Submodel,
+    UnitDefinition,
+    create_model,
+)
+from sbmlutils.metadata import (
+    BQB,
+    SBO,
+)
+
+from pkdb_models.models.rivaroxaban.models import annotations, templates
+from pkdb_models.models.rivaroxaban.models.fits import FITS
 
 
 # -----------------------------------------------------------------------------
 # Whole Body Metabolism
 # -----------------------------------------------------------------------------
 class U(templates.U):
-    """UnitsDefinitions."""
+    """Units of the whole-body model."""
 
     cm = UnitDefinition("cm")
     hr = UnitDefinition("hr")
@@ -58,9 +77,9 @@ _m = Model(
     name="Rivaroxaban body model",
     notes="""
     # Physiologically based pharmacokinetic/ pharmacodynamic (PBPK/PD) model rivaroxaban (body model)
-    
+
     Rivaroxaban, a direct oral anticoagulant (DOAC), is a widely used drug for the prevention and treatment of thromboembolic disorders. While its fixed dosing regimen and predictable anticoagulation profile improve clinical usability, significant inter-individual variability in pharmacokinetics (PK) and pharmacodynamics (PD) exists, particularly in patients with altered physiology or comorbidities. This study established an open database of rivaroxaban PK and PD data from 14 clinical studies. The data were used to develop and validate a physiologically based pharmacokinetic/pharmacodynamic (PBPK/PD) model of rivaroxaban that captures its absorption, distribution, metabolism, excretion, and coagulation effects. The model incorporates the effects of dose, food intake, hepatic and renal function, and allows simulation of activated Factor X (Factor Xa) inhibition, prothrombin time (PT), and activated partial thromboplastin time (aPTT). Simulations accurately reproduced observed plasma concentration-time and coagulation profiles across a range of doses, fed/fasting conditions, as well as with different degrees of cirrhosis and renal impairment. This mechanistic PBPK/PD model provides a framework for exploring variability in rivaroxaban response across diverse clinical scenarios and supports its use in personalized dosing strategies, clinical trial design, and regulatory evaluation.
-    
+
     ## License
     * Source Code: [MIT](https://opensource.org/license/MIT)
     * Documentation: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
@@ -71,22 +90,36 @@ _m = Model(
     model_units=templates.model_units,
     creators=templates.creators,
     annotations=[
+        *annotations.model,
         # tissue
         (BQB.OCCURS_IN, "BTO:0001489"),  # whole body
         (BQB.OCCURS_IN, "FMA:256135"),  # body
-
         (BQB.HAS_PROPERTY, "ncit/C79369"),  # Pharmacokinetics: Absorption
         (BQB.HAS_PROPERTY, "ncit/C79371"),  # Pharmacokinetics: Metabolism
         (BQB.HAS_PROPERTY, "ncit/C79372"),  # Pharmacokinetics: Excretion
         (BQB.HAS_PROPERTY, "ncit/C79370"),  # Pharmacokinetics: Distribution
-    ] + templates.model_annotations
+    ],
 )
 
 _m.ports = []
 _m.deletions = []
 _m.replaced_elements = []
 
-SUBSTANCES_BODY = {
+
+class SubstanceBody(TypedDict):
+    """Definition of a substance transported in the whole-body model."""
+
+    name: str
+    unit: UnitDefinition
+    cinit: float  # initial concentration [mmole/l]
+    Mr: float  # molecular weight [g/mole]
+    IVDOSE: NotRequired[float]  # intravenous dose [mg]
+    PODOSE: NotRequired[float]  # oral dose [mg]
+    # distribution in tissues, `ftissue_<sid>` and `Kp_<sid>` are fitted
+    tissue_distribution: NotRequired[bool]
+
+
+SUBSTANCES_BODY: dict[str, SubstanceBody] = {
     "riv": {
         "name": "rivaroxaban",
         "unit": U.mmole,
@@ -98,11 +131,12 @@ SUBSTANCES_BODY = {
         "IVDOSE": 0,  # venous plasma
         # oral absorption
         "PODOSE": 0,  # dose
-
-        # 'ftissue': 1,  # [litre_per_min] distribution in tissues
-        # logP = 2.82; P = 10^0.07 = 660.7  (ALOGPS)
-        # logP = 3.12; P = 10^0.07 = 1318.2  (Chemaxon)
-        # "Kp": 660,  # [-] tissue/plasma partition coefficient
+        # tissue distribution, `ftissue_riv` and `Kp_riv` are fitted (see
+        # `fits.FITS`): the volume of distribution at steady state is about
+        # 50 l (0.62 l/kg) after 1 mg IV, the half-life 4.5 hr (Mueck2014);
+        # rivaroxaban is lipophilic (logP 2.82 ALOGPS, 3.12 Chemaxon) but
+        # 92-95 % bound to plasma proteins
+        "tissue_distribution": True,
     },
     "rx": {
         "name": "rivaroxaban metabolites",
@@ -110,7 +144,10 @@ SUBSTANCES_BODY = {
         # initial concentration
         "cinit": 0.0,  # [mmole/l]
         # Molecular weight
-        "Mr": 435.88,  # [g/mole]  # FIXME: not known
+        # the metabolites are in rivaroxaban equivalents, as the
+        # radioactivity of [14C]rivaroxaban (Weinz2009), the only data of the
+        # metabolites
+        "Mr": 435.88,  # [g/mole]
     },
 }
 
@@ -153,7 +190,7 @@ _m.external_model_definitions = [
         modelRef=liver_id,
     ),
     ExternalModelDefinition(
-         sid="gut", name="gut model definition", source=f"{gut_id}.xml", modelRef=gut_id
+        sid="gut", name="gut model definition", source=f"{gut_id}.xml", modelRef=gut_id
     ),
 ]
 
@@ -290,7 +327,7 @@ _m.compartments = [
 ]
 
 # create plasma and tissue compartments (for correct blood volume)
-for cid in COMPARTMENTS_BODY.keys():
+for cid in COMPARTMENTS_BODY:
     if cid not in ["ar", "ve", "po", "hv"]:
         _m.compartments.extend(
             [
@@ -428,45 +465,47 @@ for sid, sdict in SUBSTANCES_BODY.items():
             )
         )
 
-    # tissue species
+    # tissue species, not in the blood and the organs of their own models
+    no_tissue = {"ve", "ar", "li", "ki", "gu", "po", "hv"}
     for cid, cname in COMPARTMENTS_BODY.items():
-        if "ftissue" in sdict:
-            if cid not in ["ve", "ar", "li", "ki", "gu", "po", "hv"]:
-                sid_ex = f"C{cid}_{sid}"
-                cid_ex = f"V{cid}_tissue"
+        if sdict.get("tissue_distribution") and cid not in no_tissue:
+            sid_ex = f"C{cid}_{sid}"
+            cid_ex = f"V{cid}_tissue"
 
-                _m.species.extend(
-                    [
-                        Species(
-                            sid_ex,
-                            metaId=f"meta_{sid_ex}",
-                            initialConcentration=sdict["cinit"],
-                            compartment=cid_ex,
-                            substanceUnit=sdict["unit"],
-                            name=f"{sdict['name']} ({cname})",
-                            hasOnlySubstanceUnits=False,
-                            port=True,
-                            sboTerm=SBO.SIMPLE_CHEMICAL,
-                            annotations=annotations.species[sid],
-                        )
-                    ]
-                )
+            _m.species.extend(
+                [
+                    Species(
+                        sid_ex,
+                        metaId=f"meta_{sid_ex}",
+                        initialConcentration=sdict["cinit"],
+                        compartment=cid_ex,
+                        substanceUnit=sdict["unit"],
+                        name=f"{sdict['name']} ({cname})",
+                        hasOnlySubstanceUnits=False,
+                        port=True,
+                        sboTerm=SBO.SIMPLE_CHEMICAL,
+                        annotations=annotations.species[sid],
+                    )
+                ]
+            )
 
     # urine metabolites dummy species
     if sid in ["riv", "rx"]:
-        _m.species.extend([
-            Species(
-                f"Aurine_{sid}",
-                metaId=f"meta_Aurine_{sid}",
-                initialConcentration=0,
-                compartment="Vurine",
-                substanceUnit=sdict["unit"],
-                name=f"{sdict['name']} (urine)",
-                hasOnlySubstanceUnits=True,
-                sboTerm=SBO.SIMPLE_CHEMICAL,
-                annotations=annotations.species[sid],
-            ),
-        ])
+        _m.species.extend(
+            [
+                Species(
+                    f"Aurine_{sid}",
+                    metaId=f"meta_Aurine_{sid}",
+                    initialConcentration=0,
+                    compartment="Vurine",
+                    substanceUnit=sdict["unit"],
+                    name=f"{sdict['name']} (urine)",
+                    hasOnlySubstanceUnits=True,
+                    sboTerm=SBO.SIMPLE_CHEMICAL,
+                    annotations=annotations.species[sid],
+                ),
+            ]
+        )
 
     # feces metabolites
     if sid in ["riv", "rx"]:
@@ -531,22 +570,23 @@ for skey in ["riv", "rx"]:
     )
 
 # enterohepatic circulation
-_m.replaced_elements.extend([
-    ReplacedElement(
-        sid=f"Cgu_rx_RE",
-        metaId=f"Cgu_rx_RE",
-        elementRef=f"Cgu_rx",
-        submodelRef=SUBMODEL_SID_DICT["gu"],
-        portRef=f"rx_lumen{PORT_SUFFIX}",
-    ),
-    ReplacedElement(
-        sid=f"Cgu_rx_RE2",
-        metaId=f"Cgu_rx_RE2",
-        elementRef=f"Cgu_rx",
-        submodelRef=SUBMODEL_SID_DICT["li"],
-        portRef=f"rx_lumen{PORT_SUFFIX}",
-    )
-]
+_m.replaced_elements.extend(
+    [
+        ReplacedElement(
+            sid="Cgu_rx_RE",
+            metaId="Cgu_rx_RE",
+            elementRef="Cgu_rx",
+            submodelRef=SUBMODEL_SID_DICT["gu"],
+            portRef=f"rx_lumen{PORT_SUFFIX}",
+        ),
+        ReplacedElement(
+            sid="Cgu_rx_RE2",
+            metaId="Cgu_rx_RE2",
+            elementRef="Cgu_rx",
+            submodelRef=SUBMODEL_SID_DICT["li"],
+            portRef=f"rx_lumen{PORT_SUFFIX}",
+        ),
+    ]
 )
 
 
@@ -561,48 +601,28 @@ _m.parameters.extend(
             75,
             U.kg,
             constant=True,
-            name="body weight [kg]",
+            name="body weight",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
         ),
         Parameter(
-            "HEIGHT",
-            170,
-            U.cm,
+            "BW_ref",
+            75,
+            U.kg,
             constant=True,
-            name="height [cm]",
+            name="reference body weight [kg]",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        ),
-        Parameter(
-            "HR",
-            70,
-            U.per_min,
-            constant=True,
-            name="heart rate [1/min]",
-            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        ),
-        Parameter(
-            "HRrest",
-            70,
-            U.per_min,
-            constant=True,
-            name="heart rate [1/min]",
-            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        ),
-        Parameter(
-            "BSA",
-            0,
-            U.m2,
-            constant=False,
-            name="body surface area [m^2]",
-            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-            port=True
+            notes=(
+                "Body weight at which the exchange flows of the tissue "
+                "distribution (`ftissue_<sid>`) are given; they scale with the "
+                "body weight as the volumes and the blood flows do."
+            ),
         ),
         Parameter(
             "COBW",
             1.548,
             U.ml_per_s_kg,
             constant=True,
-            name="cardiac output per bodyweight [ml/s/kg]",
+            name="cardiac output per bodyweight",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
         ),
         Parameter(
@@ -615,30 +635,22 @@ _m.parameters.extend(
             notes="""
             1.0: normal function;
             <1.0: reduced function as reduced cardiac output;
-            """
+            """,
         ),
         Parameter(
             "CO",
             108.33,
             U.ml_per_s,
             constant=False,
-            name="cardiac output [ml/s]",
+            name="cardiac output",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
         ),
         Parameter(
             "QC",
-            108.33 * 1000 * 60,
+            108.33 / 1000 * 60,
             U.l_per_min,
             constant=False,
-            name="cardiac output [L/hr]",
-            sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        ),
-        Parameter(
-            "COHRI",
-            150,
-            U.ml,
-            constant=True,
-            name="increase of cardiac output per heartbeat [ml/min*min]",
+            name="cardiac output",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
         ),
         # fractional tissue volumes
@@ -654,7 +666,6 @@ _m.parameters.extend(
             "HCT",
             0.51,
             U.dimensionless,
-            constant=True,
             metaId="meta_HCT",
             name="hematocrit",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
@@ -743,7 +754,7 @@ _m.parameters.extend(
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
             notes="""
         Assumed FQgu is the sum of FQgu + FQsp + FQpa for correct portal blood flow.
-        with FQgu=0.146, FQsp=0.017, FQpa=0.017 
+        with FQgu=0.146, FQsp=0.017, FQpa=0.017
         """,
         ),
         Parameter(
@@ -778,14 +789,6 @@ _m.parameters.extend(
             name="rest of body fractional tissue blood flow",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
         ),
-        # Parameter(
-        #     "conversion_min_per_day",
-        #     1440,
-        #     U.min_per_day,
-        #     constant=True,
-        #     name="Conversion factor min to hours",
-        #     sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-        # ),
         Parameter(
             "f_cirrhosis",
             0,
@@ -806,7 +809,10 @@ _m.parameters.extend(
             name="fraction of portal venous blood shunted by the liver",
             sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
             annotations=[
-                (BQB.IS, "hp/HP:0002629"),  # Gastrointestinal arteriovenous malformation
+                (
+                    BQB.IS,
+                    "hp/HP:0002629",
+                ),  # Gastrointestinal arteriovenous malformation
             ],
         ),
         Parameter(
@@ -823,37 +829,41 @@ _m.parameters.extend(
 
 for sid, sdict in SUBSTANCES_BODY.items():
     if "PODOSE" in sdict:
-        # Parameter for intestine model
-        _m.parameters.extend([
-            Parameter(
-                f"PODOSE_{sid}",
-                sdict["PODOSE"],
-                U.mg,
-                constant=False,
-                sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-                name=f"oral dose {sid} [mg]",
-            ),
-            ]
-        )
-        _m.replaced_elements.extend([
-            ReplacedElement(
-                sid=f"PODOSE_{sid}_RE",
-                metaId=f"PODOSE_{sid}_RE",
-                elementRef=f"PODOSE_{sid}",
-                submodelRef=SUBMODEL_SID_DICT["gu"],
-                portRef=f"PODOSE_{sid}{PORT_SUFFIX}",
-            ),
-            ]
-        )
+        # parameters of the intestine model: the oral dose of a tablet and of
+        # a solution
+        for dose_id, dose_name in [
+            ("PODOSE", "oral dose"),
+            ("POSOLUTION", "oral dose as solution"),
+        ]:
+            _m.parameters.append(
+                Parameter(
+                    f"{dose_id}_{sid}",
+                    sdict["PODOSE"],
+                    U.mg,
+                    constant=False,
+                    sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+                    name=f"{dose_name} {sid} [mg]",
+                )
+            )
+            _m.replaced_elements.append(
+                ReplacedElement(
+                    sid=f"{dose_id}_{sid}_RE",
+                    metaId=f"{dose_id}_{sid}_RE",
+                    elementRef=f"{dose_id}_{sid}",
+                    submodelRef=SUBMODEL_SID_DICT["gu"],
+                    portRef=f"{dose_id}_{sid}{PORT_SUFFIX}",
+                )
+            )
 
-_m.rules = _m.rules + [
+_m.rules = [
+    *_m.rules,
     AssignmentRule("f_shunts", "f_cirrhosis", unit=U.dimensionless),
     AssignmentRule("f_tissue_loss", "f_cirrhosis", unit=U.dimensionless),
 ]
 
-replaced_parameters = {
+replaced_parameters: dict[str, list[str]] = {
     "li": [],
-    "gu": [],
+    "gu": ["Mr_riv"],
     "ki": [],
 }
 
@@ -886,25 +896,26 @@ for sid, sdict in SUBSTANCES_BODY.items():
     )
 
     # tissue distribution
-    if "ftissue" in sdict:
-        _m.parameters.extend([
-            Parameter(
-                f"ftissue_{sid}",
-                sdict["ftissue"],
-                U.l_per_min,
-                constant=True,
-                sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-                name=f"tissue distribution {sid}",
-            ),
-            Parameter(
-                f"Kp_{sid}",
-                sdict["Kp"],
-                U.dimensionless,
-                constant=True,
-                sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
-                name=f"tissue/plasma partition coefficient {sid}",
-            ),
-        ])
+    if sdict.get("tissue_distribution"):
+        _m.parameters.extend(
+            [
+                Parameter(
+                    f"ftissue_{sid}",
+                    **FITS.parameter(f"ftissue_{sid}", unit=U.l_per_min),
+                    constant=True,
+                    sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+                    name=f"tissue distribution {sid}",
+                    notes="Exchange flow at the reference body weight `BW_ref`.",
+                ),
+                Parameter(
+                    f"Kp_{sid}",
+                    **FITS.parameter(f"Kp_{sid}", unit=U.dimensionless),
+                    constant=True,
+                    sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+                    name=f"tissue/plasma partition coefficient {sid}",
+                ),
+            ]
+        )
 
     # dosing
     if "IVDOSE" in sdict:
@@ -950,7 +961,8 @@ for sid, sdict in SUBSTANCES_BODY.items():
 # -------------------------------------------------------------------------------------------------
 # AssignmentRules
 # -------------------------------------------------------------------------------------------------
-_m.rules = _m.rules + [
+_m.rules = [
+    *_m.rules,
     # Rest body volume
     AssignmentRule(
         "FVre",
@@ -959,13 +971,8 @@ _m.rules = _m.rules + [
     ),
     # Rest body perfusion
     AssignmentRule("FQre", "1.0 dimensionless - (FQki + FQh)", U.dimensionless),
-
-    # Body surface area (Haycock1978)
-    AssignmentRule(
-        "BSA", "0.024265 m2 * power(BW/1 kg, 0.5378) * power(HEIGHT/1 cm, 0.3964)", U.m2
-    ),
     # cardiac output (depending on heart rate and bodyweight)
-    AssignmentRule("CO", "f_cardiac_function*BW*COBW + (HR-HRrest)*COHRI / 60 s_per_min", U.ml_per_s),
+    AssignmentRule("CO", "f_cardiac_function*BW*COBW", U.ml_per_s),
     # cardiac output (depending on bodyweight)
     AssignmentRule("QC", "CO/1000 ml_per_l * 60 s_per_min", U.l_per_min),
     # volumes
@@ -1012,7 +1019,6 @@ _m.rules = _m.rules + [
 # Volumes for explicit tissue models
 for cid, cname in COMPARTMENTS_BODY.items():
     if cid not in ["ve", "ar", "po", "hv"]:
-
         _m.rules.append(
             # plasma volume associated with tissue
             AssignmentRule(
@@ -1044,8 +1050,6 @@ for cid, cname in COMPARTMENTS_BODY.items():
             )
 
 for sid, sdict in SUBSTANCES_BODY.items():
-    sname = sdict["name"]
-
     # injection
     if "IVDOSE" in sdict:
         _m.rules.extend(
@@ -1074,15 +1078,15 @@ for sid, sdict in SUBSTANCES_BODY.items():
     # --------------------
     # tissue distribution
     # --------------------
-    if "ftissue" in sdict:
-        for cid in COMPARTMENTS_BODY.keys():
+    if sdict.get("tissue_distribution"):
+        for cid in COMPARTMENTS_BODY:
             if cid not in ["ve", "ar", "li", "gu", "ki", "po", "hv"]:
                 _m.reactions.append(
                     Reaction(
                         sid=f"transport_{cid}_{sid}",
                         name=f"transport {sname}",
                         formula=(
-                            f"ftissue_{sid} * (C{cid}_plasma_{sid}*Kp_{sid} - C{cid}_{sid})",
+                            f"ftissue_{sid} * BW/BW_ref * (C{cid}_plasma_{sid}*Kp_{sid} - C{cid}_{sid})",
                             U.mmole_per_min,
                         ),
                         equation=f"C{cid}_plasma_{sid} <-> C{cid}_{sid}",
@@ -1227,12 +1231,11 @@ for sid, sdict in SUBSTANCES_BODY.items():
                     # shunted arterial flow
                     Reaction(
                         sid=f"Flow_arli_hv_{sid}",
-                        name=f"flow arterial shunts",
+                        name="flow arterial shunts",
                         formula=(f"f_shunts*Qha*Car_{sid}", U.mmole_per_min),
                         equation=f"Car_{sid} -> Chv_{sid}",
                         sboTerm=SBO.TRANSPORT_REACTION,
                     ),
-
                     # (unshunted) portal flow
                     Reaction(
                         sid=f"Flow_po_li_{sid}",
@@ -1247,7 +1250,7 @@ for sid, sdict in SUBSTANCES_BODY.items():
                     # portal shunts
                     Reaction(
                         sid=f"Flow_po_hv_{sid}",
-                        name=f"flow portal shunts",
+                        name="flow portal shunts",
                         formula=(f"f_shunts*Qpo*Cpo_{sid}", U.mmole_per_min),
                         equation=f"Cpo_{sid} -> Chv_{sid}",
                         sboTerm=SBO.TRANSPORT_REACTION,
@@ -1303,78 +1306,79 @@ _m.species.extend(
             annotations=[],
         ),
         Species(
-            f"Aurine_riv_rx",
-            metaId=f"meta_Aurine_riv_rx",
+            "Aurine_riv_rx",
+            metaId="meta_Aurine_riv_rx",
             initialConcentration=0,
             compartment="Vurine",
             substanceUnit=U.mmole,
-            name=f"RIV + RX (urine)",
+            name="RIV + RX (urine)",
             hasOnlySubstanceUnits=True,
             sboTerm=SBO.SIMPLE_CHEMICAL,
             annotations=[],
         ),
         Species(
-            f"Afeces_riv_rx",
-            metaId=f"meta_Afeces_riv_rx",
+            "Afeces_riv_rx",
+            metaId="meta_Afeces_riv_rx",
             initialConcentration=0,
             compartment="Vfeces",
             substanceUnit=U.mmole,
-            name=f"RIV + RX (feces)",
+            name="RIV + RX (feces)",
             hasOnlySubstanceUnits=True,
             sboTerm=SBO.SIMPLE_CHEMICAL,
             annotations=[],
         ),
         Species(
-            f"Cgu_rx",
+            "Cgu_rx",
             name="rivaroxaban metabolites (intestinal volume)",
-            metaId=f"meta_Cgu_rx",
+            metaId="meta_Cgu_rx",
             initialConcentration=0,
             compartment="Vgu",
             substanceUnit=U.mmole,
             hasOnlySubstanceUnits=False,
             sboTerm=SBO.SIMPLE_CHEMICAL,
             annotations=[],
-        )
+        ),
     ]
 )
-_m.rules.extend([
-    AssignmentRule(
-        "Cve_riv_rx",
-        "Cve_riv + Cve_rx",
-        unit=U.mmole,
-        name="Sum of RIV and RX plasma",
-    ),
-    AssignmentRule(
-        "Aurine_riv_rx",
-        "Aurine_riv + Aurine_rx",
-        unit=U.mmole,
-        name="Sum of RIV and RX urine",
-    ),
-    AssignmentRule(
-        "Afeces_riv_rx",
-        "Afeces_riv + Afeces_rx",
-        unit=U.mmole,
-        name="Sum of RIV and RX feces",
-    ),
-    AssignmentRule(
-        "Afeces_urine_riv_rx",
-        "Afeces_riv_rx + Aurine_riv_rx",
-        unit=U.mmole,
-        name="Sum of RIV and RX feces and urine",
-    ),
-])
+_m.rules.extend(
+    [
+        AssignmentRule(
+            "Cve_riv_rx",
+            "Cve_riv + Cve_rx",
+            unit=U.mmole_per_l,
+            name="Sum of RIV and RX plasma",
+        ),
+        AssignmentRule(
+            "Aurine_riv_rx",
+            "Aurine_riv + Aurine_rx",
+            unit=U.mmole,
+            name="Sum of RIV and RX urine",
+        ),
+        AssignmentRule(
+            "Afeces_riv_rx",
+            "Afeces_riv + Afeces_rx",
+            unit=U.mmole,
+            name="Sum of RIV and RX feces",
+        ),
+        AssignmentRule(
+            "Afeces_urine_riv_rx",
+            "Afeces_riv_rx + Aurine_riv_rx",
+            unit=U.mmole,
+            name="Sum of RIV and RX feces and urine",
+        ),
+    ]
+)
 
 model_body: Model = _m
 
 
 if __name__ == "__main__":
     from pkdb_models.models.rivaroxaban import MODEL_BASE_PATH
-    from pkdb_models.models.rivaroxaban.models.model_coagulation import model_coagulation
-
-    model_coagulation.species = [s for s in model_coagulation.species if s.sid != "Cve_riv"]
+    from pkdb_models.models.rivaroxaban.models.factory import coagulation_of_body
 
     result = create_model(
         filepath=MODEL_BASE_PATH / f"{model_body.sid}.xml",
-        model=[model_coagulation, model_body], sbml_level=3, sbml_version=2
+        model=[coagulation_of_body(), model_body],
+        sbml_level=3,
+        sbml_version=2,
     )
-    visualize_sbml(result.sbml_path, delete_session=False)

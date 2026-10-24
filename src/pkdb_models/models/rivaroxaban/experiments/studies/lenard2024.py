@@ -1,111 +1,165 @@
-from typing import Dict
+"""Simulation experiment of the study Lenard2024."""
 
-from sbmlsim.data import DataSet, load_pkdb_dataframe
-from sbmlsim.fit import FitMapping, FitData
-from sbmlutils.console import console
+from typing import ClassVar, override
 
-from pkdb_models.models import rivaroxaban
+import pandas as pd
+from pkpdsim.metadata import (
+    ApplicationForm,
+    Coadministration,
+    Dosing,
+    Fasting,
+    Health,
+    PKPDMappingMetaData,
+    Route,
+    Tissue,
+)
+from sbmlsim import Q
+from sbmlsim.data import DataSet
+from sbmlsim.fit import FitData, FitMapping
+from sbmlsim.plot import Axis, Figure
+from sbmlsim.simulation import Simulation
+
+from pkdb_models.models.rivaroxaban import MODEL
 from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
     RivaroxabanSimulationExperiment,
 )
-from pkdb_models.models.rivaroxaban.experiments.metadata import Tissue, Route, Dosing, ApplicationForm, Health, \
-    Fasting, RivaroxabanMappingMetaData, Coadministration
 
-from sbmlsim.plot import Axis, Figure
-from sbmlsim.simulation import Timecourse, TimecourseSim
 
-from pkdb_models.models.rivaroxaban.helpers import run_experiments
+def impute_sd(df: pd.DataFrame) -> pd.DataFrame:
+    """Give the points of a mean curve without a standard deviation one.
+
+    The figures of the microdose studies have no error bars after 8 hr (and
+    hidden ones near the peak); sbmlsim gives a point without a standard
+    deviation the largest one of its curve, which removes the low
+    concentrations of the terminal phase from a fit. Such a point (after the
+    dose) gets the median coefficient of variation of the points of its curve
+    with a standard deviation.
+
+    Args:
+        df: the rows of one mean curve with the columns `time`, `mean`, `sd`.
+
+    Returns:
+        A copy of the rows with the standard deviations.
+    """
+    df = df.copy()
+    has_sd = df["sd"].notna() & (df["mean"] > 0)
+    cv = (df.loc[has_sd, "sd"] / df.loc[has_sd, "mean"]).median()
+    missing = df["sd"].isna() & (df["time"] > 0)
+    df.loc[missing, "sd"] = df.loc[missing, "mean"] * cv
+    return df
 
 
 class Lenard2024(RivaroxabanSimulationExperiment):
-    """Simulation experiment of Lenard2024."""
+    """Simulation experiment of Lenard2024.
 
-    colors = {
+    Microdose cocktail of apixaban 25 µg, rivaroxaban 25 µg and edoxaban 50 µg
+    as an oral solution in 12 healthy subjects, given alone and on day 8 of
+    clarithromycin 500 mg twice daily (inhibition of CYP3A4 and P-gp at steady
+    state). Only the rivaroxaban data is used.
+    """
+
+    interventions: ClassVar[list[str]] = [
+        "API25, RIV25, EDO50",
+        "API25, RIV25, EDO50, CLAR",
+    ]
+    #: keys of the datasets and mappings by intervention, the simulation is
+    #: the key in upper case
+    keys: ClassVar[dict[str, str]] = {
+        "API25, RIV25, EDO50": "riv25",
+        "API25, RIV25, EDO50, CLAR": "riv25_clar",
+    }
+    colors: ClassVar[dict[str, str]] = {
         "API25, RIV25, EDO50": "black",
-        # "API25, RIV25, EDO50, CLAR": "tab:blue",
+        "API25, RIV25, EDO50, CLAR": "tab:red",
     }
-    labels = {
-        "API25, RIV25, EDO50": "RIV25",
-        # "API25, RIV25, EDO50, CLAR": "RIV25, CLAR",
+    intervention_labels: ClassVar[dict[str, str]] = {
+        "API25, RIV25, EDO50": "RIV 25 µg",
+        "API25, RIV25, EDO50, CLAR": "RIV 25 µg + clarithromycin",
     }
-
-    interventions = list(colors.keys())
-
-    doses =  {
-        "API25, RIV25, EDO50": 0.025,  # [μg] (2 times dosing, first on day1, second on day 5)
-        # "API25, RIV25, EDO50, CLAR": 0.025,  # 50 µg
+    coadministrations: ClassVar[dict[str, Coadministration]] = {
+        "API25, RIV25, EDO50": Coadministration.NONE,
+        "API25, RIV25, EDO50, CLAR": Coadministration.CLARITHROMYCIN,
     }
-
-    infos_pk = {
-        "[Cve_riv]": "rivaroxaban",
+    #: inhibition by clarithromycin 500 mg twice daily (not fitted): a strong
+    #: CYP3A4 inhibitor (midazolam AUC about 8 fold, i.e. about 90 % of the
+    #: CYP3A4 activity inhibited) and an inhibitor of the renal P-gp (renal
+    #: clearance of digoxin reduced by about a third, Rengelshausen2003).
+    #: Observed AUC ratio of rivaroxaban 1.43 (Cmax 1.40) in this study, 1.54
+    #: with 20 mg (Mueck2013); the model has no intestinal CYP3A4 or P-gp, so
+    #: the increase of Cmax is not described.
+    inhibition: ClassVar[dict[str, dict[str, float]]] = {
+        "API25, RIV25, EDO50": {"LI__f_cyp3a4": 1.0, "KI__f_pgp": 1.0},
+        "API25, RIV25, EDO50, CLAR": {"LI__f_cyp3a4": 0.1, "KI__f_pgp": 0.7},
     }
+    #: rivaroxaban 25 µg, a single dose in each period (the second dose on
+    #: day 8 after a washout of 7 days is the clarithromycin arm)
+    dose = 0.025  # [mg]
 
-    def datasets(self) -> Dict[str, DataSet]:
+    @override
+    def datasets(self) -> dict[str, DataSet]:
         dsets = {}
-        for fig_id in ["Fig2"]:
-            df = load_pkdb_dataframe(f"{self.sid}_{fig_id}", data_path=self.data_path)
-            for label, df_label in df.groupby("label"):
-                dset = DataSet.from_df(df_label, self.ureg)
-                if label.startswith("rivaroxaban"):
-                        dset.unit_conversion("mean", 1 / self.Mr.riv)
-                dsets[label] = dset
+        df = self.load_dataframe("Fig2")
+        df = df[df.substance == "rivaroxaban"]
+        for intervention, df_label in df.groupby("intervention"):
+            dset = DataSet.from_df(impute_sd(df_label), self.ureg)
+            dset.unit_conversion("mean", 1 / self.Mr.riv)
+            dsets[self.keys[str(intervention)]] = dset
         return dsets
 
-    def simulations(self) -> Dict[str, TimecourseSim]:
-        Q_ = self.Q_
-        tcsims = {}
-        for intervention in self.interventions:
-                dose = self.doses[intervention]
-                tcsims[f"{intervention}"] = TimecourseSim(
-                        [Timecourse(
-                            start=0,
-                            end=25 * 60,  # [min]
-                            steps=500,
-                            changes={
-                                **self.default_changes(),
-                                "PODOSE_riv": Q_(dose, "mg")
-                            },
-                        )])
-        return tcsims
+    @override
+    def simulations(self) -> dict[str, Simulation]:
+        return {
+            self.keys[intervention].upper(): Simulation(
+                time_unit="min",
+                end=25 * 60,
+                preinit_changes={
+                    **self.default_changes(),
+                    "POSOLUTION_riv": Q(self.dose, "mg"),
+                    **{
+                        pid: Q(value, "dimensionless")
+                        for pid, value in self.inhibition[intervention].items()
+                    },
+                },
+            )
+            for intervention in self.interventions
+        }
 
-    def fit_mappings(self) -> Dict[str, FitMapping]:
+    @override
+    def fit_mappings(self) -> dict[str, FitMapping]:
         mappings = {}
         for intervention in self.interventions:
-                # PK
-                for ks, sid in enumerate(self.infos_pk):
-                    name = self.infos_pk[sid]
-                    mappings[f"fm_{name}_{intervention}"] = FitMapping(
-                        self,
-                        reference=FitData(
-                            self,
-                            dataset=f"{name}_{intervention}",
-                            xid="time",
-                            yid="mean",
-                            yid_sd="mean_sd",
-                            count="count",
-                        ),
-                        observable=FitData(
-                            self, task=f"task_{intervention}", xid="time", yid=sid,
-                        ),
-                        metadata=RivaroxabanMappingMetaData(
-                            tissue=Tissue.PLASMA,
-                            route=Route.PO,
-                            application_form=ApplicationForm.TABLET,
-                            dosing=Dosing.SINGLE,
-                            health=Health.HEALTHY,
-                            fasting=Fasting.NR,
-                            coadministration=Coadministration.CLARITHROMYCIN if "CLAR" in intervention else Coadministration.NONE
-                        ),
-                    )
+            key = self.keys[intervention]
+            mappings[f"fm_{key}"] = FitMapping(
+                self,
+                reference=FitData(
+                    self,
+                    dataset=key,
+                    xid="time",
+                    yid="mean",
+                    yid_sd="mean_sd",
+                    count="count",
+                ),
+                observable=FitData(
+                    self,
+                    task=f"task_{key.upper()}",
+                    xid="time",
+                    yid="[Cve_riv]",
+                ),
+                metadata=PKPDMappingMetaData(
+                    tissue=Tissue.PLASMA,
+                    route=Route.PO,
+                    application_form=ApplicationForm.SOLUTION,
+                    dosing=Dosing.SINGLE,
+                    health=Health.HEALTHY,
+                    fasting=Fasting.NR,
+                    coadministration=self.coadministrations[intervention],
+                ),
+            )
 
         return mappings
 
-    def figures(self) -> Dict[str, Figure]:
-        return {
-            **self.figure_pk(),
-        }
-
-    def figure_pk(self) -> Dict[str, Figure]:
+    @override
+    def figures(self) -> dict[str, Figure]:
         fig = Figure(
             experiment=self,
             sid="Fig2",
@@ -118,34 +172,26 @@ class Lenard2024(RivaroxabanSimulationExperiment):
         plots[0].set_yaxis(self.label_riv_plasma, unit=self.unit_riv)
 
         for intervention in self.interventions:
-            for ks, sid in enumerate(self.infos_pk):
-                name = self.infos_pk[sid]
+            key = self.keys[intervention]
+            plots[0].add_data(
+                task=f"task_{key.upper()}",
+                xid="time",
+                yid="[Cve_riv]",
+                label=self.intervention_labels[intervention],
+                color=self.colors[intervention],
+            )
+            plots[0].add_data(
+                dataset=key,
+                xid="time",
+                yid="mean",
+                yid_sd="mean_sd",
+                count="count",
+                label=self.intervention_labels[intervention],
+                color=self.colors[intervention],
+            )
 
-                # simulation
-                plots[ks].add_data(
-                    task=f"task_{intervention}",
-                    xid="time",
-                    yid=sid,
-                    label=self.labels[intervention],
-                    color=self.colors[f"{intervention}"],
-                )
-                # data
-                plots[ks].add_data(
-                    dataset=f"{name}_{intervention}",
-                    xid="time",
-                    yid="mean",
-                    yid_sd="mean_sd",
-                    count="count",
-                    label=self.labels[intervention],
-                    color=self.colors[f"{intervention}"],
-                )
-
-        return {
-            fig.sid: fig
-        }
+        return self.figures_by_sid(fig)
 
 
 if __name__ == "__main__":
-    out = rivaroxaban.RESULTS_PATH_SIMULATION / Lenard2024.__name__
-    out.mkdir(parents=True, exist_ok=True)
-    run_experiments(Lenard2024, output_dir=Lenard2024.__name__)
+    MODEL.run_experiments(Lenard2024, output_dir=Lenard2024.__name__)

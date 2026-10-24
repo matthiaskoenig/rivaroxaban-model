@@ -1,45 +1,55 @@
 """Liver model for rivaroxaban."""
 
-from sbmlutils import cytoscape as cyviz
-from pathlib import Path
-import pandas as pd
 import numpy as np
-from sbmlutils.converters import odefac
-from sbmlutils.factory import *
-from sbmlutils.metadata import *
-from pkdb_models.models.rivaroxaban.models import annotations
-from pkdb_models.models.rivaroxaban.models import templates
-from pkdb_models.models.rivaroxaban import MODEL_BASE_PATH
+from sbmlutils.factory import (
+    Compartment,
+    FactoryResult,
+    Model,
+    Parameter,
+    Reaction,
+    Species,
+    create_model,
+)
+from sbmlutils.metadata import (
+    BQB,
+    SBO,
+)
+
+from pkdb_models.models.rivaroxaban.models import annotations, templates
+from pkdb_models.models.rivaroxaban.models.fits import FITS
 
 
 class U(templates.U):
-    """UnitDefinitions"""
+    """Units of the liver model."""
 
-    pass
 
-# TODO: add EHC equations
 mid = "rivaroxaban_liver"
-version = 1
 
 _m = Model(
     sid=mid,
     name="Model for hepatic rivaroxaban metabolism.",
-    notes=f"""
+    notes="""
     Model for hepatic rivaroxaban metabolism.
-    
-    """ + templates.terms_of_use,
+
+    Rivaroxaban is metabolized in the liver into a variety of metabolites,
+    which are lumped (`rx`): oxidation by CYP3A4 (`f_cyp3a4`) and CYP2J2 and
+    CYP independent hydrolysis (Weinz2009, Mueck2014). The metabolites leave
+    the liver into the plasma, from which they are excreted in the urine, and
+    with the bile into the feces.
+    """
+    + templates.terms_of_use,
     creators=templates.creators,
     units=U,
     model_units=templates.model_units,
     annotations=[
+        *annotations.model,
         # tissue
-        (BQB.OCCURS_IN, "fma/FMA:7197"),
-        (BQB.OCCURS_IN, "bto/BTO:0000759"),
-        (BQB.OCCURS_IN, "ncit/C12392"),
-
+        (BQB.OCCURS_IN, "fma/FMA:7197"),  # Liver
+        (BQB.OCCURS_IN, "bto/BTO:0000759"),  # Liver
+        (BQB.OCCURS_IN, "ncit/C12392"),  # Liver
         (BQB.HAS_PROPERTY, "ncit/C79371"),  # Pharmacokinetics: Metabolism
         (BQB.HAS_PROPERTY, "ncit/C79372"),  # Pharmacokinetics: Excretion
-    ] + templates.model_annotations
+    ],
 )
 
 _m.compartments = [
@@ -51,7 +61,7 @@ _m.compartments = [
         constant=True,
         sboTerm=SBO.PHYSICAL_COMPARTMENT,
         annotations=annotations.compartments["plasma"],
-        port=True
+        port=True,
     ),
     Compartment(
         "Vli",
@@ -61,7 +71,7 @@ _m.compartments = [
         constant=True,
         sboTerm=SBO.PHYSICAL_COMPARTMENT,
         annotations=annotations.compartments["li"],
-        port=True
+        port=True,
     ),
     Compartment(
         "Vmem",
@@ -72,7 +82,7 @@ _m.compartments = [
         sboTerm=SBO.PHYSICAL_COMPARTMENT,
         annotations=annotations.compartments["basolateral"],
         spatialDimensions=2,
-        port=True
+        port=True,
     ),
     Compartment(
         "Vbi",
@@ -104,7 +114,7 @@ _m.species = [
         hasOnlySubstanceUnits=False,
         sboTerm=SBO.SIMPLE_CHEMICAL,
         annotations=annotations.species["riv"],
-        port=True
+        port=True,
     ),
     Species(
         "riv",
@@ -116,11 +126,11 @@ _m.species = [
         sboTerm=SBO.SIMPLE_CHEMICAL,
         annotations=annotations.species["riv"],
     ),
-Species(
+    Species(
         "rx_ext",
         name="rivaroxaban metabolites (plasma)",
         initialConcentration=0.0,
-        compartment="Vli",
+        compartment="Vext",
         substanceUnit=U.mmole,
         hasOnlySubstanceUnits=False,
         sboTerm=SBO.SIMPLE_CHEMICAL,
@@ -163,10 +173,40 @@ Species(
 _m.parameters = [
     Parameter(
         "RXEX_BI_k",
-        9.99999999999998e-05,
-        unit=U.per_min,
+        **FITS.parameter("LI__RXEX_BI_k", unit=U.per_min),
         name="rate for rivaroxaban metabolite export in bile",
         sboTerm=SBO.KINETIC_CONSTANT,
+        notes="""
+        Biliary excretion of the metabolites: of an oral solution of 10 mg
+        [14C]rivaroxaban 65.7 % of the dose are recovered in the urine (36 %
+        unchanged) and 28.0 % in the feces (7 % unchanged), i.e. about 30 % of
+        the dose are metabolites in the urine and 21 % in the feces
+        (Weinz2009).
+        """,
+    ),
+    Parameter(
+        "f_cyp3a4",
+        1.0,
+        unit=U.dimensionless,
+        name="CYP3A4 activity",
+        sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+        notes="""
+        Activity of CYP3A4 relative to normal: 1.0 normal, <1.0 inhibition,
+        >1.0 induction; set by the experiments of the coadministrations with
+        documented factors, not fitted.
+        """,
+    ),
+    Parameter(
+        "fm_cyp3a4",
+        0.4,
+        unit=U.dimensionless,
+        name="fraction of the hepatic metabolism by CYP3A4",
+        sboTerm=SBO.QUANTITATIVE_SYSTEMS_DESCRIPTION_PARAMETER,
+        notes="""
+        Rivaroxaban is metabolized by CYP3A4 (about 18 % of the dose), CYP2J2
+        (about 14 %) and CYP independent hydrolysis (about 14 %) (Mueck2014),
+        so CYP3A4 is about 18/46 = 0.4 of the hepatic metabolism.
+        """,
     ),
 ]
 _m.reactions = [
@@ -174,22 +214,19 @@ _m.reactions = [
         sid="RIVIM",
         name="rivaroxaban import (RIVIM)",
         equation="riv_ext <-> riv",
-
         compartment="Vmem",
         sboTerm=SBO.TRANSPORT_REACTION,
         pars=[
             Parameter(
-                "RIVIM_Vmax",
+                "RIVIM_k",
                 1000.0,
                 U.per_min,
-                name="Vmax rivaroxaban import",
-                sboTerm=SBO.MAXIMAL_VELOCITY,
+                name="rate of rivaroxaban import",
+                sboTerm=SBO.KINETIC_CONSTANT,
             ),
         ],
-        formula=(
-            "RIVIM_Vmax * Vli * (riv_ext - riv)"
-        ),
-        notes="""Assuming fast equilibration."""
+        formula=("RIVIM_k * Vli * (riv_ext - riv)", U.mmole_per_min),
+        notes="""Assuming fast equilibration.""",
     ),
     Reaction(
         sid="RIV2RX",
@@ -199,21 +236,28 @@ _m.reactions = [
         sboTerm=SBO.BIOCHEMICAL_REACTION,
         pars=[
             Parameter(
-                "RIV2RX_Vmax",
-                0.06401213063939644,
-                U.per_min,
-                name="Vmax rivaroxaban conversion",
-                sboTerm=SBO.MAXIMAL_VELOCITY,
+                "RIV2RX_k",
+                **FITS.parameter("LI__RIV2RX_k", unit=U.per_min),
+                name="rate of rivaroxaban conversion",
+                sboTerm=SBO.KINETIC_CONSTANT,
+                notes="""
+                Intrinsic hepatic clearance per liver volume; the total
+                clearance of rivaroxaban is about 10 l/hr, of which about 6-7
+                l/hr are non-renal (Mueck2014).
+                """,
             ),
         ],
         formula=(
-            "RIV2RX_Vmax * Vli * riv"
+            "(1 dimensionless - fm_cyp3a4 + fm_cyp3a4 * f_cyp3a4)"
+            " * RIV2RX_k * Vli * riv",
+            U.mmole_per_min,
         ),
         notes="""
-        Combination of multiple enzymes in the liver which create a variet of different
-        metabolites. Not much is known about the conversions of rivaroxaban to its metabolites.
-        [Weinz2009].
-        """
+        Oxidative degradation of the morpholinone moiety by CYP3A4 and CYP2J2
+        and CYP independent hydrolysis of the amide bonds into a variety of
+        metabolites, which are lumped (Weinz2009); the part of CYP3A4 is
+        changed by `f_cyp3a4`.
+        """,
     ),
     Reaction(
         sid="RXEX",
@@ -223,17 +267,15 @@ _m.reactions = [
         sboTerm=SBO.TRANSPORT_REACTION,
         pars=[
             Parameter(
-                "RXEX_Vmax",
+                "RXEX_k",
                 1000.0,
                 U.per_min,
-                name="Vmax rivaroxaban metabolite export",
-                sboTerm=SBO.MAXIMAL_VELOCITY,
+                name="rate of rivaroxaban metabolite export",
+                sboTerm=SBO.KINETIC_CONSTANT,
             ),
         ],
-        formula=(
-            "RXEX_Vmax * Vli * (rx - rx_ext)"
-        ),
-        notes="""Assuming fast equilibration."""
+        formula=("RXEX_k * Vli * (rx - rx_ext)", U.mmole_per_min),
+        notes="""Assuming fast equilibration.""",
     ),
     Reaction(
         "RXEX_BI",
@@ -257,101 +299,16 @@ _m.reactions = [
             U.mmole_per_min,
         ),
     ),
-
 ]
 
 model_liver = _m
 
-def liver_layout(dx=200, dy=200) -> pd.DataFrame:
-    """Liver layout for Cytoscape visualization."""
-    delta_x = 0.8 * dx
-    delta_y = 0.4 * dy
-
-    positions = [
-        ["riv_ext", delta_x, 0.5 * delta_y],
-        ["RIVIM", delta_x, 1.5 * delta_y],
-        ["riv", 1.2 * delta_x, 2.2 * delta_y],
-        ["RIV2RX", 1.6 * delta_x, 3.1 * delta_y],
-        ["rx", 2 * delta_x, 4 * delta_y],
-
-        ["RXEX", 3 * delta_x, 1.5 * delta_y],
-        ["rx_ext", 3 * delta_x, 0.5 * delta_y],
-
-        ["RXEX_BI", 2 * delta_x, 5.5 * delta_y],
-        ["rx_bi", 2 * delta_x, 6.3 * delta_y],
-
-        ["RXEXEHC", 2 * delta_x, 7.5 * delta_y],
-        ["rx_lumen", 2 * delta_x, 8.5 * delta_y],
-    ]
-
-    df = pd.DataFrame(positions, columns=["id", "x", "y"])
-    df.set_index("id", inplace=True)
-    return df
-
-
-def liver_annotations(dx=200, dy=200) -> list:
-    """Bounding boxes for 'plasma', 'liver', 'bile', and 'gut lumen' compartments stacked vertically."""
-
-    delta_x = 0.8 * dx
-    delta_y = 0.4 * dy
-
-    width = 4 * delta_x
-    x_pos = 0
-
-    kwargs = {
-        "type": cyviz.AnnotationShapeType.ROUND_RECTANGLE,
-        "opacity": 20,
-        "border_color": "#000000",
-        "border_thickness": 2,
-    }
-
-    annotations = [
-        # Plasma
-        cyviz.AnnotationShape(
-            x_pos=x_pos,
-            y_pos=0 * delta_y,
-            width=width,
-            height=1.5 * delta_y,
-            fill_color="#FF0000",  # red
-            **kwargs
-        ),
-
-        # Liver
-        cyviz.AnnotationShape(
-            x_pos=x_pos,
-            y_pos=1.5 * delta_y,
-            width=width,
-            height=4 * delta_y,
-            fill_color="#FFFFFF",  # white
-            **kwargs
-        ),
-
-        # Bile
-        cyviz.AnnotationShape(
-            x_pos=x_pos,
-            y_pos=5.5 * delta_y,
-            width=width,
-            height=2 * delta_y,
-            fill_color="#00FF00",  # green
-            **kwargs
-        ),
-
-        # Gut lumen
-        cyviz.AnnotationShape(
-            x_pos=x_pos,
-            y_pos=7.5 * delta_y,
-            width=width,
-            height=1.5 * delta_y,
-            fill_color="#FFE3E3",  # light pink
-            **kwargs
-        ),
-    ]
-
-    return annotations
-
-
 
 if __name__ == "__main__":
+    from sbmlode import OdeSystem
+
+    from pkdb_models.models.rivaroxaban import MODEL_BASE_PATH
+
     results: FactoryResult = create_model(
         model=model_liver,
         filepath=MODEL_BASE_PATH / f"{model_liver.sid}.xml",
@@ -360,19 +317,5 @@ if __name__ == "__main__":
     )
 
     # ODE equations
-    ode_factory = odefac.SBML2ODE.from_file(sbml_file=results.sbml_path)
-    ode_factory.to_markdown(md_file=results.sbml_path.parent / f"{results.sbml_path.stem}.md")
-
-    # visualization in Cytoscape
-    cyviz.visualize_sbml(results.sbml_path, delete_session=True)
-    cyviz.apply_layout(layout=liver_layout())
-    cyviz.add_annotations(annotations=liver_annotations())
-
-
-# PNG output
-#     figure_path: Path = MODEL_BASE_PATH.parent / "figures" / f"{model_liver.sid}.png"
-#     cyviz.export_image(
-#         figure_path,
-#         fit_content=True,
-#      )
-#     console.print(figure_path)
+    ode_system = OdeSystem.from_sbml(results.sbml_path)
+    ode_system.write(results.sbml_path.parent / f"{results.sbml_path.stem}.md")

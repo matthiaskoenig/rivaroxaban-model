@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RivaroxabanParameterScan | sbmlsim experiment</title>
+<style>
+:root {
+  --bg: #ffffff; --bg-soft: #f6f7f9; --bg-card: #ffffff;
+  --fg: #1b1f24; --fg-soft: #5b6472; --line: #e3e6ea;
+  --accent: #3b5bdb; --training: #2f9e44; --validation: #1c7ed6; --outlier: #e8590c;
+  --excluded: #868e96;
+  --radius: 10px; --shadow: 0 1px 2px rgba(16,24,40,.06), 0 1px 3px rgba(16,24,40,.1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171c; --bg-soft: #1a1e24; --bg-card: #1a1e24;
+    --fg: #e6e9ee; --fg-soft: #9aa4b2; --line: #2a3038;
+    --accent: #748ffc; --training: #51cf66; --validation: #4dabf7; --outlier: #ff922b;
+    --excluded: #adb5bd;
+    --shadow: none;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .92em; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header.top {
+  position: sticky; top: 0; z-index: 20; background: var(--bg);
+  border-bottom: 1px solid var(--line); padding: 14px 24px 0;
+}
+.top .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: baseline; }
+.top h1 { margin: 0; font-size: 20px; font-weight: 650; letter-spacing: -.01em; }
+.top .sub { color: var(--fg-soft); font-size: 13px; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; margin-left: auto; }
+.badge {
+  background: var(--bg-soft); border: 1px solid var(--line); border-radius: 999px;
+  padding: 2px 10px; font-size: 12px; color: var(--fg-soft); white-space: nowrap;
+}
+.badge b { color: var(--fg); font-weight: 600; }
+.badge.failed, .badge.failed b { color: var(--outlier); border-color: var(--outlier); }
+nav.sections { display: flex; gap: 4px; margin-top: 12px; }
+nav.sections a {
+  padding: 8px 14px; border-bottom: 2px solid transparent; color: var(--fg-soft);
+  font-size: 14px; font-weight: 550;
+}
+nav.sections a.active { color: var(--fg); border-bottom-color: var(--accent); }
+.search { display: flex; gap: 8px; align-items: center; padding: 10px 0 12px; }
+.search input {
+  flex: 1; max-width: 460px; padding: 8px 12px; font-size: 14px; color: var(--fg);
+  background: var(--bg-soft); border: 1px solid var(--line); border-radius: 8px;
+}
+.search input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+.chip {
+  border: 1px solid var(--line); background: var(--bg-soft); color: var(--fg-soft);
+  border-radius: 999px; padding: 5px 12px; font-size: 12.5px; cursor: pointer;
+}
+.chip[aria-pressed="true"] { color: #fff; border-color: transparent; }
+.chip[data-kind="training"][aria-pressed="true"] { background: var(--training); }
+.chip[data-kind="validation"][aria-pressed="true"] { background: var(--validation); }
+.chip[data-kind="outlier"][aria-pressed="true"] { background: var(--outlier); }
+.chip[data-kind="excluded"][aria-pressed="true"] { background: var(--excluded); }
+#hits { color: var(--fg-soft); font-size: 12.5px; margin-left: auto; }
+
+main { padding: 24px; max-width: 1400px; margin: 0 auto; }
+section { margin-bottom: 44px; scroll-margin-top: 150px; }
+section > h2 {
+  font-size: 17px; font-weight: 650; margin: 0 0 4px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+h3 { font-size: 14px; font-weight: 600; color: var(--fg-soft); margin: 26px 0 10px;
+     text-transform: uppercase; letter-spacing: .04em; }
+.card {
+  background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 16px; margin-bottom: 16px;
+}
+/* a heading which opens a card sits at the padding of the card */
+.card > h3:first-child { margin-top: 0; }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        margin-bottom: 16px; }
+/* the gap of the grid is the space between its cards */
+.grid > .card { margin-bottom: 0; }
+.card.wide { grid-column: 1 / -1; }
+
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+/* two tables in one card, e.g. the networks and their arrays */
+table + table { margin-top: 24px; }
+th, td { text-align: left; padding: 7px 12px 7px 0; border-bottom: 1px solid var(--line); }
+th { color: var(--fg-soft); font-weight: 600; white-space: nowrap; }
+th[data-sort] { cursor: pointer; user-select: none; }
+th[data-sort]:hover { color: var(--fg); }
+th[data-sort]::after { content: " ⇅"; opacity: .35; }
+th[data-sort].asc::after { content: " ↑"; opacity: 1; }
+th[data-sort].desc::after { content: " ↓"; opacity: 1; }
+td.num, th.num { text-align: right; padding-right: 18px; font-variant-numeric: tabular-nums; }
+tbody tr:hover { background: var(--bg-soft); }
+tr.total td { font-weight: 650; border-top: 2px solid var(--line); }
+
+.kv { display: grid; grid-template-columns: max-content 1fr; gap: 4px 20px; font-size: 13.5px;
+      margin: 0; }
+.kv dt { color: var(--fg-soft); }
+.kv dd { margin: 0; word-break: break-word; white-space: pre-line; }
+
+.tag { border-radius: 999px; padding: 1px 9px; font-size: 11.5px; font-weight: 600; color: #fff; }
+.tag.training { background: var(--training); }
+.tag.validation { background: var(--validation); }
+.tag.outlier { background: var(--outlier); }
+.tag.excluded { background: var(--excluded); }
+.warn { color: var(--outlier); }
+
+/* what a value means, on the header of a column or next to a figure */
+.hint {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 14px; height: 14px; margin-left: 4px; border-radius: 50%;
+  border: 1px solid var(--line); color: var(--fg-soft);
+  font-size: 10px; font-weight: 700; line-height: 1; cursor: help;
+  position: relative; vertical-align: middle; user-select: none;
+}
+.hint:hover, .hint:focus { border-color: var(--accent); color: var(--accent); }
+.hint::after {
+  content: attr(data-tip);
+  position: absolute; bottom: calc(100% + 8px); left: 50%;
+  transform: translateX(-50%);
+  width: max-content; max-width: 320px; padding: 8px 10px;
+  border-radius: 6px; border: 1px solid var(--line);
+  background: var(--bg); color: var(--fg); box-shadow: 0 4px 16px rgb(0 0 0 / 18%);
+  font-size: 12px; font-weight: 400; line-height: 1.45; text-align: left;
+  white-space: normal; opacity: 0; visibility: hidden; transition: opacity .12s;
+  z-index: 20; pointer-events: none;
+}
+.hint:hover::after, .hint:focus::after { opacity: 1; visibility: visible; }
+/* a tooltip of the last columns would leave the page */
+td:last-child .hint::after, th:last-child .hint::after { left: auto; right: 0; transform: none; }
+/* on a phone a wide table scrolls inside its card and not the page; the
+   tooltips of its header open downwards, into the table, not above the card */
+@media (max-width: 700px) {
+  .card { overflow-x: auto; }
+  th .hint::after { bottom: auto; top: calc(100% + 8px); }
+  /* the header of a phone is not sticky, it would cover half of the screen,
+     and its rows wrap; the gutter is 16px */
+  header.top { position: static; padding: 12px 16px 0; }
+  main { padding: 16px; }
+  footer { padding: 8px 16px 24px; }
+  section { scroll-margin-top: 16px; }
+  nav.sections { overflow-x: auto; }
+  nav.sections a { padding: 8px 10px; white-space: nowrap; }
+  .search { flex-wrap: wrap; }
+  .search input { flex-basis: 100%; max-width: none; }
+}
+
+figure { margin: 0; }
+figure img {
+  width: 100%; height: auto; background: #fff; border: 1px solid var(--line);
+  border-radius: 8px; cursor: zoom-in;
+}
+figcaption { color: var(--fg-soft); font-size: 12.5px; margin-top: 6px; }
+
+.mapping { }
+.mapping header { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 10px; }
+.mapping header .name { font-weight: 650; }
+.mapping header .exp { color: var(--fg-soft); font-size: 13px; }
+.mapping .metrics { margin-left: auto; display: flex; gap: 14px; font-size: 12.5px; color: var(--fg-soft); }
+.mapping .metrics b { color: var(--fg); font-weight: 600; }
+.hidden { display: none !important; }
+.failed { color: var(--outlier); }
+.empty { color: var(--fg-soft); font-style: italic; padding: 16px 0; }
+
+pre.code {
+  margin: 0; padding: 14px 16px; overflow-x: auto; max-height: 70vh;
+  background: var(--bg-soft); border: 1px solid var(--line); border-radius: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12.5px; line-height: 1.5; tab-size: 4;
+}
+#lightbox {
+  position: fixed; inset: 0; background: rgba(8,10,14,.86); z-index: 50;
+  display: none; align-items: center; justify-content: center; padding: 24px; cursor: zoom-out;
+}
+#lightbox.open { display: flex; }
+#lightbox img { max-width: 100%; max-height: 100%; background: #fff; border-radius: 8px; }
+footer { color: var(--fg-soft); font-size: 12.5px; padding: 8px 24px 32px; max-width: 1400px; margin: 0 auto; }
+</style>
+<style>
+  /* an interactive figure is a page of its own, shown in place of the image */
+  figure iframe { width: 100%; height: 520px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg-card); }
+  /* a figure of one panel is not stretched to the width of the page, a figure
+     of many panels still uses it */
+  #figures figure img { width: auto; max-width: 100%; max-height: 70vh; display: block; margin: 0 auto; }
+  .mapping header .exp a + a::before { content: "·"; color: var(--fg-soft); margin: 0 6px; }
+</style>
+</head>
+<body data-items="figures">
+
+<header class="top">
+  <div class="row">
+    <h1>RivaroxabanParameterScan</h1>
+    <span class="sub">simulation experiment</span>
+    <div class="badges">
+<span class="badge">models <b>1</b></span>
+<span class="badge">datasets <b>0</b></span>
+<span class="badge">figures <b>8</b></span>
+    </div>
+  </div>
+  <nav class="sections">
+<a href="#overview">Overview</a>
+<a href="#figures">Figures</a>
+<a href="#code">Code</a>
+  </nav>
+  <div class="search">
+    <input id="search" type="search" placeholder="Search figures, models, datasets …" autocomplete="off">
+    <span id="hits"></span>
+  </div>
+</header>
+
+<main>
+
+<section id="overview">
+  <h2>Overview</h2>
+
+  <h3>Models</h3>
+  <div class="card">
+    <table data-filter="row">
+      <thead><tr><th data-sort="text">model</th><th data-sort="text">source</th></tr></thead>
+      <tbody>
+      <tr><td class="mono">model</td><td><a href="../../../../src/pkdb_models/models/rivaroxaban/models/output/models/rivaroxaban_body_flat.xml" title="../../../../src/pkdb_models/models/rivaroxaban/models/output/models/rivaroxaban_body_flat.xml">rivaroxaban_body_flat.xml</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Datasets</h3>
+  <div class="card">
+    <p class="empty">The experiment has no datasets.</p>
+  </div>
+</section>
+
+<section id="figures">
+  <h2>Figures (8)</h2>
+  <div class="card mapping" data-filter="card">
+    <header>
+      <span class="name mono">fig_timecourse_dose</span>
+      <span class="exp">
+<a href="RivaroxabanParameterScan_fig_timecourse_dose.svg">svg</a>      </span>
+    </header>
+    <figure>
+      <img loading="lazy" src="RivaroxabanParameterScan_fig_timecourse_dose.svg" alt="fig_timecourse_dose">
+    </figure>
+  </div>
+  <div class="card mapping" data-filter="card">
+    <header>
+      <span class="name mono">fig_pk_dose</span>
+      <span class="exp">
+<a href="RivaroxabanParameterScan_fig_pk_dose.svg">svg</a>      </span>
+    </header>
+    <figure>
+      <img loading="lazy" src="RivaroxabanParameterScan_fig_pk_dose.svg" alt="fig_pk_dose">
+    </figure>
+  </div>
+  <div class="card mapping" data-filter="card">
+    <header>
+      <span class="name mono">fig_timecourse_renal</span>
+      <span class="exp">
+<a href="RivaroxabanParameterScan_fig_timecourse_renal.svg">svg</a>      </span>
+    </header>
+    <figure>
+      <img loading="lazy" src="RivaroxabanParameterScan_fig_timecourse_renal.svg" alt="fig_timecourse_renal">
+    </figure>
+  </div>
+  <div class="card mapping" data-filter="card">
+    <header>
+      <span class="name mono">fig_pk_renal</span>
+      <span class="exp">
+<a href="RivaroxabanParameterScan_fig_pk_renal.svg">svg</a>      </span>
+    </header>
+    <figure>
+      <img loading="lazy" src="RivaroxabanParameterScan_fig_pk_renal.svg" alt="fig_pk_renal">
+    </figure>
+  </div>
+  <div class="card mapping" data-filter="card">
+    <header>
+      <span class="name mono">fig_timecourse_hepatic</span>
+      <span class="exp">
+<a href="RivaroxabanParameterScan_fig_timecourse_hepatic.svg">svg</a>      </span>
+    </header>
+    <figure>
+      <img loading="lazy" src="RivaroxabanParameterScan_fig_timecourse_hepatic.svg" alt="fig_timecourse_hepatic">
+    </figure>
+  </div>
+  <div class="card mapping" data-filter="card">
+    <header>
+      <span class="name mono">fig_pk_hepatic</span>
+      <span class="exp">
+<a href="RivaroxabanParameterScan_fig_pk_hepatic.svg">svg</a>      </span>
+    </header>
+    <figure>
+      <img loading="lazy" src="RivaroxabanParameterScan_fig_pk_hepatic.svg" alt="fig_pk_hepatic">
+    </figure>
+  </div>
+  <div class="card mapping" data-filter="card">
+    <header>
+      <span class="name mono">fig_timecourse_food</span>
+      <span class="exp">
+<a href="RivaroxabanParameterScan_fig_timecourse_food.svg">svg</a>      </span>
+    </header>
+    <figure>
+      <img loading="lazy" src="RivaroxabanParameterScan_fig_timecourse_food.svg" alt="fig_timecourse_food">
+    </figure>
+  </div>
+  <div class="card mapping" data-filter="card">
+    <header>
+      <span class="name mono">fig_pk_food</span>
+      <span class="exp">
+<a href="RivaroxabanParameterScan_fig_pk_food.svg">svg</a>      </span>
+    </header>
+    <figure>
+      <img loading="lazy" src="RivaroxabanParameterScan_fig_pk_food.svg" alt="fig_pk_food">
+    </figure>
+  </div>
+  <p class="empty hidden" data-empty>No figure matches the search.</p>
+</section>
+
+<section id="code">
+  <h2>Code</h2>
+  <div class="card">
+    <p><a href="../../../../src/pkdb_models/models/rivaroxaban/experiments/scans/scan_parameters.py" title="../../../../src/pkdb_models/models/rivaroxaban/experiments/scans/scan_parameters.py">scan_parameters.py</a></p>
+    <pre class="code"><code>&#34;&#34;&#34;Parameter scans of rivaroxaban: the dose, the renal function, cirrhosis and food.&#34;&#34;&#34;
+
+from collections.abc import Mapping
+from typing import ClassVar, TypedDict, override
+
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from matplotlib.axes import Axes
+from matplotlib.colors import Colormap
+from matplotlib.typing import ColorType
+from pkpdsim.scan import point_band, point_timecourse, scan_dimensions, start_values
+from sbmlsim import Q
+from sbmlsim.plot.serialization_matplotlib import FigureMPL
+from sbmlsim.result import ScanResult
+from sbmlsim.simulation import Dimension, Scan, Simulation
+from sbmlsim.units import Quantity
+
+from pkdb_models.models.rivaroxaban import MODEL
+from pkdb_models.models.rivaroxaban.experiments.base_experiment import (
+    RivaroxabanSimulationExperiment,
+)
+from pkdb_models.models.rivaroxaban.rivaroxaban_pk import (
+    calculate_rivaroxaban_pd,
+    summarize,
+)
+
+
+class ScanSpec(TypedDict):
+    &#34;&#34;&#34;Definition of a parameter scan.&#34;&#34;&#34;
+
+    parameter: str
+    #: the values of the parameter, which contain the reference
+    range: np.ndarray
+    units: str
+    #: the value of the scan in the simulations of the other scans
+    reference: float
+    label: str
+    #: a logarithmic axis of the scanned parameter
+    log: bool
+    #: the colormap from the lowest to the highest value
+    colormap: str
+
+
+class RivaroxabanParameterScan(RivaroxabanSimulationExperiment):
+    &#34;&#34;&#34;Scan the effect of parameters on the pharmacokinetics and the anticoagulation.
+
+    A single oral dose of 10 mg rivaroxaban as a tablet, fasted, in a healthy
+    liver and kidney, followed for 4 days (the half-life is 3 to 5 hr, longer
+    in severe renal impairment and cirrhosis). Scanned are the dose (1 to
+    100 mg; the dissolution saturates above 10 mg), the renal function (0.1 to
+    10, logarithmic), the degree of cirrhosis (0 to 0.9) and the fed state
+    (0, fasted, to 1, fed); the figures show the first 2 days of the
+    timecourses of rivaroxaban and its metabolites in plasma, their excretion
+    and the anticoagulant effects (PT, aPTT, inhibition of factor Xa), and the
+    pharmacokinetic parameters of the non-compartmental analysis
+    (`rivaroxaban_pk`) and the maxima of the effects over the scanned
+    parameter.
+
+    In a run over the draws of the fitted parameters (`run_simulation
+    pkdb_models.models.rivaroxaban --uncertainty`) every point of a scan is
+    simulated for every draw; the figures draw the median of the draws with the
+    band of their quantiles.
+    &#34;&#34;&#34;
+
+    #: the end of the simulations [hr]
+    tend = 96
+    #: the output times [hr]: every 0.05 hr in the first day (absorption and
+    #: maximum, tmax 0.5 to 4 hr), every 0.5 hr after it
+    times: ClassVar[tuple[float, ...]] = tuple(
+        np.unique(
+            np.concatenate([np.linspace(0, 24, 481), np.linspace(24, tend, 145)])
+        ).tolist()
+    )
+    #: the end of the time axis of the timecourses [hr]
+    tend_plot = 48
+    #: the opacity of the bands of the draws
+    band_alpha = 0.15
+    #: the oral dose of the scans [mg]
+    dose_riv = 10.0
+
+    #: the variables of the timecourses
+    timecourses: ClassVar[tuple[str, ...]] = (
+        &#34;[Cve_riv]&#34;,
+        &#34;[Cve_rx]&#34;,
+        &#34;Aurine_riv&#34;,
+        &#34;Aurine_rx&#34;,
+        &#34;Afeces_rx&#34;,
+        &#34;PT&#34;,
+        &#34;aPTT&#34;,
+        &#34;Xa_inhibition&#34;,
+    )
+    #: the pharmacokinetic parameters of the substances of `rivaroxaban_pk`
+    pk_parameters: ClassVar[dict[str, tuple[str, ...]]] = {
+        &#34;riv&#34;: (&#34;auc_inf_obs&#34;, &#34;cmax&#34;, &#34;tmax&#34;, &#34;thalf&#34;, &#34;cl_f&#34;),
+        &#34;rx&#34;: (&#34;auc_inf_obs&#34;, &#34;cmax&#34;, &#34;tmax&#34;, &#34;thalf&#34;),
+    }
+    pk_names: ClassVar[dict[str, str]] = {
+        &#34;riv&#34;: &#34;rivaroxaban plasma&#34;,
+        &#34;rx&#34;: &#34;rivaroxaban metabolites plasma&#34;,
+    }
+    #: the effects whose maximum is drawn over the scanned parameter
+    effects: ClassVar[tuple[str, ...]] = (&#34;PT&#34;, &#34;aPTT&#34;, &#34;Xa_inhibition&#34;)
+    pk_labels: ClassVar[Mapping[str, str]] = {
+        &#34;auc_inf_obs&#34;: &#34;AUC&#34;,
+        &#34;cmax&#34;: &#34;Cmax&#34;,
+        &#34;tmax&#34;: &#34;Tmax&#34;,
+        &#34;thalf&#34;: &#34;Half-life&#34;,
+        &#34;cl_f&#34;: &#34;CL/F&#34;,
+        &#34;PT&#34;: &#34;max PT&#34;,
+        &#34;aPTT&#34;: &#34;max aPTT&#34;,
+        &#34;Xa_inhibition&#34;: &#34;max Xa inhibition&#34;,
+    }
+    pk_units: ClassVar[Mapping[str, str]] = {
+        &#34;auc_inf_obs&#34;: &#34;µmole/l*hr&#34;,
+        &#34;cmax&#34;: &#34;µmole/l&#34;,
+        &#34;tmax&#34;: &#34;hr&#34;,
+        &#34;thalf&#34;: &#34;hr&#34;,
+        &#34;cl_f&#34;: &#34;l/hr&#34;,
+        &#34;PT&#34;: &#34;s&#34;,
+        &#34;aPTT&#34;: &#34;s&#34;,
+        &#34;Xa_inhibition&#34;: &#34;percent&#34;,
+    }
+
+    scan_map: ClassVar[dict[str, ScanSpec]] = {
+        &#34;dose&#34;: {
+            &#34;parameter&#34;: &#34;PODOSE_riv&#34;,
+            &#34;range&#34;: np.array([1, 2.5, 5, 10, 20, 30, 40, 60, 80, 100], dtype=float),
+            &#34;units&#34;: &#34;mg&#34;,
+            &#34;reference&#34;: dose_riv,
+            &#34;label&#34;: &#34;rivaroxaban dose [mg]&#34;,
+            &#34;log&#34;: True,
+            &#34;colormap&#34;: &#34;viridis_r&#34;,
+        },
+        &#34;renal&#34;: {
+            &#34;parameter&#34;: &#34;KI__f_renal_function&#34;,
+            &#34;range&#34;: np.logspace(-1, 1, num=11),
+            &#34;units&#34;: &#34;dimensionless&#34;,
+            &#34;reference&#34;: 1.0,
+            &#34;label&#34;: &#34;renal function [-]&#34;,
+            &#34;log&#34;: True,
+            &#34;colormap&#34;: &#34;seismic_r&#34;,
+        },
+        &#34;hepatic&#34;: {
+            &#34;parameter&#34;: &#34;f_cirrhosis&#34;,
+            &#34;range&#34;: np.linspace(0, 0.9, num=10),
+            &#34;units&#34;: &#34;dimensionless&#34;,
+            &#34;reference&#34;: 0.0,
+            &#34;label&#34;: &#34;cirrhosis degree [-]&#34;,
+            &#34;log&#34;: False,
+            &#34;colormap&#34;: &#34;Blues&#34;,
+        },
+        &#34;food&#34;: {
+            &#34;parameter&#34;: &#34;GU__fed&#34;,
+            &#34;range&#34;: np.linspace(0, 1, num=6),
+            &#34;units&#34;: &#34;dimensionless&#34;,
+            &#34;reference&#34;: 0.0,
+            &#34;label&#34;: &#34;fed state [-]&#34;,
+            &#34;log&#34;: False,
+            &#34;colormap&#34;: &#34;Purples&#34;,
+        },
+    }
+
+    font: ClassVar[dict[str, str | int]] = {&#34;weight&#34;: &#34;bold&#34;, &#34;size&#34;: 15}
+    tick_font_size = 13
+
+    def _reference_changes(self, parameter: str) -&gt; dict[str, Quantity | float]:
+        &#34;&#34;&#34;Get the changes of the reference without the scanned parameter.
+
+        The reference is the dose of 10 mg, fasted, in a healthy liver and
+        kidney; the scanned parameter is set by the dimension of the scan.
+        &#34;&#34;&#34;
+        changes: dict[str, Quantity | float] = {
+            **self.default_changes(),
+            **{
+                spec[&#34;parameter&#34;]: Q(spec[&#34;reference&#34;], spec[&#34;units&#34;])
+                for spec in self.scan_map.values()
+            },
+        }
+        changes.pop(parameter)
+        return changes
+
+    @override
+    def simulations(self) -&gt; dict[str, Scan]:
+        return {
+            f&#34;scan_{key}&#34;: Scan(
+                simulation=Simulation(
+                    time_unit=&#34;hr&#34;,
+                    end=self.tend,
+                    times=self.times,
+                    preinit_changes=self._reference_changes(spec[&#34;parameter&#34;]),
+                ),
+                dimensions=[
+                    Dimension(
+                        &#34;dim_scan&#34;,
+                        values={spec[&#34;parameter&#34;]: Q(spec[&#34;range&#34;], spec[&#34;units&#34;])},
+                    ),
+                ],
+            )
+            for key, spec in self.scan_map.items()
+        }
+
+    def _across(self) -&gt; str | None:
+        &#34;&#34;&#34;Get the dimension of the draws of the fitted parameters, `None` without.&#34;&#34;&#34;
+        return None if self.uncertainty is None else self.uncertainty.id
+
+    def _axis_values(self, res: ScanResult, spec: ScanSpec) -&gt; np.ndarray:
+        &#34;&#34;&#34;Get the values of the axis of the scanned parameter at the points.&#34;&#34;&#34;
+        pid = spec[&#34;parameter&#34;]
+        values = start_values(res, pid)
+        across = self._across()
+        if across is not None:
+            values = values.isel({across: 0})
+        scanned = Q(values.values, res.units[pid]).to(spec[&#34;units&#34;]).magnitude
+        return np.asarray(scanned, dtype=float)
+
+    @staticmethod
+    def _color(spec: ScanSpec, value: float, cmap: Colormap) -&gt; ColorType:
+        &#34;&#34;&#34;Get the color of a value of a scan, black for the reference.&#34;&#34;&#34;
+        if np.isclose(value, spec[&#34;reference&#34;]):
+            return &#34;black&#34;
+        vmin, vmax = float(np.min(spec[&#34;range&#34;])), float(np.max(spec[&#34;range&#34;]))
+        if spec[&#34;log&#34;]:
+            position = (np.log10(value) - np.log10(vmin)) / (
+                np.log10(vmax) - np.log10(vmin)
+            )
+        else:
+            position = (value - vmin) / (vmax - vmin)
+        return cmap(float(position))
+
+    @staticmethod
+    def _unit(units: Mapping[str, str], sid: str) -&gt; str:
+        &#34;&#34;&#34;Get the unit of a variable in the figures, the inhibition in percent.&#34;&#34;&#34;
+        return &#34;percent&#34; if sid == &#34;Xa_inhibition&#34; else units[sid]
+
+    def _timecourse(
+        self, ax: Axes, res: ScanResult, sid: str, index: int, color: ColorType
+    ) -&gt; tuple[np.ndarray, np.ndarray, float, float]:
+        &#34;&#34;&#34;Get the timecourse of a point of a scan, drawing the band of its draws.
+
+        Returns:
+            The time and the values in the units of the figure, the median of
+            the draws in a run over them, and the minimum and the maximum of
+            the values or of the band on the time axis of the figure.
+        &#34;&#34;&#34;
+        (scandim,) = scan_dimensions(res, self._across())
+        run = self.uncertainty
+        if run is None:
+            time, values = point_timecourse(res, sid, **{scandim: index})
+        else:
+            time, lower, values, upper = point_band(
+                res, sid, across=run.id, quantiles=run.quantiles, **{scandim: index}
+            )
+        unit = self._unit(self.units, sid)
+        t_vec = Q(time, res.units[&#34;time&#34;]).to(self.units[&#34;time&#34;]).magnitude
+        c_vec = Q(values, res.units[sid]).to(unit).magnitude
+        shown = t_vec &lt;= self.tend_plot
+        bottom = float(np.nanmin(c_vec[shown]))
+        top = float(np.nanmax(c_vec[shown]))
+        if run is not None:
+            lower_vec = Q(lower, res.units[sid]).to(unit).magnitude
+            upper_vec = Q(upper, res.units[sid]).to(unit).magnitude
+            ax.fill_between(
+                t_vec,
+                lower_vec,
+                upper_vec,
+                color=color,
+                alpha=self.band_alpha,
+                linewidth=0,
+            )
+            bottom = min(bottom, float(np.nanmin(lower_vec[shown])))
+            top = max(top, float(np.nanmax(upper_vec[shown])))
+        return t_vec, c_vec, bottom, top
+
+    def _maxima(self, res: ScanResult) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;Get the maxima of the effects at every point of a scan.
+
+        Returns:
+            One row per point (and draw), the columns `point`, `draw` (with
+            draws) and per effect its maximum and its unit (`&lt;effect&gt;_unit`).
+        &#34;&#34;&#34;
+        across = self._across()
+        dfs = calculate_rivaroxaban_pd(res, across=across)
+        columns = [&#34;point&#34;, *([&#34;draw&#34;] if across is not None else [])]
+        df = dfs[self.effects[0]][columns].copy()
+        for sid in self.effects:
+            df[sid] = dfs[sid][&#34;max&#34;].to_numpy(dtype=float)
+            df[f&#34;{sid}_unit&#34;] = dfs[sid][&#34;unit&#34;].to_numpy()
+        return df
+
+    def _summary(
+        self, df: pd.DataFrame, key: str, target: str
+    ) -&gt; tuple[np.ndarray, np.ndarray | None, np.ndarray | None]:
+        &#34;&#34;&#34;Get a parameter at the points of a scan, the median and the band of the draws.
+
+        Returns:
+            The values (the median of the draws in a run over them), and the
+            lower and the upper quantile, `None` without draws.
+        &#34;&#34;&#34;
+        unit = df[f&#34;{key}_unit&#34;].iloc[0]
+        run = self.uncertainty
+        if run is None:
+            return (
+                Q(df[key].to_numpy(dtype=float), unit).to(target).magnitude,
+                None,
+                None,
+            )
+        summary = summarize(df, key, run.quantiles)
+        median, lower, upper = (
+            Q(summary[column].to_numpy(), unit).to(target).magnitude
+            for column in [&#34;median&#34;, &#34;lower&#34;, &#34;upper&#34;]
+        )
+        return median, lower, upper
+
+    @override
+    def figures_mpl(self) -&gt; dict[str, FigureMPL]:
+        figures: dict[str, FigureMPL] = {}
+        keys = [f&#34;scan_{key}&#34; for key in self.scan_map]
+        pk_dfs = self.calculate_rivaroxaban_pk(scans=keys, across=self._across())
+        for key, spec in self.scan_map.items():
+            res = self.results[f&#34;task_scan_{key}&#34;]
+            figures[f&#34;fig_timecourse_{key}&#34;] = self._figure_timecourses(key, spec, res)
+            figures[f&#34;fig_pk_{key}&#34;] = self._figure_pharmacokinetics(
+                spec, res, pk_dfs[f&#34;scan_{key}&#34;]
+            )
+        return figures
+
+    def _figure_timecourses(
+        self, key: str, spec: ScanSpec, res: ScanResult
+    ) -&gt; FigureMPL:
+        &#34;&#34;&#34;Timecourses of a scan, the reference in black.
+
+        Raises:
+            ValueError: if the reference is not a point of the scan.
+        &#34;&#34;&#34;
+        cmap = matplotlib.colormaps[spec[&#34;colormap&#34;]]
+        x_vec = self._axis_values(res, spec)
+        references = [
+            k for k, x in enumerate(x_vec) if np.isclose(x, spec[&#34;reference&#34;])
+        ]
+        if not references:
+            raise ValueError(f&#34;The reference is not a point of the scan &#39;{key}&#39;.&#34;)
+
+        ncols = 4
+        nrows = (len(self.timecourses) + ncols - 1) // ncols
+        f: FigureMPL
+        f, axes = plt.subplots(
+            nrows=nrows, ncols=ncols, figsize=(5.5 * ncols, 5 * nrows)
+        )
+        f.subplots_adjust(wspace=0.4, hspace=0.35)
+        f.suptitle(
+            f&#34;Scan {spec[&#39;label&#39;]}: reference black&#34;, fontsize=20, fontweight=&#34;bold&#34;
+        )
+        for ax, sid in zip(axes.flatten(), self.timecourses, strict=True):
+            ymin, ymax = np.inf, 0.0
+            # the reference last, on top
+            for index in [k for k in range(len(x_vec)) if k not in references] + [
+                references[0]
+            ]:
+                color = self._color(spec, float(x_vec[index]), cmap)
+                t_vec, c_vec, bottom, top = self._timecourse(ax, res, sid, index, color)
+                ymin, ymax = min(ymin, bottom), max(ymax, top)
+                ax.plot(t_vec, c_vec, color=color, linewidth=2.0)
+            ax.set_xlim(0, self.tend_plot)
+            # the clotting times start at their baseline, not at 0
+            low = 0.95 * ymin if sid in (&#34;PT&#34;, &#34;aPTT&#34;) else 0.0
+            ax.set_ylim(bottom=low, top=1.05 * ymax if ymax &gt; 0 else 1.0)
+            ax.tick_params(axis=&#34;both&#34;, labelsize=self.tick_font_size)
+            ax.set_xlabel(
+                f&#34;{self.label_time} [{self.units[&#39;time&#39;]}]&#34;, fontdict=self.font
+            )
+            unit = self._unit(self.units, sid).replace(&#34;dimensionless&#34;, &#34;-&#34;)
+            ax.set_ylabel(f&#34;{self.labels[sid]} [{unit}]&#34;, fontdict=self.font)
+        return f
+
+    def _figure_pharmacokinetics(
+        self, spec: ScanSpec, res: ScanResult, df: pd.DataFrame
+    ) -&gt; FigureMPL:
+        &#34;&#34;&#34;Pharmacokinetic parameters of the substances and the maxima of the effects.&#34;&#34;&#34;
+        x_vec = self._axis_values(res, spec)
+        maxima = self._maxima(res)
+        rows: list[list[tuple[str, pd.DataFrame, str]]] = [
+            [
+                (key, df[df[&#34;substance&#34;] == substance], self.pk_names[substance])
+                for key in parameters
+            ]
+            for substance, parameters in self.pk_parameters.items()
+        ]
+        rows.append([(sid, maxima, &#34;anticoagulation&#34;) for sid in self.effects])
+        ncols = max(len(row) for row in rows)
+        nrows = len(rows)
+        f: FigureMPL
+        f, axes = plt.subplots(
+            nrows=nrows, ncols=ncols, figsize=(5 * ncols, 4.5 * nrows)
+        )
+        f.subplots_adjust(wspace=0.45, hspace=0.45)
+        f.suptitle(
+            f&#34;Scan {spec[&#39;label&#39;]}: pharmacokinetics and pharmacodynamics&#34;,
+            fontsize=20,
+            fontweight=&#34;bold&#34;,
+        )
+        for krow, panels in enumerate(rows):
+            for kcol in range(ncols):
+                ax: Axes = axes[krow, kcol]
+                if kcol &gt;= len(panels):
+                    ax.set_axis_off()
+                    continue
+                key, data, name = panels[kcol]
+                target = self.pk_units[key]
+                y_vec, y_lower, y_upper = self._summary(data, key, target)
+                if y_lower is not None and y_upper is not None:
+                    ax.fill_between(
+                        x_vec,
+                        y_lower,
+                        y_upper,
+                        color=&#34;black&#34;,
+                        alpha=self.band_alpha,
+                        linewidth=0,
+                    )
+                    top = float(np.nanmax(y_upper))
+                else:
+                    top = float(np.nanmax(y_vec))
+                ax.axvline(x=spec[&#34;reference&#34;], color=&#34;grey&#34;, linestyle=&#34;--&#34;)
+                ax.plot(
+                    x_vec,
+                    y_vec,
+                    marker=&#34;o&#34;,
+                    linestyle=&#34;-&#34;,
+                    color=&#34;black&#34;,
+                    markeredgecolor=&#34;black&#34;,
+                )
+                if spec[&#34;log&#34;]:
+                    ax.set_xscale(&#34;log&#34;)
+                # a margin above keeps a constant curve inside the axes
+                ax.set_ylim(bottom=0.0, top=1.1 * top if top &gt; 0 else 1.0)
+                ax.tick_params(axis=&#34;both&#34;, labelsize=self.tick_font_size)
+                ax.set_title(name, fontsize=13)
+                ax.set_xlabel(spec[&#34;label&#34;], fontdict=self.font)
+                ax.set_ylabel(f&#34;{self.pk_labels[key]} [{target}]&#34;, fontdict=self.font)
+        return f
+
+
+if __name__ == &#34;__main__&#34;:
+    MODEL.run_experiments(RivaroxabanParameterScan, output_dir=&#34;scan_parameters&#34;)
+</code></pre>
+  </div>
+</section>
+
+</main>
+
+<footer>
+<a href="../index.html">all experiments</a> · <a href="../../../../src/pkdb_models/models/rivaroxaban/experiments/scans/scan_parameters.py" title="../../../../src/pkdb_models/models/rivaroxaban/experiments/scans/scan_parameters.py">scan_parameters.py</a>
+</footer>
+
+<div id="lightbox"><img alt=""></div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---- search and the filter chips ------------------------------------
+  const search = document.getElementById("search");
+  const hits = document.getElementById("hits");
+  const chips = Array.from(document.querySelectorAll(".chip"));
+  const cards = Array.from(document.querySelectorAll('[data-filter="card"]'));
+  const rows = Array.from(document.querySelectorAll('table[data-filter="row"] tbody tr'));
+  const empty = document.querySelector("[data-empty]");
+  const itemLabel = document.body.dataset.items || "items";
+
+  const haystack = new Map();
+  for (const node of [...cards, ...rows]) {
+    haystack.set(node, node.textContent.toLowerCase());
+  }
+
+  function activeKinds() {
+    return new Set(chips.filter((c) => c.getAttribute("aria-pressed") === "true")
+                        .map((c) => c.dataset.kind));
+  }
+
+  function matches(node, query, kinds) {
+    const kind = node.dataset.kind;
+    if (kind && !kinds.has(kind)) return false;
+    return !query || haystack.get(node).includes(query);
+  }
+
+  function apply() {
+    const query = search.value.trim().toLowerCase();
+    const kinds = activeKinds();
+    let shownCards = 0;
+    for (const node of cards) {
+      const show = matches(node, query, kinds);
+      node.classList.toggle("hidden", !show);
+      if (show) shownCards += 1;
+    }
+    for (const node of rows) {
+      node.classList.toggle("hidden", !matches(node, query, kinds));
+    }
+    if (empty) empty.classList.toggle("hidden", shownCards > 0 || cards.length === 0);
+    const filtering = Boolean(query) || (chips.length > 0 && kinds.size < chips.length);
+    hits.textContent = filtering
+      ? shownCards + " / " + cards.length + " " + itemLabel
+      : "";
+  }
+
+  search.addEventListener("input", apply);
+  for (const chip of chips) {
+    chip.addEventListener("click", () => {
+      chip.setAttribute("aria-pressed", chip.getAttribute("aria-pressed") === "true" ? "false" : "true");
+      apply();
+    });
+  }
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "/" && document.activeElement !== search) {
+      event.preventDefault();
+      search.focus();
+    } else if (event.key === "Escape") {
+      if (document.activeElement === search && search.value) { search.value = ""; apply(); }
+      closeLightbox();
+    }
+  });
+
+  // ---- sortable tables -------------------------------------------------
+  function cellValue(row, index, kind) {
+    const text = row.cells[index] ? row.cells[index].textContent.trim() : "";
+    if (kind !== "num") return text.toLowerCase();
+    // the AIC of a perfect fit is -inf, a cell without a value sorts last
+    if (text === "-inf") return Number.NEGATIVE_INFINITY;
+    const value = parseFloat(text);
+    return Number.isNaN(value) ? Number.POSITIVE_INFINITY : value;
+  }
+
+  for (const table of document.querySelectorAll("table")) {
+    const headers = Array.from(table.querySelectorAll("th[data-sort]"));
+    headers.forEach((th, index) => {
+      th.addEventListener("click", () => {
+        const body = table.tBodies[0];
+        if (!body) return;
+        const kind = th.dataset.sort;
+        const descending = th.classList.contains("asc");
+        for (const other of headers) other.classList.remove("asc", "desc");
+        th.classList.add(descending ? "desc" : "asc");
+        const sorted = Array.from(body.rows).sort((a, b) => {
+          const left = cellValue(a, index, kind);
+          const right = cellValue(b, index, kind);
+          if (left < right) return descending ? 1 : -1;
+          if (left > right) return descending ? -1 : 1;
+          return 0;
+        });
+        for (const row of sorted) body.appendChild(row);
+      });
+    });
+  }
+
+  // ---- the section the page is scrolled to -----------------------------
+  // a tab (data-tab) is not a section, its page marks the tab which is shown
+  const links = Array.from(document.querySelectorAll("nav.sections a:not([data-tab])"));
+  const sections = links.map((link) => document.querySelector(link.getAttribute("href")));
+  function scrollspy() {
+    let current = 0;
+    sections.forEach((section, index) => {
+      if (section && section.getBoundingClientRect().top < 200) current = index;
+    });
+    links.forEach((link, index) => link.classList.toggle("active", index === current));
+  }
+  window.addEventListener("scroll", scrollspy, { passive: true });
+  scrollspy();
+
+  // ---- click a figure to enlarge it ------------------------------------
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = lightbox.querySelector("img");
+  function closeLightbox() { lightbox.classList.remove("open"); lightboxImage.src = ""; }
+  for (const image of document.querySelectorAll("figure img")) {
+    image.addEventListener("click", () => {
+      lightboxImage.src = image.getAttribute("src");
+      lightbox.classList.add("open");
+    });
+  }
+  lightbox.addEventListener("click", closeLightbox);
+
+  apply();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+study	individual	group	count	intervention	measurement_type	substance	tissue	method	label	time	time_unit	value	mean	mean_pm	mean_sd	mean_se	comments	raw	mean_unit	value_unit	count_unit
+Liu2024		fed_20	22.0	fed_20	aPTT (change relative)		plasma	calculated	aPTT (change relative)_fed_20	0.0	hr		1.0		0.134				dimensionless	dimensionless	dimensionless
+Liu2024		fed_20	22.0	fed_20	aPTT (change relative)		plasma	calculated	aPTT (change relative)_fed_20	3.0	hr		1.7196261682243		0.421				dimensionless	dimensionless	dimensionless
+Liu2024		fed_20	22.0	fed_20	aPTT (change relative)		plasma	calculated	aPTT (change relative)_fed_20	8.0	hr		1.33021806853583		0.249				dimensionless	dimensionless	dimensionless
+Liu2024		fed_20	22.0	fed_20	aPTT (change relative)		plasma	calculated	aPTT (change relative)_fed_20	12.0	hr		1.1588785046729		0.201				dimensionless	dimensionless	dimensionless
